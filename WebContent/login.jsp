@@ -30,7 +30,7 @@
 <h1>ログイン</h1>
 
 <h4>ID</h4>
-<input type = "text" name = "name" size="30">
+<input type = "text" name = "id" size="30">
 <h4>PASSWORD</h4>
 <input type = "password" name = "password" size="30">
 
