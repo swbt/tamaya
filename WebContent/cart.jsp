@@ -19,8 +19,8 @@
 
   </head>
   <body>
-    <div id="header"></div>
-    <h2>カートに入っている商品</h2>
+    <div id="header"></div><br>
+    <h2>カートに入っている商品</h2><br>
     <p>商品名　(税込)　個数　小計(税込)　削除</p>
     <p>合計　　　　円</p>
     <a href="./siharai.html">購入／支払い情報入力</a>
