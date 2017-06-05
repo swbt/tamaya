@@ -7,17 +7,16 @@ IN	受け渡し
 OUT 受け取り
 
 /* 商品名 */
-int id					//ユーザー管理用
-String userId			//ユーザーID(ログイン用)
+int userId				//ユーザー管理用
 String userPass			//ユーザーパスワード
 String userName			//ユーザー名
 String userAddress		//届け先住所
-String email			//メールアドレス
+String email			//メールアドレス(ログイン併用)
 String postalCode		//郵便番号
 String phoneNumber		//電話番号
 String comment			//問い合わせ内容
 String inquiryDate		//問い合わせ日時
-int inquiry id			//問い合わせID
+int inquiryId			//問い合わせID
 
 int creditId			//クレジット種類
 String creditNumber		//クレジット番号
@@ -55,60 +54,64 @@ String adminPass		//管理者用パスワード
 
 1.トップ画面					:top
 IN
-id
-itemId
-quantity
+userId	//ユーザーのカートに入れる
+itemId	//カートに入れる商品
+quantity	//入れる数
 
 OUT
-id
+userId	//ランキング商品をカートに入れる時使用
+//userIdが取得できない場合はログイン画面へ
 
 
 2.ログイン後ヘッダー			:login_header
 OUT
-id
+userId	//いるか不明 ログイン情報保持
 
 
 
 3.ログイン前ヘッダー			:header
 IN
-userId
-userPass
+email		//DBと連携 ページ内で使用
+userPass	//同上
 
 4.ログイン情報入力画面			:login
 IN
-userID
+email		//ログイン前と同じ
 userPass
 
 5.商品詳細画面（モーダル）		:syousai
 OUT
-id
-itemId
-itemName
-price
-quantity
-stocks
-itemDetail
-imgPath
+userId			//カートに入れる時使用ユーザー毎のカートへ
+itemId		//カート用商品ID
+itemName	//表示用
+price		//表示用
+stocks		//在庫
+itemDetail	//商品説明
+imgPath		//商品画像表示
 
 IN
-id
-quantity
+userId			//カートへ入れる時使用
+quantity	//カートに入れる商品の数
 
 6.カート表示画面				:cart
 OUT
-itemId
-itemName
-price
-quantity
-subTotal
-delete
-total
+itemId		//商品追加時使用
+itemName	//表示用
+price		//単価
+quantity	//数
+subTotal	//小計
+total		//合計
+
+IN
+itemId		//商品追加時使用(カートから追加できないなら不要)
+delete		//商品削除時使用
+quantity	//カートに入れる商品の数(カートから追加できないなら不要)
 
 7.支払い画面					:siharai
 IN
 creditId
 creditNumber
-nameE
+nameE		//名義
 securityCode
 expirationMonth
 expirationYear
@@ -132,10 +135,13 @@ userName
 userAddress
 
 IN
-historyId
 userId
 itemId
-
+quantity
+//注文確定したらhistory_id(DB)が自動更新される
+//購入ユーザーのid
+//購入した商品id及び個数がDBへ
+//購入日は自動更新?
 
 9.決裁完了画面					:siharai_kanryo
 
@@ -153,44 +159,50 @@ imgPath
 quantity
 historyId
 subTotal
+//個人情報表示,購入履歴 DBの情報によっては表示項目を増やす
 
 11.特集画面
 21-24.価格別
 25-28.種類別
 IN
+userId
 itemId
 quantity
 
 OUT
+userId
 itemId
 itemName
 price
-stocks
-itemDetail
+stocks		//在庫用
+quantity
 imgPath
+//モーダルではなくカートに入れるを押した場合に
+//必要なため記述
+//基本的にはモーダル画面と動きは同じ
 
 12.お問い合わせ入力画面			:toiawase
 IN
 userName
 email
 comment
+//確認画面へ送る
 
 13.お問い合わせ内容確認画面		:toiawase_kakunin
 IN
 userName
 email
 comment
+//完了画面へ移行時DBへ
 
 OUT
 userName
 email
 comment
+//確認画面からもらう
+
 
 14.お問い合わせ完了画面			:toiawase_kanryo
-IN
-userName
-email
-comment
 
 15.管理者TOP画面				:kanri_top
 
@@ -215,15 +227,6 @@ itemDetail
 imgPath
 category
 
-OUT
-itemId
-itemName
-price
-stocks
-itemDetail
-imgPath
-category
-
 
 18.管理者商品情報変更・削除		:kanri_henko
 IN
@@ -234,7 +237,7 @@ stocks
 itemDetail
 imgPath
 category
-delete
+delete	//商品削除時使用
 
 OUT
 itemId
@@ -248,10 +251,14 @@ category
 
 19.管理者お問い合わせ確認画面	:kanri_kakunin
 OUT
+id
 userName
 email
 comment
 inquiryDate
+inquiryId
+//問い合わせ履歴表示
+//inquiryIdは自動更新
 
 20.管理者ログイン後ヘッダー		:kanri_header
 
@@ -259,3 +266,4 @@ inquiryDate
 IN
 adminId
 adminPass
+//ログイン確認用
