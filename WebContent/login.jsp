@@ -27,24 +27,28 @@
 	</head>
 	<body>
 
+<div class="login">
 <h1>ログイン</h1>
-
+<form method="post">
 <h4>ID</h4>
-<input type = "text" name = "id" size="30">
+<input type = "text" name = "id" placeholder="ユーザーID" required="required"/>
 <h4>PASSWORD</h4>
-<input type = "password" name = "password" size="30">
+<input type = "password" name = "password" placeholder="パスワード" required="required"/>
 
-<ul>
-  <li><a href="">Log in画像ボタン</a></li>
-  <li><a href="">
-  		<img src="/tamaya/WebContent/img/sign_facebook.png" alt="sign in with Facebook">
-  </a></li>
-  <li><a href="">
-  		<img src="/tamaya/WebContent/img/sign_google.png" alt="sign in with Google">
-  	</a></li>
-  <li><a href="">
-  		<img src="/tamaya/WebContent/img/sign_Twitter.png" alt="sign in with Twitter">
-  </a></li>
+<ul><div>
+  <li><a href=""><button type="submit" class="btn btn-primary btn-black btn-large">Log in</button>
+  </form>
+  </div>
+  <a href="">
+  		<img src="img/sign_facebook.png" alt="sign in with Facebook"><br>
+  </a>
+  <a href="">
+  		<img src="img/sign_google.png" alt="sign in with Google"><br>
+  </a>
+  <a href="">
+  		<img src="img/sign_Twitter.png" alt="sign in with Twitter"><br>
+  </a>
+  </div>
 
 </ul>
 
