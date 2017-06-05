@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>問い合わせ確認画面</title>
+    <title>問い合わせ完了画面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Stylesheet
     ==================================================
@@ -19,11 +21,17 @@
     $('#top-menu').prmenu();
         });
 	</script>
-  </head>
-  <body>
-    <h1>問い合わせ確認画面</h1>
-    <ul>
-      <li><a href="./toiawase_kanryo.html">問い合わせ完了確認画面移動ボタン</a></li>
-    </ul>
-  </body>
-</html>
+
+
+
+<meta http-equiv="refresh" content="5;top.jsp">
+</HEAD>
+<BODY>
+<h1>お問い合わせ完了致しました。</h1>
+５秒後にジャンプします。<br>
+ジャンプしない場合は、下記のTOPボタンをクリックしてください。<br>
+<br>
+<a href="top.jsp"><button type="button" class="btn btn-success">TOPページ</button></a>
+
+</BODY>
+</HTML>
