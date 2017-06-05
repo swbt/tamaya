@@ -30,8 +30,8 @@
 <div class="login">
 <h1>ログイン</h1>
 <form method="post">
-<h4>ID</h4>
-<input type = "text" name = "id" placeholder="ユーザーID" required="required"/>
+<h4>MAILADDRESS</h4>
+<input type = "text" name = "mailaddress" placeholder="メールアドレス" required="required"/>
 <h4>PASSWORD</h4>
 <input type = "password" name = "password" placeholder="パスワード" required="required"/>
 
@@ -52,7 +52,7 @@
 
 </ul>
 
-<%--ログイン画面参考サイト→https://codepen.io/arthitst/pen/lrEAf --%>>
+<%--ログイン画面参考サイト→https://codepen.io/arthitst/pen/lrEAf --%>
 
 </body>
 
