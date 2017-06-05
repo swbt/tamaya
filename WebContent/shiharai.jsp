@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>支払い確認</title>
+    <meta name="description" content="An interactive getting started guide for Brackets.">
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+  <body>
+    <h2>カード情報入力</h2>
+　  　<P>ご利用可能なクレジットカード</P>
+<input type="image" src="img/visa.png"width=50>
+<input type="image" src="img/master.png"width=50>
+<input type="image"  src="img/jcb.png"width=50>
+   <br>●クレジットカード情報の入力の間違い等にご注意いただき、下記項目をすべて入力し「支払い確認へ(仮)」を押してください。
+   <br>●本人名義以外のカード（家族名義のカード含む）、盗難カード等での不正使用は重大な犯罪です。
+   <br>●弊社ではデジタルIDを使用したSSL暗号化技術により、カード情報を暗号化しています。ご安心ください。
+        <br>（↑文字を小さく↑）
+
+　<p>カード番号</p>
+
+※ご本人名義のカードのみご利用いただけます。
+<br>※半角入力（ハイフンなし）　例：1234123412341234
+
+　<p>有効期限</p>
+
+　<p>カード名義人</p>
+<br>※半角英数字（例：TARO YAMADA）
+
+　<p>支払い回数</p>
+<br>ご契約の関係で指定された分割回数をご利用になれないことがございます。
+
+　<p>セキュリティーコード</p>
+<br>主にカード裏面のご署名欄に印刷されている末尾3桁～4桁の数字です。
+
+       <p> <a href="./siharai_kakunin.html">支払い確認へ</a></p>
+
+
+    </body>
+</html>
