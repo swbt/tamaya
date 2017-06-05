@@ -13,7 +13,7 @@
 	<div id="contents">
 	<p><a id="modal-open">【クリックでモーダルウィンドウ開示】</a></p>
 	<p class="page-txt">ここからページ本文<br>
-	<br>
+	モーダル画面参照サイト→https://www.tam-tam.co.jp/tipsnote/html_css/post8031.html<br>
 	</div>
 	<!-- /#contents -->
 </body>
