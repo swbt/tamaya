@@ -36,9 +36,15 @@
 
 <ul>
   <li><a href="">Log in画像ボタン</a></li>
-  <li><a href="">Facebookログインボタン画像</a></li>
-  <li><a href="">Googleログインボタン画像</a></li>
-  <li><a href="">Twitterログインボタン画像</a></li>
+  <li><a href="">
+  		<img src="/tamaya/WebContent/img/sign_facebook.png" alt="sign in with Facebook">
+  </a></li>
+  <li><a href="">
+  		<img src="/tamaya/WebContent/img/sign_google.png" alt="sign in with Google">
+  	</a></li>
+  <li><a href="">
+  		<img src="/tamaya/WebContent/img/sign_Twitter.png" alt="sign in with Twitter">
+  </a></li>
 
 </ul>
 
