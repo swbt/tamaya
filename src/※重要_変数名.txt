@@ -1,0 +1,261 @@
+先頭文字に数字は使えない
+大文字と小文字は区別される
+予約語は使えない
+複合文字の場合は区切りを大文字する
+
+IN	受け渡し
+OUT 受け取り
+
+/* 商品名 */
+int id					//ユーザー管理用
+String userId			//ユーザーID(ログイン用)
+String userPass			//ユーザーパスワード
+String userName			//ユーザー名
+String userAddress		//届け先住所
+String email			//メールアドレス
+String postalCode		//郵便番号
+String phoneNumber		//電話番号
+String comment			//問い合わせ内容
+String inquiryDate		//問い合わせ日時
+int inquiry id			//問い合わせID
+
+int creditId			//クレジット種類
+String creditNumber		//クレジット番号
+String nameE			//クレジット名義人
+String securityCode		//セキュリティーコード
+int expirationMonth		//有効期限月
+int expirationYear		//有効期限年
+int paymentId			//支払い回数
+
+int itemId				//商品ID
+String itemName			//商品名
+float price				//単価
+int stocks				//在庫
+int sales				//売り上げ数
+String itemDetail		//商品詳細
+String imgPath			//イメージパス
+int category			//カテゴリID
+int quantity			//数量
+int historyId			//履歴ID(注文番号)
+int subTotal			//小計金額
+int total				//合計金額
+boolean delete			//商品削除フラグ
+
+String createdAt		//登録日時
+String updatedAt		//更新日時
+
+String adminId			//管理者用ID
+String adminPass		//管理者用パスワード
+
+
+
+
+
+
+
+1.トップ画面					:top
+IN
+id
+itemId
+quantity
+
+OUT
+id
+
+
+2.ログイン後ヘッダー			:login_header
+OUT
+id
+
+
+
+3.ログイン前ヘッダー			:header
+IN
+userId
+userPass
+
+4.ログイン情報入力画面			:login
+IN
+userID
+userPass
+
+5.商品詳細画面（モーダル）		:syousai
+OUT
+id
+itemId
+itemName
+price
+quantity
+stocks
+itemDetail
+imgPath
+
+IN
+id
+quantity
+
+6.カート表示画面				:cart
+OUT
+itemId
+itemName
+price
+quantity
+subTotal
+delete
+total
+
+7.支払い画面					:siharai
+IN
+creditId
+creditNumber
+nameE
+securityCode
+expirationMonth
+expirationYear
+paymentId
+
+
+8.支払い確認画面				:siharai_kakunin
+OUT
+itemId
+itemName
+price
+imgPath
+quantity
+subTotal
+total
+creditId
+creditNumber
+nameE
+securityCode
+userName
+userAddress
+
+IN
+historyId
+userId
+itemId
+
+
+9.決裁完了画面					:siharai_kanryo
+
+10.マイページ					:mypage
+OUT
+userName
+userAddress
+email
+postalCode
+phoneNumber
+itemId
+itemName
+price
+imgPath
+quantity
+historyId
+subTotal
+
+11.特集画面
+21-24.価格別
+25-28.種類別
+IN
+itemId
+quantity
+
+OUT
+itemId
+itemName
+price
+stocks
+itemDetail
+imgPath
+
+12.お問い合わせ入力画面			:toiawase
+IN
+userName
+email
+comment
+
+13.お問い合わせ内容確認画面		:toiawase_kakunin
+IN
+userName
+email
+comment
+
+OUT
+userName
+email
+comment
+
+14.お問い合わせ完了画面			:toiawase_kanryo
+IN
+userName
+email
+comment
+
+15.管理者TOP画面				:kanri_top
+
+16.管理者販売履歴画面			:kanri_rireki
+OUT
+itemId
+itemName
+price
+stocks
+sales
+imgPath
+category
+historyId
+
+17.管理者商品追加画面			:kanri_tuika
+IN
+itemId
+itemName
+price
+stocks
+itemDetail
+imgPath
+category
+
+OUT
+itemId
+itemName
+price
+stocks
+itemDetail
+imgPath
+category
+
+
+18.管理者商品情報変更・削除		:kanri_henko
+IN
+itemId
+itemName
+price
+stocks
+itemDetail
+imgPath
+category
+delete
+
+OUT
+itemId
+itemName
+price
+stocks
+itemDetail
+imgPath
+category
+
+
+19.管理者お問い合わせ確認画面	:kanri_kakunin
+OUT
+userName
+email
+comment
+inquiryDate
+
+20.管理者ログイン後ヘッダー		:kanri_header
+
+29.管理者ログイン情報入力画面   :kanri_login
+IN
+adminId
+adminPass
