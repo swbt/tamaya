@@ -10,8 +10,11 @@
 
 </head>
 <body>
- <h1 class="contact-title">お問い合わせ内容入力画面</h1>
-
+<div style="text-align : center">
+ <h1 class="contact-title">お問い合わせフォーム</h1>
+</div>
+<br>
+<br>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   <div class="container">
@@ -46,9 +49,9 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-2">ご意見をどうぞ</div>
+    <div class="col-sm-2">お問い合わせ内容</div>
     <div class="col-sm-10" style="padding: 3px;">
-      <textarea class="form-control  input-sm" rows="3" id="comment" placeholder="ご意見をどうぞ"></textarea>
+      <textarea class="form-control  input-sm" rows="3" id="comment" placeholder="お問い合わせ内容"></textarea>
     </div>
   </div>
 
@@ -59,7 +62,8 @@
 
 
   </div>
-  </div>
+
 
 </body>
 </html>
+
