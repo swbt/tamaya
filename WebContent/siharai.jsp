@@ -8,14 +8,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>支払い確認</title>
     <meta name="description" content="An interactive getting started guide for Brackets.">
+        <!-- Stylesheet
+    ==================================================-->
+    <!--
+    <link rel="stylesheet" type="text/css" href="css/＠＠＠.css">-->
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css" href="css/siharai.css">
+    <!-- Javascripts
+    ================================================== -->
   </head>
 
   <body>
   <h2>カード情報入力</h2>
-   <table border="1" cellspacing="0" cellpadding="0">
+   <table class="table" border="1" cellspacing="0" cellpadding="0">
     <tr>
-	 <th>ご利用可能な
+	 <th bgcolor="#d3d3d3">ご利用可能な
 	 <br>クレジットカード</th>
      <td>
      <input type="image" src="img/visa.png"width=50>
@@ -23,21 +30,21 @@
      <input type="image"  src="img/jcb.png"width=50>
      </td>
     </tr>
-    <tr>
    </table>
-   <br>●クレジットカード情報の入力の間違い等にご注意いただき、下記項目をすべて入力し「支払い確認へ(仮)」を押してください。
-   <br>●本人名義以外のカード（家族名義のカード含む）、盗難カード等での不正使用は重大な犯罪です。
-   <br>●弊社ではデジタルIDを使用したSSL暗号化技術により、カード情報を暗号化しています。ご安心ください。
-       <!--↑文字を小さく↑）-->
-   <table border="1" cellspacing="0" cellpadding="0">
+     <br>●クレジットカード情報の入力の間違い等にご注意いただき、下記項目をすべて入力し「支払い確認へ(仮)」を押してください。
+     <br>●本人名義以外のカード（家族名義のカード含む）、盗難カード等での不正使用は重大な犯罪です。
+     <br>●弊社ではデジタルIDを使用したSSL暗号化技術により、カード情報を暗号化しています。ご安心ください。
+         <!--↑文字を小さく↑）-->
+   <table class="table2" border="1" cellspacing="0" cellpadding="0">
     <tr>
-     <th>カード番号</th>
+     <th bgcolor="#d3d3d3">カード番号</th>
      <td><input type="text" name="card number" size="20">
 	 <br>※ご本人名義のカードのみご利用いただけます。
-     <br>※半角入力（ハイフンなし）　例：1234123412341234 </td>
+     <br>※半角入力（ハイフンなし）　例：1234123412341234
+     </td>
     </tr>
 	<tr>
-     <th>有効期限</th>
+     <th bgcolor="#d3d3d3">有効期限</th>
       <td>
       <select name="moon">
        <option value="moon">1</option>
@@ -81,14 +88,14 @@
       </td>
      </tr>
      <tr>
-      <th>カード名義人</th>
+      <th bgcolor="#d3d3d3">カード名義人</th>
       <td>
       <input type="text" name="card number" size="20">
       <br>※半角英数字（例：TARO YAMADA）
       </td>
      </tr>
      <tr>
-      <th>支払い回数</th>
+      <th bgcolor="#d3d3d3">支払い回数</th>
       <td>
       <select name="int">
        <option value="int">一括</option>
@@ -99,7 +106,7 @@
       </td>
      </tr>
      <tr>
-      <th>セキュリティーコード</th>
+      <th bgcolor="#d3d3d3">セキュリティーコード</th>
       <td><input type="text" name="security code" size="3">
       <br>
       <input type="image" src="img/security_code.png"width=50>
