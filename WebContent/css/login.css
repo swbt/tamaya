@@ -1,4 +1,6 @@
 .login{
+	width:350px;
+	height:450px;
 	padding: 20px 20px;
 	margin: 100px 425px;
 	text-align: center;
@@ -7,6 +9,7 @@
 	background-color: #cde4ff; //îwåiêF
 	margin-bottom: 2em
 }
+
 
 .login p{
 	margin: 0;
