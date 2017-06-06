@@ -36,7 +36,7 @@
 
 	<tbody>
     <tr>
-    <td><img src="img/honkidama.jpg" alt="商品画像　商品名"> 　　本気玉</td>
+    <td><img src="img/honkidama.jpg" alt="商品画像　商品名" align="middle"> 　　本気玉</td>
     <td>2,500円（税込）</td>
     <td>
     <select name="number" >
@@ -75,7 +75,7 @@
 
 	<div>
     <a href="./siharai.html">
-    	<img src="img/shiharai_nyuryoku.png" alt="支払い情報入力画面">
+    	<img src="img/shiharai_nyuryoku.png" alt="支払い情報入力画面" align="right">
     </a>
     </div>
   </body>
