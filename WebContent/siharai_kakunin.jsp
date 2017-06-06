@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,7 +25,7 @@
   </head>
   <body>
     <ul>
-      <li><a href="./siharai_kanryo.html">決済完了画面</a></li>
+      <li><a href="./siharai_kanryo.jsp">決済完了画面</a></li>
     </ul>
   </body>
 </html>
