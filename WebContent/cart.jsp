@@ -36,11 +36,25 @@
 
 	<tbody>
     <tr>
-    <td>商品画像　商品名</td>
+    <td><img src="img/honkidama.jpg" alt="商品画像　商品名"> 　　本気玉</td>
     <td>2,500円（税込）</td>
-    <td>個数</td>
+    <td>
+    <select name="number" >
+    	<option value="selected">選択してください</open>
+    	<option value="1">1</option>
+    	<option value="2">2</option>
+    	<option value="3">3</option>
+    	<option value="4">4</option>
+    	<option value="5">5</option>
+    	<option value="6">6</option>
+    	<option value="7">7</option>
+    	<option value="8">8</option>
+    	<option value="9">9</option>
+    	<option value="10">10</option>
+    	</select>
+    </td>
     <td>2,500円（税込）</td>
-    <td>×</td>
+    <td><img src="img/shut.gif" alt="×"></td>
     </tr>
     </tbody>
 
