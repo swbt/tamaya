@@ -4,29 +4,19 @@
 "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-<constant name="struts.devMode" value="true"/>
+  <!-- devMode = true の時、struts2を開発（デバッグ）モードで稼働する
+       必ず本番稼働の前にこの項目をfalseにするか、削除すること -->
+  <constant name="struts.devMode" value="true"></constant>
 
+  <package name="com.internousdev.kagiya.action" extends="struts-default">
+    <action name="LoginAction" class="com.internousdev.tamaya.action.LoginAction" method="execute">
+      <result name="success">top.jsp</result>
+      <result name="error">top.jsp</result>
+    </action>
 
-<package name="com.internousdev.tamaya.action" extends="struts-default">
-
-<!-- ログインアクション、SUCCESSならuser_mypage.jsp、ERRORならlogin.jsp、loginならadmin.top.jspに遷移する -->
-<!--
-		<action name="loginAction" class="com.internousdev.tamaya.action.LoginAction"
-			method="execute">
-			<result name="success">index.jsp</result>
-			<result name="error">login.jsp</result>
-			<result name="login">admin_top.jsp</result>
-		</action>
-		-->
-
-<!-- ログアウトアクション、SUCCESSならuser_top.jsp、ERRORならlogin.jspに遷移する -->
-<!--
-		<action name="logoutAction" class="com.internousdev.tamaya.action.LogoutAction"
-			method="execute">
-			<result name="success">logout.jsp</result>
-			<result name="error">login.jsp</result>
-		</action>
-		-->
-
-</package>
+    <action name="LogoutAction" class="com.internousdev.tamaya.action.LogoutAction" method="execute">
+      <result name="success">top.jsp</result>
+      <result name="error">top.jsp</result>
+    </action>
+  </package>
 </struts>
