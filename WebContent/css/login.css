@@ -1,0 +1,14 @@
+.login{
+	padding: 20px 20px;
+	margin: 100px 425px;
+	text-align: center;
+	color: #2c2c2f;
+	boreder-radius: 10px;
+	background-color: #cde4ff; //îwåiêF
+	margin-bottom: 2em
+}
+
+.login p{
+	margin: 0;
+	padding: 0;
+}
