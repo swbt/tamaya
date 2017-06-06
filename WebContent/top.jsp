@@ -49,14 +49,14 @@
 	<h3>花火の種類別</h3></div>
   	<div class="box1">
 
-	  	<a href="./temoti.jsp"><img src="img/temotiphoto.png" width=200 height=270 alt="手持ち花火"></a>
-	  	<a href="./temoti.jsp">手持ち花火</a>
-	  	<a href="./hunsyutu.jsp"><img src="img/hunsyutuphoto.jpg" width=200 height=270 alt="噴出花火"></a>
-	  	<a href="./hunsyutu.jsp">噴出花火</a>
-	  	<a href="./utiage.jsp"><img src="img/utiagephoto.jpg" width=200 height=270 alt="打上げ花火"></a>
-	  	<a href="./utiage.jsp">打上げ花火</a>
-	  	<a href="./sonota.jsp"><img src="img/sonotaphoto.jpeg" width=200 height=270 alt="その他花火"></a>
-		<a href="./sonota.jsp">その他花火</a>
+	  	<a href="./temoti.jsp"><img src="img/temotiphoto.png" width=150 height=100 alt="手持ち"></a>
+	  	<a href="./temoti.jsp">手持ち</a>
+	  	<a href="./hunsyutu.jsp"><img src="img/hunsyutuphoto.jpg" width=150 height=100 alt="噴出"></a>
+	  	<a href="./hunsyutu.jsp">噴出</a>
+	  	<a href="./utiage.jsp"><img src="img/utiagephoto.jpg" width=150 height=100 alt="打上げ"></a>
+	  	<a href="./utiage.jsp">打上げ</a>
+	  	<a href="./sonota.jsp"><img src="img/sonotaphoto.jpeg" width=150 height=100 alt="その他"></a>
+		<a href="./sonota.jsp">その他</a>
 
 	</div>
 </div>
@@ -72,7 +72,7 @@
 
 	<div class=box2>
 
-	<div class=button1><a href="kakaku0000">499円以下</a></div>
+	<a href="kakaku0000"><button type="button" class="btn btn-primary btn-lg">499円以下</button></a>
     <div class=button2><a href="kakaku0500" id="button">500円～999円</a></div>
      <div class=button3><a href="kakaku1000" id="button">1000円～4999円</a></div>
     <div class=button4><a href="kakaku5000" id="button">5000円～</a></div>
@@ -97,11 +97,11 @@
 
 
 	<div class=box4>
-    <a href="./tokusyu.jsp"><img src="img/kazokuphoto.jpg" width=240 height=270 alt="家族特集"></a>
+    <a href="./tokusyu.jsp"><img src="img/kazokuphoto.jpg" width=220 height=270 alt="家族特集"></a>
     <a href="./tokusyu.jsp">家族特集</a>
-     <a href="./tokusyu.jsp"><img src="img/couplephoto.jpg" width=240 height=270 alt="カップル特集"></a>
+     <a href="./tokusyu.jsp"><img src="img/couplephoto.jpg" width=220 height=270 alt="カップル特集"></a>
      <a href="./tokusyu.jsp">カップル特集</a>
-     <a href="./tokusyu.jsp"><img src="img/daikazokuphoto.jpg" width=240 height=270 alt="大人数特集"></a>
+     <a href="./tokusyu.jsp"><img src="img/daikazokuphoto.jpg" width=220 height=270 alt="大人数特集"></a>
      <a href="./tokusyu.jsp">大人数特集</a>
 
 	</div>
@@ -111,7 +111,15 @@
 </div>
 
 
-<p>
-  <button type="button" class="btn btn-primary btn-lg">499円以下</button>
+
+
+
+
+
+
+
+
+
+
   	</body>
 	</html>
