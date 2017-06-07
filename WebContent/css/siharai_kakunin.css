@@ -1,0 +1,17 @@
+table{
+	border-collapse: collapse;
+}
+td,th{
+	border: 1px solid #b7b7b7;
+	padding: 12px 60px;
+}
+select{
+	font-size:14px;
+}
+thead tr{
+	background: #E0FFFF;
+}
+
+tfoot tr{
+	background: #E0FFFF;
+}
