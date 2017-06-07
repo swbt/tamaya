@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+	<html>
 	<head>
 	<meta charset="utf-8">
     <title>カート</title>
@@ -16,13 +16,13 @@
     	  $("#header").load("login_header.html");
       });
     </script>
-  </head>
-  <body>
+  	</head>
+  	<body>
     <div id="header"></div><br>
 
     <img src="img/cart_shohin.png" alt="カートに入っている商品">
 	<table align="center">
-		<thead>
+	<thead>
     <tr>
     <th>商品名</th>
     <th>価格</th>
@@ -35,7 +35,7 @@
 	<tbody>
     <tr>
     <td><img src="img/honkidama.jpg" alt="商品画像　商品名" align="middle"> 　　本気玉</td>
-    <td>2,500円（税込）</td>
+    <td align="center">2,500円（税込）</td>
     <td>
     <select name="number" >
     	<option value="selected">選択してください</open>
@@ -51,7 +51,7 @@
     	<option value="10">10</option>
     	</select>
     </td>
-    <td>2,500円（税込）</td>
+    <td align="center">2,500円（税込）</td>
     <td><img src="img/shut.gif" alt="×"></td>
     </tr>
     </tbody>
@@ -67,8 +67,8 @@
 	<table align="center">
 	<tr>
     <td>合計（税込）</td>
-    <td>1個</td>
-    <td>2,500円</td>
+    <td align="center">1個</td>
+    <td align="center">2,500円</td>
     </table>
 
 	<div>

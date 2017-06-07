@@ -42,16 +42,16 @@
 	<tbody>
     <tr>
     <td><img src="img/honkidama.jpg" alt="商品画像　商品名" align="middle"> 　　本気玉</td>
-    <td>2,500円（税込）</td>
-    <td>1</td>
-    <td>2,500円（税込）</td>
+    <td align="center">2,500円（税込）</td>
+    <td align="center">1</td>
+    <td align="center">2,500円（税込）</td>
     </tr>
     </tbody>
 
 	<tfoot>
     <tr>
     <td colspan="2">送料（国内）</td>
-    <td colspan="3">無料</td>
+    <td colspan="3" align="center">無料</td>
     </tr>
     </tfoot>
     </table>
@@ -59,8 +59,8 @@
 	<table align="center">
 	<tr>
     <td>合計（税込）</td>
-    <td>1個</td>
-    <td>2,500円</td>
+    <td align="center">1個</td>
+    <td align="center">2,500円</td>
     </table>
 
     <table align="center">
@@ -72,19 +72,19 @@
 
     <tbody>
     <tr>
-    <td>カードの種類</td><td>VISA</td>
+    <td>カードの種類</td><td align="center">VISA</td>
     </tr>
     <tr>
-    <td>カード番号</td><td>000000000000</td>
+    <td>カード番号</td><td align="center">000000000000</td>
     </tr>
     <tr>
-    <td>セキュリティーコード</td><td>123</td>
+    <td>セキュリティーコード</td><td align="center">123</td>
     </tr>
     <tr>
-    <td>有効期限</td><td>2018年　5月</td>
+    <td>有効期限</td><td align="center">2018年　5月</td>
     </tr>
     <tr>
-    <td>カード名義人</td><td>白石　遼</td>
+    <td>カード名義人</td><td align="center">白石　遼</td>
     </tr>
     </tbody>
     </table>
@@ -99,10 +99,10 @@
 
     <tbody>
     <tr>
-    <td>氏名</td><td>白石　遼</td>
+    <td>氏名</td><td align="center">白石　遼</td>
     </tr>
     <tr>
-    <td>お届け先住所</td><td>東京都○○区</td>
+    <td>お届け先住所</td><td align="center">東京都○○区</td>
     </tr>
     </tbody>
     </table>
