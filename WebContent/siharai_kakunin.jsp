@@ -41,7 +41,7 @@
 
 	<tbody>
     <tr>
-    <td><img src="img/honkidama.jpg" alt="商品画像　商品名" align="middle"> 　　本気玉</td>
+    <td><img src="img/honkidama.jpg" alt="商品画像　商品名" align="center"> 　　本気玉</td>
     <td align="center">2,500円（税込）</td>
     <td align="center">1</td>
     <td align="center">2,500円（税込）</td>
@@ -50,17 +50,15 @@
 
 	<tfoot>
     <tr>
-    <td colspan="2">送料（国内）</td>
-    <td colspan="3" align="center">無料</td>
+    <td class="souryo" colspan="2">送料（国内）</td>
+    <td align="center" colspan="2">無料</td>
     </tr>
-    </tfoot>
-    </table>
-
-	<table align="center">
-	<tr>
-    <td>合計（税込）</td>
+    <tr>
+    <td class="gokei" colspan="2">合計（税込）</td>
     <td align="center">1個</td>
     <td align="center">2,500円</td>
+    </tr>
+    </tfoot>
     </table>
 
     <table align="center">
