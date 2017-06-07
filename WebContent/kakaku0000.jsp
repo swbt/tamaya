@@ -28,7 +28,11 @@
   <body>
     <div id="header"></div>
     <h1>499円以下</h1>
-    <p><img src="img/image.jpg"width=200>　<img src="img/image.jpg"width=200>　<img src="img/image.jpg"width=200></p>
+    <p>
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+    </p>
     ※モーダル画面で商品詳細
   </body>
 </html>

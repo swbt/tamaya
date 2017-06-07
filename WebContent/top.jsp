@@ -19,13 +19,20 @@
     <!-- Javascripts
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        $("#header").load("login_header.jsp");
-      });
-
-
-    </script>
+    <s:if test="#session.loginFlg == true">
+      <script>
+        $(function(){
+          $("#header").load("login_header.jsp");
+        });
+      </script>
+    </s:if>
+    <s:else>
+      <script>
+        $(function(){
+          $("#header").load("header.jsp");
+        });
+      </script>
+    </s:else>
 
   	</head>
   	<body>
