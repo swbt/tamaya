@@ -20,6 +20,7 @@
   <div class="container">
 
 
+			<div class="col-sm-offset-3 col-sm-8">
 
   <div class="row">
     <div class="col-sm-2">お名前</div>
