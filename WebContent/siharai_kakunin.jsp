@@ -11,16 +11,16 @@
     ==================================================
     <!--
     <link rel="stylesheet" type="text/css"  href="css/＠＠＠.css">
-    <link rel="stylesheet" type="text/css"  href="css/cart.css">
     <link rel="stylesheet" type="text/css"  href="css/＠＠＠.css">
     <link rel="stylesheet" type="text/css"  href="">
     -->
+    <link rel="stylesheet" type="text/css"  href="css/siharai_kakunin.css">
     <!-- Javascripts
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script>
         $(document).ready(function(){
-    $('#top-menu').prmenu();
+   			 $('#top-menu').prmenu();
         });
 	</script>
   </head>
@@ -28,7 +28,7 @@
     <body>
     <div id="header"></div><br>
 
-    <img src="img/cart_shohin.png" alt="カートに入っている商品">
+    <img src="img/siharai_kakunin.png" alt="お支払い確認">
 	<table>
 		<thead>
     <tr>
@@ -36,7 +36,6 @@
     <th>価格</th>
     <th>個数</th>
     <th>小計</th>
-    <th>削除</th>
     </tr>
     	</thead>
 
@@ -60,7 +59,6 @@
     	</select>
     </td>
     <td>2,500円（税込）</td>
-    <td><img src="img/shut.gif" alt="×"></td>
     </tr>
     </tbody>
 
@@ -81,11 +79,8 @@
 
 	<div>
     <a href="./siharai.html">
-    	<img src="img/shiharai_nyuryoku.png" alt="支払い情報入力画面" align="right">
+    	<img src="img/chumon_kanryo.png" alt="注文確定" align="right">
     </a>
     </div>
-    <ul>
-      <li><a href="./siharai_kanryo.jsp">決済完了画面</a></li>
-    </ul>
   </body>
 </html>

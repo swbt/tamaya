@@ -2,9 +2,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+	<head>
+	<meta charset="utf-8">
     <title>カート</title>
     <meta name="description" content="An interactive getting started guide for Brackets.">
     <!--
@@ -17,7 +16,6 @@
     	  $("#header").load("login_header.html");
       });
     </script>
-
   </head>
   <body>
     <div id="header"></div><br>
