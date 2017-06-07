@@ -1,99 +1,155 @@
+body {
 
-body	{
-	background-color:black;
-	width:1000px;
-	height:2000px;
+	width:99%;
+	height:99%;
+	background-image: url("../img/background.jpg");
+	background-attachment: fixed;
+	background-position: right bottom;
 }
 
 
-
-h3	{
+h3 {
 	text-align:center;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-.syurui	{
+.syurui {
 	background-color:white;
 	border: 4px solid #000040;
-    border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
-    margin: 2em 3;
-    padding: 2em;
+	border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+	margin: 2em 0;
+	padding: 5em;
+	height:180px;
+}
 
+
+.ttt {
+	width:20%;
+	height:100px;
+}
+
+
+.hhh {
+	width:20%;
+	height:100px;
+}
+
+
+.uuu {
+	width:20%;
+	height:100px;
+}
+
+
+.sss {
+	width:20%;
+	height:100px;
+}
+
+.box4 {
+	width:100%;
 }
 
 
 
+.ttt1 {
+	width:28%;
+	height:250px;
+}
 
-.kakaku{
+
+.ttt2 {
+	width:28%;
+	height:250px;
+}
+
+
+.ttt3 {
+	width:28%;
+	height:250px;
+}
+
+
+.kakaku {
 	background-color:white;
 	border: 4px solid #82636b;
-    border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
-    margin: 2em 0;
-    padding: 2em;
+	border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+	margin: 2em 0;
+	padding: 2em;
+	height:180px;
 }
 
 
-
-
-.ranking{
+.ranking {
 	background-color:white;
 	border: 4px solid #82636b;
-    border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
-    margin: 2em 0;
-    padding: 2em;
+	border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+	margin: 2em 0;
+	padding: 2em;
+	height:320px;
 }
 
 
-.tokusyu{
+.tokusyu {
 	background-color:white;
 	border: 4px solid #82636b;
-    border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
-    margin: 2em 0;
-    padding: 2em;
+	border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+	margin: 2em 0;
+	padding: 2em;
+	height:320px;
+}
+
+
+.box2 {
+	height:100px;
+}
+
+
+.g1 {
+	width:1000px;
+}
+
+
+.hbox2 {
+	text-align:center;
+	margin:3px;
+	padding:3px;
+}
+
+
+.syurui {
+	padding:1px;
+}
+
+
+.box1 {
+	text-align:center;
+
+
+
 }
 
 
 
-
-
-
-
-
-
-button	{
-	color:red;
+.kakaku {
+	padding:1px;
 }
 
 
 
+.button1 {
 
-
-
-
-
-.button1{
-
+	width:22%;
+	height:40px;
+	display:block;
+	float:left;
 	margin:10px;
-	width:150px;
 	color:#00ffff;
 	background:#337fcc;
 	font-size:18px;
 	font-weight:bold;
 	text-shadow:0 -1px 1px #143352;
 	text-align:center;
-	display:block;
 	text-decoration:none;
 	border:1px solid #225588;
 	adding:12px 0 8px 0;
@@ -113,7 +169,6 @@ button	{
 }
 
 
-
 a.button:hover {
 	background:-moz-linear-gradient(rgba(119,170,221,0.9), rgba(34,85,136,0.9));
 	background:-webkit-gradient(linear, 100% 100%, 100% 0%, from(rgba(34,85,136,0.9)), to(rgba(119,170,221,0.9)));
@@ -130,289 +185,280 @@ a.button:hover {
 }
 
 
-
-
-
-
-
-
 .button2 {
 
-
-
-  margin:10px;
-
-  width:150px;
-
-  color:#e4eef8;
-
-  background:#337fcc;
-
-  font-size:18px;
-
-  font-weight:bold;
-
-  text-shadow:0 -1px 1px #143352;
-
-  text-align:center;
-
-  display:block;
-
-  text-decoration:none;
-
-  border:1px solid #225588;
-
- 	adding:12px 0 8px 0;
-
-  border-radius:12px;
-
-  background:-moz-linear-gradient(rgba(34,85,136,0.5), rgba(34,85,136,1));
-
-  background:-webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(34,85,136,0.5)), to(rgba(34,85,136,1)));
-
-  box-shadow:0px 1px 0px #1b446d,
-
-             0px 2px 0px #1b446d,
-
-             0px 3px 0px #1b446d,
-
-            0px 4px 0px #1b446d,
-
-             0px 5px 0px #1b446d,
-
-             0px 6px 0px #1b446d,
-
-             0px 7px 0px #1b446d,
-
-             2px 7px 3px rgba(0,0,0,0.3),
-
-             0px 1px 0px rgba(255,255,255,0.5) inset,
-
-             0px -1px 0px rgba(255,255,255,0.2) inset;
+	width:22%;
+	height:40px;
+	display:block;
+	float:left;
+	margin:10px;
+	color:#e4eef8;
+	background:#337fcc;
+	font-size:18px;
+	font-weight:bold;
+	text-shadow:0 -1px 1px #143352;
+	text-align:center;
+	text-decoration:none;
+	border:1px solid #225588;
+	adding:12px 0 8px 0;
+	border-radius:12px;
+	background:-moz-linear-gradient(rgba(34,85,136,0.5), rgba(34,85,136,1));
+	background:-webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(34,85,136,0.5)), to(rgba(34,85,136,1)));
+	box-shadow:0px 1px 0px #1b446d,
+	0px 2px 0px #1b446d,
+	0px 3px 0px #1b446d,
+	0px 4px 0px #1b446d,
+	0px 5px 0px #1b446d,
+	0px 6px 0px #1b446d,
+	0px 7px 0px #1b446d,
+	2px 7px 3px rgba(0,0,0,0.3),
+	0px 1px 0px rgba(255,255,255,0.5) inset,
+	0px -1px 0px rgba(255,255,255,0.2) inset;
 }
-
 
 
 a.button2:hover {
-  background:-moz-linear-gradient(rgba(119,170,221,0.9), rgba(34,85,136,0.9));
-
-  background:-webkit-gradient(linear, 100% 100%, 100% 0%, from(rgba(34,85,136,0.9)), to(rgba(119,170,221,0.9)));
-
-  box-shadow:0px 1px 0px #225588,
-
-             0px 2px 0px #225588,
-
-             0px 3px 0px #225588,
-
-             0px 4px 0px #225588,
-
-            0px 5px 0px #225588,
-
-             0px 6px 0px #225588,
-
-             0px 7px 0px #225588,
-
-             2px 7px 3px rgba(0,0,0,0.3),
-
-             0px 1px 0px rgba(255,255,255,0.5) inset,
-
-             0px -1px 0px rgba(255,255,255,0.2) inset;
+	background:-moz-linear-gradient(rgba(119,170,221,0.9), rgba(34,85,136,0.9));
+	background:-webkit-gradient(linear, 100% 100%, 100% 0%, from(rgba(34,85,136,0.9)), to(rgba(119,170,221,0.9)));
+	box-shadow:0px 1px 0px #225588,
+	0px 2px 0px #225588,
+	0px 3px 0px #225588,
+	0px 4px 0px #225588,
+	0px 5px 0px #225588,
+	0px 6px 0px #225588,
+	0px 7px 0px #225588,
+	2px 7px 3px rgba(0,0,0,0.3),
+	0px 1px 0px rgba(255,255,255,0.5) inset,
+	0px -1px 0px rgba(255,255,255,0.2) inset;
 }
-
-
 
 
 .button3 {
-  margin:10px;
 
-  width:150px;
-
-  color:#e4eef8;
-
-  background:#337fcc;
-
-  font-size:18px;
-
-  font-weight:bold;
-
-  text-shadow:0 -1px 1px #143352;
-
-  text-align:center;
-
-  display:block;
-
-  text-decoration:none;
-
-  border:1px solid #225588;
-
- 	adding:12px 0 8px 0;
-
-  border-radius:12px;
-
-  background:-moz-linear-gradient(rgba(34,85,136,0.5), rgba(34,85,136,1));
-
-  background:-webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(34,85,136,0.5)), to(rgba(34,85,136,1)));
-
-  box-shadow:0px 1px 0px #1b446d,
-
-             0px 2px 0px #1b446d,
-
-             0px 3px 0px #1b446d,
-
-            0px 4px 0px #1b446d,
-
-             0px 5px 0px #1b446d,
-
-             0px 6px 0px #1b446d,
-
-             0px 7px 0px #1b446d,
-
-             2px 7px 3px rgba(0,0,0,0.3),
-
-             0px 1px 0px rgba(255,255,255,0.5) inset,
-
-             0px -1px 0px rgba(255,255,255,0.2) inset;
+	width:22%;
+	height:40px;
+	display:block;
+	float:left;
+	margin:10px;
+	color:#e4eef8;
+	background:#337fcc;
+	font-size:18px;
+	font-weight:bold;
+	text-shadow:0 -1px 1px #143352;
+	text-align:center;
+	text-decoration:none;
+	border:1px solid #225588;
+	adding:12px 0 8px 0;
+	border-radius:12px;
+	background:-moz-linear-gradient(rgba(34,85,136,0.5), rgba(34,85,136,1));
+	background:-webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(34,85,136,0.5)), to(rgba(34,85,136,1)));
+	box-shadow:0px 1px 0px #1b446d,
+	0px 2px 0px #1b446d,
+	0px 3px 0px #1b446d,
+	0px 4px 0px #1b446d,
+	0px 5px 0px #1b446d,
+	0px 6px 0px #1b446d,
+	0px 7px 0px #1b446d,
+	2px 7px 3px rgba(0,0,0,0.3),
+	0px 1px 0px rgba(255,255,255,0.5) inset,
+	0px -1px 0px rgba(255,255,255,0.2) inset;
 }
-
 
 
 a.button3:hover {
-  background:-moz-linear-gradient(rgba(119,170,221,0.9), rgba(34,85,136,0.9));
-
-  background:-webkit-gradient(linear, 100% 100%, 100% 0%, from(rgba(34,85,136,0.9)), to(rgba(119,170,221,0.9)));
-
-  box-shadow:0px 1px 0px #225588,
-
-             0px 2px 0px #225588,
-
-             0px 3px 0px #225588,
-
-             0px 4px 0px #225588,
-
-            0px 5px 0px #225588,
-
-             0px 6px 0px #225588,
-
-             0px 7px 0px #225588,
-
-             2px 7px 3px rgba(0,0,0,0.3),
-
-             0px 1px 0px rgba(255,255,255,0.5) inset,
-
-             0px -1px 0px rgba(255,255,255,0.2) inset;
+	background:-moz-linear-gradient(rgba(119,170,221,0.9), rgba(34,85,136,0.9));
+	background:-webkit-gradient(linear, 100% 100%, 100% 0%, from(rgba(34,85,136,0.9)), to(rgba(119,170,221,0.9)));
+	box-shadow:0px 1px 0px #225588,
+	0px 2px 0px #225588,
+	0px 3px 0px #225588,
+	0px 4px 0px #225588,
+	0px 5px 0px #225588,
+	0px 6px 0px #225588,
+	0px 7px 0px #225588,
+	2px 7px 3px rgba(0,0,0,0.3),
+	0px 1px 0px rgba(255,255,255,0.5) inset,
+	0px -1px 0px rgba(255,255,255,0.2) inset;
 }
-
-
 
 
 .button4 {
-  margin:10px;
 
-  width:150px;
-
-  color:#e4eef8;
-
-  background:#337fcc;
-
-  font-size:18px;
-
-  font-weight:bold;
-
-  text-shadow:0 -1px 1px #143352;
-
-  text-align:center;
-
-  display:block;
-
-  text-decoration:none;
-
-  border:1px solid #225588;
-
- 	adding:12px 0 8px 0;
-
-  border-radius:12px;
-
-  background:-moz-linear-gradient(rgba(34,85,136,0.5), rgba(34,85,136,1));
-
-  background:-webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(34,85,136,0.5)), to(rgba(34,85,136,1)));
-
-  box-shadow:0px 1px 0px #1b446d,
-
-             0px 2px 0px #1b446d,
-
-             0px 3px 0px #1b446d,
-
-            0px 4px 0px #1b446d,
-
-             0px 5px 0px #1b446d,
-
-             0px 6px 0px #1b446d,
-
-             0px 7px 0px #1b446d,
-
-             2px 7px 3px rgba(0,0,0,0.3),
-
-             0px 1px 0px rgba(255,255,255,0.5) inset,
-
-             0px -1px 0px rgba(255,255,255,0.2) inset;
+	width:22%;
+	height:40px;
+	display:block;
+	float:left;margin:10px;
+	color:#e4eef8;
+	background:#337fcc;
+	font-size:18px;
+	font-weight:bold;
+	text-shadow:0 -1px 1px #143352;
+	text-align:center;
+	text-decoration:none;
+	border:1px solid #225588;
+	adding:12px 0 8px 0;
+	border-radius:12px;
+	background:-moz-linear-gradient(rgba(34,85,136,0.5), rgba(34,85,136,1));
+	background:-webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(34,85,136,0.5)), to(rgba(34,85,136,1)));
+	box-shadow:0px 1px 0px #1b446d,
+	0px 2px 0px #1b446d,
+	0px 3px 0px #1b446d,
+	0px 4px 0px #1b446d,
+	0px 5px 0px #1b446d,
+	0px 6px 0px #1b446d,
+	0px 7px 0px #1b446d,
+	2px 7px 3px rgba(0,0,0,0.3),
+	0px 1px 0px rgba(255,255,255,0.5) inset,
+	0px -1px 0px rgba(255,255,255,0.2) inset;
 }
-
 
 
 a.button4:hover {
-  background:-moz-linear-gradient(rgba(119,170,221,0.9), rgba(34,85,136,0.9));
-
-  background:-webkit-gradient(linear, 100% 100%, 100% 0%, from(rgba(34,85,136,0.9)), to(rgba(119,170,221,0.9)));
-
-  box-shadow:0px 1px 0px #225588,
-
-             0px 2px 0px #225588,
-
-             0px 3px 0px #225588,
-
-             0px 4px 0px #225588,
-
-            0px 5px 0px #225588,
-
-             0px 6px 0px #225588,
-
-             0px 7px 0px #225588,
-
-             2px 7px 3px rgba(0,0,0,0.3),
-
-             0px 1px 0px rgba(255,255,255,0.5) inset,
-
-             0px -1px 0px rgba(255,255,255,0.2) inset;
+	background:-moz-linear-gradient(rgba(119,170,221,0.9), rgba(34,85,136,0.9));
+	background:-webkit-gradient(linear, 100% 100%, 100% 0%, from(rgba(34,85,136,0.9)), to(rgba(119,170,221,0.9)));
+	box-shadow:0px 1px 0px #225588,
+	0px 2px 0px #225588,
+	0px 3px 0px #225588,
+	0px 4px 0px #225588,
+	0px 5px 0px #225588,
+	0px 6px 0px #225588,
+	0px 7px 0px #225588,
+	2px 7px 3px rgba(0,0,0,0.3),
+	0px 1px 0px rgba(255,255,255,0.5) inset,
+	0px -1px 0px rgba(255,255,255,0.2) inset;
 }
 
 
+.photo-show {
+	border:10px solid gray;
+	height: 500px; /*表示したい大きさ*/
+	margin: 100px; /*縦余白30pxは任意*/
+	max-width: 80%;
+	position: relative;
+	width: 2500px;/*表示したい大きさ、height と合わせる*/
+	max-width: 100%;
+	margin: 0 auto;
+	text-align:center;
+	background-color:black;
+	padding-top:3px;
 
 
+	.photo-show{
+    position:relative;
+}
+
+.photo-show{
+     z-index: -1;
+     position: absolute;
+     content:'';
+     bottom: 10px;
+     left: 10px;
+     width: 70%;
+     top: 80%;
+     max-width:432px;
+     background: #8d8c8c;
+     /*影を入れる*/
+     -webkit-box-shadow: 0 15px 10px #8d8c8c;
+     -moz-box-shadow: 0 15px 10px #8d8c8c;
+     box-shadow: 0 15px 10px #8d8c8c;
+     /*回転させる*/
+     -webkit-transform: rotate(-5deg);
+     -moz-transform: rotate(-5deg);
+     -o-transform: rotate(-5deg);
+     -ms-transform: rotate(-5deg);
+     transform: rotate(-5deg);
+}
+}
 
 
+.photo-show img {
+	animation: show 6s infinite;
+	webkit-animation: show 12s infinite;
+	border-radius: 50%;
+	height: 500px;
+	max-width: 100%;
+	opacity: 0;
+	position: absolute; /*画像を全て重ねる*/
+	width: 2500px;
+}
 
 
+/*アニメーション*/
+@keyframes show {
+	0% {opacity:0}
+	5% {opacity:1}
+	10% {opacity:1}
+	20% {opacity:0}
+}
+
+@-webkit-keyframes show {
+	0% {opacity:0}
+	5% {opacity:1}
+	10% {opacity:1}
+	20% {opacity:0}
+}
 
 
+/*各画像のアニメーションの開始時間をずらす*/
+.photo-show img:nth-of-type(1) {
+	animation-delay: 0s;
+	webkit-animation-delay: 0s;
+}
 
 
+.photo-show img:nth-of-type(2) {
+	animation-delay: 2s;
+	webkit-animation-delay: 2s;
+}
 
 
+.photo-show img:nth-of-type(3) {
+	animation-delay: 4s;
+	webkit-animation-delay: 4s;
+}
 
 
+.photo-show img:nth-of-type(4) {
+	animation-delay: 6s;
+	webkit-animation-delay: 6s;
+}
 
 
+.photo-show img:nth-of-type(5) {
+	animation-delay: 8s;
+	webkit-animation-delay: 8s
+}
 
 
+.photo-show img:nth-of-type(6) {
+	animation-delay: 10s;
+	webkit-animation-delay: 10s;
+}
 
 
+.photo-show img:nth-of-type(7) {
+	animation-delay: 12s;
+	webkit-animation-delay: 12s;
+}
 
 
+.photo-show img:nth-of-type(8) {
+	animation-delay: 14s;
+	webkit-animation-delay: 14s;
+}
+}
 
 
+/*マウスが画像に重なった際、動きを止めて四角くする*/
+.photo-show img {
+	transition: 0.2s;
+	webkit-transition: 0.2s;
+}
 
 
-
-
+.photo-show:hover img {
+	animation-play-state: paused;
+	webkit-animation-play-state: paused;
+	border-radius: 0;
+}
 
 
