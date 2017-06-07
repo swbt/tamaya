@@ -70,7 +70,7 @@
     </table>
 
 	<div>
-    <a href="./siharai.html">
+    <a href="./siharai.jsp">
     	<img src="img/shiharai_nyuryoku.png" alt="支払い情報入力画面" align="right">
     </a>
     </div>

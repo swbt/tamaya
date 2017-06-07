@@ -106,7 +106,7 @@
     </table>
 
 	<div>
-    <a href="./siharai.html">
+    <a href="./siharai_kanryo.jsp">
     	<img src="img/chumon_kanryo.png" alt="注文確定" align="right">
     </a>
     </div>
