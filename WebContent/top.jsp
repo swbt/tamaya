@@ -19,13 +19,20 @@
     <!-- Javascripts
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        $("#header").load("login_header.jsp");
-      });
-
-
-    </script>
+    <s:if test="#session.loginFlg == true">
+      <script>
+        $(function(){
+          $("#header").load("login_header.jsp");
+        });
+      </script>
+    </s:if>
+    <s:else>
+      <script>
+        $(function(){
+          $("#header").load("header.jsp");
+        });
+      </script>
+    </s:else>
 
   	</head>
   	<body>
@@ -72,10 +79,10 @@
 
 	<div class=box2>
 
-	<a href="kakaku0000"><button type="button" class="btn btn-primary btn-lg">499円以下</button></a>
-    <div class=button2><a href="kakaku0500" id="button">500円～999円</a></div>
-     <div class=button3><a href="kakaku1000" id="button">1000円～4999円</a></div>
-    <div class=button4><a href="kakaku5000" id="button">5000円～</a></div>
+	<a href="kakaku0000.jsp"><button type="button" class="btn btn-primary btn-lg">499円以下</button></a>
+    <div class=button2><a href="kakaku0500.jsp" id="button">500円～999円</a></div>
+     <div class=button3><a href="kakaku1000.jsp" id="button">1000円～4999円</a></div>
+    <div class=button4><a href="kakaku5000.jsp" id="button">5000円～</a></div>
 	</div>
 	</div>
 

@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+	<html>
+	<head>
+	<meta charset="utf-8">
     <title>カート</title>
     <meta name="description" content="An interactive getting started guide for Brackets.">
     <!--
@@ -17,14 +16,13 @@
     	  $("#header").load("login_header.html");
       });
     </script>
-
-  </head>
-  <body>
+  	</head>
+  	<body>
     <div id="header"></div><br>
 
     <img src="img/cart_shohin.png" alt="カートに入っている商品">
-	<table>
-		<thead>
+	<table align="center">
+	<thead>
     <tr>
     <th>商品名</th>
     <th>価格</th>
@@ -36,8 +34,8 @@
 
 	<tbody>
     <tr>
-    <td><img src="img/honkidama.jpg" alt="商品画像　商品名" align="middle"> 　　本気玉</td>
-    <td>2,500円（税込）</td>
+    <td><img src="img/honkidama.jpg" alt="商品画像　商品名" align="center"> 　　本気玉</td>
+    <td align="center">2,500円（税込）</td>
     <td>
     <select name="number" >
     	<option value="selected">選択してください</open>
@@ -53,28 +51,26 @@
     	<option value="10">10</option>
     	</select>
     </td>
-    <td>2,500円（税込）</td>
-    <td><img src="img/shut.gif" alt="×"></td>
+    <td align="center">2,500円（税込）</td>
+    <td><img src="img/shut.gif" alt="×" align="middle"></td>
     </tr>
     </tbody>
 
 	<tfoot>
     <tr>
-    <td colspan="2">送料（国内）</td>
-    <td colspan="3">無料</td>
+    <td class="souryo" colspan="2">送料（国内）</td>
+    <td align="center" colspan="3">無料</td>
     </tr>
+    <tr>
+    <td class="gokei" colspan="2">合計（税込）</td>
+    <td align="center">1個</td>
+    <td align="center" colspan="2">2,500円</td>
+    <tr>
     </tfoot>
     </table>
 
-	<table border="1" cellspacing="0">
-	<tr>
-    <td>合計（税込）</td>
-    <td>1個</td>
-    <td>2,500円</td>
-    </table>
-
 	<div>
-    <a href="./siharai.html">
+    <a href="./siharai.jsp">
     	<img src="img/shiharai_nyuryoku.png" alt="支払い情報入力画面" align="right">
     </a>
     </div>

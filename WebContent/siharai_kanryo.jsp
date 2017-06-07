@@ -22,8 +22,17 @@
     $('#top-menu').prmenu();
         });
 	</script>
+
+	<meta http-equiv="refresh" content="5;top.jsp">
   </head>
   <body>
-    購入が完了しました。
+ <BODY>
+<h1>ご注文ありがとうございました。</h1>
+５秒後にジャンプします。<br>
+ジャンプしない場合は、下記のTOPボタンをクリックしてください。<br>
+<br>
+<a href="top.jsp"><button type="button" class="btn btn-success">TOPページ</button></a>
+
+</BODY>
   </body>
 </html>
