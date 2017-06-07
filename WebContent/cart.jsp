@@ -21,7 +21,7 @@
     <div id="header"></div><br>
 
     <img src="img/cart_shohin.png" alt="カートに入っている商品">
-	<table>
+	<table align="center">
 		<thead>
     <tr>
     <th>商品名</th>
@@ -64,7 +64,7 @@
     </tfoot>
     </table>
 
-	<table border="1" cellspacing="0">
+	<table align="center">
 	<tr>
     <td>合計（税込）</td>
     <td>1個</td>
