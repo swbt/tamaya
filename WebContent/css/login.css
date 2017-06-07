@@ -1,17 +1,16 @@
 .login{
 	width:350px;
-	height:450px;
+	height:480px;
 	padding: 20px 20px;
-	margin: 100px 425px;
+	margin:  100px auto;
 	text-align: center;
 	color: #2c2c2f;
 	boreder-radius: 10px;
 	background-color: #cde4ff; //îwåiêF
 	margin-bottom: 2em
+	margin: 0 auto;Åv
 }
 
-
-.login p{
-	margin: 0;
-	padding: 0;
+.log_button{
+	margin:30px;
 }

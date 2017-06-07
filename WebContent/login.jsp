@@ -10,7 +10,8 @@
 
         <!-- Stylesheet （css呼び込みはここに記入）
     ================================================== -->
-    <link rel="stylesheet" type="text/css" href="css/login.css"><!-- cssのデータ元を記入する必要あり --!>
+  	<!-- cssのデータ元を記入する必要あり --!>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="css/＠＠＠.css">
     <link rel="stylesheet" type="text/css" href="">
 
@@ -22,40 +23,42 @@
         $(document).ready(function(){
     $('#top-menu').prmenu();
         });
-</script>
+	</script>
 
 	</head>
 	<main>
 	<body>
 
-<div class="login">
-<h1>ログイン</h1>
-<form method="post">
-<h4>MAILADDRESS</h4>
-<input type = "text" name = "mailaddress" placeholder="メールアドレス" required="required"/>
-<h4>PASSWORD</h4>
-<input type = "password" name = "password" placeholder="パスワード" required="required"/>
+	<div class="login" text-align>
+	<h1>ログイン</h1>
+	<form method="post">
+	<h4>MAILADDRESS</h4>
+	<input type = "text" name = "mailaddress" placeholder="メールアドレス" size="30">
+	<h4>PASSWORD</h4>
+	<input type = "password" name = "password" placeholder="パスワード" size="30">
 
-<ul style="list-style:none;"><div>
-  <li><a href=""><button type="submit" class="btn btn-primary btn-black btn-large">Log in</button>
-  </form>
+	<ul style="list-style:none;">
+	<div class=log_button  align="center">
+ 	<li><a href=""><button type="submit" class="btn btn-primary btn-black btn-large">Log in</button>
+ 	</form>
+ 	</div>
  	<div>
-  <a href="">
+  	<a href="">
   		<img src="img/sign_facebook.png" alt="sign in with Facebook" width="250" height="40"><br>
-  </a>
-  <a href="">
+  	</a>
+  	<a href="">
   		<img src="img/sign_google.png" alt="sign in with Google" width="250" height="40"><br>
-  </a>
-  <a href="">
+  	</a>
+  	<a href="">
   		<img src="img/sign_Twitter.png" alt="sign in with Twitter" width="250" height="40"><br>
-  </a>
-  </div>
+ 	</a>
+  	</div>
 
-</ul>
+	</ul>
 	</main>
 
-<%--ログイン画面参考サイト→https://codepen.io/arthitst/pen/lrEAf --%>
+	<%--ログイン画面参考サイト→https://codepen.io/arthitst/pen/lrEAf --%>
 
-</body>
+	</body>
 
-</html>
+	</html>
