@@ -114,7 +114,7 @@
       </td>
      </tr>
     </table>
-   <a href="./cart.jsp">戻る</a>
-   <a href="./siharai_kakunin.jsp">次へ</a>
+   <a class="Button01" href="./cart.jsp">戻る</a>
+   <a class="Button02" href="./siharai_kakunin.jsp">次へ</a>
   </body>
 </html>
