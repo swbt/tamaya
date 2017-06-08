@@ -52,7 +52,8 @@
 
 <div style="float:left;">
       <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
-<p>
+
+ <div align="center">
 数量<select name="kosuu">
 <option value="1">1</option>
 <option value="2">2</option>
@@ -65,13 +66,14 @@
 <option value="9">9</option>
 </select>
 <input type="submit" value="カートに入れる">
-</p>
+
+</div>
 </div>
 
 <div style="float:left;">
       <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
-          <p>
 
+ <div align="center">
 数量<select name="kosuu">
 <option value="1">1</option>
 <option value="2">2</option>
@@ -84,129 +86,143 @@
 <option value="9">9</option>
 </select>
 <input type="submit" value="カートに入れる">
-</p>
-</div>
 
-<div style="float:left;">
-      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
-<p>
-数量<select name="kosuu">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-</select>
-<input type="submit" value="カートに入れる">
-</p>
 </div>
-<div style="float:left;">
-      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
-<p>
-数量<select name="kosuu">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-</select>
-<input type="submit" value="カートに入れる">
-</p>
-</div>
-<div style="float:left;">
-      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
-<p>
-数量<select name="kosuu">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-</select>
-<input type="submit" value="カートに入れる">
-</p>
-</div>
-<div style="float:left;">
-      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
-<p>
-数量<select name="kosuu">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-</select>
-<input type="submit" value="カートに入れる">
-</p>
-</div>
-<div style="float:left;">
-      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
-<p>
-数量<select name="kosuu">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-</select>
-<input type="submit" value="カートに入れる">
-</p>
-</div>
-<div style="float:left;">
-      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
-<p>
-数量<select name="kosuu">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-</select>
-<input type="submit" value="カートに入れる">
-</p>
-</div>
-<div style="float:left;">
-      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
-<p>
-数量<select name="kosuu">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-</select>
-<input type="submit" value="カートに入れる">
-</p>
 </div>
 
+<div style="float:left;">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+
+ <div align="center">
+数量<select name="kosuu">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+</select>
+<input type="submit" value="カートに入れる">
+
+</div>
+</div>
+<div style="float:left;">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+
+ <div align="center">
+数量<select name="kosuu">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+</select>
+<input type="submit" value="カートに入れる">
+
+</div>
+</div>
+<div style="float:left;">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+
+ <div align="center">
+数量<select name="kosuu">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+</select>
+<input type="submit" value="カートに入れる">
+
+</div>
+</div>
+<div style="float:left;">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+
+ <div align="center">
+数量<select name="kosuu">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+</select>
+<input type="submit" value="カートに入れる">
+
+</div>
+</div>
+<div style="float:left;">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+
+ <div align="center">
+数量<select name="kosuu">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+</select>
+<input type="submit" value="カートに入れる">
+
+</div>
+</div>
+<div style="float:left;">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+
+ <div align="center">
+数量<select name="kosuu">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+</select>
+<input type="submit" value="カートに入れる">
+
+</div>
+</div>
+<div style="float:left;">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+
+ <div align="center">
+数量<select name="kosuu">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+</select>
+<input type="submit" value="カートに入れる">
+
+</div>
+</div>
 
 </li>
 </ul>
