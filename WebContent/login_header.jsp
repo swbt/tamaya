@@ -4,22 +4,39 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>ログイン後ヘッダー</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ▼▼Stylesheet -->
-    <link rel="stylesheet" type="text/css"  href="css/login_header.css">
-    <!-- ▼▼JQuery -->
+    <!-- Stylesheet
+    ==================================================
+    -->
+   <!-- <link rel="stylesheet" type="text/css"  href="css/login_header.css"> -->
+    <!--
+    <link rel="stylesheet" type="text/css"  href="css/＠＠＠.css">
+    <link rel="stylesheet" type="text/css" href="css/＠＠＠.css">
+    <link rel="stylesheet" type="text/css" href="">
+    -->
+    <!-- Javascripts
+    ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
+
+
+
+      <link rel="stylesheet" type="text/css" href="./css/login_header.css">
+
   </head>
   <body>
-    <div id="menu">
-      <ul>
-        <li><a href="./top.jsp">ロゴ画像</a></li>
-        <li><a href="./cart.jsp">マイカート</a></li>
-        <li><a href="./mypage.jsp">マイページ</a></li>
-        <li><a href="./toiawase.jsp">お問合わせ</a></li>
-        <li><a href='<s:url action="LogoutAction"></s:url>'>ログアウト</a></li>
-      </ul>
+    <div class="example">
+      <div class="trim">
+        <img src="./img/hanabi1.jpg" class="bb">
+      </div>
+      <a href="◯◯"><i class="fa fa-twitter" ></i>お問い合わせ</a>
+      <a href="◯◯"><i class="fa fa-twitter" ></i>ログアウト</a>
+      <a href="◯◯"><i class="fa fa-twitter" ></i>マイページ</a>
+      <a href="◯◯"><i class="fa fa-twitter" ></i>マイカート</a>
+      <a href="◯◯"><i class="fa fa-twitter" ></i>トップ</a>
     </div>
+
+
+
   </body>
 </html>
