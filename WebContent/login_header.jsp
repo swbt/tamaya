@@ -29,11 +29,11 @@
       <div class="trim">
         <img src="./img/hanabi1.jpg" class="bb">
       </div>
-      <a href="◯◯"><i class="fa fa-twitter" ></i>お問い合わせ</a>
-      <a href="◯◯"><i class="fa fa-twitter" ></i>ログアウト</a>
-      <a href="◯◯"><i class="fa fa-twitter" ></i>マイページ</a>
-      <a href="◯◯"><i class="fa fa-twitter" ></i>マイカート</a>
-      <a href="◯◯"><i class="fa fa-twitter" ></i>トップ</a>
+      <a href="./toiawase.jsp"><i class="fa fa-twitter" ></i>お問い合わせ</a>
+      <a href="./top.jsp"><i class="fa fa-twitter" ></i>ログアウト</a>
+      <a href="./mypage.jsp"><i class="fa fa-twitter" ></i>マイページ</a>
+      <a href="./cart.jsp"><i class="fa fa-twitter" ></i>マイカート</a>
+      <a href="./top.jsp"><i class="fa fa-twitter" ></i>トップ</a>
     </div>
 
 
