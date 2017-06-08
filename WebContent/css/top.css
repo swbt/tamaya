@@ -221,6 +221,30 @@ body {
 
 
 
+
+h2 {
+	text-align:center;
+}
+
+
+.icon1 {
+	float:left;
+}
+
+
+.icon2 {
+	float:left;
+}
+
+
+.icon3 {
+	float:left;
+}
+
+
+
+
+
 .button1 {
 
 	width:22%;
@@ -270,7 +294,6 @@ a.button:hover {
 
 
 .button2 {
-
 	width:22%;
 	height:40px;
 	display:block;
@@ -319,6 +342,7 @@ a.button2:hover {
 
 .button3 {
 
+	float:left;
 	width:22%;
 	height:40px;
 	display:block;
@@ -414,20 +438,59 @@ a.button4:hover {
 
 
 .ttt1 {
-	width:28%;
+	width:350px;
 	height:250px;
 }
 
 
 .ttt2 {
-	width:28%;
+	width:350px;
 	height:250px;
 }
 
 
 .ttt3 {
-	width:28%;
+	width:350px;
 	height:250px;
 }
 
+h4 {display:inline;
+	float;left;
 
+}
+
+
+.zzz {
+	display:inline;
+	float;left;
+	margin-right:300px;
+	margin-left:100px;
+
+
+.zzz1 {
+	display:inline;
+	float;left;
+	margin-left:1000px;
+
+
+
+
+
+.zzz2 {
+	display:inline;
+	float;right;
+	margin-right:3000px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
