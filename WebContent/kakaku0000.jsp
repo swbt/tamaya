@@ -40,27 +40,30 @@
   <body>
     <div id="header"></div>
     <ul class="nav">
-    <li class="nav__item1"><a href="kakaku0000.jsp">499円以下</a></li>
+    <li class="nav__item1"><a href="kakaku0000.jsp">～499円</a></li>
     <li class="nav__item"><a href="kakaku0500.jsp">500円～999円</a></li>
     <li class="nav__item"><a href="kakaku1000.jsp">1000円～4999円</a></li>
     <li class="nav__item"><a href="kakaku5000.jsp">5000円～</a></li>
 	</ul>
 
 <ul style="list-style:none;">
-     <li class="test"> <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+     <li class="test">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+      <br>
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+      <br>
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
+      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
 
-</li>
-
-<li class="test">
-      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
-</li>
-<li class="test">
-      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
-      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
-      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
-      <img src="img/image.jpg" width=200 data-toggle="modal" data-target="#syousai">
 </li>
 </ul>
+
+
     ※モーダル画面で商品詳細
 
       <!-- モーダルの中身 -->
