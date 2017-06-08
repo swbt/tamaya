@@ -38,23 +38,18 @@ pageEncoding="utf-8"%>
 				<img src="img/hanabi11.jpg" class="aaa7" alt="手持ち花火">
 			</div>
 			<div class=syurui>
-				<div class="hbox1">
-					<h3>花火の種類別</h3>
-				</div>
-				<div class="box1">
-					<a href="./temoti.jsp"><img src="img/temotiphoto.png" class="ttt" alt="手持ち"></a>
-					<a href="./temoti.jsp">手持ち</a>
-					<a href="./hunsyutu.jsp"><img src="img/hunsyutuphoto.jpg" class="hhh" alt="噴出"></a>
-					<a href="./hunsyutu.jsp">噴出</a>
-					<a href="./utiage.jsp"><img src="img/utiagephoto.jpg" class="uuu" alt="打上げ"></a>
-					<a href="./utiage.jsp">打上げ</a>
-					<a href="./sonota.jsp"><img src="img/sonotaphoto.jpeg"  class="sss" alt="その他"></a>
-					<a href="./sonota.jsp">その他</a>
-				</div>
+
 			</div>
 
 			<div class=kakaku>
 			<div class=hbox2>
+			<h3>花火の価格別</h3>
+			<div class=box2>
+					<a href="kakaku0000.jsp" class="button1">499円以下</a>
+					<a href="kakaku0500.jsp" class="button2">500円～999円</a>
+					<a href="kakaku1000.jsp" class="button3">1000円～4999円</a>
+
+				</div>
 				<h3>花火の価格別</h3>
 			</div>
 				<div class=box2>

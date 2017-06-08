@@ -1,14 +1,17 @@
 body {
-	width:99%;
-	height:99%;
 	background-image: url("../img/hanabi12.jpg");
 	background-attachment: fixed;
 	background-position: right bottom;
 }
 
 
-h3 {
-	text-align:center;
+
+
+.comtainer {
+
+	width:99%;
+	height:99%;
+
 }
 
 
@@ -30,7 +33,6 @@ h3 {
 .photo-show{
     position:relative;
 }
-
 
 .photo-show{
      z-index: -1;
@@ -142,6 +144,20 @@ h3 {
 }
 
 
+.syurui {
+	background-color:white;
+	border: 4px solid #82636b;
+	border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+	margin: 2em 0;
+	padding: 5em;
+	height:180px;
+	width:90%;
+}
+
+
+
+
+
 .kakaku {
 	background-color:white;
 	border: 4px solid #82636b;
@@ -152,12 +168,32 @@ h3 {
 }
 
 
-
-
-
-.box1 {
-	width:75%;
+.ranking {
+	background-color:white;
+	border: 4px solid #82636b;
+	border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+	margin: 2em 0;
+	padding: 2em;
+	height:320px;
 }
+
+
+.tokusyu {
+	background-color:white;
+	border: 4px solid #82636b;
+	border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+	margin: 2em 0;
+	padding: 2em;
+	height:320px;
+}
+
+
+
+
+
+
+
+
 
 
 .ttt {
@@ -183,57 +219,6 @@ h3 {
 	height:100px;
 }
 
-
-.kakaku {
-	background-color:white;
-	border: 4px solid #82636b;
-	border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
-	margin: 2em 0;
-	padding: 2em;
-	height:180px;
-}
-
-
-.kakaku {
-	padding:1px;
-}
-
-
-.hbox2 {
-	text-align:center;
-	margin:3px;
-	padding:3px;
-}
-
-
-.box2 {
-	height:100px;
-}
-
-
-.ranking {
-	background-color:white;
-	border: 4px solid #82636b;
-	border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
-	margin: 2em 0;
-	padding: 2em;
-	height:320px;
-}
-
-
-.tokusyu {
-	background-color:white;
-	border: 4px solid #82636b;
-	border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
-	margin: 2em 0;
-	padding: 2em;
-	height:320px;
-}
-
-
-.box4 {
-	width:75%;
-}
 
 
 .button1 {
@@ -425,6 +410,7 @@ a.button4:hover {
 	0px 1px 0px rgba(255,255,255,0.5) inset,
 	0px -1px 0px rgba(255,255,255,0.2) inset;
 }
+
 
 
 .ttt1 {
