@@ -371,8 +371,8 @@ a.button4:hover {
 
 
 .photo-show img {
-	animation: show 6s infinite;
-	webkit-animation: show 12s infinite;
+	animation: show 22s infinite;
+	webkit-animation: show 44s infinite;
 	border-radius: 50%;
 	height: 500px;
 	max-width: 100%;
@@ -445,8 +445,15 @@ a.button4:hover {
 	animation-delay: 14s;
 	webkit-animation-delay: 14s;
 }
+.photo-show img:nth-of-type(8) {
+	animation-delay: 16s;
+	webkit-animation-delay: 16s;
 }
-
+.photo-show img:nth-of-type(8) {
+	animation-delay: 18s;
+	webkit-animation-delay: 18s;
+}
+}
 
 /*マウスが画像に重なった際、動きを止めて四角くする*/
 .photo-show img {

@@ -26,9 +26,17 @@ pageEncoding="utf-8"%>
 		</div>
 		<div class="container">
 			<div class=photo-show>
-				<img src="img/test01_.jpg" class="aaa" alt="手持ち花火">
-				<img src="img/test02_.jpg" class="bbb" alt="手持ち花火">
-				<img src="img/test03_.jpg" class="ccc" alt="手持ち花火">
+				<img src="img/hanabi11.jpg" class="aaa" alt="手持ち花火">
+				<img src="img/hanabi2.jpg" class="bbb" alt="手持ち花火">
+				<img src="img/hanabi3.jpg" class="ccc" alt="手持ち花火">
+				<img src="img/hanabi4.jpg" class="ccc" alt="手持ち花火">
+				<img src="img/hanabi5.jpg" class="ccc" alt="手持ち花火">
+				<img src="img/hanabi6.jpg" class="ccc" alt="手持ち花火">
+				<img src="img/hanabi7.jpg" class="ccc" alt="手持ち花火">
+				<img src="img/hanabi8.jpg" class="ccc" alt="手持ち花火">
+				<img src="img/hanabi9.jpg" class="ccc" alt="手持ち花火">
+				<img src="img/hanabi10.jpg" class="ccc" alt="手持ち花火">
+				<img src="img/hanabi11.jpg" class="ccc" alt="手持ち花火">
 			</div>
 			<div class=syurui>
 				<div class="hbox1">
