@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>特集画面</title>
     <meta name="description" content="An interactive getting started guide for Brackets.">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./css/tokusyu.css">
   </head>
   <body>
     <h2>家族</h2>
