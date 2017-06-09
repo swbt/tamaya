@@ -1,11 +1,13 @@
+
+
+
 body {
 	background-image: url("../img/hanabi12.jpg");
 	background-attachment: fixed;
 	background-position: right bottom;
+	max-width:100%;
+
 }
-
-
-
 
 .comtainer {
 
@@ -151,7 +153,7 @@ body {
 	margin: 2em 0;
 	padding: 5em;
 	height:180px;
-	width:90%;
+	width:100%;
 }
 
 
@@ -163,8 +165,11 @@ body {
 	border: 4px solid #82636b;
 	border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
 	margin: 2em 0;
-	padding: 2em;
+	padding: 5em;
 	height:180px;
+	overflow:auto;
+	width:100%;
+
 }
 
 
@@ -173,9 +178,30 @@ body {
 	border: 4px solid #82636b;
 	border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
 	margin: 2em 0;
-	padding: 2em;
+	padding: 5em;
 	height:320px;
+	overflow:auto;
+	width:100%;
 }
+
+
+.box3{
+	right:0;
+	left:0;
+	margin: 5px;
+	width: auto;
+	height:auto;
+	display:block;
+
+}
+
+.box4{
+	display:block;
+	margin:auto;
+
+}
+
+
 
 
 .tokusyu {
@@ -185,63 +211,84 @@ body {
 	margin: 2em 0;
 	padding: 2em;
 	height:320px;
+	overflow:auto;
+	width:auto;
+
 }
 
 
-
-
-
-
-
-
-
-
-.ttt {
-	width:50%;
-	height:100px;
+.h2 {
+	text-align:center;
 }
 
 
-.hhh {
-	width:20%;
-	height:100px;
-}
-
-
-.uuu {
-	width:20%;
-	height:100px;
-}
-
-
-.sss {
-	width:20%;
-	height:100px;
-}
-
-
-
-
-h2 {
+.h3 {
 	text-align:center;
 }
 
 
 .icon1 {
+
+
 	float:left;
+
+
+
 }
 
 
 .icon2 {
 	float:left;
+
+
+
+
+
+
 }
 
 
 .icon3 {
 	float:left;
+
+
+
+
+
+
+
+
 }
 
 
+.d1 {
+	float:left;
+	overflow:auto;
+   height: auto;
+   text-align:center;
+
+
+}
+
+
+.d2 {
+	float:left;
+	overflow:auto;
+   height: auto;
+   text-align:center;
+
+
+}
+
+
+.d3 {
+	float:left;
+	overflow:auto;
+   height: auto;
+   text-align:center;
+
+
+}
 
 
 
@@ -437,49 +484,11 @@ a.button4:hover {
 
 
 
-.ttt1 {
-	width:350px;
-	height:250px;
-}
-
-
-.ttt2 {
-	width:350px;
-	height:250px;
-}
-
-
-.ttt3 {
-	width:350px;
-	height:250px;
-}
-
-h4 {display:inline;
-	float;left;
-
-}
-
-
-.zzz {
-	display:inline;
-	float;left;
-	margin-right:300px;
-	margin-left:100px;
-
-
-.zzz1 {
-	display:inline;
-	float;left;
-	margin-left:1000px;
 
 
 
 
 
-.zzz2 {
-	display:inline;
-	float;right;
-	margin-right:3000px;
 
 
 
