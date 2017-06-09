@@ -8,9 +8,10 @@ pageEncoding="utf-8"%>
 		<title>花火なら『tamaya』</title>
 		<!-- Stylesheet
 		================================================== -->
-		<lINK href="css/top.css"rel="stylesheet" type="text/css">
+		<link href="css/top.css"rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="slick.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="slick-theme.css" media="screen" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="slick.min.js"></script>
 		<!-- Javascripts
 		================================================== -->
@@ -64,28 +65,50 @@ pageEncoding="utf-8"%>
 				<h2>花火の売り上げランキングトップ3</h2>
 			</div>
 			<div class=box3>
-				<div class=icon1><a href="./"><img src=""  alt="1位(アイコン)"></a><p>商品名<br>価格</p></div>
-				<div class=icon2><a href="./"><img src=""  alt="2位(アイコン)"></a><p>商品名<br>価格</p></div>
-				<div class=icon3><a href="./"><img src=""  alt="3位(アイコン)"></a><p>商品名<br>価格</p></div>
+
+				<div class=icon1><img src="img/image.jpg" width=320  data-toggle="modal" data-target="#syousai"><a href="./"><img src=""></a></div>
+				<div class=icon2><img src="img/image.jpg" width=320 data-toggle="modal" data-target="#syousai"><a href="./"><img src=""></a></div>
+				<div class=icon3><img src="img/image.jpg" width=320 data-toggle="modal" data-target="#syousai"><a href="./"><img src=""></a></div>
 			</div>
 			</div>
 			<div class=tokusyu>
 				<div class=hbox4>
 					<h2>花火特集</h2>
-					<h4 class="zzz">家族特集</h4><h4 class="zzz1">カップル特集</h4>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<h4 class="zzz2">大人数特集</h4>
 				</div>
 				<div class=box4>
-					<a href="./tokusyu.jsp"><img src="img/kazokuphoto.jpg" class="ttt1" alt="家族特集"></a>
-					<a href="./tokusyu.jsp"></a>
-					<a href="./tokusyu.jsp"><img src="img/couplephoto.jpg" class="ttt2" alt="カップル特集"></a>
-					<a href="./tokusyu.jsp"></a>
-					<a href="./tokusyu.jsp"><img src="img/daikazokuphoto.jpg"class="ttt3" alt="大人数特集"></a>
-					<a href="./tokusyu.jsp"></a>
+
+					<div class=d1><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg" alt="家族特集"></a><a href="./tokusyu.jsp">家族特集</a>
+					</div>
+
+					<div class=d2><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg" alt="カップル特集"></a><a href="./tokusyu.jsp">カップル特集</a>
+					</div>
+
+					<div class=d3><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg" alt="大人数特集"></a><a href="./tokusyu.jsp">大人数特集</a>
+					</div>
 				</div>
 			</div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	</body>
 </html>

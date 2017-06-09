@@ -11,6 +11,7 @@ a{
   }
 
 .example a {/*aタグを画像の真ん中に*/
+
   position: relative;
   top: -50px;
   left: 60px;
@@ -18,7 +19,7 @@ a{
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
   /*以下装飾*/
-    width:12%;
+  width:12%;
   text-align: center;
     /*余計な隙間を除く*/
   font-size: 1.5vw;/*文字サイズ*/
