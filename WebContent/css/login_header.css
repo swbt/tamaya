@@ -7,6 +7,7 @@ a{
 }
 
 .example {
+  margin: 0 auto; width:960px;
   position: relative;
   }
 
@@ -19,10 +20,14 @@ a{
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
   /*以下装飾*/
+<<<<<<< HEAD
+    width:100px;
+=======
   width:12%;
+>>>>>>> branch 'master' of https://github.com/internousdevwork/tamaya
   text-align: center;
     /*余計な隙間を除く*/
-  font-size: 1.5vw;/*文字サイズ*/
+  font-size: 1.0vw;/*文字サイズ*/
   border: solid white 2px; /*線で囲う*/
   padding: 7px;/*文字と線の間の余白*/
   color: white;/*文字色*/
@@ -35,13 +40,32 @@ a{
   background: rgba(255, 255, 255, 0.3);/*背景を半透明に*/
   }
 
-.trim {
-  position: relative;
-  overflow: hidden;
-  height: 200px;
+.bb {
+  width: 150%;
+
+
+  }
+.bb {
+
+    border:1px solid #cccccc;
+
+    height: 100px;
+
+    position: relative;
+
 }
 
-.bb {
-  width: 100%;
-  }
+.bb img {
 
+    position: absolute;
+
+    right: 0;
+
+    bottom: 0;
+
+}
+.img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
