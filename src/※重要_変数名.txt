@@ -37,8 +37,8 @@ String imgPath			//イメージパス
 int category			//カテゴリID
 int quantity			//数量
 int historyId			//履歴ID(注文番号)
-int subTotal			//小計金額
-int total				//合計金額
+float subTotal			//小計金額
+float total				//合計金額
 boolean delete			//商品削除フラグ
 
 String createdAt		//登録日時
