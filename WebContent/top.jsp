@@ -46,18 +46,18 @@ pageEncoding="utf-8"%>
 			<div class=hbox2>
 			<h2>花火の価格別と種類別</h2>
 			<div class=box2>
-					<a href="kakaku0000.jsp" class="button1">499円以下</a>
-					<a href="kakaku0500.jsp" class="button2">500円～999円</a>
-					<a href="kakaku1000.jsp" class="button3">1000円～4999円</a>
-					<a href="kakaku0000.jsp" class="button1">5000円以上</a>
+					<a href="<s:url action="GoItemListAction"><s:param name="priceRange" value="1"/></s:url>" class="button1">499円以下</a>
+					<a href="<s:url action="GoItemListAction"><s:param name="priceRange" value="2"/></s:url>" class="button2">500円～999円</a>
+					<a href="<s:url action="GoItemListAction"><s:param name="priceRange" value="3"/></s:url>" class="button3">1000円～4999円</a>
+					<a href="<s:url action="GoItemListAction"><s:param name="priceRange" value="4"/></s:url>" class="button1">5000円以上</a>
 
 				</div>
 			</div>
 				<div class=box2>
-					<a href="kakaku0000.jsp" class="button1">手持ち花火</a>
-					<a href="kakaku0500.jsp" class="button2">噴出花火</a>
-					<a href="kakaku1000.jsp" class="button3">打上げ花火</a>
-					<a href="kakaku5000.jsp" class="button4">その他花火</a>
+					<a href="<s:url action="GoItemListAction"><s:param name="category" value="'temoti'"/></s:url>" class="button1">手持ち花火</a>
+					<a href="<s:url action="GoItemListAction"><s:param name="category" value="'hunsyutu'"/></s:url>" class="button2">噴出花火</a>
+					<a href="<s:url action="GoItemListAction"><s:param name="category" value="'utiage'"/></s:url>" class="button3">打上げ花火</a>
+					<a href="<s:url action="GoItemListAction"><s:param name="category" value="'sonota'"/></s:url>" class="button4">その他花火</a>
 				</div>
 			</div>
 			<div class=ranking>

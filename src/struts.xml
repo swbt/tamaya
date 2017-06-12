@@ -18,5 +18,10 @@
       <result name="success">top.jsp</result>
       <result name="error">top.jsp</result>
     </action>
+
+    <action name="GoItemListAction" class="com.internousdev.tamaya.action.GoItemListAction" method="execute">
+      <result name="success">item_list.jsp</result>
+      <result name="error">top.jsp</result>
+    </action>
   </package>
 </struts>
