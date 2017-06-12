@@ -1,0 +1,9 @@
+.modal-dialog{
+  width: 90%
+}
+
+#item_detail{
+  top: 0;
+  left: 0;
+  width: 100%;
+}

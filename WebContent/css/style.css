@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+.item_list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.item{
+  margin-bottom: 3rem;
+  padding: 3rem;
+  width: 24%;
+  background-color: #f0f0f0;
+}
+
+.item img{
+  display: block;
+  margin-bottom: 3rem;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 980px){
+  .item {
+    width: 32%;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .item {
+    width: 49%;
+  }
+}
+
+@media screen and (max-width: 380px){
+  .item_list {
+    flex-direction: column;
+  }
+
+  .item {
+    width: 100%;
+  }
+}

@@ -1,14 +1,15 @@
 /**
  *
  */
-package com.internousdev.tamaya.dao;
+package com.internousdev.tamaya.dto;
 
 import java.math.BigDecimal;
 
 /**
+ * 商品に関する情報をここに入れて運ぶ
  * @author Takahiro Adachi
- * @since
- * @version
+ * @since 1.0
+ * @version 1.0
  */
 public class ItemDTO {
 	private static BigDecimal tax = new BigDecimal("0.08");
@@ -18,7 +19,7 @@ public class ItemDTO {
 	private BigDecimal priceWithTax;	//税込価格
 	private int stocks;
 	private int sales;
-	private String detail;
+	private String itemDetail;
 	private String imgPath;
 
 
@@ -64,11 +65,11 @@ public class ItemDTO {
 	public void setSales(int sales) {
 		this.sales = sales;
 	}
-	public String getDetail() {
-		return detail;
+	public String getItemDetail() {
+		return itemDetail;
 	}
-	public void setDetail(String detail) {
-		this.detail = detail;
+	public void setItemDetail(String itemDetail) {
+		this.itemDetail = itemDetail;
 	}
 	public String getImgPath() {
 		return imgPath;
