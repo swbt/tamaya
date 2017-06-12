@@ -3,8 +3,11 @@
  */
 package com.internousdev.tamaya.action;
 
-import com.internousdev.legmina.action.ArrayList;
-import com.internousdev.legmina.dto.CartDTO;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Map;
+
+import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * @author internousdev
@@ -61,14 +64,14 @@ public class UpdateCartAction extends ActionSupport implement SessionAware{
 	 */
 	private ArrayList<ItemDTO> itemDetail;
 	/**
-	 *セッション情報(未定義？よく分からない)
+	 *セッション情報
 	 */
 	private Map<String,Object> session;
 
 	/**
 	 * カートの上限処理を実行するメソッド
-	 * @author Misa Kikuchi
-	 * @since 2017/05/20
+	 * @author ryusei tanaka
+	 * @since 2017/06/12
 	 * @version 1.0
 	 */
 	public String execute() throws SQLException {
