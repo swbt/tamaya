@@ -12,7 +12,7 @@ String userPass			//ユーザーパスワード
 String userName			//ユーザー名
 String userAddress		//届け先住所
 String email			//メールアドレス(ログイン併用)
-boolean loginFlg		//ログインフラグ					※170606追加
+boolean loginFlg		//ログインフラグ				※170606追加
 String postalCode		//郵便番号
 String phoneNumber		//電話番号
 String comment			//問い合わせ内容
@@ -29,7 +29,7 @@ int paymentId			//支払い回数
 
 int itemId				//商品ID
 String itemName			//商品名
-float price				//単価
+BigDecimal price		//単価
 int stocks				//在庫
 int sales				//売り上げ数
 String itemDetail		//商品詳細
@@ -37,8 +37,8 @@ String imgPath			//イメージパス
 int category			//カテゴリID
 int quantity			//数量
 int historyId			//履歴ID(注文番号)
-float subTotal			//小計金額
-float total				//合計金額
+BigDecimal subTotal		//小計金額
+BigDecimal total		//合計金額
 boolean delete			//商品削除フラグ
 
 String createdAt		//登録日時
