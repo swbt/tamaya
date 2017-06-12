@@ -30,11 +30,16 @@ foreign key (item_id)references items(item_id)
 create table purchase_history(
 history_id int primary key not null auto_increment,
 user_id int not null,
+purchase_date datetime not null,
+foreign key (user_id)references openconnect.users(user_id) on delete cascade
+);
+
+create table purchase_history_contents(
+history_id int primary key not null,
 item_id int not null,
 price decimal not null,
 quantity int not null default 1,
-purchase_date datetime not null,
-foreign key (user_id)references openconnect.users(user_id) on delete cascade,
+foreign key (history_id)references purchase_history(history_id),
 foreign key (item_id)references items(item_id)
 );
 
