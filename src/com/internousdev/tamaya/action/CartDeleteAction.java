@@ -155,13 +155,13 @@ public class CartDeleteAction  extends CartAssist implements SeesionAware{ //※
 		this.quantity = quantity;
 		}
 
-	//ユーザー情報を入れるリスト（購入確認画面で必要）を取得するメソッド
+	//ユーザー情報を入れるリスト（購入確認画面で必要）を取得するメソッド	※Tamayaで必要かどうかは不明
 	//@param userList ユーザー情報を入れるリスト
 	public ArrayList<UserDTO> getUsersList(){
 		return userList;
 		}
 
-	//クレジット情報を入れるリスト（購入確認画面で必要）を格納するメソッド
+	//クレジット情報を入れるリスト（購入確認画面で必要）を格納するメソッド		※Tamayaで必要かどうかは不明
 	//@return creditList クレジット情報を入れるリスト
 	public void setCreditList(ArrayList<CreditDTO>creditList){
 		this.setCreditList = creditList;
