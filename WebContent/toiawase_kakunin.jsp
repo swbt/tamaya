@@ -4,10 +4,10 @@
 
 
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>お問い合わせ入力画面</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <title>お問い合わせ入力画面</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <script type="text/javascript">js/toiawase.js</script>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
                 <div>
                     <label>お名前</label>
                     <br>
-                <input type="text" size="20">
+                <a href = "JavaScrpt:answer()"></a>
                 </div>
                 <div>
                     <label>ふりがな</label>

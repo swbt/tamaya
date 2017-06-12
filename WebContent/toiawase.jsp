@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>お問い合わせ入力画面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">js/toiawase.js</script>
 
 
 </head>
@@ -21,7 +22,7 @@
 
 
 			<div class="col-sm-offset-3 col-sm-8">
-
+ <form  name="param" action="toiawase_kakunin.jsp" method="post"target="_top">
   <div class="row">
     <div class="col-sm-2">お名前</div>
     <div class="col-sm-10 form-inline" style="padding: 3px;">
@@ -37,7 +38,7 @@
  <div class="row">
     <div class="col-sm-2">電話番号</div>
     <div class="col-sm-10 form-inline" style="padding: 3px;">
-      <input type="text" class="form-control input-sm" id="email" placeholder="電話番号" size="30">
+      <input type="text" class="form-control input-sm" id="tell" placeholder="電話番号" size="30">
     </div>
     </div>
 
@@ -55,14 +56,13 @@
       <textarea class="form-control  input-sm" rows="3" id="comment" placeholder="お問い合わせ内容"></textarea>
     </div>
   </div>
-
   <div class="text-center" style="padding: 30px;">
+</form>
 
 
-      <a href="toiawase_kakunin.jsp"><button type="button" class="btn btn-success">送信内容の確認</button></a>
-
-
+     <button type="button" class="btn btn-success" onClick="func()">送信内容の確認</button></a>
   </div>
+  <div id="answer"></div>
 
 
 </body>

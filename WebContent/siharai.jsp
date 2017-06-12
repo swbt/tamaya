@@ -16,7 +16,6 @@
     <link rel="stylesheet" type="text/css" href="css/siharai.css">
     <!-- Javascripts
     ================================================== -->
-    <script type="text/javascript" src="siharai.js"></script>
   </head>
 
   <body>
@@ -36,7 +35,6 @@
      <br>●本人名義以外のカード（家族名義のカード含む）、盗難カード等での不正使用は重大な犯罪です。
      <br>●弊社ではデジタルIDを使用したSSL暗号化技術により、カード情報を暗号化しています。ご安心ください。
          <!--↑文字を小さく↑）-->
-  <form name="param" action="#">
    <table class="table2" border="1" cellspacing="0" cellpadding="0">
     <tr>
      <th bgcolor="#d3d3d3">カード番号</th>
