@@ -6,11 +6,12 @@
 	text-align: center;
 	color: #2c2c2f;
 	boreder-radius: 10px;
-	background-color: #cde4ff; //îwåiêF
-	margin-bottom: 2em
-	margin: 0 auto;Åv
+	background-color: #cde4ff; /*îwåiêF*/
+	margin-bottom: 2em;
+	margin: 0 auto;
 }
 
 .log_button{
 	margin:30px;
+	text-align: center;
 }
