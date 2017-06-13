@@ -19,12 +19,10 @@ public class ContactAction extends ActionSupport {
 	private String comment;			//問い合わせ内容
 	private String inquiryDate;		//問い合わせ日時
 	private String phoneNumber;		//電話番号
+
 	/**
-	 * 実行メソッド 問い合わせ情報の送信処理をする
-	 * @author Atsushi Kawai
-	 * @since 2017/06/13
-	 * @return SUCESS / ERROR
-	 */
+	 * 実行メソッド 問い合わせ情報の送信処理をする*/
+
 	public String execute() {
 		String result = ERROR;
 

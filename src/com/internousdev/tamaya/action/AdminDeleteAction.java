@@ -10,16 +10,6 @@ import com.opensymphony.xwork2.ActionSupport;
  *商品情報を削除するクラス
  */
 public class AdminDeleteAction extends ActionSupport {
-	/**
-	 * シリアルID
-	 * @author Ryo Maeda
-     * @since 2017/05/18
-     * @version 1.0
-     */
-
-	private static final long serialVersionUID = 8523447612582469504L;
-
-
 
 	/**
 	 * 商品ID

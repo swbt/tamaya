@@ -99,10 +99,6 @@ public class GoAdminDeleteAction extends ActionSupport {
 	}
 
 
-	/**
-	 * セッターゲッター
-	 */
-
 	  /**
 	   *  商品名を格納するメソッド
 	   *  @param itemsName セットする itemsName
@@ -211,30 +207,5 @@ public class GoAdminDeleteAction extends ActionSupport {
 	   */
 	  public String getUpdatedAt(){return updatedAt;}
 
-	  /**
-	   *商品画像01を格納するメソッド
-	   *  @param itemImg01　セットする itemImg01
-	   */
-	  public void setItemIm01(String itemImg01){this.itemImg01=itemImg01;}
-
-	  /**
-	  *  商品画像01を取得するメソッド
-	  *  @return itemImg01 商品画像01
-	  */
-	  public String getItemImg01() {return itemImg01;}
-
-	  /**
-	   * 商品画像02を格納するメソッド
-	   *  itemImg02
-	   *  @param itemImg02　セットする  itemImg02
-	   */
-	  public void setItemImg02(String itemImg02) {this.itemImg02 = itemImg02;}
-
-	  /**
-	  *  商品画像02を取得するメソッド
-	  *  itemImg02
-	  *  @return itemImg02 商品画像02
-	  */
-	  public String getItemImg02() {return itemImg02;}
 
 }

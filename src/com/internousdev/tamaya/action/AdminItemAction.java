@@ -39,7 +39,7 @@ public class AdminItemAction extends ActionSupport{
 	/**
 	 * 在庫数
 	 */
-	private int stock;
+	private int stocks;
 
 	/**
 	 * 売上数
@@ -55,16 +55,6 @@ public class AdminItemAction extends ActionSupport{
 	 * 更新日
 	 */
 	private String updatedAt;
-
-	/**
-	 * 商品画像01
-	 */
-	private String itemImg01;
-
-	/**
-	 * 商品画像02
-	 */
-	private String itemImg02;
 
 
 	/**
@@ -103,9 +93,6 @@ public class AdminItemAction extends ActionSupport{
 	}
 
 
-	/**
-	 * セッターゲッター
-	 */
 
 
 	/**
@@ -191,8 +178,8 @@ public class AdminItemAction extends ActionSupport{
 	 * 在庫数を取得するメソッド
 	 * @return stock　在庫数
 	 */
-	public int getStock() {
-		return stock;
+	public int getStocks() {
+		return stocks;
 	}
 
 
@@ -201,8 +188,8 @@ public class AdminItemAction extends ActionSupport{
 	 * 在庫数を格納するメソッド
 	 * @param stock セットする stock
 	 */
-	public void setStock(int stock) {
-		this.stock = stock;
+	public void setStocks(int stock) {
+		this.stocks = stock;
 	}
 
 
@@ -262,47 +249,6 @@ public class AdminItemAction extends ActionSupport{
 	public void setUpdatedAt(String updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-
-
-
-	/**
-	 * 商品画像01を取得するメソッド
-	 * @return itemImg01　商品画像01
-	 */
-	public String getItemImg01() {
-		return itemImg01;
-	}
-
-
-
-	/**
-	 * 商品画像01を格納するメソッド
-	 * @param itemImg01 セットする itemImg01
-	 */
-	public void setItemImg01(String itemImg01) {
-		this.itemImg01 = itemImg01;
-	}
-
-
-
-	/**
-	 * 商品画像02を取得するメソッド
-	 * @return itemImg02 商品画像02
-	 */
-	public String getItemImg02() {
-		return itemImg02;
-	}
-
-
-
-	/**
-	 * 商品画像02を格納するメソッド
-	 * @param itemImg02 セットする itemImg02
-	 */
-	public void setItemImg02(String itemImg02) {
-		this.itemImg02 = itemImg02;
-	}
-
 
 
 	/**

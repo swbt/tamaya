@@ -12,13 +12,8 @@ import com.opensymphony.xwork2.ActionSupport;
  *顧客情報を表示するクラス
  */
 public class AdminUserAction extends ActionSupport{
-	/**
-	 * シリアルID
-	 */
-	//private static final long serialVersionUID = 991275253511116448L;
 
-	/**
-	 * 顧客ID
+	 /** ユーザーID
 	 */
 	private int userId;
 
@@ -231,7 +226,6 @@ public class AdminUserAction extends ActionSupport{
 		public void setRegisterDay(String registerDay) {
 			this.registerDay = registerDay;
 		}
-
 }
 
 

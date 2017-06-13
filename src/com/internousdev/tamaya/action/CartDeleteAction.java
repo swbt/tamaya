@@ -64,12 +64,6 @@ public class CartDeleteAction extends CartAssist implements SeesionAware{ //※�
 	private Map<String, Object> session;
 
 
-	/**
-	 * カートの中身の削除を実行するメソッド
-	 * @author KAORI TAKANASHI
-	 * @version 1.0
-	 * @since 2017/6/12
-	 */
 	public String execute() throws SQLException{
 		String result =ERROR;
 

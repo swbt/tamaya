@@ -7,9 +7,8 @@ import java.util.ArrayList;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-/**
- * @author internousdev
- *問い合わせ情報を表示するアクションクラス
+/** *問い合わせ情報を表示するアクションクラス
+ * @author seiya takahashi
  */
 public class AdminContactAction extends ActionSupport{
 
@@ -82,9 +81,9 @@ public class AdminContactAction extends ActionSupport{
 	 * 実行メソッド DAOから指定した範囲の問い合わせ情報を取得する
 	 * @author Soshi Azuma
 	 * @since 2017/05/22
-	 * @return result 問い合わせ情報の取得に成功したらSUCCESS,失敗したらERROR
+	 */ @return result 問い合わせ情報の取得に成功したらSUCCESS,失敗したらERROR
 
-public String execute(){
+	public String execute(){
 		String result = ERROR;
 		AdminContactDAO dao = new AdminContactDAO();
 
@@ -132,7 +131,7 @@ public String execute(){
 	}
 	return result;
 }
-*/
+
 	/**
 	 * 問い合わせ項目検索の取得メソッド
 	 * @return searchTitle　問い合わせ項目検索

@@ -232,8 +232,8 @@ public class PurchaseCompleteAction {
 	 * 商品名を取得するメソッド
 	 * @return itemsName　商品名
 	 */
-	public String getItemsName() {
-		return itemsName;
+	public String getItemName() {
+		return itemName;
 	}
 
 
@@ -241,8 +241,8 @@ public class PurchaseCompleteAction {
 	 * 商品名を格納するメソッド
 	 * @param itemsName セットする itemsName
 	 */
-	public void setItemsName(String itemsName) {
-		this.itemsName = itemsName;
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
 	}
 
 
