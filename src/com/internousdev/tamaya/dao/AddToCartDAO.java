@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.dto.ItemDTO;
-import com.internousdev.tamaya.util.MySQLConnector;
+import com.internousdev.util.db.mysql.MySqlConnector;
 
 public class AddToCartDAO {
 
@@ -27,7 +27,7 @@ public class AddToCartDAO {
 
 		public ArrayList<ItemDTO> itemStatus(int itemId){
 
-			Connection con = new MySQLConnector().getConnection("tamaya");
+			Connection con = new MySqlConnector("tamaya","root","mysql").getConnection();
 			ArrayList<ItemDTO> itemStatus = new ArrayList<ItemDTO>();
 
 			String sql = "select * from items where item_id = ?";

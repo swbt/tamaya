@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.internousdev.tamaya.dto.UserDTO;
-import com.internousdev.tamaya.util.MySQLConnector;
+import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * ログアウトの前にデータベースのlogin_flgをfalseにする
@@ -19,7 +19,7 @@ import com.internousdev.tamaya.util.MySQLConnector;
  */
 public class LogoutDAO {
 	public void update(int userId){
-		Connection con = new MySQLConnector().getConnection("openconnect");
+		Connection con = new MySqlConnector("openconnect","root","mysql").getConnection();
 		UserDTO dto = new UserDTO();
 		String sql1 = "UPDATE users SET login_flg=FALSE WHERE user_id=?";
 		String sql2 = "SELECT login_flg from users WHERE user_id=?";

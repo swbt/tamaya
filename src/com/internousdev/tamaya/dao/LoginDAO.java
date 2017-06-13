@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.internousdev.tamaya.dto.UserDTO;
-import com.internousdev.tamaya.util.MySQLConnector;
+import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * ユーザーの情報をデータベースから取ってくる
@@ -20,7 +20,7 @@ import com.internousdev.tamaya.util.MySQLConnector;
  */
 public class LoginDAO {
 	public UserDTO select(String email, String userPass){
-		Connection con = new MySQLConnector("openconnect").getConnection();
+		Connection con = new MySqlConnector("openconnect","root","mysql").getConnection();
 		UserDTO dto = new UserDTO();
 		String sql = "SELECT * FROM users WHERE phone_email=? AND password=?";
 

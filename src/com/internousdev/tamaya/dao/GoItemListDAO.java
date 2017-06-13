@@ -12,7 +12,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.internousdev.tamaya.dto.ItemDTO;
-import com.internousdev.tamaya.util.MySQLConnector;
+import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * 商品一覧を表示するために必要な情報をデータベースから取ってくる
@@ -24,7 +24,7 @@ import com.internousdev.tamaya.util.MySQLConnector;
 public class GoItemListDAO {
 
 	public ArrayList<ItemDTO> select(){
-		Connection con = new MySQLConnector().getConnection("tamaya");
+		Connection con = new MySqlConnector("tamaya","root","mysql").getConnection();
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 		String sql = "SELECT * FROM items";
 

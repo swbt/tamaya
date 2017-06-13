@@ -1,10 +1,10 @@
-package com.internousdev.tamaya.dao;
+package com.internousdev.tamaya.dto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import com.internousdev.tamaya.util.MySQLConnector;
+import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * カートテーブル内情報の削除に関するクラス
@@ -25,7 +25,8 @@ public class CartDeleteDTO {
 
 	public int delete(int userId,int cartId) {
 		int delCount = 0;
-		Connection con = new MySQLConnector().getConnection("tamaya");
+		Connection con = new MySqlConnector("tamaya","root","mysql").getConnection();
+//		Connection con = new MySQLConnector().getConnection("tamaya");
 		String sql = "delete fromcart whrere user_id=?";	//user_id
 		try{
 			PreparedStatement ps =con.prepareStatement(sql);
