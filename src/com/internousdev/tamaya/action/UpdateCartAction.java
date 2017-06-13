@@ -4,13 +4,11 @@
 package com.internousdev.tamaya.action;
 
 import java.math.BigDecimal;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -83,47 +81,48 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 	 * @since 2017/06/12
 	 * @version 1.0
 	 */
-	public String execute() throws SQLException {
-
-		String result=LOGIN;
-		//セッション情報の確認
-		if(session.containsKey("userId")){
-
-			userId=(int) session.get("userId");
-			CartUpdateDAO cartUpDao=new CartUpdateDAO();
-			GOItemDetailDAO goItemDao=new GoItemDetailDAO();
-			GoCartDAO goCartdao=new GoCartDAO();
-			purchaseCompleteDAO pulchaseDao=new purchaseCompleteDAO();
-			itemStatus=GoItemDao.selectbyItem(itemId);//商品情報収集
-
-			//商品情報をカートに追加
-			updateCount=cartUpDao.updateCart(cartId,userId,quantity);
-			//数量に0以下が指定された場合の処理
-			if(quantity<=0){
-				CartDeleteDAO DelDao=new CartDeleteDAO();
-				DelDao.delete(userId,cartId);
-			}
-
-			//アレイリストに追加
-			cartList=goCartDao.selected.Item(userId);
-			if(pulchaseDao.StockCheck(cartList)=="OK"){//在庫切れか？okなら次へ！
-				if(cartList.size()>0){
-					for(BigDecimal i=0;i<cartList.size(); i++){
-						total +=(cartList.get(i).getPrice())*(cartList.get(i).getQuantity());
-					}
-				result=SUCCESS;
-				}
-				else if(pulchaseDao.stockCheck(cartList)=="NG"){
-				}else{
-					//在庫切れだったら、どの商品が在庫切れかをチェックする
-					itemName=pulchaseDao.stockcheck(cartList);
-					result=ERROR;
-			}
-		}
-		return result;
-		}
-
-	}
+//	public String execute() throws SQLException {
+//
+//		String result=LOGIN;
+//		CartUpdateDAO cartUpdateDAO=new CartUpdateDAO();
+//		GoItemDetailDAO goItemDetailDAO=new GoItemDetailDAO();
+//		GoCartDAO goCartdao=new GoCartDAO();
+//		PurchaseCompleteDAO pulchaseDao=new PurchaseCompleteDAO();
+//
+//		//セッション情報の確認
+//		if(session.containsKey("userId")){
+//			userId=(int) session.get("userId");
+//
+////			itemStatus=goItemDetailDAO.selectbyItem(itemId);//商品情報収集
+//
+//			//商品情報をカートに追加
+////			updateCount=cartUpdateDAO.updateCart(cartId,userId,quantity);
+//			//数量に0以下が指定された場合の処理
+//			if(quantity<=0){
+//				CartDeleteDAO DelDao=new CartDeleteDAO();
+////				DelDao.delete(userId,cartId);
+//			}
+//
+//			//アレイリストに追加
+////			cartList=goCartDao.selected.Item(userId);
+////			if(pulchaseDao.StockCheck(cartList)=="OK"){//在庫切れか？okなら次へ！
+//				if(cartList.size()>0){
+////					for(BigDecimal i=0;i<cartList.size(); i++){
+////						total +=(cartList.get(i).getPrice())*(cartList.get(i).getQuantity());
+//					}
+//				result=SUCCESS;
+//				}
+////				else if(pulchaseDao.stockCheck(cartList)=="NG"){
+//				}else{
+//					//在庫切れだったら、どの商品が在庫切れかをチェックする
+////					itemName=pulchaseDao.stockcheck(cartList);
+////					result=ERROR;
+//			}
+////		}
+//		return result;
+////		}
+//
+//	}
 	/**
 	* カートIDを取得するメソッド
 	* @return cartId カートID
