@@ -60,7 +60,7 @@
 </form>
 
 
-     <button type="button" class="btn btn-success" onClick="func()">送信内容の確認</button></a>
+     <a href="toiawase_kakunin.jsp"><button type="button" class="btn btn-success" onClick="func()">送信内容の確認</button></a>
   </div>
   <div id="answer"></div>
 
