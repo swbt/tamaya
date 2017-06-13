@@ -19,8 +19,7 @@ import com.internousdev.tamaya.util.MySQLConnector;
  */
 public class LogoutDAO {
 	public void update(int userId){
-		MySQLConnector my = new MySQLConnector();
-		Connection con = my.getConnection("openconnect");
+		Connection con = new MySQLConnector().getConnection("openconnect");
 		UserDTO dto = new UserDTO();
 		String sql1 = "UPDATE users SET login_flg=FALSE WHERE user_id=?";
 		String sql2 = "SELECT login_flg from users WHERE user_id=?";

@@ -24,8 +24,7 @@ import com.internousdev.tamaya.util.MySQLConnector;
 public class GoItemListDAO {
 
 	public ArrayList<ItemDTO> select(){
-		MySQLConnector my = new MySQLConnector();
-		Connection con = my.getConnection("tamaya");
+		Connection con = new MySQLConnector().getConnection("tamaya");
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 		String sql = "SELECT * FROM items";
 

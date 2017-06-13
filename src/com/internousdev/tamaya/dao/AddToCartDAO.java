@@ -27,8 +27,7 @@ public class AddToCartDAO {
 
 		public ArrayList<ItemDTO> itemStatus(int itemId){
 
-			MySQLConnector db = new MySQLConnector();
-			Connection con =db.getConnection("tamaya");
+			Connection con = new MySQLConnector().getConnection("tamaya");
 			ArrayList<ItemDTO> itemStatus = new ArrayList<ItemDTO>();
 
 			String sql = "select * from items where item_id = ?";

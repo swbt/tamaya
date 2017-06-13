@@ -20,8 +20,7 @@ import com.internousdev.tamaya.util.MySQLConnector;
 public class ShowItemDetailDAO {
 
 	public ItemDTO select(int itemId){
-		MySQLConnector my = new MySQLConnector();
-		Connection con = my.getConnection("tamaya");
+		Connection con = new MySQLConnector().getConnection("tamaya");
 		ItemDTO dto = new ItemDTO();
 		String sql = "SELECT * FROM items where item_id = ?";
 
