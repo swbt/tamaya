@@ -3,22 +3,27 @@
  */
 package com.internousdev.tamaya.action;
 
+import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.tamaya.dto.CartDTO;
+import com.internousdev.tamaya.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * @author internousdev
  *
  */
-public class UpdateCartAction extends ActionSupport implement SessionAware{
+public class UpdateCartAction extends ActionSupport implements SessionAware{
 
 	/**
 	 * シリアルID
 	 */
-	private static final long serialVersionUID=;
+	private static final long serialVersionUID=-869165581865322731L;
 	/**
 	* カートID(未定義)
 	*/
@@ -38,7 +43,7 @@ public class UpdateCartAction extends ActionSupport implement SessionAware{
 	/**
 	* 価格
 	*/
-	private int price;
+	private BigDecimal price;
 	/**
 	*購入数
 	*/
@@ -48,13 +53,17 @@ public class UpdateCartAction extends ActionSupport implement SessionAware{
 	*/
 	private String imgPath;
 	/**
+	*購入商品の小計価格
+	*/
+	private BigDecimal subtotal;
+	/**
 	*購入商品の合計価格
 	*/
-	private int total;
+	private BigDecimal total;
 	/**
 	* 更新処理をした件数
 	*/
-	private int updatedAt;
+	private int updateCount;
 	/**
 	*カート情報（未定義）
 	*/
@@ -76,9 +85,9 @@ public class UpdateCartAction extends ActionSupport implement SessionAware{
 	 */
 	public String execute() throws SQLException {
 
-		String result=login;
+		String result=LOGIN;
 		//セッション情報の確認
-		if(session.containskey("userId")){
+		if(session.containsKey("userId")){
 
 			userId=(int) session.get("userId");
 			CartUpdateDAO cartUpDao=new CartUpdateDAO();
@@ -99,19 +108,21 @@ public class UpdateCartAction extends ActionSupport implement SessionAware{
 			cartList=goCartDao.selected.Item(userId);
 			if(pulchaseDao.StockCheck(cartList)=="OK"){//在庫切れか？okなら次へ！
 				if(cartList.size()>0){
-					for(int i==0;i cartList.size(); i++){
-						amountAll +=(cartList.get(i).getprice())*(cartList.get(i).getQuantities());
+					for(BigDecimal i=0;i<cartList.size(); i++){
+						total +=(cartList.get(i).getPrice())*(cartList.get(i).getQuantity());
 					}
 				result=SUCCESS;
 				}
 				else if(pulchaseDao.stockCheck(cartList)=="NG"){
-				else{
+				}else{
 					//在庫切れだったら、どの商品が在庫切れかをチェックする
 					itemName=pulchaseDao.stockcheck(cartList);
 					result=ERROR;
 			}
 		}
 		return result;
+		}
+
 	}
 	/**
 	* カートIDを取得するメソッド
@@ -179,7 +190,7 @@ public class UpdateCartAction extends ActionSupport implement SessionAware{
 	 * 価格を取得するメソッド
 	 * @return price 価格
 	 */
-	public int getPrice() {
+	public BigDecimal getPrice() {
 		return price;
 	}
 
@@ -187,7 +198,7 @@ public class UpdateCartAction extends ActionSupport implement SessionAware{
 	 * 価格を格納するメソッド
 	 * @param price セットする price
 	 */
-	public void setPrice(int price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 
@@ -224,10 +235,24 @@ public class UpdateCartAction extends ActionSupport implement SessionAware{
 	}
 
 	/**
+	 * 小計金額を取得するメソッド
+	 * @return amountAll 合計金額
+	 */
+	public BigDecimal getSubTotal() {
+		return subtotal;
+	}
+	/**
+	 * 小計金額を格納するメソッド
+	 * @param total セットする total
+	 */
+	public void setSubTotal(BigDecimal subtotal) {
+		this.total = subtotal;
+	}
+	/**
 	 * 合計金額を取得するメソッド
 	 * @return amountAll 合計金額
 	 */
-	public int getTotal() {
+	public BigDecimal getTotal() {
 		return total;
 	}
 
@@ -235,7 +260,7 @@ public class UpdateCartAction extends ActionSupport implement SessionAware{
 	 * 合計金額を格納するメソッド
 	 * @param total セットする total
 	 */
-	public void setAmountAll(int Total) {
+	public void setTotal(BigDecimal total) {
 		this.total = total;
 	}
 
@@ -244,7 +269,7 @@ public class UpdateCartAction extends ActionSupport implement SessionAware{
 	 * @return updateCount 更新処理をした件数
 	 */
 	public int getUpdateCount() {
-		return updateCount;
+		return getUpdateCount();
 	}
 
 	/**
@@ -260,15 +285,15 @@ public class UpdateCartAction extends ActionSupport implement SessionAware{
 	 * @return updatedAt カート情報
 	 */
 	public ArrayList<CartDTO> getCartList() {
-		return updatedAt;
+		return cartList;
 	}
 
 	/**
 	 * カート情報を格納するメソッド
 	 * @param updatedAt セットする cartList
 	 */
-	public void setCartList(ArrayList<CartDTO> UpdatedAt) {
-		this.updatedAt = updatedAt;
+	public void setCartList(ArrayList<CartDTO> cartList) {
+		this.cartList =cartList;
 	}
 
 	/**
@@ -283,7 +308,7 @@ public class UpdateCartAction extends ActionSupport implement SessionAware{
 	 * 商品情報を格納するメソッド
 	 * @param itemDetail セットする itemStatus
 	 */
-	public void setItemStatus(ArrayList<ItemDTO> ItemDetail) {
+	public void setItemStatus(ArrayList<ItemDTO> itemDetail) {
 		this.itemDetail = itemDetail;
 	}
 
@@ -302,39 +327,5 @@ public class UpdateCartAction extends ActionSupport implement SessionAware{
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
