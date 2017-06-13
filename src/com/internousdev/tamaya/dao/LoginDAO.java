@@ -20,7 +20,7 @@ import com.internousdev.tamaya.util.MySQLConnector;
  */
 public class LoginDAO {
 	public UserDTO select(String email, String userPass){
-		Connection con = new MySQLConnector().getConnection("openconnect");
+		Connection con = new MySQLConnector("openconnect").getConnection();
 		UserDTO dto = new UserDTO();
 		String sql = "SELECT * FROM users WHERE phone_email=? AND password=?";
 

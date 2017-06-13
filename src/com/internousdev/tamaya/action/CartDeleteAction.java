@@ -1,10 +1,13 @@
 package com.internousdev.tamaya.action;
 
+import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import com.internousdev.tamaya.dto.UserDTO;
+import com.internousdev.tamaya.util.CartAssist;
 
 /**
  *  カートの中身を削除するクラス
@@ -13,31 +16,35 @@ import com.internousdev.tamaya.dto.UserDTO;
  * @since 2017/6/12
  */
 
-public class CartDeleteAction  extends CartAssist implements SeesionAware{ //※クラス未作成
+public class CartDeleteAction extends CartAssist implements SeesionAware{ //※クラス未作成
 
 	private static final String ERROR = null;
+
+	private static final String SUCCESS = null;
+
+	private static final String LOGIN = null;
 
 	//ユーザーID
 	private int userId;
 
 	//【IN】
-	// 商品追加時使用
+	// ユーザー管理用
 	private int itemId;
 
-	// 表示用
+	// 商品名
 	private String itemName;
 
 	// 単価
-	private float price;
+	private BigDecimal price;
 
-	// 数
+	// 数量
 	private int quantity;
 
 	// 小計
-	private float subTotal;
+	private BigDecimal subTotal;
 
 	// 合計
-	private float total;
+	private BigDecimal total;
 
 	//【OUT】
 	// 商品削除時使用
@@ -45,11 +52,18 @@ public class CartDeleteAction  extends CartAssist implements SeesionAware{ //※
 
 	//【その他】
 	//検索したカート内の商品の情報を入れるリスト
-	private List<○○DTO> cartList = new ArrayList<>();		//DTO未作成
+	private List<CartDTO> cartList = new ArrayList<>();		//DTO未作成
+
 	//	ユーザー情報を入れるリスト（購入確認画面で必要）
 	public ArrayList<UserDTO> usersList = new ArrayList<UserDTO>();
+
 	//クレジット情報を入れるリスト（購入確認画面で必要）
-	public ArrayList<○○DTO> creditList = new ArrayList<○○DTO>();	//DTO未作成
+	public ArrayList<CreditDTO> creditList = new ArrayList<CreditDTO>();	//DTO未作成
+
+	//セッション情報
+	private Map<String, Object> session;
+
+
 	/**
 	 * カートの中身の削除を実行するメソッド
 	 * @author KAORI TAKANASHI
@@ -62,33 +76,31 @@ public class CartDeleteAction  extends CartAssist implements SeesionAware{ //※
 			/**
 			 *セッション情報切れになっていないかの確認
 			 */
-			if (session.containKey("userId")){
+			if (session.containsKey("userId")){
 				userId = (int)session.get("userId");
 
 				CartDeleteDAO dao = new CartDeleteDAO();
 				GoCartDAO dao2 = new GoCartDAO();
 
-				delCount = dao.delete(userId,cartId);
-				if(delCount>0)
+				delete = (boolean) dao.delete(userId);
+				cartList;
+				if(delete>0){
+					//カートの情報をリスト化
 					cartList = dao2.delete(userId);
 					if(cartList.size() > 0){
-						for(int i = 0;i < cartList.size(); i++){
-						amountAll += (cartList.get(i).getPrice())*(cartList.get(i).getQuantities());
+						//合計金額算出
+						for(int i = 0; i < cartList.size(); i++){
+						total += (cartList.get(i).getPrice())*(cartList.get(i).getQuantity());
 					}
-					MypageDTO dao3 = new MypageDAO();
-					○○DAO dao4 = new ○○DAO();	//DAO未作成
-					userList = dao3.select(userId);
-					creditList = dao4.selectCredit(userId);
 					result = SUCCESS;
 				}
 			}
 
-		}else{
-			result = LOGIN;
+		} else {
+			 result = LOGIN;
 			}
 		return result;
 		}
-	}
 
 
 	//ユーザーIDを取得するためのメソッド
@@ -121,25 +133,25 @@ public class CartDeleteAction  extends CartAssist implements SeesionAware{ //※
 
 	//小計金額を取得するメソッド
 	//@return subTotal
-	public float getSubTotal(){
+	public BigDecimal getSubTotal(){
 		return subTotal;
 		}
 
 	//小計金額を格納するメソッド
 	//@param subTotal
-	public void setSubTotal(float subTotal){
+	public void setSubTotal(BigDecimal subTotal){
 		this.subTotal = subTotal;
 	}
 
 	//合計金額を取得するメソッド
 	//@return total
-	public float getTotal(){
+	public BigDecimal getTotal(){
 		return total;
 		}
 
 	//合計金額を格納するメソッド
 	//@param total
-	public void setTotal(float total){
+	public void setTotal(BigDecimal total){
 		this.total = total;
 		}
 
@@ -153,17 +165,5 @@ public class CartDeleteAction  extends CartAssist implements SeesionAware{ //※
 	//@paramquantities セットする quantity
 	public void setQuantity(int quantity){
 		this.quantity = quantity;
-		}
-
-	//ユーザー情報を入れるリスト（購入確認画面で必要）を取得するメソッド	※Tamayaで必要か否か不明
-	//@param userList ユーザー情報を入れるリスト
-	public ArrayList<UserDTO> getUsersList(){
-		return userList;
-		}
-
-	//クレジット情報を入れるリスト（購入確認画面で必要）を格納するメソッド		※Tamayaで必要か否か不明
-	//@return creditList クレジット情報を入れるリスト
-	public void setCreditList(ArrayList<CreditDTO>creditList){
-		this.setCreditList = creditList;
 		}
 	}
