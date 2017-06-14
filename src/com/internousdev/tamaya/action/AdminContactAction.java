@@ -5,6 +5,7 @@ package com.internousdev.tamaya.action;
 
 import java.util.ArrayList;
 
+import com.internousdev.tamaya.dao.AdminContactDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /** *問い合わせ情報を表示するアクションクラス
