@@ -14,7 +14,7 @@ public class CreditCheckDAO {
 	 * 入力されたクレジット番号の上6ケタと、クレジットマネージャDBを照合するメソッド@param creditId クレジットの種類
 	 * @param checkNumber クレジット番号上6ケタ@return result 合致すればtrue、しなければfalseを返す
 	 * @author MISA KIKUCHI@since 5/19@version 1.0*/
-	public boolean select(int creditId, String checkNunber){
+	public boolean select(int creditId, String checkNumber){
 		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "creditcard_manager", "root","mysql");
 		Connection con = db.getConnection();
 		boolean result=false;
@@ -31,15 +31,15 @@ public class CreditCheckDAO {
 		PreparedStatement ps=con.prepareStatement(sql);
 
 		ps.setString(1, checkNumber);
-		resultSet rs=ps.executeQuery();
+		ResultSet rs=ps.executeQuery();
 		rs.next();
-		if(rs.getString("card_Name").equals(brandName)){
+		if(rs.getString("card_name").equals(brandName)){
 
 			result=true;
 			}
 	}catch(SQLException e){
 		e.printStackTrace();
-	}finaly{
+	}finally{
 		try{
 			con.close();
 		}catch(SQLException e){
@@ -53,11 +53,12 @@ public class CreditCheckDAO {
 	 * @param creditId クレジットの種類
 	 * @param creditNumber クレジット番号
 	 * @return userInfoDto クレジットカード情報
-	 * @author MISA KIKUCHI
-	 * @since 5/19
+	 * @author ryusei tanaka
+	 *@since 2017/06/14
 	 * @version 1.0
 	 */
 	public CreditDTO selectUserInfo(int creditId,String creditNumber){
+		CreditDTO userInfoDto=new CreditDTO();
 		String brandName=null;
 		if(creditId==1){
 			brandName="visa";
