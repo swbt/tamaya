@@ -53,7 +53,7 @@ public class AdminUserDAO {
 
 				dto.setPhoneNumber(rs.getString("phone_number"));
 
-				dto.setPhone_Email(rs.getString("phone_email"));
+				dto.setPhoneEmail(rs.getString("phone_email"));
 
 				dto.setPostal(rs.getString("postal"));
 

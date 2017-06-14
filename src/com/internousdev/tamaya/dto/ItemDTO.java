@@ -21,7 +21,8 @@ public class ItemDTO {
 	private int sales;
 	private String itemDetail;
 	private String imgPath;
-
+    private int SortId;
+    private String ItemGenre;
 
 	public static BigDecimal getTax() {
 		return tax;
@@ -77,4 +78,18 @@ public class ItemDTO {
 	public void setImgPath(String imgPath) {
 		this.imgPath = imgPath;
 	}
+
+	public String getItemGenre() {
+		return ItemGenre;
+	}
+	public void setItemGenre(String itemGenre) {
+		ItemGenre = itemGenre;
+	}
+	public int getSortId() {
+		return SortId;
+	}
+	public void setSortId(int sortId) {
+		SortId = sortId;
+	}
+
 }

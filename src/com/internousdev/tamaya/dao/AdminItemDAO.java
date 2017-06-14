@@ -50,7 +50,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 
 				dto.setItemName(rs.getString("item_name"));
 
-				dto.setPrice(rs.getBigDecimal("price"));
+				dto.setPriceWithTax(rs.getBigDecimal("price"));
 
 				dto.setStocks(rs.getInt("stocks"));
 
@@ -62,11 +62,11 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 
 				dto.setSortId(rs.getInt("sort_id"));
 
-				dto.setCreatedAt(rs.getString("created_at"));
+				//dto.setCreatedAt(rs.getString("created_at"));
 
-				dto.setUpdatedAt(rs.getString("updated_at"));
+				//dto.setUpdatedAt(rs.getString("updated_at"));
 
-				dto.setDelKey(rs.getBoolean("del_key"));
+				//dto.setDelKey(rs.getBoolean("del_key"));
 
 				switch(dto.getSortId()){
 				case 1:dto.setItemGenre("temoti"); break;
