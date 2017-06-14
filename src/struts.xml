@@ -19,13 +19,13 @@
       <result name="error">top.jsp</result>
     </action>
 
-    <action name="GoItemListAction" class="com.internousdev.tamaya.action.GoItemListAction" method="execute">
+    <action name="FetchItemListAction" class="com.internousdev.tamaya.action.FetchItemListAction" method="execute">
       <result name="item_list">item_list.jsp</result>
       <result name="top">top.jsp</result>
       <result name="error">top.jsp</result>
     </action>
 
-    <action name="ShowItemDetailAction" class="com.internousdev.tamaya.action.ShowItemDetailAction" method="execute">
+    <action name="FetchItemDetailAction" class="com.internousdev.tamaya.action.FetchItemDetailAction" method="execute">
       <result name="success">syousai.jsp</result>
       <result name="error">index.jsp</result>
     </action>

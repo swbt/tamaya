@@ -21,7 +21,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
  * @since 1.0
  * @version 1.0
  */
-public class GoItemListDAO {
+public class FetchItemListDAO {
 
 	public ArrayList<ItemDTO> select(){
 		Connection con = new MySqlConnector("tamaya","root","mysql").getConnection();
@@ -56,8 +56,7 @@ public class GoItemListDAO {
 	}
 
 	public ArrayList<ItemDTO> select(String category){
-		MySQLConnector my = new MySQLConnector();
-		Connection con = my.getConnection("tamaya");
+		Connection con = new MySqlConnector("tamaya","root","mysql").getConnection();
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 		String sql = "SELECT * FROM items WHERE category = ?";
 		try{
@@ -88,7 +87,7 @@ public class GoItemListDAO {
 	}
 
 	public ArrayList<ItemDTO> select(int priceRange){
-		MySQLConnector my = new MySQLConnector();
+		Connection con = new MySqlConnector("tamaya","root","mysql").getConnection();
 		Connection con = my.getConnection("tamaya");
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 		String sql = "SELECT * FROM items WHERE price >= ? AND price < ?";

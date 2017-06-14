@@ -17,7 +17,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @since 1.0
  * @version 1.0
  */
-public class ShowItemDetailAction extends ActionSupport implements SessionAware {
+public class FetchItemDetailAction extends ActionSupport implements SessionAware {
 	private int itemId;
 	private ItemDTO dto = new ItemDTO();
 	private Map<String, Object> session;

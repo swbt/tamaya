@@ -35,7 +35,7 @@ pageEncoding="utf-8"%>
     var actionUrl;
     var actionUrlWithParam;
     function imgClick(itemId) {
-      actionUrl = '<s:url action="ShowItemDetailAction"></s:url>';
+      actionUrl = '<s:url action="FetchItemDetailAction"></s:url>';
       actionUrlWithParam = actionUrl + "?itemId=" + itemId;
       $('#item_detail').attr('src', actionUrlWithParam);
     };
@@ -65,18 +65,18 @@ pageEncoding="utf-8"%>
 			<div class=hbox2>
 			<h2>花火の価格別と種類別</h2>
 			<div class=box2>
-					<a href="<s:url action="GoItemListAction"><s:param name="priceRange" value="1"/></s:url>" class="button1">499円以下</a>
-					<a href="<s:url action="GoItemListAction"><s:param name="priceRange" value="2"/></s:url>" class="button2">500円～999円</a>
-					<a href="<s:url action="GoItemListAction"><s:param name="priceRange" value="3"/></s:url>" class="button3">1000円～4999円</a>
-					<a href="<s:url action="GoItemListAction"><s:param name="priceRange" value="4"/></s:url>" class="button1">5000円以上</a>
+					<a href="<s:url action="FetchItemListAction"><s:param name="priceRange" value="1"/></s:url>" class="button1">499円以下</a>
+					<a href="<s:url action="FetchItemListAction"><s:param name="priceRange" value="2"/></s:url>" class="button2">500円～999円</a>
+					<a href="<s:url action="FetchItemListAction"><s:param name="priceRange" value="3"/></s:url>" class="button3">1000円～4999円</a>
+					<a href="<s:url action="FetchItemListAction"><s:param name="priceRange" value="4"/></s:url>" class="button1">5000円以上</a>
 
 				</div>
 			</div>
 				<div class=box2>
-					<a href="<s:url action="GoItemListAction"><s:param name="category" value="'temoti'"/></s:url>" class="button1">手持ち花火</a>
-					<a href="<s:url action="GoItemListAction"><s:param name="category" value="'hunsyutu'"/></s:url>" class="button2">噴出花火</a>
-					<a href="<s:url action="GoItemListAction"><s:param name="category" value="'utiage'"/></s:url>" class="button3">打上げ花火</a>
-					<a href="<s:url action="GoItemListAction"><s:param name="category" value="'sonota'"/></s:url>" class="button4">その他花火</a>
+					<a href="<s:url action="FetchItemListAction"><s:param name="category" value="'temoti'"/></s:url>" class="button1">手持ち花火</a>
+					<a href="<s:url action="FetchItemListAction"><s:param name="category" value="'hunsyutu'"/></s:url>" class="button2">噴出花火</a>
+					<a href="<s:url action="FetchItemListAction"><s:param name="category" value="'utiage'"/></s:url>" class="button3">打上げ花火</a>
+					<a href="<s:url action="FetchItemListAction"><s:param name="category" value="'sonota'"/></s:url>" class="button4">その他花火</a>
 				</div>
 			</div>
 			<div class=ranking>
@@ -87,7 +87,7 @@ pageEncoding="utf-8"%>
   
   				<div class="item_list">
             <s:if test="itemList == null || itemList.isEmpty()">
-              <meta http-equiv="Refresh" content="0; url=<s:url action='GoItemListAction'><s:param name='transition' value='"top"'/></s:url>">
+              <meta http-equiv="Refresh" content="0; url=<s:url action='FetchItemListAction'><s:param name='transition' value='"top"'/></s:url>">
             </s:if>
             <s:else>
               <s:iterator status="i" begin="1" end="3">

@@ -22,8 +22,8 @@
     var actionUrl;                //アクションのURL
     var actionUrlWithParam;       //アクションのパラメータ付きURL
     function imgClick(itemId) {   //onclick="imgClick(this.name);"の属性がついた画像をクリックした時に実行される
-      actionUrl = '<s:url action="ShowItemDetailAction"></s:url>';  //例：/kagiya/ShowItemDetailAction.action
-      actionUrlWithParam = actionUrl + "?itemId=" + itemId;         //例：/kagiya/ShowItemDetailAction.action?itemId=2
+      actionUrl = '<s:url action="FetchItemDetailAction"></s:url>';  //例：/kagiya/FetchItemDetailAction.action
+      actionUrlWithParam = actionUrl + "?itemId=" + itemId;         //例：/kagiya/FetchItemDetailAction.action?itemId=2
       $('#item_detail').attr('src', actionUrlWithParam);  //#item_detailを持つ要素の'src'属性にactionUrlWithParamを代入
     };
     </script>
