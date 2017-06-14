@@ -88,7 +88,6 @@ public class FetchItemListDAO {
 
 	public ArrayList<ItemDTO> select(int priceRange){
 		Connection con = new MySqlConnector("tamaya","root","mysql").getConnection();
-		Connection con = my.getConnection("tamaya");
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 		String sql = "SELECT * FROM items WHERE price >= ? AND price < ?";
 		int minPrice, maxPrice;
