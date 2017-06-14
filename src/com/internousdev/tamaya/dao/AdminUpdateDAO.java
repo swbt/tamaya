@@ -79,11 +79,11 @@ public class AdminUpdateDAO {
 		int c=1;
 		String sql="";
 		if(imgDel==1){
-			sql= "update items set items_name =?,price=?,stocks=?,sales =?,items_detail=?,sort_id=? where item_id=?";
+			sql= "update item set item_name =?,price=?,stocks=?,sales =?,item_detail=?,sort_id=? where item_id=?";
 		}else if(imgDel==2){
-			sql= "update items set items_name =?,price=?,stocks=?,sales =?,items_detail=?,img_path=?,sort_id=? where item_id=?";
+			sql= "update item set item_name =?,price=?,stocks=?,sales =?,item_detail=?,img_path=?,sort_id=? where item_id=?";
 		}else if(imgDel==3){
-			sql= "update items set items_name =?,price=?,stocks=?,sales =?,items_detail=?,img_path='',sort_id=? where item_id=?";
+			sql= "update item set item_name =?,price=?,stocks=?,sales =?,item_detail=?,img_path='',sort_id=? where item_id=?";
 		}
 		try{
 			PreparedStatement ps= con.prepareStatement(sql);

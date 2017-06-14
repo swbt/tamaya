@@ -29,7 +29,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 		if(itemName.equals("") || itemName==null){
 			sql="select * from item where del_key = false";
 		}else{
-			sql="select * from item where items_name= ? and del_key= false";
+			sql="select * from item where item_name= ? and del_key= false";
 			k=1;
 		}
 
@@ -56,7 +56,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 
 				dto.setSales(rs.getInt("sales"));
 
-				dto.setItemDetail(rs.getString("items_detail"));
+				dto.setItemDetail(rs.getString("item_detail"));
 
 				dto.setImgPath(rs.getString("img_path"));
 
