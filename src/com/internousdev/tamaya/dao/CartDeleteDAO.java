@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import com.internousdev.util.db.mysql.MySqlConnector;
+
 
 /**
  * カートテーブル内情報の削除に関するクラス
@@ -24,10 +26,9 @@ public class CartDeleteDAO {
 
 	public int delete(int userId){
 		int delCount = 0;
-		MySQLConnector db = new MySQLConnector();
-		Connection con = db.getConnection("openconnect");
+		Connection con = new MySqlConnector("openconnect").getConnection();
 		String sql1 = "delete from carts where user_id=? and cart_id=?";
-		
+
 		try{
 			PreparedStatement ps = con.prepareStatement(sql1);
 			ps.setInt(1, userId);
