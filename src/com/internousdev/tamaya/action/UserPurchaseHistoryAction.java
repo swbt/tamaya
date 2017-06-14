@@ -1,4 +1,4 @@
-package com.internousdev.legmina.action;
+package com.internousdev.tamaya.action;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tamaya.dto.HistoryDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -56,8 +57,8 @@ public class UserPurchaseHistoryAction extends ActionSupport implements SessionA
 		for(int i=0;i<all;i++){
 			HistoryDTO dto = new HistoryDTO();
 			dto= allList.get(i);
-			String str=dto.getItemsName();
-			if(str.startsWith(itemsName)){
+			String str=dto.getItemName();
+			if(str.startsWith(itemName)){
 				UserPurchaseHistoryList.add(dto);
 			}
 
@@ -118,22 +119,22 @@ public class UserPurchaseHistoryAction extends ActionSupport implements SessionA
 	/**
 	 * 単価を格納するメソッド
 	 */
-	public void setPrice(float price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 
 	/**
 	 * 数量を取得するメソッド
 	 */
-	public int getQuantities() {
-		return quantities;
+	public int getQuantity() {
+		return quantity;
 	}
 
 	/**
 	 * 数量を格納するメソッド
 	 */
-	public void setQuantities(int quantities) {
-		this.quantities = quantities;
+	public void setQuantities(int quantity) {
+		this.quantity = quantity;
 	}
 
 	/**
@@ -146,7 +147,7 @@ public class UserPurchaseHistoryAction extends ActionSupport implements SessionA
 	/**
 	 * 合計金額を格納するメソッド
 	 */
-	public void setSubtotal(float subtotal) {
+	public void setSubtotal(BigDecimal subtotal) {
 		this.subtotal = subtotal;
 	}
 

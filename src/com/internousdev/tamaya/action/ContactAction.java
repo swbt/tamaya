@@ -1,5 +1,6 @@
 package com.internousdev.tamaya.action;
 
+import com.internousdev.tamaya.dao.ContactDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.dto.ItemDTO;
+import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * 決済に関するクラス
@@ -26,7 +27,7 @@ public class purchaseCompleteDAO {
 	 * @version 1.0
 	 */
 	public String stockCheck(ArrayList<CartDTO> cartList) {
-		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "legmina", "root", "mysql");
+		MySqlConnector db = new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root", "mysql");
 		Connection con = db.getConnection();
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 		String sql = "select * from items where item_id=?";
@@ -36,7 +37,7 @@ public class purchaseCompleteDAO {
 			int add = 0;
 			for (int a = 0; a < cartList.size(); a++) {
 				if (cartList.get(i).getItemId() == cartList.get(a).getItemId()) {
-					add += cartList.get(a).getQuantities();
+					add += cartList.get(a).getQuantity();
 				}
 			}
 			ItemDTO dto = new ItemDTO();
@@ -49,7 +50,7 @@ public class purchaseCompleteDAO {
 
 					//在庫切れのものがある場合は商品名をリストに格納する
 					dto.setStocks(rs.getInt("stocks"));// 在庫数
-					dto.setItemsName(rs.getString("items_name"));//商品名
+					dto.setItemName(rs.getString("item_name"));//商品名
 					itemList.add(dto);
 				}
 			} catch (SQLException e) {
@@ -57,7 +58,7 @@ public class purchaseCompleteDAO {
 			}
 
 			if (dto.getStocks() < add) {
-				check = dto.getItemsName();
+				check = dto.getItemName();
 				break;
 
 			}
@@ -77,7 +78,7 @@ public class purchaseCompleteDAO {
 	 */
 	public int purchase(int userId) {
 		int ret = 0;
-		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "legmina", "root", "mysql");
+		MySqlConnector db = new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root", "mysql");
 		Connection con = null;
 		con = db.getConnection();
 		CartDTO dto = new CartDTO();
@@ -91,12 +92,12 @@ public class purchaseCompleteDAO {
 			while (rs.next()) {
 				dto.setUserId(rs.getInt("user_id"));
 				dto.setItemId(rs.getInt("item_id"));
-				dto.setQuantities(rs.getInt("quantities"));
+				dto.setQuantity(rs.getInt("quantities"));
 
 				PreparedStatement ps2 = con.prepareStatement(insert);
 				ps2.setInt(1, userId);
 				ps2.setInt(2, dto.getItemId());
-				ps2.setInt(3, dto.getQuantities());
+				ps2.setInt(3, dto.getQuantity());
 
 				ret += ps2.executeUpdate();
 			}
@@ -122,7 +123,7 @@ public class purchaseCompleteDAO {
 	 */
 	public int clean(int userId) {
 		int ret = 0;
-		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "legmina", "root", "mysql");
+		MySqlConnector db = new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root", "mysql");
 		Connection con = db.getConnection();
 		String cleanCart = "delete from carts where user_id = ?";
 		try {
@@ -150,7 +151,7 @@ public class purchaseCompleteDAO {
 	 */
 	public int stockUpdate(int userId) {
 		int ret = 0;
-		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "legmina", "root", "mysql");
+		MySqlConnector db = new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root", "mysql");
 		Connection con = db.getConnection();
 		String stockUpdate = "UPDATE items SET stocks = ? WHERE item_id = ?";
 		ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
@@ -165,7 +166,7 @@ public class purchaseCompleteDAO {
 			while (rs.next()) {
 				CartDTO dto = new CartDTO();
 				dto.setItemId(rs.getInt("item_id"));// 商品ID
-				dto.setQuantities(rs.getInt("quantities"));// 数量
+				dto.setQuantity(rs.getInt("quantity"));// 数量
 				cartList.add(dto);
 			}
 		} catch (SQLException e) {
@@ -197,7 +198,7 @@ public class purchaseCompleteDAO {
 				int add = 0;
 				for (int a = 0; a < cartList.size(); a++) {
 					if (cartList.get(i).getItemId() == cartList.get(a).getItemId()) {
-						add += cartList.get(a).getQuantities();
+						add += cartList.get(a).getQuantity();
 					}
 				}
 
@@ -227,7 +228,7 @@ public class purchaseCompleteDAO {
 	 */
 	public int salesUpdate(int userId) {
 		int ret = 0;
-		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "legmina", "root", "mysql");
+		MySqlConnector db = new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root", "mysql");
 		Connection con = db.getConnection();
 		String stockUpdate = "UPDATE items SET sales = ? WHERE item_id = ?";
 		ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
@@ -242,7 +243,7 @@ public class purchaseCompleteDAO {
 			while (rs.next()) {
 				CartDTO dto = new CartDTO();
 				dto.setItemId(rs.getInt("item_id"));// 商品ID
-				dto.setQuantities(rs.getInt("quantities"));// 数量
+				dto.setQuantity(rs.getInt("quantity"));// 数量
 				cartList.add(dto);
 			}
 		} catch (SQLException e) {
@@ -274,7 +275,7 @@ public class purchaseCompleteDAO {
 				int add = 0;
 				for (int a = 0; a < cartList.size(); a++) {
 					if (cartList.get(i).getItemId() == cartList.get(a).getItemId()) {
-						add += cartList.get(a).getQuantities();
+						add += cartList.get(a).getQuantity();
 					}
 				}
 

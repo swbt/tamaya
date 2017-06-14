@@ -1,3 +1,4 @@
+package com.internousdev.tamaya.dto;
 /**
  * 商品購入に関するDTOクラス
  * @author seiya takahashi

@@ -3,7 +3,13 @@ package com.internousdev.tamaya.dao;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 
+import com.internousdev.tamaya.dto.ContactHistoryDTO;
 import com.internousdev.util.db.mongodb.MongoDBConnector;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 
 /**
  * お問い合わせ情報閲覧に関するクラス

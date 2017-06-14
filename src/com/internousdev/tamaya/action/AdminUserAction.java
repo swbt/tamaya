@@ -5,6 +5,8 @@ package com.internousdev.tamaya.action;
 
 import java.util.ArrayList;
 
+import com.internousdev.tamaya.dao.AdminUserDAO;
+import com.internousdev.tamaya.dto.MypageDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

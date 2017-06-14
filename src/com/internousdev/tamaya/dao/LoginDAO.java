@@ -48,7 +48,7 @@ public class LoginDAO {
 	}
 
 	public void update(int userId){
-		MySQLConnector db = new MySQLConnector();
+		MySqlConnector db = new MySqlConnector();
 		Connection con = db.getConnection("openconnect");
 		UserDTO dto = new UserDTO();
 		String sql1 = "UPDATE users SET login_flg=TRUE WHERE user_id=?";

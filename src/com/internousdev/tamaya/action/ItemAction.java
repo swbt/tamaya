@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.internousdev.legmina.action;
+package com.internousdev.tamaya.action;
 
 import java.math.BigDecimal;
 import java.sql.SQLException;
@@ -103,8 +103,8 @@ public String getItemName() {
  * 商品名を格納するメソッド
  * @param itemName セットする itemsName
  */
-public void setItemName(String itemsName) {
-	this.itemsName = itemsName;
+public void setItemName(String itemName) {
+	this.itemName = itemName;
 }
 
 

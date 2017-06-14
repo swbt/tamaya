@@ -7,7 +7,11 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Map;
 
+import com.internousdev.tamaya.dao.CreditInsertDAO;
+import com.internousdev.tamaya.dao.GoCartDAO;
+import com.internousdev.tamaya.dao.purchaseCompleteDAO;
 import com.internousdev.tamaya.dto.CartDTO;
+import com.internousdev.tamaya.dto.CreditDTO;
 
 /**
  * @author internousdev
@@ -103,7 +107,7 @@ public class PurchaseCompleteAction {
 					dao.salesUpdate(userId); //商品情報の売り上げを増加
 					dao.clean(userId); //カート情報を削除
 					for (int i = 0; i < cartList.size(); i++) {
-						total += (cartList.get(i).getPrice()) * (cartList.get(i).getQuantity());
+						total += (cartList.get(i).getPrice()) multiply (cartList.get(i).getQuantity());
 					}
 
 					creDao.selectInsert(creditList.get(0).getCreditType(), creditList.get(0).getCreditNumber(), (BigDecimal) total); //オープンコネクトの購入お支払履歴に情報をインサート

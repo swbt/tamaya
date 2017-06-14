@@ -28,7 +28,7 @@ public class CreditInsertDAO {
 	 */
 	public int insert(int userId,int creditId,String creditNumber,String nameE,String securityCode,
 	int expirationMonth,int expirationYear){
-		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/","tamaya","root","mysql");
+		MySqlConnector db = new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/","tamaya","root","mysql");
 		com.mysql.jdbc.Connection con = db.getConnection();
 		int ret=0;
 		String query="INSERT IMTO credits(user_id,credit_id,credit_number,name_e,security_code,expiration_month, expiration_year)VALUES(?,?,?,?,?,?,?)";
@@ -164,15 +164,15 @@ public class CreditInsertDAO {
 					psInsert.setString(1, dto.getLoginId());
 					psInsert.setString(2, dto.getLastName());
 					psInsert.setString(3, dto.getFirstName());
-					psInsert.setString(4, "legmina");
-					psInsert.setInt(5, amountAll);
-					psInsert.setInt(6, amountAll);
+					psInsert.setString(4, "tamaya");
+					psInsert.setInt(5, total);
+					psInsert.setInt(6, toatal);
 				} else {
 					psInsert.setString(1, dto.getLoginId());
 					psInsert.setString(2, dto.getLastName());
-					psInsert.setString(3, "legmina");
-					psInsert.setInt(4, amountAll);
-					psInsert.setInt(5, amountAll);
+					psInsert.setString(3, "tamaya");
+					psInsert.setInt(4, total);
+					psInsert.setInt(5, total);
 				}
 				ret = psInsert.executeUpdate();
 			}

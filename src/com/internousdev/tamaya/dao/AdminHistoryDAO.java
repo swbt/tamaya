@@ -6,6 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.internousdev.tamaya.dto.AdminHistoryDTO;
+import com.internousdev.tamaya.dto.HistoryDTO;
+import com.internousdev.util.db.mysql.MySqlConnector;
+
 
 
 /**
@@ -32,7 +36,7 @@ public class AdminHistoryDAO {
 	 * @version 1.0
 	 */
 	public ArrayList<AdminHistoryDTO> select(int itemId) {
-		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root", "mysql");
+		MySqlConnector db = new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root", "mysql");
 		Connection con = db.getConnection();
 
 		ArrayList<AdminHistoryDTO> adminhistoryList = new ArrayList<AdminHistoryDTO>();
@@ -75,15 +79,15 @@ public class AdminHistoryDAO {
 
 				dto.setPurchaseId(rs.getInt("purchase_id")); //購入ID
 
-				dto.setQuantities(rs.getInt("quantities")); //数量
+				dto.setQuantity(rs.getInt("quantity")); //数量
 
 				dto.setCreatedAt(rs.getString("created_at")); //登録日
 
-				dto.setItemsName(rs.getString("items_name")); //商品名
+				dto.setItemName(rs.getString("item_name")); //商品名
 
-				dto.setPrice(rs.getFloat("price")); //単価
+				dto.setPrice(rs.getBigDecimal("price")); //単価
 
-				dto.setSubtotal(dto.getPrice()*dto.getQuantities());//合計金額
+				dto.setSubtotal(dto.getPrice()*dto.getQuantity());//合計金額
 
 
 				adminhistoryList.add(dto);

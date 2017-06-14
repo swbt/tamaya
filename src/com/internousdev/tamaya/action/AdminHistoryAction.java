@@ -1,4 +1,4 @@
-package com.internousdev.legmina.action;
+package com.internousdev.tamaya.action;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -6,6 +6,8 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tamaya.dao.AdminHistoryDAO;
+import com.internousdev.tamaya.dto.AdminHistoryDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -51,7 +53,7 @@ public class AdminHistoryAction extends ActionSupport implements SessionAware{
 	/**
 	 * 数量
      */
-	private int quantities;
+	private int quantity;
 
 
 	/**
@@ -161,15 +163,15 @@ public class AdminHistoryAction extends ActionSupport implements SessionAware{
 	/**
 	 * 数量を取得するメソッド
 	 */
-	public int getQuantities() {
-		return quantities;
+	public int getQuantity() {
+		return quantity;
 	}
 
 	/**
 	 * 数量を格納するメソッド
 	 */
-	public void setQuantities(int quantities) {
-		this.quantities = quantities;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	/**

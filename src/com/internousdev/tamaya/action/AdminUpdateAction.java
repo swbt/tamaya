@@ -1,7 +1,8 @@
-package com.internousdev.legmina.action;
+package com.internousdev.tamaya.action;
 
 import java.math.BigDecimal;
 
+import com.internousdev.tamaya.dao.AdminUpdateDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -50,7 +51,7 @@ public class AdminUpdateAction extends ActionSupport{
 	/**
 	 * 売上数
 	 */
-	private BigDecimal sales;
+	private int sales;
 
 
 	 /** 登録日
@@ -100,7 +101,7 @@ public class AdminUpdateAction extends ActionSupport{
 	 * 商品名を取得するメソッド
 	 * @return itemsName　商品名
 	 */
-	public String getItemsName() {
+	public String getItemName() {
 		return itemName;
 	}
 
@@ -108,8 +109,8 @@ public class AdminUpdateAction extends ActionSupport{
 	/**
 	 * 商品名を格納するメソッド
 	 */
-	public void setItemName(String itemsName) {
-		this.itemName = itemsName;
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
 	}
 
 

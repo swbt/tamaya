@@ -1,4 +1,4 @@
-package com.internousdev.legmina.action;
+package com.internousdev.tamaya.action;
 
 import java.math.BigDecimal;
 import java.sql.SQLException;
@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tamaya.dao.GoCartDAO;
 import com.internousdev.tamaya.dto.CartDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -72,7 +73,7 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 			GoCartDAO dao = new GoCartDAO();
 			cartList = dao.selectedItem(userId);
 			for(int i = 0; i < cartList.size(); i++ ){
-				amountAll += (cartList.get(i).getPrice())*(cartList.get(i).getQuantities());
+				total += (cartList.get(i).getPrice())multiply(cartList.get(i).getQuantity());
 			}
 			result = SUCCESS;
 		}
@@ -149,8 +150,8 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	/**
 	 * 数量を格納するメソッド
 	 */
-	public void setQuantities(int quantities) {
-		this.quantities = quantities;
+	public void setQuantities(int quantity) {
+		this.quantity = quantity;
 	}
 
 	/**
@@ -178,8 +179,8 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	 * 合計金額を格納するメソッド
 
 	 */
-	public void setAmountAll(BigDecimal amountAll) {
-		this.amountAll = amountAll;
+	public void setTotal(BigDecimal total) {
+		this.total = total;
 	}
 
 	/**

@@ -7,8 +7,12 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tamaya.dao.CreditInsertDAO;
+import com.internousdev.tamaya.dao.GoCartDAO;
+import com.internousdev.tamaya.dao.MypageDAO;
 import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.dto.CreditDTO;
+import com.internousdev.tamaya.dto.MypageDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 	/**

@@ -73,7 +73,7 @@ public class AddToCartDAO {
 			public int addToCart(int userId,int itemId){
 				int addCount = 0;
 
-				MySQLConnector db = new MySQLConnector();
+				MySqlConnector db = new MySqlConnector();
 				Connection con =db.getConnection("tamaya");
 				String sql = "insert into carts (user_id,item_id) values(?,?)" ;
 
@@ -106,7 +106,7 @@ public class AddToCartDAO {
 			 */
 		  public ArrayList<CartDTO> selected(int userId){
 
-		    MySQLConnector db = new MySQLConnector();
+		    MySqlConnector db = new MySqlConnector();
 		    Connection con = db.getConnection("tamaya");
 		    ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
 
@@ -130,7 +130,7 @@ public class AddToCartDAO {
 
 					while (rs2.next()) {
 
-						dto.setItemsName(rs2.getString("items_name"));//商品名
+						dto.setItemName(rs2.getString("item_name"));//商品名
 						dto.setPrice(rs2.getBigDecimal("price")); //価格
 						dto.setImgPath(rs2.getString("img_path")); //イメージパス
 					}
