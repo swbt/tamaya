@@ -27,8 +27,8 @@ public class CartUpdateDAO {
 	public int updateCart(int userId,int quantity){		//※変数：updatecartは必要？
 		int updateCount = 0;
 
-		MySqlConnector db = new MySqlConnector();
-		Connection con = (Connection) db.getConnection("openconnect");
+		MySqlConnector db = new MySqlConnector("openconnect");
+		Connection con = (Connection) db.getConnection();
 		//UPDATE a SET b = c WHERE d = e→テーブル(a)に対して、d = eであればbにcをセットする
 		String sql ="update carts set quantity=? where user_id=?";
 
