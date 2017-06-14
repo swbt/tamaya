@@ -166,7 +166,7 @@ public class CreditInsertDAO {
 					psInsert.setString(3, dto.getFirstName());
 					psInsert.setString(4, "tamaya");
 					psInsert.setInt(5, total);
-					psInsert.setInt(6, toatal);
+					psInsert.setInt(6, total);
 				} else {
 					psInsert.setString(1, dto.getLoginId());
 					psInsert.setString(2, dto.getLastName());

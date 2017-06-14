@@ -18,11 +18,11 @@ public class LoginUtil extends ActionSupport {
 	private static final long serialVersionUID = -564268116563098912L;
 
 
-	public String validate(MYpageDTO dto,Map<String, Object> session){
-		
+	public String validate(MypageDTO dto,Map<String, Object> session){
+
 		String errorMsg=null;
-		if(session.containsKey("userId")){
-			if((int) (session.get("userId")) ==(dto.getUserId())){
+		if(session.containsKey("email")){
+			if((String) (session.get("phoneEmail")) ==(dto.getPhoneEmail())){
 				errorMsg=getText("lang.login.notDouble");
 			}else{
 				errorMsg=getText("lang.login.notSameTime");
@@ -40,7 +40,7 @@ public class LoginUtil extends ActionSupport {
 	public String validate(String email,String password,MypageDTO dto,Map<String, Object> session){
 		String errorMsg=null;
 
-		if(!email.equals(dto.getPhoneEmail())  || !password.equals(dto.getPassword))){
+		if(!email.equals(dto.getPhoneEmail())  || !password.equals(dto.getPassword())){
 			errorMsg=getText("lang.login.notCorrect");
 			return errorMsg;
 		}

@@ -75,19 +75,19 @@ public class AdminHistoryDAO {
 			while (rs.next()) {
 				AdminHistoryDTO dto = new AdminHistoryDTO();
 
-				dto.setItemId(rs.getInt("item_id")); //商品ID
+				dto.setItemId(rs.getInt("itemId")); //商品ID
 
-				dto.setPurchaseId(rs.getInt("purchase_id")); //購入ID
+				dto.setPurchaseId(rs.getInt("purchaseId")); //購入ID
 
-				dto.setQuantity(rs.getInt("quantity")); //数量
+				dto.setQuantities(rs.getInt("quantities")); //数量
 
 				dto.setCreatedAt(rs.getString("created_at")); //登録日
 
-				dto.setItemName(rs.getString("item_name")); //商品名
+				dto.setItemName(rs.getString("itemName")); //商品名
 
 				dto.setPrice(rs.getBigDecimal("price")); //単価
 
-				dto.setSubtotal(dto.getPrice()*dto.getQuantity());//合計金額
+				dto.setSubtotal(dto.getPrice()multiply dto.getQuantity());//合計金額
 
 
 				adminhistoryList.add(dto);

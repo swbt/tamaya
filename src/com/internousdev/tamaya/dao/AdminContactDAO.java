@@ -1,6 +1,5 @@
 package com.internousdev.tamaya.dao;
 
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 
 import com.internousdev.tamaya.dto.ContactHistoryDTO;
@@ -49,7 +48,7 @@ public class AdminContactDAO {
 		}
 		try {
 			db = con.getConnection();
-		} catch (UnknownHostException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		DBCollection coll = db.getCollection("inquiry_histories");

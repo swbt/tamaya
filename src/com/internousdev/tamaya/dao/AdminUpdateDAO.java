@@ -72,18 +72,18 @@ public class AdminUpdateDAO {
 	 * @param sortId 種類ID
 	 * @return inserted 成否を格納する変数
 	 */
-	public int insert(int itemId,String itemName,BigDecimal price,int stocks,int sales, String itemDetail,int imgDel,String imgPath,int sortId){
+	public int insert(int itemId,String itemName,BigDecimal price,int stocks,int sales, String itemDetail,int imgDel,String imgPath){
 		MySqlConnector db=new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root","mysql");
 		Connection con=db.getConnection();
 		int inserted=0;
 		int c=1;
 		String sql="";
 		if(imgDel==1){
-			sql= "update items set items_name =?,price=?,stocks=?,sales =?,items_detail=?,sort_id=? where item_id=?";
+			sql= "update items set items_name =?,price=?,stocks=?,sales =?,items_detail=? where item_id=?";
 		}else if(imgDel==2){
-			sql= "update items set items_name =?,price=?,stocks=?,sales =?,items_detail=?,img_path=?,sort_id=? where item_id=?";
+			sql= "update items set items_name =?,price=?,stocks=?,sales =?,items_detail=?,img_path=? where item_id=?";
 		}else if(imgDel==3){
-			sql= "update items set items_name =?,price=?,stocks=?,sales =?,items_detail=?,img_path='',sort_id=? where item_id=?";
+			sql= "update items set items_name =?,price=?,stocks=?,sales =?,items_detail=?,img_path='' where item_id=?";
 		}
 		try{
 			PreparedStatement ps= con.prepareStatement(sql);
@@ -95,7 +95,7 @@ public class AdminUpdateDAO {
 			if(imgDel==2){
 				ps.setString(c++,imgPath);
 			}
-			ps.setInt(c++,sortId);
+
 			ps.setInt(c, itemId);
 			inserted=ps.executeUpdate();
 

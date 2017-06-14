@@ -1,5 +1,6 @@
 package com.internousdev.tamaya.util;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.internousdev.tamaya.dto.CartDTO;
@@ -15,7 +16,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class CartAssist extends ActionSupport{
 
 	//合計金額
-	private float total;
+	private BigDecimal total;
 
 	// 商品数合計		※変数：totalOrder新規製作する必要あり？
 	private int totalOrder;
@@ -24,8 +25,8 @@ public class CartAssist extends ActionSupport{
 	// @param cartList カート内商品
 	// @return total 合計金額
 	public float payment(List<CartDTO> cartList) {
-		cartList.forEach(cart -> payment += cart.getPrice() * cart.getQuantity());
-		return total;
+		cartList.forEach(cart -> payment += cart.getPrice(). multiply cart.getQuantity());
+		 return subTotal;
 	}
 
 	// カートに入ってる商品数を合計して返すメソッド

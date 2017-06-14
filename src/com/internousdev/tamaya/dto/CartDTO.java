@@ -63,14 +63,14 @@ public class CartDTO {
 	 * 商品名を取得するメソッド
 	 * @return itemsName 商品名
 	 */
-	public String getItemsName() {
+	public String getItemName() {
 		return itemName;
 	}
 	/**
 	 * 商品名を格納するメソッド
 	 * @param itemsName セットする itemsName
 	 */
-	public void setItemsName(String itemName) {
+	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
 	/**

@@ -6,11 +6,12 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tamaya.dao.UserPurchaseHistoryDAO;
 import com.internousdev.tamaya.dto.HistoryDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * 商品一覧から商品の一覧を取得するクラス
+ * 商品一覧から商品の情報を取得するクラス
  *
  * @author seiya takahashi
  * @since 2017/6/13
@@ -23,10 +24,10 @@ public class UserPurchaseHistoryAction extends ActionSupport implements SessionA
 
 	private int userId;		//ユーザーId//
 	private int itemId;		//商品Id//
-	private String itemsName="";	//商品名//
+	private String itemName="";	//商品名//
 	private BigDecimal price;	//価格//
 	private int quantities;		//数量//
-	public float subtotal;		//小計金額//
+	public BigDecimal subtotal;		//小計金額//
 	private String createdAt;	//登録日//
 
 	private Map<String,Object> session;	//セッション情報//
@@ -99,14 +100,14 @@ public class UserPurchaseHistoryAction extends ActionSupport implements SessionA
 	 * 商品名を取得するメソッド
 	 */
 	public String getItemsName() {
-		return itemsName;
+		return itemName;
 	}
 
 	/**
 	 * 商品IDを格納するメソッド
 	 */
 	public void setItemsName(String itemsName) {
-		this.itemsName = itemsName;
+		this.itemName = itemsName;
 	}
 
 	/**
@@ -126,21 +127,21 @@ public class UserPurchaseHistoryAction extends ActionSupport implements SessionA
 	/**
 	 * 数量を取得するメソッド
 	 */
-	public int getQuantity() {
-		return quantity;
+	public int getQuantities() {
+		return quantities;
 	}
 
 	/**
 	 * 数量を格納するメソッド
 	 */
 	public void setQuantities(int quantity) {
-		this.quantity = quantity;
+		this.quantities = quantity;
 	}
 
 	/**
 	 * 合計金額を取得するメソッド
 	 */
-	public float getSubtotal() {
+	public BigDecimal getSubtotal() {
 		return subtotal;
 	}
 

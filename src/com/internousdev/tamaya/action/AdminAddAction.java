@@ -5,6 +5,7 @@ package com.internousdev.tamaya.action;
 
 import java.math.BigDecimal;
 
+import com.internousdev.tamaya.dao.AdminAddDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -22,7 +23,7 @@ public class AdminAddAction extends ActionSupport{
 	private BigDecimal price;       //価格//
 
 	private String imgPath;         //商品写真//
-	private String itemdetail;      //商品詳細//
+	private String itemDetail;      //商品詳細//
 	private int stocks=0;           //在庫数//
 	private int sales;              //売り上げ数//
 
@@ -39,7 +40,7 @@ public class AdminAddAction extends ActionSupport{
 
 		AdminAddDAO dao=new AdminAddDAO();
 		if(dao.doubling(itemName)){
-			setDobling("＊すでにある商品です");
+			setDoubling("＊すでにある商品です");
 	}else{
 		inserted=dao.insert(itemName,price,stocks,itemDetail,imgPath,category);
 
@@ -111,11 +112,11 @@ public class AdminAddAction extends ActionSupport{
 
 	//在庫数を取得//
 	public int getStock() {
-		return stock;
+		return stocks;
 	}
 	//在庫数を格納//
 	public void setStock(int stock) {
-		this.stock = stock;
+		this.stocsk = stock;
 	}
 
 

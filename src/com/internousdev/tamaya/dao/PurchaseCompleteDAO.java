@@ -16,7 +16,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
  * @since 6/13
  * @version 1.0s
  */
-public class purchaseCompleteDAO {
+public class PurchaseCompleteDAO {
 
 	/**
 	 * カートリストの商品に在庫切れのものがないかを確認するメソッド

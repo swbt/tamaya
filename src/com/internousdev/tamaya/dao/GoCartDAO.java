@@ -53,10 +53,10 @@ public class GoCartDAO{
 
 			while (rs2.next()) {
 
-				dto.setItemName(rs2.getString("item_name"));//商品名
+				dto.setItemName(rs2.getString("itemName"));//商品名
 				dto.setPrice(rs2.getBigDecimal("price")); //価格
 				dto.setSubtotal(dto.getPrice() multiply dto.getQuantity(); //小計分からず
-				dto.setImgPath(rs2.getString("img_path")); //イメージパス
+				dto.setImgPath(rs2.getString("imgPath")); //イメージパス
 			}
     	}
     }catch(SQLException e){

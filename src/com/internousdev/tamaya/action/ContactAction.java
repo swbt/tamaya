@@ -29,14 +29,14 @@ public class ContactAction extends ActionSupport {
 
 		ContactDAO dao = new ContactDAO();
 		try{
-			if(dao.mongoInsert(userName, email, comment, inquiryDate, phoneNumber)){
+			if(dao.insert(userName, email, comment, inquiryDate, phoneNumber)){
 
 				comment = comment.replace("\r\n","<br>");
 				result = SUCCESS;
 				return result;
 			}
-		} catch (UnknownHostException e) {
-			e.printStackTrance();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}return result;
 	}
 

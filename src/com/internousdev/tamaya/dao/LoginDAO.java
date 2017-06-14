@@ -3,6 +3,7 @@
  */
 package com.internousdev.tamaya.dao;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -48,8 +49,7 @@ public class LoginDAO {
 	}
 
 	public void update(int userId){
-		MySqlConnector db = new MySqlConnector();
-		Connection con = db.getConnection("openconnect");
+		Connection con = new MySqlConnector("openconnect","root","mysql").getConnection();
 		UserDTO dto = new UserDTO();
 		String sql1 = "UPDATE users SET login_flg=TRUE WHERE user_id=?";
 		String sql2 = "SELECT login_flg from users WHERE user_id=?";

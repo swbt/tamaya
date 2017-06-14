@@ -9,9 +9,11 @@ import java.util.Map;
 
 import com.internousdev.tamaya.dao.CreditInsertDAO;
 import com.internousdev.tamaya.dao.GoCartDAO;
-import com.internousdev.tamaya.dao.purchaseCompleteDAO;
+import com.internousdev.tamaya.dao.PurchaseCompleteDAO;
 import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.dto.CreditDTO;
+
+
 
 /**
  * @author internousdev
@@ -94,7 +96,7 @@ public class PurchaseCompleteAction {
 			userId = (int)session.get("userId");
 
 
-			purchaseCompleteDAO dao = new purchaseCompleteDAO();
+			PurchaseCompleteDAO dao = new PurchaseCompleteDAO();
 			CreditInsertDAO creDao = new CreditInsertDAO();
 			GoCartDAO dao3 = new GoCartDAO();
 

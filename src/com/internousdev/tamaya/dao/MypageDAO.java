@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.internousdev.tamaya.dao;
 
 import java.sql.Connection;
@@ -10,12 +7,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.internousdev.tamaya.dto.MypageDTO;
-import com.internousdev.util.db.mysql.MySqlConnector;
+import com.internousdev.tamaya.util.DBConnector;
 
 /**
  * Mypageに関するクラス
- * @author Kaburagi Kenichi
- * @since 2017/06/14
+ * @author
+ * @since
  * @version 1.0
  */
 public class MypageDAO {
@@ -23,13 +20,13 @@ public class MypageDAO {
 	 * UserIDでMypageに必要な情報を取得しリストに格納するメソッド
 	 * @param userId ユーザーID
 	 * @return UserList ユーザー情報
-	 * @author Kenichi Kaburagi
-	 * @since 2017/06/14
+	 * @author Miyauchi Akitomo
+	 * @since 2017/05/15
 	 * @version 1.0
 	 */
 	public ArrayList<MypageDTO> select(int userId) {
-		Connection con = new MySqlConnector("openconnect","root","mysql").getConnection();
-
+		DBConnector db = new DBConnector("com.mysql.jdbc.Driver","jdbc:mysql://localhost/","openconnect","root","mysql");
+		Connection con = db.getConnection();
 		MypageDTO dto = new MypageDTO();
 		ArrayList<MypageDTO> userList = new ArrayList<MypageDTO>();
 
@@ -41,19 +38,25 @@ public class MypageDAO {
 
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				dto.setUserName(rs.getString("user_name"));
+				dto.setUserId(rs.getInt("user_id"));
 
-				dto.setPostalCode(rs.getString("postalcode"));
+				dto.setFamilyNameKanji(rs.getString("family_name_kanji"));
 
-				dto.setUserAddress(rs.getString("userAddress"));
+				dto.setGivenNameKanji(rs.getString("given_name_kanji"));
 
-				dto.setEmail(rs.getString("email"));
+				dto.setSex(rs.getString("sex"));
 
-				dto.setHistoryId(rs.getInt("historyid"));
+				dto.setBirthday(rs.getString("birthday"));
 
 				dto.setPhoneNumber(rs.getString("phone_number"));
 
+				dto.setPhoneEmail(rs.getString("phone_email"));
 
+				dto.setPostal(rs.getString("postal"));
+
+				dto.setAddress(rs.getString("address"));
+
+				dto.setPassword(rs.getString("password"));
 
 				userList.add(dto);
 			}

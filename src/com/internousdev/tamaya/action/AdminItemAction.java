@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 import com.internousdev.tamaya.dao.AdminItemDAO;
 import com.internousdev.tamaya.dto.ItemDTO;
+import com.internousdev.util.pagination.AllPages;
+import com.internousdev.util.pagination.PageObject;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -63,6 +65,12 @@ public class AdminItemAction extends ActionSupport{
 	 */
 	public ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 
+	public int number;
+
+	private int maxPage;
+	public ArrayList<ItemDTO> displayList = new ArrayList<ItemDTO>();
+
+	private int pageNum=1;
 
 
 	/**
@@ -90,6 +98,15 @@ public class AdminItemAction extends ActionSupport{
 		}
 		number=itemList.size();
 
+		if(number > 0) {
+			//ページネーション処理
+			ArrayList<PageObject> allPages = new ArrayList<PageObject>();
+			AllPages allp = new AllPages();
+			allPages=allp.paginate(itemList, 10);
+			setMaxPage(allp.getMaxPage(itemList, 10));
+			setDisplayList(allPages.get(pageNum-1).getPaginatedList());
+			result = SUCCESS;
+		}
 		return result;
 	}
 
