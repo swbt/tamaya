@@ -19,6 +19,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @version 1.0
  */
 public class GoItemListAction extends ActionSupport implements SessionAware {
+	private String transition = "";
 	private String category = "";
 	private int priceRange = 0;
 	private ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
@@ -33,18 +34,27 @@ public class GoItemListAction extends ActionSupport implements SessionAware {
 			itemList = dao.select(category);
 		} else if(priceRange != 0){
 			itemList = dao.select(priceRange);
-		} else{
+		} else {
 			itemList = dao.select();
 		}
 
 		if(itemList.size() <= 0){
 			return ret;
 		}
-
-		ret = SUCCESS;
+		if(transition.equals("top")){
+			ret = "top";
+			return ret;
+		}
+		ret = "item_list";
 		return ret;
 	}
 
+	public String getTransition() {
+		return transition;
+	}
+	public void setTransition(String transition) {
+		this.transition = transition;
+	}
 	public String getCategory() {
 		return category;
 	}

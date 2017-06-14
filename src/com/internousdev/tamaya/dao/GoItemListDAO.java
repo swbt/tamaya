@@ -26,7 +26,7 @@ public class GoItemListDAO {
 	public ArrayList<ItemDTO> select(){
 		Connection con = new MySqlConnector("tamaya","root","mysql").getConnection();
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
-		String sql = "SELECT * FROM items";
+		String sql = "SELECT * FROM items ORDER BY sales DESC";
 
 		try{
 			Statement st = con.createStatement();

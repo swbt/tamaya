@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.internousdev.tamaya.dto.ItemDTO;
-import com.internousdev.tamaya.util.MySQLConnector;
+import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * @author Takahiro Adachi
@@ -20,7 +20,7 @@ import com.internousdev.tamaya.util.MySQLConnector;
 public class ShowItemDetailDAO {
 
 	public ItemDTO select(int itemId){
-		Connection con = new MySQLConnector().getConnection("tamaya");
+		Connection con = new MySqlConnector("tamaya").getConnection();
 		ItemDTO dto = new ItemDTO();
 		String sql = "SELECT * FROM items where item_id = ?";
 
