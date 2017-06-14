@@ -45,7 +45,7 @@ public class AdminUserDAO {
 
 				dto.setUserId(rs.getInt("user_id"));
 
-			dto.setFamilyName(rs.getString("family_name"));
+				dto.setFamilyName(rs.getString("family_name"));
 
 				dto.setGivenName(rs.getString("given_name"));
 
@@ -61,7 +61,7 @@ public class AdminUserDAO {
 
 				dto.setPassword(rs.getString("password"));
 
-				//dto.setSex(rs.getString("sex"));
+				dto.setSex(rs.getString("sex"));
 
 				dto.setRegisterDay(rs.getString("register_day"));
 
