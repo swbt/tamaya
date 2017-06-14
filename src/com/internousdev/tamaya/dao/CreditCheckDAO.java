@@ -1,12 +1,12 @@
 package com.internousdev.tamaya.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.internousdev.tamaya.dto.CreditDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
 
 /**クレジットの照合に関するクラス@author MISA KIKUCHI@since 5/19@version 1.0*/
 public class CreditCheckDAO {
