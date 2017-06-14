@@ -1,9 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<!-- ここから国際化 -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<!-- ここまで国際化 -->
 <!DOCTYPE html>
 	<html>
   	<head>
+      <!-- ここから国際化 -->
+      <fmt:setBundle basename="com.internousdev.legmina.property.paymentConfirm" var="lang" />
+      <!-- ここまで国際化 -->
     <meta charset="utf-8">
     <title>支払い確認画面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,23 +32,22 @@
 	</script>
   	</head>
  	<body>
-    <body>
     <div id="header"></div><br>
 
     <img src="img/siharai_kakunin.png" alt="お支払い確認">
 	<table align="center">
-	<thead>
-    <tr>
-    <th>商品名</th>
-    <th>価格</th>
-    <th>個数</th>
-    <th>小計</th>
-    </tr>
-    </thead>
+    	<thead>
+          <tr>
+            <th><s:text name="lang.siharai_kakunin.itemname" /></th>
+            <th><s:text name="lang.siharai_kakunin.price" />:<fmt:formatNumber value="${price}" /><s:text name="lang.paymentConfirm.en"  /></th>
+            <th><s:text name="lang.siharai_kakunin.quantity" />：<s:property value="quantities" /></th>
+            <th><s:text name="lang.siharai_kakunin.subtotal" />：<fmt:formatNumber value="${subtotal}" /><s:text name="lang.paymentConfirm.en"  /></th>
+          </tr>
+        </thead>
 
 	<tbody>
     <tr>
-    <td><img src="img/honkidama.jpg" alt="商品画像　商品名" align="center"> 　　本気玉</td>
+    <td><img src="<s:property value="imgPath"/>" align="center"> ></td>
     <td align="center">2,500円（税込）</td>
     <td align="center">1</td>
     <td align="center">2,500円（税込）</td>
@@ -97,10 +103,10 @@
 
     <tbody>
     <tr>
-    <td>氏名</td><td align="center">白石　遼</td>
+    <td>氏名</td><td align="center"><s:property value="usersList[0].familyNameKanji" /></td>
     </tr>
     <tr>
-    <td>お届け先住所</td><td align="center">東京都○○区</td>
+    <td>お届け先住所</td><td align="center"><s:property value="usersList[0].address" /></td>
     </tr>
     </tbody>
     </table>

@@ -1,3 +1,4 @@
+
 package com.internousdev.tamaya.dao;
 
 import java.net.UnknownHostException;
@@ -7,19 +8,20 @@ import java.util.TimeZone;
 
 import com.internousdev.util.db.mongodb.MongoDBConnector;
 
-/**
+	/**
 	 * 問い合わせフォームに関するクラス
-	 * @author Atsushi Kawai
-	 * @since 2017/06/13
+	 * @author KAORI TAKAHASHI
+	 * @since 2017/06/14
 	 * @version 1.0
 	 */
 public class ContactDAO {
 
 	/**
 	 * mongoDBにデータをインサートするメソッド
-	 * @author Soshi Azuma
-	 * @since 2017/05/16
+	 * @author KAORI TAKAHASHI
+	 * @since 2017/06/14
 	 * @version 1.0
+	 * @param title 問い合わせ項目
 	 * @param userName 問い合わせ者名
 	 * @param email メールアドレス
 	 * @param comment 問い合わせ内容
@@ -45,11 +47,12 @@ public class ContactDAO {
 
 		BasicDBObject input = new BasicDBObject();
 
+			input.put("title",title);
 			input.put("user_name", userName);
 			input.put("email", email);
 			input.put("comment", comment);
 			input.put("inquiried_at", dt);
-			input.put("phoneNumber", phoneNumber);
+
 			coll.insert(input);
 
 			/*
@@ -67,4 +70,3 @@ public class ContactDAO {
 		}
 	/*close()はMongoDBconnectorで行う*/
 }
-
