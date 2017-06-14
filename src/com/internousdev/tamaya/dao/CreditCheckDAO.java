@@ -1,10 +1,11 @@
 package com.internousdev.tamaya.dao;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.internousdev.tamaya.dto.CreditDTO;
+import com.internousdev.util.db.mysql.MySqlConnector;
+import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 /**クレジットの照合に関するクラス@author MISA KIKUCHI@since 5/19@version 1.0*/
@@ -15,8 +16,8 @@ public class CreditCheckDAO {
 	 * @param checkNumber クレジット番号上6ケタ@return result 合致すればtrue、しなければfalseを返す
 	 * @author MISA KIKUCHI@since 5/19@version 1.0*/
 	public boolean select(int creditId, String checkNumber){
-		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "creditcard_manager", "root","mysql");
-		Connection con = db.getConnection();
+
+		Connection con = new MySqlConnector("openconnect").getConnection();
 		boolean result=false;
 		String brandName=null;
 		String sql="select * from m_creditcard_type where card_number = ?";
@@ -67,15 +68,15 @@ public class CreditCheckDAO {
 		}else if(creditId==3){
 			brandName="jcb";
 		}
-		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", brandName, "root", "mysql");
-		Connection con = db.getConnection();
+		Connection con = new MySqlConnector("openconnect").getConnection();
 
 		/** 以下でカード番号、セキュリティコード、有効期限の情報を抜き取るが、
 		 * 	visaのDBに有効期限がないので、それだけはカード番号とセキュリティコードのみ抜き取ってる。**/
 
-		String query="select * from credit_card where credit_number=?";
+		String sql="select * from credit_card where credit_number=?";
 		try{
-			PreparedStatement ps=con.prepareStatement(query);
+			PreparedStatement ps=con.prepareStatement(sql);
+
 			ps.setString(1, creditNumber);
 			ResultSet rs=ps.executeQuery();
 			while(rs.next()){

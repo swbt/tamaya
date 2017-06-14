@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.internousdev.tamaya.dto.CreditDTO;
+import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**クレジットカード情報の入力・削除に関するクラス@author ryusei tanaka いらないかも
 @since 6/14@version 1.0*/
@@ -64,8 +65,7 @@ public class CreditInsertDAO {
 		 * @version 1.0
 		 */
 		public boolean search(int userId){
-			DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root", "mysql");
-			java.sql.Connection con = db.getConnection();
+			Connection con = new MySqlConnector("openconnect").getConnection();
 			String sql="select * from credits where user_id=?";
 			boolean result=false;
 			try{
@@ -102,8 +102,7 @@ public class CreditInsertDAO {
 	 */
 	public int cleanCredit(int userId){
 		int ret=0;
-		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root", "mysql");
-		Connection con = db.getConnection();
+		Connection con = new MySqlConnector("openconnect").getConnection();
 		String cleanCreditCard = "delete from credits where user_id = ?";
 		try {
 			PreparedStatement ps1 = con.prepareStatement(cleanCreditCard);
@@ -138,8 +137,7 @@ public class CreditInsertDAO {
 			insert = "INSERT INTO user_history(login_id, name_e, corporation_name, spend, payment) VALUES(?, ?, ?, ?, ?)";
 		}
 
-		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", creditType, "root", "mysql");
-		Connection con = db.getConnection();
+		Connection con = new MySqlConnector("openconnect").getConnection();
 		CreditDTO dto = new CreditDTO();
 		String sql = "select * from credit_card where credit_number = ?";
 
@@ -200,8 +198,7 @@ public class CreditInsertDAO {
 	 */
 	public ArrayList<CreditDTO> selectCredit(int userId) {
 
-		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root", "mysql");
-		Connection con = db.getConnection();
+		Connection con = new MySqlConnector("openconnect").getConnection();
 		ArrayList<CreditDTO> creditList = new ArrayList<CreditDTO>();
 		String sql = "select * from credits where user_id=?";
 		String brandName = null;
@@ -244,30 +241,4 @@ public class CreditInsertDAO {
 		}
 		return creditList;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
 }

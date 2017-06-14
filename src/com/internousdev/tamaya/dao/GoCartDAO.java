@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.internousdev.tamaya.dto.CartDTO;
+import com.internousdev.util.db.mysql.MySqlConnector;
 
 
 /**
@@ -28,8 +29,7 @@ public class GoCartDAO{
 	 */
   public ArrayList<CartDTO> selectedItem(int userId){
 
-    DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root","mysql");
-    Connection con = db.getConnection();
+	  Connection con = new MySqlConnector("openconnect").getConnection();
     ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
 
     String sql = "select * from carts where user_id=?";
