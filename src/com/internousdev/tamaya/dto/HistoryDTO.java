@@ -17,13 +17,13 @@ public class HistoryDTO {
 
 	private BigDecimal price;		//単価
 
-	private int quantities;			//数量
+	private int quantity;			//数量
 
 	private BigDecimal subTotal;		//小計
 
 	private String createdAt;		//登録日
 
-	private String itemsName;		//商品名
+	private String itemName;		//商品名
 
 	public int getUserId() {
 		return userId;
@@ -50,11 +50,11 @@ public class HistoryDTO {
 	}
 
 	public int getQuantities() {
-		return quantities;
+		return quantity;
 	}
 
-	public void setQuantities(int quantities) {
-		this.quantities = quantities;
+	public void setQuantities(int quantity) {
+		this.quantity = quantity;
 	}
 
 	public BigDecimal getSubTotal() {
@@ -73,11 +73,11 @@ public class HistoryDTO {
 		this.createdAt = createdAt;
 	}
 
-	public String getItemsName() {
-		return itemsName;
+	public String getItemName() {
+		return itemName;
 	}
 
-	public void setItemsName(String itemsName) {
-		this.itemsName = itemsName;
+	public void setItemsName(String itemName) {
+		this.itemName = itemName;
 	}
 }

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.internousdev.tamaya.dto.ItemDTO;
+import com.internousdev.util.db.mysql.MySqlConnector;
 
 	public class AdminItemDAO {
 	/**
@@ -17,18 +18,18 @@ import com.internousdev.tamaya.dto.ItemDTO;
 	 * @since 2017/05/18
 	 * @version 1.0
 	 */
-	public ArrayList<ItemDTO> select(String itemsName){
-		DBConnector db=new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "legmina", "root","mysql");
+	public ArrayList<ItemDTO> select(String itemName){
+		MySqlConnector db=new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root","mysql");
 		Connection con=db.getConnection();
 
 		ArrayList<ItemDTO> itemList=new ArrayList<ItemDTO>();
 		int k=0;
 		String sql;
 
-		if(itemsName.equals("") || itemsName==null){
-			sql="select * from items where del_key = false";
+		if(itemName.equals("") || itemName==null){
+			sql="select * from item where del_key = false";
 		}else{
-			sql="select * from items where items_name= ? and del_key= false";
+			sql="select * from item where items_name= ? and del_key= false";
 			k=1;
 		}
 
@@ -38,7 +39,7 @@ import com.internousdev.tamaya.dto.ItemDTO;
 		try{
 			PreparedStatement ps= con.prepareStatement(sql);
 			if(k==1){
-				ps.setString(1,itemsName);
+				ps.setString(1,itemName);
 			}
 			ResultSet rs=ps.executeQuery();
 
@@ -47,9 +48,9 @@ import com.internousdev.tamaya.dto.ItemDTO;
 
 				dto.setItemId(rs.getInt("item_id"));
 
-				dto.setItemsName(rs.getString("items_name"));
+				dto.setItemName(rs.getString("item_name"));
 
-				dto.setPrice(rs.getFloat("price"));
+				dto.setPrice(rs.getBigDecimal("price"));
 
 				dto.setStocks(rs.getInt("stocks"));
 

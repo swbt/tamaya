@@ -19,7 +19,7 @@ public class AdminHistoryDTO {
 
 	private String createdAt;		//登録日
 
-	private float subtotal;			//小計
+	private BigDecimal subtotal;			//小計
 
 	private int sales;				//売り上げ数
 
@@ -55,11 +55,11 @@ public class AdminHistoryDTO {
 		this.createdAt = createdAt;
 	}
 
-	public float getSubtotal() {
+	public BigDecimal getSubtotal() {
 		return subtotal;
 	}
 
-	public void setSubtotal(float subtotal) {
+	public void setSubtotal(BigDecimal subtotal) {
 		this.subtotal = subtotal;
 	}
 

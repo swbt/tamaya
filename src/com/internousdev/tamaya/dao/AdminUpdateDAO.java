@@ -1,9 +1,12 @@
 package com.internousdev.tamaya.dao;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import com.internousdev.util.db.mysql.MySqlConnector;
 
 	/**
 	 * 商品情報の取得に関するクラス
@@ -24,15 +27,15 @@ public class AdminUpdateDAO {
 	 * @return 成功すればtrue、失敗したらfalse
 	 */
 
-	public boolean doubling(int itemId ,String itemsName){
+	public boolean doubling(int itemId ,String itemName){
 		boolean result=false;
-		DBConnector db=new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "legmina", "root","mysql");
+		MySqlConnector db=new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root","mysql");
 		Connection con=db.getConnection();
 
 		String sql="select * from items where items_name = ? and item_id !=?";
 		try{
 			PreparedStatement ps= con.prepareStatement(sql);
-			ps.setString(1, itemsName);
+			ps.setString(1, itemName);
 			ps.setInt(2, itemId);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()){
@@ -69,8 +72,8 @@ public class AdminUpdateDAO {
 	 * @param sortId 種類ID
 	 * @return inserted 成否を格納する変数
 	 */
-	public int insert(int itemId,String itemsName,float price,int stocks,int sales, String itemDetail,int imgDel,String imgPath,int sortId){
-		DBConnector db=new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "legmina", "root","mysql");
+	public int insert(int itemId,String itemName,BigDecimal price,int stocks,int sales, String itemDetail,int imgDel,String imgPath,int sortId){
+		MySqlConnector db=new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root","mysql");
 		Connection con=db.getConnection();
 		int inserted=0;
 		int c=1;
@@ -84,8 +87,8 @@ public class AdminUpdateDAO {
 		}
 		try{
 			PreparedStatement ps= con.prepareStatement(sql);
-			ps.setString(c++,itemsName);
-			ps.setFloat(c++,price);
+			ps.setString(c++,itemName);
+			ps.setBigDecimal(c++,price);
 			ps.setInt(c++,stocks);
 			ps.setInt(c++, sales);
 			ps.setString(c++,itemDetail);

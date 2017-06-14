@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.internousdev.tamaya.dto.MypageDTO;
+import com.internousdev.util.db.mysql.MySqlConnector;
+
 /**
  * 顧客情報に関するクラス
  * @author Miyauchi Akitomo
@@ -24,7 +27,7 @@ public class AdminUserDAO {
 	* @version 1.0
 	*/
 	public ArrayList<MypageDTO> select(int userId) {
-		DBConnector db = new DBConnector("com.mysql.jdbc.Driver","jdbc:mysql://localhost/","openconnect","root","mysql");
+		MySqlConnector db = new MySqlConnector("com.mysql.jdbc.Driver","jdbc:mysql://localhost/","openconnect","root","mysql");
 		Connection con = db.getConnection();
 		MypageDTO dto = new MypageDTO();
 		ArrayList<MypageDTO> itemList = new ArrayList<MypageDTO>();
@@ -42,7 +45,7 @@ public class AdminUserDAO {
 
 				dto.setUserId(rs.getInt("user_id"));
 
-				dto.setFamilyName(rs.getString("family_name"));
+			dto.setFamilyName(rs.getString("family_name"));
 
 				dto.setGivenName(rs.getString("given_name"));
 
@@ -50,7 +53,7 @@ public class AdminUserDAO {
 
 				dto.setPhoneNumber(rs.getString("phone_number"));
 
-				dto.setPhoneEmail(rs.getString("phone_email"));
+				dto.setPhone_Email(rs.getString("phone_email"));
 
 				dto.setPostal(rs.getString("postal"));
 
@@ -58,7 +61,7 @@ public class AdminUserDAO {
 
 				dto.setPassword(rs.getString("password"));
 
-				dto.setSex(rs.getString("sex"));
+				//dto.setSex(rs.getString("sex"));
 
 				dto.setRegisterDay(rs.getString("register_day"));
 
