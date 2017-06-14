@@ -7,6 +7,10 @@ import java.util.Calendar;
 import java.util.TimeZone;
 
 import com.internousdev.util.db.mongodb.MongoDBConnector;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBObject;
 
 	/**
 	 * 問い合わせフォームに関するクラス
