@@ -25,7 +25,7 @@
 
     <link rel="stylesheet" type="text/css" href="./css/mypage.css" media="all">
   </head>
-
+ <h1>マイページ</h1>
  <table class="type07">
     <thead>
     <tr>
