@@ -130,16 +130,6 @@ public class AdminAddAction extends ActionSupport{
 	}
 
 
-	//カテゴリーを取得//
-	public int getCategory() {
-		return category;
-	}
-	//カテゴリーを格納//
-	public void setCategory(int category) {
-		this.category=category;
-	}
-
-
 	//登録日を取得//
 	public String getCreatedAt() {
 		return createdAt;
