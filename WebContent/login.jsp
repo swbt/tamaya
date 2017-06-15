@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="s" uri="/struts-tags"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
     <title>ログイン情報入力画面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
@@ -36,19 +38,20 @@
         <h4>PASSWORD</h4>
         <s:password name = "userPass" placeholder="パスワード" size="30"/>
       </s:form>
+
       <div class=log_button  align="center">
         <a href=""><button type="submit" class="btn btn-primary btn-black btn-large">Log in</button></a>
       </div>
       <div>
-        <s:a href="">
+        <a href="GoFacebookAction">
           <img src="img/sign_facebook.png" alt="sign in with Facebook" width="250" height="40"><br>
-        </s:a>
-        <s:a href="">
+        </a>
+        <a href="GoGoogleAction">
           <img src="img/sign_google.png" alt="sign in with Google" width="250" height="40"><br>
-        </s:a>
-        <s:a href="">
+        </a>
+        <a href="GoTwitterAction">
         <img src="img/sign_Twitter.png" alt="sign in with Twitter" width="250" height="40"><br>
-        </s:a>
+        </a>
       </div>
       <%--ログイン画面参考サイト→https://codepen.io/arthitst/pen/lrEAf --%>
     </div>
