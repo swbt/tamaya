@@ -1,146 +1,153 @@
-/**
- *
- */
 package com.internousdev.tamaya.action;
 
 import java.math.BigDecimal;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tamaya.dao.CartDeleteDAO;
+import com.internousdev.tamaya.dao.CartUpdateDAO;
+import com.internousdev.tamaya.dao.GoCartDAO;
+import com.internousdev.tamaya.dao.PurchaseCompleteDAO;
 import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * @author internousdev
- *
+ * カート内の個数を増減するクラス
+ * @author Misa Kikuchi
+ * @since 2017/05/20
+ * @version 1.0
  */
+
 public class UpdateCartAction extends ActionSupport implements SessionAware{
 
 	/**
 	 * シリアルID
 	 */
-	private static final long serialVersionUID=-869165581865322731L;
+	private static final long serialVersionUID = -869165581865322731L;
 	/**
-	* カートID(未定義)
-	*/
+	 * カートID
+	 */
 	private int cartId;
 	/**
-	* ユーザーID
-	*/
+	 *ユーザーID
+	 */
 	private int userId;
 	/**
-	*商品ID
-	*/
+	 *商品ID
+	 */
 	private int itemId;
 	/**
-	*商品名
-	*/
+	 *商品名
+	 */
 	private String itemName;
 	/**
-	* 価格
-	*/
+	 * 価格
+	 */
 	private BigDecimal price;
 	/**
-	*購入数
-	*/
+	 *購入数
+	 */
 	private int quantity;
 	/**
-	*イメージファイルパス
-	*/
+	 *イメージファイルパス
+	 */
 	private String imgPath;
 	/**
-	*購入商品の小計価格
-	*/
-	private BigDecimal subtotal;
+	 *購入商品の合計価格
+	 */
+	private BigDecimal total = new BigDecimal(0);
 	/**
-	*購入商品の合計価格
-	*/
-	private BigDecimal total;
-	/**
-	* 更新処理をした件数
-	*/
+	 * 更新処理をした件数
+	 */
 	private int updateCount;
 	/**
-	*カート情報（未定義）
-	*/
+	 *カート情報
+	 */
 	private ArrayList<CartDTO> cartList;
 	/**
 	 *商品情報
 	 */
-	private ArrayList<ItemDTO> itemDetail;
+	private ArrayList<ItemDTO> itemStatus;
 	/**
 	 *セッション情報
 	 */
 	private Map<String,Object> session;
 
+
+
 	/**
 	 * カートの上限処理を実行するメソッド
-	 * @author ryusei tanaka
-	 * @since 2017/06/12
+	 * @author Misa Kikuchi
+	 * @since 2017/05/20
 	 * @version 1.0
 	 */
-//	public String execute() throws SQLException {
-//
-//		String result=LOGIN;
-//		CartUpdateDAO cartUpdateDAO=new CartUpdateDAO();
-//		GoItemDetailDAO goItemDetailDAO=new GoItemDetailDAO();
-//		GoCartDAO goCartdao=new GoCartDAO();
-//		PurchaseCompleteDAO pulchaseDao=new PurchaseCompleteDAO();
-//
-//		//セッション情報の確認
-//		if(session.containsKey("userId")){
-//			userId=(int) session.get("userId");
-//
-////			itemStatus=goItemDetailDAO.selectbyItem(itemId);//商品情報収集
-//
-//			//商品情報をカートに追加
-////			updateCount=cartUpdateDAO.updateCart(cartId,userId,quantity);
-//			//数量に0以下が指定された場合の処理
-//			if(quantity<=0){
-//				CartDeleteDAO DelDao=new CartDeleteDAO();
-////				DelDao.delete(userId,cartId);
-//			}
-//
-//			//アレイリストに追加
-////			cartList=goCartDao.selected.Item(userId);
-////			if(pulchaseDao.StockCheck(cartList)=="OK"){//在庫切れか？okなら次へ！
-//				if(cartList.size()>0){
-////					for(BigDecimal i=0;i<cartList.size(); i++){
-////						total +=(cartList.get(i).getPrice())*(cartList.get(i).getQuantity());
-//					}
-//				result=SUCCESS;
-//				}
-////				else if(pulchaseDao.stockCheck(cartList)=="NG"){
-//				}else{
-//					//在庫切れだったら、どの商品が在庫切れかをチェックする
-////					itemName=pulchaseDao.stockcheck(cartList);
-////					result=ERROR;
-//			}
-////		}
-//		return result;
-////		}
-//
-//	}
+	public String execute() throws SQLException {
+
+		String result = LOGIN;
+		//セッション情報の確認
+		if (session.containsKey("userId")) {
+
+			userId = (int) session.get("userId");
+			CartUpdateDAO cartUpDao = new CartUpdateDAO();
+			//GoItemDetailDAO goItemDao = new GoItemDetailDAO();
+			GoCartDAO goCartDao = new GoCartDAO();
+			PurchaseCompleteDAO purchaseDao = new PurchaseCompleteDAO();
+			//itemStatus = goItemDao.selectbyItem(itemId);//商品情報収集
+
+			//商品情報をカートに追加
+			updateCount = cartUpDao.updateCart(cartId, userId);
+
+			//数量に0以下が指定された場合の処理
+			if(quantity <= 0){
+				CartDeleteDAO DelDao = new CartDeleteDAO();
+				DelDao.delete(userId);
+			}
+
+			//アレイリストに追加
+			cartList = goCartDao.selectedItem(userId);
+
+			if (purchaseDao.stockCheck(cartList)=="OK") { //在庫切れでないか？ＯＫなら次へ進む
+				if (cartList.size() > 0) {
+					for (int i = 0; i < cartList.size(); i++) {
+						total = (cartList.get(i).getPrice()) .multiply(BigDecimal.valueOf (cartList.get(i).getQuantity()));
+					}
+					result = SUCCESS;
+				}
+				}else if(purchaseDao.stockCheck(cartList)=="NG"){
+				}else{
+					//在庫切れだったら、どの商品が在庫切れかをチェックする
+					itemName = purchaseDao.stockCheck(cartList);
+				result = ERROR;
+			}
+		}
+		return result;
+	}
+
+
+
 	/**
-	* カートIDを取得するメソッド
-	* @return cartId カートID
-	*/
-	public int getCartId(){
+	 * カートIDを取得するメソッド
+	 * @return cartId　カートID
+	 */
+	public int getCartId() {
 		return cartId;
 	}
+
 	/**
 	 * カートIDを格納するメソッド
 	 * @param cartId セットする cartId
 	 */
-	public void setCartId(int cartId){
-		this.cartId=cartId;
+	public void setCartId(int cartId) {
+		this.cartId = cartId;
 	}
+
 	/**
 	 * ユーザーIDを取得するメソッド
-	 * @return userId ユーザーID
+	 * @return userId　ユーザーID
 	 */
 	public int getUserId() {
 		return userId;
@@ -156,7 +163,7 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 
 	/**
 	 * 商品IDを取得するメソッド
-	 * @return itemId 商品ID
+	 * @return itemId　商品ID
 	 */
 	public int getItemId() {
 		return itemId;
@@ -172,7 +179,7 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 
 	/**
 	 * 商品名を取得するメソッド
-	 * @return itemName 商品名
+	 * @return itemsName　商品名
 	 */
 	public String getItemName() {
 		return itemName;
@@ -180,15 +187,15 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 
 	/**
 	 * 商品名を格納するメソッド
-	 * @param itemName セットする itemsName
+	 * @param itemsName セットする itemsName
 	 */
-	public void setItemsName(String itemName) {
+	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
 
 	/**
 	 * 価格を取得するメソッド
-	 * @return price 価格
+	 * @return price　価格
 	 */
 	public BigDecimal getPrice() {
 		return price;
@@ -204,15 +211,15 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 
 	/**
 	 * 購入数を取得するメソッド
-	 * @return quantities 購入数
+	 * @return quantities　購入数
 	 */
-	public int getQuantitiy() {
+	public int getQuantity() {
 		return quantity;
 	}
 
 	/**
 	 * 購入数を格納するメソッド
-	 * @param quantity セットする quantity
+	 * @param quantities セットする quantities
 	 */
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
@@ -220,7 +227,7 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 
 	/**
 	 * イメージファイルパスを取得するメソッド
-	 * @return imgPath イメージファイルパス
+	 * @return imgPath　イメージファイルパス
 	 */
 	public String getImgPath() {
 		return imgPath;
@@ -235,22 +242,8 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 	}
 
 	/**
-	 * 小計金額を取得するメソッド
-	 * @return amountAll 合計金額
-	 */
-	public BigDecimal getSubTotal() {
-		return subtotal;
-	}
-	/**
-	 * 小計金額を格納するメソッド
-	 * @param total セットする total
-	 */
-	public void setSubTotal(BigDecimal subtotal) {
-		this.total = subtotal;
-	}
-	/**
 	 * 合計金額を取得するメソッド
-	 * @return amountAll 合計金額
+	 * @return amountAll　合計金額
 	 */
 	public BigDecimal getTotal() {
 		return total;
@@ -258,18 +251,18 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 
 	/**
 	 * 合計金額を格納するメソッド
-	 * @param total セットする total
+	 * @param amountAll セットする amountAll
 	 */
-	public void setTotal(BigDecimal total) {
+	public void settotal(BigDecimal total) {
 		this.total = total;
 	}
 
 	/**
 	 * 更新処理をした件数を取得するメソッド
-	 * @return updateCount 更新処理をした件数
+	 * @return updateCount　更新処理をした件数
 	 */
 	public int getUpdateCount() {
-		return getUpdateCount();
+		return updateCount;
 	}
 
 	/**
@@ -282,7 +275,7 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 
 	/**
 	 * カート情報を取得するメソッド
-	 * @return updatedAt カート情報
+	 * @return cartList　カート情報
 	 */
 	public ArrayList<CartDTO> getCartList() {
 		return cartList;
@@ -290,26 +283,26 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 
 	/**
 	 * カート情報を格納するメソッド
-	 * @param updatedAt セットする cartList
+	 * @param cartList セットする cartList
 	 */
 	public void setCartList(ArrayList<CartDTO> cartList) {
-		this.cartList =cartList;
+		this.cartList = cartList;
 	}
 
 	/**
 	 * 商品情報を取得するメソッド
-	 * @return itemDetail 商品情報
+	 * @return itemStatus　商品情報
 	 */
-	public ArrayList<ItemDTO> getItemDetail() {
-		return itemDetail;
+	public ArrayList<ItemDTO> getItemStatus() {
+		return itemStatus;
 	}
 
 	/**
 	 * 商品情報を格納するメソッド
-	 * @param itemDetail セットする itemStatus
+	 * @param itemStatus セットする itemStatus
 	 */
-	public void setItemStatus(ArrayList<ItemDTO> itemDetail) {
-		this.itemDetail = itemDetail;
+	public void setItemStatus(ArrayList<ItemDTO> itemStatus) {
+		this.itemStatus = itemStatus;
 	}
 
 	/**
@@ -327,5 +320,5 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-}
 
+}
