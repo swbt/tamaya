@@ -10,8 +10,7 @@
     <!-- Stylesheet
     ==================================================
     -->
-   <!-- <link rel="stylesheet" type="text/css"  href="css/login_header.css"> -->
-    <link rel="stylesheet" type="text/css" href="css/login_header.css">
+    <link rel="stylesheet" type="text/css" href="./css/login_header.css">
     <!-- Javascripts
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -22,16 +21,16 @@
 
   </head>
   <body>
-    <div class="example">
       <div class="trim">
         <img src="./img/tamaya22.png" class="bb">
-      </div>
+    <div class="example">
       <a href="toiawase.jsp"><i class="fa fa-twitter" ></i> お問い合わせ</a>
       <a href="top.jsp"><i class="fa fa-twitter" ></i> ログアウト</a>
       <a href="mypage.jsp"><i class="fa fa-twitter" ></i> マイページ</a>
       <a href="cart.jsp"><i class="fa fa-twitter" ></i> マイカート</a>
       <a href="top.jsp"><i class="fa fa-twitter" ></i> トップ</a>
     </div>
+      </div>
 
   </body>
 </html>

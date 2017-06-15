@@ -1,3 +1,8 @@
+*{
+	margin:0;
+	padding:0;
+}
+
 a{
     float: right;
 }
@@ -7,14 +12,22 @@ a{
 }
 
 .example {
-  margin: 0 auto; width:960px;
+  margin: 0 auto;
+width:960px;
+  margin-right: -50px;
   position: relative;
   }
+
+.trim{
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+}
 
 .example a {/*aƒ^ƒO‚ğ‰æ‘œ‚Ì^‚ñ’†‚É*/
   position: relative;
   top: -50px;
-  left: 60px;
+  left: 0px;
   -ms-transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
@@ -35,34 +48,12 @@ a{
   background: rgba(255, 255, 255, 0.3);/*”wŒi‚ğ”¼“§–¾‚É*/
   }
 
-.bb {
-  width: 150%;
-
-
   }
-.bb {
 
-    border:1px solid #cccccc;
-
-    height: 100px;
-
-    position: relative;
-
-}
-
-.bb img {
-
-    position: absolute;
-
-    right: 0;
-
-    bottom: 0;
-
-}
-.img {
-  width: 100%;
+img {
+  width: 100px;
   height: 400px;
   object-fit: cover;
-}
 
+}
 
