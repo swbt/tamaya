@@ -1,5 +1,6 @@
 package com.internousdev.tamaya.dao;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -87,7 +88,7 @@ public class AdminHistoryDAO {
 
 				dto.setPrice(rs.getBigDecimal("price")); //単価
 
-				dto.setSubtotal(dto.getPrice()multiply dto.getQuantity());//合計金額
+				dto.setSubtotal(dto.getPrice().multiply(BigDecimal.valueOf(dto.getQuantities())));//合計金額
 
 
 				adminhistoryList.add(dto);
