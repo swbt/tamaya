@@ -149,16 +149,16 @@ public class CreditInsertDAO {
 			PreparedStatement psInsert = con.prepareStatement(insert);
 			while (rs.next()) {
 				if (creditType.equals("visa")) {
-					dto.setLoginId(rs.getString("login_id"));
-					dto.setLastName(rs.getString("last_name"));
-					dto.setFirstName(rs.getString("first_name"));
-					dto.setCreditNumber(rs.getString("credit_number"));
-					dto.setSecurityCode(rs.getInt("security_code"));
+					dto.setLoginId(rs.getString("loginId"));
+					dto.setLastName(rs.getString("lastName"));
+					dto.setFirstName(rs.getString("firstName"));
+					dto.setCreditNumber(rs.getString("creditNumber"));
+					dto.setSecurityCode(rs.getInt("securityCode"));
 				} else {
-					dto.setLoginId(rs.getString("login_id"));
-					dto.setLastName(rs.getString("name_e"));
-					dto.setCreditNumber(rs.getString("credit_number"));
-					dto.setSecurityCode(rs.getInt("security_code"));
+					dto.setLoginId(rs.getString("loginId"));
+					dto.setLastName(rs.getString("nameE"));
+					dto.setCreditNumber(rs.getString("creditNumber"));
+					dto.setSecurityCode(rs.getInt("securityCode"));
 				}
 				if (creditType.equals("visa")) {
 					psInsert.setString(1, dto.getLoginId());

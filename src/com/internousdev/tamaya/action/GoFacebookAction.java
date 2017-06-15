@@ -1,12 +1,9 @@
 package com.internousdev.tamaya.action;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
-import com.internousdev.legmina.util.FacebookOauth;
+import com.internousdev.util.oauth.facebook.FacebookOauth;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
