@@ -11,6 +11,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tamaya.dao.GoCartDAO;
 import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.util.CartAssist;
 
@@ -159,13 +160,6 @@ public class GoSettlementAction extends CartAssist implements SessionAware{
 		this.session = session;
 	}
 
-	/**
-	 * シリアルIDを取得するメソッド
-	 * @return serialversionuid　シリアルID
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 
 	/**
 	 * カート内に入ってる合計商品数を取得するメソッド

@@ -10,6 +10,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tamaya.dao.ItemDAO;
 import com.internousdev.tamaya.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -58,7 +59,7 @@ public class ItemAction extends ActionSupport implements SessionAware{
   /**
    * カテゴリー
    */
-  private int categoryId;
+  private int category;
 
 
 
@@ -112,8 +113,8 @@ public void setItemName(String itemName) {
  * 商品IDを取得するメソッド
  * @return itemID
  */
-public int getItemID() {
-	return itemID;
+public int getItemId() {
+	return itemId;
 }
 
 
@@ -122,7 +123,7 @@ public int getItemID() {
  * @param itemID セットする itemID
  */
 public void setItemID(int itemID) {
-	this.itemID = itemID;
+	this.itemId = itemId;
 }
 
 
@@ -268,22 +269,7 @@ public void setSession(Map<String, Object> session) {
 }
 
 
-/**
- * ジャンルを取得するメソッド
- * @return　itemGenre　ジャンル
- */
-public String getItemGenre() {
-	return itemGenre;
-}
 
-
-/**
- * ジャンルを格納するメソッド
- * @param itemGenre セットする itemGenre
- */
-public void setItemGenre(String itemGenre) {
-	this.itemGenre = itemGenre;
-}
 
 
 }

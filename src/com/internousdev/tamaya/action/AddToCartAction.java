@@ -29,7 +29,7 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 
 	private int quantity;			//数量
 	private String imgPath;			//イメージファイルパス
-	private BigDecimal total;				//合計金額
+	private BigDecimal total;		//合計金額
 	private int addCount;			//カートへ商品追加処理をした件数
 
 	private ArrayList<CartDTO> cartList;			//カート情報

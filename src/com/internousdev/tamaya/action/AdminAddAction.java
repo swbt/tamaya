@@ -116,7 +116,7 @@ public class AdminAddAction extends ActionSupport{
 	}
 	//在庫数を格納//
 	public void setStock(int stock) {
-		this.stocsk = stock;
+		this.stocks = stocks;
 	}
 
 

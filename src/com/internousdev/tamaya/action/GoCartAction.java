@@ -47,7 +47,7 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	/**
 	 * 合計金額
 	 */
-	private BigDecimal amountAll;
+	private BigDecimal total;
 	/**
 	 * カート内の商品情報を入れるリスト
 	 */
@@ -73,7 +73,7 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 			GoCartDAO dao = new GoCartDAO();
 			cartList = dao.selectedItem(userId);
 			for(int i = 0; i < cartList.size(); i++ ){
-				total += (cartList.get(i).getPrice())multiply(cartList.get(i).getQuantity());
+				total = total.add(cartList.get(i).getPrice()) .multiply (BigDecimal.valueOf(cartList.get(i).getQuantity()));
 			}
 			result = SUCCESS;
 		}
@@ -151,7 +151,7 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	 * 数量を格納するメソッド
 	 */
 	public void setQuantities(int quantity) {
-		this.quantity = quantity;
+		this.quantities = quantities;
 	}
 
 	/**
@@ -172,7 +172,7 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	 * 合計金額を取得するメソッド
 	 */
 	public BigDecimal getAmountAll() {
-		return amountAll;
+		return total;
 	}
 
 	/**
