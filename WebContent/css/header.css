@@ -1,34 +1,71 @@
-@CHARSET "UTF-8";
-
-#menu ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  align-items: center;
+*{
+	margin:0;
+	padding:0;
 }
 
-#menu li{
-  padding: 0;
-  margin: 0;
+a{
+    float: right;
+    top: 55px;
+    left: 50px;
 }
 
-#menu li a{
-  display: block;
-  border: 1px solid #666;
-  background-color: #ccc;
-  padding: 3px;
-  height: 90px;
-  width: 90px;
-  text-decoration: none;
-  color: #333;
-  margin: 1px;
+
+
+.clear{
+    clear: both;
+}
+
+.trim{
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+}
+.example {
+  margin: 0 auto;
+width:960px;
+  margin-right: 50px;
+  position: relative;
+  top: -100px;
+  left: 0px;
+  }
+
+
+ .fm{
+	float:right;
+	 top: -50xp;
+     left: 0px;
+}
+
+
+.example a {/*aタグを画像の真ん中に*/
+  position: relative;
+
+
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  /*以下装飾*/
+    width:100px;
   text-align: center;
-  line-height: 90px;
-  font-size: 14px;
-}
-#menu li a:hover{
-  background-color: #2d56be;
-  color: #fff;
-}
+    /*余計な隙間を除く*/
+  font-size: 1.0vw;/*文字サイズ*/
+  border: solid white 2px; /*線で囲う*/
+  padding: 7px;/*文字と線の間の余白*/
+  color: white;/*文字色*/
+  text-decoration: none;/*下線を表示させない*/
+  background-color:black;
 
+  }
+
+.example a:hover{/*カーソルを当てたとき*/
+  background: rgba(255, 255, 255, 0.3);/*背景を半透明に*/
+  }
+
+  }
+
+img {
+  width: 100px;
+  height: 400px;
+  object-fit: cover;
+
+}

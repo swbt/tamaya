@@ -20,15 +20,19 @@
 
   <body>
   <h2>カード情報入力</h2>
-   <table class="table" border="1" cellspacing="0" cellpadding="0">
+   <table class="table" border="0" cellspacing="0" cellpadding="0">
     <tr>
-	 <th bgcolor="#d3d3d3">ご利用可能な
-	 <br>クレジットカード</th>
-     <td>
-     <input type="image" src="img/visa.png"width=50>
-     <input type="image" src="img/master.png"width=50>
-     <input type="image"  src="img/jcb.png"width=50>
-     </td>
+	 <td bgcolor="#d3d3d3" rowspan="2">ご利用可能な
+	 <br>クレジットカード</td>
+
+     <td><img src="img/visa.png"width=50></td>
+     <td><img src="img/master.png"width=50></td>
+     <td><img src="img/jcb.png"width=50></td>
+    </tr>
+    <tr>
+       <td><input type="radio" name="creditType" value="1" required></td>
+         <td><input type="radio" name="creditType" value="2"></td>
+       <td><input type="radio" name="creditType" value="3"></td>
     </tr>
    </table>
      <br>●クレジットカード情報の入力の間違い等にご注意いただき、下記項目をすべて入力し「支払い確認へ(仮)」を押してください。
@@ -38,7 +42,7 @@
    <table class="table2" border="1" cellspacing="0" cellpadding="0">
     <tr>
      <th bgcolor="#d3d3d3">カード番号</th>
-     <td><input type="text" name="card number" size="20" id="card number">
+     <td><input type="text" name="card number" value="creditNumber" size="20">
 	 <br>※ご本人名義のカードのみご利用いただけます。
      <br>※半角入力（ハイフンなし）　例：1234123412341234
      </td>
@@ -46,43 +50,43 @@
 	<tr>
      <th bgcolor="#d3d3d3">有効期限</th>
       <td>
-      <select name="moon">
-       <option value="moon">1</option>
-       <option value="moon">2</option>
-       <option value="moon">3</option>
-       <option value="moon">4</option>
-       <option value="moon">5</option>
-       <option value="moon">6</option>
-       <option value="moon">7</option>
-       <option value="moon">8</option>
-       <option value="moon">9</option>
-       <option value="moon">10</option>
-       <option value="moon">11</option>
-       <option value="moon">12</option>
+      <select name="expirationMonth">
+       <option value="expirationMonth">1</option>
+       <option value="expirationMonth">2</option>
+       <option value="expirationMonth">3</option>
+       <option value="expirationMonth">4</option>
+       <option value="expirationMonth">5</option>
+       <option value="expirationMonth">6</option>
+       <option value="expirationMonth">7</option>
+       <option value="expirationMonth">8</option>
+       <option value="expirationMonth">9</option>
+       <option value="expirationMonth">10</option>
+       <option value="expirationMonth">11</option>
+       <option value="expirationMonth">12</option>
       </select>
        /20
-      <select name="year">
-       <option value="year">17</option>
-       <option value="year">18</option>
-       <option value="year">19</option>
-       <option value="year">20</option>
-       <option value="year">21</option>
-       <option value="year">22</option>
-       <option value="year">23</option>
-       <option value="year">24</option>
-       <option value="year">25</option>
-       <option value="year">26</option>
-       <option value="year">27</option>
-       <option value="year">28</option>
-       <option value="year">29</option>
-       <option value="year">30</option>
-       <option value="year">31</option>
-       <option value="year">32</option>
-       <option value="year">33</option>
-       <option value="year">34</option>
-       <option value="year">35</option>
-       <option value="year">36</option>
-       <option value="year">37</option>
+      <select name="expirationYear">
+       <option value="expirationYear">17</option>
+       <option value="expirationYear">18</option>
+       <option value="expirationYear">19</option>
+       <option value="expirationYear">20</option>
+       <option value="expirationYear">21</option>
+       <option value="expirationYear">22</option>
+       <option value="expirationYear">23</option>
+       <option value="expirationYear">24</option>
+       <option value="expirationYear">25</option>
+       <option value="expirationYear">26</option>
+       <option value="expirationYear">27</option>
+       <option value="expirationYear">28</option>
+       <option value="expirationYear">29</option>
+       <option value="expirationYear">30</option>
+       <option value="expirationYear">31</option>
+       <option value="expirationYear">32</option>
+       <option value="expirationYear">33</option>
+       <option value="expirationYear">34</option>
+       <option value="expirationYear">35</option>
+       <option value="expirationYear">36</option>
+       <option value="expirationYear">37</option>
       </select>
       <br>カードの有効期限は通常「月／年（西暦下2桁）」で刻印されています。
       </td>
@@ -90,7 +94,7 @@
      <tr>
       <th bgcolor="#d3d3d3">カード名義人</th>
       <td>
-      <input type="text" name="card number" size="20">
+      <input type="text" name="nameE" size="20">
       <br>※半角英数字（例：TARO YAMADA）
       </td>
      </tr>
