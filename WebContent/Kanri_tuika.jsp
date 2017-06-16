@@ -1,26 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%--国際化用 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-
-</html>
-
 <head>
 <meta charset="UTF-8">
-<title>商品追加</title>
+
+<%--国際化用 --%>
+<fmt:setLocale value="${pageContext.request.locale.language}" />
+<fmt:setBundle basename="com.internousdev.tamaya.property.kanri_tuika" var="lang" />
+<title>商品追加<s:text name="lang.admin_add."/></title>
+
+<%--検索エンジンによるインデックス拒否 --%>
 <meta name="ROBOTS" content="NOINDEX.NOFOLLOW">
+
 <meta name="viewport" content="width=device">
 <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
 <link rel="stylesheet" href="css/AdminLogin.css">
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<link
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"　crossorigin="anonymous">
 
 <div class="kannri_header">
 	<h1>管理者ページ</h1>
@@ -56,7 +58,7 @@
 
 		<tbody>
 			<tr>
-				<td></td>
+				<td><h1><a href="<s:url action="aa"/>">登録</a></h1></td>
 				<td></td>
 				<td><a href="" src=></td>
 				<td></td>

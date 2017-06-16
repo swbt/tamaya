@@ -10,7 +10,14 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tamaya.dao.CartDeleteDAO;
+import com.internousdev.tamaya.dao.CreditInsertDAO;
+import com.internousdev.tamaya.dao.GoCartDAO;
+import com.internousdev.tamaya.dao.MypageDAO;
 import com.internousdev.tamaya.dto.CartDTO;
+import com.internousdev.tamaya.dto.CreditDTO;
+import com.internousdev.tamaya.dto.MypageDTO;
+import com.internousdev.tamaya.util.CartAssist;
 
 /**
  * @author seiya takahashi
@@ -27,7 +34,7 @@ public class DelCartAction extends CartAssist implements SessionAware{
 	private Map<String, Object> session;	//セッション情報//
 
 	private ArrayList<CartDTO> cartList=new ArrayList<>(); //検索したカート内の商品情報を入れるリスト//
-	public ArrayList<MYpageDTO> userList=new ArrayList<>(); //ユーザー情報を入れるリスト//
+	public ArrayList<MypageDTO> userList=new ArrayList<>(); //ユーザー情報を入れるリスト//
 	private ArrayList<CreditDTO> creditList=new ArrayList<CreditDTO>(); //クレジット情報を入れるリスト//
 
 
