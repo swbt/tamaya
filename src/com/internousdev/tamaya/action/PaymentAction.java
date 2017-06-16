@@ -86,7 +86,7 @@ import com.opensymphony.xwork2.ActionSupport;
 	CreditDTO userinfoDto=null;
 	MypageDAO MyDao=new MypageDAO();
 	GoCartDAO goCartDao=new GoCartDAO();
-	CreditCheckDAO daoC=new CregitCheckDAO();
+	CreditCheckDAO daoC=new CreditCheckDAO();
 	/***
 	* ログアウトしてないかの確認。すべてＯＫだったらloginFlgをtrue
 	***/
@@ -103,7 +103,7 @@ import com.opensymphony.xwork2.ActionSupport;
 	//カード番号16ケタとセキュリティコードに間違いがないか
 	userinfoDto=daoC.selectUserInfo(creditId,creditNumber);
 	if(creditNumber.equals(userinfoDto.getCreditNumber())){
-	if(Integer.parseInt(securityCode) == userinfoDto.getSecurityCode()){
+	if(securityCode == userinfoDto.getSecurityCode()){
 	//有効期限に間違えがないか
 	//visaのDBに有効期限が見当たらないので、visaは問答無用でtrue
 	if(creditId==1){
