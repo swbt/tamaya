@@ -11,8 +11,7 @@
 	content="An interactive getting started guide for Brackets.">
 <!-- Stylesheet
     ==================================================-->
-<!--
-    <link rel="stylesheet" type="text/css" href="css/＠＠＠.css">-->
+
 <link rel="stylesheet" href="main.css">
 <link rel="stylesheet" type="text/css" href="css/siharai.css">
 <!-- Javascripts
@@ -23,7 +22,7 @@
 	<h2>カード情報入力</h2>
 
 	<s:form action="PaymentAction">
-		<table class="table" border="0" cellspacing="0" cellpadding="0">
+		<table class="table" border="">
 			<tr>
 				<td bgcolor="#d3d3d3" rowspan="2">ご利用可能な <br>クレジットカード
 				</td>
@@ -42,7 +41,7 @@
      <br>●本人名義以外のカード（家族名義のカード含む）、盗難カード等での不正使用は重大な犯罪です。
      <br>●弊社ではデジタルIDを使用したSSL暗号化技術により、カード情報を暗号化しています。ご安心ください。
          <!--↑文字を小さく↑）-->
-		<table class="table2" border="1" cellspacing="0" cellpadding="0">
+		<table class="table2" border="">
 			<tr>
 				<th bgcolor="#d3d3d3">カード番号</th>
 				<td><input type="text" name="creditNumber"
