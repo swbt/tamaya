@@ -27,7 +27,7 @@
 
       <s:form action="LoginAction" class="fm" style="color:white;">
           <s:textfield name="email" label="email"/>
-          <s:password name="userPass" label="password"/>
+          <s:password name="userPass" label="password" size="20" />
           <s:submit value="ログイン"/>
         </s:form>
          <a href="toiawase.jsp"><i class="fa fa-twitter" ></i> お問い合わせ</a>

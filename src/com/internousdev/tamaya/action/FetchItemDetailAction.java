@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tamaya.dao.ShowItemDetailDAO;
+import com.internousdev.tamaya.dao.FetchItemDetailDAO;
 import com.internousdev.tamaya.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -25,7 +25,7 @@ public class FetchItemDetailAction extends ActionSupport implements SessionAware
 	@Override
 	public String execute(){
 		String ret = ERROR;
-		ShowItemDetailDAO dao = new ShowItemDetailDAO();
+		FetchItemDetailDAO dao = new FetchItemDetailDAO();
 
 		dto = dao.select(itemId);
 

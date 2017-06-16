@@ -51,12 +51,14 @@
         </thead>
 
 	<tbody>
+    <s:iterator value="cartList">
     <tr>
     <td><img src="<s:property value="imgPath"/>" <s:property value="itemName" /> align="center"> </td>
     <td align="center">￥<fmt:formatNumber value="${price}" />（税込）</td>
     <td align="center"><s:property value="orderCount" /></td>   <!-- orderCount新設の必要あり？ -->
     <td align="center">￥<fmt:formatNumber value="${subTotal}" /></td>
     </tr>
+    </s:iterator>
     </tbody>
 
 	<tfoot>
@@ -67,7 +69,7 @@
 
     <tr>
     <td class="gokei" colspan="2">合計（税込）</td>
-    <td align="center">1個</td>
+    <td align="center"><s:property value="quantity" /></td>
     <td align="center">￥<fmt:formatNumber value="${total}" /></td>
     </tr>
     </tfoot>

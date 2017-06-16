@@ -41,57 +41,57 @@
 
     <img src="img/cart_shohin.png" alt="カートに入っている商品">
 	<table align="center">
-    	<thead>
+      	<thead>
+            <tr>
+              <th>商品名</th>
+              <th>価格</th>
+              <th>個数</th>
+              <th>小計</th>
+              <th>削除</th>
+            </tr>
+          </thead>
+
+    	<tbody>
+          <s:iterator value = "cartList"><!-- デザインが崩れてしまうため保留 -->
+            <tr>
+              <td><img src="<s:property value="imgPath"/>" <s:property value="itemName" /> align="center"> </td>
+              <td align="center">￥<fmt:formatNumber value="${price}" />（税込）</td>
+              <td align="center">
+                      <select name="orderCount" onChange="this.form.submit()" style="width: 50px">
+                        <option value="<s:property value="orderCount"/>" selected><s:property value="orderCount"/></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select></td>   <!-- orderCount新設の必要あり？ -->
+              <td align="center">￥<fmt:formatNumber value="${subTotal}" /></td>
+              <td align="center">
+                <!--<s:form action="CartDeleteAction">-->   <!-- sタグがデザインを崩す原因になっている -->
+                    <button type="submit" class="btn btn-default"><s:text name="×" /></button>
+                <!-- </s:form> -->
+              </td>
+            </tr>
+          </s:iterator><!-- デザインが崩れてしまうため保留 -->
+        </tbody>
+
+    	<tfoot>
           <tr>
-            <th>商品名</th>
-            <th>価格</th>
-            <th>個数</th>
-            <th>小計</th>
-            <th>削除</th>
+            <td class="souryo" colspan="2">送料（国内）</td>
+            <td align="center" colspan="3">無料</td>
           </tr>
-        </thead>
 
-	<tbody>
-    <tr>
-    <td><img src="<s:property value="imgPath"/>" <s:property value="itemName" /> align="center"> </td>
-    <td align="center">￥<fmt:formatNumber value="${price}" />（税込）</td>
-    <td align="center">
-            <select name="orderCount" onChange="this.form.submit()" style="width: 50px">
-              <option value="<s:property value="orderCount"/>" selected><s:property value="orderCount"/></option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select></td>   <!-- orderCount新設の必要あり？ -->
-    <td align="center">￥<fmt:formatNumber value="${subTotal}" /></td>
-    <td align="center">
-      <!--<s:form action="CartDeleteAction">-->   <!-- sタグがデザインを崩す原因になっている -->
-          <button type="submit" class="btn btn-default"><s:text name="×" /></button>
-      <!-- </s:form> -->
-      </td>
-
-
-    </tr>
-    </tbody>
-
-	<tfoot>
-    <tr>
-    <td class="souryo" colspan="2">送料（国内）</td>
-    <td align="center" colspan="3">無料</td>
-    </tr>
-
-    <tr>
-    <td class="gokei" colspan="2">合計（税込）</td>
-    <td align="center">1個</td>
-    <td align="center" colspan="2">￥<fmt:formatNumber value="${total}" /></td>
-    </tr>
-    </tfoot>
+          <tr>
+            <td class="gokei" colspan="2">合計（税込）</td>
+            <td align="center">1個</td>  <!-- 合計個数方法不明 -->
+            <td align="center" colspan="2">￥<fmt:formatNumber value="${total}" /></td>
+          </tr>
+        </tfoot>
     </table>
 
 	<div>
