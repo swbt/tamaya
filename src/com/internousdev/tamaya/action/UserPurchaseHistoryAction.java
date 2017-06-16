@@ -6,7 +6,6 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tamaya.dao.UserPurchaseHistoryDAO;
 import com.internousdev.tamaya.dto.HistoryDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -26,7 +25,7 @@ public class UserPurchaseHistoryAction extends ActionSupport implements SessionA
 	private int itemId;		//商品Id//
 	private String itemName="";	//商品名//
 	private BigDecimal price;	//価格//
-	private int quantities;		//数量//
+	private int quantity;		//数量//
 	public BigDecimal subtotal;		//小計金額//
 	private String createdAt;	//登録日//
 
@@ -99,15 +98,15 @@ public class UserPurchaseHistoryAction extends ActionSupport implements SessionA
 	/**
 	 * 商品名を取得するメソッド
 	 */
-	public String getItemsName() {
+	public String getItemName() {
 		return itemName;
 	}
 
 	/**
 	 * 商品IDを格納するメソッド
 	 */
-	public void setItemsName(String itemsName) {
-		this.itemName = itemsName;
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
 	}
 
 	/**
@@ -127,15 +126,15 @@ public class UserPurchaseHistoryAction extends ActionSupport implements SessionA
 	/**
 	 * 数量を取得するメソッド
 	 */
-	public int getQuantities() {
-		return quantities;
+	public int getQuantity() {
+		return quantity;
 	}
 
 	/**
 	 * 数量を格納するメソッド
 	 */
-	public void setQuantities(int quantity) {
-		this.quantities = quantity;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	/**

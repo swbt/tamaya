@@ -58,7 +58,7 @@
     <thead>
     <tr>
 
-        <th scope="cols">注文履歴</th>
+        <th scope="cols">購入履歴</th>
         <th scope="cols"></th>
     </tr>
     </thead>
