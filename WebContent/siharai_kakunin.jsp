@@ -7,7 +7,7 @@
 <!-- ここまで国際化 -->
 
 <!DOCTYPE html>
-	<html>
+	<html lang="ja">
   	<head>
       <!-- ここから国際化 -->
       <fmt:setBundle basename="com.internousdev.legmina.property.paymentConfirm" var="lang" />
