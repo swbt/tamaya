@@ -15,7 +15,7 @@ public class CreditCheckDAO {
 	 * 入力されたクレジット番号の上6ケタと、クレジットマネージャDBを照合するメソッド@param creditId クレジットの種類
 	 * @param checkNumber クレジット番号上6ケタ@return result 合致すればtrue、しなければfalseを返す
 	 * @author MISA KIKUCHI@since 5/19@version 1.0*/
-	public boolean select(int creditId, String checkNumber){
+	public boolean select(int creditId, int checkNumber){
 
 		Connection con = new MySqlConnector("openconnect").getConnection();
 		boolean result=false;
@@ -31,7 +31,7 @@ public class CreditCheckDAO {
 	try{
 		PreparedStatement ps=con.prepareStatement(sql);
 
-		ps.setString(1, checkNumber);
+		ps.setLong(1, checkNumber);
 		ResultSet rs=ps.executeQuery();
 		rs.next();
 		if(rs.getString("card_name").equals(brandName)){

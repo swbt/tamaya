@@ -121,4 +121,14 @@ public class CreditDTO {
 		public void setPaymentId(int paymentId) {
 			this.paymentId = paymentId;
 		}
+
+		public int ExpirationYear() {
+			// TODO 自動生成されたメソッド・スタブ
+			return 0;
+		}
+
+		public int ExpirationMonth() {
+			// TODO 自動生成されたメソッド・スタブ
+			return 0;
+		}
 }

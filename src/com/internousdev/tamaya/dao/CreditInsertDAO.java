@@ -29,7 +29,7 @@ public class CreditInsertDAO {
 	public int insert(int userId,int creditId,String creditNumber,String nameE,String securityCode,
 	int expirationMonth,int expirationYear){
 		MySqlConnector db = new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/","tamaya","root","mysql");
-		com.mysql.jdbc.Connection con = db.getConnection();
+		Connection con = db.getConnection();
 		int ret=0;
 		String query="INSERT IMTO credits(user_id,credit_id,credit_number,name_e,security_code,expiration_month, expiration_year)VALUES(?,?,?,?,?,?,?)";
 		try{

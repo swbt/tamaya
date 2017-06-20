@@ -105,7 +105,7 @@
 
 
 
-	 <button type="submit" class="Button02" href="./siharai_kakunin.jsp">次へ</button>
+	 <button type="submit" class="Button02"a href="./siharai_kakunin.jsp">次へ</button>
 
 	</s:form>
 </body>
