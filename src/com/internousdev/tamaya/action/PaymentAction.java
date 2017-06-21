@@ -32,7 +32,7 @@ public class PaymentAction extends ActionSupport implements SessionAware{
 	/**
 	 * ユーザーID
 	 */
-	private Object userId;
+	private int userId;
 	/**
 	 * クレジット種類
 	 */
@@ -48,7 +48,7 @@ public class PaymentAction extends ActionSupport implements SessionAware{
 	/**
 	 * セキュリティコード
 	 */
-	private int securityCode;
+	private String securityCode;
 	/**
 	 * 有効期限（月）
 	 */
@@ -83,7 +83,7 @@ public class PaymentAction extends ActionSupport implements SessionAware{
 		String result=ERROR;
 		Boolean loginflg=false;
 		Boolean creditflg=false;
-		CreditDTO userinfoDto=null;
+		CreditDTO userinfoDto=new CreditDTO();
 		MypageDAO MyDao=new MypageDAO();
 		GoCartDAO goCartDao=new GoCartDAO();
 		CreditCheckDAO daoC=new CreditCheckDAO();
@@ -128,8 +128,8 @@ public class PaymentAction extends ActionSupport implements SessionAware{
 				/*** すべてのフラグがＯＮだったので、諸々の処理をする ***/
 				CreditInsertDAO creInsertDao=new CreditInsertDAO();
 				//クレジットテーブルに情報を入れる
-				if(creInsertDao.serch(userId)==false){
-					creInsertDao.insert(userId,creditId,creditNumber, nameE, securityCode, expirationMonth,expirationYear);
+				if(creInsertDao.search(userId)==false){
+					creInsertDao.insert(userId,creditId,creditNumber,nameE,securityCode,expirationMonth,expirationYear);
 					result=SUCCESS;
 				}else {
 					//すでに同じユーザーＩＤでクレジット情報が入っていたら、古いのを消して新しいのを入れる

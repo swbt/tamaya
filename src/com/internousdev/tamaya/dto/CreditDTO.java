@@ -131,4 +131,14 @@ public class CreditDTO {
 			// TODO 自動生成されたメソッド・スタブ
 			return 0;
 		}
+
+		public void setCreditType(String brandName) {
+			// TODO 自動生成されたメソッド・スタブ
+
+		}
+
+		public void setUserId(int int1) {
+			// TODO 自動生成されたメソッド・スタブ
+
+		}
 }

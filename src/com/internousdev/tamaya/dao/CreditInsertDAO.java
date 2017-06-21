@@ -42,14 +42,14 @@ public class CreditInsertDAO {
 			ps.setInt(6, expirationMonth);
 			ps.setInt(7, expirationYear);
 			ret=ps.executeUpdate();
-		}catch(SQLExeption e){
+		}catch(SQLException e){
 			e.printStackTrace();
 
 		}finally{
 			if(con!=null){
 				try{
 					con.close();
-				}catch(SQLExeption e){
+				}catch(SQLException e){
 					e.printStackTrace();
 				}
 			}

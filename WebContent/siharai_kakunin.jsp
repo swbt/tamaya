@@ -82,24 +82,26 @@
     </tr>
     </thead>
 
+	<s:iterator value="creditList">
     <tbody>
     <tr>
-    <td>カードの種類</td><td align="center"><s:iterator value="creditList"></s:iterator></td>
+    <td>カードの種類</td><td align="center"></td>
     </tr>
     <tr>
-    <td>カード番号</td><td align="center"><s:property value="creditNumber" /></td>
+    <td>カード番号</td><td align="center"><s:property value="creditId" /></td>
     </tr>
     <tr>
     <td>セキュリティーコード</td><td align="center"><s:property value="securityCode" /></td>
     </tr>
     <tr>
-    <td>有効期限</td><td align="center"><s:property value="expirationMonth" /></td>
+    <td>有効期限</td><td align="center"><s:property value="expirationYear" /><s:property value="expirationMonth" /></td>
     </tr>
     <tr>
     <td>カード名義人</td><td align="center"><s:property value="nameE" /> </td>
     </tr>
     </tbody>
     </table>
+    </s:iterator>
 
     <table align="center">
     <thead>
