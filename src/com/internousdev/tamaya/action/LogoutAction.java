@@ -18,15 +18,15 @@ import com.opensymphony.xwork2.ActionSupport;
  * @version 1.0
  */
 public class LogoutAction extends ActionSupport implements SessionAware {
-	private Boolean loginFlg;
 	private Map<String, Object> session;
 
 	public String execute(){
 		String result = ERROR;
 		LogoutDAO dao = new LogoutDAO();
 		UserDTO dto = new UserDTO();
-		Object flg = session.get("loginFlg");
-		loginFlg = (boolean)flg;
+		int userId = (int)session.get("userId");
+		boolean loginFlg = (boolean)session.get("loginFlg");
+		System.out.println(loginFlg);
 
 		if(!loginFlg){
 			session.clear();
@@ -34,7 +34,8 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 			return result;
 		}
 
-		dao.update(dto.getUserId());
+		dao.update(userId);
+		System.out.println(dto.getLoginFlg());
 		if(!dto.getLoginFlg()){
 			session.clear();
 			result = SUCCESS;
@@ -42,12 +43,6 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 		return result;
 	}
 
-	public Boolean getLoginFlg() {
-		return loginFlg;
-	}
-	public void setLoginFlg(Boolean login_flg) {
-		this.loginFlg = login_flg;
-	}
 	public Map<String, Object> getSession() {
 		return session;
 	}

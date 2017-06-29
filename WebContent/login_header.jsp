@@ -28,7 +28,7 @@
         <img src="./img/tamaya22.png" class="bb">
     <div class="example">
       <a href="toiawase.jsp"><i class="fa fa-twitter" ></i> お問い合わせ</a>
-      <a href="top.jsp"><i class="fa fa-twitter" ></i> ログアウト</a>
+      <a href="<s:url action="LogoutAction"/>"><i class="fa fa-twitter" ></i> ログアウト</a>
       <a href="mypage.jsp"><i class="fa fa-twitter" ></i> マイページ</a>
       <a href="cart.jsp"><i class="fa fa-twitter" ></i> マイカート</a>
       <a href="top.jsp"><i class="fa fa-twitter" ></i> トップ</a>

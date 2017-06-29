@@ -40,6 +40,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			}
 		}
 		session.put("loginFlg", dto.getLoginFlg());
+		session.put("userId", dto.getUserId());
 		ret = SUCCESS;
 		return ret;
 	}
