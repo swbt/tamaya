@@ -16,10 +16,17 @@
 <link rel="stylesheet" type="text/css" href="css/siharai.css">
 <!-- Javascripts
     ================================================== -->
+
+<!--     ログインヘッダー読み込む -->
+         <s:include value="login_header.jsp" />
+
 </head>
 
 <body>
 	<h2>カード情報入力</h2>
+
+
+
 
 	<s:form action="PaymentAction">
 		<table class="table" border="">
@@ -63,7 +70,7 @@
 						<option value="10">10</option>
 						<option value="11">11</option>
 						<option value="12">12</option>
-				</select> /20 <select name="">
+				</select> /20 <select name="expirationYear">
 						<option value="17">17</option>
 						<option value="18">18</option>
 						<option value="19">19</option>
@@ -102,11 +109,8 @@
 
 	<a class="Button01" href="./cart.jsp">戻る</a>
 
-
-
-
-	 <button type="submit" class="Button02"a href="./siharai_kakunin.jsp">次へ</button>
-
-	</s:form>
+	 <a href="./siharai_kakunin.jsp"><button type="submit" class="Button02">次へ</button></a>
+</s:form>
+<!-- <a href="./siharai_kakunin.jsp"><button type="submit" class="Button02">次へ</button></a> -->
 </body>
 </html>

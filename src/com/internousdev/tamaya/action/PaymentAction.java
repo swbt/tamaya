@@ -48,7 +48,7 @@ public class PaymentAction extends ActionSupport implements SessionAware{
 	/**
 	 * セキュリティコード
 	 */
-	private String securityCode;
+	private int securityCode;
 	/**
 	 * 有効期限（月）
 	 */
@@ -90,8 +90,8 @@ public class PaymentAction extends ActionSupport implements SessionAware{
 		/***
 		 * ログアウトしてないかの確認。すべてＯＫだったらloginFlgをtrue
 		 ***/
-		if(session.get("userId")!=null){
-			userId=session.get("userId");
+		if(session.containsKey("userId")){
+			userId=(int)session.get("userId");
 			loginflg=true;
 		}
 		/***
@@ -142,8 +142,11 @@ public class PaymentAction extends ActionSupport implements SessionAware{
 				cartList=goCartDao.selectedItem(userId);
 				creditList=creInsertDao.selectCredit(userId);
 				//合計金額の計算
-				for(BigDecimal i=0;i<cartList.size();i++){
-					total+=(cartList.get(i).getPrice()) * (cartList.get(i).getQuantity());
+
+
+				for(int i = 0; i < cartList.size() ; i++){
+					//total = total + cartList.get(i).getPrice() * cartList.get(i).getQuantity();
+					total = total.add(cartList.get(i).getPrice()).multiply(BigDecimal.valueOf(cartList.get(i).getQuantity()));
 				}
 			}
 			else {
@@ -152,6 +155,7 @@ public class PaymentAction extends ActionSupport implements SessionAware{
 			}
 			return result;
 		}
+		return result;
 	}
 	/**
 	 * ユーザIDを取得するメソッド

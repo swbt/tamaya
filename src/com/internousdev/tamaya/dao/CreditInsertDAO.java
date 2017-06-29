@@ -26,7 +26,7 @@ public class CreditInsertDAO {
 	 *@since 2017/06/14
 	 * @version 1.0
 	 */
-	public int insert(int userId,int creditId,String creditNumber,String nameE,String securityCode,
+	public int insert(int userId,int creditId,String creditNumber,String nameE,int securityCode,
 	int expirationMonth,int expirationYear){
 		MySqlConnector db = new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/","tamaya","root","mysql");
 		Connection con = db.getConnection();
@@ -38,7 +38,7 @@ public class CreditInsertDAO {
 			ps.setInt(2, creditId);
 			ps.setString(3, creditNumber);
 			ps.setString(4, nameE);
-			ps.setString(5, securityCode);
+			ps.setInt(5, securityCode);
 			ps.setInt(6, expirationMonth);
 			ps.setInt(7, expirationYear);
 			ret=ps.executeUpdate();
