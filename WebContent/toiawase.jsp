@@ -1,28 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+   <!-- ここから国際化 -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!-- ここまで国際化 -->
 <!DOCTYPE html>
 <html>
+<head>
+<!-- 国際化ここから -->
+<fmt:setLocale value="${pageContext.request.locale.language}" />
+<fmt:setBundle basename="com.internousdev.tamaya.property.toiawase" var="lang" />
+<!-- 国際化ここまで -->
+
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>お問い合わせ入力画面</title>
+
+  <title><s:text name = "lang.toiawase.inquiry" /></title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="text/javascript">js/toiawase.js</script>
   <link href="css/bootstrap.min.css" rel="stylesheet">
  </head>
  <body>
   <div style="text-align : center">
-   <h1 class="contact-title">お問い合わせフォーム</h1>
+ <h1> <s:text name = "lang.toiawase.inquiryForm"  /></h1>
   </div>
   <br>
   <br>
   <div class="container">
+  <div class="row">
    <div class="col-sm-offset-3 col-sm-8">
-    <form  name="param" action="toiawase_kakunin.jsp" method="post"target="_top">
-    <div class="row">
-     <div class="col-sm-2">お名前</div>
+
+   <s:form method="post" action="ContactAction" class="autoConfirm">
+
+
+     <div class="col-sm-2"><s:text name ="lang.toiawase.name" /><font color="red">※</font><br></div>
       <div class="col-sm-10 form-inline" style="padding: 3px;">
-       <input type="text" class="form-control input-sm" id="name" placeholder="お名前" size="20">
+       <input type="text" name="userName" class="form-control" required="required" maxlength="30"placeholder="<s:text name = "lang.toiawase.yamada"/>" />
       </div>
      </div>
       <div class="row">
@@ -41,15 +56,16 @@
            <div class="col-sm-2">お問い合わせ内容</div>
             <div class="col-sm-10" style="padding: 3px;">
              <textarea class="form-control  input-sm" rows="3" id="comment" placeholder="お問い合わせ内容"></textarea>
+	</div>
             </div>
            </div>
-            <div class="text-center" style="padding: 30px;">
-           </div>
-           </form>
+</div>
+            <div class="text-center" style="padding: 30px;"></div>
+
            <a href="toiawase_kakunin.jsp"><button type="button" class="btn btn-success" onClick="func()">送信内容の確認</button></a>
-          </div>
-           <div id="answer">
-          </div>
-         </div>
+
+           <div id="answer"></div>
+
+
  </body>
 </html>
