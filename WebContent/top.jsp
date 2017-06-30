@@ -33,14 +33,14 @@
 <s:include value="modal.jsp" />
 
 <script>
-    var actionUrl;
-    var actionUrlWithParam;
-    function imgClick(itemId) {
-      actionUrl = '<s:url action="FetchItemDetailAction"></s:url>';
-      actionUrlWithParam = actionUrl + "?itemId=" + itemId;
-      $('#item_detail').attr('src', actionUrlWithParam);
-    };
-    </script>
+	var actionUrl;
+	var actionUrlWithParam;
+	function imgClick(itemId) {
+		actionUrl = '<s:url action="FetchItemDetailAction"></s:url>';
+		actionUrlWithParam = actionUrl + "?itemId=" + itemId;
+		$('#item_detail').attr('src', actionUrlWithParam);
+	};
+</script>
 </head>
 <body>
 	<div id="header"></div>
