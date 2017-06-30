@@ -38,7 +38,7 @@ public class PaymentAction extends ActionSupport implements SessionAware{
 	 */
 	private int creditId;
 	/**
-	 * クレジット種類
+	 * クレジットナンバー
 	 */
 	private String creditNumber;
 	/**

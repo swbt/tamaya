@@ -60,6 +60,8 @@ public class CreditCheckDAO {
 	 */
 	public CreditDTO selectUserInfo(int creditId,String creditNumber){
 		CreditDTO userInfoDto=new CreditDTO();
+
+
 		String brandName=null;
 		if(creditId==1){
 			brandName="visa";

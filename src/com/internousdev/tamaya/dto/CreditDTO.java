@@ -12,25 +12,34 @@ package com.internousdev.tamaya.dto;
 
 public class CreditDTO {
 
-		private String email;				//ログイン用メールアドレス
+	private String email;				//ログイン用メールアドレス
 
-		private int creditId;				//クレジットの種類
+	private int creditId;				//クレジットの種類
 
-		private String creditNumber;		//クレジット番号
+	private String creditNumber;		//クレジット番号
 
-		private String nameE;				//クレジット名義人
+	private String nameE;				//クレジット名義人
 
-		private int securityCode;			//セキュリティコード
+	private int securityCode;			//セキュリティコード
 
-		private int expirationMonth;		//有効期限(月)
+	private int expirationMonth;		//有効期限(月)
 
-		private int expirationYear;			//有効期限(年）
+	private int expirationYear;			//有効期限(年）
 
-		private String creditNumberDown;	//クレジット番号下4ケタ(変数名なし)
+	private String creditNumberDown;	//クレジット番号下4ケタ(変数名なし)
 
-		private String createdAt;			//登録日時
+	private String createdAt;			//登録日時
 
-		private String updatedAt;			//更新日時
+	private String updatedAt;			//更新日時
+
+	private String loginId;				//ログインID
+
+	private String lastName;			//姓名
+
+	private String firstName;			//名前
+
+
+
 
 		private int paymentId;				//支払い回数
 
@@ -141,4 +150,41 @@ public class CreditDTO {
 			// TODO 自動生成されたメソッド・スタブ
 
 		}
+
+		public void setLoginId(String string) {
+			// TODO 自動生成されたメソッド・スタブ
+
+		}
+
+		public void setLastName(String string) {
+			// TODO 自動生成されたメソッド・スタブ
+
+		}
+
+		public void setFirstName(String string) {
+			// TODO 自動生成されたメソッド・スタブ
+
+		}
+
+		public String getLoginId() {
+			// TODO 自動生成されたメソッド・スタブ
+			return loginId;
+		}
+
+		public String getLastName() {
+			return lastName;
+		}
+
+		public String getFirstName() {
+			// TODO 自動生成されたメソッド・スタブ
+			return firstName;
+		}
+
+
+
+
+
+
 }
+
+

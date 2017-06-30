@@ -128,10 +128,10 @@ public class CreditInsertDAO {
 	 *@since 2017/06/14
 	 * @version 1.0
 	 */
-	public int selectInsert(String creditType, String creditNumber, int amountAll) {
+	public int selectInsert(int creditId, String creditNumber, int amountAll) {
 		int ret = 0;;
 		String insert = null;
-		if(creditType.equals("visa")){
+		if(creditId==1){
 			insert = "INSERT INTO user_history(login_id, last_name, first_name, office_name, spend, payment) VALUES(?, ?, ?, ?, ?, ?)";
 		}else{
 			insert = "INSERT INTO user_history(login_id, name_e, corporation_name, spend, payment) VALUES(?, ?, ?, ?, ?)";
@@ -148,7 +148,7 @@ public class CreditInsertDAO {
 			ResultSet rs = ps.executeQuery();
 			PreparedStatement psInsert = con.prepareStatement(insert);
 			while (rs.next()) {
-				if (creditType.equals("visa")) {
+				if (creditId==1) {
 					dto.setLoginId(rs.getString("loginId"));
 					dto.setLastName(rs.getString("lastName"));
 					dto.setFirstName(rs.getString("firstName"));
@@ -160,19 +160,19 @@ public class CreditInsertDAO {
 					dto.setCreditNumber(rs.getString("creditNumber"));
 					dto.setSecurityCode(rs.getInt("securityCode"));
 				}
-				if (creditType.equals("visa")) {
+				if (creditId==1) {
 					psInsert.setString(1, dto.getLoginId());
 					psInsert.setString(2, dto.getLastName());
 					psInsert.setString(3, dto.getFirstName());
 					psInsert.setString(4, "tamaya");
-					psInsert.setInt(5, total);
-					psInsert.setInt(6, total);
+					psInsert.setInt(5, amountAll);
+					psInsert.setInt(6, amountAll);
 				} else {
 					psInsert.setString(1, dto.getLoginId());
 					psInsert.setString(2, dto.getLastName());
 					psInsert.setString(3, "tamaya");
-					psInsert.setInt(4, total);
-					psInsert.setInt(5, total);
+					psInsert.setInt(4, amountAll);
+					psInsert.setInt(5, amountAll);
 				}
 				ret = psInsert.executeUpdate();
 			}

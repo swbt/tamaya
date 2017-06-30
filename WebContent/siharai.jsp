@@ -107,10 +107,13 @@
 			</tr>
 		</table>
 
+<div class="center">
+
 	<a class="Button01" href="./cart.jsp">戻る</a>
 
 	 <a href="./siharai_kakunin.jsp"><button type="submit" class="Button02">次へ</button></a>
+	</div>
 </s:form>
-<!-- <a href="./siharai_kakunin.jsp"><button type="submit" class="Button02">次へ</button></a> -->
+
 </body>
 </html>
