@@ -31,7 +31,7 @@ public class CreditInsertDAO {
 		MySqlConnector db = new MySqlConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/","tamaya","root","mysql");
 		Connection con = db.getConnection();
 		int ret=0;
-		String query="INSERT IMTO credits(user_id,credit_id,credit_number,name_e,security_code,expiration_month, expiration_year)VALUES(?,?,?,?,?,?,?)";
+		String query="INSERT IMTO credit(user_id,credit_id,credit_number,name_e,security_code,expiration_month, expiration_year)VALUES(?,?,?,?,?,?,?)";
 		try{
 			PreparedStatement ps=con.prepareStatement(query);
 			ps.setInt(1, userId);

@@ -37,6 +37,7 @@ public class CreditCheckDAO {
 		if(rs.getString("card_name").equals(brandName)){
 
 			result=true;
+
 			}
 	}catch(SQLException e){
 		e.printStackTrace();
@@ -55,10 +56,12 @@ public class CreditCheckDAO {
 	 * @param creditNumber クレジット番号
 	 * @return userInfoDto クレジットカード情報
 	 * @author ryusei tanaka
-	 *@since 2017/06/14
+	 * @since 2017/06/14
 	 * @version 1.0
 	 */
 	public CreditDTO selectUserInfo(int creditId,String creditNumber){
+
+
 		CreditDTO userInfoDto=new CreditDTO();
 
 
