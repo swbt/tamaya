@@ -109,11 +109,13 @@
 
 <div class="center">
 
-	<a class="Button01" href="./cart.jsp">戻る</a>
-
-	 <a href="./siharai_kakunin.jsp"><button type="submit" class="Button02">次へ</button></a>
+	 <s:submit value="次へ" theme="simple" class="Button01" />
 	</div>
 </s:form>
+
+
+	<s:form action ="GoCartAction"><s:submit value="戻る" /></s:form>
+
 
 </body>
 </html>
