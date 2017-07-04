@@ -50,6 +50,14 @@
 			<result name="error">siharai.jsp</result>
 		</action>
 
+	<!-- カートに追加する処理 -->
+	<action name="AddToCartAction"
+		class="com.internousdev.tamaya.action.AddToCartAction" method="execute">
+		<result name="SUCCESS">cart.jsp</result>
+		<result name="ERROR">item_list.jsp</result>
+	</action>
+
+
 
 <!--
 

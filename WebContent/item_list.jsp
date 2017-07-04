@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/siharai.css">
     <!-- ▼▼jQuery -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <!-- ▼▼他のjavascript -->
@@ -55,6 +56,22 @@
             <tr><td>値段</td><td><s:property value="itemList.get(#i.index).priceWithTax"/>円（税込）</td></tr>
           </table>
         </div>
+        <s:form action="AddToCartAction">
+        <select name="kosuu">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+				</select>
+				<s:property value="itemList.get(#i.index).itemId" />
+				<s:submit value="カートに追加" class="Button01" />
+		</s:form>
       </s:iterator>
     </div><!-- .item_list -->
   </body>
