@@ -22,6 +22,7 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class AddToCartAction extends ActionSupport implements SessionAware {
 
+	private static final long serialVersionUID = 1L;
 	private int userId;				//ユーザーID
 	private int itemId;				// 商品ID
 	private String itemName;		// 商品名
@@ -53,6 +54,8 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 
 		if (session.containsKey("userId")) {
 
+			System.out.println("userId" );
+			System.out.println("ID出しますよ＝");
 			userId = (int) session.get("userId");
 			AddToCartDAO dao = new AddToCartDAO();
 			itemStatus = dao.itemStatus(itemId);
@@ -66,7 +69,9 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 					result = SUCCESS;
 				}
 		}
+		System.out.println(result + "リザルト返しま～す");
 		return result;
+
 	}
 
 
@@ -114,6 +119,7 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 
 	/**数量取得メソッド*/
 	public int getQuantity() {
+		System.out.println(quantity + "受け取りました");
 		return quantity;
 	}
 	/**数量格納メソッド*/

@@ -51,11 +51,14 @@
 		</action>
 
 	<!-- カートに追加する処理 -->
-	<action name="AddToCartAction"
-		class="com.internousdev.tamaya.action.AddToCartAction" method="execute">
-		<result name="SUCCESS">cart.jsp</result>
+	<action name="CartUpdateAction"
+		class="com.internousdev.tamaya.action.CartUpdateAction" method="execute">
+		<result name="SUCCESS">item_list.jsp</result>
 		<result name="ERROR">item_list.jsp</result>
 	</action>
+
+
+
 
 
 

@@ -1,56 +1,44 @@
+/**
+ *
+ */
 package com.internousdev.tamaya.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import com.internousdev.util.db.mysql.MySqlConnector;
+import com.internousdev.tamaya.util.DBConnector;
 
-	/**
-	* カートインサート＆アップデートに関するクラス
-	* @author KAORI TAKAHASHI
-	* @since 2017/06/14
-	*@version 1.0
-	*/
-
+//カーとの中に同じ商品があれば注文数が増える処理
 public class CartUpdateDAO {
 
-	/**
-	*カート商品の数量を更新するメソッド
-	* @author KAORI TAKAHASHI
-	* @since 2017/06/14
-	*@param userId ユーザーID
-	*@param quantity 数量
-	*@return int 成否を判断する変数
-	*/
+    public int update(int orderCount, int userId, int itemId) {
+        int count = 0;
+        String driverName = "com.mysql.jdbc.Driver";
+        String url = "jdbc:mysql://localhost/";
+        DBConnector db = new DBConnector(driverName, url, "tamaya", "root", "mysql");
+        Connection con = db.getConnection();
+        //UPDATE a SET b = c WHERE d = e→テーブル(a)に対して、d = eであればbにcをセットする
+        String sql = "UPDATE cart SET quantity = ? WHERE user_id = ? && item_id = ?";
 
-	public int updateCart(int userId,int quantity){		//※変数：updatecartは必要？
-		int updateCount = 0;
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, orderCount);
+            ps.setInt(2, userId);
+            ps.setInt(3, itemId);
+            count = ps.executeUpdate();
+            if(ps!=null) ps.close();
+        }catch(SQLException e) {
+        	e.printStackTrace();
+        }finally{
+            try{
+                con.close();
+            }catch(SQLException e) {
+                e.printStackTrace();
+            }
+        }
 
-		MySqlConnector db = new MySqlConnector("openconnect");
-		Connection con = (Connection) db.getConnection();
-		//UPDATE a SET b = c WHERE d = e→テーブル(a)に対して、d = eであればbにcをセットする
-		String sql ="update carts set quantity=? where user_id=?";
-
-		try{
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setInt(1, quantity);
-			ps.setInt(2, userId);
-			updateCount = ps.executeUpdate();
-		}catch(SQLException e){
-			e.printStackTrace();
-		}finally{
-			if(con!=null){
-				try{
-					con.close();
-				}catch(SQLException e){
-					e.printStackTrace();
-				}
-			}
-		}
-	return updateCount;
-	}
-
-
+        return count;
+    }
 
 }

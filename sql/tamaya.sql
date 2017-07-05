@@ -18,7 +18,7 @@ registration_date datetime not null default CURRENT_timestamp,
 updated_date datetime not null default CURRENT_timestamp on update current_timestamp
 );
 
-create table cart(
+create table carts(
 user_id int not null,
 item_id int not null,
 item_name varchar(100) not null,
