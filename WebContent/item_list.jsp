@@ -47,28 +47,39 @@
 	<div class="item_list">
 
 
-			<!-- ▼▼itemList<ItemDTO> の中の ItemDTO オブジェクトを順番に全て取り出す。ループ変数は i -->
-			<s:iterator value="itemList" status="i">
-				<div class="item">
-					<!-- ▼▼この画像をクリックすると #item_detail_modal のモーダルを開く（modal.jsp内にある） -->
-					<!-- ▼▼モーダル周りの動作はbootstrap.jsで定義されています -->
-					<img src="<s:property value="itemList.get(#i.index).imgPath"/>"
-						data-toggle="modal" data-target="#item_detail_modal"
-						onclick="imgClick(this.name);"
-						name="<s:property value='itemList.get(#i.index).itemId'/>">
-					<table>
-						<tr>
-							<td>商品名</td>
-							<td><s:property value="itemList.get(#i.index).itemName" /></td>
-						</tr>
-						<tr>
-							<td>値段</td>
-							<td><s:property value="itemList.get(#i.index).priceWithTax" />円（税込）</td>
-						</tr>
-					</table>
-				</div>
-				<s:form action="CartUpdateAction">
-				<select name="orderCount">
+		<!-- ▼▼itemList<ItemDTO> の中の ItemDTO オブジェクトを順番に全て取り出す。ループ変数は i -->
+		<s:iterator value="itemList" status="i">
+			<div class="item">
+				<!-- ▼▼この画像をクリックすると #item_detail_modal のモーダルを開く（modal.jsp内にある） -->
+				<!-- ▼▼モーダル周りの動作はbootstrap.jsで定義されています -->
+				<img src="<s:property value="itemList.get(#i.index).imgPath"/>"
+					data-toggle="modal" data-target="#item_detail_modal"
+					onclick="imgClick(this.name);"
+					name="<s:property value='itemList.get(#i.index).itemId'/>">
+				<table>
+					<tr>
+						<td>商品名</td>
+						<td><s:property value="itemList.get(#i.index).itemName" /></td>
+					</tr>
+					<tr>
+						<td>値段</td>
+						<td><s:property value="itemList.get(#i.index).priceWithTax" />円（税込）</td>
+					</tr>
+				</table>
+			</div>
+			<s:form action="CartUpdateAction">
+
+				<!-- 普通データをPOSTするためにはsubmitボタンを用意してあげるが、たまにはsubmitもせずに選択した時点で自動的にsubmitして欲しい事もある。
+				そんなときはonChangeでsubmitさせる。
+				でもこの方法だと変えなかった時はそのまま〜になるので、その当たりは調整を(´･ω･｀) -->
+
+
+
+
+：<select name="orderCount" onChange="this.form.submit()">
+
+					<option value="<s:property value="orderCount"/>" selected><s:property
+							value="orderCount" /></option>
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -80,12 +91,21 @@
 					<option value="9">9</option>
 					<option value="10">10</option>
 				</select>
-				<input type="hidden" name="itemId" value="<s:property value='itemList.get(#i.index).itemId'/>"/>
+				<input type="hidden" name="itemId"
+					value="<s:property value='itemList.get(#i.index).itemId'/>" />
 				<s:property value="itemList.get(#i.index).itemId" />
-				<s:submit name="itemList.get(#i.index).itemId" value="カートに追加" class="Button01" />
-				</s:form>
-			</s:iterator>
+					<a href="<s:url action="CartUpdateAction"><s:param name="ItemId" value="itemList.get(#i.index).itemId"></s:param>
+					<s:param name="orderCount"></s:param>
+					</s:url>"
+						>Id渡し</a>
 
-</div>
+
+
+				<s:submit name="itemList.get(#i.index).itemId" value="カートに追加"
+					class="Button01" />
+			</s:form>
+		</s:iterator>
+
+	</div>
 </body>
 </html>
