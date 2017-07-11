@@ -43,7 +43,7 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	/**
 	 *数量
 	 */
-	private int quantities;
+	private int quantity;
 	/**
 	 *イメージパスファイル
 	 */
@@ -147,15 +147,15 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	/**
 	 * 数量を取得するメソッド
 	 */
-	public int getQuantities() {
-		return quantities;
+	public int getQuantity() {
+		return quantity;
 	}
 
 	/**
 	 * 数量を格納するメソッド
 	 */
-	public void setQuantities(int quantity) {
-		this.quantities = quantities;
+	public void setQuantity(int quantity) {
+		this.quantity= quantity;
 	}
 
 	/**

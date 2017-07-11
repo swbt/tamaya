@@ -30,7 +30,7 @@ public class GoCartDAO{
 	 */
   public ArrayList<CartDTO> selectedItem(int userId){
 
-	  Connection con = new MySqlConnector("openconnect").getConnection();
+	  Connection con = new MySqlConnector("tamaya","root","mysql").getConnection();
     ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
 
     String sql = "select * from carts where user_id=?";
@@ -54,10 +54,10 @@ public class GoCartDAO{
 
 			while (rs2.next()) {
 
-				dto.setItemName(rs2.getString("itemName"));//商品名
+				dto.setItemName(rs2.getString("item_name"));//商品名
 				dto.setPrice(rs2.getBigDecimal("price")); //価格
 				dto.setSubtotal(dto.getPrice().multiply(BigDecimal.valueOf(dto.getQuantity()))); //小計分からず
-				dto.setImgPath(rs2.getString("imgPath")); //イメージパス
+				dto.setImgPath(rs2.getString("img_path")); //イメージパス
 			}
     	}
     }catch(SQLException e){
