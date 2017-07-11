@@ -21,8 +21,8 @@ updated_date datetime not null default CURRENT_timestamp on update current_times
 create table carts(
 user_id int not null,
 item_id int not null,
-item_name varchar(100) not null,
-price decimal not null,
+item_name varchar(100),
+price decimal,
 quantity int not null default 1,
 is_delete boolean default false,
 foreign key (user_id)references openconnect.users(user_id) on delete cascade,
@@ -68,3 +68,8 @@ values("ビッグ線香花火",98,9,"日本製の線香花火です。線香花�
 ,("岡本太郎花火",1700,7,"岡本太郎の花火です。芸術は爆発だーーーーーーーーーーーーーーーーーーーーーー！！！",3,"./img/tarou.jpg")
 ,("マシュマロ花火",3500,7,"マシュマロ花火です。可愛くて、美味しい。",2,"./img/marshmallow.jpg")
 ;
+
+insert into carts(user_id,item_id,quantity)
+values(1,4,7)
+;
+

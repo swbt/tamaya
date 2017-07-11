@@ -37,9 +37,9 @@
 		<!-- クレジットカード入力画面から次へ進むための処理 -->
 		<action name="PaymentAction" class="com.internousdev.tamaya.action.PaymentAction"
 			method="execute">
-			<result name="SUCCESS">siharai_kakunin.jsp</result>
+			<result name="success">siharai_kakunin.jsp</result>
 			<result name="error">siharai.jsp</result>
-			<result name="LOGIN">top.jsp</result>
+			<result name="login">top.jsp</result>
 		</action>
 
 		<!-- クレジットカード入力画面から次へ進むための処理 -->
@@ -50,11 +50,19 @@
 			<result name="error">siharai.jsp</result>
 		</action>
 
+		<!-- ヘッダーからカート画面への遷移 -->
+		<action name="GoCartAction"
+			class="com.internousdev.tamaya.action.GoCartAction" method="execute">
+			<result name="success">cart.jsp</result>
+			<result name="error">cart.jsp</result>
+		</action>
+
+
 	<!-- カートに追加する処理 -->
-	<action name="CartUpdateAction"
-		class="com.internousdev.tamaya.action.CartUpdateAction" method="execute">
-		<result name="SUCCESS">item_list.jsp</result>
-		<result name="ERROR">item_list.jsp</result>
+	<action name="CartInsertAction"
+		class="com.internousdev.tamaya.action.CartInsertAction" method="execute">
+		<result name="success" type="chain">FetchItemListAction</result>
+		<result name="error">item_list.jsp</result>
 	</action>
 
 
@@ -62,283 +70,6 @@
 
 
 
-<!--
-
-
-		ここからOAuth認証関連
-
-		Twitter認証を行うアクション
-		<action name="GoTwitterAction"
-			class="com.internousdev.catsndogs.action.GoTwitterAction" method="execute">
-			<result name="success">top.jsp</result>
-			<result name="error">login.jsp</result>
-		</action>
-
-		Twitter認証のコールバックアクション
-		<action name="LoginTwitterAction"
-			class="com.internousdev.catsndogs.action.LoginTwitterAction" method="execute">
-			<result name="success">top.jsp</result>
-			<result name="error">login.jsp</result>
-		</action>
-
-		Facebook認証を行うアクション
-		<action name="GoFacebookAction"
-			class="com.internousdev.catsndogs.action.GoFacebookAction" method="execute">
-			<result name="success">top.jsp</result>
-			<result name="error">login.jsp</result>
-		</action>
-
-		Facebook認証のコールバックアクション
-		<action name="LoginFacebookAction"
-			class="com.internousdev.catsndogs.action.LoginFacebookAction" method="execute">
-			<result name="success">top.jsp</result>
-			<result name="error">login.jsp</result>
-		</action>
-
-		Google認証を行うアクション
-		<action name="GoGoogleAction" class="com.internousdev.catsndogs.action.GoGoogleAction"
-			method="execute">
-			<result name="success">top.jsp</result>
-			<result name="error">login.jsp</result>
-		</action>
-
-		Google認証のコールバックアクション
-		<action name="LoginGoogleAction"
-			class="com.internousdev.catsndogs.action.LoginGoogleAction" method="execute">
-			<result name="success">top.jsp</result>
-			<result name="error">login.jsp</result>
-		</action>
-
-		ヘッダー画面遷移
-
-		ヘッダーからマイページへの遷移
-		<action name="GoMypageAction" class="com.internousdev.catsndogs.action.GoMypageAction"
-			method="execute">
-			<result name="success">mypage.jsp</result>
-			<result name="error">mypage.jsp</result>
-		</action>
-
-		ヘッダーから商品検索結果表示処理
-		<action name="HeaderSearchAction"
-			class="com.internousdev.catsndogs.action.HeaderSearchAction" method="execute">
-			<result name="success">header_search.jsp</result>
-			<result name="error">header_search.jsp</result>
-		</action>
-
-		ヘッダーからログイン画面への遷移
-		<action name="GoLoginAction" class="com.internousdev.catsndogs.action.GoLoginAction"
-			method="execute">
-			<result name="success">login.jsp</result>
-		</action>
-
-		ヘッダーからカートへの遷移
-		<action name="GoCartAction" class="com.internousdev.catsndogs.action.GoCartAction"
-			method="execute">
-			<result name="success">cart.jsp</result>
-			<result name="error">cart.jsp</result>
-		</action>
-
-		ヘッダーからログアウト
-		<action name="LogoutAction" class="com.internousdev.catsndogs.action.LogoutAction"
-			method="execute">
-			<result name="success">top.jsp</result>
-			<result name="error">login.jsp</result>
-		</action>
-
-		ヘッダーのロゴからトップへ
-		<action name="GoTopAction" class="com.internousdev.catsndogs.action.GoTopAction"
-			method="execute">
-			<result name="success">top.jsp</result>
-		</action>
-
-		ヘッダーから商品一覧画面への遷移
-		<action name="GoItemListAction"
-			class="com.internousdev.catsndogs.action.GoItemListAction" method="execute">
-			<result name="success">item.jsp</result>
-			<result name="error">item.jsp</result>
-		</action>
-
-		ログイン画面から管理者ログイン画面への遷移
-		<action name="GoAdminLoginAction"
-			class="com.internousdev.catsndogs.action.GoAdminLoginAction" method="execute">
-			<result name="success">admin_login.jsp</result>
-		</action>
-
-		管理者ログイン画面
-		<action name="AdminLoginAction"
-			class="com.internousdev.catsndogs.action.AdminLoginAction" method="execute">
-			<result name="success">admin_top.jsp</result>
-			<result name="error">admin_login.jsp</result>
-		</action>
-
-
-		カート・purchase など購入関連
-
-		カート一覧画面、から購入画面への遷移 5/12福田
-		<action name="GoPurchaseAction"
-			class="com.internousdev.catsndogs.action.GoPurchaseAction" method="execute">
-			<result name="success">purchase.jsp</result>
-			<result name="error">cart.jsp</result>
-		</action>
-
-		カート一覧画面で商品の個数を変更する
-		<action name="CartUpdateAction"
-			class="com.internousdev.catsndogs.action.CartUpdateAction" method="execute">
-			<result name="success" type="chain">GoCartAction</result>
-		</action>
-
-		カート一覧画面から商品を削除する
-		<action name="CartDeleteAction"
-			class="com.internousdev.catsndogs.action.CartDeleteAction" method="execute">
-			<result name="success" type="chain">GoCartAction</result>
-		</action>
-
-		クレジットカード入力画面から次へ進むための処理
-		<action name="CheckCreditInfomationAction"
-			class="com.internousdev.catsndogs.action.CheckCreditInfomationAction"
-			method="execute">
-			<result name="success" type="chain">PurchaseSecondAction</result>
-			<result name="error">purchase.jsp</result>
-		</action>
-
-		支払方法入力画面（旧購入画面）から購入確認画面への遷移2 5/12福田
-		<action name="PurchaseSecondAction"
-			class="com.internousdev.catsndogs.action.PurchaseSecondAction"
-			method="execute">
-			<result name="success">purchase_confirm.jsp</result>
-			<result name="error">purchase_confirm.jsp</result>
-			<result name="empty_cart">purchase.jsp</result>
-		</action>
-
-		購入確認画面から購入完了画面への遷移 5/11福田
-		<action name="FinalizePurchaseOrderAction"
-			class="com.internousdev.catsndogs.action.FinalizePurchaseOrderAction"
-			method="execute">
-			<result name="success">purchase_completion.jsp</result>
-			<result name="error">purchase_confirm.jsp</result>
-		</action>
-
-		購入確認画面から支払方法入力画面への遷移 5/12福田
-		<action name="PurchaseCancelAction"
-			class="com.internousdev.catsndogs.action.PurchaseCancelAction"
-			method="execute">
-			<result name="success">purchase.jsp</result>
-			<result name="error">purchase.jsp</result>
-		</action>
-
-		商品一覧画面から商品詳細画面への遷移 5/15 kawabata
-		<action name="GoItemdetailAction"
-			class="com.internousdev.catsndogs.action.GoItemdetailAction" method="execute">
-			<result name="success">item_detail.jsp</result>
-			<result name="error">item_detail.jsp</result>
-		</action>
-
-		商品詳細画面、購入画面からカート一覧画面への遷移 5/15 kawabata
-		<action name="CartInsertAction"
-			class="com.internousdev.catsndogs.action.CartInsertAction" method="execute">
-			<result name="success" type="chain">GoCartAction</result>
-			<result name="error" type="chain">GoCartAction</result>
-			<result name="login">login.jsp</result>
-		</action>
-
-		ログイン画面からトップ画面への遷移
-		<action name="LoginAction" class="com.internousdev.catsndogs.action.LoginAction"
-			method="execute">
-			<result name="success" type="chain">GoMypageAction</result>
-			<result name="error">login.jsp</result>
-		</action>
-
-		購入関連ここまで
-
-		問い合わせ画面
-		<action name="ContactAction" class="com.internousdev.catsndogs.action.ContactAction"
-			method="execute">
-			<result name="success">inquiryok.jsp</result>
-			<result name="error">contact.jsp</result>
-		</action>
-
-		管理画面系 ここから
-
-		管理者問い合わせ画面
-		<action name="AdminContactAction"
-			class="com.internousdev.catsndogs.action.AdminContactAction" method="execute">
-			<result name="success">admin_contact.jsp</result>
-			<result name="error">admin_contact.jsp</result>
-		</action>
-
-		管理商品検索結果表示処理
-		<action name="AdminItemListAction"
-			class="com.internousdev.catsndogs.action.AdminItemListAction" method="execute">
-			<result name="success">admin_item_list.jsp</result>
-			<result name="error">admin_item_list.jsp</result>
-			<result name="input">admin_item_list.jsp</result>
-		</action>
-
-		管理商品検索表示画面から商品編集画面への遷移
-		<action name="AdminItemEditAction"
-			class="com.internousdev.catsndogs.action.AdminItemEditAction" method="execute">
-			<result name="success">admin_item_edit.jsp</result>
-			<result name="error">admin_item_list.jsp</result>
-		</action>
-
-		管理商品編集確認画面から管理Topへの遷移
-		<action name="AdminItemUpdateExecuteAction"
-			class="com.internousdev.catsndogs.action.AdminItemUpdateExecuteAction"
-			method="execute">
-			<result name="success">admin_item_list.jsp</result>
-			<result name="error">admin_item_edit.jsp</result>
-		</action>
-
-		管理商品追加処理 2017/05/12
-		<action name="AdminItemAddAction"
-			class="com.internousdev.catsndogs.action.AdminItemAddAction" method="execute">
-			<result name="success">admin_item_list.jsp</result>
-			<result name="error">admin_item_add.jsp</result>
-		</action>
-
-		管理画面から商品追加画面への遷移
-		<action name="GoAdminItemAddAction"
-			class="com.internousdev.catsndogs.action.GoAdminItemAddAction"
-			method="execute">
-			<result name="success">admin_item_add.jsp</result>
-		</action>
-
-		管理商品削除処理 2017/05/12
-		<action name="AdminItemDeleteAction"
-			class="com.internousdev.catsndogs.action.AdminItemDeleteAction"
-			method="execute">
-			<result name="success">admin_item_list.jsp</result>
-		</action>
-
-		管理商品購入履歴 2017/05/19
-		<action name="AdminPurchaseHistoryAction"
-			class="com.internousdev.catsndogs.action.AdminPurchaseHistoryAction"
-			method="execute">
-			<result name="success">admin_history.jsp</result>
-			<result name="error">admin_history.jsp</result>
-		</action>
-
-		管理 顧客情報検索処理
-		<action name="AdminCustomerAction"
-			class="com.internousdev.catsndogs.action.AdminCustomerAction" method="execute">
-			<result name="success">admin_customer.jsp</result>
-			<result name="error">admin_customer.jsp</result>
-		</action>
-
-
-		マイページ
-		<action name="GoMypageAction" class="com.internousdev.catsndogs.action.GoMypageAction"
-			method="execute">
-			<result name="success">mypage.jsp</result>
-			<result name="error">login.jsp</result>
-		</action>
-
-	</package>
-
-
-</struts>
-
- -->
 
 
 	</package>

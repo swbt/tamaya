@@ -16,8 +16,8 @@ public class CartUpdateDAO {
         int count = 0;
         Connection con = new MySqlConnector("tamaya","root","mysql").getConnection();
         //UPDATE a SET b = c WHERE d = e→テーブル(a)に対して、d = eであればbにcをセットする
+/*        String sql= "UPDATE carts SET quantity = ? WHERE user_id = ? && item_id = ?";*/
         String sql = "UPDATE carts SET quantity = ? WHERE user_id = ? && item_id = ?";
-
         try {
             PreparedStatement ps = con.prepareStatement(sql);
 
@@ -40,5 +40,5 @@ public class CartUpdateDAO {
 
         return count;
     }
-
 }
+

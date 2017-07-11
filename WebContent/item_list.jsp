@@ -22,14 +22,14 @@
 <script src="js/bootstrap.min.js"></script>
 
 <script>
-    var actionUrl;                //アクションのURL
-    var actionUrlWithParam;       //アクションのパラメータ付きURL
-    function imgClick(itemId) {   //onclick="imgClick(this.name);"の属性がついた画像をクリックした時に実行される
-      actionUrl = '<s:url action="FetchItemDetailAction"></s:url>';  //例：/kagiya/FetchItemDetailAction.action
-      actionUrlWithParam = actionUrl + "?itemId=" + itemId;         //例：/kagiya/FetchItemDetailAction.action?itemId=2
-      $('#item_detail').attr('src', actionUrlWithParam);  //#item_detailを持つ要素の'src'属性にactionUrlWithParamを代入
-    };
-    </script>
+	var actionUrl; //アクションのURL
+	var actionUrlWithParam; //アクションのパラメータ付きURL
+	function imgClick(itemId) { //onclick="imgClick(this.name);"の属性がついた画像をクリックした時に実行される
+		actionUrl = '<s:url action="FetchItemDetailAction"></s:url>'; //例：/kagiya/FetchItemDetailAction.action
+		actionUrlWithParam = actionUrl + "?itemId=" + itemId; //例：/kagiya/FetchItemDetailAction.action?itemId=2
+		$('#item_detail').attr('src', actionUrlWithParam); //#item_detailを持つ要素の'src'属性にactionUrlWithParamを代入
+	};
+</script>
 </head>
 
 <body>
@@ -67,7 +67,7 @@
 					</tr>
 				</table>
 			</div>
-			<s:form action="CartUpdateAction">
+			<s:form action="CartInsertAction">
 
 				<!-- 普通データをPOSTするためにはsubmitボタンを用意してあげるが、たまにはsubmitもせずに選択した時点で自動的にsubmitして欲しい事もある。
 				そんなときはonChangeでsubmitさせる。
@@ -94,10 +94,8 @@
 				<input type="hidden" name="itemId"
 					value="<s:property value='itemList.get(#i.index).itemId'/>" />
 				<s:property value="itemList.get(#i.index).itemId" />
-					<a href="<s:url action="CartUpdateAction"><s:param name="ItemId" value="itemList.get(#i.index).itemId"></s:param>
-					<s:param name="orderCount"></s:param>
-					</s:url>"
-						>Id渡し</a>
+				<a href="<s:url action="CartInsertAction"><s:param name="ItemId" value="itemList.get(#i.index).itemId"></s:param>
+					<s:param name="orderCount" value="7"/></s:url>">Id渡し</a>
 
 
 
@@ -107,5 +105,7 @@
 		</s:iterator>
 
 	</div>
+	<a href='<s:url action="CartInsertAction"><s:param name="ItemId" value="1"/>
+	<s:param name="orderCount" value="7"/></s:url>'>Id渡し</a>
 </body>
 </html>

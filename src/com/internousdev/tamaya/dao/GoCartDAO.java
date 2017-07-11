@@ -13,8 +13,8 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * カート遷移に関するクラス
- *@author ryusei tanaka
- * @since 2017/06/14
+ *@author YUKO　TSUJI
+ * @since 2017/07/11
  * @version 1.0
  */
 public class GoCartDAO{
@@ -24,8 +24,8 @@ public class GoCartDAO{
 	 * カート内の商品情報を取得しリストに格納するメソッド
 	 * @param userId ユーザーID
 	 * @return cartList カート内の商品情報
-	 * @author ryusei tanaka
- * @since 2017/06/14
+	 * @author YUKO　TSUJI
+ * @since 2017/07/11
 	 * @version 1.0
 	 */
   public ArrayList<CartDTO> selectedItem(int userId){

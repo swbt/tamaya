@@ -13,13 +13,17 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * カートの情報を取得するアクションクラス
- * @author seiya takahashi
- * @since 2017/6/13
+ * @author YUKO TSUJI
+ * @since 2017/7/11
  * @version 1.0
  */
 
 public class GoCartAction extends ActionSupport implements SessionAware{
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 *ユーザーID
 	 */
