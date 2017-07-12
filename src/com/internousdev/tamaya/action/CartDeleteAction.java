@@ -9,9 +9,7 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tamaya.dao.CartDeleteDAO;
-import com.internousdev.tamaya.dao.CreditInsertDAO;
 import com.internousdev.tamaya.dao.GoCartDAO;
-import com.internousdev.tamaya.dao.MypageDAO;
 import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.dto.CreditDTO;
 import com.internousdev.tamaya.dto.MypageDTO;
@@ -98,7 +96,7 @@ public class CartDeleteAction extends CartAssist implements SessionAware{
 
 			System.out.println(itemId + "やりましたよ2");
 
-			System.out.println(delCount + "やりましたよ2");
+			System.out.println(delCount + "消してやりましたよ");
 
 			if(delCount>0){
 				cartList = dao2.selectedItem(userId);
@@ -106,10 +104,10 @@ public class CartDeleteAction extends CartAssist implements SessionAware{
 					for(int i = 0; i < cartList.size(); i++ ){
 						total = (cartList.get(i).getPrice()).multiply(BigDecimal.valueOf(cartList.get(i).getQuantity()));
 					}
-					MypageDAO dao3 = new MypageDAO();
+/*					MypageDAO dao3 = new MypageDAO();
 					CreditInsertDAO dao4 = new CreditInsertDAO();
 					usersList = dao3.select(userId);
-					creditList = dao4.selectCredit(userId);
+					creditList = dao4.selectCredit(userId);*/
 					result = SUCCESS;
 				}
 			}
