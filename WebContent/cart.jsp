@@ -21,7 +21,7 @@
 
 
 
-	<!-- <link rel="stylesheet" type="text/css"  href="css/cart.css" -->
+<!-- 	<link rel="stylesheet" type="text/css"  href="css/cart.css"> -->
 
  
 <script src="js/jquery-3.2.1.min.js"></script>
@@ -61,7 +61,7 @@
 			<s:iterator value="cartList">
 				<!-- デザインが崩れてしまうため保留 -->
 				<tr>
-					<td><img src="<s:property value="imgPath"/>"
+					<td><img class="shohin" src="<s:property value="imgPath"/>" width="180" height="180"
 						<s:property value="itemName" /> align="center"></td>
 					<td align="center">￥<fmt:formatNumber value="${price}" />（税込）
 					</td>
