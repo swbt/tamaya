@@ -37,7 +37,7 @@ public class CartDeleteDAO {
 			ps.setInt(1, userId);
 			ps.setInt(2, itemId );
 			delCount = ps.executeUpdate();
-			System.out.println(delCount + "やりましたよ");
+			System.out.println(delCount + "ＤＡＯの消すかうんとやりましたよ");
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{

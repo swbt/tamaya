@@ -116,7 +116,7 @@
 	</table>
 
 	<div>
-		<a href="./siharai.jsp"> <s:form action="GoPaymentAction"></s:form>
+		<a href="./siharai.jsp"><%--  <s:form action="GoPaymentAction"></s:form> --%>
 			<img src="img/shiharai_nyuryoku.png" alt="支払い情報入力画面" align="right">
 		</a>
 	</div>

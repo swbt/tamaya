@@ -94,7 +94,7 @@ public class CartDeleteAction extends CartAssist implements SessionAware{
 
 			delCount = dao.delete(userId,itemId);
 
-			System.out.println(itemId + "やりましたよ2");
+			System.out.println(itemId + "アイテムＩＤですよ");
 
 			System.out.println(delCount + "消してやりましたよ");
 
@@ -103,7 +103,10 @@ public class CartDeleteAction extends CartAssist implements SessionAware{
 				if (cartList.size() > 0) {
 					for(int i = 0; i < cartList.size(); i++ ){
 						total = (cartList.get(i).getPrice()).multiply(BigDecimal.valueOf(cartList.get(i).getQuantity()));
+					
+						System.out.println(total + "トータル");
 					}
+					
 /*					MypageDAO dao3 = new MypageDAO();
 					CreditInsertDAO dao4 = new CreditInsertDAO();
 					usersList = dao3.select(userId);
