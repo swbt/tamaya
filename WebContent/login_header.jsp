@@ -27,11 +27,17 @@
       <div class="trim">
         <img src="./img/tamaya22.png" class="bb">
     <div class="example">
-      <a href="toiawase.jsp"><i class="button" ></i> お問い合わせ</a>
-      <a href="<s:url action="LogoutAction"/>"><i class="button" ></i> ログアウト</a>
-      <a href="mypage.jsp"><i class="button" ></i> マイページ</a>
-      <a href="<s:url action="GoCartAction"></s:url>"><i class="button" ></i> マイカート</a>
-      <a href="top.jsp"><i class="button" ></i> トップ</a>
+    <div id="menu">
+		<ul>
+			<li><a href="toiawase.jsp">お問い合わせ</a></li>
+			<li><a href="<s:url action="LogoutAction"/>"><i class="button" ></i> ログアウト</a></li>
+			<li><a href="mypage.jsp">マイページ</a></li>
+			<li><a href="cart.jsp">マイカート</a></li>
+			<li><a href="top.jsp">トップ</a></li>
+
+		</ul>
+		</div>
+
     </div>
       </div>
 

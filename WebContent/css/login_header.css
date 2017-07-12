@@ -44,9 +44,6 @@ width:960px;
 
   }
 
-.example a:hover{/*ƒJ[ƒ\ƒ‹‚ğ“–‚Ä‚½‚Æ‚«*/
-  background: rgba(255, 255, 255, 0.3);/*”wŒi‚ğ”¼“§–¾‚É*/
-  }
 
   }
 
@@ -55,5 +52,32 @@ img {
   height: 400px;
   object-fit: cover;
 
+}
+#menu ul{
+margin: 0;
+padding: 0;
+list-style: none;
+}
+#menu li{
+display: inline;
+padding: 0;
+margin: 0;
+float: right;
+}
+#menu li a{
+display: block;
+width: 100px;
+padding: 3px;
+margin: 10px 0px 10px 0px;
+text-decoration: none;
+border:outset 3px black;
+background-color: #ffffff;
+text-align: center;
+color: #000000;
+font-size: 14px;
+}
+#menu li a:hover{
+border: inset 3px black;
+background-color: #ffffff;
 }
 

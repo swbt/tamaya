@@ -30,8 +30,14 @@
           <s:password name="userPass" label="password" size="20" />
           <s:submit value="ログイン"/>
         </s:form>
-         <a href="toiawase.jsp"><i class="button" ></i> お問い合わせ</a>
-      <a href="top.jsp"><i class="button" ></i> トップ</a>
+     	<div id="menu">
+		<ul>
+			<li><a href="toiawase.jsp">お問い合わせ</a></li>
+			<li><a href="cart.jsp">マイカート</a></li>
+			<li><a href="top.jsp">トップ</a></li>
+
+		</ul>
+		</div>
     </div>
       </div>
 
