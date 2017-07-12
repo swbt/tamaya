@@ -38,7 +38,7 @@ public class CartInsertDAO {
             ps.setInt(2, itemId);
             ps.setInt(3, orderCount);
             ret = ps.executeUpdate();
-            System.out.println(ret + "インサート入ってる");
+
         }catch (SQLException e){
             e.printStackTrace();
         }finally{

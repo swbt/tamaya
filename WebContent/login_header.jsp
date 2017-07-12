@@ -30,7 +30,7 @@
       <a href="toiawase.jsp"><i class="button" ></i> お問い合わせ</a>
       <a href="<s:url action="LogoutAction"/>"><i class="button" ></i> ログアウト</a>
       <a href="mypage.jsp"><i class="button" ></i> マイページ</a>
-      <a href="cart.jsp"><i class="button" ></i> マイカート</a>
+      <a href="<s:url action="GoCartAction"></s:url>"><i class="button" ></i> マイカート</a>
       <a href="top.jsp"><i class="button" ></i> トップ</a>
     </div>
       </div>

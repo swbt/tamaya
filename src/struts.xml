@@ -44,28 +44,32 @@
 
 		<!-- クレジットカード入力画面から次へ進むための処理 -->
 		<action name="PurchaseCompleteAction"
-			class="com.internousdev.tamaya.action.PurchaseCompleteAction"
-			method="execute">
+			class="com.internousdev.tamaya.action.PurchaseCompleteAction" method="execute">
 			<result name="success" type="chain">PurchaseCompleteAction</result>
 			<result name="error">siharai.jsp</result>
 		</action>
 
-		<!-- ヘッダーからカート画面への遷移 -->
-		<action name="GoCartAction"
-			class="com.internousdev.tamaya.action.GoCartAction" method="execute">
+		<!-- ログイン後のヘッダーからカート画面への遷移 -->
+		<action name="GoCartAction" class="com.internousdev.tamaya.action.GoCartAction"
+			method="execute">
 			<result name="success">cart.jsp</result>
 			<result name="error">cart.jsp</result>
 		</action>
 
 
-	<!-- カートに追加する処理 -->
-	<action name="CartInsertAction"
-		class="com.internousdev.tamaya.action.CartInsertAction" method="execute">
-		<result name="success" type="chain">FetchItemListAction</result>
-		<result name="error">item_list.jsp</result>
-	</action>
+		<!-- カートに追加する処理 -->
+		<action name="CartInsertAction" class="com.internousdev.tamaya.action.CartInsertAction"
+			method="execute">
+			<result name="success" type="chain">FetchItemListAction</result>
+			<result name="error">item_list.jsp</result>
+		</action>
 
-
+	<!-- カートから削除する処理 -->
+		<action name="CartDeleteAction" class="com.internousdev.tamaya.action.CartDeleteAction"
+			method="execute">
+			<result name="success" type="chain">CartDeleteAction</result>
+			<result name="error">top.jsp</result>
+		</action>
 
 
 

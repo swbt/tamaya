@@ -20,9 +20,9 @@ import com.internousdev.tamaya.util.CartAssist;
 
 /**
  *  カートの中身を削除するクラス
- * @author TATSUHIRO SAITO
+ * @author YUKO TSUJI
  * @version 1.0
- * @since 2017/5/10
+ * @since 2017/07/12
  */
 
 public class CartDeleteAction extends CartAssist implements SessionAware{
@@ -75,7 +75,7 @@ public class CartDeleteAction extends CartAssist implements SessionAware{
 
 	/**
 	 * カートの中身の削除を実行するメソッド
-	 * @author TATSUHIRO SAITO
+	 * @author YUKO TSUJI
 	 * @version 1.0
 	 * @since 2017/5/10
 	 */
@@ -93,6 +93,8 @@ public class CartDeleteAction extends CartAssist implements SessionAware{
 			GoCartDAO dao2 = new GoCartDAO();
 
 			delCount = dao.delete(userId);
+			System.out.println(delCount + "やりましたよ2");
+			
 			if(delCount>0){
 				cartList = dao2.selectedItem(userId);
 				if (cartList.size() > 0) {

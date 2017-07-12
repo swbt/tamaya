@@ -26,13 +26,16 @@ public class CartDeleteDAO {
 
 	public int delete(int userId){
 		int delCount = 0;
-		Connection con = new MySqlConnector("openconnect").getConnection();
-		String sql1 = "delete from carts where user_id=? and cart_id=?";
+		Connection con = new MySqlConnector("tamaya").getConnection();
+		String sql1 = "delete from carts where user_id=?";
 
 		try{
+			
 			PreparedStatement ps = con.prepareStatement(sql1);
 			ps.setInt(1, userId);
+			ps.setInt(2, );
 			delCount = ps.executeUpdate();
+			System.out.println(delCount + "やりましたよ");
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{

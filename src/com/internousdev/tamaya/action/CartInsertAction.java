@@ -86,7 +86,7 @@ public class CartInsertAction extends ActionSupport implements SessionAware {
 	 * @return result 成功ならSUCCESS　失敗ならERROR　ログイン状態でなければLOGIN
 	 */
 	public String execute(){
-		System.out.println("アクションに来たよ");
+/*		System.out.println("アクションに来たよ");*/
 		//基本的にresultにはERRORが入っている
 	String result = ERROR;
 
@@ -112,7 +112,7 @@ public class CartInsertAction extends ActionSupport implements SessionAware {
 			//resultがSUCCESSに置き換わる
 			int count = 0;
 			count = dao.insert(userId,itemId,orderCount) ;
-			System.out.println(count + "無理");
+
 
 /*		元	if(dao.insert(userId,itemId,orderCount) > 0){*/
 			if(count>0){
@@ -131,7 +131,7 @@ public class CartInsertAction extends ActionSupport implements SessionAware {
 		result = LOGIN;
 
 	}
-	System.out.println(result + "引き渡ししてくれ");
+
 	return result;
 
     }

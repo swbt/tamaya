@@ -51,6 +51,9 @@ public class GoCartDAO{
     		PreparedStatement ps2 = con.prepareStatement(select2);
 			ps2.setInt(1, dto.getItemId());
 			ResultSet rs2 = ps2.executeQuery();
+			
+			
+
 
 			while (rs2.next()) {
 

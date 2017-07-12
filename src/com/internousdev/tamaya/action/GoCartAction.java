@@ -51,7 +51,7 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	/**
 	 * 合計金額
 	 */
-	private BigDecimal total;
+	private BigDecimal total = new BigDecimal("0");
 	/**
 	 * カート内の商品情報を入れるリスト
 	 */
@@ -76,7 +76,10 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 
 			GoCartDAO dao = new GoCartDAO();
 			cartList = dao.selectedItem(userId);
+			System.out.println(cartList.size() + "の量がある");
 			for(int i = 0; i < cartList.size(); i++ ){
+				System.out.println(cartList.get(i).getPrice());
+				System.out.println(cartList.get(i).getQuantity());
 				total = total.add(cartList.get(i).getPrice()) .multiply (BigDecimal.valueOf(cartList.get(i).getQuantity()));
 			}
 			result = SUCCESS;
