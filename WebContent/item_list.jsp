@@ -52,6 +52,14 @@
 			<div class="item">
 				<!-- ▼▼この画像をクリックすると #item_detail_modal のモーダルを開く（modal.jsp内にある） -->
 				<!-- ▼▼モーダル周りの動作はbootstrap.jsで定義されています -->
+
+
+<!-- 				indexは0からスタート
+				countは1からスタート
+				stepを入れると例step=2だと2ずつ増えていく
+				変数iに入る数字を指定するためのパラメータ -->
+
+
 				<img src="<s:property value="itemList.get(#i.index).imgPath"/>"
 					data-toggle="modal" data-target="#item_detail_modal"
 					onclick="imgClick(this.name);"

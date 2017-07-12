@@ -41,13 +41,12 @@
 
 	<div class="a">
 		<table>
-			<s:iterator value="cartList" status="rs">
+			<s:iterator value="cartList" status="un">
 				<tr height="60">
-					<td align="center" width="100"><img src="<s:property value="imgPath"/>" <s:property value="itemName" /> align="center"></td>
+					<td align="center" width="100"><img src="<s:property value="un.imgPath"/> align="center"></td>
 					<td align="center" width="250">
 						<!--商品名-->
-						<s:property value="itemName" />
-						<!-- 商品名 -->：<s:property value="itemName" />
+						<s:property value="un.itemName" />
 					</td>
 					<td align="center" width="100">
 						<!-- 個数が変更されたとき、小計なども自動的に変更される -->
@@ -113,7 +112,7 @@
 
 
 
-	<%-- <table align="center">
+	<table align="center">
       	<thead>
 
 
@@ -168,7 +167,7 @@
           </tr>
         </tfoot>
     </table>
- --%>
+
 	<div>
     <a href="./siharai.jsp"> <s:form action="GoPaymentAction"></s:form>
     	<img src="img/shiharai_nyuryoku.png" alt="支払い情報入力画面" align="right">

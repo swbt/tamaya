@@ -9,13 +9,13 @@ create table items(
 item_id int not null primary key auto_increment,
 item_name varchar(100) not null,
 price double not null,
-stocks int not null,
-sales int not null default 0,
+stocks int,
+sales int default 0,
 item_detail text not null,
 category enum('utiage','temoti','hunsyutu','sonota') not null,
 img_path varchar(255) not null,
-registration_date datetime not null default CURRENT_timestamp,
-updated_date datetime not null default CURRENT_timestamp on update current_timestamp
+registration_date datetime default CURRENT_timestamp,
+updated_date datetime default CURRENT_timestamp on update current_timestamp
 );
 
 create table carts(
