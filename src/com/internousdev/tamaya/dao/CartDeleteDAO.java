@@ -17,23 +17,25 @@ public class CartDeleteDAO {
 
 	/**
 	 * カート内の商品を削除するメソッド
-	 * @author KAORI TAKAHASHI
-	 * @since 2017/06/14
+	 * @author YUKO TSUJI
+	 * @since 2017/07/12
 	 * @version 1.0
 	 * @param userId ユーザーID
 	 * @return delCount 削除する件数
 	 */
 
-	public int delete(int userId){
+	public int delete(int userId,int itemId){
 		int delCount = 0;
 		Connection con = new MySqlConnector("tamaya").getConnection();
 		String sql1 = "delete from carts where user_id=?";
-
+		if(itemId !=0){
+			sql1 = "delete from carts where user_id=? &&item_id=?";
+		}
 		try{
-			
+
 			PreparedStatement ps = con.prepareStatement(sql1);
 			ps.setInt(1, userId);
-			ps.setInt(2, );
+			ps.setInt(2, itemId );
 			delCount = ps.executeUpdate();
 			System.out.println(delCount + "やりましたよ");
 		}catch(SQLException e){

@@ -83,7 +83,12 @@
 					</select></td>
 					<!-- orderCount新設の必要あり？ -->
 					<td align="center">￥<fmt:formatNumber value="${subTotal}" /></td>
-					<td align="center"><s:form action="CartDeleteAction">
+					<td align="center"> <s:form
+											action="CartDeleteAction">
+											<s:hidden name="userId" value="%{userId}" />
+											<s:hidden name="itemId" value="%{itemId}" />
+											<button type="submit" class="btn btn-default">削除
+											</button>
 							<!-- sタグがデザインを崩す原因になっている -->
 							<button type="submit" class="btn btn-default">
 								<s:text name="×" />

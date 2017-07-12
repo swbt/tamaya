@@ -36,7 +36,7 @@ public class CartDeleteAction extends CartAssist implements SessionAware{
 	/**
 	 * 合計金額
 	 */
-	private BigDecimal total;
+	private BigDecimal total = new BigDecimal("0"); /*←初期化*/
 
 	/**
 	 * 　数量
@@ -48,6 +48,8 @@ public class CartDeleteAction extends CartAssist implements SessionAware{
 	 */
 	private int userId;
 
+
+	private int itemId;	/* 商品ID*/
 
 	/**
 	 * 削除処理をした件数
@@ -92,9 +94,12 @@ public class CartDeleteAction extends CartAssist implements SessionAware{
 			CartDeleteDAO dao = new CartDeleteDAO();
 			GoCartDAO dao2 = new GoCartDAO();
 
-			delCount = dao.delete(userId);
+			delCount = dao.delete(userId,itemId);
+
+			System.out.println(itemId + "やりましたよ2");
+
 			System.out.println(delCount + "やりましたよ2");
-			
+
 			if(delCount>0){
 				cartList = dao2.selectedItem(userId);
 				if (cartList.size() > 0) {
@@ -131,6 +136,21 @@ public class CartDeleteAction extends CartAssist implements SessionAware{
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+
+	public int getItemId() {
+		return itemId;
+	}
+
+
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
+	}
+
+
+	public void setTotal(BigDecimal total) {
+		this.total = total;
+	}
+
 
 	/**
 	 * セッションを取得するためのメソッド
