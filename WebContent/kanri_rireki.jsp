@@ -11,97 +11,81 @@
 
 <%--国際化用 --%>
 <fmt:setLocale value="${pageContext.request.locale.language}" />
-<fmt:setBundle basename="com.internousdev.tamaya.property.kanri_rireki" var="lang" />
-<title>販売履歴<s:title text name="lang.admin_purchase_history.title"/></title>
+<fmt:setBundle basename="com.internousdev.tamaya.property.kanri_rireki"
+	var="lang" />
+<title><s:text name="lang.kanri_rireki.title" /></title>
 
 <%--検索エンジンによるインデックス拒否 --%>
 <meta name="ROBOTS" content="NOINDEX.NOFOLLOW">
-
-<meta name="viewport" content="width=device">
-<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+<meta name="viewport" content="width=device initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/AdminLogin.css">
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<link　href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"　rel="stylesheet"
+<link rel="stylesheet" href="css/bootstrapTWBScolor.css">
+<script src="js/to-top.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.2.min.js "></script>
+<link
+	　href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	　rel="stylesheet"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	crossorigin="anonymous">
-
-<div class="kannri_header">
-	<h1>管理者ページ</h1>
-	<br>
-	<ul class="nav nav-tabs">
-		<li><a href="kanri_login.jsp">top</a></li>
-		<li><a href="kanri_rireki.jsp">販売履歴</a></li>
-		<li><a href="kanri_tuika.jsp">商品追加</a></li>
-		<li><a href="kanri_sakujyo.jsp">商品削除</a></li>
-		<li><a href="kanri_henko.jsp">商品変更</a></li>
-		<li><a href="kanri_kakunin.jsp">問い合わせ確認</a></li>
-		<li><a href="kanri_login.jsp">ログアウト</a></li>
-	</ul>
-</div>
-
-<div class="panel panel-default ">
-	<div class="panel-heading ">
-		<h2 class="well well-lg">販売履歴</h2>
-	</div>
-	<table class="example ">
-		<thead>
-			<tr>
-				<th>商品画像</th>
-				<th>商品名</th>
-				<th>価格</th>
-				<th>販売個数</th>
-				<th>購入金額</th>
-				<th>購入日</th>
-			</tr>
-		</thead>
-
-
-		<tbody>
-			<tr>
-				<td></td>
-				<td></td>
-				<td><a href=" " src=></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td><a href=" " src=></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td><a href=" " src=></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td><a href=" " src=></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-
-			</tr>
-		</tbody>
-
-	</table>
 </head>
 
+<body>
+<!-- ヘッダー部分の挿入 -->
+	<header>
+		<s:include value="kanri_header.jsp" />
+	</header>
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<h2><s:text name="lang.kanri_rireki.title" /></h2>
+		</div>
+
+		<p>
+			<s:text name="lang.kanri_rireki.search" />
+		</p>
+		<s:form action="AdminHistoryAction">
+			<input type="number" name="itemId" size="50" placeholder="itemId"
+				min="0" max="100">
+			<input type="submit" value="Search">
+		</s:form>
+
+		<table>
+			<tr align="center">
+				<th><s:text name="lang.kanri_rireki.itemId" /></th>
+				<th><s:text name="lang.kanri_rireki.itemName" /></th>
+				<th><s:text name="lang.kanri_rireki.purchaseId" /></th>
+				<th><s:text name="lang.kanri_rireki.price" /></th>
+				<th><s:text name="lang.kanri_rireki.quantities" /></th>
+				<th><s:text name="lang.kanri_rireki.subtotal" /></th>
+				<th><s:text name="lang.kanri_rireki.purchaseDate" /></th>
+			</tr>
+
+
+			<s:iterator value="adminHistoryList">
+				<s:iterator>
+					<tr class="bg-info">
+						<td><s:property value="itemId" /></td>
+						<td><s:property value="itemsName" /></td>
+						<td><s:property value="purchaseId" /></td>
+						<td>&yen;<fmt:formatNumber value="${price}" /></td>
+						<td><s:property value="quantities" /></td>
+						<td>&yen;<fmt:formatNumber value="${subtotal}" /></td>
+						<td><s:property value="createdAt" /></td>
+					</tr>
+				</s:iterator>
+			</s:iterator>
+		</table>
+		<div id="page-top" class="page-top">
+			<p>
+				<a id="move-page-top" class="move-page-top">▲</a>
+			</p>
+		</div>
+		<div class="panel-footer">
+			<s:text name="lang.kanri_rireki.footer" />
+		</div>
+	</div>
+</body>
 </html>
-
-

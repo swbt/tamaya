@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+
 <%--国際化用 --%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -12,37 +14,40 @@
 <%--国際化用 --%>
 <fmt:setLocale value="${pageContext.request.locale.language}" />
 <fmt:setBundle basename="com.internousdev.tamaya.property.kanri_login" var="lang" />
-<title>管理者ログイン画面<s:text name="lang.admin_login.title" /></title>
+
+<title><s:text name="lang.kanri_login.title"/></title>
 
 <%--検索エンジンによるインデックス拒否 --%>
 <meta name="ROBOTS" content="NOINDEX.NOFOLLOW">
-
-<meta name="viewport" content="width=device">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/AdminLogin.css">
-
+<meta name="viewport" content="width=device initial-scale=1.0">
+<link rel="stylesheet" href="css/AdminLoginPageOnly.css">
 </head>
 
-
 <body>
-	<caption>
-	<h1><s:text name="管理者専用画面"></s:text></h1>
-	</caption>
+	<caption><h1><s:text name="lang.kanri_login.title"/></h1></caption>
 
-	<div class="main">
-<h2><s:text name="%{getText('lang.adminLogin.kanrisya')}"/></h2>
- <s:form action="AdminLoginAction">
- <s:textfield type="text" name="phoneEmail" placeholder="%{getText('lang.adminLogin.mailAddress')}" class="input" required="required" size="40"/>
- <s:password type="password" name="password" placeholder="%{getText('lang.adminLogin.password')}" class="input" required="required" size="40" />
- <s:submit value="ログイン" class="login-btn"  size="14" />
-
- </s:form>
-
-		<!--必要であれば表示
+	<!--必要であれば表示してね
            <div class="logout-button">
-            <input type="submit" class="button" value="ログアウト" />
+            <input type="submit" class="button" value="logout" />
         </div>-->
+
+</body>
+<s:form action="AdminLoginAction">
+	<div class="container">
+		<div class="box">
+			<s:textfield type="text" name="email" required="required"
+				placeholder="email" autocomplete="off" maxlength='30'/>
+		</div>
+		<div class="box">
+			<s:password type="password" name="password" required="required"
+				placeholder="Password" autocomplete="off" maxlength='30'/>
+		</div>
+		<div class="box">
+			<s:submit value="login" class="btn btn-info" title="Register" />
+		</div>
 	</div>
+</s:form>
+
 
 </body>
 
