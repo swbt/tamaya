@@ -70,14 +70,14 @@ width: 100px;
 padding: 3px;
 margin: 10px 0px 10px 0px;
 text-decoration: none;
-border:outset 3px black;
-background-color: #ffffff;
+border:outset 3px #8000ff;
+background-color: white;
 text-align: center;
-color: #000000;
+color: black;
 font-size: 14px;
 }
 #menu li a:hover{
-border: inset 3px black;
-background-color: #ffffff;
+border: inset 3px #ff00ff;
+background-color: white;
 }
 

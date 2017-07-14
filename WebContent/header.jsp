@@ -15,10 +15,6 @@
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
 
-
-
-
-
   </head>
   <body>
       <div class="trim">
@@ -29,11 +25,11 @@
           <s:textfield name="email" label="email"/>
           <s:password name="userPass" label="password" size="20" />
           <s:submit value="ログイン"/>
-        </s:form>
+      </s:form>
+
      	<div id="menu">
 		<ul>
 			<li><a href="toiawase.jsp">お問い合わせ</a></li>
-			<li><a href="cart.jsp">マイカート</a></li>
 			<li><a href="top.jsp">トップ</a></li>
 
 		</ul>

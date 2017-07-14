@@ -61,6 +61,7 @@ public class GoCartDAO{
 				dto.setPrice(rs2.getBigDecimal("price")); //価格
 				dto.setSubtotal(dto.getPrice().multiply(BigDecimal.valueOf(dto.getQuantity()))); //小計分からず
 				dto.setImgPath(rs2.getString("img_path")); //イメージパス
+				
 			}
     	}
     }catch(SQLException e){
@@ -74,5 +75,12 @@ public class GoCartDAO{
 	}
      return cartList;
   }
+  
+ 
+  
+  
+  
+  
+  
 }
 

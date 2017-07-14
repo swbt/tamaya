@@ -1,5 +1,4 @@
 body {
-	background-image: url("../img/hanabi12.jpg");
 	background-attachment: fixed;
 	background-position: right bottom;
 	max-width: 100%;
@@ -14,7 +13,7 @@ body {
 	border: 10px solid gray;
 	height: 500px; /*表示したい大きさ*/
 	margin: 100px; /*縦余白30pxは任意*/
-	max-width: 85%;
+	max-width: 100%;
 	position: relative;
 	width: 90%; /*表示したい大きさ、height と合わせる*/
 	max-width: 100%;

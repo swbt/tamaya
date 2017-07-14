@@ -44,6 +44,7 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	 *数量
 	 */
 	private int quantity;
+
 	/**
 	 *イメージパスファイル
 	 */
@@ -51,7 +52,11 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	/**
 	 * 合計金額
 	 */
-	private BigDecimal total = new BigDecimal("0");
+	private BigDecimal subtotal = new BigDecimal("0"); /*小計*/
+	private BigDecimal total = new BigDecimal("0");/*合計*/
+
+	private BigDecimal quantity2 = new BigDecimal("0");
+	private BigDecimal kosu = new BigDecimal("0"); /*個数合計*/
 	/**
 	 * カート内の商品情報を入れるリスト
 	 */
@@ -78,15 +83,20 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 			cartList = dao.selectedItem(userId);
 			System.out.println(cartList.size() + "の量がある");
 			for(int i = 0; i < cartList.size(); i++ ){
-				System.out.println(cartList.get(i).getPrice());
-				System.out.println(cartList.get(i).getQuantity());
-				total = total.add(cartList.get(i).getPrice()) .multiply (BigDecimal.valueOf(cartList.get(i).getQuantity()));
+				/*System.out.println(cartList.get(i).getPrice());
+				System.out.println(cartList.get(i).getQuantity());*/
+				subtotal = cartList.get(i).getPrice().multiply (BigDecimal.valueOf(cartList.get(i).getQuantity()));
+				total = total.add(subtotal);
+
+				quantity2 = BigDecimal.valueOf(cartList.get(i).getQuantity());
+				kosu = kosu.add(quantity2);
+
 			}
+			System.out.println("合計￥" + total);
 			result = SUCCESS;
 		}
 		return result;
 	}
-
 
 
 	/**
@@ -175,20 +185,7 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 		this.imgPath = imgPath;
 	}
 
-	/**
-	 * 合計金額を取得するメソッド
-	 */
-	public BigDecimal getAmountAll() {
-		return total;
-	}
 
-	/**
-	 * 合計金額を格納するメソッド
-
-	 */
-	public void setTotal(BigDecimal total) {
-		this.total = total;
-	}
 
 	/**
 	 * カート内の商品情報を入れるリストを取得するメソッド
@@ -217,6 +214,35 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
+
+
+
+	/**
+	 * @return subtotal
+	 */
+	public BigDecimal getTotal() {
+		return total;
+	}
+
+
+
+	/**
+	 * @param total セットする total
+	 */
+	public void setTotal(BigDecimal total) {
+		this.total = total;
+	}
+
+
+	public BigDecimal getKosu() {
+		return kosu;
+	}
+
+
+	public void setKosu(BigDecimal kosu) {
+		this.kosu = kosu;
+	}
+
 
 
 }

@@ -54,13 +54,13 @@
 				<!-- ▼▼モーダル周りの動作はbootstrap.jsで定義されています -->
 
 
-<!-- 				indexは0からスタート
+<!-- 			indexは0からスタート
 				countは1からスタート
 				stepを入れると例step=2だと2ずつ増えていく
 				変数iに入る数字を指定するためのパラメータ -->
 
 
-				<img src="<s:property value="itemList.get(#i.index).imgPath"/>"
+				<img src="<s:property value="itemList.get(#i.index).imgPath"/>" width="180" height="180"
 					data-toggle="modal" data-target="#item_detail_modal"
 					onclick="imgClick(this.name);"
 					name="<s:property value='itemList.get(#i.index).itemId'/>">
