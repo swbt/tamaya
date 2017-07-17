@@ -23,6 +23,10 @@ public class CartInsertAction extends ActionSupport implements SessionAware {
 	 */
 	private static final long serialVersionUID = -7416129671577221670L;
 
+	private String category = "";
+	private int priceRange = 0;
+
+
 	/**
 	 * ユーザーID
 	 */
@@ -319,5 +323,21 @@ public class CartInsertAction extends ActionSupport implements SessionAware {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public int getPriceRange() {
+		return priceRange;
+	}
+	public void setPriceRange(int priceRange) {
+		this.priceRange = priceRange;
+
+	}
+
+
 
 }

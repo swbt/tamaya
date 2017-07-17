@@ -70,6 +70,7 @@
 					<td align="center">￥<fmt:formatNumber value="${price}" />（税込）
 					</td>
 					<td align="center"><s:property value="quantity" />個
+
 					<s:form action="CartUpdateAction">
 					<select name="orderCount">
 							<option value="<s:property value="orderCount"/>" selected><s:property

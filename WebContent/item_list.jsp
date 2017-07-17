@@ -75,17 +75,15 @@
 					</tr>
 				</table>
 			</div>
-			<s:form action="CartInsertAction">
+
 
 				<!-- 普通データをPOSTするためにはsubmitボタンを用意してあげるが、たまにはsubmitもせずに選択した時点で自動的にsubmitして欲しい事もある。
 				そんなときはonChangeでsubmitさせる。
 				でもこの方法だと変えなかった時はそのまま〜になるので、その当たりは調整を(´･ω･｀) -->
 
 
-
-
-：<select name="orderCount" onChange="this.form.submit()">
-
+		<s:form action="CartInsertAction">
+					<select name="orderCount">
 					<option value="<s:property value="orderCount"/>" selected><s:property
 							value="orderCount" /></option>
 					<option value="1">1</option>
@@ -99,21 +97,22 @@
 					<option value="9">9</option>
 					<option value="10">10</option>
 				</select>
-				<input type="hidden" name="itemId"
+<%-- 				<input type="hidden" name="itemId"
 					value="<s:property value='itemList.get(#i.index).itemId'/>" />
 				<s:property value="itemList.get(#i.index).itemId" />
 				<a href="<s:url action="CartInsertAction"><s:param name="ItemId" value="itemList.get(#i.index).itemId"></s:param>
-					</s:url>">Id渡し</a>
-
-
-
-				<s:submit name="itemList.get(#i.index).itemId" value="カートに追加"
-					class="Button01" />
+					</s:url>">Id渡し</a> --%>
+					<s:hidden name="userId" value="%{userId}" />
+					<s:hidden name="itemId" value="%{itemId}" />
+					<s:hidden name="priceRange" value="%{priceRange}" />
+					<s:hidden name="category" value="%{category}" />
+					<button type="submit" class="Button01">カートに入れる</button>
+<%-- 				<s:submit name="itemList.get(#i.index).itemId" value="カートに追加"
+					class="Button01" /> --%>
 			</s:form>
 		</s:iterator>
 
 	</div>
-	<a href='<s:url action="CartInsertAction"><s:param name="ItemId" value="1"/>
-	<s:param name="orderCount" value="7"/></s:url>'>Id渡し</a>
+
 </body>
 </html>
