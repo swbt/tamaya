@@ -6,6 +6,7 @@ package com.internousdev.tamaya.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 
@@ -24,7 +25,7 @@ public class CartUpdateDAO {
             ps.setInt(1, orderCount);
             ps.setInt(2, userId);
             ps.setInt(3, itemId);
-            System.out.println(ps + "イイネ！");
+
             count = ps.executeUpdate();
             System.out.println(count + "回！やりますよ");
             if(ps!=null) ps.close();

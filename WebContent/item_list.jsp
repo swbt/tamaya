@@ -103,7 +103,7 @@
 					value="<s:property value='itemList.get(#i.index).itemId'/>" />
 				<s:property value="itemList.get(#i.index).itemId" />
 				<a href="<s:url action="CartInsertAction"><s:param name="ItemId" value="itemList.get(#i.index).itemId"></s:param>
-					<s:param name="orderCount" value="7"/></s:url>">Id渡し</a>
+					</s:url>">Id渡し</a>
 
 
 

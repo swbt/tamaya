@@ -86,7 +86,6 @@ public class CartUpdateAction extends ActionSupport implements SessionAware{
 	 * @return itemId
 	 */
 	public int getItemId() {
-		System.out.println(itemId + "頼みましたかね");
 		return itemId;
 	}
 
@@ -104,9 +103,6 @@ public class CartUpdateAction extends ActionSupport implements SessionAware{
 		return orderCount;
 	}
 
-	/**
-	 * @param orderCount セットする orderCount
-	 */
 	public void setOrderCount(int orderCount) {
 		this.orderCount = orderCount;
 	}

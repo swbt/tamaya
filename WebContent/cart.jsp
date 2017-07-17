@@ -69,9 +69,9 @@
 					<td><s:property value="itemName" /></td>
 					<td align="center">￥<fmt:formatNumber value="${price}" />（税込）
 					</td>
-					<td align="center"><s:property value="quantity" />個 <select
-						name="orderCount" onChange="this.form.submit()"
-						style="width: 50px">
+					<td align="center"><s:property value="quantity" />個
+					<s:form action="CartUpdateAction">
+					<select name="orderCount">
 							<option value="<s:property value="orderCount"/>" selected><s:property
 									value="orderCount" /></option>
 							<option value="1">1</option>
@@ -85,15 +85,15 @@
 							<option value="9">9</option>
 							<option value="10">10</option>
 					</select>
-					<s:form action="CartUpdateAction">
-					<s:hidden name="orderCount" value="%{orderCount}" />
+
+					<%-- <s:hidden name="orderCount" value="%{orderCount}" /> --%>  <!-- ←※不要！！！念のため残しとく -->
 					<s:hidden name="userId" value="%{userId}" />
 					<s:hidden name="itemId" value="%{itemId}" />
-					<s:hidden name="quantity" value="%{quantity}" />
+					<%-- <s:hidden name="quantity" value="%{quantity}" /> --%>
 					<button type="submit" class="btn btn-default">変更</button>
 					</s:form>
 					</td>
-					<!-- orderCount新設の必要あり？ -->
+
 
 
 					<td align="center">￥ <s:property value="%{price * quantity}" /></td>
