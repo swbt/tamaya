@@ -86,7 +86,7 @@
 							<option value="10">10</option>
 					</select>
 
-					<%-- <s:hidden name="orderCount" value="%{orderCount}" /> --%>  <!-- ←※不要！！！念のため残しとく -->
+					<%-- <s:hidden name="orderCount" value="%{orderCount}" /> --%>  <!-- ←※不要！！！あえて残しとく -->
 					<s:hidden name="userId" value="%{userId}" />
 					<s:hidden name="itemId" value="%{itemId}" />
 					<%-- <s:hidden name="quantity" value="%{quantity}" /> --%>
