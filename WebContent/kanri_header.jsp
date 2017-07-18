@@ -45,12 +45,11 @@
 				<ul class="nav navbar-nav">
 					<li><a href="#"></a></li>
 					<li><a href="#"></a></li>
-					<li><a href="kanri_login.jsp"><s:text name="lang.kanri_header.top"/></a></li>
-					<li><a href="kanri_rireki.jsp"><s:text name="lang.kanri_header.rireki"/></a></li>
-					<li><a href="kanri_tuika.jsp"><s:text name="lang.kanri_header.tuika"/></a></li>
-					<li><a href="kanri_sakujyo.jsp"><s:text name="lang.kanri_header.sakujyo"/></a></li>
-					<li><a href="kanri_henko.jsp"><s:text name="lang.kanri_header.henko"/></a></li>
-					<li><a href="kanri_kakunin.jsp"><s:text name="lang.kanri_header.kakunin"/></a></li>
+					<li><a href="kanri_login.jsp"><s:text name="TOP"/></a></li>
+					<li><a href="kanri_rireki.jsp"><s:text name="PURCHASE HISTORY"/></a></li>
+					<li><a href="kanri_tuika.jsp"><s:text name="ADDITEMS"/></a></li>
+					<li><a href="kanri_sakujyo.jsp"><s:text name="DELETEITEMS"/></a></li>
+					<li><a href="kanri_henko.jsp"><s:text name=""/></a></li>
 					<li><a href="<s:url action="AdminLogoutAction"/>"><s:text name="lang.kanri_header.logout"/></a></li>
 				</ul>
 				<p class="navbar-text"><s:text name="lang.kanri_header.welcome"/></p>

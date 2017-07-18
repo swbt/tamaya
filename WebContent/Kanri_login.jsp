@@ -15,7 +15,7 @@
 <fmt:setLocale value="${pageContext.request.locale.language}" />
 <fmt:setBundle basename="com.internousdev.tamaya.property.kanri_login" var="lang" />
 
-<title><s:text name="lang.kanri_login.title"/></title>
+<title>管理者ログイン</title>
 
 <%--検索エンジンによるインデックス拒否 --%>
 <meta name="ROBOTS" content="NOINDEX.NOFOLLOW">
@@ -24,7 +24,7 @@
 </head>
 
 <body>
-	<caption><h1><s:text name="lang.kanri_login.title"/></h1></caption>
+	<caption><h1>管理者ログイン</h1></caption>
 
 	<!--必要であれば表示してね
            <div class="logout-button">
