@@ -35,12 +35,10 @@
 <s:form action="LoginAction">
 	<div class="container">
 		<div class="box">
-			<s:textfield type="text" name="email" label="email"
-				placeholder="email" autocomplete="off" maxlength='30'/>
+			<s:textfield name = "email" placeholder="メールアドレス" size="30"/>
 		</div>
 		<div class="box">
-			<s:password type="password" name="password"
-				placeholder="Password" autocomplete="off" maxlength='30'/>
+			<s:password name = "userPass" placeholder="パスワード" size="30"/>
 		</div>
 		<div class="box">
 			<s:submit value="login" class="btn btn-info" title="Register" />
