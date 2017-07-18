@@ -28,6 +28,7 @@ public class GoItemListAction extends ActionSupport implements SessionAware {
 	@Override
 	public String execute(){
 		String ret = ERROR;
+		System.out.println("GoItemListAction : category = " + category + ", priceRange = " + priceRange);
 		ItemListDAO dao = new ItemListDAO();
 
 		if(!category.isEmpty()){
@@ -39,10 +40,6 @@ public class GoItemListAction extends ActionSupport implements SessionAware {
 		}
 
 		if(itemList.size() <= 0){
-			return ret;
-		}
-		if(transition.equals("top")){
-			ret = "top";
 			return ret;
 		}
 		ret = "item_list";

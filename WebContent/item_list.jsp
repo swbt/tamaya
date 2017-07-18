@@ -42,7 +42,8 @@
   </s:else>
   <!-- ▼▼モーダル画面のjspファイルを読み込む -->
   <s:include value="modal.jsp" />
-
+  <s:set name="priceRange" value="priceRange" />
+  <s:set name="category" value="category" />
 
   <div class="item_list">
 
@@ -72,14 +73,12 @@
           </tr>
           <tr>
             <td>値段</td>
-            <td><s:property
-                value="itemList.get(#i.index).priceWithTax" />円（税込）</td>
+            <td><s:property value="itemList.get(#i.index).priceWithTax" />円（税込）</td>
           </tr>
         </table>
         <s:form action="AddToCartAction">
         <select name="orderCount">
-          <option value="<s:property value="orderCount"/>" selected>
-            <s:property value="orderCount" /></option>
+          <option value="<s:property value="quantity"/>" selected><s:property value="quantity" /></option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -93,8 +92,8 @@
         </select>
         <s:hidden name="userId" value="%{userId}" />
         <s:hidden name="itemId" value="%{itemId}" />
-        <s:hidden name="priceRange" value="%{priceRange}" />
-        <s:hidden name="category" value="%{category}" />
+        <s:hidden name="priceRange" value="%{#priceRange}" />
+        <s:hidden name="category" value="%{#category}" />
         <s:submit class="btn btn-primary" value="カートに入れる" />
         <%--         <s:submit name="itemList.get(#i.index).itemId" value="カートに追加"
           class="Button01" /> --%>
@@ -107,7 +106,7 @@
         でもこの方法だと変えなかった時はそのまま〜になるので、その当たりは調整を(´･ω･｀) -->
 
 
-      
+
     </s:iterator>
 
   </div>

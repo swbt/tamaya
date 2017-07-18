@@ -8,7 +8,7 @@ use tamaya;
 create table items(
 item_id int not null primary key auto_increment,
 item_name varchar(100) not null,
-price double not null,
+price decimal not null,
 stocks int default 0 not null,
 sales int default 0 not null,
 item_detail text,
@@ -39,7 +39,7 @@ foreign key (user_id)references openconnect.users(user_id) on delete cascade
 create table purchase_history_contents(
 history_id int primary key not null,
 item_id int not null,
-price decimal not null,
+price decimal(10, 5) not null,
 quantity int not null default 1,
 foreign key (history_id)references purchase_history(history_id),
 foreign key (item_id)references items(item_id)
@@ -56,6 +56,13 @@ expiration_year varchar(2) not null,
 registration_date datetime not null default CURRENT_timestamp,
 updated_date datetime not null default CURRENT_timestamp  on update current_timestamp,
 foreign key (user_id)references openconnect.users(user_id) on delete cascade
+);
+
+create table taxs(
+tax_rate_id int primary key auto_increment,
+tax_rate decimal(10, 5) not null,
+begin_on datetime not null,
+end_on datetime not null
 );
 
 insert into items(item_name,price,stocks,item_detail,category,img_path)
@@ -78,3 +85,5 @@ insert into carts(user_id,item_id,quantity)
 values(1,4,7)
 ;
 
+insert into taxs(tax_rate, begin_on, end_on) values
+(0.08, '2014-04-01', '9999-12-31');

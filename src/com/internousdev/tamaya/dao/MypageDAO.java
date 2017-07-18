@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.internousdev.tamaya.dto.MypageDTO;
-import com.internousdev.tamaya.util.DBConnector;
+import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * Mypageに関するクラス
@@ -25,8 +25,7 @@ public class MypageDAO {
 	 * @version 1.0
 	 */
 	public ArrayList<MypageDTO> select(int userId) {
-		DBConnector db = new DBConnector("com.mysql.jdbc.Driver","jdbc:mysql://localhost/","openconnect","root","mysql");
-		Connection con = db.getConnection();
+		Connection con = new MySqlConnector("tamaya").getConnection();
 		MypageDTO dto = new MypageDTO();
 		ArrayList<MypageDTO> userList = new ArrayList<MypageDTO>();
 
