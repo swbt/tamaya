@@ -25,13 +25,14 @@ public class AddToCartAction_ref extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;
 	private int userId;				//ユーザーID
 	private int itemId;				// 商品ID
-	private String itemName;		// 商品名
 	private BigDecimal price;			//単価
 
 	private int quantity;			//数量
-	private String imgPath;			//イメージファイルパス
 	private BigDecimal total;		//合計金額
 	private int addCount;			//カートへ商品追加処理をした件数
+
+	private String category = "";	//遷移先
+	private int priceRange = 0;		//遷移先
 
 	private ArrayList<CartDTO> cartList;			//カート情報
 	private ArrayList<ItemDTO> itemStatus;			//商品情報
@@ -96,17 +97,6 @@ public class AddToCartAction_ref extends ActionSupport implements SessionAware {
 		this.itemId = itemId;
 	}
 
-
-	/**商品名取得メソッド */
-	public String getItemName() {
-		return itemName;
-	}
-	/**商品名格納メソッド*/
-	public void setItemsName(String itemName) {
-		this.itemName = itemName;
-	}
-
-
 	/**単価取得メソッド*/
 	public BigDecimal getPrice() {
 		return price;
@@ -127,17 +117,6 @@ public class AddToCartAction_ref extends ActionSupport implements SessionAware {
 		this.quantity = quantity;
 	}
 
-
-	/**イメージファイルパス取得メソッド*/
-	public String getImgPath() {
-		return imgPath;
-	}
-	/**イメージファイルパス格納メソッド*/
-	public void setImgPath(String imgPath) {
-		this.imgPath = imgPath;
-	}
-
-
 	/**合計金額取得メソッド*/
 	public BigDecimal getTotal() {
 		return total;
@@ -156,6 +135,34 @@ public class AddToCartAction_ref extends ActionSupport implements SessionAware {
 	public void setAddcount(int addCount) {
 		this.addCount = addCount;
 	}
+
+
+	public String getCategory() {
+		return category;
+	}
+
+
+
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+
+
+
+	public int getPriceRange() {
+		return priceRange;
+	}
+
+
+
+
+	public void setPriceRange(int priceRange) {
+		this.priceRange = priceRange;
+	}
+
+
 
 
 	/**カート情報を取得するメソッド*/
