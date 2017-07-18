@@ -111,7 +111,7 @@
 		<tfoot>
 			<tr>
 				<td class="souryo" colspan="2">送料（国内）</td>
-				<td align="center" colspan="3">たとえ世界の果てまで行っても....無料なにゃで</td>
+				<td align="center" colspan="3">無料</td>
 			</tr>
 
 			<tr>
