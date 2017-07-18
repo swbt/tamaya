@@ -84,6 +84,21 @@
     </action>
 
 
+	<!-- 管理者ログイン -->
+
+    <action name="LoginAction" class="com.internousdev.tamaya.action.LoginAction" method="execute">
+      <result name="success" type="redirect">kanri_kakunin</result>
+      <result name="error" type="redirect">Kanri_login.jsp</result>
+    </action>
+
+ 		<!-- 管理者ログアウト -->
+    <action name="LogoutAction" class="com.internousdev.tamaya.action.LogoutAction" method="execute">
+      <result name="success" type="redirect"></result>
+      <result name="error" type="redirect"></result>
+    </action>
+
+
+
 
   </package>
 </struts>

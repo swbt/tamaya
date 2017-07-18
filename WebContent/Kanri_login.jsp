@@ -32,14 +32,14 @@
         </div>-->
 
 </body>
-<s:form action="AdminLoginAction">
+<s:form action="LoginAction">
 	<div class="container">
 		<div class="box">
-			<s:textfield type="text" name="email" required="required"
+			<s:textfield type="text" name="email" label="email"
 				placeholder="email" autocomplete="off" maxlength='30'/>
 		</div>
 		<div class="box">
-			<s:password type="password" name="password" required="required"
+			<s:password type="password" name="password"
 				placeholder="Password" autocomplete="off" maxlength='30'/>
 		</div>
 		<div class="box">
