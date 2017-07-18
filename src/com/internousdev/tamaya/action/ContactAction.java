@@ -19,8 +19,8 @@ public class ContactAction extends ActionSupport {
 	private String email;			//メールアドレス
 	private String comment;			//問い合わせ内容
 	private String inquiryDate;		//問い合わせ日時
-	private String phoneNumber;		//電話番号
-
+	private String postalCode;		//電話番号
+	private String inquiryId;
 	/**
 	 * 実行メソッド 問い合わせ情報の送信処理をする*/
 
@@ -29,7 +29,7 @@ public class ContactAction extends ActionSupport {
 
 		ContactDAO dao = new ContactDAO();
 		try{
-			if(dao.insert(userName, email, comment, inquiryDate, phoneNumber)){
+			if(dao.mongoInsert(userName, email, comment,  postalCode,inquiryId)){
 
 				comment = comment.replace("\r\n","<br>");
 				result = SUCCESS;
@@ -64,10 +64,10 @@ public class ContactAction extends ActionSupport {
 	public void setInquiryDate(String inquiryDate) {
 		this.inquiryDate = inquiryDate;
 	}
-	public String getPhoneNumber() {
-		return phoneNumber;
+	public String getPostalCode() {
+		return postalCode;
 	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setPhoneNumber(String postalCode) {
+		this.postalCode = postalCode;
 	}
 }

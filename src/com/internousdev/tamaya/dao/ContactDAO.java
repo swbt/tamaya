@@ -34,7 +34,7 @@ public class ContactDAO {
 	 * @return INSERT真偽値 true / false
 	 * @throws UnknownHostException ホストの IP アドレスが判定できなかった場合にスローされる(呼び出し元で例外処理を行う)
 	 */
-	public boolean mongoInsert(String inquiryId, String inquireDate ,String userName, String email, String postalCode, String comment) throws UnknownHostException {
+	public boolean mongoInsert(String inquiryId, String userName, String email, String postalCode, String comment) throws UnknownHostException {
 		boolean result = false;
 
 		/* 管理者が日本人であることを想定しているため、
@@ -54,10 +54,10 @@ public class ContactDAO {
 		BasicDBObject input = new BasicDBObject();
 
 			input.put("inquiryId",inquiryId);
-			input.put("inquireDate", inquireDate);
+			input.put("inquireDate", dt);
 			input.put("userName",userName);
 			input.put("email", email);
-			input.put("postalCodet", postalCode);
+			input.put("postalCode", postalCode);
 			input.put("comment", comment);
 
 			coll.insert(input);

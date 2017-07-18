@@ -5,6 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- ここまで国際化 -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@
 <fmt:setBundle basename="com.internousdev.tamaya.property.toiawase" var="lang" />
 <!-- 国際化ここまで -->
 
- <head>
+
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <title><s:text name = "lang.toiawase.inquiry" /></title>
@@ -39,7 +40,7 @@
       <div class="col-sm-10 form-inline" style="padding: 3px;">
        <input type="text" name="userName" class="form-control" required="required" maxlength="30"placeholder="<s:text name = "lang.toiawase.yamada"/>" />
       </div>
-     </div>
+
       <div class="row">
        <div class="col-sm-2">電話番号</div>
         <div class="col-sm-10 form-inline" style="padding: 3px;">
@@ -56,16 +57,28 @@
            <div class="col-sm-2">お問い合わせ内容</div>
             <div class="col-sm-10" style="padding: 3px;">
              <textarea class="form-control  input-sm" rows="3" id="comment" placeholder="お問い合わせ内容"></textarea>
-	</div>
-            </div>
-           </div>
+
 </div>
-            <div class="text-center" style="padding: 30px;"></div>
+
+     </div>
+  </s:form>
+  </div>
+ </div>
+
+
+
+</div>
+
+
+
+
+            <div class="text-center" style="padding: 30px;">
 
            <a href="toiawase_kakunin.jsp"><button type="button" class="btn btn-success" onClick="func()">送信内容の確認</button></a>
+		   </div>
 
-           <div id="answer"></div>
+</body>
 
-
- </body>
+  <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript"></script>
 </html>
