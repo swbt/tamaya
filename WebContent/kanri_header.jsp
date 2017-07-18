@@ -44,10 +44,9 @@
 				<ul class="nav navbar-nav">
 					<li><a href="kanri_login.jsp"><s:text name="TOP"/></a></li>
 					<li><a href="kanri_rireki.jsp"><s:text name="PURCHASE HISTORY"/></a></li>
-					<li><a href="kanri_tuika.jsp"><s:text name="ADD ITEMS"/></a></li>
-					<li><a href="kanri_sakujyo.jsp"><s:text name="DELETE ITEMS"/></a></li>
-					<li><a href="kanri_tuika.jsp"><s:text name="UPDATE ITEMS"/></a></li>
-					<li><a href="kanri_sakujyo.jsp"><s:text name="SELECT ITEMS"/></a></li>
+					<li><a href="Kanri_tuika.jsp"><s:text name="ADD ITEMS"/></a></li>
+					<li><a href="Kanri_sakujyo.jsp"><s:text name="DELETE ITEMS"/></a></li>
+					<li><a href="kanri_henko.jsp"><s:text name="UPDATE ITEMS"/></a></li>
 					<li><a href="<s:url action="LogoutAction"/>"><s:text name="LOGOUT"/></a></li>
 				</ul>
 			</div>
