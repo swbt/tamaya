@@ -8,7 +8,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tamaya.dao.CartInsertDAO;
+import com.internousdev.tamaya.dao.AddToCartDAO;
 import com.internousdev.tamaya.dto.PurchaseDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -22,7 +22,7 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = -7416129671577221670L;
 	private String category = "";
 	private int priceRange = 0;
-	/**  ユーザーID */
+	/** ユーザーID */
 	private int userId = 3;
 	/** アイテムID */
 	private int itemId;
@@ -39,69 +39,64 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 	/** 合計(数) */
 	private int totalAmount;
 	/** カートリスト */
-	private ArrayList<PurchaseDTO> cartList=new ArrayList<PurchaseDTO>();
+	private ArrayList<PurchaseDTO> cartList = new ArrayList<PurchaseDTO>();
 	/** カート検索 */
-	private ArrayList<PurchaseDTO> searchCart=new ArrayList<PurchaseDTO>();
+	private ArrayList<PurchaseDTO> searchCart = new ArrayList<PurchaseDTO>();
 	/** ユーザー情報 */
 	private Map<String, Object> session;
 
-
 	/**
 	 * 実行メソッド
+	 * 
 	 * @author AYUMU SHINKAI
-	 * @return result 成功ならSUCCESS　失敗ならERROR　ログイン状態でなければLOGIN
+	 * @return result 成功ならSUCCESS 失敗ならERROR ログイン状態でなければLOGIN
 	 */
-	public String execute(){
-/*		System.out.println("アクションに来たよ");*/
-		//基本的にresultにはERRORが入っている
-	String result = ERROR;
+	public String execute() {
+		String result = ERROR;
 
-/*
- * ユーザーIDが取得できなければログインさせる
- */
-	if(session.get("userId") != null){
-		int userId = (int) session.get("userId");
-	    CartInsertDAO dao = new CartInsertDAO();
+		if (session.get("userId") != null) {
+			int userId = (int) session.get("userId");
+			System.out.println("AddToCartAction : userId = " + userId + ", itemId = " + itemId + ", orderCount = " + orderCount);
+			AddToCartDAO dao = new AddToCartDAO();
 
-	    /*
-	     * cartテーブルに同じ商品があればエラー
-	     */
-	 /*   searchCart = dao.search(userId,itemId);
-	    	if(searchCart.size()!=0){
-	    		return result;
-	    	}*/
+			/*
+			 * cartテーブルに同じ商品があればエラー
+			 */
+			/*
+			 * searchCart = dao.search(userId,itemId); if(searchCart.size()!=0){
+			 * return result; }
+			 */
 
-        /*
-         * insertできていればSUCCESS
-         */
+			/*
+			 * insertできていればSUCCESS
+			 */
 
-			//resultがSUCCESSに置き換わる
+			// resultがSUCCESSに置き換わる
 			int count = 0;
-			count = dao.insert(userId,itemId,orderCount) ;
+			count = dao.insert(userId, itemId, orderCount);
 
+			/* 元 if(dao.insert(userId,itemId,orderCount) > 0){ */
+			if (count > 0) {
+				result = SUCCESS;
+				/*
+				 * int listSize=cartList.size(); float totalAmountFloat=0;
+				 * 
+				 * for(int i=0;i<listSize;i++){ numberPurchased +=
+				 * cartList.get(i).getOrderCount(); totalAmountFloat +=
+				 * (cartList.get(i).getPrice()) *
+				 * (float)(cartList.get(i).getOrderCount()); totalAmount =
+				 * (int)totalAmountFloat; }
+				 */
+			}
+		} else {
+			// resultがLOGINに置き換わる
+			result = LOGIN;
 
-/*		元	if(dao.insert(userId,itemId,orderCount) > 0){*/
-			if(count>0){
-			result = SUCCESS;
-		/*	int listSize=cartList.size();
-			float totalAmountFloat=0;
-
-			for(int i=0;i<listSize;i++){
-				numberPurchased += cartList.get(i).getOrderCount();
-				totalAmountFloat += (cartList.get(i).getPrice()) * (float)(cartList.get(i).getOrderCount());
-				totalAmount = (int)totalAmountFloat;
-			}*/
 		}
-	}else{
-		//resultがLOGINに置き換わる
-		result = LOGIN;
+
+		return result;
 
 	}
-
-	return result;
-
-    }
-
 
 	/**
 	 * @return userId
@@ -110,14 +105,13 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 		return userId;
 	}
 
-
 	/**
-	 * @param userId セットする userId
+	 * @param userId
+	 *            セットする userId
 	 */
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-
 
 	/**
 	 * @return itemId
@@ -126,14 +120,13 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 		return itemId;
 	}
 
-
 	/**
-	 * @param itemId セットする itemId
+	 * @param itemId
+	 *            セットする itemId
 	 */
 	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
-
 
 	/**
 	 * @return itemName
@@ -142,14 +135,13 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 		return itemName;
 	}
 
-
 	/**
-	 * @param itemName セットする itemName
+	 * @param itemName
+	 *            セットする itemName
 	 */
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
-
 
 	/**
 	 * @return image1
@@ -158,14 +150,13 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 		return image1;
 	}
 
-
 	/**
-	 * @param image1 セットする image1
+	 * @param image1
+	 *            セットする image1
 	 */
 	public void setImage1(String image1) {
 		this.image1 = image1;
 	}
-
 
 	/**
 	 * @return orderCount
@@ -174,14 +165,13 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 		return orderCount;
 	}
 
-
 	/**
-	 * @param orderCount セットする orderCount
+	 * @param orderCount
+	 *            セットする orderCount
 	 */
 	public void setOrderCount(int orderCount) {
 		this.orderCount = orderCount;
 	}
-
 
 	/**
 	 * @return price
@@ -190,14 +180,13 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 		return price;
 	}
 
-
 	/**
-	 * @param price セットする price
+	 * @param price
+	 *            セットする price
 	 */
 	public void setPrice(float price) {
 		this.price = price;
 	}
-
 
 	/**
 	 * @return numberPurchased
@@ -206,14 +195,13 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 		return numberPurchased;
 	}
 
-
 	/**
-	 * @param numberPurchased セットする numberPurchased
+	 * @param numberPurchased
+	 *            セットする numberPurchased
 	 */
 	public void setNumberPurchased(int numberPurchased) {
 		this.numberPurchased = numberPurchased;
 	}
-
 
 	/**
 	 * @return totalAmount
@@ -222,14 +210,13 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 		return totalAmount;
 	}
 
-
 	/**
-	 * @param totalAmount セットする totalAmount
+	 * @param totalAmount
+	 *            セットする totalAmount
 	 */
 	public void setTotalAmount(int totalAmount) {
 		this.totalAmount = totalAmount;
 	}
-
 
 	/**
 	 * @return cartList
@@ -238,14 +225,13 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 		return cartList;
 	}
 
-
 	/**
-	 * @param cartList セットする cartList
+	 * @param cartList
+	 *            セットする cartList
 	 */
 	public void setCartList(ArrayList<PurchaseDTO> cartList) {
 		this.cartList = cartList;
 	}
-
 
 	/**
 	 * @return searchCart
@@ -254,14 +240,13 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 		return searchCart;
 	}
 
-
 	/**
-	 * @param searchCart セットする searchCart
+	 * @param searchCart
+	 *            セットする searchCart
 	 */
 	public void setSearchCart(ArrayList<PurchaseDTO> searchCart) {
 		this.searchCart = searchCart;
 	}
-
 
 	/**
 	 * @return session
@@ -270,14 +255,13 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 		return session;
 	}
 
-
 	/**
-	 * @param session セットする session
+	 * @param session
+	 *            セットする session
 	 */
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
 
 	/**
 	 * @return serialversionuid
@@ -289,17 +273,18 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 	public String getCategory() {
 		return category;
 	}
+
 	public void setCategory(String category) {
 		this.category = category;
 	}
+
 	public int getPriceRange() {
 		return priceRange;
 	}
+
 	public void setPriceRange(int priceRange) {
 		this.priceRange = priceRange;
 
 	}
-
-
 
 }

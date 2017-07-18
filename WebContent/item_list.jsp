@@ -78,8 +78,7 @@
         </table>
         <s:form action="AddToCartAction">
         <select name="orderCount">
-          <option value="<s:property value="orderCount"/>" selected>
-            <s:property value="orderCount" /></option>
+          <option value="<s:property value="quantity"/>" selected><s:property value="quantity" /></option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
