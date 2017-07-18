@@ -20,30 +20,28 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 public class ItemDetailDAO {
 
 	public ItemDTO select(int itemId){
-		Connection con = new MySqlConnector("tamaya").getConnection();
+		TaxDAO tdao = new TaxDAO();
 		ItemDTO dto = new ItemDTO();
-		String sql = "SELECT * FROM items where item_id = ?";
+		try(Connection con = new MySqlConnector("tamaya").getConnection();) {
+			BigDecimal taxRate = tdao.getTaxRate();
 
-		try{
+			String sql = "SELECT * FROM items where item_id = ?";
+
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, itemId);
 			ResultSet rs = ps.executeQuery();
 
 			if(rs.next()){
+				dto.setTaxRate(taxRate);
 				dto.setItemId(rs.getInt("item_id"));
 				dto.setItemName(rs.getString("item_name"));
 				dto.setCategory(rs.getString("category"));
-				dto.setPriceWithTax((rs.getBigDecimal("price").multiply(ItemDTO.getTax().add(BigDecimal.ONE))).setScale(0, BigDecimal.ROUND_DOWN));
+				dto.setPrice(rs.getBigDecimal("price"));
 				dto.setStocks(rs.getInt("stocks"));
 				dto.setSales(rs.getInt("sales"));
 				dto.setItemDetail(rs.getString("item_detail"));
 				dto.setImgPath(rs.getString("img_path"));
 			}
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
-		try{
-			con.close();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}

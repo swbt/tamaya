@@ -27,20 +27,23 @@ public class AddToCartDAO {
 	 */
 
 	public ArrayList<ItemDTO> itemStatus(int itemId) {
+		TaxDAO tdao = new TaxDAO();
 		Connection con = new MySqlConnector("tamaya").getConnection();
 		ArrayList<ItemDTO> itemStatus = new ArrayList<ItemDTO>();
 
 		String sql = "select * from items where item_id = ?";
 
 		try {
+			BigDecimal taxRate = tdao.getTaxRate();
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, itemId);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				ItemDTO dto = new ItemDTO();
+
+				dto.setTaxRate(taxRate);
 				dto.setItemName(rs.getString("item_name"));
-				dto.setPriceWithTax(rs.getBigDecimal("price").multiply(ItemDTO.getTax().add(BigDecimal.ONE)).setScale(0,
-						BigDecimal.ROUND_DOWN));
+				dto.setPriceWithTax(rs.getBigDecimal("price"));
 				dto.setStocks(rs.getInt("stocks"));
 				dto.setSales(rs.getInt("sales"));
 				dto.setItemDetail(rs.getString("items_detail"));

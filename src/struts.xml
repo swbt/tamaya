@@ -18,67 +18,59 @@
       <result name="error" type="redirect">GoTopAction</result>
     </action>
 
-    <action name="LogoutAction" class="com.internousdev.tamaya.action.LogoutAction"
-      method="execute">
+    <action name="LogoutAction" class="com.internousdev.tamaya.action.LogoutAction" method="execute">
       <result name="success" type="redirect">GoTopAction</result>
       <result name="error" type="redirect">GoTopAction</result>
     </action>
 
-    <action name="GoItemListAction"
-      class="com.internousdev.tamaya.action.GoItemListAction" method="execute">
+    <action name="GoItemListAction" class="com.internousdev.tamaya.action.GoItemListAction" method="execute">
       <result name="item_list">item_list.jsp</result>
       <result name="top" type="redirect">GoTopAction</result>
       <result name="error" type="redirect">GoTopAction</result>
     </action>
 
-    <action name="GoItemDetailAction"
-      class="com.internousdev.tamaya.action.GoItemDetailAction" method="execute">
+    <action name="GoItemDetailAction" class="com.internousdev.tamaya.action.GoItemDetailAction" method="execute">
       <result name="success">syousai.jsp</result>
       <result name="error">index.jsp</result>
     </action>
 
     <!-- クレジットカード入力画面から次へ進むための処理 -->
-    <action name="PaymentAction" class="com.internousdev.tamaya.action.PaymentAction"
-      method="execute">
+    <action name="PaymentAction" class="com.internousdev.tamaya.action.PaymentAction" method="execute">
       <result name="success">siharai_kakunin.jsp</result>
       <result name="error">siharai.jsp</result>
       <result name="login" type="redirect">GoTopAction</result>
     </action>
 
     <!-- クレジットカード入力画面から次へ進むための処理 -->
-    <action name="PurchaseCompleteAction"
-      class="com.internousdev.tamaya.action.PurchaseCompleteAction" method="execute">
+    <action name="PurchaseCompleteAction" class="com.internousdev.tamaya.action.PurchaseCompleteAction"
+    method="execute">
       <result name="success" type="chain">PurchaseCompleteAction</result>
       <result name="error">siharai.jsp</result>
     </action>
 
     <!-- ログイン後のヘッダーからカート画面への遷移 -->
-    <action name="GoCartAction" class="com.internousdev.tamaya.action.GoCartAction"
-      method="execute">
+    <action name="GoCartAction" class="com.internousdev.tamaya.action.GoCartAction" method="execute">
       <result name="success">cart.jsp</result>
       <result name="error">cart.jsp</result>
     </action>
 
 
     <!-- カートに追加する処理 -->
-    <action name="AddToCartAction" class="com.internousdev.tamaya.action.AddToCartAction"
-      method="execute">
+    <action name="AddToCartAction" class="com.internousdev.tamaya.action.AddToCartAction" method="execute">
       <result name="success" type="chain">GoItemListAction</result>
       <result name="error">item_list.jsp</result>
       <result name="login">login.jsp</result>
     </action>
 
     <!-- カートから削除する処理 -->
-    <action name="CartDeleteAction" class="com.internousdev.tamaya.action.CartDeleteAction"
-      method="execute">
+    <action name="CartDeleteAction" class="com.internousdev.tamaya.action.CartDeleteAction" method="execute">
       <result name="success">cart.jsp</result>
       <result name="error" type="redirect">GoTopAction</result>
     </action>
 
 
     <!-- カートを更新する処理 -->
-    <action name="CartUpdateAction" class="com.internousdev.tamaya.action.CartUpdateAction"
-      method="execute">
+    <action name="CartUpdateAction" class="com.internousdev.tamaya.action.CartUpdateAction" method="execute">
       <result name="success" type="chain">GoCartAction</result>
       <result name="error" type="redirect">GoTopAction</result>
     </action>

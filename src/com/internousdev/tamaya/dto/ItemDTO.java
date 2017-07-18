@@ -12,10 +12,11 @@ import java.math.BigDecimal;
  * @version 1.0
  */
 public class ItemDTO {
-	private static BigDecimal tax = new BigDecimal("0.08");
 	private int itemId;
 	private String itemName;
 	private String category;
+	private BigDecimal price;	//税抜き価格
+	private BigDecimal taxRate;		//税
 	private BigDecimal priceWithTax;	//税込価格
 	private int stocks;
 	private int sales;
@@ -24,12 +25,6 @@ public class ItemDTO {
     private int SortId;
     private String ItemGenre;
 
-	public static BigDecimal getTax() {
-		return tax;
-	}
-	public static void setTax(BigDecimal tax) {
-		ItemDTO.tax = tax;
-	}
 	public int getItemId() {
 		return itemId;
 	}
@@ -47,6 +42,19 @@ public class ItemDTO {
 	}
 	public void setCategory(String category) {
 		this.category = category;
+	}
+	public BigDecimal getPrice() {
+		return price;
+	}
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+		priceWithTax = price.multiply(taxRate.add(BigDecimal.ONE)).setScale(0, BigDecimal.ROUND_DOWN);
+	}
+	public BigDecimal getTaxRate() {
+		return taxRate;
+	}
+	public void setTaxRate(BigDecimal taxRate) {
+		this.taxRate = taxRate;
 	}
 	public BigDecimal getPriceWithTax() {
 		return priceWithTax;

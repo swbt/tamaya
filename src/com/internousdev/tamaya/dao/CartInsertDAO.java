@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.internousdev.tamaya.dto.PurchaseDTO;
-import com.internousdev.tamaya.util.DBConnector;
+import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * @author WATARU AMEMIYA
@@ -28,8 +28,7 @@ public class CartInsertDAO {
 	 */
 
     public int insert(int userId,int itemId,int orderCount) {
-        DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root","mysql");
-        Connection con = db.getConnection();
+		Connection con = new MySqlConnector("tamaya").getConnection();
         int ret = 0;
         String sql = "insert into carts (user_id,item_id,quantity) values (?,?,?)";
         try{
@@ -62,8 +61,7 @@ public class CartInsertDAO {
      * @return searchCart	更新されたリストを返す
      */
     public ArrayList<PurchaseDTO> search(int userId,int itemId){
-        DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root","mysql");
-        Connection con = db.getConnection();
+		Connection con = new MySqlConnector("tamaya").getConnection();
         ArrayList<PurchaseDTO> searchCart=new ArrayList<PurchaseDTO>();
 
         String sql="select * from carts where user_id = ? && item_id = ?";

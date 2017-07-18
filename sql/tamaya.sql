@@ -8,7 +8,7 @@ use tamaya;
 create table items(
 item_id int not null primary key auto_increment,
 item_name varchar(100) not null,
-price double not null,
+price decimal not null,
 stocks int default 0 not null,
 sales int default 0 not null,
 item_detail text,
@@ -39,7 +39,7 @@ foreign key (user_id)references openconnect.users(user_id) on delete cascade
 create table purchase_history_contents(
 history_id int primary key not null,
 item_id int not null,
-price decimal not null,
+price decimal(10, 5) not null,
 quantity int not null default 1,
 foreign key (history_id)references purchase_history(history_id),
 foreign key (item_id)references items(item_id)
@@ -58,6 +58,13 @@ updated_date datetime not null default CURRENT_timestamp  on update current_time
 foreign key (user_id)references openconnect.users(user_id) on delete cascade
 );
 
+create table taxs(
+tax_rate_id int primary key auto_increment,
+tax_rate decimal(10, 5) not null,
+begin_on datetime not null,
+end_on datetime not null
+);
+
 insert into items(item_name,price,stocks,item_detail,category,img_path)
 values('ビッグ線香花火',98,9,'日本製の線香花火です。線香花火シリーズの中で最大サイズになります。長い時間楽しみたい方、面白い花火が好きな方にお勧めの花火となっております。','temoti','./img/test01_.jpg')
 ,('ロケット花火',78,5,'北朝鮮製のロケット花火です。ロケット花火シリーズの中で最小サイズになります。長い時間楽しみたい方、面白い花火が好きな方にお勧めの花火となっております。','utiage','./img/test02_.jpg')
@@ -73,3 +80,5 @@ insert into carts(user_id,item_id,quantity)
 values(1,4,7)
 ;
 
+insert into taxs(tax_rate, begin_on, end_on) values
+(0.08, '2014-04-01', '9999-12-31');

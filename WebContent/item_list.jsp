@@ -72,8 +72,7 @@
           </tr>
           <tr>
             <td>値段</td>
-            <td><s:property
-                value="itemList.get(#i.index).priceWithTax" />円（税込）</td>
+            <td><s:property value="itemList.get(#i.index).priceWithTax" />円（税込）</td>
           </tr>
         </table>
         <s:form action="AddToCartAction">
@@ -107,7 +106,7 @@
         でもこの方法だと変えなかった時はそのまま〜になるので、その当たりは調整を(´･ω･｀) -->
 
 
-      
+
     </s:iterator>
 
   </div>
