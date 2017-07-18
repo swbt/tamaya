@@ -8,7 +8,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tamaya.dao.FetchItemListDAO;
+import com.internousdev.tamaya.dao.ItemListDAO;
 import com.internousdev.tamaya.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -18,7 +18,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @since 1.0
  * @version 1.0
  */
-public class FetchItemListAction extends ActionSupport implements SessionAware {
+public class GoItemListAction extends ActionSupport implements SessionAware {
 	private String transition = "";
 	private String category = "";
 	private int priceRange = 0;
@@ -28,7 +28,7 @@ public class FetchItemListAction extends ActionSupport implements SessionAware {
 	@Override
 	public String execute(){
 		String ret = ERROR;
-		FetchItemListDAO dao = new FetchItemListDAO();
+		ItemListDAO dao = new ItemListDAO();
 
 		if(!category.isEmpty()){
 			itemList = dao.select(category);

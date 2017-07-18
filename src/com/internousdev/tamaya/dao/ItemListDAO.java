@@ -21,8 +21,39 @@ import com.internousdev.util.db.mysql.MySqlConnector;
  * @since 1.0
  * @version 1.0
  */
-public class FetchItemListDAO {
+public class ItemListDAO {
+	public ArrayList<ItemDTO> getRanking(int limit) {
+		Connection con = new MySqlConnector("tamaya","root","mysql").getConnection();
+		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
+		String sql = "SELECT * FROM items ORDER BY sales DESC LIMIT ?";
 
+		try{
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, limit);
+			ResultSet rs = ps.executeQuery();
+
+			while(rs.next()){
+				//while内でItemDTOを宣言しないと、itemList内のdtoが全て同じ値になる（参照渡し？）
+				ItemDTO dto = new ItemDTO();
+				dto.setItemId(rs.getInt("item_id"));
+				dto.setItemName(rs.getString("item_name"));
+				dto.setCategory(rs.getString("category"));
+				dto.setPriceWithTax((rs.getBigDecimal("price").multiply(ItemDTO.getTax().add(BigDecimal.ONE))).setScale(0, BigDecimal.ROUND_DOWN));
+				dto.setStocks(rs.getInt("stocks"));
+				dto.setSales(rs.getInt("sales"));
+				dto.setImgPath(rs.getString("img_path"));
+				itemList.add(dto);
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		try{
+			con.close();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return itemList;
+	}
 	public ArrayList<ItemDTO> select(){
 		Connection con = new MySqlConnector("tamaya","root","mysql").getConnection();
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
