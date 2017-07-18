@@ -127,7 +127,7 @@
 	<div class="button1">
 		<ul>
 		<li><a href="siharai.jsp">支払い入力画面へ</a></li>
-		<li><a href="top.jsp">トップ画面へ</a></li>
+		<li><a href="<s:url action="GoTopAction" />">トップ画面へ</a></li>
 		</ul>
 	</div>
 </body>

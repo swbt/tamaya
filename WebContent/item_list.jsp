@@ -76,15 +76,7 @@
                 value="itemList.get(#i.index).priceWithTax" />円（税込）</td>
           </tr>
         </table>
-      </div>
-
-
-      <!-- 普通データをPOSTするためにはsubmitボタンを用意してあげるが、たまにはsubmitもせずに選択した時点で自動的にsubmitして欲しい事もある。
-        そんなときはonChangeでsubmitさせる。
-        でもこの方法だと変えなかった時はそのまま〜になるので、その当たりは調整を(´･ω･｀) -->
-
-
-      <s:form action="AddToCartAction">
+        <s:form action="AddToCartAction">
         <select name="orderCount">
           <option value="<s:property value="orderCount"/>" selected>
             <s:property value="orderCount" /></option>
@@ -103,10 +95,19 @@
         <s:hidden name="itemId" value="%{itemId}" />
         <s:hidden name="priceRange" value="%{priceRange}" />
         <s:hidden name="category" value="%{category}" />
-        <s:submit class="Button01" value="カートに入れる" />
+        <s:submit class="btn btn-primary" value="カートに入れる" />
         <%--         <s:submit name="itemList.get(#i.index).itemId" value="カートに追加"
           class="Button01" /> --%>
       </s:form>
+      </div>
+
+
+      <!-- 普通データをPOSTするためにはsubmitボタンを用意してあげるが、たまにはsubmitもせずに選択した時点で自動的にsubmitして欲しい事もある。
+        そんなときはonChangeでsubmitさせる。
+        でもこの方法だと変えなかった時はそのまま〜になるので、その当たりは調整を(´･ω･｀) -->
+
+
+      
     </s:iterator>
 
   </div>

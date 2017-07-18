@@ -14,21 +14,21 @@
       <result name="error">top.jsp</result>
     </action>
     <action name="LoginAction" class="com.internousdev.tamaya.action.LoginAction" method="execute">
-      <result name="success">top.jsp</result>
-      <result name="error">top.jsp</result>
+      <result name="success" type="redirect">GoTopAction</result>
+      <result name="error" type="redirect">GoTopAction</result>
     </action>
 
     <action name="LogoutAction" class="com.internousdev.tamaya.action.LogoutAction"
       method="execute">
-      <result name="success">top.jsp</result>
-      <result name="error">top.jsp</result>
+      <result name="success" type="redirect">GoTopAction</result>
+      <result name="error" type="redirect">GoTopAction</result>
     </action>
 
     <action name="GoItemListAction"
       class="com.internousdev.tamaya.action.GoItemListAction" method="execute">
       <result name="item_list">item_list.jsp</result>
-      <result name="top">top.jsp</result>
-      <result name="error">top.jsp</result>
+      <result name="top" type="redirect">GoTopAction</result>
+      <result name="error" type="redirect">GoTopAction</result>
     </action>
 
     <action name="GoItemDetailAction"
@@ -42,7 +42,7 @@
       method="execute">
       <result name="success">siharai_kakunin.jsp</result>
       <result name="error">siharai.jsp</result>
-      <result name="login">top.jsp</result>
+      <result name="login" type="redirect">GoTopAction</result>
     </action>
 
     <!-- クレジットカード入力画面から次へ進むための処理 -->
@@ -72,7 +72,7 @@
     <action name="CartDeleteAction" class="com.internousdev.tamaya.action.CartDeleteAction"
       method="execute">
       <result name="success">cart.jsp</result>
-      <result name="error">top.jsp</result>
+      <result name="error" type="redirect">GoTopAction</result>
     </action>
 
 
@@ -80,7 +80,7 @@
     <action name="CartUpdateAction" class="com.internousdev.tamaya.action.CartUpdateAction"
       method="execute">
       <result name="success" type="chain">GoCartAction</result>
-      <result name="error">top.jsp</result>
+      <result name="error" type="redirect">GoTopAction</result>
     </action>
 
 

@@ -30,7 +30,7 @@
      	<div id="menu">
 		<ul>
 			<li><a href="toiawase.jsp">お問い合わせ</a></li>
-			<li><a href="top.jsp">トップ</a></li>
+			<li><a href="<s:url action="GoTopAction" />">トップ</a></li>
 
 		</ul>
 		</div>

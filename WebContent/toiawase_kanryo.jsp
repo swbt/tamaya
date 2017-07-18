@@ -24,14 +24,14 @@
 
 
 
-<meta http-equiv="refresh" content="5;top.jsp">
+<meta http-equiv="refresh" content="5;<s:url action="GoTopAction" />">
 </HEAD>
 <BODY>
 <h1>お問い合わせ完了致しました。</h1>
 ５秒後にジャンプします。<br>
 ジャンプしない場合は、下記のTOPボタンをクリックしてください。<br>
 <br>
-<a href="top.jsp"><button type="button" class="btn btn-success">TOPページ</button></a>
+<a href="<s:url action="GoTopAction" />"><button type="button" class="btn btn-success">TOPページ</button></a>
 
 </BODY>
 </HTML>
