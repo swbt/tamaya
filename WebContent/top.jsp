@@ -23,9 +23,8 @@
 <script src="js/bootstrap.min.js"></script>
 
 <!-- ▼▼ログイン判定し、それに応じたヘッダーのjspファイルを読み込む -->
-<s:if test="#session.loginFlg == true">
-  <s:include value="lo
-  gin_header.jsp" />
+<s:if test="#session.userId != null">
+  <s:include value="login_header.jsp" />
 </s:if>
 <s:else>
   <s:include value="header.jsp" />
