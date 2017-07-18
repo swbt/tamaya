@@ -107,25 +107,23 @@
       <div class=box3>
 
         <div class="item_list">
-            <s:iterator status="i" begin="1" end="3">
-              <div class="item_wrapper">
-                <div class="item">
-                  <s:form action="GoItemDetailAction" target="item_detail">
-                    <s:hidden name="itemId" value="%{itemList.get(#i.index).itemId}"/>
-                    <s:submit class="img_path" type="image" src="%{itemList.get(#i.index).imgPath}"
-                    data-toggle="modal" data-target="#item_detail_modal"/>
-                  </s:form>
-                  <table>
-                    <tr>
-                      <td>商品名</td>
-                      <td><s:property value="itemList.get(#i.index).itemName" /></td>
-                    </tr>
-                    <tr>
-                      <td>値段</td>
-                      <td><s:property value="itemList.get(#i.index).priceWithTax" />円（税込）</td>
-                    </tr>
-                  </table>
-                </div>
+          <s:iterator status="i" begin="1" end="3">
+              <div class="item">
+                <s:form action="GoItemDetailAction" target="item_detail">
+                  <s:hidden name="itemId" value="%{itemList.get(#i.index).itemId}"/>
+                  <s:submit class="img_path" type="image" src="%{itemList.get(#i.index).imgPath}"
+                  data-toggle="modal" data-target="#item_detail_modal"/>
+                </s:form>
+                <table>
+                  <tr>
+                    <td>商品名</td>
+                    <td><s:property value="itemList.get(#i.index).itemName" /></td>
+                  </tr>
+                  <tr>
+                    <td>値段</td>
+                    <td><s:property value="itemList.get(#i.index).priceWithTax" />円（税込）</td>
+                  </tr>
+                </table>
               </div>
             </s:iterator>
         </div>
