@@ -42,22 +42,24 @@
 <s:iterator value="userList">
     <tr>
         <th scope="row">氏名</th>
-        <td><s:property value= "familyNameKanji" /><!--  && <s:property value="familyNameKana" /> --></td>
+        <td><s:property value= "familyNameKanji" /><s:property value="familyNameKana" /></td>
     </tr>
     <tr>
         <th scope="row">住所</th>
-        <td>〒○○○-○○○○　東京都○○区○○</td>
+        <td>〒<s:property value= "postal" />　<s:property value= "address" /></td>
     </tr>
     <tr>
         <th scope="row">email</th>
 
-        <td>○○○○@gmail.com</td>
+        <td><s:property value= "email" /></td>
 
     </tr>
 
 </tbody>
 </table>
 </s:iterator>
+
+
 
 
 <table class="type07">
@@ -69,30 +71,33 @@
     </tr>
     </thead>
     <tbody>
+    <s:iterator value="cartList">
     <tr>
         <th scope="row">商品画像</th>
-        <td>画像</td>
+        <td><img class="shohin" src="<s:property value="imgPath"/>"
+						width="200" height="180"
+						align="center"></td>
     </tr>
     <tr>
         <th scope="row">商品名</th>
-        <td>線香花火</td>
+        <td><s:property value="itemName" /></td>
     </tr>
     <tr>
         <th scope="row">価格</th>
 
-        <td>1000円(税込)</td>
+        <td><s:property value="price" />円</td>
 
     </tr>
     <tr>
         <th scope="row">数量</th>
-        <td>3(個)</td>
+        <td><s:property value="quantity" /></td>
     <tr>
         <th scope="row">小計</th>
 
-        <td>3240円(税込)</td>
+        <td><s:property value="%{price * quantity}" />円</td>
 
     </tr>
 </tbody>
-
+</s:iterator>
 </table>
 
