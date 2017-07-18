@@ -23,8 +23,9 @@
 <script src="js/bootstrap.min.js"></script>
 
 <!-- ▼▼ログイン判定し、それに応じたヘッダーのjspファイルを読み込む -->
-<s:if test="#session.userId != null">
-  <s:include value="login_header.jsp" />
+<s:if test="#session.loginFlg == true">
+  <s:include value="lo
+  gin_header.jsp" />
 </s:if>
 <s:else>
   <s:include value="header.jsp" />
@@ -34,7 +35,116 @@
 
 </head>
 <body>
-  <div id="header"></div>
+
+
+<div class="container">
+<div class="dbox1">
+<div class="h1title1"></div>
+<div class="pbox1"></div>
+</div>
+</div>
+<div class="dbox2">
+<div class="h1title2">
+<h2>花火の価格別と種類別</h2>
+</div>
+<div class="pbox2">
+<table>
+<tr>
+<td>
+<div class="kakaku1">
+<a
+href="<s:url action="FetchItemListAction"><s:param name="priceRange" value="1"/></s:url">499円以下</a>
+</div>
+</td>
+<td><div class="kakaku2">
+<a
+href="<s:url action="FetchItemListAction"><s:param name="priceRange" value="2"/></s:url">500円～999円</a>
+</div></td>
+<td><div class="kakaku3">
+<a
+href="<s:url action="FetchItemListAction"><s:param name="priceRange" value="3"/></s:url">1000円～4999円</a>
+</div></td>
+<td><div class="kakaku4">
+<a
+href="<s:url action="FetchItemListAction"><s:param name="priceRange" value="4"/></s:url">5000円以上</a>
+</div></td>
+</tr>
+</table>
+</div>
+</div>
+
+<div class="dbox3">
+<div class="h1title3"></div>
+<div class="pbox3">
+<table>
+<tr>
+<td>
+<div class=syurui1>
+<a
+href="<s:url action="FetchItemListAction"><s:param name="category" value="'temoti'"/></s:url">手持花火</a>
+</div>
+</td>
+<td><div class=syurui2>
+<a
+href="<s:url action="FetchItemListAction"><s:param name="category" value="'hunsyutu'"/></s:url">噴出花火</a>
+</div></td>
+<td><div class=syurui3>
+<a
+href="<s:url action="FetchItemListAction"><s:param name="category" value="'utiage'"/></s:url">打上花火</a>
+</div></td>
+<td><div class=syurui4>
+<a
+href="<s:url action="FetchItemListAction"><s:param name="category" value="'sonota'"/></s:url">その他花火</a>
+</div></td>
+</tr>
+</table>
+</div>
+</div>
+
+<div class="dbox4">
+<div class="h1title4">
+<h2>花火の売り上げランキングトップ3</h2>
+</div>
+
+<table>
+<tr>
+<td>1位</td>
+<td>2位</td>
+<td>3位</td>
+</tr>
+<tr>
+<td><div class="pboxes1"></div></td>
+<td><div class="pboxes2"></div></td>
+<td><div class="pboxes3"></div></td>
+</tr>
+</table>
+</div>
+<div class="dbox5">
+<div class="h1title5">
+<h2>花火特集</h2>
+</div>
+<div class="pbox5">
+<table>
+<tr>
+<td><a href="./tokusyu.jsp">家族特集</a></td>
+<td><a href="./tokusyu.jsp">カップル特集</a></td>
+<td><a href="./tokusyu.jsp">大人数特集</a></td>
+</tr>
+<tr>
+<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
+alt="家族特集"></a></td>
+<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
+alt="カップル特集"></a></td>
+<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
+alt="大人数特集"></a></td>
+</tr>
+</table>
+</div>
+</div>
+
+
+
+<%--   <div id="header"></div>
   <div class="container">
     <div class=photo-show>
       <img src="img/hanabi2.jpg" class="aaa" alt="手持ち花火">
@@ -99,6 +209,7 @@
 
         <div class="item_list">
             <s:iterator status="i" begin="1" end="3">
+              <div class="item_wrapper">
                 <div class="item">
                   <s:form action="GoItemDetailAction" target="item_detail">
                     <s:hidden name="itemId" value="%{itemList.get(#i.index).itemId}"/>
@@ -116,6 +227,7 @@
                     </tr>
                   </table>
                 </div>
+              </div>
             </s:iterator>
         </div>
       </div>
@@ -136,6 +248,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --%>
 </body>
 </html>
