@@ -31,7 +31,7 @@
 		<ul>
 			<li><a href="toiawase.jsp">お問い合わせ</a></li>
 			<li><a href="<s:url action="LogoutAction"/>"><i class="button" ></i> ログアウト</a></li>
-			<li><a href="mypage.jsp">マイページ</a></li>
+			<li><a href="<s:url action="GoMyPageAction" />">マイページ</a></li>
 			<li><a href="<s:url action="GoCartAction"/>">マイカート</a></li>
 			<li><a href="<s:url action="GoTopAction" />">トップ</a></li>
 

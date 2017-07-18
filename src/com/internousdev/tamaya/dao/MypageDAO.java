@@ -1,3 +1,7 @@
+
+
+
+
 package com.internousdev.tamaya.dao;
 
 import java.sql.Connection;
@@ -8,7 +12,6 @@ import java.util.ArrayList;
 
 import com.internousdev.tamaya.dto.MypageDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
-
 /**
  * Mypageに関するクラス
  * @author
@@ -20,12 +23,13 @@ public class MypageDAO {
 	 * UserIDでMypageに必要な情報を取得しリストに格納するメソッド
 	 * @param userId ユーザーID
 	 * @return UserList ユーザー情報
-	 * @author Miyauchi Akitomo
-	 * @since 2017/05/15
+	 * @author YUKO TSUJI
+	 * @since 2017/07/18
 	 * @version 1.0
 	 */
 	public ArrayList<MypageDTO> select(int userId) {
-		Connection con = new MySqlConnector("tamaya").getConnection();
+
+		Connection con = new MySqlConnector("openconnect","root","mysql").getConnection();
 		MypageDTO dto = new MypageDTO();
 		ArrayList<MypageDTO> userList = new ArrayList<MypageDTO>();
 
@@ -36,6 +40,7 @@ public class MypageDAO {
 			ps.setInt(1, userId);
 
 			ResultSet rs = ps.executeQuery();
+
 			while (rs.next()) {
 				dto.setUserId(rs.getInt("user_id"));
 
@@ -43,19 +48,9 @@ public class MypageDAO {
 
 				dto.setGivenNameKanji(rs.getString("given_name_kanji"));
 
-				dto.setSex(rs.getString("sex"));
-
-				dto.setBirthday(rs.getString("birthday"));
-
-				dto.setPhoneNumber(rs.getString("phone_number"));
-
-				dto.setPhoneEmail(rs.getString("phone_email"));
-
-				dto.setPostal(rs.getString("postal"));
-
 				dto.setAddress(rs.getString("address"));
 
-				dto.setPassword(rs.getString("password"));
+				dto.setEmail(rs.getString("phone_email"));
 
 				userList.add(dto);
 			}

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 
 <!DOCTYPE html>
 <html>
@@ -17,14 +18,17 @@
     <!-- Javascripts
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script>
+<!--     <script>
       $(document).ready(function(){
         $("#header").load("login_header.html");
       });
-    </script>
-
+    </script> -->
     <link rel="stylesheet" type="text/css" href="./css/mypage.css" media="all">
   </head>
+
+  	<s:include value="login_header.jsp" />
+
+
  <h1>マイページ</h1>
  <table class="type07">
     <thead>
@@ -35,9 +39,10 @@
     </tr>
     </thead>
     <tbody>
+<s:iterator value="userList">
     <tr>
         <th scope="row">氏名</th>
-        <td>山田花子</td>
+        <td><s:property value= "familyNameKanji" /><!--  && <s:property value="familyNameKana" /> --></td>
     </tr>
     <tr>
         <th scope="row">住所</th>
@@ -51,8 +56,9 @@
     </tr>
 
 </tbody>
-
 </table>
+</s:iterator>
+
 
 <table class="type07">
     <thead>
@@ -89,3 +95,4 @@
 </tbody>
 
 </table>
+

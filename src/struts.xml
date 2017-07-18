@@ -76,6 +76,13 @@
     </action>
 
 
+	  <!-- マイページを表示する処理 -->
+    <action name="GoMyPageAction" class="com.internousdev.tamaya.action.GoMyPageAction"
+      method="execute">
+      <result name="success">mypage.jsp</result>
+      <result name="error">top.jsp</result>
+    </action>
+
 
 
   </package>
