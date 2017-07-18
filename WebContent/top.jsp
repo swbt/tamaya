@@ -148,5 +148,9 @@
       </div>
     </div>
   </div>
+  <a href="./Kanri_login.jsp">管理者ログイン</a>
+  <br>
+  <br>
+
 </body>
 </html>
