@@ -25,6 +25,7 @@ item_name varchar(100),
 price decimal,
 quantity int not null default 1,
 is_delete boolean default false,
+primary key (user_id, item_id),
 foreign key (user_id)references openconnect.users(user_id) on delete cascade,
 foreign key (item_id)references items(item_id)
 );

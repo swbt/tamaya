@@ -47,7 +47,7 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 
 	/**
 	 * 実行メソッド
-	 * 
+	 *
 	 * @author AYUMU SHINKAI
 	 * @return result 成功ならSUCCESS 失敗ならERROR ログイン状態でなければLOGIN
 	 */
@@ -58,44 +58,13 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 			int userId = (int) session.get("userId");
 			System.out.println("AddToCartAction : userId = " + userId + ", itemId = " + itemId + ", orderCount = " + orderCount);
 			AddToCartDAO dao = new AddToCartDAO();
-
-			/*
-			 * cartテーブルに同じ商品があればエラー
-			 */
-			/*
-			 * searchCart = dao.search(userId,itemId); if(searchCart.size()!=0){
-			 * return result; }
-			 */
-
-			/*
-			 * insertできていればSUCCESS
-			 */
-
-			// resultがSUCCESSに置き換わる
-			int count = 0;
-			count = dao.insert(userId, itemId, orderCount);
-
-			/* 元 if(dao.insert(userId,itemId,orderCount) > 0){ */
-			if (count > 0) {
+			if (dao.insert(userId, itemId, orderCount)) {
 				result = SUCCESS;
-				/*
-				 * int listSize=cartList.size(); float totalAmountFloat=0;
-				 * 
-				 * for(int i=0;i<listSize;i++){ numberPurchased +=
-				 * cartList.get(i).getOrderCount(); totalAmountFloat +=
-				 * (cartList.get(i).getPrice()) *
-				 * (float)(cartList.get(i).getOrderCount()); totalAmount =
-				 * (int)totalAmountFloat; }
-				 */
 			}
 		} else {
-			// resultがLOGINに置き換わる
 			result = LOGIN;
-
 		}
-
 		return result;
-
 	}
 
 	/**

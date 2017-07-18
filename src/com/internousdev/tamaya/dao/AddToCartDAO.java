@@ -27,30 +27,21 @@ public class AddToCartDAO {
 	 * @return ret			注文する商品の情報を返す
 	 */
 
-    public int insert(int userId,int itemId,int orderCount) {
-		Connection con = new MySqlConnector("tamaya").getConnection();
-        int ret = 0;
-        String sql = "insert into carts (user_id,item_id,quantity) values (?,?,?)";
-        try{
+    public boolean insert(int userId, int itemId, int orderCount) {
+        String sql = "INSERT INTO carts (user_id, item_id, quantity) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE quantity = ?";
+        try(Connection con = new MySqlConnector("tamaya").getConnection();) {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, userId);
             ps.setInt(2, itemId);
             ps.setInt(3, orderCount);
-            ret = ps.executeUpdate();
-
-        }catch (SQLException e){
-            e.printStackTrace();
-        }finally{
-            if(con != null){
-                try{
-                    con.close();
-                }catch (SQLException e){
-                    e.printStackTrace();
-                }
+            ps.setInt(4, orderCount);
+            if(ps.executeUpdate() >= 0) {
+            	return true;
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
-        return ret;
+        return false;
     }
 
 
