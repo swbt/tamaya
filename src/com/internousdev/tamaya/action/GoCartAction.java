@@ -19,51 +19,30 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 
 public class GoCartAction extends ActionSupport implements SessionAware{
-
-	/**
-	 *
-	 */
+	/**  */
 	private static final long serialVersionUID = 1L;
-	/**
-	 *ユーザーID
-	 */
+	/** ユーザーID */
 	private int userId;
-	/**
-	 *商品ID
-	 */
+	/** 商品ID */
 	private int itemId;
-	/**
-	 *商品名
-	 */
+	/** 商品名 */
 	private String itemName;
-	/**
-	 * 単価
-	 */
+	/** 単価 */
 	private BigDecimal price;
-	/**
-	 *数量
-	 */
+	/** 数量 */
 	private int quantity;
 
-	/**
-	 *イメージパスファイル
-	 */
+	/** イメージパスファイル */
 	private String imgPath;
-	/**
-	 * 合計金額
-	 */
+	/** 合計金額 */
 	private BigDecimal subtotal = new BigDecimal("0"); /*小計*/
 	private BigDecimal total = new BigDecimal("0");/*合計*/
 
 	private BigDecimal quantity2 = new BigDecimal("0");
 	private BigDecimal kosu = new BigDecimal("0"); /*個数合計*/
-	/**
-	 * カート内の商品情報を入れるリスト
-	 */
+	/** カート内の商品情報を入れるリスト */
 	private ArrayList<CartDTO> cartList=new ArrayList<>();
-	/**
-	 *セッション情報
-	 */
+	/** セッション情報 */
 	private Map<String,Object> session;
 
 	/**
