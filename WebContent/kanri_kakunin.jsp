@@ -13,7 +13,7 @@
 <fmt:setLocale value="${pageContext.request.locale.language}" />
 <fmt:setBundle basename="com.internousdev.tamaya.property.kanri_kakunin"
 	var="lang" />
-<title><s:text name="lang.kanri_kakunin.title" /></title>
+<title><s:text name="AdminConfirm" /></title>
 
 <%--検索エンジンによるインデックスを拒否 --%>
 <meta name="ROBOTS" content="NOINDEX.NOFOLLOW">

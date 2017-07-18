@@ -84,8 +84,14 @@
     </action>
 
 
-	<!-- 管理者ログイン -->
+	<!-- ＜此処から下は管理者ページの処理を記述＞ -->
 
+
+
+
+
+
+	<!-- 管理者ログイン -->
     <action name="LoginAction" class="com.internousdev.tamaya.action.LoginAction" method="execute">
       <result name="success" type="redirect">kanri_kakunin.jsp</result>
       <result name="error" type="redirect">Kanri_login.jsp</result>
