@@ -23,25 +23,21 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	private Map<String, Object> session;
 
 	public String execute(){
+		System.out.println("LoginAction : email = " + email + ", userPass = " + userPass);
 		String ret = ERROR;
 		LoginDAO dao = new LoginDAO();
 		UserDTO dto = new UserDTO();
 
 		//入力した情報が登録されているか確認
-		dto = dao.select(email, userPass);
-		if(!email.equals(dto.getEmail()) || !userPass.equals(dto.getUserPass())){
+		dto = dao.login(email, userPass);
+		if(dto == null){
+			System.out.println("LoginAction : result = " + ret);
 			return ret;
 		}
-		//データベースのloginFlgがfalseだったらtrueに更新
-		if(!dto.getLoginFlg()){
-			dao.update(dto.getUserId());
-			if(!dto.getLoginFlg()){
-				return ret;
-			}
-		}
-		session.put("loginFlg", dto.getLoginFlg());
+		System.out.println("userId = " + dto.getUserId());
 		session.put("userId", dto.getUserId());
 		ret = SUCCESS;
+		System.out.println("LoginAction : result = " + ret);
 		return ret;
 	}
 

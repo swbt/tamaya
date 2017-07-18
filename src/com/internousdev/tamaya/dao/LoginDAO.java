@@ -20,30 +20,27 @@ import com.internousdev.util.db.mysql.MySqlConnector;
  * @version 1.0
  */
 public class LoginDAO {
-	public UserDTO select(String email, String userPass){
-		Connection con = new MySqlConnector("openconnect","root","mysql").getConnection();
+	public UserDTO login(String email, String userPass){
 		UserDTO dto = new UserDTO();
-		String sql = "SELECT * FROM users WHERE phone_email=? AND password=?";
+		try (Connection con = new MySqlConnector("openconnect").getConnection();) {
+			String sql1 = "SELECT * FROM users WHERE phone_email = ? AND password = ?";
 
-		try{
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, email);
-			ps.setString(2, userPass);
-			ResultSet rs = ps.executeQuery();
+			PreparedStatement ps1 = con.prepareStatement(sql1);
+			ps1.setString(1, email);
+			ps1.setString(2, userPass);
+			ResultSet rs1 = ps1.executeQuery();
 
-			if(rs.next()){
-				dto.setUserId(rs.getInt("user_id"));
-				dto.setEmail(rs.getString("phone_email"));
-				dto.setUserPass(rs.getString("password"));
-				dto.setLoginFlg(rs.getBoolean("login_flg"));
+			if(rs1.next()){
+				dto.setUserId(rs1.getInt("user_id"));
+				dto.setLoginFlg(rs1.getBoolean("login_flg"));
 			}
+			String sql2 = "UPDATE users SET login_flg = TRUE WHERE user_id = ?";
+			PreparedStatement ps2 = con.prepareStatement(sql2);
+			ps2.setInt(1, dto.getUserId());
+			ps2.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();
-		}
-		try{
-			con.close();
-		} catch(SQLException e) {
-			e.printStackTrace();
+			return null;
 		}
 		return dto;
 	}

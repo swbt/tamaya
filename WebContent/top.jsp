@@ -23,7 +23,7 @@
 <script src="js/bootstrap.min.js"></script>
 
 <!-- ▼▼ログイン判定し、それに応じたヘッダーのjspファイルを読み込む -->
-<s:if test="#session.loginFlg == true">
+<s:if test="#session.userId != null">
   <s:include value="login_header.jsp" />
 </s:if>
 <s:else>
@@ -99,7 +99,6 @@
 
         <div class="item_list">
             <s:iterator status="i" begin="1" end="3">
-              <div class="item_wrapper">
                 <div class="item">
                   <s:form action="GoItemDetailAction" target="item_detail">
                     <s:hidden name="itemId" value="%{itemList.get(#i.index).itemId}"/>
@@ -117,7 +116,6 @@
                     </tr>
                   </table>
                 </div>
-              </div>
             </s:iterator>
         </div>
       </div>
