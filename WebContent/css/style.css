@@ -1,4 +1,10 @@
 @CHARSET "UTF-8";
+body {
+  background-image: url("../img/back-ground2.jpg");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  color: #BBBBBB;
+}
 input {
   color: black;
 }
@@ -12,12 +18,15 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f0f0f0;
+  background-color: rgba(200, 200, 200, 0.2);
   width: 23%;
   margin: 0 1% 3rem;
   padding-bottom: 3rem;
 }
-
+.item table{
+  width: 80%;
+  margin: 10%;
+}
 .img_path {
   display: block;
   padding: 15%;
@@ -31,19 +40,19 @@ input {
 }
 
 @media screen and (max-width: 980px){
-  .item_wrapper {
+  .item {
     flex-basis: 31%;
   }
 }
 
 @media screen and (max-width: 768px){
-  .item_wrapper {
+  .item {
     flex-basis: 48%;
   }
 }
 
 @media screen and (max-width: 380px){
-  .item_wrapper {
+  .item {
     flex-basis: 98%;
   }
 }

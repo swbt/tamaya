@@ -10,11 +10,11 @@
 <!-- Stylesheet
     ================================================== -->
 <link rel="stylesheet" href="css/reset.css">
-<link href="css/top.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="slick.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="slick-theme.css"
   media="screen" />
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link href="css/top.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/style.css">
 <script src="slick.min.js"></script>
 <!-- Javascripts
