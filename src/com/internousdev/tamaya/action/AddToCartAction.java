@@ -3,192 +3,341 @@
  */
 package com.internousdev.tamaya.action;
 
-import java.math.BigDecimal;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tamaya.dao.AddToCartDAO;
-import com.internousdev.tamaya.dto.CartDTO;
-import com.internousdev.tamaya.dto.ItemDTO;
+import com.internousdev.tamaya.dao.CartInsertDAO;
+import com.internousdev.tamaya.dto.PurchaseDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * @author seiya takahashi
- * @since 2017/6/13
+ * @author internousdev
  *
  */
 public class AddToCartAction extends ActionSupport implements SessionAware {
 
-	private static final long serialVersionUID = 1L;
-	private int userId;				//ユーザーID
-	private int itemId;				// 商品ID
-	private String itemName;		// 商品名
-	private BigDecimal price;			//単価
+	/**
+	 * 生成されたシリアルナンバー
+	 */
+	private static final long serialVersionUID = -7416129671577221670L;
 
-	private int quantity;			//数量
-	private String imgPath;			//イメージファイルパス
-	private BigDecimal total;		//合計金額
-	private int addCount;			//カートへ商品追加処理をした件数
+	private String category = "";
+	private int priceRange = 0;
 
-	private ArrayList<CartDTO> cartList;			//カート情報
-	private ArrayList<ItemDTO> itemStatus;			//商品情報
-	private Map<String, Object> session;			//セッション情報
 
 	/**
-	 1：セッション情報を持っているか判断
-	 2：購入数が在庫数を超えていないか判断
-	 3：遷移元のitemId,itemName,price,quantity,imgPathとsession内のuserIdを使用し、カートへ指定商品を登録
-	 4：カートへ登録された情報を取得
-	 5：カート内の情報を元に購入商品の合計金額金額を算出
-	 * @author seiya takahashi
-	 * @since 2017/6/13
-
+	 * ユーザーID
 	 */
+	private int userId = 3;
 
-	public String execute() throws SQLException {
+	/**
+	 * アイテムID
+	 */
+	private int itemId;
 
-		String result = ERROR;
+	/**
+	 * アイテムネーム
+	 */
+	private String itemName;
 
-		if (session.containsKey("userId")) {
+	/**
+	 * イメージ１
+	 */
+	private String image1;
 
-			System.out.println("userId" );
-			System.out.println("ID出しますよ＝");
-			userId = (int) session.get("userId");
-			AddToCartDAO dao = new AddToCartDAO();
-			itemStatus = dao.itemStatus(itemId);
-			addCount = dao.addToCart(userId, itemId);
-			cartList = dao.selected(userId);
+	/**
+	 * オーダーカウント
+	 */
+	private int orderCount;
 
-		if (cartList.size() > 0) {
-					for (int i = 0; i < cartList.size(); i++) {
-						total = total.add(cartList.get(i).getPrice()) .multiply (BigDecimal.valueOf(cartList.get(i).getQuantity()));
-					}
-					result = SUCCESS;
-				}
+	/**
+	 * プライス
+	 */
+	private float price;
+
+	/**
+	 * 購入番号
+     */
+	private int numberPurchased;
+
+	/**
+	 * 合計(数)
+	 *
+	 */
+	private int totalAmount;
+
+	/**
+	 * カートリスト
+	 */
+	private ArrayList<PurchaseDTO> cartList=new ArrayList<PurchaseDTO>();
+
+	/**
+	 * カート検索
+	 */
+	private ArrayList<PurchaseDTO> searchCart=new ArrayList<PurchaseDTO>();
+
+	/**
+	 * ユーザー情報
+	 */
+	private Map<String, Object> session;
+
+
+	/**
+	 * 実行メソッド
+	 * @author AYUMU SHINKAI
+	 * @return result 成功ならSUCCESS　失敗ならERROR　ログイン状態でなければLOGIN
+	 */
+	public String execute(){
+/*		System.out.println("アクションに来たよ");*/
+		//基本的にresultにはERRORが入っている
+	String result = ERROR;
+
+/*
+ * ユーザーIDが取得できなければログインさせる
+ */
+	if(session.get("userId") != null){
+		int userId = (int) session.get("userId");
+	    CartInsertDAO dao = new CartInsertDAO();
+
+	    /*
+	     * cartテーブルに同じ商品があればエラー
+	     */
+	 /*   searchCart = dao.search(userId,itemId);
+	    	if(searchCart.size()!=0){
+	    		return result;
+	    	}*/
+
+        /*
+         * insertできていればSUCCESS
+         */
+
+			//resultがSUCCESSに置き換わる
+			int count = 0;
+			count = dao.insert(userId,itemId,orderCount) ;
+
+
+/*		元	if(dao.insert(userId,itemId,orderCount) > 0){*/
+			if(count>0){
+			result = SUCCESS;
+		/*	int listSize=cartList.size();
+			float totalAmountFloat=0;
+
+			for(int i=0;i<listSize;i++){
+				numberPurchased += cartList.get(i).getOrderCount();
+				totalAmountFloat += (cartList.get(i).getPrice()) * (float)(cartList.get(i).getOrderCount());
+				totalAmount = (int)totalAmountFloat;
+			}*/
 		}
-		System.out.println(result + "リザルト返しま～す");
-		return result;
+	}else{
+		//resultがLOGINに置き換わる
+		result = LOGIN;
 
 	}
 
+	return result;
+
+    }
 
 
-
-	/**ユーザーID取得メソッド*/
+	/**
+	 * @return userId
+	 */
 	public int getUserId() {
 		return userId;
 	}
-	/**ユーザーID格納メソッド */
+
+
+	/**
+	 * @param userId セットする userId
+	 */
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 
 
-	/**商品ID取得メソッド*/
+	/**
+	 * @return itemId
+	 */
 	public int getItemId() {
 		return itemId;
 	}
-	/**商品ID格納メソッド*/
+
+
+	/**
+	 * @param itemId セットする itemId
+	 */
 	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
 
 
-	/**商品名取得メソッド */
+	/**
+	 * @return itemName
+	 */
 	public String getItemName() {
 		return itemName;
 	}
-	/**商品名格納メソッド*/
-	public void setItemsName(String itemName) {
+
+
+	/**
+	 * @param itemName セットする itemName
+	 */
+	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
 
 
-	/**単価取得メソッド*/
-	public BigDecimal getPrice() {
+	/**
+	 * @return image1
+	 */
+	public String getImage1() {
+		return image1;
+	}
+
+
+	/**
+	 * @param image1 セットする image1
+	 */
+	public void setImage1(String image1) {
+		this.image1 = image1;
+	}
+
+
+	/**
+	 * @return orderCount
+	 */
+	public int getOrderCount() {
+		return orderCount;
+	}
+
+
+	/**
+	 * @param orderCount セットする orderCount
+	 */
+	public void setOrderCount(int orderCount) {
+		this.orderCount = orderCount;
+	}
+
+
+	/**
+	 * @return price
+	 */
+	public float getPrice() {
 		return price;
 	}
-	/** 単価格納メソッド*/
-	public void setPrice(BigDecimal price) {
+
+
+	/**
+	 * @param price セットする price
+	 */
+	public void setPrice(float price) {
 		this.price = price;
 	}
 
 
-	/**数量取得メソッド*/
-	public int getQuantity() {
-		System.out.println(quantity + "受け取りました");
-		return quantity;
-	}
-	/**数量格納メソッド*/
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	/**
+	 * @return numberPurchased
+	 */
+	public int getNumberPurchased() {
+		return numberPurchased;
 	}
 
 
-	/**イメージファイルパス取得メソッド*/
-	public String getImgPath() {
-		return imgPath;
-	}
-	/**イメージファイルパス格納メソッド*/
-	public void setImgPath(String imgPath) {
-		this.imgPath = imgPath;
+	/**
+	 * @param numberPurchased セットする numberPurchased
+	 */
+	public void setNumberPurchased(int numberPurchased) {
+		this.numberPurchased = numberPurchased;
 	}
 
 
-	/**合計金額取得メソッド*/
-	public BigDecimal getTotal() {
-		return total;
-	}
-	/**合計金額格納メソッド*/
-	public void setTotal(BigDecimal total) {
-		this.total = total;
+	/**
+	 * @return totalAmount
+	 */
+	public int getTotalAmount() {
+		return totalAmount;
 	}
 
 
-    /**カートへ商品追加処理をした件数を取得する*/
-	public int getAddCount() {
-		return addCount;
-	}
-	/**カートへ商品追加処理をした件数を格納する*/
-	public void setAddcount(int addCount) {
-		this.addCount = addCount;
+	/**
+	 * @param totalAmount セットする totalAmount
+	 */
+	public void setTotalAmount(int totalAmount) {
+		this.totalAmount = totalAmount;
 	}
 
 
-	/**カート情報を取得するメソッド*/
-	public ArrayList<CartDTO> getCartList() {
+	/**
+	 * @return cartList
+	 */
+	public ArrayList<PurchaseDTO> getCartList() {
 		return cartList;
 	}
-	/**カート情報を格納するメソッド*/
-	public void setCartList(ArrayList<CartDTO> cartList) {
+
+
+	/**
+	 * @param cartList セットする cartList
+	 */
+	public void setCartList(ArrayList<PurchaseDTO> cartList) {
 		this.cartList = cartList;
 	}
 
 
-	/**商品情報を取得するメソッド*/
-	public ArrayList<ItemDTO> getItemStatus() {
-		return itemStatus;
-	}
-	/**商品情報を格納するメソッド*/
-	public void setItemStatus(ArrayList<ItemDTO> itemStatus) {
-		this.itemStatus = itemStatus;
+	/**
+	 * @return searchCart
+	 */
+	public ArrayList<PurchaseDTO> getSearchCart() {
+		return searchCart;
 	}
 
 
-	/**セッション操作用情報を取得するメソッド*/
+	/**
+	 * @param searchCart セットする searchCart
+	 */
+	public void setSearchCart(ArrayList<PurchaseDTO> searchCart) {
+		this.searchCart = searchCart;
+	}
+
+
+	/**
+	 * @return session
+	 */
 	public Map<String, Object> getSession() {
 		return session;
 	}
-	/**セッション情報を格納するメソッド*/
+
+
+	/**
+	 * @param session セットする session
+	 */
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
 
+
+	/**
+	 * @return serialversionuid
+	 */
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public int getPriceRange() {
+		return priceRange;
+	}
+	public void setPriceRange(int priceRange) {
+		this.priceRange = priceRange;
+
+	}
+
+
+
 }
-
-
-
-

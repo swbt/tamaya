@@ -61,7 +61,7 @@
 
 
     <!-- カートに追加する処理 -->
-    <action name="CartInsertAction" class="com.internousdev.tamaya.action.CartInsertAction"
+    <action name="AddToCartAction" class="com.internousdev.tamaya.action.AddToCartAction"
       method="execute">
       <result name="success" type="chain">GoItemListAction</result>
       <result name="error">item_list.jsp</result>
