@@ -48,6 +48,8 @@ public class MypageDAO {
 
 				dto.setGivenNameKanji(rs.getString("given_name_kanji"));
 
+				dto.setPostal(rs.getString("postal"));
+
 				dto.setAddress(rs.getString("address"));
 
 				dto.setEmail(rs.getString("phone_email"));
