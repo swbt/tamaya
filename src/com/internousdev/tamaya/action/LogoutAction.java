@@ -25,10 +25,8 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 		LogoutDAO dao = new LogoutDAO();
 		UserDTO dto = new UserDTO();
 		int userId = (int)session.get("userId");
-		boolean loginFlg = (boolean)session.get("loginFlg");
-		System.out.println(loginFlg);
 
-		if(!loginFlg){
+		if(!session.containsKey("userId")){
 			session.clear();
 			result = SUCCESS;
 			return result;

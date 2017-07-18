@@ -92,12 +92,12 @@ public class GoMyPageAction extends ActionSupport implements SessionAware{
 		if(session.containsKey("userId")){
 			userId= (int)session.get("userId");
 
-
-		GoCartDAO dao = new GoCartDAO();
-		cartList = dao.selectedItem(userId);
-
+			System.out.println("入ってます");
+			GoCartDAO dao = new GoCartDAO();
+			cartList = dao.selectedItem(userId);
+			System.out.println(postal);
 			/*＜小計・合計を出す場合＞*/
-/*		for(int i = 0; i < cartList.size(); i++){
+			/*		for(int i = 0; i < cartList.size(); i++){
 
 			subtotal = cartList.get(i).getPrice().multiply (BigDecimal.valueOf(cartList.get(i).getQuantity()));
 			total = total.add(subtotal);
@@ -107,10 +107,10 @@ public class GoMyPageAction extends ActionSupport implements SessionAware{
 
 		}*/
 
-		MypageDAO mpdao = new MypageDAO();
-		userList = mpdao.select(userId);
+			MypageDAO mpdao = new MypageDAO();
+			userList = mpdao.select(userId);
 
-		result = "SUCCESS";
+			result = SUCCESS;
 
 		}
 

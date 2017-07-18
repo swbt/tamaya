@@ -22,6 +22,7 @@ public class GoItemListAction extends ActionSupport implements SessionAware {
 	private String transition = "";
 	private String category = "";
 	private int priceRange = 0;
+	private int quantity = 0;
 	private ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 	private Map<String, Object> session;
 
@@ -64,6 +65,14 @@ public class GoItemListAction extends ActionSupport implements SessionAware {
 	public void setPriceRange(int priceRange) {
 		this.priceRange = priceRange;
 	}
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
 	public ArrayList<ItemDTO> getItemList() {
 		return itemList;
 	}
