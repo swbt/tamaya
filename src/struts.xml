@@ -93,8 +93,8 @@
 
  		<!-- 管理者ログアウト -->
     <action name="LogoutAction" class="com.internousdev.tamaya.action.LogoutAction" method="execute">
-      <result name="success" type="redirect"></result>
-      <result name="error" type="redirect"></result>
+      <result name="success" type="redirect">kanri_kakunin.jsp</result>
+      <result name="error" type="redirect">Kanri_login.jsp</result>
     </action>
 
 
