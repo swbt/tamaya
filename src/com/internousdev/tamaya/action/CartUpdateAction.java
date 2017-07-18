@@ -45,6 +45,8 @@ public class CartUpdateAction extends ActionSupport implements SessionAware{
         int count = 0;
         errorMsg = "";
 
+
+
         if(session.containsKey("userId")) {
             userId = (int)session.get("userId");
             System.out.println(userId + "こんにちは");
@@ -54,10 +56,7 @@ public class CartUpdateAction extends ActionSupport implements SessionAware{
 
         CartUpdateDAO dao = new CartUpdateDAO();
         count = dao.update(orderCount, userId, itemId);
-        System.out.println(userId+ "ユーザーIDはこちら");
-        System.out.println(orderCount+ "オーダーカウントはこちら");
-        System.out.println(itemId+ "アイテムIDはこちら");
-        System.out.println(count + "アップデート数がありますこちらに");
+
         if(count==0) {
             errorMsg = "注文個数を変更できませんでした";
             return ERROR;
