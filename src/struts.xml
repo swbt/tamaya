@@ -65,6 +65,7 @@
       method="execute">
       <result name="success" type="chain">GoItemListAction</result>
       <result name="error">item_list.jsp</result>
+      <result name="login">login.jsp</result>
     </action>
 
     <!-- カートから削除する処理 -->

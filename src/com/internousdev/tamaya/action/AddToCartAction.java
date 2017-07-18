@@ -18,69 +18,31 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class AddToCartAction extends ActionSupport implements SessionAware {
 
-	/**
-	 * 生成されたシリアルナンバー
-	 */
+	/** 生成されたシリアルナンバー */
 	private static final long serialVersionUID = -7416129671577221670L;
-
 	private String category = "";
 	private int priceRange = 0;
-
-
-	/**
-	 * ユーザーID
-	 */
+	/**  ユーザーID */
 	private int userId = 3;
-
-	/**
-	 * アイテムID
-	 */
+	/** アイテムID */
 	private int itemId;
-
-	/**
-	 * アイテムネーム
-	 */
+	/** アイテムネーム */
 	private String itemName;
-
-	/**
-	 * イメージ１
-	 */
+	/** イメージ１ */
 	private String image1;
-
-	/**
-	 * オーダーカウント
-	 */
+	/** オーダーカウント */
 	private int orderCount;
-
-	/**
-	 * プライス
-	 */
+	/** プライス */
 	private float price;
-
-	/**
-	 * 購入番号
-     */
+	/** 購入番号 */
 	private int numberPurchased;
-
-	/**
-	 * 合計(数)
-	 *
-	 */
+	/** 合計(数) */
 	private int totalAmount;
-
-	/**
-	 * カートリスト
-	 */
+	/** カートリスト */
 	private ArrayList<PurchaseDTO> cartList=new ArrayList<PurchaseDTO>();
-
-	/**
-	 * カート検索
-	 */
+	/** カート検索 */
 	private ArrayList<PurchaseDTO> searchCart=new ArrayList<PurchaseDTO>();
-
-	/**
-	 * ユーザー情報
-	 */
+	/** ユーザー情報 */
 	private Map<String, Object> session;
 
 

@@ -22,14 +22,12 @@ public class AddToCartDAO {
 	 * @author
 	 * @since
 	 * @version 1.0
-	 * @param itemId
-	 *            商品ID
+	 * @param itemId 商品ID
 	 * @return itemStatus 商品情報
 	 */
 
 	public ArrayList<ItemDTO> itemStatus(int itemId) {
-
-		Connection con = new MySqlConnector("tamaya", "root", "mysql").getConnection();
+		Connection con = new MySqlConnector("tamaya").getConnection();
 		ArrayList<ItemDTO> itemStatus = new ArrayList<ItemDTO>();
 
 		String sql = "select * from items where item_id = ?";

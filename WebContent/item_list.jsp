@@ -99,16 +99,11 @@
           <option value="9">9</option>
           <option value="10">10</option>
         </select>
-        <%--         <input type="hidden" name="itemId"
-          value="<s:property value='itemList.get#i.index).itemId'/>" />
-        <s:property value="itemList.get(#i.index).itemId" />
-        <a href="<s:url action="AddToCartAction"><s:param name="ItemId" value="itemList.get(#i.index).itemId"></s:param>
-          </s:url>">Id渡し</a> --%>
         <s:hidden name="userId" value="%{userId}" />
         <s:hidden name="itemId" value="%{itemId}" />
         <s:hidden name="priceRange" value="%{priceRange}" />
         <s:hidden name="category" value="%{category}" />
-        <button type="submit" class="Button01">カートに入れる</button>
+        <s:submit class="Button01" value="カートに入れる" />
         <%--         <s:submit name="itemList.get(#i.index).itemId" value="カートに追加"
           class="Button01" /> --%>
       </s:form>
