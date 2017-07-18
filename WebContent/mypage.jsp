@@ -25,13 +25,9 @@
     </script> -->
     <link rel="stylesheet" type="text/css" href="./css/mypage.css" media="all">
   </head>
-  <!-- ▼▼ログイン判定し、それに応じたヘッダーのjspファイルを読み込む -->
-  <s:if test="#session.loginFlg == true">
+
   	<s:include value="login_header.jsp" />
-  </s:if>
-  	<s:else>
-  	<s:include value="header.jsp" />
-  </s:else>
+
 
  <h1>マイページ</h1>
  <table class="type07">
