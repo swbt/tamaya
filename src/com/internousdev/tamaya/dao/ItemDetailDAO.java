@@ -17,7 +17,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
  * @since 1.0
  * @version 1.0
  */
-public class FetchItemDetailDAO {
+public class ItemDetailDAO {
 
 	public ItemDTO select(int itemId){
 		Connection con = new MySqlConnector("tamaya").getConnection();

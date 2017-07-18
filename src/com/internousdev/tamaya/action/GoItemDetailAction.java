@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tamaya.dao.FetchItemDetailDAO;
+import com.internousdev.tamaya.dao.ItemDetailDAO;
 import com.internousdev.tamaya.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -17,21 +17,21 @@ import com.opensymphony.xwork2.ActionSupport;
  * @since 1.0
  * @version 1.0
  */
-public class FetchItemDetailAction extends ActionSupport implements SessionAware {
+public class GoItemDetailAction extends ActionSupport implements SessionAware {
 	private int itemId;
-	private ItemDTO dto = new ItemDTO();
+	private ItemDTO item = new ItemDTO();
 	private Map<String, Object> session;
 
 	@Override
 	public String execute(){
 		String ret = ERROR;
-		FetchItemDetailDAO dao = new FetchItemDetailDAO();
-
-		dto = dao.select(itemId);
-
-		if(dto != null){
+		System.out.println("GoItemDetailAction : itemId = " + itemId);
+		ItemDetailDAO dao = new ItemDetailDAO();
+		item = dao.select(itemId);
+		if(item != null){
 			ret = SUCCESS;
 		}
+		System.out.println("GoItemDetailAction : result = " + ret);
 		return ret;
 	}
 
@@ -41,11 +41,11 @@ public class FetchItemDetailAction extends ActionSupport implements SessionAware
 	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
-	public ItemDTO getDto() {
-		return dto;
+	public ItemDTO getItem() {
+		return item;
 	}
-	public void setDto(ItemDTO dto) {
-		this.dto = dto;
+	public void setItem(ItemDTO item) {
+		this.item = item;
 	}
 	public Map<String, Object> getSession() {
 		return session;

@@ -22,7 +22,7 @@
           </div><!-- /.modal-header -->
           <div class="modal-body">
             <!-- ここにモーダルの中身を記述します -->
-            <iframe id="item_detail" src=""></iframe>
+            <iframe id="item_detail" name="item_detail" src=""></iframe>
           </div><!-- /.modal-body -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>

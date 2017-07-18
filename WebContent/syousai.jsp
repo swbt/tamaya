@@ -25,11 +25,11 @@
     </script>
   </head>
   <body>
-    <img alt="商品画像" src="<s:property value="dto.getImgPath()"/>">
+    <img alt="商品画像" src="<s:property value="item.getImgPath()"/>">
     <s:property value="itemId"/>
-    <s:property value="dto.itemName"/>
-    <s:property value="dto.detail"/>
-    <s:property value="dto.priceWithTax"/>
-    <s:property value="dto.stock"/>
+    <s:property value="item.itemName"/>
+    <s:property value="item.detail"/>
+    <s:property value="item.priceWithTax"/>
+    <s:property value="item.stock"/>
   </body>
 </html>

@@ -32,15 +32,6 @@
 <!-- ▼▼モーダル画面のjspファイルを読み込む -->
 <s:include value="modal.jsp" />
 
-<script>
-	var actionUrl;
-	var actionUrlWithParam;
-	function imgClick(itemId) {
-		actionUrl = '<s:url action="FetchItemDetailAction"></s:url>';
-		actionUrlWithParam = actionUrl + "?itemId=" + itemId;
-		$('#item_detail').attr('src', actionUrlWithParam);
-	};
-</script>
 </head>
 <body>
   <div id="header"></div>
@@ -107,35 +98,27 @@
       <div class=box3>
 
         <div class="item_list">
-          <s:if test="itemList == null || itemList.isEmpty()">
-            <meta http-equiv="Refresh"
-              content="0; url=<s:url action=''><s:param name='transition' value='"top"'/></s:url>">
-          </s:if>
-          <s:else>
             <s:iterator status="i" begin="1" end="3">
               <div class="item_wrapper">
                 <div class="item">
-                  <img
-                    src="<s:property value="itemList.get(#i.index).imgPath"/>"
-                    data-toggle="modal" data-target="#item_detail_modal"
-                    onclick="imgClick(this.name);"
-                    name="<s:property value='itemList.get(#i.index).itemId'/>">
+                  <s:form action="GoItemDetailAction" target="item_detail">
+                    <s:hidden name="itemId" value="%{itemList.get(#i.index).itemId}"/>
+                    <s:submit class="img_path" type="image" src="%{itemList.get(#i.index).imgPath}"
+                    data-toggle="modal" data-target="#item_detail_modal"/>
+                  </s:form>
                   <table>
                     <tr>
                       <td>商品名</td>
-                      <td><s:property
-                          value="itemList.get(#i.index).itemName" /></td>
+                      <td><s:property value="itemList.get(#i.index).itemName" /></td>
                     </tr>
                     <tr>
                       <td>値段</td>
-                      <td><s:property
-                          value="itemList.get(#i.index).priceWithTax" />円（税込）</td>
+                      <td><s:property value="itemList.get(#i.index).priceWithTax" />円（税込）</td>
                     </tr>
                   </table>
                 </div>
               </div>
             </s:iterator>
-          </s:else>
         </div>
       </div>
     </div>
@@ -147,11 +130,9 @@
         <div class=d1>
           <a href="./tokusyu.jsp"><img src="img/hanabi2.jpg" alt="家族特集"></a><a href="./tokusyu.jsp">家族特集</a>
         </div>
-
         <div class=d2>
           <a href="./tokusyu.jsp"><img src="img/hanabi2.jpg" alt="カップル特集"></a><a href="./tokusyu.jsp">カップル特集</a>
         </div>
-
         <div class=d3>
           <a href="./tokusyu.jsp"><img src="img/hanabi2.jpg" alt="大人数特集"></a><a href="./tokusyu.jsp">大人数特集</a>
         </div>
