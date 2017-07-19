@@ -1,447 +1,188 @@
-@CHARSET "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset//a>/font>/u>
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+output, ruby, section, summary, time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers
+*/
+article, aside, details, figcaption, figure, footer, header, hgroup,
+menu, nav, section {
+display: block;
+}
+
 body {
-  background-attachment: fixed;
-  background-position: right bottom;
-  max-width: 100%;
+line-height: 1;
 }
+
+ol, ul {
+list-style: none;
+}
+
+blockquote, q {
+quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+content: '';
+content: none;
+}
+
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+====================
+
+/*===============================================
+●style.css 画面の横幅が769px以上
+===============================================*/
+@media screen and (min-width: 769px) {
+img {
+max-width: 100%;
+height: auto;
+width /***/: auto;
+}
+#container {
+width: 100%;
+}
+～以下、画面の横幅が768pxまでの場合のスタイル記入～
+}
+/*===============================================
+●tablet.css 画面の横幅が768pxまで
+===============================================*/
+@media screen and (max-width: 768px) {
+img {
+max-width: 100%;
+height: auto;
+width /***/: auto;
+}
+#container {
+width: 100%;
+}
+～以下、画面の横幅が768pxまでの場合のスタイル記入～
+}
+/*===============================================
+●smart.css 画面の横幅が640pxまで
+===============================================*/
+@media screen and (max-width:640px) {
+img {
+max-width: 100%;
+height: auto;
+width /***/: auto;
+}
+#container {
+width: 100%;
+}
+～以下、画面の横幅が640pxまでの場合のスタイル記入～
+}
+
+body {
+background-color: #ffffff;
+width: 100%;
+margin: 0 auto;
+}
+
+.pbox1 {
+border: 10px solid gray;
+height: 500px; /*表示したい大きさ*/
+margin: 100px; /*縦余白30pxは任意*/
+max-width: 100%;
+position: relative;
+width: 90%; /*表示したい大きさ、height と合わせる*/
+max-width: 100%;
+margin: 0 auto;
+text-align: center;
+padding-top: 3px;
+}
+
 h2 {
-  color: #CCCCCC;
-  text-shadow: rgba(0, 0, 21, 1) 1px 1px 0px, rgba(0, 0, 21, 1) -1px 1px 0px,
-             rgba(0, 0, 21, 1) 1px -1px 0px, rgba(0, 0, 21, 1) -1px -1px 0px;
-}
-.comtainer {
-  width: 99%;
-  height: 99%;
+text-align: center;
+border:1px solid black;
+margin:10px;
+padding:5px;
 }
 
-.photo-show {
-  border: 10px solid gray;
-  height: 500px; /*�\���������傫��*/
-  margin: 100px; /*�c�]��30px�͔C��*/
-  max-width: 100%;
-  position: relative;
-  width: 90%; /*�\���������傫���Aheight �ƍ��킹��*/
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  background-color: black;
-  padding-top: 3px;
-  .
-  photo-show
-  {
-  position
-  :
-  relative;
+.pbox2 {
+padding: 10px;
+margin: 0 auto;
+float: left;
+text-align: center;
 }
 
-.photo-show {
-  z-index: -1;
-  position: absolute;
-  content: '';
-  bottom: 10px;
-  left: 10px;
-  width: 75%;
-  top: 80%;
-  max-width: 432px;
-  background: #8d8c8c;
-  /*�e������*/
-  -webkit-box-shadow: 0 15px 10px #8d8c8c;
-  -moz-box-shadow: 0 15px 10px #8d8c8c;
-  box-shadow: 0 15px 10px #8d8c8c;
-  /*��]������*/
-  -webkit-transform: rotate(-5deg);
-  -moz-transform: rotate(-5deg);
-  -o-transform: rotate(-5deg);
-  -ms-transform: rotate(-5deg);
-  transform: rotate(-5deg);
+table {
+text-align: center;
+display: inline-block;
+margin-left: auto;
+margin-right: auto
 }
 
-}
-.photo-show img {
-  animation: show 27s infinite;
-  webkit-animation: show 54s infinite;
-  border-radius: 0%;
-  height: 500px;
-  max-width: 100%;
-  opacity: 0;
-  position: absolute; /*�摜��S�ďd�˂�*/
-  width: 2000px;
+.kakaku1,.kakaku2,.kakaku3,.kakaku4 {
+float: left;
+padding: 30px;
+margin:10px;
 }
 
-/*�A�j���[�V����*/
-@
-keyframes show { 0% {
-  opacity: 0
+.dbox3 {
+clear: both;
+float: left;
 }
 
-5%
-{
-opacity
-
-
-:
-
-
-1
-}
-10%
-{
-opacity
-
-
-:
-
-
-1
-}
-20%
-{
-opacity
-
-
-:
-
-
-0
-}
-}
-@
--webkit-keyframes show { 0% {
-  opacity: 0
+.pbox3 {
+padding: 10px;
+margin: 0 auto;
+float: left;
+text-align: center;
 }
 
-5%
-{
-opacity
-
-
-:
-
-
-1
-}
-10%
-{
-opacity
-
-
-:
-
-
-1
-}
-20%
-{
-opacity
-
-
-:
-
-
-0
-}
+.syurui1,.syurui2,.syurui3,.syurui4 {
+padding: 30px;
+float: left;
+margin:10px;
 }
 
-/*�e�摜�̃A�j���[�V�����̊J�n���Ԃ����炷*/
-.photo-show img:nth-of-type(1) {
-  animation-delay: 0s;
-  webkit-animation-delay: 0s;
+.dbox4,.dbox5 {
+padding: 10px;
+margin: 0 auto;
+text-align: center;
 }
 
-.photo-show img:nth-of-type(2) {
-  animation-delay: 3s;
-  webkit-animation-delay: 3s;
+.h1title4 {
+clear: both;
 }
 
-.photo-show img:nth-of-type(3) {
-  animation-delay: 6s;
-  webkit-animation-delay: 6s;
+.pboxes1,.pboxes2,.pboxes3 {
+float: left;
+border: 1px solid gray;
+height: 100px; /*表示したい大きさ*/
+margin: 10px; /*縦余白30pxは任意*/
+width: 250px;
 }
 
-.photo-show img:nth-of-type(4) {
-  animation-delay: 9s;
-  webkit-animation-delay: 9s;
+.dbox5 {
+float: clear;
 }
 
-.photo-show img:nth-of-type(5) {
-  animation-delay: 12s;
-  webkit-animation-delay: 12s
+.h1title5 {
+clear: both;
 }
 
-.photo-show img:nth-of-type(6) {
-  animation-delay: 15s;
-  webkit-animation-delay: 15s;
-}
-
-.photo-show img:nth-of-type(7) {
-  animation-delay: 18s;
-  webkit-animation-delay: 18s;
-}
-
-.photo-show img:nth-of-type(8) {
-  animation-delay: 21s;
-  webkit-animation-delay: 21s;
-}
-
-.photo-show img:nth-of-type(9) {
-  animation-delay: 24s;
-  webkit-animation-delay: 24s;
-}
-
-.photo-show img:nth-of-type(10) {
-  animation-delay: 27s;
-  webkit-animation-delay: 27s;
-}
-
-}
-.syurui {
-  background-color: white;
-  border: 4px solid #82636b;
-  border-radius: 240px 15px 185px 15px/15px 200px 15px 185px;
-  margin: 2em 0;
-  padding: 5em;
-  height: 180px;
-  width: 100%;
-}
-
-.kakaku {
-  background-color: white;
-  border: 4px solid rgba(126, 30, 79, 0.5);
-  border-radius: 240px 15px 185px 15px/15px 200px 15px 185px;
-  margin: 2em 0;
-  padding: 5em;
-  height: 180px;
-  overflow: auto;
-  width: 100%;
-}
-
-.ranking {
-  background-color: white;
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 4px solid rgba(126, 30, 79, 0.5);
-  margin: 0;
-  width: 100%;
-}
-
-.box3 {
-  right: 0;
-  left: 0;
-  margin: 5px;
-  width: auto;
-  height: auto;
-  display: block;
-}
-
-.box4 {
-  display: block;
-  margin: auto;
-}
-
-.tokusyu {
-  background-color: white;
-  border: 4px solid #82636b;
-  border-radius: 240px 15px 185px 15px/15px 200px 15px 185px;
-  margin: 2em 0;
-  padding: 2em;
-  height: 320px;
-  overflow: auto;
-  width: auto;
-}
-
-.h2 {
-  text-align: center;
-}
-
-.h3 {
-  text-align: center;
-}
-
-.icon1 {
-  float: left;
-}
-
-.icon2 {
-  float: left;
-}
-
-.icon3 {
-  float: left;
-}
-
-.d1 {
-  float: left;
-  overflow: auto;
-  height: auto;
-  text-align: center;
-}
-
-.d2 {
-  float: left;
-  overflow: auto;
-  height: auto;
-  text-align: center;
-}
-
-.d3 {
-  float: left;
-  overflow: auto;
-  height: auto;
-  text-align: center;
-}
-
-.button1 {
-  width: 22%;
-  height: 40px;
-  display: block;
-  float: left;
-  margin: 10px;
-  color: #00ffff;
-  background: #337fcc;
-  font-size: 18px;
-  font-weight: bold;
-  text-shadow: 0 -1px 1px #143352;
-  text-align: center;
-  text-decoration: none;
-  border: 1px solid #225588;
-  adding: 12px 0 8px 0;
-  border-radius: 12px;
-  background: -moz-linear-gradient(rgba(34, 85, 136, 0.5),
-    rgba(34, 85, 136, 1));
-  background: -webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(34, 85, 136, 0.5)),
-    to(rgba(34, 85, 136, 1)));
-  box-shadow: 0px 1px 0px #1b446d, 0px 2px 0px #1b446d, 0px 3px 0px
-    #1b446d, 0px 4px 0px #1b446d, 0px 5px 0px #1b446d, 0px 6px 0px #1b446d,
-    0px 7px 0px #1b446d, 2px 7px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px
-    rgba(255, 255, 255, 0.5) inset, 0px -1px 0px rgba(255, 255, 255, 0.2)
-    inset;
-}
-
-a.button:hover {
-  background: -moz-linear-gradient(rgba(119, 170, 221, 0.9),
-    rgba(34, 85, 136, 0.9));
-  background: -webkit-gradient(linear, 100% 100%, 100% 0%, from(rgba(34, 85, 136, 0.9)),
-    to(rgba(119, 170, 221, 0.9)));
-  box-shadow: 0px 1px 0px #225588, 0px 2px 0px #225588, 0px 3px 0px
-    #225588, 0px 4px 0px #225588, 0px 5px 0px #225588, 0px 6px 0px #225588,
-    0px 7px 0px #225588, 2px 7px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px
-    rgba(255, 255, 255, 0.5) inset, 0px -1px 0px rgba(255, 255, 255, 0.2)
-    inset;
-}
-
-.button2 {
-  width: 22%;
-  height: 40px;
-  display: block;
-  float: left;
-  margin: 10px;
-  color: #e4eef8;
-  background: #337fcc;
-  font-size: 18px;
-  font-weight: bold;
-  text-shadow: 0 -1px 1px #143352;
-  text-align: center;
-  text-decoration: none;
-  border: 1px solid #225588;
-  adding: 12px 0 8px 0;
-  border-radius: 12px;
-  background: -moz-linear-gradient(rgba(34, 85, 136, 0.5),
-    rgba(34, 85, 136, 1));
-  background: -webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(34, 85, 136, 0.5)),
-    to(rgba(34, 85, 136, 1)));
-  box-shadow: 0px 1px 0px #1b446d, 0px 2px 0px #1b446d, 0px 3px 0px
-    #1b446d, 0px 4px 0px #1b446d, 0px 5px 0px #1b446d, 0px 6px 0px #1b446d,
-    0px 7px 0px #1b446d, 2px 7px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px
-    rgba(255, 255, 255, 0.5) inset, 0px -1px 0px rgba(255, 255, 255, 0.2)
-    inset;
-}
-
-a.button2:hover {
-  background: -moz-linear-gradient(rgba(119, 170, 221, 0.9),
-    rgba(34, 85, 136, 0.9));
-  background: -webkit-gradient(linear, 100% 100%, 100% 0%, from(rgba(34, 85, 136, 0.9)),
-    to(rgba(119, 170, 221, 0.9)));
-  box-shadow: 0px 1px 0px #225588, 0px 2px 0px #225588, 0px 3px 0px
-    #225588, 0px 4px 0px #225588, 0px 5px 0px #225588, 0px 6px 0px #225588,
-    0px 7px 0px #225588, 2px 7px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px
-    rgba(255, 255, 255, 0.5) inset, 0px -1px 0px rgba(255, 255, 255, 0.2)
-    inset;
-}
-
-.button3 {
-  float: left;
-  width: 22%;
-  height: 40px;
-  display: block;
-  float: left;
-  margin: 10px;
-  color: #e4eef8;
-  background: #337fcc;
-  font-size: 18px;
-  font-weight: bold;
-  text-shadow: 0 -1px 1px #143352;
-  text-align: center;
-  text-decoration: none;
-  border: 1px solid #225588;
-  adding: 12px 0 8px 0;
-  border-radius: 12px;
-  background: -moz-linear-gradient(rgba(34, 85, 136, 0.5),
-    rgba(34, 85, 136, 1));
-  background: -webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(34, 85, 136, 0.5)),
-    to(rgba(34, 85, 136, 1)));
-  box-shadow: 0px 1px 0px #1b446d, 0px 2px 0px #1b446d, 0px 3px 0px
-    #1b446d, 0px 4px 0px #1b446d, 0px 5px 0px #1b446d, 0px 6px 0px #1b446d,
-    0px 7px 0px #1b446d, 2px 7px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px
-    rgba(255, 255, 255, 0.5) inset, 0px -1px 0px rgba(255, 255, 255, 0.2)
-    inset;
-}
-
-a.button3:hover {
-  background: -moz-linear-gradient(rgba(119, 170, 221, 0.9),
-    rgba(34, 85, 136, 0.9));
-  background: -webkit-gradient(linear, 100% 100%, 100% 0%, from(rgba(34, 85, 136, 0.9)),
-    to(rgba(119, 170, 221, 0.9)));
-  box-shadow: 0px 1px 0px #225588, 0px 2px 0px #225588, 0px 3px 0px
-    #225588, 0px 4px 0px #225588, 0px 5px 0px #225588, 0px 6px 0px #225588,
-    0px 7px 0px #225588, 2px 7px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px
-    rgba(255, 255, 255, 0.5) inset, 0px -1px 0px rgba(255, 255, 255, 0.2)
-    inset;
-}
-
-.button4 {
-  width: 22%;
-  height: 40px;
-  display: block;
-  float: left;
-  margin: 10px;
-  color: #e4eef8;
-  background: #337fcc;
-  font-size: 18px;
-  font-weight: bold;
-  text-shadow: 0 -1px 1px #143352;
-  text-align: center;
-  text-decoration: none;
-  border: 1px solid #225588;
-  adding: 12px 0 8px 0;
-  border-radius: 12px;
-  background: -moz-linear-gradient(rgba(34, 85, 136, 0.5),
-    rgba(34, 85, 136, 1));
-  background: -webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(34, 85, 136, 0.5)),
-    to(rgba(34, 85, 136, 1)));
-  box-shadow: 0px 1px 0px #1b446d, 0px 2px 0px #1b446d, 0px 3px 0px
-    #1b446d, 0px 4px 0px #1b446d, 0px 5px 0px #1b446d, 0px 6px 0px #1b446d,
-    0px 7px 0px #1b446d, 2px 7px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px
-    rgba(255, 255, 255, 0.5) inset, 0px -1px 0px rgba(255, 255, 255, 0.2)
-    inset;
-}
-
-a.button4:hover {
-  background: -moz-linear-gradient(rgba(119, 170, 221, 0.9),
-    rgba(34, 85, 136, 0.9));
-  background: -webkit-gradient(linear, 100% 100%, 100% 0%, from(rgba(34, 85, 136, 0.9)),
-    to(rgba(119, 170, 221, 0.9)));
-  box-shadow: 0px 1px 0px #225588, 0px 2px 0px #225588, 0px 3px 0px
-    #225588, 0px 4px 0px #225588, 0px 5px 0px #225588, 0px 6px 0px #225588,
-    0px 7px 0px #225588, 2px 7px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px
-    rgba(255, 255, 255, 0.5) inset, 0px -1px 0px rgba(255, 255, 255, 0.2)
-    inset;
+tr, td {
+text-align: center;
+height: 100px; /*表示したい大きさ*/
+margin: auto; /*縦余白30pxは任意*/
+width: 30%;
 }
