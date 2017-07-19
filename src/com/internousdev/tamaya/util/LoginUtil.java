@@ -22,7 +22,7 @@ public class LoginUtil extends ActionSupport {
 
 		String errorMsg=null;
 		if(session.containsKey("email")){
-			if((String) (session.get("phoneEmail")) ==(dto.getPhoneEmail())){
+			if((String) (session.get("phoneEmail")) ==(dto.getEmail())){
 				errorMsg=getText("lang.login.notDouble");
 			}else{
 				errorMsg=getText("lang.login.notSameTime");
@@ -40,7 +40,7 @@ public class LoginUtil extends ActionSupport {
 	public String validate(String email,String password,MypageDTO dto,Map<String, Object> session){
 		String errorMsg=null;
 
-		if(!email.equals(dto.getPhoneEmail())  || !password.equals(dto.getPassword())){
+		if(!email.equals(dto.getEmail())  || !password.equals(dto.getPassword())){
 			errorMsg=getText("lang.login.notCorrect");
 			return errorMsg;
 		}
