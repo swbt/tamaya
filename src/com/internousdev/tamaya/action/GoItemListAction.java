@@ -13,7 +13,7 @@ import com.internousdev.tamaya.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * 商品を検索し、条件にあったものを全てitemList<ItemDTO>に格納する
+ * 商品を検索し、条件にあったものを全てitemList<ItemDTOTest>に格納する
  * @author Takahiro Adachi
  * @since 1.0
  * @version 1.0

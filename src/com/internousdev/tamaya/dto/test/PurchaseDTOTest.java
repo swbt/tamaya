@@ -1,14 +1,14 @@
 /**
  *
  */
-package com.internousdev.tamaya.dto;
+package com.internousdev.tamaya.dto.test;
 
 /**PurchaseDTOTest 購入履歴情報を格納するためのクラス
 * @author　SayakaFukuda
 * @since 2017/05/02
 * @version 1.0
 */
-public class PurchaseDTO {
+public class PurchaseDTOTest {
 
 
 	//購入ID
