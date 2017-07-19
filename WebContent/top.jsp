@@ -34,7 +34,6 @@
 
 </head>
 <body>
-<body>
 	<div class="container">
 		<div class="dbox1">
 			<div class="h1title1"></div>
@@ -51,22 +50,36 @@
 				<tr>
 					<td>
 						<div class="kakaku1">
-							<a
-								href="<s:url action="FetchItemListAction"><s:param name="priceRange" value="1"/></s:url>">499円以下</a>
+							<s:form action="GoItemListAction">
+								<s:hidden name="priceRange" value="1" />
+								<s:submit class="button1" value="499円以下" />
+							</s:form>
 						</div>
 					</td>
-					<td><div class="kakaku2">
-							<a
-								href="<s:url action="FetchItemListAction"><s:param name="priceRange" value="2"/></s:url>">500円～999円</a>
-						</div></td>
-					<td><div class="kakaku3">
-							<a
-								href="<s:url action="FetchItemListAction"><s:param name="priceRange" value="3"/></s:url>">1000円～4999円</a>
-						</div></td>
-					<td><div class="kakaku4">
-							<a
-								href="<s:url action="FetchItemListAction"><s:param name="priceRange" value="4"/></s:url>">5000円以上</a>
-						</div></td>
+					<td>
+						<div class="kakaku2">
+							<s:form action="GoItemListAction">
+								<s:hidden name="priceRange" value="2" />
+								<s:submit class="button1" value="500円～999円" />
+							</s:form>
+						</div>
+					</td>
+					<td>
+						<div class="kakaku3">
+							<s:form action="GoItemListAction">
+								<s:hidden name="priceRange" value="3" />
+								<s:submit class="button1" value="1000円～4999円" />
+							</s:form>
+						</div>
+					</td>
+					<td>
+						<div class="kakaku4">
+							<s:form action="GoItemListAction">
+								<s:hidden name="priceRange" value="4" />
+								<s:submit class="button1" value="5000円以上" />
+							</s:form>
+						</div>
+					</td>
 				</tr>
 			</table>
 		</div>
@@ -79,21 +92,29 @@
 				<tr>
 					<td>
 						<div class=syurui1>
-							<a
-								href="<s:url action="FetchItemListAction"><s:param name="category" value="'temoti'"/></s:url>">手持花火</a>
+							<s:form action="GoItemListAction">
+								<s:hidden name="category" value="'temoti'" />
+								<s:submit class="button1" value="手持ち花火" />
+							</s:form>
 						</div>
 					</td>
 					<td><div class=syurui2>
-							<a
-								href="<s:url action="FetchItemListAction"><s:param name="category" value="'hunsyutu'"/></s:url>">噴出花火</a>
+							<s:form action="GoItemListAction">
+								<s:hidden name="category" value="'hunsyutu'" />
+								<s:submit class="button1" value="噴出花火" />
+							</s:form>
 						</div></td>
 					<td><div class=syurui3>
-							<a
-								href="<s:url action="FetchItemListAction"><s:param name="category" value="'utiage'"/></s:url>">打上花火</a>
+							<s:form action="GoItemListAction">
+								<s:hidden name="category" value="'utiage'" />
+								<s:submit class="button1" value="打上げ花火" />
+							</s:form>
 						</div></td>
 					<td><div class=syurui4>
-							<a
-								href="<s:url action="FetchItemListAction"><s:param name="category" value="'sonota'"/></s:url>">その他花火</a>
+							<s:form action="GoItemListAction">
+								<s:hidden name="category" value="'sonota'" />
+								<s:submit class="button1" value="その他花火" />
+							</s:form>
 						</div></td>
 				</tr>
 			</table>
