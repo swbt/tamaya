@@ -43,7 +43,10 @@
 	<div id="header"></div>
 	<br>
 
+
 	<img src="img/cart_shohin.png" alt="カートに入っている商品">
+
+	<div class="container">
 
 	<table align="center">
 		<thead>
@@ -129,6 +132,8 @@
 		<li><a href="siharai.jsp">支払い入力画面へ</a></li>
 		<li><a href="<s:url action="GoTopAction" />">トップ画面へ</a></li>
 		</ul>
+	</div>
+
 	</div>
 </body>
 </html>
