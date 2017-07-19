@@ -114,7 +114,7 @@
 						<br>
 						<div>
 							<input type="button"
-								value="<s:text name = 'lang.kanri_tuika.toinput'/>"
+								value="<s:text name = 'lang.kanri_tuika.toInput'/>"
 								class="autoConfirmBack">
 						</div>
 
