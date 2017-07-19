@@ -13,7 +13,7 @@
 <fmt:setLocale value="${pageContext.request.locale.language}" />
 <fmt:setBundle basename="com.internousdev.tamaya.property.kanri_header" var="lang" />
 
-<title><s:text name="AdminConfirm"/></title>
+<title><s:text name="lang.kanri_header.title"/></title>
 
 <%--検索エンジンによるインデックス拒否 --%>
 <meta name="ROBOTS" content="NOINDEX.NOFOLLOW">
@@ -42,11 +42,11 @@
 
 			<div class="collapse navbar-collapse" id="navbarEexample5">
 				<ul class="nav navbar-nav">
-					<li><a href="kanri_rireki.jsp"><s:text name="商品履歴"/></a></li>
-					<li><a href="Kanri_tuika.jsp"><s:text name="商品追加"/></a></li>
-					<li><a href="Kanri_sakujyo.jsp"><s:text name="商品削除"/></a></li>
-					<li><a href="kanri_henko.jsp"><s:text name="商品変更"/></a></li>
-					<li><a href="<s:url action="LogoutAction"/>"><s:text name="ログアウト"/></a></li>
+					<li><a href="kanri_rireki.jsp"><s:text name="lang.kanri_header.rireki"/></a></li>
+					<li><a href="Kanri_tuika.jsp"><s:text name="lang.kanri_header.tuika"/></a></li>
+					<li><a href="Kanri_sakujyo.jsp"><s:text name="lang.kanri_header.sakujyo"/></a></li>
+					<li><a href="kanri_henko.jsp"><s:text name="lang.kanri_header.henko"/></a></li>
+					<li><a href="<s:url action="LogoutAction"/>"><s:text name="lang.kanri_header.logout"/></a></li>
 				</ul>
 			</div>
 		</div>
