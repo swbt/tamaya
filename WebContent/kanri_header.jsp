@@ -42,7 +42,6 @@
 
 			<div class="collapse navbar-collapse" id="navbarEexample5">
 				<ul class="nav navbar-nav">
-					<li><a href="kanri_login.jsp"><s:text name="トップ"/></a></li>
 					<li><a href="kanri_rireki.jsp"><s:text name="商品履歴"/></a></li>
 					<li><a href="Kanri_tuika.jsp"><s:text name="商品追加"/></a></li>
 					<li><a href="Kanri_sakujyo.jsp"><s:text name="商品削除"/></a></li>
