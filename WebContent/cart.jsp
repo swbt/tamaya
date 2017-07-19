@@ -38,10 +38,9 @@
 
 	<!--     ログインヘッダー読み込む -->
 	<s:include value="login_header.jsp" />
-
-
 	<div id="header"></div>
 	<br>
+	<div class="container">        <!-- 全体を囲むコンテナ -->
 
 
 	<img src="img/cart_shohin.png" alt="カートに入っている商品">
@@ -134,6 +133,7 @@
 		</ul>
 	</div>
 
+	</div>
 	</div>
 </body>
 </html>
