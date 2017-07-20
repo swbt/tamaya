@@ -1,34 +1,19 @@
-/**
- *
- */
-package com.internousdev.tamaya.action;
 
+package com.internousdev.tamaya.action;
 import java.util.ArrayList;
 
 import com.internousdev.tamaya.dao.AdminContactDAO;
 import com.internousdev.tamaya.dto.ContactHistoryDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-/** *問い合わせ情報を表示するアクションクラス
- * @author seiya takahashi
- */
 public class AdminContactAction extends ActionSupport{
 
-
 	/**
-	 * 問い合わせ項目検索
+	 * シリアルID
 	 */
-	private String searchTitle = "";
+	private static final long serialVersionUID = 4111312065627471764L;
 
-	/**
-	 * 名前検索
-	 */
-	private String searchName = "";
 
-	/**
-	 * 問い合わせ項目
-	 */
-	private String  title;
 
 	/**
 	 * 問い合わせ者名
@@ -61,32 +46,11 @@ public class AdminContactAction extends ActionSupport{
 	private ArrayList<ContactHistoryDTO> displayList = new ArrayList<ContactHistoryDTO>();
 
 
-	/**
-	 *	1ページに表示する上限(初期値10コ分)
-	 */
-	private int pageLimit =10;
+	/* * 実行メソッド DAOから指定した範囲の問い合わせ情報を取得する
 
-	/**
-	 *	ページネーションの左側のボタンの数
-	 */
-	//private int leftPage;
-
-	/**
-	 *	ページネーションの右側のボタンの数
-	 */
-	//private int rightPage;
-
-
-
-
-	/**
-	 * 実行メソッド DAOから指定した範囲の問い合わせ情報を取得する
-	 * @author seiya takahashi
-	 * @since 2017/05/22
 	 * @return result 問い合わせ情報の取得に成功したらSUCCESS,失敗したらERROR
 	 */
-
-	public String execute(){
+public String execute(){
 		String result = ERROR;
 		AdminContactDAO dao = new AdminContactDAO();
 
@@ -94,41 +58,6 @@ public class AdminContactAction extends ActionSupport{
 
 		selectList = dao.selectMongo(searchTitle, searchName, searchSort);
 
-
-
-		pageCount = selectList.size()/pageLimit;
-		if(selectList.size()%pageLimit != 0){
-			pageCount++;
-		}
-		arrayPageCount =new int[pageCount];
-		for(int i=0;i<pageCount;i++){
-			arrayPageCount[i] = i+1;
-		}
-		int rowNumber = pageLimit * currentPage;
-		for(int j=0 ; j < selectList.size() ; j++){
-			if( j >= rowNumber){
-				ContactHistoryDTO dto = selectList.get(j);
-				displayList.add(dto);
-			}
-			if( displayList.size()==pageLimit){
-				break;
-			}
-		}
-		if(currentPage==pageCount-1){
-			leftPage=4;
-			rightPage=0;
-		}else if(currentPage==pageCount-2){
-			leftPage=3;
-			rightPage=1;
-		}else if(currentPage==0){
-			leftPage=0;
-			rightPage=4;
-		}else if(currentPage==1){
-			leftPage=1;
-			rightPage=3;
-		}else{
-			leftPage=2;
-			rightPage=2;
 		}
 		result=SUCCESS;
 	}
@@ -165,6 +94,22 @@ public class AdminContactAction extends ActionSupport{
 	 */
 	public void setSearchName(String searchName) {
 		this.searchName = searchName;
+	}
+
+	/**
+	 * ソート検索の取得メソッド
+	 * @return searchSort　ソート検索
+	 */
+	public int getSearchSort() {
+		return searchSort;
+	}
+
+	/**
+	 * ソート検索の格納メソッド
+	 * @param searchSort セットする searchSort
+	 */
+	public void setSearchSort(int searchSort) {
+		this.searchSort = searchSort;
 	}
 
 	/**
@@ -232,6 +177,22 @@ public class AdminContactAction extends ActionSupport{
 	}
 
 	/**
+	 * 登録日取得メソッド
+	 * @return dt　登録日
+	 */
+	public String getDt() {
+		return dt;
+	}
+
+	/**
+	 * 登録日格納メソッド
+	 * @param dt セットする dt
+	 */
+	public void setDt(String dt) {
+		this.dt = dt;
+	}
+
+	/**
 	 * 問い合わせリスト取得メソッド
 	 * @return selectList　問い合わせリスト
 	 */
@@ -265,22 +226,8 @@ public class AdminContactAction extends ActionSupport{
 
 
 
-	/**
-	 * 1ページに表示する上限取得メソッド
-	 * @return pageLimit　1ページに表示する上限
-	 */
-	public int getPageLimit() {
-		return pageLimit;
-	}
-
-	/**
-	 * 1ページに表示する上限格納メソッド
-	 * @param pageLimit セットする pageLimit
-	 */
-	public void setPageLimit(int pageLimit) {
-		this.pageLimit = pageLimit;
-	}
 
 
 }
+
 

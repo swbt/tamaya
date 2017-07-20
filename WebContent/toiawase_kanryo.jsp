@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,22 +16,13 @@
     <!-- Javascripts
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script>
-        $(document).ready(function(){
-    $('#top-menu').prmenu();
-        });
-	</script>
 
 
-
-<meta http-equiv="refresh" content="5;<s:url action="GoTopAction" />">
+ <meta http-equiv="refresh" content="2;URL=./top.jsp">
 </HEAD>
 <BODY>
 <h1>お問い合わせ完了致しました。</h1>
 ５秒後にジャンプします。<br>
-ジャンプしない場合は、下記のTOPボタンをクリックしてください。<br>
-<br>
-<a href="<s:url action="GoTopAction" />"><button type="button" class="btn btn-success">TOPページ</button></a>
 
 </BODY>
 </HTML>

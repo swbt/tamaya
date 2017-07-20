@@ -11,12 +11,19 @@ import com.mongodb.MongoClient;
  */
 public class MongoDBconnector {
 	private MongoClient client = null;
-	public DB getConnection() throws UnknownHostException {
-	DB db = null;
-	client = new MongoClient("localhost", 27017);
-	db = client.getDB("tamaya");
-	return db;
-}
+	public DB getConnection(){
+		try {
+			client = new MongoClient("localhost", 27017);
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+		//接続するデータベース名
+		DB db =client.getDB("tamaya");
+
+		return db;
+	}
+
+
 
 public void closeConnection() {
 	client.close();

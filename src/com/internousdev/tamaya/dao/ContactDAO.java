@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-import com.internousdev.util.db.mongodb.MongoDBConnector;
+import com.internousdev.tamaya.util.MongoDBconnector;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -19,20 +19,8 @@ import com.mongodb.DBObject;
 	 */
 public class ContactDAO {
 
-	/**
-	 * mongoDBにデータをインサートするメソッド
-	 * @author KAORI TAKAHASHI
-	 * @since 2017/06/14
-	 * @version 1.0
-	 * @param inquiryId 問い合わせID
-	 * @param inquiryDate 問い合わせ日時
-	 * @param userName 問い合わせ者名（ユーザー名）
-	 * @param email メールアドレス
-	 * @param postalCode 電話番号
-	 * @param comment 問い合わせ内容
-	 * @return INSERT真偽値 true / false
-	 * @throws UnknownHostException ホストの IP アドレスが判定できなかった場合にスローされる(呼び出し元で例外処理を行う)
-	 */
+
+
 	public boolean mongoInsert(String userName, String email, String postalCode, String comment) throws UnknownHostException {
 		boolean result = false;
 
@@ -45,7 +33,7 @@ public class ContactDAO {
 		String dt = sdf.format(cal.getTime());
 
 		/*MongoDBサーバに接続*/
-		MongoDBConnector con = new MongoDBConnector();
+		MongoDBconnector con = new MongoDBconnector();
 		/*利用するDB(コレクション)を取得*/
 		DB db = con.getConnection();
 		DBCollection coll = db.getCollection("inquiry_histories");
