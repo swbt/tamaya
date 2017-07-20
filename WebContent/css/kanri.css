@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+table {
+
+	width: 200px;
+	border-color:#333333;
+	border-width:1px;
+	border-style:solid;
+}
+
+td {
+
+	align: center;
+	height: 40px;
+	border-color:#999999;
+	border-width:1px;
+	border-style:dashed;
+}
+
+
