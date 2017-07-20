@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.internousdev.tamaya.util;
 
 import java.net.UnknownHostException;
@@ -29,5 +26,4 @@ public void closeConnection() {
 
 
 }
-
 

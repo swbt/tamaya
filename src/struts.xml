@@ -120,6 +120,26 @@
 			<result name="error">top.jsp</result>
 		</action>
 
+		<!-- お問い合わせ画面 -->
+		<action name="ContactConfirmAction"
+			class="com.internousdev.tamaya.action.ContactConfirmAction" method="execute">
+			<result name="success">toiawase_kakunin.jsp</result>
+			<result name="error">toiawase.jsp</result>
+		</action>
+
+		<!-- お問い合わせ確認画面から入力画面にもどる -->
+		<action name="BackContactAction" class="com.internousdev.tamaya.action.BackContactAction"
+			method="execute">
+			<result name="success">toiawase.jsp</result>
+			<result name="error">toiawase_kakunin.jsp</result>
+		</action>
+
+		<!-- お問い合わせ内容mongoへ登録 -->
+		<action name="ContactAction" class="com.internousdev.tamaya.action.ContactAction"
+			method="execute">
+			<result name="success">toiawase_kanryo.jsp</result>
+			<result name="error">toiawase.jsp</result>
+		</action>
 
 		<!-- ＜此処から下は管理者ページの処理を記述＞ -->
 
