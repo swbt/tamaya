@@ -14,6 +14,9 @@ public class UserDTO {
 	private String email;
 	private String userPass;
 	private boolean loginFlg;
+	private int userFlg;
+
+
 
 	public int getUserId() {
 		return userId;
@@ -38,5 +41,13 @@ public class UserDTO {
 	}
 	public void setLoginFlg(boolean loginFlg) {
 		this.loginFlg = loginFlg;
+	}
+
+	public int getUserFlg() {
+		return userFlg;
+	}
+
+	public void setUserFlg(int userFlg) {
+		this.userFlg = userFlg;
 	}
 }
