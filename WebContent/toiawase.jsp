@@ -25,57 +25,46 @@
  </head>
  <body>
   <div style="text-align : center">
- <h1> <s:text name = "lang.toiawase.inquiryForm"  /></h1>
+ <h1>お問い合わせフォーム</h1>
   </div>
   <br>
   <br>
   <div class="container">
   <div class="row">
-   <div class="col-sm-offset-3 col-sm-8">
+  <div class="col-sm-offset-3 col-sm-8">
 
-   <s:form method="post" action="ContactAction" class="autoConfirm">
+ <s:form method="post" action="ContactConfirmAction" class="autoConfirm">
 
-
-     <div class="col-sm-2"><s:text name ="lang.toiawase.name" /><font color="red">※</font><br></div>
-      <div class="col-sm-10 form-inline" style="padding: 3px;">
-       <input type="text" name="userName" class="form-control" required="required" maxlength="30"placeholder="<s:text name = "lang.toiawase.yamada"/>" />
-      </div>
-
-      <div class="row">
-       <div class="col-sm-2">電話番号</div>
+	<div class="row">
+    	<div class="col-sm-2">お名前</div>
+    	<div class="col-sm-10 form-inline" style="padding: 3px;">
+        <input type="text" name="userName" class="form-control" required="required" size="24" value = "<s:property value='#session.userName' />"placeholder="お名前">
+    </div>
+	</div>
+    <div class="row">
+        <div class="col-sm-2">電話番号</div>
         <div class="col-sm-10 form-inline" style="padding: 3px;">
-         <input type="tel" class="form-control input-sm" id="tell" placeholder="電話番号" size="30">
+        <input type="tel" class="form-control input-sm" name="postalCode" value = "<s:property value='#session.postalCode' />"placeholder="電話番号" size="30">
+    </div>
+    </div>
+    <div class="row">
+    	<div class="col-sm-2">Email</div>
+        <div class="col-sm-10 form-inline" style="padding: 3px;">
+        <input type="email" class="form-control input-sm" name="email" value = "<s:property value='#session.email' />"placeholder="email" size="30">
         </div>
-       </div>
-        <div class="row">
-         <div class="col-sm-2">Email</div>
-          <div class="col-sm-10 form-inline" style="padding: 3px;">
-           <input type="email" class="form-control input-sm" id="email" placeholder="Email" size="30">
-          </div>
-         </div>
-          <div class="row">
-           <div class="col-sm-2">お問い合わせ内容</div>
-            <div class="col-sm-10" style="padding: 3px;">
-             <textarea class="form-control  input-sm" rows="3" id="comment" placeholder="お問い合わせ内容"></textarea>
+    </div>
+    <div class="row">
+    	<div class="col-sm-2">お問い合わせ内容</div>
+        <div class="col-sm-10" style="padding: 3px;">
+        <textarea class="form-control  input-sm" rows="3" name="comment" placeholder="お問い合わせ内容"></textarea>
+ 		<input type="submit" value="<s:property value='#session.comment' />"placeholder="送信内容確認">
+        </div>
+	</div>
 
-</div>
-
-     </div>
-  </s:form>
-  </div>
+</s:form>
  </div>
-
-
-
-</div>
-
-
-
-
-            <div class="text-center" style="padding: 30px;">
-
-           <a href="toiawase_kakunin.jsp"><button type="button" class="btn btn-success" onClick="func()">送信内容の確認</button></a>
-		   </div>
+ </div>
+ </div>
 
 </body>
 

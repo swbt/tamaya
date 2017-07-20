@@ -9,18 +9,32 @@ import com.opensymphony.xwork2.ActionSupport;
 	 * @since 2017/06/13
 	 * @version 1.0
 	 */
-public class ContactAction extends ActionSupport {
+package com.internousdev.tamaya.action;
 
-	/**
-	 * シリアルID
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.tamaya.dao.ContactDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+/**
+	 * ContactAction 問い合わせフォームからの情報をMongoDBにインサートするアクション
+	 * @author Atsushi Kawai
+	 * @since 2017/06/13
+	 * @version 1.0
 	 */
-	private static final long serialversionUID = -5450844676239079386L;
+public class ContactAction extends ActionSupport implements SessionAware{
+
+	private static final long serialVersionUID = 1L;
+
 	private String userName;		//問い合わせ者名
 	private String email;			//メールアドレス
 	private String comment;			//問い合わせ内容
-	private String inquiryDate;		//問い合わせ日時
+
 	private String postalCode;		//電話番号
-	private String inquiryId;
+
+	private Map<String,Object> session;
 	/**
 	 * 実行メソッド 問い合わせ情報の送信処理をする*/
 
@@ -29,7 +43,13 @@ public class ContactAction extends ActionSupport {
 
 		ContactDAO dao = new ContactDAO();
 		try{
-			if(dao.mongoInsert(userName, email, comment,  postalCode,inquiryId)){
+			userName = (String)session.get("userName");
+			comment = (String)session.get("comment");
+			email =(String)session.get("email");
+
+			postalCode = (String)session.get("postalCode");
+
+			if(dao.mongoInsert(userName, email, comment,  postalCode)){
 
 				comment = comment.replace("\r\n","<br>");
 				result = SUCCESS;
@@ -58,16 +78,20 @@ public class ContactAction extends ActionSupport {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	public String getInquiryDate() {
-		return inquiryDate;
-	}
-	public void setInquiryDate(String inquiryDate) {
-		this.inquiryDate = inquiryDate;
-	}
+
 	public String getPostalCode() {
 		return postalCode;
 	}
 	public void setPhoneNumber(String postalCode) {
 		this.postalCode = postalCode;
+	}
+	@Override
+	public void setSession(Map<String, Object> session) {
+		// TODO 自動生成されたメソッド・スタブ
+			this.session = session;
+	}
+
+	public Map<String,Object> getSession(){
+		return session;
 	}
 }
