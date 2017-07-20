@@ -43,7 +43,7 @@
 
 	<div class="dbox2">
 		<div class="h1title2">
-			<h2>花火の価格別と種類別</h2>
+			<h2><font color="blue">花火の価格別と種類別</font></h2>
 		</div>
 		<div class="pbox2">
 			<table>
@@ -93,26 +93,26 @@
 					<td>
 						<div class=syurui1>
 							<s:form action="GoItemListAction">
-								<s:hidden name="category" value="'temoti'" />
+								<s:hidden name="category" value="temoti" />
 								<s:submit class="button1" value="手持ち花火" />
 							</s:form>
 						</div>
 					</td>
 					<td><div class=syurui2>
 							<s:form action="GoItemListAction">
-								<s:hidden name="category" value="'hunsyutu'" />
+								<s:hidden name="category" value="hunsyutu" />
 								<s:submit class="button1" value="噴出花火" />
 							</s:form>
 						</div></td>
 					<td><div class=syurui3>
 							<s:form action="GoItemListAction">
-								<s:hidden name="category" value="'utiage'" />
+								<s:hidden name="category" value="utiage" />
 								<s:submit class="button1" value="打上げ花火" />
 							</s:form>
 						</div></td>
 					<td><div class=syurui4>
 							<s:form action="GoItemListAction">
-								<s:hidden name="category" value="'sonota'" />
+								<s:hidden name="category" value="sonota" />
 								<s:submit class="button1" value="その他花火" />
 							</s:form>
 						</div></td>
@@ -123,19 +123,26 @@
 
 	<div class="dbox4">
 		<div class="h1title4">
-			<h2>花火の売り上げランキングトップ3</h2>
+			<h2><font color="red">花火の売り上げランキングトップ3</font></h2>
 		</div>
 
 		<table>
 			<tr>
-				<td>1位</td>
-				<td>2位</td>
-				<td>3位</td>
+				<td>　　　　1位</td>
+				<td>　　　　2位</td>
+				<td>　　　　3位</td>
 			</tr>
 			<tr>
-				<td><div class="pboxes1"></div></td>
-				<td><div class="pboxes2"></div></td>
-				<td><div class="pboxes3"></div></td>
+				<td><div class="pboxes1">
+					<h3>　　　　　　メガトンバッグ</h3>
+					<a href="リンク先のURL"><img src="img/megaton_bag.jpg" width=150 alt="画像の説明文"></a></div></td>
+				<td><div class="pboxes2">
+					<h3>　　　　　　　大和魂</h3>
+					<a href="リンク先のURL"><img src="img/yamato_damashi.jpg" width=150 alt="画像の説明文"></a></div></td>
+
+				<td><div class="pboxes3">
+					<h3>　　　　　　　パワフル三変化</h3>
+					<a href="リンク先のURL"><img src="img/powerful_sanhenge.jpg" width=150 alt="画像の説明文"></a></div></td>
 			</tr>
 		</table>
 	</div>

@@ -1,5 +1,8 @@
 package com.internousdev.tamaya.action;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
@@ -8,32 +11,32 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  	* GoFacebookAction Facebookでログインする為のクラス
- 	* @author Kaito Fukutani
-	* @since 2017/5/18
+ 	* @author Kaori Takahashi
+	* @since 2017/07/20
 	* @version 1.0
 	*/
 public class GoFacebookAction  extends ActionSupport implements ServletResponseAware,ServletRequestAware{
 
 	/**
 	 * シリアルID
-	 * @author Kaito Fukutani
-	 * @since 2017/5/18
+	 * @author Kaori Takahashi
+	 * @since 2017/07/20
 	 * @version 1.0
 	 */
 	private static final long serialVersionUID = -564268116563098912L;
 
 	/**
 	 * リクエスト
-	 * @author Kaito Fukutani
-	 * @since 2017/5/18
+	 * @author Kaori Takahashi
+	 * @since 2017/07/20
 	 * @version 1.0
 	 */
 	private HttpServletRequest request;
 
 	/**
 	 * レスポンス
-	 * @author Kaito Fukutani
-	 * @since 2017/5/18
+	 * @author Kaori Takahashi
+	 * @since 2017/07/20
 	 * @version 1.0
 	 */
 	private HttpServletResponse response;
@@ -42,8 +45,8 @@ public class GoFacebookAction  extends ActionSupport implements ServletResponseA
 
 	/**
 	 * FaceBookからTokenを取得メソッド
-	 * @author Kaito Fukutani
-	 * @since 2017/5/18
+	 * @author Kaori Takahashi
+	 * @since 2017/07/20
 	 * @version 1.0
 	 */
     public String execute() {
@@ -54,8 +57,8 @@ public class GoFacebookAction  extends ActionSupport implements ServletResponseA
 
 	/**
 	 * リクエスト格納メソッド
-	 * @author Kaito Fukutani
-	 * @since 2017/5/18
+	 * @author Kaori Takahashi
+	 * @since 2017/07/20
 	 * @version 1.0
 	 */
 	public void setServletRequest(HttpServletRequest request) {
@@ -63,8 +66,8 @@ public class GoFacebookAction  extends ActionSupport implements ServletResponseA
 	}
 	/**
 	 * レスポンス格納メソッド
-	 * @author Kaito Fukutani
-	 * @since 2017/5/18
+	 * @author Kaori Takahashi
+	 * @since 2017/07/20
 	 * @version 1.0
 	 */
 	public void setServletResponse(HttpServletResponse response) {

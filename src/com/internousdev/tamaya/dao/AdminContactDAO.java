@@ -3,7 +3,8 @@ package com.internousdev.tamaya.dao;
 import java.util.ArrayList;
 
 import com.internousdev.tamaya.dto.ContactHistoryDTO;
-import com.internousdev.util.db.mongodb.MongoDBConnector;
+import com.internousdev.tamaya.util.MongoDBconnector;
+
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -36,7 +37,7 @@ public class AdminContactDAO {
 
 
 		/* mongoDBに接続*/
-		MongoDBConnector con = new MongoDBConnector();
+		MongoDBconnector con = new MongoDBconnector();
 		DB db=null;
 
 
@@ -60,9 +61,9 @@ public class AdminContactDAO {
 				/*問い合わせ項目検索用*/
 				BasicDBObject querytitle = new BasicDBObject("title", searchTitle);
 				/*名前検索用*/
-				BasicDBObject queryname = new BasicDBObject("user_name", searchName);
+				BasicDBObject queryname = new BasicDBObject("userName", searchName);
 				/*名前と問い合わせ項目検索用*/
-				BasicDBObject querynt = new BasicDBObject("title", searchTitle).append("user_name", searchName);
+				BasicDBObject querynt = new BasicDBObject("title", searchTitle).append("userName", searchName);
 				BasicDBObject querysort = new BasicDBObject("inquiried_at", searchSort);
 
 

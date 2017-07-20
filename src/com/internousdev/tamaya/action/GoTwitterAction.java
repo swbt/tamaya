@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
-import com.internousdev.legmina.util.TwitterOauth;
+import com.internousdev.tamaya.util.TwitterOauth;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * TwitterIDでログインする為のクラス
- * @author Misa Kikuchi
- * @since 2017/05/18
+ * @author Kaori Takahashi
+ * @since 2017/07/20
  * @version 1.0
  */
 public class GoTwitterAction extends ActionSupport implements ServletResponseAware, ServletRequestAware {
