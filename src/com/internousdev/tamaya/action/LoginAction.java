@@ -38,8 +38,9 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 		}
 
-		if(userFlg == 3){
+		if(dto.getUserFlg() == 3){
 			ret = "admin";
+			System.out.println("userId = " + dto.getUserId());
 			return ret;
 		}
 
