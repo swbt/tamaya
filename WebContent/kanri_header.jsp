@@ -43,8 +43,6 @@
 			<div class="collapse navbar-collapse" id="navbarEexample5">
 				<ul class="nav navbar-nav">
 					<li><a href="kanri_rireki.jsp"><s:text name="lang.kanri_header.rireki"/></a></li>
-					<li><a href="Kanri_tuika.jsp"><s:text name="lang.kanri_header.tuika"/></a></li>
-					<li><a href="Kanri_sakujyo.jsp"><s:text name="lang.kanri_header.sakujyo"/></a></li>
 					<li><a href="kanri_henko.jsp"><s:text name="lang.kanri_header.henko"/></a></li>
 					<li><a href="<s:url action="LogoutAction"/>"><s:text name="lang.kanri_header.logout"/></a></li>
 				</ul>

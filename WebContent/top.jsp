@@ -21,6 +21,8 @@
     ================================================== -->
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
 
 <!-- ▼▼ログイン判定し、それに応じたヘッダーのjspファイルを読み込む -->
 <s:if test="#session.userId != null">
@@ -32,8 +34,6 @@
 <!-- ▼▼モーダル画面のjspファイルを読み込む -->
 <s:include value="modal.jsp" />
 
-</head>
-<body>
 	<div class="container">
 		<div class="dbox1">
 			<div class="h1title1"></div>
@@ -52,7 +52,7 @@
 						<div class="kakaku1">
 							<s:form action="GoItemListAction">
 								<s:hidden name="priceRange" value="1" />
-								<s:submit class="button1" value="499円以下" />
+								<s:submit class="mojilink" value="499円以下" />
 							</s:form>
 						</div>
 					</td>
@@ -60,7 +60,7 @@
 						<div class="kakaku2">
 							<s:form action="GoItemListAction">
 								<s:hidden name="priceRange" value="2" />
-								<s:submit class="button1" value="500円～999円" />
+								<s:submit class="mojilink" value="500円～999円" />
 							</s:form>
 						</div>
 					</td>
@@ -161,7 +161,7 @@
 			</table>
 		</div>
 	</div>
-	<a href="./Kanri_login.jsp">管理者ログイン</a>
+	<a href="./kanri_login.jsp">管理者ログイン</a>
 	<br>
 	<br>
 
