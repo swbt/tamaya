@@ -179,6 +179,10 @@ float: clear;
 
 .h1title5 {
 clear: both;
+text-align: center;
+display: inline-block;
+margin-left: auto;
+margin-right: auto
 }
 
 tr, td {

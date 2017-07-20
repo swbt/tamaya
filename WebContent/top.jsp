@@ -141,25 +141,12 @@
 	</div>
 	<div class="dbox5">
 		<div class="h1title5">
-			<h2>花火特集</h2>
+
+			<a href="./tokusyu.jsp">花火特集</a>
+
 		</div>
-		<div class="pbox5">
-			<table>
-				<tr>
-					<td><a href="./tokusyu.jsp">家族特集</a></td>
-					<td><a href="./tokusyu.jsp">カップル特集</a></td>
-					<td><a href="./tokusyu.jsp">大人数特集</a></td>
-				</tr>
-				<tr>
-					<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
-							alt="家族特集"></a></td>
-					<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
-							alt="カップル特集"></a></td>
-					<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
-							alt="大人数特集"></a></td>
-				</tr>
-			</table>
-		</div>
+
+
 	</div>
 	<a href="./kanri_login.jsp">管理者ログイン</a>
 	<br>
@@ -282,20 +269,34 @@
 	<div class=tokusyu>
 		<div class=hbox4>
 			<h2>花火特集</h2>
+			<a href="./tokusyu.jsp"><img src="img/hanabi2.jpg" alt="花火特集"></a>
+					href="./tokusyu.jsp">花火特集</a>
 		</div>
-		<div class=box4>
-			<div class=d1>
-				<a href="./tokusyu.jsp"><img src="img/hanabi2.jpg" alt="家族特集"></a><a
-					href="./tokusyu.jsp">家族特集</a>
-			</div>
-			<div class=d2>
-				<a href="./tokusyu.jsp"><img src="img/hanabi2.jpg" alt="カップル特集"></a><a
-					href="./tokusyu.jsp">カップル特集</a>
-			</div>
-			<div class=d3>
-				<a href="./tokusyu.jsp"><img src="img/hanabi2.jpg" alt="大人数特集"></a><a
-					href="./tokusyu.jsp">大人数特集</a>
-			</div>
+		<div class="pbox5">
+			<table>
+				<tr>
+					<td><a href="./tokusyu.jsp">家族特集</a></td>
+					<td><a href="./tokusyu.jsp">カップル特集</a></td>
+					<td><a href="./tokusyu.jsp">大人数特集</a></td>
+				</tr>
+				<tr>
+					<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
+							alt="家族特集"></a></td>
+					<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
+							alt="カップル特集"></a></td>
+					<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
+							alt="大人数特集"></a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<a href="./kanri_login.jsp">管理者ログイン</a>
+	<br>
+	<br>
+
+</body>
+</html>
+
 		</div>
 	</div>
 </div>
