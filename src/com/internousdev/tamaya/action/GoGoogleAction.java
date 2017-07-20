@@ -9,13 +9,12 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.legmina.util.GoogleOauth;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * Googleでログインする為のクラス
- * @author TATSUHIRO　SAITO
- * @since 1.0
+ * @author Kaori Takahashi
+ * @since 2017/07/20
  * @version 1.0
  */
 public class GoGoogleAction extends ActionSupport implements ServletResponseAware,ServletRequestAware,SessionAware {
