@@ -33,10 +33,9 @@ public class BackContactAction extends ActionSupport{
 
 			}
 
-			if(userName.equals(" ") ==false &&  postalCode.equals(" ") ==false && email.equals(" ")== false && comment.equals(" ")== false ){
 				result = SUCCESS;
 					return result;
-			}
+			//}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
