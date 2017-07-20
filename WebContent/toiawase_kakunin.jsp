@@ -44,24 +44,21 @@
     <div class="row">
     	<div class="col-sm-2">お問い合わせ内容</div>
         <div class="col-sm-10" style="padding: 3px;">
-        <textarea class="form-control  input-sm" rows="3" name="comment" value="<s:property value='#session.comment'/>" placeholder="お問い合わせ内容"></textarea>
- 		<input type="submit" class="btn btn-default" value="送信内容編集" >
- 		 <input type="submit" class="btn btn-default" value="お問い合わせ完了" >
-        </div>
+        <textarea class="form-control  input-sm" rows="3" name="comment"placeholder="お問い合わせ内容"><s:property value='#session.comment'/></textarea>
+		</div>
 	</div>
 	</div>
     </div>
   	</div>
-
-			<button type ="submit" class="btn btn-default" style="float:right;" value="{%('lang_confirm.send')}" ><text name='送る'/></button>
         </s:form>
 
+	<div style="text-align : center">
 
-<s:form action="BackContactAction">
-     	<button type = "submit" class="btn btn-default" style="float:right;" value="%{get('lang_confirm.backToInput')}" ><text name='戻る'/></button>
-     </s:form>
-
-
+<s:form action="BackContactAction" >
+     	<input type="submit" class="btn btn-default" value="送信内容編集">
+</s:form>
+<input type="submit" class="btn btn-default" value="お問い合わせ完了" >
+	</div>
 </body>
  <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript"></script>

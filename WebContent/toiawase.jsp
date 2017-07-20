@@ -56,8 +56,8 @@
     <div class="row">
     	<div class="col-sm-2">お問い合わせ内容</div>
         <div class="col-sm-10" style="padding: 3px;">
-        <textarea class="form-control  input-sm" rows="3" name="comment" placeholder="お問い合わせ内容"></textarea>
- 		<input type="submit" value="<s:property value='#session.comment' />"placeholder="送信内容確認">
+        <textarea class="form-control  input-sm" rows="3" name="comment" placeholder="お問い合わせ内容"><s:property value='#session.comment' /></textarea>
+ 		<input type="submit" value="送信内容確認">
         </div>
 	</div>
 

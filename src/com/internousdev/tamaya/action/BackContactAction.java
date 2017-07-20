@@ -8,11 +8,11 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class BackContactAction extends ActionSupport{
 
-	private String userName="";		//問い合わせ者名
-	private String email="";			//メールアドレス
-	private String comment="";			//問い合わせ内容
-
-	private String postalCode="";		//電話番号
+	private static final long serialVersionUID = 1L;
+	private String userName=" ";
+	private String postalCode=" ";//電話番号
+	private String email=" ";			//メールアドレス
+	private String comment=" ";			//問い合わせ内容
 
 
 	public String execute() {
@@ -20,19 +20,20 @@ public class BackContactAction extends ActionSupport{
 
 
 		try {
-			if (userName.equals("")== true) {
+			if (userName.equals(" ")== true) {
 
 			}
-			if(postalCode.equals("")== true){
-			}
-			if(email.equals("")== true){
-
-			}
-			if(comment.equals("")== true){
-
+			if(postalCode.equals(" ")== true){
 			}
 
-			if(userName.equals("") ==false &&  comment.equals("") ==false && email.equals("")== false && postalCode.equals("")== false ){
+			if(email.equals(" ")== true){
+
+			}
+			if(comment.equals(" ")== true){
+
+			}
+
+			if(userName.equals(" ") ==false &&  postalCode.equals(" ") ==false && email.equals(" ")== false && comment.equals(" ")== false ){
 				result = SUCCESS;
 					return result;
 			}
@@ -70,6 +71,9 @@ public class BackContactAction extends ActionSupport{
 		this.postalCode = postalCode;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 
 }

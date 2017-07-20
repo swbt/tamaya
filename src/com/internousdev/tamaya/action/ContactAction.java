@@ -1,15 +1,6 @@
 package com.internousdev.tamaya.action;
 
-import com.internousdev.tamaya.dao.ContactDAO;
-import com.opensymphony.xwork2.ActionSupport;
 
-/**
-	 * ContactAction 問い合わせフォームからの情報をMongoDBにインサートするアクション
-	 * @author Atsushi Kawai
-	 * @since 2017/06/13
-	 * @version 1.0
-	 */
-package com.internousdev.tamaya.action;
 
 import java.util.Map;
 
@@ -17,6 +8,8 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tamaya.dao.ContactDAO;
 import com.opensymphony.xwork2.ActionSupport;
+
+
 
 /**
 	 * ContactAction 問い合わせフォームからの情報をMongoDBにインサートするアクション
