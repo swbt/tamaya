@@ -28,7 +28,7 @@
 
 
 
-	<s:form action="PaymentAction">
+	<s:form action="VerifyCreditCardAction">
 		<table class="table" border="">
 			<tr>
 				<td bgcolor="#d3d3d3" rowspan="2">ご利用可能な <br>クレジットカード
@@ -71,27 +71,27 @@
 						<option value="11">11</option>
 						<option value="12">12</option>
 				</select> /20 <select name="expirationYear">
-						<option value="17">17</option>
-						<option value="18">18</option>
-						<option value="19">19</option>
-						<option value="20">20</option>
-						<option value="21">21</option>
-						<option value="22">22</option>
-						<option value="23">23</option>
-						<option value="24">24</option>
-						<option value="25">25</option>
-						<option value="26">26</option>
-						<option value="27">27</option>
-						<option value="28">28</option>
-						<option value="29">29</option>
-						<option value="30">30</option>
-						<option value="31">31</option>
-						<option value="32">32</option>
-						<option value="33">33</option>
-						<option value="34">34</option>
-						<option value="35">35</option>
-						<option value="36">36</option>
-						<option value="37">37</option>
+						<option value="2017">17</option>
+						<option value="2018">18</option>
+						<option value="2019">19</option>
+						<option value="2020">20</option>
+						<option value="2021">21</option>
+						<option value="2022">22</option>
+						<option value="2023">23</option>
+						<option value="2024">24</option>
+						<option value="2025">25</option>
+						<option value="2026">26</option>
+						<option value="2027">27</option>
+						<option value="2028">28</option>
+						<option value="2029">29</option>
+						<option value="2030">30</option>
+						<option value="2031">31</option>
+						<option value="2032">32</option>
+						<option value="2033">33</option>
+						<option value="2034">34</option>
+						<option value="2035">35</option>
+						<option value="2036">36</option>
+						<option value="2037">37</option>
 				</select> <br>カードの有効期限は通常「月／年（西暦下2桁）」で刻印されています。</td>
 			</tr>
 			<tr>

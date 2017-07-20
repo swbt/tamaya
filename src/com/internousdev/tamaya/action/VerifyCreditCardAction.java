@@ -40,19 +40,25 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 		if(!session.containsKey("userId")){
 			return "login";
 		}
+		System.out.println("creditId:" + creditId + ", creditNumber:" + creditNumber);
+		System.out.print("securityCode = " + securityCode + ", expirationYear = " + expirationYear);
+		System.out.println(", expirationMonth = " + expirationMonth + ", nameE = " + nameE);
 		CreditUtil util = new CreditUtil(creditId, creditNumber);
 		// クレジットカード番号上6ケタの照合
 		if (util.brandCheck()) {
 			// クレジットカード番号16ケタ、セキュリティコード、有効期限、名義人の照合
 			if (util.creditCheck(securityCode, expirationYear, expirationMonth, nameE)) {
+				System.out.println("VerifyCreditCardAction : SUCCESS");
 				return SUCCESS;
 			} else {
+				System.out.println("VerifyCreditCardAction : ERROR(creditCheck)");
 				return ERROR;
 			}
 		} else {
+			System.out.println("VerifyCreditCardAction : ERROR(brandCheck)");
 			return ERROR;
 		}
-
+		//TODO カートの中身をDBから取ってくる処理
 	}
 
 	/** クレジット種類を取得するメソッド */
