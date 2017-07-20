@@ -13,8 +13,10 @@ import com.internousdev.tamaya.dto.MypageDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
- * @author internousdev
- *
+ * Oauthでのログインに関するクラス
+ * @author Kenichi Kaburagi
+ * @since 2017/06/14
+ * @version 1.0
  */
 public class LoginOauthDAO {
 
