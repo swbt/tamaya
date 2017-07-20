@@ -93,26 +93,26 @@
 					<td>
 						<div class=syurui1>
 							<s:form action="GoItemListAction">
-								<s:hidden name="category" value="'temoti'" />
+								<s:hidden name="category" value="temoti" />
 								<s:submit class="button1" value="手持ち花火" />
 							</s:form>
 						</div>
 					</td>
 					<td><div class=syurui2>
 							<s:form action="GoItemListAction">
-								<s:hidden name="category" value="'hunsyutu'" />
+								<s:hidden name="category" value="hunsyutu" />
 								<s:submit class="button1" value="噴出花火" />
 							</s:form>
 						</div></td>
 					<td><div class=syurui3>
 							<s:form action="GoItemListAction">
-								<s:hidden name="category" value="'utiage'" />
+								<s:hidden name="category" value="utiage" />
 								<s:submit class="button1" value="打上げ花火" />
 							</s:form>
 						</div></td>
 					<td><div class=syurui4>
 							<s:form action="GoItemListAction">
-								<s:hidden name="category" value="'sonota'" />
+								<s:hidden name="category" value="sonota" />
 								<s:submit class="button1" value="その他花火" />
 							</s:form>
 						</div></td>
