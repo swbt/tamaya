@@ -24,7 +24,7 @@
 </head>
 <body>
   <!-- ▼▼ログイン判定し、それに応じたヘッダーのjspファイルを読み込む -->
-  <s:if test="#session.loginFlg == true">
+  <s:if test="#session.userId != null">
     <s:include value="login_header.jsp" />
   </s:if>
   <s:else>

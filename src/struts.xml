@@ -4,166 +4,140 @@
 "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-	<!-- devMode = true の時、struts2を開発（デバッグ）モードで稼働する 必ず本番稼働の前にこの項目をfalseにするか、削除すること -->
-	<constant name="struts.devMode" value="true"></constant>
-	<constant name="struts.ui.theme" value="simple" />
+  <!-- devMode = true の時、struts2を開発（デバッグ）モードで稼働する
+       必ず本番稼働の前にこの項目をfalseにするか、削除すること -->
+  <constant name="struts.devMode" value="true"></constant>
+  <constant name="struts.ui.theme" value="simple" />
 
 
-	<!-- 国際化 -->
-	<constant name="struts.custom.i18n.resources"
-		value="com.internousdev.tamaya.property.header
-			   com.internousdev.tamaya.property.item_list
-			   com.internousdev.tamaya.property.kanri_header
-			   com.internousdev.tamaya.property.kanri_henko
-			   com.internousdev.tamaya.property.kanri_kakunin
-			   com.internousdev.tamaya.property.Kanri_login
-			   com.internousdev.tamaya.property.kanri_rireki
-			   com.internousdev.tamaya.property.Kanri_sakujyo
-			   com.internousdev.tamaya.property.Kanri_tuika
-			   com.internousdev.tamaya.property.login_header
-			   com.internousdev.tamaya.property.login
-			   com.internousdev.tamaya.property.modal
-			   com.internousdev.tamaya.property.mypage
-			   com.internousdev.tamaya.property.siharai_kakunin
-			   com.internousdev.tamaya.property.siharai_kanryo
-			   com.internousdev.tamaya.property.siharai
-			   com.internousdev.tamaya.property.syousai
-			   com.internousdev.tamaya.property.toiawase_kakunin
-			   com.internousdev.tamaya.property.toiawase_kanryo
-			   com.internousdev.tamaya.property.toiawase
-			   com.internousdev.tamaya.property.tokusyu
-			   com.internousdev.tamaya.property.top
-			   " />
+  <!-- 国際化 -->
+  <constant name="struts.custom.i18n.resources"
+    value="com.internousdev.tamaya.property.header
+         com.internousdev.tamaya.property.item_list
+         com.internousdev.tamaya.property.kanri_header
+         com.internousdev.tamaya.property.kanri_henko
+         com.internousdev.tamaya.property.kanri_kakunin
+         com.internousdev.tamaya.property.Kanri_login
+         com.internousdev.tamaya.property.kanri_rireki
+         com.internousdev.tamaya.property.Kanri_sakujyo
+         com.internousdev.tamaya.property.Kanri_tuika
+         com.internousdev.tamaya.property.login_header
+         com.internousdev.tamaya.property.login
+         com.internousdev.tamaya.property.modal
+         com.internousdev.tamaya.property.mypage
+         com.internousdev.tamaya.property.siharai_kakunin
+         com.internousdev.tamaya.property.siharai_kanryo
+         com.internousdev.tamaya.property.siharai
+         com.internousdev.tamaya.property.syousai
+         com.internousdev.tamaya.property.toiawase_kakunin
+         com.internousdev.tamaya.property.toiawase_kanryo
+         com.internousdev.tamaya.property.toiawase
+         com.internousdev.tamaya.property.tokusyu
+         com.internousdev.tamaya.property.top
+         " />
 
-	<package name="com.internousdev.tamaya.action" extends="struts-default">
-		<action name="GoTopAction" class="com.internousdev.tamaya.action.GoTopAction"
-			method="execute">
-			<result name="success">top.jsp</result>
-			<result name="error">top.jsp</result>
-		</action>
-		<action name="LoginAction" class="com.internousdev.tamaya.action.LoginAction"
-			method="execute">
-			<result name="success" type="redirect">GoTopAction</result>
-			<result name="error" type="redirect">GoTopAction</result>
-		</action>
+  <package name="com.internousdev.tamaya.action" extends="struts-default">
+    <action name="GoTopAction" class="com.internousdev.tamaya.action.GoTopAction" method="execute">
+      <result name="success">top.jsp</result>
+      <result name="error">top.jsp</result>
+    </action>
+    <action name="LoginAction" class="com.internousdev.tamaya.action.LoginAction" method="execute">
+      <result name="success" type="redirect">GoTopAction</result>
+      <result name="error" type="redirect">GoTopAction</result>
+      <result name="admin">kanri_login</result>
+    </action>
 
-		<action name="LogoutAction" class="com.internousdev.tamaya.action.LogoutAction"
-			method="execute">
-			<result name="success" type="redirect">GoTopAction</result>
-			<result name="error" type="redirect">GoTopAction</result>
-		</action>
+    <action name="LogoutAction" class="com.internousdev.tamaya.action.LogoutAction" method="execute">
+      <result name="success" type="redirect">GoTopAction</result>
+      <result name="error" type="redirect">GoTopAction</result>
+    </action>
 
-		<action name="GoItemListAction" class="com.internousdev.tamaya.action.GoItemListAction"
-			method="execute">
-			<result name="item_list">item_list.jsp</result>
-			<result name="top" type="redirect">GoTopAction</result>
-			<result name="error" type="redirect">GoTopAction</result>
-		</action>
+    <action name="GoItemListAction" class="com.internousdev.tamaya.action.GoItemListAction"
+      method="execute">
+      <result name="item_list">item_list.jsp</result>
+      <result name="top" type="redirect">GoTopAction</result>
+      <result name="error" type="redirect">GoTopAction</result>
+    </action>
 
-		<action name="GoItemDetailAction"
-			class="com.internousdev.tamaya.action.GoItemDetailAction" method="execute">
-			<result name="success">syousai.jsp</result>
-			<result name="error">index.jsp</result>
-		</action>
+    <action name="GoItemDetailAction" class="com.internousdev.tamaya.action.GoItemDetailAction"
+      method="execute">
+      <result name="success">syousai.jsp</result>
+      <result name="error">index.jsp</result>
+    </action>
 
-		<!-- クレジットカード入力画面から次へ進むための処理 -->
-		<action name="PaymentAction" class="com.internousdev.tamaya.action.PaymentAction"
-			method="execute">
-			<result name="success">siharai_kakunin.jsp</result>
-			<result name="error">siharai.jsp</result>
-			<result name="login" type="redirect">GoTopAction</result>
-		</action>
+    <!-- 選択・入力されたクレジットカード情報が正しいか検証する -->
+    <action name="VerifyCreditCardAction" class="com.internousdev.tamaya.action.VerifyCreditCardAction"
+      method="execute">
+      <result name="success">siharai_kakunin.jsp</result>
+      <result name="error">siharai.jsp</result>
+      <result name="login" type="redirect">GoTopAction</result>
+    </action>
 
-		<!-- クレジットカード入力画面から次へ進むための処理 -->
-		<action name="PurchaseCompleteAction"
-			class="com.internousdev.tamaya.action.PurchaseCompleteAction" method="execute">
-			<result name="success" type="chain">PurchaseCompleteAction</result>
-			<result name="error">siharai.jsp</result>
-		</action>
+    <!-- クレジットカード入力画面から次へ進むための処理 -->
+    <action name="PurchaseCompleteAction" class="com.internousdev.tamaya.action.PurchaseCompleteAction"
+      method="execute">
+      <result name="success" type="chain">PurchaseCompleteAction</result>
+      <result name="error">siharai.jsp</result>
+    </action>
 
-		<!-- ログイン後のヘッダーからカート画面への遷移 -->
-		<action name="GoCartAction" class="com.internousdev.tamaya.action.GoCartAction"
-			method="execute">
-			<result name="success">cart.jsp</result>
-			<result name="error">cart.jsp</result>
-		</action>
+    <!-- ログイン後のヘッダーからカート画面への遷移 -->
+    <action name="GoCartAction" class="com.internousdev.tamaya.action.GoCartAction" method="execute">
+      <result name="success">cart.jsp</result>
+      <result name="error">cart.jsp</result>
+    </action>
 
 
-		<!-- カートに追加する処理 -->
-		<action name="AddToCartAction" class="com.internousdev.tamaya.action.AddToCartAction"
-			method="execute">
-			<result name="success" type="chain">GoItemListAction</result>
-			<result name="error">item_list.jsp</result>
-			<result name="login">login.jsp</result>
-		</action>
+    <!-- カートに追加する処理 -->
+    <action name="AddToCartAction" class="com.internousdev.tamaya.action.AddToCartAction"
+      method="execute">
+      <result name="success" type="chain">GoItemListAction</result>
+      <result name="error">item_list.jsp</result>
+      <result name="login">login.jsp</result>
+    </action>
 
-		<!-- カートから削除する処理 -->
-		<action name="CartDeleteAction" class="com.internousdev.tamaya.action.CartDeleteAction"
-			method="execute">
-			<result name="success">cart.jsp</result>
-			<result name="error" type="redirect">GoTopAction</result>
-		</action>
-
-
-		<!-- カートを更新する処理 -->
-		<action name="CartUpdateAction" class="com.internousdev.tamaya.action.CartUpdateAction"
-			method="execute">
-			<result name="success" type="chain">GoCartAction</result>
-			<result name="error" type="redirect">GoTopAction</result>
-		</action>
+    <!-- カートから削除する処理 -->
+    <action name="CartDeleteAction" class="com.internousdev.tamaya.action.CartDeleteAction"
+      method="execute">
+      <result name="success">cart.jsp</result>
+      <result name="error" type="redirect">GoTopAction</result>
+    </action>
 
 
-		<!-- マイページを表示する処理 -->
-		<action name="GoMyPageAction" class="com.internousdev.tamaya.action.GoMyPageAction"
-			method="execute">
-			<result name="success">mypage.jsp</result>
-			<result name="error">top.jsp</result>
-		</action>
-
-		<!-- お問い合わせ画面 -->
-		<action name="ContactConfirmAction"
-			class="com.internousdev.tamaya.action.ContactConfirmAction" method="execute">
-			<result name="success">toiawase_kakunin.jsp</result>
-			<result name="error">toiawase.jsp</result>
-		</action>
-
-		<!-- お問い合わせ確認画面から入力画面にもどる -->
-		<action name="BackContactAction" class="com.internousdev.tamaya.action.BackContactAction"
-			method="execute">
-			<result name="success">toiawase.jsp</result>
-			<result name="error">toiawase_kakunin.jsp</result>
-		</action>
-
-		<!-- お問い合わせ内容mongoへ登録 -->
-		<action name="ContactAction" class="com.internousdev.tamaya.action.ContactAction"
-			method="execute">
-			<result name="success">toiawase_kanryo.jsp</result>
-			<result name="error">toiawase.jsp</result>
-		</action>
-
-		<!-- ＜此処から下は管理者ページの処理を記述＞ -->
+    <!-- カートを更新する処理 -->
+    <action name="CartUpdateAction" class="com.internousdev.tamaya.action.CartUpdateAction"
+      method="execute">
+      <result name="success" type="chain">GoCartAction</result>
+      <result name="error" type="redirect">GoTopAction</result>
+    </action>
 
 
+    <!-- マイページを表示する処理 -->
+    <action name="GoMyPageAction" class="com.internousdev.tamaya.action.GoMyPageAction"
+      method="execute">
+      <result name="success">mypage.jsp</result>
+      <result name="error">top.jsp</result>
+    </action>
 
+    <!-- お問い合わせ画面 -->
+    <action name="ContactConfirmAction" class="com.internousdev.tamaya.action.ContactConfirmAction"
+      method="execute">
+      <result name="success">toiawase_kakunin.jsp</result>
+      <result name="error">toiawase.jsp</result>
+    </action>
 
+    <!-- お問い合わせ確認画面から入力画面にもどる -->
+    <action name="BackContactAction" class="com.internousdev.tamaya.action.BackContactAction"
+      method="execute">
+      <result name="success">toiawase.jsp</result>
+      <result name="error">toiawase_kakunin.jsp</result>
+    </action>
 
+    <!-- お問い合わせ内容mongoへ登録 -->
+    <action name="ContactAction" class="com.internousdev.tamaya.action.ContactAction" method="execute">
+      <result name="success">toiawase_kanryo.jsp</result>
+      <result name="error">toiawase.jsp</result>
+    </action>
 
-		<!-- 管理者ログイン -->
-		<action name="LoginAction" class="com.internousdev.tamaya.action.LoginAction"
-			method="execute">
-			<result name="success" type="redirect">kanri_kakunin.jsp</result>
-			<result name="error" type="redirect">Kanri_login.jsp</result>
-		</action>
-
-		<!-- 管理者ログアウト -->
-		<action name="LogoutAction" class="com.internousdev.tamaya.action.LogoutAction"
-			method="execute">
-			<result name="success" type="redirect">Kanri_login.jsp</result>
-			<result name="error" type="redirect">kanri_kakunin.jsp</result>
-		</action>
-
-
-
-
-	</package>
+    <!-- ＜此処から下は管理者ページの処理を記述＞ -->
+  </package>
 </struts>
