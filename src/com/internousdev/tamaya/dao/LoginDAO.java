@@ -33,6 +33,8 @@ public class LoginDAO {
 			if(rs1.next()){
 				dto.setUserId(rs1.getInt("user_id"));
 				dto.setLoginFlg(rs1.getBoolean("login_flg"));
+				dto.setUserFlg(rs1.getInt("user_flg"));
+
 			}
 			String sql2 = "UPDATE users SET login_flg = TRUE WHERE user_id = ?";
 			PreparedStatement ps2 = con.prepareStatement(sql2);

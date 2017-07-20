@@ -20,44 +20,51 @@
             <p>お問い合わせ内容はこちらで宜しいでしょうか？<br>よろしければ「お問い合わせ完了」ボタンを押して下さい。</p>
 </div>
   <div class="container">
-  <div class="row">
-  <div class="col-sm-offset-3 col-sm-8">
 
+
+  <div style="text-align : center">
 	<div class="row">
     	<div class="col-sm-2">お名前</div>
-    	<div class="col-sm-10 form-inline" style="padding: 3px;">
-        <input type="text" name="userName" class="form-control" value ="<s:property value='#session.userName' />" required="required" maxlength="30"placeholder="お名前">
+    	<div class="col-sm-10 form-inline" style="padding: 10px;">
+       <s:property value='#session.userName' />
     </div>
 	</div>
     <div class="row">
         <div class="col-sm-2">電話番号</div>
-        <div class="col-sm-10 form-inline" style="padding: 3px;">
-        <input type="tel" class="form-control input-sm" name="postalCode" value =" <s:property value='#session.postalCode' />" placeholder="電話番号" size="30">
+        <div class="col-sm-10 form-inline" style="padding: 10px;">
+        <s:property value='#session.postalCode' />
     </div>
     </div>
     <div class="row">
     	<div class="col-sm-2">Email</div>
-        <div class="col-sm-10 form-inline" style="padding: 3px;">
-        <input type="email" class="form-control input-sm" name="email" value="<s:property value='#session.email'/>" placeholder="email" size="30">
+        <div class="col-sm-10 form-inline" style="padding: 10px;">
+        <s:property value='#session.email'/>
         </div>
     </div>
     <div class="row">
     	<div class="col-sm-2">お問い合わせ内容</div>
-        <div class="col-sm-10" style="padding: 3px;">
-        <textarea class="form-control  input-sm" rows="3" name="comment"placeholder="お問い合わせ内容"><s:property value='#session.comment'/></textarea>
+        <div class="col-sm-10" style="padding: 10px;">
+        <s:property value='#session.comment'/>
 		</div>
 	</div>
 	</div>
     </div>
-  	</div>
+
+
         </s:form>
 
 	<div style="text-align : center">
-
+	<br>
+	<br>
+	<br>
 <s:form action="BackContactAction" >
      	<input type="submit" class="btn btn-default" value="送信内容編集">
 </s:form>
+
+<s:form action="ContactAction">
 <input type="submit" class="btn btn-default" value="お問い合わせ完了" >
+</s:form>
+
 	</div>
 </body>
  <script type="text/javascript" src="js/main.js"></script>

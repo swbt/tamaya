@@ -133,7 +133,7 @@ margin-right: auto
 
 .kakaku1,.kakaku2,.kakaku3,.kakaku4 {
 float: left;
-padding: 30px;
+padding:30px;
 margin:10px;
 }
 
@@ -167,10 +167,7 @@ clear: both;
 
 .pboxes1,.pboxes2,.pboxes3 {
 float: left;
-border: 1px solid gray;
-height: 100px; /*表示したい大きさ*/
-margin: 10px; /*縦余白30pxは任意*/
-width: 250px;
+width: 270px;
 }
 
 .dbox5 {
@@ -179,6 +176,10 @@ float: clear;
 
 .h1title5 {
 clear: both;
+text-align: center;
+display: inline-block;
+margin-left: auto;
+margin-right: auto
 }
 
 tr, td {

@@ -20,6 +20,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class LoginAction extends ActionSupport implements SessionAware {
 	private String email;
 	private String userPass;
+	private int userFlg;
 	private Map<String, Object> session;
 
 	public String execute(){
@@ -29,14 +30,25 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		UserDTO dto = new UserDTO();
 
 		//入力した情報が登録されているか確認
+
 		dto = dao.login(email, userPass);
 		if(dto == null){
 			System.out.println("LoginAction : result = " + ret);
 			return ret;
+
 		}
+
+		if(dto.getUserFlg() == 3){
+			ret = "admin";
+			System.out.println("userId = " + dto.getUserId());
+			return ret;
+		}
+
 		System.out.println("userId = " + dto.getUserId());
 		session.put("userId", dto.getUserId());
 		ret = SUCCESS;
+
+
 		System.out.println("LoginAction : result = " + ret);
 		return ret;
 	}

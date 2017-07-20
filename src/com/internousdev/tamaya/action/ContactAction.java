@@ -2,6 +2,7 @@ package com.internousdev.tamaya.action;
 
 
 
+import java.net.UnknownHostException;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -11,12 +12,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 
 
-/**
-	 * ContactAction 問い合わせフォームからの情報をMongoDBにインサートするアクション
-	 * @author Atsushi Kawai
-	 * @since 2017/06/13
-	 * @version 1.0
-	 */
+
 public class ContactAction extends ActionSupport implements SessionAware{
 
 	private static final long serialVersionUID = 1L;
@@ -44,14 +40,19 @@ public class ContactAction extends ActionSupport implements SessionAware{
 
 			if(dao.mongoInsert(userName, email, comment,  postalCode)){
 
-				comment = comment.replace("\r\n","<br>");
+				session.remove("userName");
+				session.remove("email");
+				session.remove("comment");
+				session.remove("postalCode");
 				result = SUCCESS;
 				return result;
 			}
-		} catch (Exception e) {
+		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}return result;
 	}
+
+
 
 	public String getUserName() {
 		return userName;
@@ -86,5 +87,8 @@ public class ContactAction extends ActionSupport implements SessionAware{
 
 	public Map<String,Object> getSession(){
 		return session;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 }

@@ -43,7 +43,7 @@
 
 	<div class="dbox2">
 		<div class="h1title2">
-			<h2>花火の価格別と種類別</h2>
+			<h2><font color="blue">花火の価格別と種類別</font></h2>
 		</div>
 		<div class="pbox2">
 			<table>
@@ -123,43 +123,37 @@
 
 	<div class="dbox4">
 		<div class="h1title4">
-			<h2>花火の売り上げランキングトップ3</h2>
+			<h2><font color="red">花火の売り上げランキングトップ3</font></h2>
 		</div>
 
 		<table>
 			<tr>
-				<td>1位</td>
-				<td>2位</td>
-				<td>3位</td>
+				<td>　　　　1位</td>
+				<td>　　　　2位</td>
+				<td>　　　　3位</td>
 			</tr>
 			<tr>
-				<td><div class="pboxes1"></div></td>
-				<td><div class="pboxes2"></div></td>
-				<td><div class="pboxes3"></div></td>
+				<td><div class="pboxes1">
+					<h3>　　　　　　メガトンバッグ</h3>
+					<a href="リンク先のURL"><img src="img/megaton_bag.jpg" width=150 alt="画像の説明文"></a></div></td>
+				<td><div class="pboxes2">
+					<h3>　　　　　　　大和魂</h3>
+					<a href="リンク先のURL"><img src="img/yamato_damashi.jpg" width=150 alt="画像の説明文"></a></div></td>
+
+				<td><div class="pboxes3">
+					<h3>　　　　　　　パワフル三変化</h3>
+					<a href="リンク先のURL"><img src="img/powerful_sanhenge.jpg" width=150 alt="画像の説明文"></a></div></td>
 			</tr>
 		</table>
 	</div>
 	<div class="dbox5">
 		<div class="h1title5">
-			<h2>花火特集</h2>
+
+			<a href="./tokusyu.jsp">花火特集</a>
+
 		</div>
-		<div class="pbox5">
-			<table>
-				<tr>
-					<td><a href="./tokusyu.jsp">家族特集</a></td>
-					<td><a href="./tokusyu.jsp">カップル特集</a></td>
-					<td><a href="./tokusyu.jsp">大人数特集</a></td>
-				</tr>
-				<tr>
-					<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
-							alt="家族特集"></a></td>
-					<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
-							alt="カップル特集"></a></td>
-					<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
-							alt="大人数特集"></a></td>
-				</tr>
-			</table>
-		</div>
+
+
 	</div>
 	<a href="./kanri_login.jsp">管理者ログイン</a>
 	<br>
@@ -282,20 +276,34 @@
 	<div class=tokusyu>
 		<div class=hbox4>
 			<h2>花火特集</h2>
+			<a href="./tokusyu.jsp"><img src="img/hanabi2.jpg" alt="花火特集"></a>
+					href="./tokusyu.jsp">花火特集</a>
 		</div>
-		<div class=box4>
-			<div class=d1>
-				<a href="./tokusyu.jsp"><img src="img/hanabi2.jpg" alt="家族特集"></a><a
-					href="./tokusyu.jsp">家族特集</a>
-			</div>
-			<div class=d2>
-				<a href="./tokusyu.jsp"><img src="img/hanabi2.jpg" alt="カップル特集"></a><a
-					href="./tokusyu.jsp">カップル特集</a>
-			</div>
-			<div class=d3>
-				<a href="./tokusyu.jsp"><img src="img/hanabi2.jpg" alt="大人数特集"></a><a
-					href="./tokusyu.jsp">大人数特集</a>
-			</div>
+		<div class="pbox5">
+			<table>
+				<tr>
+					<td><a href="./tokusyu.jsp">家族特集</a></td>
+					<td><a href="./tokusyu.jsp">カップル特集</a></td>
+					<td><a href="./tokusyu.jsp">大人数特集</a></td>
+				</tr>
+				<tr>
+					<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
+							alt="家族特集"></a></td>
+					<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
+							alt="カップル特集"></a></td>
+					<td><a href="./tokusyu.jsp"><img src="img/hanabi2.jpg"
+							alt="大人数特集"></a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<a href="./kanri_login.jsp">管理者ログイン</a>
+	<br>
+	<br>
+
+</body>
+</html>
+
 		</div>
 	</div>
 </div>
