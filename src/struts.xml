@@ -138,6 +138,40 @@
       <result name="error">toiawase.jsp</result>
     </action>
 
+	<!-- Twitter認証を行うアクション -->
+	<action name="GoTwitterAction" class="com.internousdev.tamaya.action.GoTwitterAction" method="execute">
+		<result name="success">index.jsp</result>
+		<result name="error">login.jsp</result>
+	</action>
+
+	<!-- Twitter認証のコールバックアクション -->
+	<action name="LoginTwitterAction" class="com.internousdev.tamaya.action.LoginTwitterAction" method="execute">
+		<result name="success" type="redirectAction">TopAction</result>
+		<result name="error">login.jsp</result>
+    </action>
+
+	<!-- Google認証を行うアクション -->
+	<action name="GoGoogleAction" class="com.internousdev.tamaya.action.GoGoogleAction" method="execute">
+		<result name="success">index.jsp</result>
+		<result name="error">login.jsp</result>
+	</action>
+
+	<!-- Google認証のコールバックアクション -->
+	<action name="LoginGoogleAction" class="com.internousdev.tamaya.action.LoginGoogleAction" method="execute">
+		<result name="success"  type="redirectAction">TopAction</result>
+		<result name="error">login.jsp</result>
+	</action>
+	<!-- Facebook認証を行うアクション -->
+	<action name="GoFacebookAction" class="com.internousdev.legmina.action.GoFacebookAction" method="execute">
+	 	<result name="success">index.jsp</result>
+	 	<result name="error">login.jsp</result>
+	</action>
+
+	<!-- Facebook認証のコールバックアクション -->
+	<action name="LoginFacebookAction" class="com.internousdev.legmina.action.LoginFacebookAction" method="execute">
+	 	<result name="success"  type="redirectAction">TopAction</result>
+	 	<result name="error">login.jsp</result>
+	</action>
     <!-- ＜此処から下は管理者ページの処理を記述＞ -->
   </package>
 </struts>
