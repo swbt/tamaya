@@ -53,19 +53,20 @@
 
         </s:form>
 
-	<div style="text-align : center">
+  <div style="text-align : center">
 	<br>
 	<br>
 	<br>
 <s:form action="BackContactAction" >
-     	<input type="submit" class="btn btn-default" value="送信内容編集">
+<input type="submit" class="btn btn-default" value="　送信内容編集　">
 </s:form>
-
+	<br>
+	<br>
 <s:form action="ContactAction">
-<input type="submit" class="btn btn-default" value="お問い合わせ完了" >
+<input type="submit" class="btn btn-default" value="お問い合わせ完了">
 </s:form>
-
 	</div>
+
 </body>
  <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript"></script>

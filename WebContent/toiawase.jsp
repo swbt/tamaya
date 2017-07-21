@@ -22,6 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="text/javascript">js/toiawase.js</script>
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./toiawase.css">
  </head>
  <body>
   <div style="text-align : center">
@@ -38,26 +39,28 @@
 	<div class="row">
     	<div class="col-sm-2">お名前</div>
     	<div class="col-sm-10 form-inline" style="padding: 3px;">
-        <input type="text" name="userName" class="form-control" required="required" size="24" value = "<s:property value='#session.userName' />"placeholder="お名前">
+        <input type="text" name="userName" class="form-control" required="required" size="24" maxlength="30" value = "<s:property value='#session.userName' />"placeholder="お名前">
     </div>
 	</div>
     <div class="row">
         <div class="col-sm-2">電話番号</div>
         <div class="col-sm-10 form-inline" style="padding: 3px;">
-        <input type="tel" class="form-control input-sm" name="postalCode" value = "<s:property value='#session.postalCode' />"placeholder="電話番号" size="30">
+        <input type="tel" class="form-control input-sm" name="postalCode" required="required" maxlength="30"  value = "<s:property value='#session.postalCode' />"placeholder="電話番号" size="30">
     </div>
     </div>
     <div class="row">
     	<div class="col-sm-2">Email</div>
         <div class="col-sm-10 form-inline" style="padding: 3px;">
-        <input type="email" class="form-control input-sm" name="email" value = "<s:property value='#session.email' />"placeholder="email" size="30">
+        <input type="email" class="form-control input-sm" name="email" required="required" maxlength="30" value = "<s:property value='#session.email' />"placeholder="email" size="30">
         </div>
     </div>
     <div class="row">
     	<div class="col-sm-2">お問い合わせ内容</div>
         <div class="col-sm-10" style="padding: 3px;">
-        <textarea class="form-control  input-sm" rows="3" name="comment" placeholder="お問い合わせ内容"><s:property value='#session.comment' /></textarea>
- 		<input type="submit" value="送信内容確認">
+        <textarea class="form-control  input-sm" rows="3" name="comment" required="required" maxlength="1000" placeholder="お問い合わせ内容"><s:property value='#session.comment' /></textarea>
+        <br>
+        <br>
+ 		<input id="submit_button" class="btn btn-default" type="submit" value="送信内容確認">
         </div>
 	</div>
 
@@ -69,5 +72,5 @@
 </body>
 
   <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript"></script>
+    <script type="text/javascript"src="js/autoConfirm.js"></script>
 </html>
