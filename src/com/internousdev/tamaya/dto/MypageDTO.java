@@ -5,7 +5,7 @@ package com.internousdev.tamaya.dto;
 /**
  * 顧客情報に関するDTOクラス
  *
- * @author
+ * @author　YUKO TSUJI
  * @since
  * @version 1.0
  */
