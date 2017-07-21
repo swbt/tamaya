@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.internousdev.tamaya.dao;
 
 import java.sql.Connection;
@@ -8,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.internousdev.tamaya.dto.LoginDTO;
 import com.internousdev.tamaya.dto.MypageDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
@@ -108,10 +104,10 @@ public int update(String uniqueId) {
  * @param oauthName OAuth名
  * @return dto ユーザー情報
  */
-public LoginDTO selectInList(String userUniqueId, int oauthName){
+public MypageDTO selectInList(String userUniqueId, int oauthName){
 
 	Connection con = new MySqlConnector("openconnect","root","mysql").getConnection();
-	LoginDTO dto = new LoginDTO();
+	MypageDTO dto = new MypageDTO();
 
 	try{
 		String sql = "SELECT * FROM users WHERE oauth_id = ? AND oauth_name = ?";
@@ -122,7 +118,7 @@ public LoginDTO selectInList(String userUniqueId, int oauthName){
 
 		if(rs.next()){
 			dto.setLoginFlg(rs.getBoolean("login_flg"));
-			dto.setPhoneEmail(rs.getString("phone_email"));
+			dto.setEmail(rs.getString("phone_email"));
 			dto.setPassword(rs.getString("password"));
 			dto.setOauthId(rs.getString("oauthId"));
 			dto.setOauthName(rs.getInt("oauthname"));

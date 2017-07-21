@@ -1,3 +1,5 @@
+package com.internousdev.tamaya.action;
+
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;

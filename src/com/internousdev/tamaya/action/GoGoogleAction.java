@@ -9,6 +9,7 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tamaya.util.GoogleOauth;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
