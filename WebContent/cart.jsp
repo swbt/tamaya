@@ -52,7 +52,7 @@
 
 
 			<tr>
-				<th>      </th>
+				<th>商品画像</th>
 				<th>商品名</th>
 				<th>価格</th>
 				<th width="180">個数</th>
