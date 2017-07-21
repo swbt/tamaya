@@ -37,26 +37,21 @@
 		<s:include value="kanri_header.jsp" />
 	</header>
 
-
-
 <div style="position:absolute; top:120px; left:200px;">
-		<table>
+	<table>
 		<tr>
 		<th>商品検索</th>
 		</tr>
 		<td>商品名</td>
-		<s:form action="">
-		<td><input type="text" name="itemNamep" size="20"></td>
-		<td><button type="submit" class="button">検索</button></td>
-		<!-- select * from items where item_name like '%itemNamep%' -->
-		<tr></tr>
-				</div>
-				</s:form>
+		<s:form action="AdminItemAction">
+			<td><input type="text" name="itemNamep" size="20"></td>
+			<td><button type="submit" class="button">検索</button></td>
+			<!-- select * from items where item_name like '%itemNamep%' -->
+			<tr></tr>
+		</s:form>
+	</table>
 
-
-
-
-
+</div>
 
 </body>
 </html>

@@ -13,10 +13,18 @@ import com.internousdev.util.pagination.PageObject;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * @author internousdev
- *商品一覧を表示するクラス
+ * 商品一覧を表示するクラス
+ * @author Kaori Takahashi
+ * @since 2017/07/21
+ * @version 1.0
+ *
  */
 public class AdminItemAction extends ActionSupport{
+
+	/**
+	 * シリアルID
+	 */
+	private static final long serialVersionUID = -181035513965129116L;
 
 	/**
 	 * 商品名
@@ -65,6 +73,9 @@ public class AdminItemAction extends ActionSupport{
 	 */
 	public ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 
+	/**
+	 * 検索数
+	 */
 	public int number;
 
 	private int maxPage;
@@ -75,9 +86,9 @@ public class AdminItemAction extends ActionSupport{
 
 	/**
 	 * 商品リストを取得するメソッド
-	 * @author Ryo Maeda
+	 * @author Kaori Takahashi
 	 * 	@return SUCCESS
-	 * @since 2017/5/16
+	 * @since 2017/7/21
 	 */
 	public String execute(){
 		String result =SUCCESS;
