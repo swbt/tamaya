@@ -36,23 +36,14 @@
 
 
 
-<div style="position:absolute; top:120px; left:200px;">
-		<table>
-		<tr>
-		<th>商品検索</th>
-		</tr>
-		<td>商品名</td>
-		<td><input type="text" name="itemNamep" size="20"></td>
-		<td><button type="submit" class="button">検索</button></td>
-		<tr></tr>
-				</div>
-<!-- 		<td></td>
+		<s:iterator value = "">
 		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
-		<td></td> -->
-
+		<td></td>
+		<td></td>
+		</s:iterator>
 
 </body>
 </html>
