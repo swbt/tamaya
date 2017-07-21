@@ -24,7 +24,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getUserId()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getUserId()}
 	 *  のためのテスト・メソッド。
 	 */
 	@Test
@@ -38,7 +38,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getUserId()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getUserId()}
 	 *  のためのテスト・メソッド。
 	 */
 	@Test
@@ -52,7 +52,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getUserId()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getUserId()}
 	 *  のためのテスト・メソッド。
 	 */
 	@Test
@@ -68,7 +68,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getUserId()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getUserId()}
 	 *  のためのテスト・メソッド。
 	 */
 	@Test
@@ -84,7 +84,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#setUserId(int)}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#setUserId(int)}
 	 *  のためのテスト・メソッド。
 	 */
 	@Test
@@ -100,7 +100,7 @@ public class AdminLoginDTOTest {
 
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#setUserId(int)}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#setUserId(int)}
 	 *  のためのテスト・メソッド。
 	 */
 	@Test
@@ -115,7 +115,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#setUserId(int)}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#setUserId(int)}
 	 *  のためのテスト・メソッド。
 	 */
 	@Test
@@ -130,7 +130,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#setUserId(int)}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#setUserId(int)}
 	 *  のためのテスト・メソッド。
 	 */
 	@Test
@@ -146,7 +146,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#setUserId(int)}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#setUserId(int)}
 	 *  のためのテスト・メソッド。
 	 */
 	@Test
@@ -164,7 +164,7 @@ public class AdminLoginDTOTest {
 
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getUserPass()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -179,7 +179,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getUserPass()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -194,7 +194,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getUserPass()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -209,7 +209,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getUserPass()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -224,7 +224,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getUserPass()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -239,7 +239,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getUserPass()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -254,7 +254,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getUserPass()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -269,7 +269,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getUserPass()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -284,7 +284,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#setUserPass(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -300,7 +300,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#setUserPass(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -316,7 +316,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#setUserPass(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -332,7 +332,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#setUserPass(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -348,7 +348,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.legmina.dto.LoginDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.legmina.dto.AdminLoginDTO#setUserPass(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -364,7 +364,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.legmina.dto.LoginDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.legmina.dto.AdminLoginDTO#setUserPass(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -380,7 +380,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.legmina.dto.LoginDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.legmina.dto.AdminLoginDTO#setUserPass(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -396,7 +396,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.legmina.dto.LoginDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.legmina.dto.AdminLoginDTO#setUserPass(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -412,11 +412,11 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#LoginFlg()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#LoginFlg()}
 	 *  のためのテスト・メソッド。
 	 */
 	@Test
-	public void testIsLoginFlg1() {
+	public void testLoginFlg1() {
 		AdminLoginDTO test = new AdminLoginDTO();
 		boolean expected = true;
 
@@ -426,11 +426,11 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#LoginFlg()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#LoginFlg()}
 	 *  のためのテスト・メソッド。
 	 */
 	@Test
-	public void testIsLoginFlg2() {
+	public void testLoginFlg2() {
 		AdminLoginDTO test = new AdminLoginDTO();
 		boolean expected = false;
 
@@ -440,7 +440,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#LoginFlg()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#LoginFlg()}
 	 *  のためのテスト・メソッド。
 	 */
 	@Test
@@ -454,7 +454,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#LoginFlg()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#LoginFlg()}
 	 *  のためのテスト・メソッド。
 	 */
 	@Test
@@ -471,7 +471,7 @@ public class AdminLoginDTOTest {
 
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -486,7 +486,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -501,7 +501,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -516,7 +516,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -531,7 +531,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -546,7 +546,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -561,7 +561,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -576,7 +576,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -591,7 +591,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -607,7 +607,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -623,7 +623,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -639,7 +639,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -655,7 +655,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -671,7 +671,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -687,7 +687,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -703,7 +703,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.LoginDTO#getEmail()}
+	 * {@link com.internousdev.tamaya.dto.AdminLoginDTO#getEmail()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
