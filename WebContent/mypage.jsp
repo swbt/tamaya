@@ -35,8 +35,8 @@
 	<thead>
 		<tr>
 
-			<th scope="cols">アカウント情報</th>
-			<th scope="cols"></th>
+			<th scope="col">アカウント情報</th>
+			<th scope="col"></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -56,9 +56,10 @@
 				<td><s:property value="email" /></td>
 
 			</tr>
+			</s:iterator>
 	</tbody>
 </table>
-</s:iterator>
+
 
 
 
@@ -67,8 +68,8 @@
 	<thead>
 		<tr>
 
-			<th scope="cols">購入履歴</th>
-			<th scope="cols"></th>
+			<th scope="col">購入履歴</th>
+			<th scope="col"></th>
 		</tr>
 	</thead>
 	<tbody>
