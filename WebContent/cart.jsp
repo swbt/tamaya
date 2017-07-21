@@ -21,7 +21,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-
+<link rel="stylesheet" type="text/css" href="./css/cart.css">
 <link rel="stylesheet" type="text/css" href="css/btn.css">
 
 
@@ -52,7 +52,7 @@
 
 
 			<tr>
-				<th>    </th>
+				<th>      </th>
 				<th>商品名</th>
 				<th>価格</th>
 				<th width="180">個数</th>
@@ -99,7 +99,7 @@
 
 
 
-					<td align="center">￥ <s:property value="%{price * quantity}" /></td>
+					<td align="center">￥ <s:property value="%{price * quantity}" />(税込)</td>
 					<td align="center"><s:form action="CartDeleteAction">
 							<s:hidden name="userId" value="%{userId}" />
 							<s:hidden name="itemId" value="%{itemId}" />
@@ -113,14 +113,14 @@
 		<tfoot>
 			<tr>
 				<td class="souryo" colspan="2">送料（国内）</td>
-				<td align="center" colspan="3">無料</td>
+				<td align="center" colspan="4">無料</td>
 			</tr>
 
 			<tr>
 				<td class="gokei" colspan="2">合計(個数)（税込）</td>
 				<td align="center"><s:property value="kosu" />個</td>
 
-				<td align="center" colspan="2">￥<s:property value="total" /></td>
+				<td align="center" colspan="3">￥<s:property value="total" />(税込)</td>
 			</tr>
 		</tfoot>
 	</table>

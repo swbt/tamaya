@@ -1,7 +1,8 @@
-/* table{
+ table{
 	border-collapse: collapse;
 	width:1100px;
 	margin: 30px;
+	border:1px solid black;
 }
 td,th{
 	border: 1px solid #b7b7b7;
@@ -25,7 +26,7 @@ thead tr{
 	background: #90EE90;
 	width:1100px;
 }
- */
+
 
 .shohin{
     width: 180px;
