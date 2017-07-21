@@ -60,7 +60,7 @@
         <textarea class="form-control  input-sm" rows="3" name="comment" required="required" maxlength="1000" placeholder="お問い合わせ内容"><s:property value='#session.comment' /></textarea>
         <br>
         <br>
- 		<input id="submit_button" type="submit" value="送信内容確認">
+ 		<input id="submit_button" class="btn btn-default" type="submit" value="送信内容確認">
         </div>
 	</div>
 
