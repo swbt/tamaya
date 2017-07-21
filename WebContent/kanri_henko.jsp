@@ -34,29 +34,25 @@
 		<s:include value="kanri_header.jsp" />
 	</header>
 
-		<table width="200" style="border-color:#333333; border-width:1px; border-style:solid;">
-<tr><td align="center"><table width="100%" height="40" style="border-color:#999999; border-width:1px; border-style:dashed;">
-<tr><td align="center">TEXT </td></tr></table></td></tr></table>
 
 
+<div style="position:absolute; top:120px; left:200px;">
 		<table>
 		<tr>
 		<th>商品検索</th>
 		</tr>
-
-
-		<td>検索ＩＤ</td>
-		<td></td>
+		<td>商品名</td>
+		<td><input type="text" name="itemNamep" size="20"></td>
+		<td><button type="submit" class="button">検索</button></td>
 		<tr></tr>
+				</div>
+<!-- 		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td> -->
 
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-
-			<s:text name="lang.kanri_henko.footer" />
 
 </body>
 </html>
