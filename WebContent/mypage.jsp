@@ -77,7 +77,7 @@
 			<tr>
 				<th scope="row">商品画像</th>
 				<td><img class="shohin" src="<s:property value="imgPath"/>"
-					width="200" height="180" align="center"></td>
+					width="200" height="180" ></td>
 			</tr>
 			<tr>
 				<th scope="row">商品名</th>
