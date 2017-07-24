@@ -31,6 +31,8 @@
 </head>
 
 <body>
+
+
 	<div class="login">
 		<s:form action="LoginAction">
 			<h1>ログイン</h1>
