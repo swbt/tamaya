@@ -21,7 +21,7 @@
 </head>
 <body>
 
-	<p>このページは花火の特集ページです。</p>
+	<p>花火の特集ページです。</p>
 	<h2>家族用</h2>
 	<h3>黄金極太スパーク</h3>
 	<a href="GoItemListAction"><img src="img/gold_spark.jpg" width=150 alt="画像の説明文"></a>
