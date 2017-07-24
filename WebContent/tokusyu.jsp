@@ -12,6 +12,12 @@
 <link rel="stylesheet" href="./css/tokusyu.css">
 <link rel="stylesheet" type="text/css" href="./css/cart.css">
 <link rel="stylesheet" type="text/css" href="css/btn.css">
+<link rel="stylesheet" type="text/css" href="css/move.css">
+<script src="js/move.js"></script>
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
 </head>
 <body>
 
@@ -98,5 +104,6 @@
 		<p>勢いよく噴出される花火に元気づけされます！</p>
 </div>
 		<div class="button2"><a href="top.jsp">トップ画面へ</a></div>
+		<p id="pageTop"><a href="#">page top</a></p>
 </body>
 </html>
