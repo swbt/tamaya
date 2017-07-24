@@ -55,9 +55,9 @@
         </div>
     </div>
     <div class="row">
-    	<div class="col-sm-2">お問い合わせ内容</div>
+    	<div class="col-sm-2">問い合わせ内容</div>
         <div class="col-sm-10" style="padding: 3px;">
-        <textarea class="form-control  input-sm" rows="3" name="comment" required="required" maxlength="1000" placeholder="お問い合わせ内容"><s:property value='#session.comment' /></textarea>
+        <textarea class="form-control  input-sm" rows="5" name="comment" required="required"  maxlength="500" placeholder="お問い合わせ内容"><s:property value='#session.comment' /></textarea>
         <br>
         <br>
  		<input id="submit_button" class="btn btn-default" type="submit" value="送信内容確認">
