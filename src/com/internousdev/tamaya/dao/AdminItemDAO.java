@@ -14,8 +14,8 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 	 * 商品情報を取得しリストに格納するメソッド
 	 * @param itemsName 商品名
 	 * @return itemList 商品情報
-	 * @author Ryo Maeda
-	 * @since 2017/05/18
+	 * @author Kaori Takahashi
+	 * @since 2017/07/24
 	 * @version 1.0
 	 */
 	public ArrayList<ItemDTO> select(String itemName){
