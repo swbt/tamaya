@@ -4,7 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class CreditDTO {
+import com.internousdev.tamaya.dto.CreditDTO;
+
+public class CreditDTOTest {
 
 	//ここからemail
 	/**
@@ -19,7 +21,7 @@ public class CreditDTO {
 		test.setEmail(expected);
 		String actual = test.getEmail();
 
-		assertEquals(expected, test.getEmail());
+		assertEquals(expected, actual);
 	}
 
 	/**
@@ -2832,7 +2834,7 @@ public class CreditDTO {
 		CreditDTO test = new CreditDTO();
 		try {
 			int PaymentIdMin = Integer.parseInt("2147483648");
-			test.setCreditDTO(PaymentIdMin);
+			test.setPaymentId(PaymentIdMin);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"2147483648\"");
@@ -2907,10 +2909,10 @@ public class CreditDTO {
 	 */
 	@Test
 	public void testSetPaymentId4() {
-		CreditDTO test = new CreditDTO);
+		CreditDTO test = new CreditDTO();
 		try {
 			int PaymentIdMax = Integer.parseInt("2147483648");
-			test.setCreditDTO(PaymentIdMax);
+			test.setPaymentId(PaymentIdMax);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"2147483648\"");
