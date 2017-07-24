@@ -10,8 +10,17 @@
 <meta name="description"
 	content="An interactive getting started guide for Brackets.">
 <link rel="stylesheet" href="./css/tokusyu.css">
+<link rel="stylesheet" type="text/css" href="./css/cart.css">
+<link rel="stylesheet" type="text/css" href="css/btn.css">
+<link rel="stylesheet" type="text/css" href="css/move.css">
+<script src="js/move.js"></script>
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
 </head>
 <body>
+
 	<p>このページは花火の特集ページです。</p>
 	<h2>家族用</h2>
 	<h3>黄金極太スパーク</h3>
@@ -94,5 +103,7 @@
 		<p>復興祈願の花火ということもあって買ってみました</p>
 		<p>勢いよく噴出される花火に元気づけされます！</p>
 </div>
+		<div class="button2"><a href="top.jsp">トップ画面へ</a></div>
+		<p id="pageTop"><a href="#">page top</a></p>
 </body>
 </html>

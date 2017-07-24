@@ -21,6 +21,11 @@
     ================================================== -->
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/move.css">
+<script src="js/move.js"></script>
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 </head>
 <body>
 
@@ -151,11 +156,12 @@
 
 			<a href="./tokusyu.jsp">花火特集ページ</a>
 
+
 		</div>
 
 
 	</div>
-
+<p id="pageTop"><a href="#">page top</a></p>
 </body>
 </html>
 

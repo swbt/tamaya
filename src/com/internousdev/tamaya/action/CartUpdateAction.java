@@ -3,11 +3,14 @@
  */
 package com.internousdev.tamaya.action;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tamaya.dao.CartUpdateDAO;
+import com.internousdev.tamaya.dto.CartDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -30,7 +33,20 @@ public class CartUpdateAction extends ActionSupport implements SessionAware{
 
     private String errorMsg;//Update失敗時のメッセージ
 
-    private Map<String, Object> session;
+
+
+	private BigDecimal subtotal = new BigDecimal("0"); /*小計*/
+	private BigDecimal total = new BigDecimal("0");/*合計*/
+
+	private BigDecimal quantity2 = new BigDecimal("0");
+	private BigDecimal kosu = new BigDecimal("0"); /*個数合計*/
+	/** カート内の商品情報を入れるリスト */
+	private ArrayList<CartDTO> cartList=new ArrayList<>();
+	/** セッション情報 */
+	private Map<String,Object> session;
+
+
+
 
 	/**
 	 * 実行メソッド
@@ -56,6 +72,20 @@ public class CartUpdateAction extends ActionSupport implements SessionAware{
 
         CartUpdateDAO dao = new CartUpdateDAO();
         count = dao.update(orderCount, userId, itemId);
+
+		for(int i = 0; i < cartList.size(); i++ ){
+			/*System.out.println(cartList.get(i).getPrice());
+			System.out.println(cartList.get(i).getQuantity());*/
+			subtotal = cartList.get(i).getPrice().multiply (BigDecimal.valueOf(cartList.get(i).getQuantity()));
+			total = total.add(subtotal);
+
+			quantity2 = BigDecimal.valueOf(cartList.get(i).getQuantity());
+			kosu = kosu.add(quantity2);
+
+		}
+
+
+
 
         if(count==0) {
             errorMsg = "注文個数を変更できませんでした";

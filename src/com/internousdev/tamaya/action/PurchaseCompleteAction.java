@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.internousdev.tamaya.dao.CreditInsertDAO;
-import com.internousdev.tamaya.dao.GoCartDAO;
+import com.internousdev.tamaya.dao.CartDAO;
 import com.internousdev.tamaya.dao.PurchaseCompleteDAO;
 import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.dto.CreditDTO;
@@ -98,9 +98,9 @@ public class PurchaseCompleteAction {
 
 			PurchaseCompleteDAO dao = new PurchaseCompleteDAO();
 			CreditInsertDAO creDao = new CreditInsertDAO();
-			GoCartDAO dao3 = new GoCartDAO();
+			CartDAO dao3 = new CartDAO();
 
-			cartList = dao3.selectedItem(userId);
+			cartList = dao3.getCart(userId);
 			creditList = creDao.selectCredit(userId);
 
 				if (dao.stockCheck(cartList)=="OK") { //在庫切れでないか？ＯＫなら次へ進む

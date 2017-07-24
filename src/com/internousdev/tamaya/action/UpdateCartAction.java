@@ -9,7 +9,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tamaya.dao.CartDeleteDAO;
 import com.internousdev.tamaya.dao.CartUpdateDAO;
-import com.internousdev.tamaya.dao.GoCartDAO;
+import com.internousdev.tamaya.dao.CartDAO;
 import com.internousdev.tamaya.dao.PurchaseCompleteDAO;
 import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.dto.ItemDTO;
@@ -94,7 +94,7 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 			userId = (int) session.get("userId");
 			CartUpdateDAO cartUpDao = new CartUpdateDAO();
 			//GoItemDetailDAO goItemDao = new GoItemDetailDAO();
-			GoCartDAO goCartDao = new GoCartDAO();
+			CartDAO CartDAO = new CartDAO();
 			PurchaseCompleteDAO purchaseDao = new PurchaseCompleteDAO();
 			//itemStatus = goItemDao.selectbyItem(itemId);//商品情報収集
 
@@ -108,7 +108,7 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 			}
 
 			//アレイリストに追加
-			cartList = goCartDao.selectedItem(userId);
+			cartList = CartDAO.getCart(userId);
 
 			if (purchaseDao.stockCheck(cartList)=="OK") { //在庫切れでないか？ＯＫなら次へ進む
 				if (cartList.size() > 0) {

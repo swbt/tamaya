@@ -23,6 +23,11 @@
 
 <link rel="stylesheet" type="text/css" href="./css/cart.css">
 <link rel="stylesheet" type="text/css" href="css/btn.css">
+<link rel="stylesheet" type="text/css" href="css/move.css">
+<script src="js/move.js"></script>
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 
 
 <script src="js/jquery-3.2.1.min.js"></script>
@@ -117,7 +122,7 @@
 			</tr>
 
 			<tr>
-				<td class="gokei" colspan="2">合計(個数)（税込）</td>
+				<td class="gokei" colspan="2"><s:property value="kosu" />合計(個数)（税込）</td>
 				<td align="center"><s:property value="kosu" />個</td>
 
 				<td align="center" colspan="3">￥<s:property value="total" />(税込)</td>
@@ -130,14 +135,12 @@
 		<ul>
 		<li>
 		<div class="button2"><a href="siharai.jsp">支払い入力画面へ</a></div></li>
-		<li>
-		<div class="button3"><a href="<s:url action="GoTopAction" />">トップ画面へ</a></div>
-		</li>
 		</ul>
 	</div>
 
 	</div>
 	</div>
+	<p id="pageTop"><a href="#">page top</a></p>
 </body>
 </html>
 

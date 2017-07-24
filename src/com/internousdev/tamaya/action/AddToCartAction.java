@@ -64,6 +64,8 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 		} else {
 			result = LOGIN;
 		}
+
+
 		return result;
 	}
 
