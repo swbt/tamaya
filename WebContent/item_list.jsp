@@ -23,13 +23,14 @@
 
 </head>
 <body>
-  <!-- ▼▼ログイン判定し、それに応じたヘッダーのjspファイルを読み込む -->
-  <s:if test="#session.userId != null">
-    <s:include value="login_header.jsp" />
-  </s:if>
-  <s:else>
-    <s:include value="header.jsp" />
-  </s:else>
+
+<!-- ▼▼ログイン判定し、それに応じたヘッダーのjspファイルを読み込む -->
+<s:if test="#session.userId != null && #session.userId > 0 ">
+	<s:include value="login_header.jsp" />
+</s:if>
+<s:else>
+	<s:include value="header.jsp" />
+</s:else>
   <!-- ▼▼モーダル画面のjspファイルを読み込む -->
   <s:include value="modal.jsp" />
   <s:set name="priceRange" value="priceRange" />
@@ -67,6 +68,7 @@
           </table>
           <s:form action="AddToCartAction">
 			<input type="text" name="orderCount" size="5">
+			<div id ="countError"></div>
             <s:hidden name="userId" value="%{userId}" />
             <s:hidden name="itemId" value="%{itemId}" />
             <s:hidden name="priceRange" value="%{#priceRange}" />
