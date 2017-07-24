@@ -20,6 +20,8 @@
 <meta name="viewport" content="width=device initial-scale=1.0">
 <link rel="stylesheet" href="css/AdminLogin.css">
 <link rel="stylesheet" href="css/bootstrapTWBScolor.css">
+<link rel="stylesheet" type="text/css" href="./css/kanri_kakunin.css">
+<link rel="stylesheet" type="text/css" href="css/btn.css">
 <script src="js/to-top.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -37,7 +39,7 @@
 		<s:include value="kanri_header.jsp" />
 	</header>
 
-<div style="position:absolute; top:120px; left:200px;">
+<div class="product_search">						<!-- style="position:absolute; top:120px; left:200px;"> -->
 	<table>
 		<tr>
 		<th>商品検索</th>

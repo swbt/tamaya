@@ -787,7 +787,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	@Test
-	public void testSetdddddddddd1() {
+	public void testSetNameE1() {
 		CreditDTO test = new CreditDTO();
 		String expected = null;
 
@@ -867,7 +867,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	@Test
-	public void testSetdddddddddd6() {
+	public void testSetNameE6() {
 		CreditDTO test = new CreditDTO();
 		String expected = "あいう１２３";
 
@@ -961,8 +961,8 @@ public class CreditDTOTest {
 	public void testGetSecurityCode4() {
 		CreditDTO test = new CreditDTO();
 		try {
-			int UserIdMin = Integer.parseInt("2147483648");
-			test.setSecurityCode(UserIdMin);
+			int SecurityCodeMin = Integer.parseInt("2147483648");
+			test.setSecurityCode(SecurityCodeMin);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"2147483648\"");
@@ -977,8 +977,8 @@ public class CreditDTOTest {
 	public void testGetSecurityCode5() {
 		CreditDTO test = new CreditDTO();
 		try {
-			int UserIdMin = Integer.parseInt("-2147483649");
-			test.setSecurityCode(UserIdMin);
+			int SecurityCodeMin = Integer.parseInt("-2147483649");
+			test.setSecurityCode(SecurityCodeMin);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"-2147483649\"");
@@ -1074,6 +1074,7 @@ public class CreditDTOTest {
 
 		assertEquals(expected, test.getExpirationMonth());
 	}
+
 	/**
 	 * creditDTO, ExpirationMonth
 	 * のためのテスト・メソッド。
@@ -1086,6 +1087,7 @@ public class CreditDTOTest {
 
 		assertEquals(expected, test.getExpirationMonth());
 	}
+
 	/**
 	 * creditDTO, ExpirationMonth
 	 * のためのテスト・メソッド。
@@ -1098,6 +1100,7 @@ public class CreditDTOTest {
 
 		assertEquals(expected, test.getExpirationMonth());
 	}
+
 	/**
 	 * creditDTO, ExpirationMonth
 	 * のためのテスト・メソッド。
@@ -1112,6 +1115,7 @@ public class CreditDTOTest {
 			assertEquals(e.getMessage(), "For input string: \"2147483648\"");
 		}
 	}
+
 	/**
 	 * creditDTO, ExpirationMonth
 	 * のためのテスト・メソッド。
