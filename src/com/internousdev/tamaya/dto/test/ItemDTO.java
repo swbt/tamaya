@@ -22,8 +22,10 @@ public class ItemDTO {
 	private int sales;
 	private String itemDetail;
 	private String imgPath;
-    private int SortId;
-    private String ItemGenre;
+
+	public void calcPriceWithTax() {
+		priceWithTax = price.multiply(taxRate.add(BigDecimal.ONE)).setScale(0, BigDecimal.ROUND_DOWN);
+	}
 
 	public int getItemId() {
 		return itemId;
@@ -48,7 +50,6 @@ public class ItemDTO {
 	}
 	public void setPrice(BigDecimal price) {
 		this.price = price;
-		priceWithTax = price.multiply(taxRate.add(BigDecimal.ONE)).setScale(0, BigDecimal.ROUND_DOWN);
 	}
 	public BigDecimal getTaxRate() {
 		return taxRate;
@@ -86,18 +87,4 @@ public class ItemDTO {
 	public void setImgPath(String imgPath) {
 		this.imgPath = imgPath;
 	}
-
-	public String getItemGenre() {
-		return ItemGenre;
-	}
-	public void setItemGenre(String itemGenre) {
-		ItemGenre = itemGenre;
-	}
-	public int getSortId() {
-		return SortId;
-	}
-	public void setSortId(int sortId) {
-		SortId = sortId;
-	}
-
 }
