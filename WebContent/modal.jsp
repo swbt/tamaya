@@ -8,7 +8,6 @@
     <title>Insert title here</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/modal.css">
-     <script type="text/javascript">js/modal.js</script>
   </head>
   <body>
     <!-- モーダルの中身 -->
@@ -23,8 +22,7 @@
           </div><!-- /.modal-header -->
           <div class="modal-body">
             <!-- ここにモーダルの中身を記述します -->
-            <iframe id="item_detail" name="item_detail" src="">
-            </iframe>
+            <iframe id="item_detail" name="item_detail" src=""></iframe>
           </div><!-- /.modal-body -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
