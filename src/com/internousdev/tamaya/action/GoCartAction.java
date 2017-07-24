@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tamaya.dao.GoCartDAO;
+import com.internousdev.tamaya.dao.CartDAO;
 import com.internousdev.tamaya.dto.CartDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -58,8 +58,8 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 		if (session.containsKey("userId")) {
 			userId = (int)session.get("userId");
 
-			GoCartDAO dao = new GoCartDAO();
-			cartList = dao.selectedItem(userId);
+			CartDAO dao = new CartDAO();
+			cartList = dao.getCart(userId);
 			System.out.println(cartList.size() + "の量がある");
 			for(int i = 0; i < cartList.size(); i++ ){
 				/*System.out.println(cartList.get(i).getPrice());

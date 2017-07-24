@@ -3,10 +3,13 @@
  */
 package com.internousdev.tamaya.action;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tamaya.dao.CartDAO;
+import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.util.creditcard.manager.CreditUtil;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -16,6 +19,8 @@ import com.opensymphony.xwork2.ActionSupport;
  * @since 1.0
  */
 public class VerifyCreditCardAction extends ActionSupport implements SessionAware {
+	/** ユーザーID */
+	private int userId;
 	/** クレジット種類 */
 	private int creditId;
 	/** クレジット番号 */
@@ -28,6 +33,8 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 	private int expirationMonth;
 	/** 有効期限（年） */
 	private int expirationYear;
+	/** カート */
+	private ArrayList<CartDTO> cart = new ArrayList<CartDTO>();
 	/** セッション情報 */
 	private Map<String, Object> session;
 
@@ -39,6 +46,8 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 	public String execute() {
 		if(!session.containsKey("userId")){
 			return "login";
+		} else {
+			userId = (int)session.get("userId");
 		}
 		System.out.println("creditId:" + creditId + ", creditNumber:" + creditNumber);
 		System.out.print("securityCode = " + securityCode + ", expirationYear = " + expirationYear);
@@ -49,7 +58,6 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 			// クレジットカード番号16ケタ、セキュリティコード、有効期限、名義人の照合
 			if (util.creditCheck(securityCode, expirationYear, expirationMonth, nameE)) {
 				System.out.println("VerifyCreditCardAction : SUCCESS");
-				return SUCCESS;
 			} else {
 				System.out.println("VerifyCreditCardAction : ERROR(creditCheck)");
 				return ERROR;
@@ -58,9 +66,19 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 			System.out.println("VerifyCreditCardAction : ERROR(brandCheck)");
 			return ERROR;
 		}
-		//TODO カートの中身をDBから取ってくる処理
+
+		cart = new CartDAO().getCart(userId);
+		return SUCCESS;
 	}
 
+	/** ユーザーIDを取得するメソッド */
+	public int getUserId() {
+		return userId;
+	}
+	/** ユーザーIDを格納するメソッド */
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 	/** クレジット種類を取得するメソッド */
 	public int getCreditId() {
 		return creditId;
@@ -108,6 +126,14 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 	/** 有効期限（年）を格納するメソッド */
 	public void setExpirationYear(int expirationYear) {
 		this.expirationYear = expirationYear;
+	}
+	/** カートを取得するメソッド */
+	public ArrayList<CartDTO> getCart() {
+		return cart;
+	}
+	/** カートを格納するメソッド */
+	public void setCart(ArrayList<CartDTO> cart) {
+		this.cart = cart;
 	}
 	/** セッション情報を取得するメソッド */
 	public Map<String, Object> getSession() {

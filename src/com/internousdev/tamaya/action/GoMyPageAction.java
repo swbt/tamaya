@@ -9,7 +9,7 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 /*＜カート情報を召喚するクラス＞*/
-import com.internousdev.tamaya.dao.GoCartDAO;
+import com.internousdev.tamaya.dao.CartDAO;
 import com.internousdev.tamaya.dao.MypageDAO;
 import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.dto.MypageDTO;
@@ -93,8 +93,8 @@ public class GoMyPageAction extends ActionSupport implements SessionAware{
 			userId= (int)session.get("userId");
 
 			System.out.println("入ってます");
-			GoCartDAO dao = new GoCartDAO();
-			cartList = dao.selectedItem(userId);
+			CartDAO dao = new CartDAO();
+			cartList = dao.getCart(userId);
 
 			MypageDAO mpdao = new MypageDAO();
 			userList = mpdao.select(userId);
