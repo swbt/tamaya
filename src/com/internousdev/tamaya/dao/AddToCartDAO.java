@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.tamaya.dto.PurchaseDTO;
+import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
@@ -51,9 +51,9 @@ public class AddToCartDAO {
      * @param itemId アイテムID
      * @return searchCart	更新されたリストを返す
      */
-    public ArrayList<PurchaseDTO> search(int userId,int itemId){
+    public ArrayList<CartDTO> search(int userId,int itemId){
 		Connection con = new MySqlConnector("tamaya").getConnection();
-        ArrayList<PurchaseDTO> searchCart=new ArrayList<PurchaseDTO>();
+        ArrayList<CartDTO> searchCart=new ArrayList<CartDTO>();
 
         String sql="select * from carts where user_id = ? && item_id = ?";
         try{
@@ -65,10 +65,10 @@ public class AddToCartDAO {
             ResultSet rs =ps.executeQuery();
 
             while(rs.next()){
-                PurchaseDTO dto2 =new PurchaseDTO();
+                CartDTO dto2 =new CartDTO();
                 dto2.setUserId(userId);
                 dto2.setItemId(rs.getInt("item_id"));
-                dto2.setOrderCount(rs.getInt("quantity"));
+                dto2.setQuantity(rs.getInt("quantity"));
                 //ここで情報を結合する(addは追加して格納するという意味)
                 searchCart.add(dto2);
                 }

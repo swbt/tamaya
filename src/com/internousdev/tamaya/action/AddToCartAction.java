@@ -9,7 +9,7 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tamaya.dao.AddToCartDAO;
-import com.internousdev.tamaya.dto.PurchaseDTO;
+import com.internousdev.tamaya.dto.CartDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -39,9 +39,9 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 	/** 合計(数) */
 	private int totalAmount;
 	/** カートリスト */
-	private ArrayList<PurchaseDTO> cartList = new ArrayList<PurchaseDTO>();
+	private ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
 	/** カート検索 */
-	private ArrayList<PurchaseDTO> searchCart = new ArrayList<PurchaseDTO>();
+	private ArrayList<CartDTO> searchCart = new ArrayList<CartDTO>();
 	/** ユーザー情報 */
 	private Map<String, Object> session;
 
@@ -190,7 +190,7 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 	/**
 	 * @return cartList
 	 */
-	public ArrayList<PurchaseDTO> getCartList() {
+	public ArrayList<CartDTO> getCartList() {
 		return cartList;
 	}
 
@@ -198,14 +198,14 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 	 * @param cartList
 	 *            セットする cartList
 	 */
-	public void setCartList(ArrayList<PurchaseDTO> cartList) {
+	public void setCartList(ArrayList<CartDTO> cartList) {
 		this.cartList = cartList;
 	}
 
 	/**
 	 * @return searchCart
 	 */
-	public ArrayList<PurchaseDTO> getSearchCart() {
+	public ArrayList<CartDTO> getSearchCart() {
 		return searchCart;
 	}
 
@@ -213,7 +213,7 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 	 * @param searchCart
 	 *            セットする searchCart
 	 */
-	public void setSearchCart(ArrayList<PurchaseDTO> searchCart) {
+	public void setSearchCart(ArrayList<CartDTO> searchCart) {
 		this.searchCart = searchCart;
 	}
 
