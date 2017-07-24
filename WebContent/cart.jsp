@@ -74,20 +74,7 @@
 					<td align="center"><s:property value="quantity" />個
 
 					<s:form action="CartUpdateAction">
-					<select name="orderCount">
-							<option value="<s:property value="orderCount"/>" selected><s:property
-									value="orderCount" /></option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-					</select>
+					<input type="text" name="orderCount" size="5">
 
 					<%-- <s:hidden name="orderCount" value="%{orderCount}" /> --%>  <!-- ←※不要！！！あえて残しとく -->
 					<s:hidden name="userId" value="%{userId}" />
