@@ -17,7 +17,7 @@ import com.internousdev.tamaya.dto.CartDTO;
  */
 public class CartDTOTest {
 
-	private int userId;			//ユーザーID
+/*	private int userId;			//ユーザーID
 
 	private int ItemId;			//商品ID
 
@@ -30,7 +30,7 @@ public class CartDTOTest {
 	private String imgPath;			//イメージパス
 
 	private int subtotal;		//小計
-
+*/
 
 	//以下アクセサリー
 
@@ -417,7 +417,7 @@ public class CartDTOTest {
 /*	BigDecimal bd = BigDecimal.valueOf(0);*/
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getPrice()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetPrice1() {
@@ -455,7 +455,7 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getPrice()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetPrice4() {
@@ -470,7 +470,7 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getPrice()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetPrice5() {
@@ -676,7 +676,7 @@ public class CartDTOTest {
 	/*	BigDecimal bd = BigDecimal.valueOf(0);*/
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getPrice()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetSubtotal1() {
@@ -685,11 +685,11 @@ public class CartDTOTest {
 
 		test.setSubtotal(expected);
 
-		assertEquals(expected, test.getPrice());
+		assertEquals(expected, test.getSubtotal());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getPrice()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetSubtotal2() {
@@ -697,11 +697,11 @@ public class CartDTOTest {
 		BigDecimal expected =  BigDecimal.valueOf(1000000000);
 		test.setSubtotal(expected);
 
-		assertEquals(expected, test.getPrice());
+		assertEquals(expected, test.getSubtotal());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getPrice()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetSubtotal3() {
@@ -710,11 +710,11 @@ public class CartDTOTest {
 
 		test.setSubtotal(expected);
 
-		assertEquals(expected, test.getPrice());
+		assertEquals(expected, test.getSubtotal());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getPrice()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetSubtotal4() {
@@ -729,7 +729,7 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getPrice()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetSubtotal5() {
@@ -754,7 +754,7 @@ public class CartDTOTest {
 
 		test.setSubtotal(expected);
 
-		assertEquals(expected, test.getPrice());
+		assertEquals(expected, test.getSubtotal());
 	}
 
 	/**
@@ -767,7 +767,7 @@ public class CartDTOTest {
 
 		test.setSubtotal(expected);
 
-		assertEquals(expected, test.getPrice());
+		assertEquals(expected, test.getSubtotal());
 	}
 
 	/**
@@ -780,7 +780,7 @@ public class CartDTOTest {
 
 		test.setSubtotal(expected);
 
-		assertEquals(expected, test.getPrice());
+		assertEquals(expected, test.getSubtotal());
 	}
 
 	/**
