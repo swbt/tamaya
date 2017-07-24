@@ -74,7 +74,20 @@
 					<td align="center"><s:property value="quantity" />個
 
 					<s:form action="CartUpdateAction">
-					<input type="text" name="orderCount" size="5">
+					<select name="orderCount">
+							<option value="<s:property value="orderCount"/>" selected><s:property
+									value="orderCount" /></option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+					</select>
 
 					<%-- <s:hidden name="orderCount" value="%{orderCount}" /> --%>  <!-- ←※不要！！！あえて残しとく -->
 					<s:hidden name="userId" value="%{userId}" />
@@ -104,7 +117,7 @@
 			</tr>
 
 			<tr>
-				<td class="gokei" colspan="2">合計(個数)（税込）</td>
+				<td class="gokei" colspan="2"><s:property value="kosu" />合計(個数)（税込）</td>
 				<td align="center"><s:property value="kosu" />個</td>
 
 				<td align="center" colspan="3">￥<s:property value="total" />(税込)</td>
