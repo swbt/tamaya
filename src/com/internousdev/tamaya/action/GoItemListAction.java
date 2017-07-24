@@ -33,9 +33,9 @@ public class GoItemListAction extends ActionSupport implements SessionAware {
 		ItemListDAO dao = new ItemListDAO();
 
 		if(!category.isEmpty()){
-			itemList = dao.select(category);
+			itemList = dao.searchByCategory(category);
 		} else if(priceRange != 0){
-			itemList = dao.select(priceRange);
+			itemList = dao.searchByPriceRange(priceRange);
 		} else {
 			itemList = dao.select();
 		}

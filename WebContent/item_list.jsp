@@ -63,7 +63,7 @@
             </tr>
             <tr>
               <td>値段</td>
-              <td><s:property value="itemList.get(#i.index).priceWithTax" />円（税込）</td>
+              <td><s:property value="itemList.get(#i.index).price" />円（税込）</td>
             </tr>
           </table>
           <s:form action="AddToCartAction">

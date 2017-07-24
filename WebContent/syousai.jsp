@@ -13,7 +13,7 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <!-- ▼▼他のjavascript -->
     <script src="js/bootstrap.min.js"></script>
-    
+
     <script>
     // 読み込みが完了してから処理を行う
     $(window).on('load resize',function(){
@@ -25,11 +25,11 @@
     </script>
   </head>
   <body>
-    <img alt="商品画像" src="<s:property value="item.getImgPath()"/>">
+    <img alt="商品画像" src="<s:property value="item.imgPath"/>">
     <s:property value="itemId"/>
     <s:property value="item.itemName"/>
-    <s:property value="item.detail"/>
-    <s:property value="item.priceWithTax"/>
-    <s:property value="item.stock"/>
+    <s:property value="item.itemDetail"/>
+    <s:property value="item.price"/>
+    <s:property value="item.stocks"/>
   </body>
 </html>

@@ -1177,7 +1177,7 @@ public class ItemDTOTest {
 		assertEquals(expected, actual);
 	}
 
-	/** {@link com.internousdev.tamaya.dto.ItemDTO#getPrice()} のためのテスト・メソッド。 */
+	/** {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。 */
 	@Test
 	public void testGetPrice1() {
 		ItemDTO test = new ItemDTO();
@@ -1186,7 +1186,7 @@ public class ItemDTOTest {
 		assertEquals(expected, test.getPrice());
 	}
 
-	/** {@link com.internousdev.tamaya.dto.ItemDTO#getPrice()} のためのテスト・メソッド。 */
+	/** {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。 */
 	@Test
 	public void testGetPrice2() {
 		ItemDTO test = new ItemDTO();
@@ -1195,7 +1195,7 @@ public class ItemDTOTest {
 		assertEquals(expected, test.getPrice());
 	}
 
-	/** {@link com.internousdev.tamaya.dto.ItemDTO#getPrice()} のためのテスト・メソッド。 */
+	/** {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。 */
 	@Test
 	public void testGetPrice3() {
 		ItemDTO test = new ItemDTO();
@@ -1204,7 +1204,7 @@ public class ItemDTOTest {
 		assertEquals(expected, test.getPrice());
 	}
 
-	/** {@link com.internousdev.tamaya.dto.ItemDTO#getPrice()} のためのテスト・メソッド。 */
+	/** {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。 */
 	@Test
 	public void testGetPrice4() {
 		ItemDTO test = new ItemDTO();
@@ -1213,7 +1213,7 @@ public class ItemDTOTest {
 		assertEquals(expected, test.getPrice());
 	}
 
-	/** {@link com.internousdev.tamaya.dto.ItemDTO#getPrice()} のためのテスト・メソッド。 */
+	/** {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。 */
 	@Test
 	public void testGetPrice5() {
 		ItemDTO test = new ItemDTO();
@@ -1223,7 +1223,7 @@ public class ItemDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPrice(BigDecimal)}
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -1236,7 +1236,7 @@ public class ItemDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPrice(BigDecimal)}
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -1249,7 +1249,7 @@ public class ItemDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPrice(BigDecimal)}
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -1262,7 +1262,7 @@ public class ItemDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPrice(BigDecimal)}
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -1275,7 +1275,7 @@ public class ItemDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPrice(BigDecimal)}
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test

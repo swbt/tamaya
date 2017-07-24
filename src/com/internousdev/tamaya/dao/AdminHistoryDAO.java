@@ -86,9 +86,9 @@ public class AdminHistoryDAO {
 
 				dto.setItemName(rs.getString("itemName")); //商品名
 
-				dto.setPrice(rs.getBigDecimal("price")); //単価
+				dto.setBasePrice(rs.getBigDecimal("price")); //単価
 
-				dto.setSubtotal(dto.getPrice().multiply(BigDecimal.valueOf(dto.getQuantities())));//合計金額
+				dto.setSubtotal(dto.getBasePrice().multiply(BigDecimal.valueOf(dto.getQuantities())));//合計金額
 
 
 				adminhistoryList.add(dto);

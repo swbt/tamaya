@@ -64,7 +64,7 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 			for(int i = 0; i < cartList.size(); i++ ){
 				/*System.out.println(cartList.get(i).getPrice());
 				System.out.println(cartList.get(i).getQuantity());*/
-				subtotal = cartList.get(i).getPrice().multiply (BigDecimal.valueOf(cartList.get(i).getQuantity()));
+				subtotal = cartList.get(i).getBasePrice().multiply (BigDecimal.valueOf(cartList.get(i).getQuantity()));
 				total = total.add(subtotal);
 
 				quantity2 = BigDecimal.valueOf(cartList.get(i).getQuantity());

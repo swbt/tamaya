@@ -424,34 +424,34 @@ public class CartDTOTest {
 		CartDTO test = new CartDTO();
 		BigDecimal expected =  BigDecimal.valueOf(0);
 
-		test.setPrice(expected);
+		test.setBasePrice(expected);
 
-		assertEquals(expected, test.getPrice());
+		assertEquals(expected, test.getBasePrice());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getPrice()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#getBasePrice()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetPrice2() {
 		CartDTO test = new CartDTO();
 		BigDecimal expected =  BigDecimal.valueOf(1000000000);
-		test.setPrice(expected);
+		test.setBasePrice(expected);
 
-		assertEquals(expected, test.getPrice());
+		assertEquals(expected, test.getBasePrice());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getPrice()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#getBasePrice()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetPrice3() {
 		CartDTO test = new CartDTO();
 		BigDecimal expected =  BigDecimal.valueOf(-12651651);
 
-		test.setPrice(expected);
+		test.setBasePrice(expected);
 
-		assertEquals(expected, test.getPrice());
+		assertEquals(expected, test.getBasePrice());
 	}
 
 	/**
@@ -462,7 +462,7 @@ public class CartDTOTest {
 		CartDTO test = new CartDTO();
 		try {
 			BigDecimal expected =  BigDecimal.valueOf(4.4028235E38);
-			test.setPrice(expected);
+			test.setBasePrice(expected);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"4.4028235E38f\"");
@@ -477,7 +477,7 @@ public class CartDTOTest {
 		CartDTO test = new CartDTO();
 		try {
 			BigDecimal expected =  BigDecimal.valueOf(-4.4028235E38);
-			test.setPrice(expected);
+			test.setBasePrice(expected);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"-4.4028235E38f\"");
@@ -485,54 +485,54 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setPrice(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#setBasePrice(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice1() {
 		CartDTO test = new CartDTO();
 		BigDecimal expected =  BigDecimal.valueOf(0);
-		test.setPrice(expected);
+		test.setBasePrice(expected);
 
-		test.setPrice(expected);
+		test.setBasePrice(expected);
 
-		assertEquals(expected, test.getPrice());
+		assertEquals(expected, test.getBasePrice());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setPrice(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#setBasePrice(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice2() {
 		CartDTO test = new CartDTO();
 		BigDecimal expected =  BigDecimal.valueOf(0.00000000001f);
 
-		test.setPrice(expected);
+		test.setBasePrice(expected);
 
-		assertEquals(expected, test.getPrice());
+		assertEquals(expected, test.getBasePrice());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setPrice(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#setBasePrice(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice3() {
 		CartDTO test = new CartDTO();
 		BigDecimal expected =  BigDecimal.valueOf(-151545151);
 
-		test.setPrice(expected);
+		test.setBasePrice(expected);
 
-		assertEquals(expected, test.getPrice());
+		assertEquals(expected, test.getBasePrice());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setPrice(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#setBasePrice(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice4() {
 		CartDTO test = new CartDTO();
 		try {
 			BigDecimal expected =  BigDecimal.valueOf(4.4028235E38);
-			test.setPrice(expected);
+			test.setBasePrice(expected);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"4.4028235E38\"");
@@ -540,14 +540,14 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setPrice(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartDTO#setBasePrice(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice5() {
 		CartDTO test = new CartDTO();
 		try {
 			BigDecimal expected =  BigDecimal.valueOf(-4.4028235E38);
-			test.setPrice(expected);
+			test.setBasePrice(expected);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"-4.4028235E38\"");

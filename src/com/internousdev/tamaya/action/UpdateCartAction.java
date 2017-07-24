@@ -113,7 +113,7 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 			if (purchaseDao.stockCheck(cartList)=="OK") { //在庫切れでないか？ＯＫなら次へ進む
 				if (cartList.size() > 0) {
 					for (int i = 0; i < cartList.size(); i++) {
-						total = (cartList.get(i).getPrice()) .multiply(BigDecimal.valueOf (cartList.get(i).getQuantity()));
+						total = (cartList.get(i).getBasePrice()) .multiply(BigDecimal.valueOf (cartList.get(i).getQuantity()));
 					}
 					result = SUCCESS;
 				}

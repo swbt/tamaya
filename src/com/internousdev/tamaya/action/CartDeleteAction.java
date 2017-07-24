@@ -8,8 +8,8 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tamaya.dao.CartDeleteDAO;
 import com.internousdev.tamaya.dao.CartDAO;
+import com.internousdev.tamaya.dao.CartDeleteDAO;
 import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.dto.CreditDTO;
 import com.internousdev.tamaya.dto.MypageDTO;
@@ -38,7 +38,7 @@ public class CartDeleteAction extends ActionSupport implements SessionAware{
 	private BigDecimal total = new BigDecimal("0"); /*←初期化*/
 
 	/**
-	 * 　数量
+	 * 数量
 	 */
 	private int quantity;
 
@@ -104,7 +104,7 @@ public class CartDeleteAction extends ActionSupport implements SessionAware{
 				cartList = dao2.getCart(userId);
 				if (cartList.size() > 0) {
 					for(int i = 0; i < cartList.size(); i++ ){
-						total = (cartList.get(i).getPrice()).multiply(BigDecimal.valueOf(cartList.get(i).getQuantity()));
+						total = (cartList.get(i).getBasePrice()).multiply(BigDecimal.valueOf(cartList.get(i).getQuantity()));
 
 						System.out.println(total + "トータル");
 					}

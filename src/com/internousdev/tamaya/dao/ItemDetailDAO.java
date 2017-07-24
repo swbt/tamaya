@@ -36,11 +36,12 @@ public class ItemDetailDAO {
 				dto.setItemId(rs.getInt("item_id"));
 				dto.setItemName(rs.getString("item_name"));
 				dto.setCategory(rs.getString("category"));
-				dto.setPrice(rs.getBigDecimal("price"));
+				dto.setBasePrice(rs.getBigDecimal("base_price"));
 				dto.setStocks(rs.getInt("stocks"));
 				dto.setSales(rs.getInt("sales"));
 				dto.setItemDetail(rs.getString("item_detail"));
 				dto.setImgPath(rs.getString("img_path"));
+				dto.calc();
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
