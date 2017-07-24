@@ -13,7 +13,8 @@ import com.internousdev.tamaya.dao.GoCartDAO;
 import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.dto.CreditDTO;
 import com.internousdev.tamaya.dto.MypageDTO;
-import com.internousdev.tamaya.util.CartAssist;
+import com.opensymphony.xwork2.ActionSupport;
+
 
 
 /**
@@ -23,7 +24,7 @@ import com.internousdev.tamaya.util.CartAssist;
  * @since 2017/07/12
  */
 
-public class CartDeleteAction extends CartAssist implements SessionAware{
+public class CartDeleteAction extends ActionSupport implements SessionAware{
 
 
 	/**
@@ -77,9 +78,10 @@ public class CartDeleteAction extends CartAssist implements SessionAware{
 	 * カートの中身の削除を実行するメソッド
 	 * @author YUKO TSUJI
 	 * @version 1.0
-	 * @since 2017/5/10
+	 * @since 2017/7/10
 	 */
 	public String execute() throws SQLException{
+
 		String result = ERROR;
 
 
@@ -103,14 +105,10 @@ public class CartDeleteAction extends CartAssist implements SessionAware{
 				if (cartList.size() > 0) {
 					for(int i = 0; i < cartList.size(); i++ ){
 						total = (cartList.get(i).getPrice()).multiply(BigDecimal.valueOf(cartList.get(i).getQuantity()));
-					
+
 						System.out.println(total + "トータル");
 					}
-					
-/*					MypageDAO dao3 = new MypageDAO();
-					CreditInsertDAO dao4 = new CreditInsertDAO();
-					usersList = dao3.select(userId);
-					creditList = dao4.selectCredit(userId);*/
+
 					result = SUCCESS;
 				}
 			}
