@@ -38,153 +38,187 @@ public class CreditDTO {
 
 	private String firstName;			//名前
 
+	/**
+	 * @return email
+	 */
+	public String getEmail() {
+		return email;
+	}
 
+	/**
+	 * @param email セットする email
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
+	/**
+	 * @return creditId
+	 */
+	public int getCreditId() {
+		return creditId;
+	}
 
-		private int paymentId;				//支払い回数
+	/**
+	 * @param creditId セットする creditId
+	 */
+	public void setCreditId(int creditId) {
+		this.creditId = creditId;
+	}
 
-		public String getEmail() {
-			return email;
-		}
+	/**
+	 * @return creditNumber
+	 */
+	public String getCreditNumber() {
+		return creditNumber;
+	}
 
-		public void setEmail(String email) {
-			this.email = email;
-		}
+	/**
+	 * @param creditNumber セットする creditNumber
+	 */
+	public void setCreditNumber(String creditNumber) {
+		this.creditNumber = creditNumber;
+	}
 
-		public int getCreditId() {
-			return creditId;
-		}
+	/**
+	 * @return nameE
+	 */
+	public String getNameE() {
+		return nameE;
+	}
 
-		public void setCreditId(int creditId) {
-			this.creditId = creditId;
-		}
+	/**
+	 * @param nameE セットする nameE
+	 */
+	public void setNameE(String nameE) {
+		this.nameE = nameE;
+	}
 
-		public String getCreditNumber() {
-			return creditNumber;
-		}
+	/**
+	 * @return securityCode
+	 */
+	public int getSecurityCode() {
+		return securityCode;
+	}
 
-		public void setCreditNumber(String creditNumber) {
-			this.creditNumber = creditNumber;
-		}
+	/**
+	 * @param securityCode セットする securityCode
+	 */
+	public void setSecurityCode(int securityCode) {
+		this.securityCode = securityCode;
+	}
 
-		public String getNameE() {
-			return nameE;
-		}
+	/**
+	 * @return expirationMonth
+	 */
+	public int getExpirationMonth() {
+		return expirationMonth;
+	}
 
-		public void setNameE(String nameE) {
-			this.nameE = nameE;
-		}
+	/**
+	 * @param expirationMonth セットする expirationMonth
+	 */
+	public void setExpirationMonth(int expirationMonth) {
+		this.expirationMonth = expirationMonth;
+	}
 
-		public int getSecurityCode() {
-			return securityCode;
-		}
+	/**
+	 * @return expirationYear
+	 */
+	public int getExpirationYear() {
+		return expirationYear;
+	}
 
-		public void setSecurityCode(int securityCode) {
-			this.securityCode = securityCode;
-		}
+	/**
+	 * @param expirationYear セットする expirationYear
+	 */
+	public void setExpirationYear(int expirationYear) {
+		this.expirationYear = expirationYear;
+	}
 
-		public int getExpirationMonth() {
-			return expirationMonth;
-		}
+	/**
+	 * @return creditNumberDown
+	 */
+	public String getCreditNumberDown() {
+		return creditNumberDown;
+	}
 
-		public void setExpirationMonth(int expirationMonth) {
-			this.expirationMonth = expirationMonth;
-		}
+	/**
+	 * @param creditNumberDown セットする creditNumberDown
+	 */
+	public void setCreditNumberDown(String creditNumberDown) {
+		this.creditNumberDown = creditNumberDown;
+	}
 
-		public int getExpirationYear() {
-			return expirationYear;
-		}
+	/**
+	 * @return createdAt
+	 */
+	public String getCreatedAt() {
+		return createdAt;
+	}
 
-		public void setExpirationYear(int expirationYear) {
-			this.expirationYear = expirationYear;
-		}
+	/**
+	 * @param createdAt セットする createdAt
+	 */
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
 
-		public String getCreditNumberDown() {
-			return creditNumberDown;
-		}
+	/**
+	 * @return updatedAt
+	 */
+	public String getUpdatedAt() {
+		return updatedAt;
+	}
 
-		public void setCreditNumberDown(String creditNumberDown) {
-			this.creditNumberDown = creditNumberDown;
-		}
+	/**
+	 * @param updatedAt セットする updatedAt
+	 */
+	public void setUpdatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
+	}
 
-		public String getCreatedAt() {
-			return createdAt;
-		}
+	/**
+	 * @return loginId
+	 */
+	public String getLoginId() {
+		return loginId;
+	}
 
-		public void setCreatedAt(String createdAt) {
-			this.createdAt = createdAt;
-		}
+	/**
+	 * @param loginId セットする loginId
+	 */
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
 
-		public String getUpdatedAt() {
-			return updatedAt;
-		}
+	/**
+	 * @return lastName
+	 */
+	public String getLastName() {
+		return lastName;
+	}
 
-		public void setUpdatedAt(String updatedAt) {
-			this.updatedAt = updatedAt;
-		}
+	/**
+	 * @param lastName セットする lastName
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-		public int getPaymentId() {
-			return paymentId;
-		}
+	/**
+	 * @return firstName
+	 */
+	public String getFirstName() {
+		return firstName;
+	}
 
-		public void setPaymentId(int paymentId) {
-			this.paymentId = paymentId;
-		}
-
-		public int ExpirationYear() {
-			// TODO 自動生成されたメソッド・スタブ
-			return 0;
-		}
-
-		public int ExpirationMonth() {
-			// TODO 自動生成されたメソッド・スタブ
-			return 0;
-		}
-
-		public void setCreditType(String brandName) {
-			// TODO 自動生成されたメソッド・スタブ
-
-		}
-
-		public void setUserId(int int1) {
-			// TODO 自動生成されたメソッド・スタブ
-
-		}
-
-		public void setLoginId(String string) {
-			// TODO 自動生成されたメソッド・スタブ
-
-		}
-
-		public void setLastName(String string) {
-			// TODO 自動生成されたメソッド・スタブ
-
-		}
-
-		public void setFirstName(String string) {
-			// TODO 自動生成されたメソッド・スタブ
-
-		}
-
-		public String getLoginId() {
-			// TODO 自動生成されたメソッド・スタブ
-			return loginId;
-		}
-
-		public String getLastName() {
-			return lastName;
-		}
-
-		public String getFirstName() {
-			// TODO 自動生成されたメソッド・スタブ
-			return firstName;
-		}
-
-
-
-
+	/**
+	 * @param firstName セットする firstName
+	 */
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
 
 }
-
-
