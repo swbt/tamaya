@@ -1297,165 +1297,1640 @@ public class CreditDTO {
 		}
 	}
 
-	private String creditNumberDown;	//クレジット番号下4ケタ(変数名なし)
+	//ここからクレジット番号下4ケタ(変数名なし)
 
-	private String createdAt;			//登録日時
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreditNumberDown1() {
+		CreditDTO test = new CreditDTO();
+		String expected = null;
 
-	private String updatedAt;			//更新日時
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
 
-	private String loginId;				//ログインID
+		assertEquals(expected, actual);
+	}
 
-	private String lastName;			//姓名
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreditNumberDown2() {
+		CreditDTO test = new CreditDTO();
+		String expected = "";
 
-	private String firstName;			//名前
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreditNumberDown3() {
+		CreditDTO test = new CreditDTO();
+		String expected = " ";
+
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreditNumberDown4() {
+		CreditDTO test = new CreditDTO();
+		String expected = "　";
+
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreditNumberDown5() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123";
+
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreditNumberDown6() {
+		CreditDTO test = new CreditDTO();
+		String expected = "あいう１２３";
+
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreditNumberDown7() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123あいう１２３";
+
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreditNumberDown8() {
+		CreditDTO test = new CreditDTO();
+		String expected = "ａｂｃ１２３あいう漢字";
+
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreditNumberDown1() {
+		CreditDTO test = new CreditDTO();
+		String expected = null;
+
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreditNumberDown2() {
+		CreditDTO test = new CreditDTO();
+		String expected = "";
+
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreditNumberDown3() {
+		CreditDTO test = new CreditDTO();
+		String expected = " ";
+
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreditNumberDown4() {
+		CreditDTO test = new CreditDTO();
+		String expected = "　";
+
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreditNumberDown5() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123";
+
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreditNumberDown6() {
+		CreditDTO test = new CreditDTO();
+		String expected = "あいう１２３";
+
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreditNumberDown7() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123あいう１２３";
+
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, CreditNumberDown
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreditNumberDown8() {
+		CreditDTO test = new CreditDTO();
+		String expected = "ａｂｃ１２３あいう漢字";
+
+		test.setCreditNumberDown(expected);
+		String actual = test.getCreditNumberDown();
+
+		assertEquals(expected, actual);
+
+	}
+
+//ここから登録日時
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreatedAt1() {
+		CreditDTO test = new CreditDTO();
+		String expected = null;
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreatedAt2() {
+		CreditDTO test = new CreditDTO();
+		String expected = "";
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreatedAt3() {
+		CreditDTO test = new CreditDTO();
+		String expected = " ";
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreatedAt4() {
+		CreditDTO test = new CreditDTO();
+		String expected = "　";
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreatedAt5() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123";
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreatedAt6() {
+		CreditDTO test = new CreditDTO();
+		String expected = "あいう１２３";
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreatedAt7() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123あいう１２３";
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetCreatedAt8() {
+		CreditDTO test = new CreditDTO();
+		String expected = "ａｂｃ１２３あいう漢字";
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreatedAt1() {
+		CreditDTO test = new CreditDTO();
+		String expected = null;
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreatedAt2() {
+		CreditDTO test = new CreditDTO();
+		String expected = "";
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreatedAt3() {
+		CreditDTO test = new CreditDTO();
+		String expected = " ";
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreatedAt4() {
+		CreditDTO test = new CreditDTO();
+		String expected = "　";
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreatedAt5() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123";
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreatedAt6() {
+		CreditDTO test = new CreditDTO();
+		String expected = "あいう１２３";
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreatedAt7() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123あいう１２３";
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, CreatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetCreatedAt8() {
+		CreditDTO test = new CreditDTO();
+		String expected = "ａｂｃ１２３あいう漢字";
+
+		test.setCreatedAt(expected);
+		String actual = test.getCreatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+//ここから更新日時
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetUpdatedAt1() {
+		CreditDTO test = new CreditDTO();
+		String expected = null;
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetUpdatedAt2() {
+		CreditDTO test = new CreditDTO();
+		String expected = "";
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetUpdatedAt3() {
+		CreditDTO test = new CreditDTO();
+		String expected = " ";
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetUpdatedAt4() {
+		CreditDTO test = new CreditDTO();
+		String expected = "　";
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetUpdatedAt5() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123";
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetUpdatedAt6() {
+		CreditDTO test = new CreditDTO();
+		String expected = "あいう１２３";
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetUpdatedAt7() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123あいう１２３";
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetUpdatedAt8() {
+		CreditDTO test = new CreditDTO();
+		String expected = "ａｂｃ１２３あいう漢字";
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetUpdatedAt1() {
+		CreditDTO test = new CreditDTO();
+		String expected = null;
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetUpdatedAt2() {
+		CreditDTO test = new CreditDTO();
+		String expected = "";
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetUpdatedAt3() {
+		CreditDTO test = new CreditDTO();
+		String expected = " ";
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetUpdatedAt4() {
+		CreditDTO test = new CreditDTO();
+		String expected = "　";
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetUpdatedAt5() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123";
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetUpdatedAt6() {
+		CreditDTO test = new CreditDTO();
+		String expected = "あいう１２３";
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetUpdatedAt7() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123あいう１２３";
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, UpdatedAt
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetUpdatedAt8() {
+		CreditDTO test = new CreditDTO();
+		String expected = "ａｂｃ１２３あいう漢字";
+
+		test.setUpdatedAt(expected);
+		String actual = test.getUpdatedAt();
+
+		assertEquals(expected, actual);
+
+	}
+
+	//ここからログインID
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+		@Test
+	public void testGetLoginId1() {
+		CreditDTO test = new CreditDTO();
+		String expected = null;
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testGetLoginId2() {
+		CreditDTO test = new CreditDTO();
+		String expected = "";
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testGetLoginId3() {
+		CreditDTO test = new CreditDTO();
+		String expected = " ";
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testGetLoginId4() {
+		CreditDTO test = new CreditDTO();
+		String expected = "　";
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testGetLoginId5() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123";
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testGetLoginId6() {
+		CreditDTO test = new CreditDTO();
+		String expected = "あいう１２３";
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testGetLoginId7() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123あいう１２３";
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testGetLoginId8() {
+		CreditDTO test = new CreditDTO();
+		String expected = "ａｂｃ１２３あいう漢字";
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testSetLoginId1() {
+		CreditDTO test = new CreditDTO();
+		String expected = null;
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testSetLoginId2() {
+		CreditDTO test = new CreditDTO();
+		String expected = "";
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testSetLoginId3() {
+		CreditDTO test = new CreditDTO();
+		String expected = " ";
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testSetLoginId4() {
+		CreditDTO test = new CreditDTO();
+		String expected = "　";
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testSetLoginId5() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123";
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testSetLoginId6() {
+		CreditDTO test = new CreditDTO();
+		String expected = "あいう１２３";
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testSetLoginId7() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123あいう１２３";
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO, LoginId
+	 * のためのテスト・メソッド。
+	 */
+	public void testSetLoginId8() {
+		CreditDTO test = new CreditDTO();
+		String expected = "ａｂｃ１２３あいう漢字";
+
+		test.setLoginId(expected);
+		String actual = test.getLoginId();
+
+		assertEquals(expected, actual);
+
+	}
+
+	//ここから姓
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetLastName1() {
+		CreditDTO test = new CreditDTO();
+		String expected = null;
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetLastName2() {
+		CreditDTO test = new CreditDTO();
+		String expected = "";
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetLastName3() {
+		CreditDTO test = new CreditDTO();
+		String expected = " ";
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetLastName4() {
+		CreditDTO test = new CreditDTO();
+		String expected = "　";
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetLastName5() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123";
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetLastName6() {
+		CreditDTO test = new CreditDTO();
+		String expected = "あいう１２３";
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetLastName7() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123あいう１２３";
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetLastName8() {
+		CreditDTO test = new CreditDTO();
+		String expected = "ａｂｃ１２３あいう漢字";
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetLastName1() {
+		CreditDTO test = new CreditDTO();
+		String expected = null;
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetLastName2() {
+		CreditDTO test = new CreditDTO();
+		String expected = "";
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetLastName3() {
+		CreditDTO test = new CreditDTO();
+		String expected = " ";
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetLastName4() {
+		CreditDTO test = new CreditDTO();
+		String expected = "　";
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetLastName5() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123";
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetLastName6() {
+		CreditDTO test = new CreditDTO();
+		String expected = "あいう１２３";
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetLastName7() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123あいう１２３";
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO,LastName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetLastName8() {
+		CreditDTO test = new CreditDTO();
+		String expected = "ａｂｃ１２３あいう漢字";
+
+		test.setLastName(expected);
+		String actual = test.getLastName();
+
+		assertEquals(expected, actual);
+
+	}
 
 
+	//ここから名
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetFirstName1() {
+		CreditDTO test = new CreditDTO();
+		String expected = null;
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetFirstName2() {
+		CreditDTO test = new CreditDTO();
+		String expected = "";
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetFirstName3() {
+		CreditDTO test = new CreditDTO();
+		String expected = " ";
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetFirstName4() {
+		CreditDTO test = new CreditDTO();
+		String expected = "　";
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetFirstName5() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123";
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetFirstName6() {
+		CreditDTO test = new CreditDTO();
+		String expected = "あいう１２３";
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetFirstName7() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123あいう１２３";
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetFirstName8() {
+		CreditDTO test = new CreditDTO();
+		String expected = "ａｂｃ１２３あいう漢字";
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetFirstName1() {
+		CreditDTO test = new CreditDTO();
+		String expected = null;
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetFirstName2() {
+		CreditDTO test = new CreditDTO();
+		String expected = "";
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetFirstName3() {
+		CreditDTO test = new CreditDTO();
+		String expected = " ";
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetFirstName4() {
+		CreditDTO test = new CreditDTO();
+		String expected = "　";
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetFirstName5() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123";
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetFirstName6() {
+		CreditDTO test = new CreditDTO();
+		String expected = "あいう１２３";
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetFirstName7() {
+		CreditDTO test = new CreditDTO();
+		String expected = "abc123あいう１２３";
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+
+	}
+
+	/**
+	 * creditDTO,FirstName
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetFirstName8() {
+		CreditDTO test = new CreditDTO();
+		String expected = "ａｂｃ１２３あいう漢字";
+
+		test.setFirstName(expected);
+		String actual = test.getFirstName();
+
+		assertEquals(expected, actual);
+
+	}
+
+//ここから支払い回数
+	/**
+	 * creditDTO, paymentId
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetPaymentId1() {
+		CreditDTO test = new CreditDTO();
+		int expected = 0;
+
+		test.setPaymentId(expected);
+
+		assertEquals(expected, test.getPaymentId());
+
+	}
+
+	/**
+	 * creditDTO, paymentId
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetPaymentId2() {
+		CreditDTO test = new CreditDTO();
+		int expected = 2147483647;
+
+		test.setPaymentId(expected);
+
+		assertEquals(expected, test.getPaymentId());
+	}
+
+	/**
+	 * creditDTO, paymentId
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetPaymentId3() {
+		CreditDTO test = new CreditDTO();
+		int expected = -2147483648;
+
+		test.setPaymentId(expected);
+
+		assertEquals(expected, test.getPaymentId());
+	}
+
+	/**
+	 * creditDTO, paymentId
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetPaymentId4() {
+		CreditDTO test = new CreditDTO();
+		try {
+			int PaymentIdMin = Integer.parseInt("2147483648");
+			test.setCreditDTO(PaymentIdMin);
+
+		} catch (RuntimeException e) {
+			assertEquals(e.getMessage(), "For input string: \"2147483648\"");
+		}
+	}
+
+	/**
+	 * creditDTO, paymentId
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetPaymentId5() {
+		CreditDTO test = new CreditDTO();
+		try {
+			int PaymentIdMin = Integer.parseInt("-2147483649");
+			test.setPaymentId(PaymentIdMin);
+
+		} catch (RuntimeException e) {
+			assertEquals(e.getMessage(), "For input string: \"-2147483649\"");
+		}
+	}
+
+	/**
+	 * creditDTO, paymentId
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetPaymentId1() {
+		CreditDTO test = new CreditDTO();
+		int expected = 0;
+
+		test.setPaymentId(expected);
+		int actual = test.getPaymentId();
+
+		assertEquals(expected, actual);
+	}
 
 
-		private int paymentId;				//支払い回数
+	/**
+	 * creditDTO, paymentId
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetPaymentId2() {
+		CreditDTO test = new CreditDTO();
+		int expected = 2147483647;
 
-		public String getEmail() {
-			return email;
+		test.setPaymentId(expected);
+		int actual = test.getPaymentId();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, paymentId
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetPaymentId3() {
+		CreditDTO test = new CreditDTO();
+		int expected = -2147483648;
+
+		test.setPaymentId(expected);
+		int actual = test.getPaymentId();
+
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * creditDTO, paymentId
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetPaymentId4() {
+		CreditDTO test = new CreditDTO);
+		try {
+			int PaymentIdMax = Integer.parseInt("2147483648");
+			test.setCreditDTO(PaymentIdMax);
+
+		} catch (RuntimeException e) {
+			assertEquals(e.getMessage(), "For input string: \"2147483648\"");
+		}
+	}
+
+	/**
+	 * creditDTO, paymentId
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetPaymentId5() {
+		CreditDTO test = new CreditDTO();
+		try {
+			int PaymentIdMax = Integer.parseInt("-2147483649");
+			test.setPaymentId(PaymentIdMax);
+
+		} catch (RuntimeException e) {
+			assertEquals(e.getMessage(), "For input string: \"-2147483649\"");
 		}
 
-		public void setEmail(String email) {
-			this.email = email;
-		}
-
-		public int getCreditId() {
-			return creditId;
-		}
-
-		public void setCreditId(int creditId) {
-			this.creditId = creditId;
-		}
-
-		public String getCreditNumber() {
-			return creditNumber;
-		}
-
-		public void setCreditNumber(String creditNumber) {
-			this.creditNumber = creditNumber;
-		}
-
-		public String getNameE() {
-			return nameE;
-		}
-
-		public void setNameE(String nameE) {
-			this.nameE = nameE;
-		}
-
-		public int getSecurityCode() {
-			return securityCode;
-		}
-
-		public void setSecurityCode(int securityCode) {
-			this.securityCode = securityCode;
-		}
-
-		public int getExpirationMonth() {
-			return expirationMonth;
-		}
-
-		public void setExpirationMonth(int expirationMonth) {
-			this.expirationMonth = expirationMonth;
-		}
-
-		public int getExpirationYear() {
-			return expirationYear;
-		}
-
-		public void setExpirationYear(int expirationYear) {
-			this.expirationYear = expirationYear;
-		}
-
-		public String getCreditNumberDown() {
-			return creditNumberDown;
-		}
-
-		public void setCreditNumberDown(String creditNumberDown) {
-			this.creditNumberDown = creditNumberDown;
-		}
-
-		public String getCreatedAt() {
-			return createdAt;
-		}
-
-		public void setCreatedAt(String createdAt) {
-			this.createdAt = createdAt;
-		}
-
-		public String getUpdatedAt() {
-			return updatedAt;
-		}
-
-		public void setUpdatedAt(String updatedAt) {
-			this.updatedAt = updatedAt;
-		}
-
-		public int getPaymentId() {
-			return paymentId;
-		}
-
-		public void setPaymentId(int paymentId) {
-			this.paymentId = paymentId;
-		}
-
-		public int ExpirationYear() {
-			// TODO 自動生成されたメソッド・スタブ
-			return 0;
-		}
-
-		public int ExpirationMonth() {
-			// TODO 自動生成されたメソッド・スタブ
-			return 0;
-		}
-
-		public void setCreditType(String brandName) {
-			// TODO 自動生成されたメソッド・スタブ
-
-		}
-
-		public void setUserId(int int1) {
-			// TODO 自動生成されたメソッド・スタブ
-
-		}
-
-		public void setLoginId(String string) {
-			// TODO 自動生成されたメソッド・スタブ
-
-		}
-
-		public void setLastName(String string) {
-			// TODO 自動生成されたメソッド・スタブ
-
-		}
-
-		public void setFirstName(String string) {
-			// TODO 自動生成されたメソッド・スタブ
-
-		}
-
-		public String getLoginId() {
-			// TODO 自動生成されたメソッド・スタブ
-			return loginId;
-		}
-
-		public String getLastName() {
-			return lastName;
-		}
-
-		public String getFirstName() {
-			// TODO 自動生成されたメソッド・スタブ
-			return firstName;
-		}
-
-
-
-
-
-
+	}
 }
-
-
