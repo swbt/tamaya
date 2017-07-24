@@ -1035,8 +1035,8 @@ public class CreditDTOTest {
 	public void testSetSecurityCode4() {
 		CreditDTO test = new CreditDTO();
 		try {
-			int UserIdMax = Integer.parseInt("2147483648");
-			test.setSecurityCode(UserIdMax);
+			int SecurityCodeMax = Integer.parseInt("2147483648");
+			test.setSecurityCode(SecurityCodeMax);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"2147483648\"");
@@ -1050,8 +1050,8 @@ public class CreditDTOTest {
 	public void testSetSecurityCode5() {
 		CreditDTO test = new CreditDTO();
 		try {
-			int UserIdMax = Integer.parseInt("-2147483649");
-			test.setSecurityCode(UserIdMax);
+			int SecurityCodeMax = Integer.parseInt("-2147483649");
+			test.setSecurityCode(SecurityCodeMax);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"-2147483649\"");
@@ -1108,8 +1108,8 @@ public class CreditDTOTest {
 	public void testGetExpirationMonth4() {
 		CreditDTO test = new CreditDTO();
 		try {
-			int UserIdMin = Integer.parseInt("2147483648");
-			test.setExpirationMonth(UserIdMin);
+			int ExpirationMonthMin = Integer.parseInt("2147483648");
+			test.setExpirationMonth(ExpirationMonthMin);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"2147483648\"");
@@ -1123,8 +1123,8 @@ public class CreditDTOTest {
 	public void testGetExpirationMonth5() {
 		CreditDTO test = new CreditDTO();
 		try {
-			int UserIdMin = Integer.parseInt("-2147483649");
-			test.setExpirationMonth(UserIdMin);
+			int ExpirationMonthMin = Integer.parseInt("-2147483649");
+			test.setExpirationMonth(ExpirationMonthMin);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"-2147483649\"");
@@ -1178,8 +1178,8 @@ public class CreditDTOTest {
 	public void testSetExpirationMonth4() {
 		CreditDTO test = new CreditDTO();
 		try {
-			int UserIdMin = Integer.parseInt("2147483648");
-			test.setExpirationMonth(UserIdMin);
+			int ExpirationMonthMin = Integer.parseInt("2147483648");
+			test.setExpirationMonth(ExpirationMonthMin);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"2147483648\"");
@@ -1193,8 +1193,8 @@ public class CreditDTOTest {
 	public void testSetExpirationMonth5() {
 		CreditDTO test = new CreditDTO();
 		try {
-			int UserIdMin = Integer.parseInt("-2147483649");
-			test.setExpirationMonth(UserIdMin);
+			int ExpirationMonthMin = Integer.parseInt("-2147483649");
+			test.setExpirationMonth(ExpirationMonthMin);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"-2147483649\"");
@@ -1233,8 +1233,8 @@ public class CreditDTOTest {
 	public void testGetExpirationYear4() {
 		CreditDTO test = new CreditDTO();
 		try {
-			int UserIdMin = Integer.parseInt("2147483648");
-			test.setExpirationYear(UserIdMin);
+			int ExpirationMonthMin = Integer.parseInt("2147483648");
+			test.setExpirationYear(ExpirationMonthMin);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"2147483648\"");
@@ -1244,8 +1244,8 @@ public class CreditDTOTest {
 	public void testGetExpirationYear5() {
 		CreditDTO test = new CreditDTO();
 		try {
-			int UserIdMin = Integer.parseInt("-2147483649");
-			test.setExpirationYear(UserIdMin);
+			int ExpirationMonthMin = Integer.parseInt("-2147483649");
+			test.setExpirationYear(ExpirationMonthMin);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"-2147483649\"");
@@ -1284,8 +1284,8 @@ public class CreditDTOTest {
 	public void testSetExpirationYear4() {
 		CreditDTO test = new CreditDTO();
 		try {
-			int UserIdMin = Integer.parseInt("2147483648");
-			test.setExpirationYear(UserIdMin);
+			int ExpirationYearMin = Integer.parseInt("2147483648");
+			test.setExpirationYear(ExpirationYearMin);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"2147483648\"");
@@ -1295,8 +1295,8 @@ public class CreditDTOTest {
 	public void testSetExpirationYear5() {
 		CreditDTO test = new CreditDTO();
 		try {
-			int UserIdMin = Integer.parseInt("-2147483649");
-			test.setExpirationYear(UserIdMin);
+			int ExpirationYearMin = Integer.parseInt("-2147483649");
+			test.setExpirationYear(ExpirationYearMin);
 
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"-2147483649\"");
