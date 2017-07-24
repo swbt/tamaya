@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
@@ -21,16 +20,11 @@
     ================================================== -->
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/move.css">
-<script src="js/move.js"></script>
-<!-- jQuery -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
 </head>
 <body>
 
 <!-- ▼▼ログイン判定し、それに応じたヘッダーのjspファイルを読み込む -->
-<s:if test="#session.userId != null">
+<s:if test="#session.userId != null && #session.userId > 0 ">
 	<s:include value="login_header.jsp" />
 </s:if>
 <s:else>
@@ -156,12 +150,11 @@
 
 			<a href="./tokusyu.jsp">花火特集ページ</a>
 
-
 		</div>
 
 
 	</div>
-<p id="pageTop"><a href="#">page top</a></p>
+
 </body>
 </html>
 
