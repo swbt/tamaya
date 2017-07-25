@@ -8,13 +8,7 @@
 <meta charset="utf-8">
 <title>マイページ</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Stylesheet
-    ================================================== -->
-<!--
-    <link rel="stylesheet" type="text/css"  href="css/＠＠＠.css">
-    <link rel="stylesheet" type="text/css" href="css/＠＠＠.css">
-    <link rel="stylesheet" type="text/css" href="">
-    -->
+
 <!-- Javascripts
     ================================================== -->
 <script src="js/jquery-3.2.1.min.js"></script>
@@ -27,14 +21,18 @@
 	media="all">
 </head>
 
-<s:include value="login_header.jsp" />
-
+<!-- ▼▼ログイン判定し、それに応じたヘッダーのjspファイルを読み込む -->
+<s:if test="#session.userId != null && #session.userId > 0 ">
+	<s:include value="login_header.jsp" />
+</s:if>
+<s:else>
+	<s:include value="header.jsp" />
+</s:else>
 
 <h1>マイページ</h1>
 <table class="type07">
 	<thead>
 		<tr>
-
 			<th scope="col">アカウント情報</th>
 			<th scope="col"></th>
 		</tr>
@@ -56,7 +54,7 @@
 				<td><s:property value="email" /></td>
 
 			</tr>
-			</s:iterator>
+		</s:iterator>
 	</tbody>
 </table>
 
@@ -76,29 +74,24 @@
 		<s:iterator value="cartList">
 			<tr>
 				<th scope="row">商品画像</th>
-				<td><img class="shohin" src="<s:property value="imgPath"/>"
-					width="200" height="180" ></td>
-			</tr>
-			<tr>
 				<th scope="row">商品名</th>
-				<td><s:property value="itemName" /></td>
-			</tr>
-			<tr>
 				<th scope="row">価格</th>
-
-				<td><s:property value="price" />円</td>
-
+				<th scope="row">個数</th>
+				<th scope="row">小計</th>
 			</tr>
 			<tr>
-				<th scope="row">数量</th>
-				<td><s:property value="quantity" /></td>
-			<tr>
-				<th scope="row">小計</th>
 
+				<td><img class="shohin" src="<s:property value="imgPath"/>"
+					height="180"></td>
+				<td><s:property value="itemName" /></td>
+				<td><s:property value="price" />円</td>
+				<td><s:property value="quantity" />個</td>
 				<td><s:property value="%{price * quantity}" />円</td>
-
 			</tr>
 		</s:iterator>
 	</tbody>
 
 </table>
+
+    <a href="#">page top</a>
+
