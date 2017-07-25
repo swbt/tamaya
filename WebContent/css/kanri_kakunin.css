@@ -94,7 +94,24 @@ width:100%;
 }
 
 .product_search{
- position:absolute;
- top:120px;
- left:200px
+ margin-left: 10%;
+ margin-right: 10%;
+ margin-bottom: 30%;
+ margin-top: 20%;
+}
+
+.product_name{
+ text-align: center;
+ width: 30px;
+}
+
+.product_text{
+ text-align: center;
+ width: 30px;
+}
+
+.search_botton{
+ text-align: center;
+ width: 30px;
+}
 }

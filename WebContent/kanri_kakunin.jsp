@@ -52,12 +52,12 @@
 		<tr>
 		<th>商品検索</th>
 		</tr>
-		<td>商品名</td>
-		<s:form action="AdminItemAction">
-			<td><input type="text" name="itemNamep" size="20"></td>
-			<td><button type="submit" class="button">検索</button></td>
+			<td class="product_name">商品名</td>
+			<s:form action="AdminItemAction">
+			<td class="product_text"><input type="text" name="itemNamep" size="20"></td>
+			<td class="search_botton"><button type="submit" class="button">検索</button></td>
 			<!-- select * from items where item_name like '%itemNamep%' -->
-		</s:form>
+			</s:form>
 	</table>
 
 </div>
