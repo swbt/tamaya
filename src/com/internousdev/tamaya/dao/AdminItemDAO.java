@@ -11,7 +11,7 @@ import com.internousdev.util.DBConnector;
 
 	public class AdminItemDAO {
 	/**
-	 * 商品情報を取得しリストに格納するメソッド
+	 * 表示したい商品を、DBから取り出しDTOへ転送する為のクラス
 	 * @param itemsName 商品名
 	 * @return itemList 商品情報
 	 * @author Kaori Takahashi
@@ -29,17 +29,13 @@ import com.internousdev.util.DBConnector;
 
 
 	/**
-	 * 表示メソッド  表示したい内容を、DBから取り出しDTOへ転送する為のメソッド
+	 * 表示メソッド  表示したい商品を、DBから取り出しDTOへ転送する為のメソッド
 	 */
 	public ArrayList<AdminItemDTO> select(String itemList) {
 		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root","mysql");
 		Connection con = null;
 		con = db.getConnection();
 		String sql = "select @num :=@num + 1 as no, items.* from (select @num := 0) as no, items where status_flg!=1";
-		if (!itemList.equals("")) {
-			sql = sql + " " + "and title like \"%" + itemList + "%\"";
-		}
-		sql = sql + " " + "order by title";
 
 		try {
 
@@ -47,21 +43,10 @@ import com.internousdev.util.DBConnector;
 			ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 
-
 			while (rs.next()) {
 				AdminItemDTO dto = new AdminItemDTO();
-				dto.setBookId(rs.getInt("book_id"));
-				dto.setTitle(rs.getString("title"));
-				dto.setSubTitle(rs.getString("sub_title"));
-				dto.setAuthor(rs.getString("author"));
-				dto.setPublisher(rs.getString("publisher"));
-				dto.setPubDay(rs.getString("publish_day"));
-				dto.setInitial(rs.getString("initial"));
-				dto.setStatusFlg(rs.getString("status_flg"));
-				dto.setRegDay(rs.getString("regist_day"));
-				dto.setUpdDay(rs.getString("updated_day"));
-				dto.setNo(rs.getInt("no"));
-
+				dto.setItemId(rs.getInt("item_id"));
+				dto.setItemName(rs.getString("item_name"));
 
 				displayList.add(dto);
 			}
@@ -83,24 +68,19 @@ import com.internousdev.util.DBConnector;
 		/**
 	    * 更新情報を、DBへ転送し、更新する為のメソッド
 	    */
-	public int update(String title, String subTitle, String author, String publisher, String pubDay, String statusFlg, int book_id) {
+	public int update(int item_id, String itemName) {
 
 		int count = 0;
 		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root",
 				"mysql");
 		Connection con = db.getConnection();
 
-		String sql = "UPDATE items SET title = ?, sub_title = ?, author = ?, publisher = ?, publish_day = ?, status_flg =? where book_id = ?";
+		String sql = "UPDATE items SET itemName = ?, where item_id = ?";
 
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, title);
-			ps.setString(2, subTitle);
-			ps.setString(3, author);
-			ps.setString(4, publisher);
-			ps.setString(5, pubDay);
-			ps.setString(6, statusFlg);
-			ps.setInt(7, book_id);
+			ps.setInt(1, item_id);
+			ps.setString(2, itemName);
 			count =ps.executeUpdate();
 
 		}catch (SQLException e) {
@@ -112,12 +92,11 @@ import com.internousdev.util.DBConnector;
 				e.printStackTrace();
 			}
 		}
-
 		return count;
 	}
 
 	/**
-	 * 書籍画面から受け取ったタイトルの追加情報を、DBへ転送し、反映する為のメソッド
+	 * 商品画面から受け取ったタイトルの追加情報を、DBへ転送し、反映する為のメソッド
 	 */
 	public int insert(String title, String subTitle, String author, String publisher, String pubDay, String initial) {
 
@@ -128,12 +107,8 @@ import com.internousdev.util.DBConnector;
 		String sql = "INSERT INTO items(title, sub_title, author, publisher, publish_day, initial)VALUES(?, ?, ?, ?, ?, ?)";
 		try{
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1,title);
-			ps.setString(2,subTitle);
-			ps.setString(3,author);
-			ps.setString(4,publisher);
-			ps.setString(5,pubDay);
-			ps.setString(6,initial);
+			ps.setString(1,item_id);
+			ps.setString(2,itemName);
 
 			count = ps.executeUpdate();
 
@@ -155,7 +130,7 @@ import com.internousdev.util.DBConnector;
 		/**
 	    * 削除メソッド DBのbook_statusの情報を変更する為のメソッド
 	    */
-	public int delete(int bookId){
+	public int delete(int itemId){
 
 		int count =0 ;
 
@@ -166,7 +141,7 @@ import com.internousdev.util.DBConnector;
 
 		try{
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, bookId);
+			ps.setInt(1, itemId);
 			count = ps.executeUpdate();
 
 		}catch(SQLException e){
