@@ -33,14 +33,7 @@
 <!-- ▼▼モーダル画面のjspファイルを読み込む -->
 <s:include value="modal.jsp" />
 
-	<div class="container">
-		<div class="dbox1">
-			<div class="h1title1"></div>
-			<div class="pbox1"></div>
-			<img src="./img/tamaya7.gif" class="pbox1">
-		</div>
-	</div>
-
+<div class="main_img"></div>
 	<div class="dbox2">
 		<div class="h1title2">
 			<h2><font color="white">花火の価格別と種類別</font></h2>
