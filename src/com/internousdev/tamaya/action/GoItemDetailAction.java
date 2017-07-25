@@ -27,7 +27,7 @@ public class GoItemDetailAction extends ActionSupport implements SessionAware {
 		String ret = ERROR;
 		System.out.println("GoItemDetailAction : itemId = " + itemId);
 		ItemDetailDAO dao = new ItemDetailDAO();
-		item = dao.select(itemId);
+		item = dao.getItemDetail(itemId);
 		if(item != null){
 			ret = SUCCESS;
 		}
