@@ -63,11 +63,17 @@
 
 
 <table class="type07">
+
+
 	<thead>
 		<tr>
 
 			<th scope="col">購入履歴</th>
 			<th scope="col"></th>
+			<th scope="col"></th>
+			<th scope="col"></th>
+			<th scope="col"></th>
+
 		</tr>
 	</thead>
 	<tbody>
@@ -79,7 +85,7 @@
 				<th scope="row">個数</th>
 				<th scope="row">小計</th>
 			</tr>
-			<tr>
+			<tr id="apple">
 
 				<td><img class="shohin" src="<s:property value="imgPath"/>"
 					height="180"></td>
