@@ -104,11 +104,9 @@ body {
 .pbox1 {
 
 	height: 100%; /*表示したい大きさ*/
-	margin: 100%; /*縦余白30pxは任意*/
 	max-width: 100%;
 	position: relative;
 	width: 100%; /*表示したい大きさ、height と合わせる*/
-	max-width: 100%;
 	margin: 0 auto;
 	text-align: center;
 	padding-top: 3px;
@@ -195,7 +193,8 @@ table {
 
 .pboxes1, .pboxes2, .pboxes3 {
 	float: left;
-	width: 270px;
+	max-width: 750px;
+	padding: 50px;
 }
 
 .dbox5 {

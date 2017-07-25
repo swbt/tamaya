@@ -1,8 +1,7 @@
 body {
-
-	background-image:url("../img/original.gif");
-	background-size:contain;
-	color:white;
-
+background-size:cover;
+background-image: url("../img/original.gif");
+background-attachment: fixed;
+color:white;
 }
 

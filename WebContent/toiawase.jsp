@@ -16,6 +16,7 @@
 
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <s:include value="header.jsp" />
 
   <title><s:text name = "lang.toiawase.inquiry" /></title>
 

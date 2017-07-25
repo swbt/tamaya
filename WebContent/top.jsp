@@ -127,21 +127,20 @@
 		</div>
 
 		<table>
-			<tr>
-				<td style="color:red;">　　　　1位</td>
-				<td style="color:red;">　　　　2位</td>
-				<td style="color:red;">　　　　3位</td>
-			</tr>
+
 			<tr>
 				<td><div class="pboxes1">
-					<h3 style="color:red;">　　　　　　メガトンバッグ</h3>
+					<h3 style="color:red;">1位 メガトンバッグ</h3>
+					<br>
 					<a href="GoItemListAction"><img src="img/megaton_bag.jpg" width=150 alt="画像の説明文"></a></div></td>
 				<td><div class="pboxes2">
-					<h3 style="color:red;">　　　　　　　大和魂</h3>
+					<h3 style="color:red;">2位 大和魂</h3>
+					<br>
 					<a href="GoItemListAction"><img src="img/yamato_damashi.jpg" width=150 alt="画像の説明文"></a></div></td>
 
 				<td><div class="pboxes3">
-					<h3 style="color:red;">　　　　　　　パワフル三変化</h3>
+					<h3 style="color:red;">3位 パワフル三変化</h3>
+					<br>
 					<a href="GoItemListAction"><img src="img/powerful_sanhenge.jpg" width=150 alt="画像の説明文"></a></div></td>
 			</tr>
 		</table>
