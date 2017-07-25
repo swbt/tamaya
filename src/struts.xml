@@ -4,8 +4,7 @@
 "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-  <!-- devMode = true の時、struts2を開発（デバッグ）モードで稼働する
-       必ず本番稼働の前にこの項目をfalseにするか、削除すること -->
+  <!-- devMode = true の時、struts2を開発（デバッグ）モードで稼働する 必ず本番稼働の前にこの項目をfalseにするか、削除すること -->
   <constant name="struts.devMode" value="true"></constant>
   <constant name="struts.ui.theme" value="simple" />
 
@@ -36,7 +35,16 @@
          com.internousdev.tamaya.property.top
          " />
 
-  <package name="com.internousdev.tamaya.action" extends="struts-default">
+  <package name="com.internousdev.tamaya.action" extends="json-default">
+    <result-types>
+      <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+    </result-types>
+
+    <action name="TestAction" class="com.internousdev.tamaya.action.TestAction" method="execute">
+      <result type="json">
+        <param name="root">hash</param>
+      </result>
+    </action>
     <action name="GoTopAction" class="com.internousdev.tamaya.action.GoTopAction" method="execute">
       <result name="success">top.jsp</result>
       <result name="error">top.jsp</result>
@@ -52,22 +60,19 @@
       <result name="error" type="redirect">GoTopAction</result>
     </action>
 
-    <action name="GoItemListAction" class="com.internousdev.tamaya.action.GoItemListAction"
-      method="execute">
+    <action name="GoItemListAction" class="com.internousdev.tamaya.action.GoItemListAction" method="execute">
       <result name="item_list">item_list.jsp</result>
       <result name="top" type="redirect">GoTopAction</result>
       <result name="error" type="redirect">GoTopAction</result>
     </action>
 
-    <action name="GoItemDetailAction" class="com.internousdev.tamaya.action.GoItemDetailAction"
-      method="execute">
+    <action name="GoItemDetailAction" class="com.internousdev.tamaya.action.GoItemDetailAction" method="execute">
       <result name="success">syousai.jsp</result>
       <result name="error">index.jsp</result>
     </action>
 
     <!-- 選択・入力されたクレジットカード情報が正しいか検証する -->
-    <action name="VerifyCreditCardAction" class="com.internousdev.tamaya.action.VerifyCreditCardAction"
-      method="execute">
+    <action name="VerifyCreditCardAction" class="com.internousdev.tamaya.action.VerifyCreditCardAction" method="execute">
       <result name="success">siharai_kakunin.jsp</result>
       <result name="error">siharai.jsp</result>
       <result name="login" type="redirect">GoTopAction</result>
@@ -81,24 +86,21 @@
 
 
     <!-- カートに追加する処理 -->
-    <action name="AddToCartAction" class="com.internousdev.tamaya.action.AddToCartAction"
-      method="execute">
+    <action name="AddToCartAction" class="com.internousdev.tamaya.action.AddToCartAction" method="execute">
       <result name="success" type="chain">GoItemListAction</result>
       <result name="error">item_list.jsp</result>
       <result name="login">login.jsp</result>
     </action>
 
     <!-- カートから削除する処理 -->
-    <action name="CartDeleteAction" class="com.internousdev.tamaya.action.CartDeleteAction"
-      method="execute">
+    <action name="CartDeleteAction" class="com.internousdev.tamaya.action.CartDeleteAction" method="execute">
       <result name="success">cart.jsp</result>
       <result name="error" type="redirectAction">GoTopAction</result>
     </action>
 
 
     <!-- カートを更新する処理 -->
-    <action name="UpdateCartAction" class="com.internousdev.tamaya.action.UpdateCartAction"
-      method="execute">
+    <action name="UpdateCartAction" class="com.internousdev.tamaya.action.UpdateCartAction" method="execute">
       <result name="success" type="chain">GoCartAction</result>
       <result name="error" type="redirectAction">GoTopAction</result>
       <result name="remove" type="redirectAction">
@@ -109,22 +111,19 @@
 
 
     <!-- マイページを表示する処理 -->
-    <action name="GoMyPageAction" class="com.internousdev.tamaya.action.GoMyPageAction"
-      method="execute">
+    <action name="GoMyPageAction" class="com.internousdev.tamaya.action.GoMyPageAction" method="execute">
       <result name="success">mypage.jsp</result>
       <result name="error">top.jsp</result>
     </action>
 
     <!-- お問い合わせ画面 -->
-    <action name="ContactConfirmAction" class="com.internousdev.tamaya.action.ContactConfirmAction"
-      method="execute">
+    <action name="ContactConfirmAction" class="com.internousdev.tamaya.action.ContactConfirmAction" method="execute">
       <result name="success">toiawase_kakunin.jsp</result>
       <result name="error">toiawase.jsp</result>
     </action>
 
     <!-- お問い合わせ確認画面から入力画面にもどる -->
-    <action name="BackContactAction" class="com.internousdev.tamaya.action.BackContactAction"
-      method="execute">
+    <action name="BackContactAction" class="com.internousdev.tamaya.action.BackContactAction" method="execute">
       <result name="success">toiawase.jsp</result>
       <result name="error">toiawase_kakunin.jsp</result>
     </action>

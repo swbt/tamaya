@@ -1,17 +1,17 @@
 package com.internousdev.tamaya.action;
 
+import java.sql.SQLException;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tamaya.dao.AddToCartDAO;
+import com.internousdev.tamaya.dao.CartDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * カート内の個数を増減するクラス
- * @author Misa Kikuchi
- * @since 2017/05/20
- * @version 1.0
+ * カート内の商品の注文数を編集するクラス
+ * @author Takahiro Adachi
+ * @since 1.0
  */
 
 public class UpdateCartAction extends ActionSupport implements SessionAware{
@@ -27,7 +27,7 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 	@Override
 	public String execute() {
 		if (!session.containsKey("userId")) {
-			System.out.println("GoCartAction : LOGIN");
+			System.out.println("UpdateCartAction : LOGIN");
 			return LOGIN;
 		}
 		userId = (int) session.get("userId");
@@ -40,11 +40,14 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 		if (quantity <= 0) {
 			return "remove";
 		}
-		AddToCartDAO dao = new AddToCartDAO();
-		if (dao.insert(userId, itemId, quantity)) {
-			return SUCCESS;
+		CartDAO dao = new CartDAO();
+		try {
+			dao.addItem(userId, itemId, quantity);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return ERROR;
 		}
-		return ERROR;
+		return SUCCESS;
 	}
 
 	/** ユーザーIDを取得するメソッド */

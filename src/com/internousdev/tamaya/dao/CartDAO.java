@@ -14,18 +14,12 @@ public class CartDAO {
 		ArrayList<CartDTO> cart = new ArrayList<CartDTO>();
 
 		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
-			String sql = ""
-					+"SELECT i.*, quantity, tax_rate FROM ( "
-					+	"SELECT item_id, quantity FROM carts WHERE user_id = ? "
-					+") AS c "
-					+"INNER JOIN ( "
-					+	"SELECT item_id, item_name, base_price, tax_type_id, stocks, img_path FROM items "
-					+") AS i "
-					+"ON c.item_id = i.item_id "
-					+"INNER JOIN ("
-					+	"SELECT tax_type_id, tax_rate FROM taxs WHERE begin_on < NOW() AND NOW() < end_on "
-					+") AS t "
-					+"ON i.tax_type_id = t.tax_type_id; ";
+			String sql = "" + "SELECT i.*, quantity, tax_rate FROM ( "
+					+ "SELECT item_id, quantity FROM carts WHERE user_id = ? " + ") AS c " + "INNER JOIN ( "
+					+ "SELECT item_id, item_name, base_price, tax_type_id, stocks, img_path FROM items " + ") AS i "
+					+ "ON c.item_id = i.item_id " + "INNER JOIN ("
+					+ "SELECT tax_type_id, tax_rate FROM taxs WHERE begin_on < NOW() AND NOW() < end_on " + ") AS t "
+					+ "ON i.tax_type_id = t.tax_type_id; ";
 
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, userId);
@@ -45,5 +39,24 @@ public class CartDAO {
 			}
 		}
 		return cart;
+	}
+
+	public boolean addItem(int userId, int itemId, int orderCount) throws SQLException {
+		String sql = "INSERT INTO carts (user_id, item_id, quantity) VALUES (?, ?, ?) "
+				+ "ON DUPLICATE KEY UPDATE quantity = ?";
+		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, userId);
+			ps.setInt(2, itemId);
+			ps.setInt(3, orderCount);
+			ps.setInt(4, orderCount);
+			if (ps.executeUpdate() >= 0) {
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw e;
+		}
+		return false;
 	}
 }

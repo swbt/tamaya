@@ -3,6 +3,7 @@
  */
 package com.internousdev.tamaya.action;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -67,7 +68,12 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 			return ERROR;
 		}
 
-		cart = new CartDAO().getCart(userId);
+		try {
+			cart = new CartDAO().getCart(userId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			//何らかのリザルトを投げる
+		}
 		return SUCCESS;
 	}
 

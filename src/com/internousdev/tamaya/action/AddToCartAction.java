@@ -3,13 +3,15 @@
  */
 package com.internousdev.tamaya.action;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tamaya.dao.AddToCartDAO;
+import com.internousdev.tamaya.dao.CartDAO;
 import com.internousdev.tamaya.dto.CartDTO;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -45,21 +47,21 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 	/** ユーザー情報 */
 	private Map<String, Object> session;
 
-	/**
-	 * 実行メソッド
-	 *
-	 * @author AYUMU SHINKAI
-	 * @return result 成功ならSUCCESS 失敗ならERROR ログイン状態でなければLOGIN
-	 */
 	public String execute() {
 		String result = ERROR;
-
+		ActionContext.getContext();
+		System.out.println(ActionContext.getContext().getName());
 		if (session.get("userId") != null) {
 			int userId = (int) session.get("userId");
 			System.out.println("AddToCartAction : userId = " + userId + ", itemId = " + itemId + ", orderCount = " + orderCount);
-			AddToCartDAO dao = new AddToCartDAO();
-			if (dao.insert(userId, itemId, orderCount)) {
-				result = SUCCESS;
+			CartDAO dao = new CartDAO();
+			try {
+				if (dao.addItem(userId, itemId, orderCount)) {
+					result = SUCCESS;
+				}
+			} catch (SQLException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
 			}
 		} else {
 			result = LOGIN;
