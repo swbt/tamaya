@@ -51,7 +51,7 @@
 						<div class="kakaku1">
 							<s:form action="GoItemListAction">
 								<s:hidden name="priceRange" value="1" />
-								<s:submit class="button1" value="499円以下" style="background-color:white;"/>
+								<s:submit class="button1" value="499円以下" />
 							</s:form>
 						</div>
 					</td>
@@ -59,7 +59,7 @@
 						<div class="kakaku2">
 							<s:form action="GoItemListAction">
 								<s:hidden name="priceRange" value="2" />
-								<s:submit class="button1" value="500円～999円" style="background-color:white;"/>
+								<s:submit class="button1" value="500円～999円"/>
 							</s:form>
 						</div>
 					</td>
@@ -67,7 +67,7 @@
 						<div class="kakaku3">
 							<s:form action="GoItemListAction">
 								<s:hidden name="priceRange" value="3" />
-								<s:submit class="button1" value="1000円～4999円" style="background-color:white;" />
+								<s:submit class="button1" value="1000円～4999円"  />
 							</s:form>
 						</div>
 					</td>
@@ -75,7 +75,7 @@
 						<div class="kakaku4">
 							<s:form action="GoItemListAction">
 								<s:hidden name="priceRange" value="4" />
-								<s:submit class="button1" value="5000円以上" style="background-color:white;"/>
+								<s:submit class="button1" value="5000円以上" />
 							</s:form>
 						</div>
 					</td>
@@ -93,26 +93,26 @@
 						<div class=syurui1>
 							<s:form action="GoItemListAction">
 								<s:hidden name="category" value="temoti" />
-								<s:submit class="button1" value="手持ち花火" style="background-color:white;"/>
+								<s:submit class="button1" value="手持ち花火"/>
 							</s:form>
 						</div>
 					</td>
 					<td><div class=syurui2>
 							<s:form action="GoItemListAction">
 								<s:hidden name="category" value="hunsyutu" />
-								<s:submit class="button1" value="噴出花火" style="background-color:white;"/>
+								<s:submit class="button1" value="噴出花火" />
 							</s:form>
 						</div></td>
 					<td><div class=syurui3>
 							<s:form action="GoItemListAction">
 								<s:hidden name="category" value="utiage" />
-								<s:submit class="button1" value="打上げ花火" style="background-color:white;"/>
+								<s:submit class="button1" value="打上げ花火"/>
 							</s:form>
 						</div></td>
 					<td><div class=syurui4>
 							<s:form action="GoItemListAction">
 								<s:hidden name="category" value="sonota" />
-								<s:submit class="button1" value="その他花火" style="background-color:white;"/>
+								<s:submit class="button1" value="その他花火"/>
 							</s:form>
 						</div></td>
 				</tr>
