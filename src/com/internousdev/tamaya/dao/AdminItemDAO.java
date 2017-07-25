@@ -98,16 +98,16 @@ import com.internousdev.util.DBConnector;
 	/**
 	 * 商品画面から受け取ったタイトルの追加情報を、DBへ転送し、反映する為のメソッド
 	 */
-	public int insert(String title, String subTitle, String author, String publisher, String pubDay, String initial) {
+	public int insert(int item_id, String itemName) {
 
 		int count = 0 ;
 
 		DBConnector db = new DBConnector("com.mysql.jdbc.Driver","jdbc:mysql://localhost/","tamaya","root","mysql");
 		Connection conn = db.getConnection();
-		String sql = "INSERT INTO items(title, sub_title, author, publisher, publish_day, initial)VALUES(?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO items(item_id, item_name)VALUES(?, ?, ?, ?, ?, ?)";
 		try{
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1,item_id);
+			ps.setInt(1,item_id);
 			ps.setString(2,itemName);
 
 			count = ps.executeUpdate();
@@ -130,7 +130,7 @@ import com.internousdev.util.DBConnector;
 		/**
 	    * 削除メソッド DBのbook_statusの情報を変更する為のメソッド
 	    */
-	public int delete(int itemId){
+	public int delete(int itemId,String itemName){
 
 		int count =0 ;
 
