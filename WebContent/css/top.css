@@ -193,7 +193,8 @@ table {
 
 .pboxes1, .pboxes2, .pboxes3 {
 	float: left;
-	width: 270px;
+	max-width: 750px;
+	padding: 50px;
 }
 
 .dbox5 {
