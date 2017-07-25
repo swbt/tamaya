@@ -57,9 +57,8 @@
           </tr>
         </table>
         <s:form action="AddToCartAction">
-          <input type="text" name="orderCount" size="5">
+          <input type="number" name="orderCount" size="5">
           <div id="countError"></div>
-          <s:hidden name="userId" value="%{userId}" />
           <s:hidden name="itemId" value="%{itemId}" />
           <s:hidden name="priceRange" value="%{#priceRange}" />
           <s:hidden name="category" value="%{#category}" />

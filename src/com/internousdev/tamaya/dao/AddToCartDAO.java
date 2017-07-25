@@ -66,7 +66,6 @@ public class AddToCartDAO {
 
             while(rs.next()){
                 CartDTO dto2 =new CartDTO();
-                dto2.setUserId(userId);
                 dto2.setItemId(rs.getInt("item_id"));
                 dto2.setQuantity(rs.getInt("quantity"));
                 //ここで情報を結合する(addは追加して格納するという意味)

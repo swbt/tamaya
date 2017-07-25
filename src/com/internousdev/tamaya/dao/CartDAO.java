@@ -10,7 +10,7 @@ import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 public class CartDAO {
-	public ArrayList<CartDTO> getCart(int userId) {
+	public ArrayList<CartDTO> getCart(int userId) throws SQLException {
 		ArrayList<CartDTO> cart = new ArrayList<CartDTO>();
 
 		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
@@ -43,8 +43,6 @@ public class CartDAO {
 				dto.calc();
 				cart.add(dto);
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
 		}
 		return cart;
 	}

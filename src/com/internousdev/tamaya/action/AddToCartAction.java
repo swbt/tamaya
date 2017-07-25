@@ -23,7 +23,7 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 	private String category = "";
 	private int priceRange = 0;
 	/** ユーザーID */
-	private int userId = 3;
+	private int userId;
 	/** アイテムID */
 	private int itemId;
 	/** アイテムネーム */

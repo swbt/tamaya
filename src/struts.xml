@@ -17,10 +17,10 @@
          com.internousdev.tamaya.property.kanri_header
          com.internousdev.tamaya.property.kanri_henko
          com.internousdev.tamaya.property.kanri_kakunin
-         com.internousdev.tamaya.property.Kanri_login
+         com.internousdev.tamaya.property.kanri_login
          com.internousdev.tamaya.property.kanri_rireki
-         com.internousdev.tamaya.property.Kanri_sakujyo
-         com.internousdev.tamaya.property.Kanri_tuika
+         com.internousdev.tamaya.property.kanri_sakujyo
+         com.internousdev.tamaya.property.kanri_tuika
          com.internousdev.tamaya.property.login_header
          com.internousdev.tamaya.property.login
          com.internousdev.tamaya.property.modal
@@ -73,13 +73,6 @@
       <result name="login" type="redirect">GoTopAction</result>
     </action>
 
-    <!-- クレジットカード入力画面から次へ進むための処理 -->
-    <action name="PurchaseCompleteAction" class="com.internousdev.tamaya.action.PurchaseCompleteAction"
-      method="execute">
-      <result name="success" type="chain">PurchaseCompleteAction</result>
-      <result name="error">siharai.jsp</result>
-    </action>
-
     <!-- ログイン後のヘッダーからカート画面への遷移 -->
     <action name="GoCartAction" class="com.internousdev.tamaya.action.GoCartAction" method="execute">
       <result name="success">cart.jsp</result>
@@ -99,15 +92,19 @@
     <action name="CartDeleteAction" class="com.internousdev.tamaya.action.CartDeleteAction"
       method="execute">
       <result name="success">cart.jsp</result>
-      <result name="error" type="redirect">GoTopAction</result>
+      <result name="error" type="redirectAction">GoTopAction</result>
     </action>
 
 
     <!-- カートを更新する処理 -->
-    <action name="CartUpdateAction" class="com.internousdev.tamaya.action.CartUpdateAction"
+    <action name="UpdateCartAction" class="com.internousdev.tamaya.action.UpdateCartAction"
       method="execute">
       <result name="success" type="chain">GoCartAction</result>
-      <result name="error" type="redirect">GoTopAction</result>
+      <result name="error" type="redirectAction">GoTopAction</result>
+      <result name="remove" type="redirectAction">
+        <param name="actionName">CartDeleteAction</param>
+        <param name="itemId">${itemId}</param>
+      </result>
     </action>
 
 

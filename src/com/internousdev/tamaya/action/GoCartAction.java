@@ -12,216 +12,90 @@ import com.internousdev.tamaya.dto.CartDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * カートの情報を取得するアクションクラス
- * @author YUKO TSUJI
- * @since 2017/7/11
- * @version 1.0
+ * カート画面に遷移する際、必要な情報を取得するクラス
+ *
+ * @author Takahiro Adachi
+ * @since 1.0
  */
-
-public class GoCartAction extends ActionSupport implements SessionAware{
-	/**  */
-	private static final long serialVersionUID = 1L;
+public class GoCartAction extends ActionSupport implements SessionAware {
 	/** ユーザーID */
 	private int userId;
-	/** 商品ID */
-	private int itemId;
-	/** 商品名 */
-	private String itemName;
-	/** 単価 */
-	private BigDecimal price;
-	/** 数量 */
-	private int quantity;
+	/** カート */
+	private ArrayList<CartDTO> cart = new ArrayList<>();
+	/** 注文する商品の総数 */
+	private int totalQuantity = 0;
+	/** 注文の合計金額 */
+	private BigDecimal totalFee = BigDecimal.ZERO;
+	/** セッション */
+	private Map<String, Object> session;
 
-	/** イメージパスファイル */
-	private String imgPath;
-	/** 合計金額 */
-	private BigDecimal subtotal = new BigDecimal("0"); /*小計*/
-	private BigDecimal total = new BigDecimal("0");/*合計*/
-
-	private BigDecimal quantity2 = new BigDecimal("0");
-	private BigDecimal kosu = new BigDecimal("0"); /*個数合計*/
-	/** カート内の商品情報を入れるリスト */
-	private ArrayList<CartDTO> cartList=new ArrayList<>();
-	/** セッション情報 */
-	private Map<String,Object> session;
-
-	/**
-	 * 実行メソッド
-	 * 処理内容と順番
-	 * 1：セッション情報を持っているか判断
-	 * 2：session内のuserIdを使用し、カートへ登録された情報を取得
-	 * 3：カート内の情報を元に合計金額を算出
-	 */
-	public String execute() throws SQLException{
-		String result=ERROR;
-
-		if (session.containsKey("userId")) {
-			userId = (int)session.get("userId");
-
-			CartDAO dao = new CartDAO();
-			cartList = dao.getCart(userId);
-			System.out.println(cartList.size() + "の量がある");
-			for(int i = 0; i < cartList.size(); i++ ){
-				/*System.out.println(cartList.get(i).getPrice());
-				System.out.println(cartList.get(i).getQuantity());*/
-				subtotal = cartList.get(i).getBasePrice().multiply (BigDecimal.valueOf(cartList.get(i).getQuantity()));
-				total = total.add(subtotal);
-
-				quantity2 = BigDecimal.valueOf(cartList.get(i).getQuantity());
-				kosu = kosu.add(quantity2);
-
-			}
-			System.out.println("合計￥" + total);
-			result = SUCCESS;
+	@Override
+	public String execute() throws SQLException {
+		if (!session.containsKey("userId")) {
+			System.out.println("GoCartAction : LOGIN");
+			return LOGIN;
 		}
-		return result;
+		userId = (int) session.get("userId");
+		if (userId == 0) {
+			System.out.println("GoCartAction : LOGIN");
+			return LOGIN;
+		}
+		System.out.println("GoCartAction : userId = " + userId);
+
+		try {
+			cart = new CartDAO().getCart(userId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			addActionError("読み込み中にエラーが発生しました");
+			return ERROR;
+		}
+		for (int i = 0; i < cart.size(); i++) {
+			totalQuantity += cart.get(i).getQuantity();
+			totalFee = totalFee.add(cart.get(i).getSubtotal());
+		}
+		System.out.println("GoCartAction : totalQuantity = " + totalQuantity + ", totalFee = " + totalFee);
+		System.out.println("GoCartAction : SUCCESS");
+		return SUCCESS;
 	}
-
-
-	/**
-	 * ユーザーIDを取得するメソッド
-	 * @return userId　ユーザーID
-	 */
+	/** ユーザーIDを取得するメソッド */
 	public int getUserId() {
 		return userId;
 	}
-
-	/**
-	 * ユーザーIDを格納するメソッド
-	 * @param userId セットする userId
-	 */
+	/** ユーザーIDを格納するメソッド */
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-
-	/**
-	 * 商品IDを取得するメソッド
-	 */
-	public int getItemId() {
-		return itemId;
+	/** カートを取得するメソッド */
+	public ArrayList<CartDTO> getCart() {
+		return cart;
 	}
-
-	/**
-	 * 商品IDを格納するメソッド
-	 */
-	public void setItemId(int itemId) {
-		this.itemId = itemId;
+	/** カートを格納するメソッド */
+	public void setCart(ArrayList<CartDTO> cart) {
+		this.cart = cart;
 	}
-
-	/**
-	 * 商品名を取得するメソッド
-	 */
-	public String getItemName() {
-		return itemName;
+	/** 注文する商品の総数を取得するメソッド */
+	public int getTotalQuantity() {
+		return totalQuantity;
 	}
-
-	/**
-	 * 商品名を格納するメソッド
-	 */
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
+	/** 注文する商品の総数を格納するメソッド */
+	public void setTotalQuantity(int totalQuantity) {
+		this.totalQuantity = totalQuantity;
 	}
-
-	/**
-	 * 単価を格取得するメソッド
-	 */
-	public BigDecimal getPrice() {
-		return price;
+	/** 注文の合計金額を取得するメソッド */
+	public BigDecimal getTotalFee() {
+		return totalFee;
 	}
-
-	/**
-	 * 単価を格納するメソッド
-	 */
-	public void setPrice(BigDecimal price) {
-		this.price = price;
+	/** 注文の合計金額を格納するメソッド */
+	public void setTotalFee(BigDecimal totalFee) {
+		this.totalFee = totalFee;
 	}
-
-	/**
-	 * 数量を取得するメソッド
-	 */
-	public int getQuantity() {
-		return quantity;
-	}
-
-	/**
-	 * 数量を格納するメソッド
-	 */
-	public void setQuantity(int quantity) {
-		this.quantity= quantity;
-	}
-
-	/**
-	 * イメージパスファイルを取得するメソッド
-	 */
-	public String getImgPath() {
-		return imgPath;
-	}
-
-	/**
-	 * イメージパスファイルを格納するメソッド
-	 */
-	public void setImgPath(String imgPath) {
-		this.imgPath = imgPath;
-	}
-
-
-
-	/**
-	 * カート内の商品情報を入れるリストを取得するメソッド
-	 */
-	public ArrayList<CartDTO> getCartList() {
-		return cartList;
-	}
-
-	/**
-	 * カート内の商品情報を入れるリストを格納するメソッド
-	 */
-	public void setCartList(ArrayList<CartDTO> cartList) {
-		this.cartList = cartList;
-	}
-
-	/**
-	 * セッション情報を取得するメソッド
-	 */
+	/** セッションを取得するメソッド */
 	public Map<String, Object> getSession() {
 		return session;
 	}
-
-	/**
-	 * セッションを格納するメソッド
-	 */
+	/** セッションを格納するメソッド */
+	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
-
-
-	/**
-	 * @return subtotal
-	 */
-	public BigDecimal getTotal() {
-		return total;
-	}
-
-
-
-	/**
-	 * @param total セットする total
-	 */
-	public void setTotal(BigDecimal total) {
-		this.total = total;
-	}
-
-
-	public BigDecimal getKosu() {
-		return kosu;
-	}
-
-
-	public void setKosu(BigDecimal kosu) {
-		this.kosu = kosu;
-	}
-
-
-
 }
