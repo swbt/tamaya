@@ -91,7 +91,7 @@ width: 100%;
 }
 
 body {
-background-color: #ffffff;
+background-color: #000000;
 width: 100%;
 margin: 0 auto;
 }
@@ -112,9 +112,10 @@ background-image:url("../img/tamaya7.gif");
 
 h2 {
 text-align: center;
-border:1px solid black;
+border:1px solid #ffffff;
 margin:10px;
 padding:5px;
+background-color:#ffffff;
 }
 
 .pbox2 {

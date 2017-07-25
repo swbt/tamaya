@@ -29,7 +29,6 @@
     <s:property value="itemId"/>
     <s:property value="item.itemName"/>
     <s:property value="item.itemDetail"/>
-    <s:property value="item.price"/>
-    <s:property value="item.stocks"/>
+
   </body>
 </html>
