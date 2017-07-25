@@ -8,6 +8,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,user-scalable=no,maximum-scale=1" />
+<link rel="stylesheet" media="all" type="text/css" href="style.css" />
+<!-- ※デフォルトのスタイル（style.css） -->
+<link rel="stylesheet" media="all" type="text/css" href="tablet.css" />
+<!-- ※タブレット用のスタイル（tablet.css） -->
+<link rel="stylesheet" media="all" type="text/css" href="smart.css" />
+<!-- ※スマートフォン用のスタイル（smart.css） -->
 
 <%--国際化用 --%>
 <fmt:setLocale value="${pageContext.request.locale.language}" />
@@ -39,7 +47,7 @@
 		<s:include value="kanri_header.jsp" />
 	</header>
 
-<div class="product_search">						<!-- style="position:absolute; top:120px; left:200px;"> -->
+<div class="product_search">
 	<table>
 		<tr>
 		<th>商品検索</th>
@@ -49,7 +57,6 @@
 			<td><input type="text" name="itemNamep" size="20"></td>
 			<td><button type="submit" class="button">検索</button></td>
 			<!-- select * from items where item_name like '%itemNamep%' -->
-			<tr></tr>
 		</s:form>
 	</table>
 
