@@ -50,7 +50,7 @@
 <div class="product_search">
 	<table>
 		<tr>
-		<th>商品検索</th>
+		<th class="product_title">商品検索</th>
 		</tr>
 			<td class="product_name">商品名</td>
 			<s:form action="AdminItemAction">
