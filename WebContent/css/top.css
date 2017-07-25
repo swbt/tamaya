@@ -3,46 +3,46 @@ v2.0 | 20110126
 License: none (public domain)
 */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
-em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
-b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
-details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
-output, ruby, section, summary, time, mark, audio, video {
-margin: 0;
-padding: 0;
-border: 0;
-font-size: 100%;
-font: inherit;
-vertical-align: baseline;
+	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+	em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+	b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+	details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+	output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers
 */
 article, aside, details, figcaption, figure, footer, header, hgroup,
-menu, nav, section {
-display: block;
+	menu, nav, section {
+	display: block;
 }
 
 body {
-line-height: 1;
+	line-height: 1;
 }
 
 ol, ul {
-list-style: none;
+	list-style: none;
 }
 
 blockquote, q {
-quotes: none;
+	quotes: none;
 }
 
 blockquote:before, blockquote:after, q:before, q:after {
-content: '';
-content: none;
+	content: '';
+	content: none;
 }
 
 table {
-border-collapse: collapse;
-border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 ====================
@@ -51,158 +51,167 @@ border-spacing: 0;
 ●style.css 画面の横幅が769px以上
 ===============================================*/
 @media screen and (min-width: 769px) {
-img {
-max-width: 100%;
-height: auto;
-width /***/: auto;
-}
-#container {
-width: 100%;
-}
-～以下、画面の横幅が768pxまでの場合のスタイル記入～
+	img {
+		max-width: 100%;
+		height: auto;
+		width /***/: auto;
+	}
+	#container {
+		width: 100%;
+	}
+	～以下、画面の横幅が768pxまでの場合のスタイル記入～
+
+
 }
 /*===============================================
 ●tablet.css 画面の横幅が768pxまで
 ===============================================*/
 @media screen and (max-width: 768px) {
-img {
-max-width: 100%;
-height: auto;
-width /***/: auto;
-}
-#container {
-width: 100%;
-}
-～以下、画面の横幅が768pxまでの場合のスタイル記入～
+	img {
+		max-width: 100%;
+		height: auto;
+		width /***/: auto;
+	}
+	#container {
+		width: 100%;
+	}
+	～以下、画面の横幅が768pxまでの場合のスタイル記入～
+
+
 }
 /*===============================================
 ●smart.css 画面の横幅が640pxまで
 ===============================================*/
 @media screen and (max-width:640px) {
-img {
-max-width: 100%;
-height: auto;
-width /***/: auto;
-}
-#container {
-width: 100%;
-}
-～以下、画面の横幅が640pxまでの場合のスタイル記入～
+	img {
+		max-width: 100%;
+		height: auto;
+		width /***/: auto;
+	}
+	#container {
+		width: 100%;
+	}
+	～以下、画面の横幅が640pxまでの場合のスタイル記入～
+
+
 }
 
 body {
-background-color: #000000;
-width: 100%;
-margin: 0 auto;
+	background-color: #000000;
+	width: 100%;
+	margin: 0 auto;
 }
 
 .pbox1 {
-border: 10px solid gray;
-height: 500px; /*表示したい大きさ*/
-margin: 100px; /*縦余白30pxは任意*/
-max-width: 100%;
-position: relative;
-width: 90%; /*表示したい大きさ、height と合わせる*/
-max-width: 100%;
-margin: 0 auto;
-text-align: center;
-padding-top: 3px;
-background-image:url("../img/tamaya7.gif");
+	border: 10px solid gray;
+	height: 500px; /*表示したい大きさ*/
+	margin: 100px; /*縦余白30pxは任意*/
+	max-width: 100%;
+	position: relative;
+	width: 90%; /*表示したい大きさ、height と合わせる*/
+	max-width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 3px;
+	background-image: url("../img/tamaya7.gif");
 }
 
 h2 {
-text-align: center;
-border:1px solid #ffffff;
-margin:10px;
-padding:5px;
-background-color:#ffffff;
+	text-align: center;
+	border: 1px solid #ffffff;
+	margin: 10px;
+	padding: 5px;
+	background-color: #ffffff;
 }
 
 .pbox2 {
-padding: 10px;
-margin: 0 auto;
-float: left;
-text-align: center;
+	padding: 10px;
+	margin: 0 auto;
+	float: left;
+	text-align: center;
 }
 
 table {
-text-align: center;
-display: inline-block;
-margin-left: auto;
-margin-right: auto
-}
-
-.kakaku1,.kakaku2,.kakaku3,.kakaku4 {
-float: left;
-padding:30px;
-margin:10px;
-}
-
-.mojilink{
+	text-align: center;
 	display: inline-block;
-    padding: 0.3em 1em;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.kakaku1, .kakaku2, .kakaku3, .kakaku4 {
+	float: left;
+	padding: 30px;
+	margin: 10px;
+}
+
+.button1 {
+	width:180px;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.5em 1em;
     text-decoration: none;
-    color: #67c5ff;
-    border: solid 2px #67c5ff;
-    border-radius: 3px;
+    border-left: solid 4px #668ad8;
+    border-right: solid 4px #668ad8;
+    color: #668ad8;
+    background: #e1f3ff;
     transition: .4s;
 }
 
-.square_btn:hover {
-    background: #67c5ff;
-    color: white;
-}
+.button1:hover {
+    background: #668ad8;
+    color: #FFF;
 }
 
-
+}
 .dbox3 {
-clear: both;
-float: left;
+	clear: both;
+	float: left;
 }
 
 .pbox3 {
-padding: 10px;
-margin: 0 auto;
-float: left;
-text-align: center;
+	padding: 10px;
+	margin: 0 auto;
+	float: left;
+	text-align: center;
 }
 
-.syurui1,.syurui2,.syurui3,.syurui4 {
-padding: 30px;
-float: left;
-margin:10px;
+.syurui1, .syurui2, .syurui3, .syurui4 {
+	padding: 30px;
+	float: left;
+	margin: 10px;
 }
 
-.dbox4,.dbox5 {
-padding: 10px;
-margin: 0 auto;
-text-align: center;
+.dbox4, .dbox5 {
+	padding: 10px;
+	margin: 0 auto;
+	text-align: center;
 }
 
 .h1title4 {
-clear: both;
+	clear: both;
 }
 
-.pboxes1,.pboxes2,.pboxes3 {
-float: left;
-width: 270px;
+.pboxes1, .pboxes2, .pboxes3 {
+	float: left;
+	width: 270px;
 }
 
 .dbox5 {
-float: clear;
+	float: clear;
 }
 
 .h1title5 {
-clear: both;
-text-align: center;
-display: inline-block;
-margin-left: auto;
-margin-right: auto
+	clear: both;
+	text-align: center;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto
 }
 
 tr, td {
-text-align: center;
-height: 100px; /*表示したい大きさ*/
-margin: auto; /*縦余白30pxは任意*/
-width: 30%;
+	text-align: center;
+	height: 100px; /*表示したい大きさ*/
+	margin: auto; /*縦余白30pxは任意*/
+	width: 30%;
 }
