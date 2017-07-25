@@ -99,5 +99,6 @@
 
 </table>
 
-    <a href="#">page top</a>
-
+<p id="pageTop">
+	<a href="#">page top</a>
+</p>

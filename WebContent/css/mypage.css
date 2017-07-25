@@ -66,11 +66,41 @@ table.type07 td {
 }
 
 
+/* ＜購入履歴のセルの太さを調節＞ */
+
 #apple td{
 
 	width: 130px;
-
-
 }
+
+
+
+/* ＜ページトップボタン＞ */
+
+#pageTop {
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+}
+
+#pageTop a {
+  display: block;
+  z-index: 999;
+  padding: 3px 3px 3px 3px;
+  border-radius: 30px;
+  width: 65px;
+  height: 50px;
+  background-color: #9FD6D2;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+#pageTop a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
 
 
