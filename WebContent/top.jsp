@@ -67,7 +67,7 @@
 						<div class="kakaku3">
 							<s:form action="GoItemListAction">
 								<s:hidden name="priceRange" value="3" />
-								<s:submit class="button1" value="1000円～4999円" style="background-color:deepskyblue;" />
+								<s:submit class="button1" value="1000円～4999円" style="background-color:white;" />
 							</s:form>
 						</div>
 					</td>
