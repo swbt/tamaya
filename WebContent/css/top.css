@@ -97,7 +97,7 @@ table {
 }
 
 body {
-	background-color: #000000;
+	background-color:black;
 	width: 100%;
 	margin: 0 auto;
 }
@@ -118,10 +118,10 @@ body {
 
 h2 {
 	text-align: center;
-	border: 1px solid #000000;
+	border: 1px solid black;
 	margin: 10px;
 	padding: 5px;
-	background-color: #000000;
+	background-color:black;
 }
 
 .pbox2 {
@@ -151,16 +151,16 @@ table {
     font-weight: bold;
     padding: 0.5em 1em;
     text-decoration: none;
-    border-left: solid 4px #0000ff;
-    border-right: solid 4px #0000ff;
-    color: #000000;
+    border-left: solid 4px blue;
+    border-right: solid 4px blue;
+    color: black;
     background: #e1f3ff;
     transition: .4s;
 }
 
 .button1:hover {
     background: #668ad8;
-    color: #ffffff;
+    color: white;
 }
 
 }
