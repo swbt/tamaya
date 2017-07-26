@@ -16,7 +16,6 @@
 
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <s:include value="header.jsp" />
 
   <title><s:text name = "lang.toiawase.inquiry" /></title>
 
@@ -26,6 +25,7 @@
   <link rel="stylesheet" type="text/css" href="./toiawase.css">
  </head>
  <body>
+ <img src="./img/tamaya22.png" class="bb">
   <div style="text-align : center">
  <h1>お問い合わせフォーム</h1>
   </div>
@@ -69,7 +69,11 @@
  </div>
  </div>
  </div>
-
+ <br>
+ <br>
+ <div style="text-align : center">
+<div class="button2"><a href="top.jsp">トップ画面へ</a></div>
+</div>
 </body>
 
   <script type="text/javascript" src="js/main.js"></script>
