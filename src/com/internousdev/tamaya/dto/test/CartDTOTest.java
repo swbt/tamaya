@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 import org.junit.Test;
 
-import com.internousdev.tamaya.dto.CartDTO;
+import com.internousdev.tamaya.dto.CartItemDTO;
 
 /**
  * @author voidernousdev
@@ -35,11 +35,11 @@ public class CartDTOTest {
 	//以下アクセサリー
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getUserId()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getUserId()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetuserId1() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		int expected = 0;
 
 		test.setUserId(expected);
@@ -48,11 +48,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getUserId()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getUserId()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetuserId2() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		int expected = 2147483647;
 
 		test.setUserId(expected);
@@ -61,11 +61,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getUserId()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getUserId()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetuserId3() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		int expected = -2147483648;
 
 		test.setUserId(expected);
@@ -74,11 +74,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getUserId()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getUserId()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetuserId4() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		try {
 			int Purchase_idMin = Integer.parseInt("2147483648");
 			test.setUserId(Purchase_idMin);
@@ -89,11 +89,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getUserId()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getUserId()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetuserId5() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		try {
 			int Purchase_idMin = Integer.parseInt("-2147483649");
 			test.setUserId(Purchase_idMin);
@@ -104,11 +104,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setUserId(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setUserId(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetuserId1() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		int expected = 0;
 
 		test.setUserId(expected);
@@ -119,11 +119,11 @@ public class CartDTOTest {
 
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setUserId(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setUserId(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetuserId2() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		int expected = 2147483647;
 
 		test.setUserId(expected);
@@ -133,11 +133,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setUserId(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setUserId(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetuserId3() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		int expected = -2147483648;
 
 		test.setUserId(expected);
@@ -147,11 +147,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setUserId(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setUserId(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetuserId4() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		try {
 			int Purchase_idMax = Integer.parseInt("2147483648");
 			test.setUserId(Purchase_idMax);
@@ -162,11 +162,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setUserId(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setUserId(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetuserId5() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		try {
 			int Purchase_idMax = Integer.parseInt("-2147483649");
 			test.setUserId(Purchase_idMax);
@@ -185,11 +185,11 @@ public class CartDTOTest {
 
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getItemName()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getItemName()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetitemName1() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = null;
 
 		test.setItemName(expected);
@@ -199,11 +199,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getItemName()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getItemName()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetitemName2() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "";
 
 		test.setItemName(expected);
@@ -213,11 +213,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getItemName()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getItemName()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetitemName3() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = " ";
 
 		test.setItemName(expected);
@@ -227,11 +227,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getItemName()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getItemName()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetitemName4() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "　";
 
 		test.setItemName(expected);
@@ -241,11 +241,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getItemName()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getItemName()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetitemName5() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "abc123";
 
 		test.setItemName(expected);
@@ -255,11 +255,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getItemName()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getItemName()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetitemName6() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "あいう１２３";
 
 		test.setItemName(expected);
@@ -269,11 +269,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getItemName()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getItemName()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetitemName7() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setItemName(expected);
@@ -283,11 +283,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getItemName()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getItemName()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetitemName8() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setItemName(expected);
@@ -297,11 +297,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetItemId1() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = null;
 
 		test.setItemName(expected);
@@ -311,11 +311,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetItemId2() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "";
 
 		test.setItemName(expected);
@@ -325,11 +325,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetItemId3() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = " ";
 
 		test.setItemName(expected);
@@ -339,11 +339,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetItemId4() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "　";
 
 		test.setItemName(expected);
@@ -353,11 +353,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetItemId5() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "abc123";
 
 		test.setItemName(expected);
@@ -367,11 +367,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetItemId6() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "あいう１２３";
 
 		test.setItemName(expected);
@@ -381,11 +381,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetItemId7() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setItemName(expected);
@@ -395,11 +395,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setitemId(java.lang.String)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetItemId8() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setItemName(expected);
@@ -417,11 +417,11 @@ public class CartDTOTest {
 /*	BigDecimal bd = BigDecimal.valueOf(0);*/
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getTotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetPrice1() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		BigDecimal expected =  BigDecimal.valueOf(0);
 
 		test.setBasePrice(expected);
@@ -430,11 +430,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getBasePrice()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getBasePrice()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetPrice2() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		BigDecimal expected =  BigDecimal.valueOf(1000000000);
 		test.setBasePrice(expected);
 
@@ -442,11 +442,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getBasePrice()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getBasePrice()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetPrice3() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		BigDecimal expected =  BigDecimal.valueOf(-12651651);
 
 		test.setBasePrice(expected);
@@ -455,11 +455,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getTotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetPrice4() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		try {
 			BigDecimal expected =  BigDecimal.valueOf(4.4028235E38);
 			test.setBasePrice(expected);
@@ -470,11 +470,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getTotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetPrice5() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		try {
 			BigDecimal expected =  BigDecimal.valueOf(-4.4028235E38);
 			test.setBasePrice(expected);
@@ -485,11 +485,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setBasePrice(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setBasePrice(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice1() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		BigDecimal expected =  BigDecimal.valueOf(0);
 		test.setBasePrice(expected);
 
@@ -499,11 +499,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setBasePrice(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setBasePrice(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice2() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		BigDecimal expected =  BigDecimal.valueOf(0.00000000001f);
 
 		test.setBasePrice(expected);
@@ -512,11 +512,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setBasePrice(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setBasePrice(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice3() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		BigDecimal expected =  BigDecimal.valueOf(-151545151);
 
 		test.setBasePrice(expected);
@@ -525,11 +525,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setBasePrice(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setBasePrice(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice4() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		try {
 			BigDecimal expected =  BigDecimal.valueOf(4.4028235E38);
 			test.setBasePrice(expected);
@@ -540,11 +540,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setBasePrice(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setBasePrice(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice5() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		try {
 			BigDecimal expected =  BigDecimal.valueOf(-4.4028235E38);
 			test.setBasePrice(expected);
@@ -562,11 +562,11 @@ public class CartDTOTest {
 
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getImgPath()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getImgPath()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testgetImgPath1() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = null;
 
 		test.setImgPath(expected);
@@ -576,11 +576,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getImgPath()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getImgPath()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testgetImgPath2() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "";
 
 		test.setImgPath(expected);
@@ -590,11 +590,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getImgPath()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getImgPath()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testgetImgPath3() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = " ";
 
 		test.setImgPath(expected);
@@ -604,11 +604,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getImgPath()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getImgPath()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testgetImgPath4() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "　";
 
 		test.setImgPath(expected);
@@ -618,11 +618,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getImgPath()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getImgPath()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testgetImgPath5() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "abc123";
 
 		test.setImgPath(expected);
@@ -632,11 +632,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getImgPath()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getImgPath()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testgetImgPath6() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "あいう１２３";
 
 		test.setImgPath(expected);
@@ -646,11 +646,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getImgPath()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getImgPath()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testgetImgPath7() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setImgPath(expected);
@@ -660,11 +660,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getImgPath()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getImgPath()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testgetImgPath8() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setImgPath(expected);
@@ -676,49 +676,49 @@ public class CartDTOTest {
 	/*	BigDecimal bd = BigDecimal.valueOf(0);*/
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getTotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetSubtotal1() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		BigDecimal expected =  BigDecimal.valueOf(0);
 
 		test.setSubtotal(expected);
 
-		assertEquals(expected, test.getSubtotal());
+		assertEquals(expected, test.getTotal());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getTotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetSubtotal2() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		BigDecimal expected =  BigDecimal.valueOf(1000000000);
 		test.setSubtotal(expected);
 
-		assertEquals(expected, test.getSubtotal());
+		assertEquals(expected, test.getTotal());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getTotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetSubtotal3() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		BigDecimal expected =  BigDecimal.valueOf(-12651651);
 
 		test.setSubtotal(expected);
 
-		assertEquals(expected, test.getSubtotal());
+		assertEquals(expected, test.getTotal());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getTotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetSubtotal4() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		try {
 			BigDecimal expected =  BigDecimal.valueOf(4.4028235E38);
 			test.setSubtotal(expected);
@@ -729,11 +729,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#getSubtotal()} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#getTotal()} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testGetSubtotal5() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		try {
 			BigDecimal expected =  BigDecimal.valueOf(-4.4028235E38);
 			test.setSubtotal(expected);
@@ -744,51 +744,51 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setSubtotal(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setSubtotal(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testsetSubtotal1() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		BigDecimal expected =  BigDecimal.valueOf(0);
 		test.setSubtotal(expected);
 
 		test.setSubtotal(expected);
 
-		assertEquals(expected, test.getSubtotal());
+		assertEquals(expected, test.getTotal());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setSubtotal(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setSubtotal(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testsetSubtotal2() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		BigDecimal expected =  BigDecimal.valueOf(0.00000000001f);
 
 		test.setSubtotal(expected);
 
-		assertEquals(expected, test.getSubtotal());
+		assertEquals(expected, test.getTotal());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setSubtotal(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setSubtotal(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testsetSubtotal3() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		BigDecimal expected =  BigDecimal.valueOf(-151545151);
 
 		test.setSubtotal(expected);
 
-		assertEquals(expected, test.getSubtotal());
+		assertEquals(expected, test.getTotal());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setSubtotal(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setSubtotal(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testsetSubtotal4() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		try {
 			BigDecimal expected =  BigDecimal.valueOf(4.4028235E38);
 			test.setSubtotal(expected);
@@ -799,11 +799,11 @@ public class CartDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.CartDTO#setSubtotal(int)} のためのテスト・メソッド。
+	 * {@link com.internousdev.tamaya.dto.CartItemDTO#setSubtotal(int)} のためのテスト・メソッド。
 	 */
 	@Test
 	public void testsetSubtotal5() {
-		CartDTO test = new CartDTO();
+		CartItemDTO test = new CartItemDTO();
 		try {
 			BigDecimal expected =  BigDecimal.valueOf(-4.4028235E38);
 			test.setSubtotal(expected);

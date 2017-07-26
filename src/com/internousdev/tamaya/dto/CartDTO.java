@@ -1,104 +1,60 @@
-/**
- *
- */
 package com.internousdev.tamaya.dto;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 
-/**
- * カート情報を格納・取得するクラス
- * @author Takahiro Adachi
- * @since 1.0
- */
 public class CartDTO {
-	/** 商品ID */
-	private int itemId;
-	/** 商品名 */
-	private String itemName;
-	/** 税抜価格 */
-	private BigDecimal basePrice;
-	/** 税率 */
-	private BigDecimal taxRate;
-	/** 税込価格 */
-	private BigDecimal price;
-	/** 数量 */
-	private int quantity;
-	/** 在庫 */
-	private int stocks;
-	/** 画像のパス */
-	private String imgPath;
-	/** 小計 */
-	private BigDecimal subtotal;
+	/** カート内の商品のリスト */
+	private ArrayList<CartItemDTO> cartItemList;
+	/** カート内の商品の総数 */
+	private int totalQuantity;
+	/** カート内の商品の小計 */
+	private BigDecimal subtotal = BigDecimal.ZERO;
+	/** 送料 */
+	private BigDecimal shippingCost = BigDecimal.ZERO;
+	/** 総計（支払う金額） */
+	private BigDecimal grandTotal = BigDecimal.ZERO;
 
-	/** 税込価格と小計を計算するメソッド */
-	public void calc() {
-		price = basePrice.multiply(BigDecimal.ONE.add(taxRate)).setScale(0, RoundingMode.HALF_EVEN);
-		subtotal = price.multiply(BigDecimal.valueOf(quantity));
+	private void calcTotal() {
+		for (CartItemDTO cartItem : cartItemList) {
+			totalQuantity += cartItem.getQuantity();
+			subtotal = subtotal.add(cartItem.getTotal());
+			grandTotal = BigDecimal.ZERO;
+		}
+	}
+	private void calcGrandTotal() {
+		grandTotal = subtotal.add(shippingCost).setScale(0, RoundingMode.HALF_EVEN);
 	}
 
-	/** 商品IDを取得するメソッド */
-	public int getItemId() {
-		return itemId;
+	/** カート内の商品のリストを取得するメソッド */
+	public ArrayList<CartItemDTO> getCartItemList() {
+		return cartItemList;
 	}
-	/** 商品IDを格納するメソッド */
-	public void setItemId(int itemId) {
-		this.itemId = itemId;
+	/** カート内の商品のリストを格納するメソッド */
+	public void setCartItemList(ArrayList<CartItemDTO> cartItemList) {
+		this.cartItemList = cartItemList;
+		calcTotal();
 	}
-	/** 商品名を取得するメソッド */
-	public String getItemName() {
-		return itemName;
+	/** カート内の商品の総数を取得するメソッド */
+	public int getTotalQuantity() {
+		return totalQuantity;
 	}
-	/** 商品名を格納するメソッド */
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
-	}
-	/** 税抜価格を取得するメソッド */
-	public BigDecimal getBasePrice() {
-		return basePrice;
-	}
-	/** 税抜価格を格納するメソッド */
-	public void setBasePrice(BigDecimal baseprice) {
-		this.basePrice = baseprice.setScale(0, RoundingMode.HALF_EVEN);
-	}
-	/** 税率を取得するメソッド */
-	public BigDecimal getTaxRate() {
-		return taxRate;
-	}
-	/** 税率を格納するメソッド */
-	public void setTaxRate(BigDecimal taxRate) {
-		this.taxRate = taxRate;
-	}
-	/** 税込価格を取得するメソッド */
-	public BigDecimal getPrice() {
-		return price;
-	}
-	/** 数量を取得するメソッド */
-	public int getQuantity() {
-		return quantity;
-	}
-	/** 数量を格納するメソッド */
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-	/** 在庫を取得するメソッド */
-	public int getStocks() {
-		return stocks;
-	}
-	/** 在庫を格納するメソッド */
-	public void setStocks(int stocks) {
-		this.stocks = stocks;
-	}
-	/** 画像のパスを取得するメソッド */
-	public String getImgPath() {
-		return imgPath;
-	}
-	/** 画像のパスを格納するメソッド */
-	public void setImgPath(String imgPath) {
-		this.imgPath = imgPath;
-	}
-	/** 小計を取得するメソッド */
+	/** カート内の商品の小計を取得するメソッド */
 	public BigDecimal getSubtotal() {
 		return subtotal;
+	}
+	/** 送料を取得するメソッド */
+	public BigDecimal getShippingCost() {
+		return shippingCost;
+	}
+	/** 送料を格納するメソッド */
+	public void setShippingCost(BigDecimal shippingCost) {
+		this.shippingCost = shippingCost;
+		calcGrandTotal();
+	}
+	/** 総計（支払う金額）を取得するメソッド */
+	public BigDecimal getGrandTotal() {
+		return grandTotal;
 	}
 }

@@ -164,7 +164,7 @@ public class UserDTOTest {
 
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#getPassword()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -172,14 +172,14 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = null;
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#getPassword()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -187,14 +187,14 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = "";
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#getPassword()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -202,14 +202,14 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = " ";
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#getPassword()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -217,14 +217,14 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = "　";
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#getPassword()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -232,14 +232,14 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = "abc123";
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#getPassword()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -247,14 +247,14 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = "あいう１２３";
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#getPassword()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -262,14 +262,14 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = "abc123あいう１２３";
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#getUserPass()}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#getPassword()}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -277,14 +277,14 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#setPassword(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -292,15 +292,15 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = null;
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#setPassword(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -308,15 +308,15 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = "";
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#setPassword(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -324,15 +324,15 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = " ";
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#setPassword(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -340,15 +340,15 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = "　";
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#setPassword(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -356,15 +356,15 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = "abc123";
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#setPassword(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -372,15 +372,15 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = "あいう１２３";
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#setPassword(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -388,15 +388,15 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = "abc123あいう１２３";
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.UserDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.tamaya.dto.UserDTO#setPassword(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -404,8 +404,8 @@ public class UserDTOTest {
 		UserDTO test = new UserDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
-		test.setUserPass(expected);
-		String actual = test.getUserPass();
+		test.setPassword(expected);
+		String actual = test.getPassword();
 
 		assertEquals(expected, actual);
 

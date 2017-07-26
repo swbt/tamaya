@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.internousdev.tamaya.dto.CreditDTO;
+import com.internousdev.tamaya.dto.CreditCardDTO;
 
 public class CreditDTOTest {
 
@@ -15,7 +15,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetEmail1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setEmail(expected);
@@ -30,7 +30,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetEmail2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setEmail(expected);
@@ -45,7 +45,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetEmail3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setEmail(expected);
@@ -60,7 +60,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetEmail4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setEmail(expected);
@@ -75,7 +75,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetEmail5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setEmail(expected);
@@ -90,7 +90,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetEmail6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setEmail(expected);
@@ -105,7 +105,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetEmail7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setEmail(expected);
@@ -120,7 +120,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetEmail8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setEmail(expected);
@@ -135,7 +135,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetEmail1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setEmail(expected);
@@ -151,7 +151,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetEmail2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setEmail(expected);
@@ -167,7 +167,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetEmail3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setEmail(expected);
@@ -183,7 +183,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetEmail4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setEmail(expected);
@@ -199,7 +199,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetEmail5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setEmail(expected);
@@ -215,7 +215,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetEmail6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setEmail(expected);
@@ -231,7 +231,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetEmail7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setEmail(expected);
@@ -247,7 +247,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetEmail8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setEmail(expected);
@@ -264,7 +264,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditId1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 0;
 
 		test.setCreditId(expected);
@@ -279,7 +279,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditId2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 2147483647;
 
 		test.setCreditId(expected);
@@ -293,7 +293,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditId3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = -2147483648;
 
 		test.setCreditId(expected);
@@ -307,7 +307,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditId4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int CreditIdMin = Integer.parseInt("2147483648");
 			test.setCreditId(CreditIdMin);
@@ -323,7 +323,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditId5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int CreditIdMin = Integer.parseInt("-2147483649");
 			test.setCreditId(CreditIdMin);
@@ -339,7 +339,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditId1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 0;
 
 		test.setCreditId(expected);
@@ -355,7 +355,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditId2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 2147483647;
 
 		test.setCreditId(expected);
@@ -370,7 +370,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditId3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = -2147483648;
 
 		test.setCreditId(expected);
@@ -385,7 +385,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditId4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int CreditIdMax = Integer.parseInt("2147483648");
 			test.setCreditId(CreditIdMax);
@@ -401,7 +401,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditId5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int CreditIdMax = Integer.parseInt("-2147483649");
 			test.setCreditId(CreditIdMax);
@@ -419,7 +419,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumber1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setCreditNumber(expected);
@@ -434,7 +434,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumber2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setCreditNumber(expected);
@@ -449,7 +449,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumber3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setCreditNumber(expected);
@@ -464,7 +464,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumber4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setCreditNumber(expected);
@@ -479,7 +479,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumber5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setCreditNumber(expected);
@@ -494,7 +494,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumber6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setCreditNumber(expected);
@@ -509,7 +509,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumber7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setCreditNumber(expected);
@@ -524,7 +524,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumber8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setCreditNumber(expected);
@@ -539,7 +539,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumber1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setCreditNumber(expected);
@@ -555,7 +555,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumber2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setCreditNumber(expected);
@@ -571,7 +571,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumber3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setCreditNumber(expected);
@@ -587,7 +587,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumber4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setCreditNumber(expected);
@@ -603,7 +603,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumber5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setCreditNumber(expected);
@@ -619,7 +619,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumber6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setCreditNumber(expected);
@@ -635,7 +635,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumber7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setCreditNumber(expected);
@@ -651,7 +651,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumber8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setCreditNumber(expected);
@@ -668,7 +668,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetNameE1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setNameE(expected);
@@ -683,7 +683,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetNameE2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setNameE(expected);
@@ -698,7 +698,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetNameE3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setNameE(expected);
@@ -713,7 +713,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetNameE4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setNameE(expected);
@@ -728,7 +728,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetNameE5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setNameE(expected);
@@ -743,7 +743,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetNameE6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setNameE(expected);
@@ -758,7 +758,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetNameE7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setNameE(expected);
@@ -773,7 +773,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetNameE8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setNameE(expected);
@@ -788,7 +788,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetNameE1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setNameE(expected);
@@ -804,7 +804,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetNameE2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setNameE(expected);
@@ -820,7 +820,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetNameE3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setNameE(expected);
@@ -836,7 +836,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetNameE4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setNameE(expected);
@@ -852,7 +852,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetNameE5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setNameE(expected);
@@ -868,7 +868,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetNameE6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setNameE(expected);
@@ -884,7 +884,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetNameE7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setNameE(expected);
@@ -900,7 +900,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetNameE8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setNameE(expected);
@@ -917,7 +917,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetSecurityCode1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 0;
 
 		test.setSecurityCode(expected);
@@ -931,7 +931,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetSecurityCode2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 2147483647;
 
 		test.setSecurityCode(expected);
@@ -945,7 +945,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetSecurityCode3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = -2147483648;
 
 		test.setSecurityCode(expected);
@@ -959,7 +959,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetSecurityCode4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int SecurityCodeMin = Integer.parseInt("2147483648");
 			test.setSecurityCode(SecurityCodeMin);
@@ -975,7 +975,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetSecurityCode5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int SecurityCodeMin = Integer.parseInt("-2147483649");
 			test.setSecurityCode(SecurityCodeMin);
@@ -991,7 +991,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetSecurityCode1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 0;
 
 		test.setSecurityCode(expected);
@@ -1005,7 +1005,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetSecurityCode2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 2147483647;
 
 		test.setSecurityCode(expected);
@@ -1019,7 +1019,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetSecurityCode3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = -2147483648;
 
 		test.setSecurityCode(expected);
@@ -1033,7 +1033,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetSecurityCode4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int SecurityCodeMax = Integer.parseInt("2147483648");
 			test.setSecurityCode(SecurityCodeMax);
@@ -1048,7 +1048,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetSecurityCode5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int SecurityCodeMax = Integer.parseInt("-2147483649");
 			test.setSecurityCode(SecurityCodeMax);
@@ -1067,7 +1067,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetExpirationMonth1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 0;
 
 		test.setExpirationMonth(expected);
@@ -1080,7 +1080,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testGetExpirationMonth2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 2147483647;
 
 		test.setExpirationMonth(expected);
@@ -1093,7 +1093,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testGetExpirationMonth3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = -2147483648;
 
 		test.setExpirationMonth(expected);
@@ -1106,7 +1106,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testGetExpirationMonth4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int ExpirationMonthMin = Integer.parseInt("2147483648");
 			test.setExpirationMonth(ExpirationMonthMin);
@@ -1121,7 +1121,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testGetExpirationMonth5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int ExpirationMonthMin = Integer.parseInt("-2147483649");
 			test.setExpirationMonth(ExpirationMonthMin);
@@ -1137,7 +1137,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetExpirationMonth1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 0;
 
 		test.setExpirationMonth(expected);
@@ -1150,7 +1150,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetExpirationMonth2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 2147483647;
 
 		test.setExpirationMonth(expected);
@@ -1163,7 +1163,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetExpirationMonth3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = -2147483648;
 
 		test.setExpirationMonth(expected);
@@ -1176,7 +1176,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetExpirationMonth4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int ExpirationMonthMin = Integer.parseInt("2147483648");
 			test.setExpirationMonth(ExpirationMonthMin);
@@ -1191,7 +1191,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetExpirationMonth5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int ExpirationMonthMin = Integer.parseInt("-2147483649");
 			test.setExpirationMonth(ExpirationMonthMin);
@@ -1204,7 +1204,7 @@ public class CreditDTOTest {
 //ここから有効期限（年)
 	@Test
 	public void testGetExpirationYear1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 0;
 
 		test.setExpirationYear(expected);
@@ -1213,7 +1213,7 @@ public class CreditDTOTest {
 	}
 
 	public void testGetExpirationYear2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 2147483647;
 
 		test.setExpirationYear(expected);
@@ -1222,7 +1222,7 @@ public class CreditDTOTest {
 	}
 
 	public void testGetExpirationYear3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = -2147483648;
 
 		test.setExpirationYear(expected);
@@ -1231,7 +1231,7 @@ public class CreditDTOTest {
 	}
 
 	public void testGetExpirationYear4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int ExpirationMonthMin = Integer.parseInt("2147483648");
 			test.setExpirationYear(ExpirationMonthMin);
@@ -1242,7 +1242,7 @@ public class CreditDTOTest {
 	}
 
 	public void testGetExpirationYear5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int ExpirationMonthMin = Integer.parseInt("-2147483649");
 			test.setExpirationYear(ExpirationMonthMin);
@@ -1255,7 +1255,7 @@ public class CreditDTOTest {
 
 	@Test
 	public void testSetExpirationYear1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 0;
 
 		test.setExpirationYear(expected);
@@ -1264,7 +1264,7 @@ public class CreditDTOTest {
 	}
 
 	public void testSetExpirationYear2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = 2147483647;
 
 		test.setExpirationYear(expected);
@@ -1273,7 +1273,7 @@ public class CreditDTOTest {
 	}
 
 	public void testSetExpirationYear3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		int expected = -2147483648;
 
 		test.setExpirationYear(expected);
@@ -1282,7 +1282,7 @@ public class CreditDTOTest {
 	}
 
 	public void testSetExpirationYear4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int ExpirationYearMin = Integer.parseInt("2147483648");
 			test.setExpirationYear(ExpirationYearMin);
@@ -1293,7 +1293,7 @@ public class CreditDTOTest {
 	}
 
 	public void testSetExpirationYear5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		try {
 			int ExpirationYearMin = Integer.parseInt("-2147483649");
 			test.setExpirationYear(ExpirationYearMin);
@@ -1311,7 +1311,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumberDown1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setCreditNumberDown(expected);
@@ -1326,7 +1326,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumberDown2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setCreditNumberDown(expected);
@@ -1341,7 +1341,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumberDown3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setCreditNumberDown(expected);
@@ -1356,7 +1356,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumberDown4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setCreditNumberDown(expected);
@@ -1371,7 +1371,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumberDown5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setCreditNumberDown(expected);
@@ -1386,7 +1386,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumberDown6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setCreditNumberDown(expected);
@@ -1401,7 +1401,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumberDown7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setCreditNumberDown(expected);
@@ -1416,7 +1416,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreditNumberDown8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setCreditNumberDown(expected);
@@ -1431,7 +1431,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumberDown1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setCreditNumberDown(expected);
@@ -1447,7 +1447,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumberDown2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setCreditNumberDown(expected);
@@ -1463,7 +1463,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumberDown3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setCreditNumberDown(expected);
@@ -1479,7 +1479,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumberDown4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setCreditNumberDown(expected);
@@ -1495,7 +1495,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumberDown5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setCreditNumberDown(expected);
@@ -1511,7 +1511,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumberDown6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setCreditNumberDown(expected);
@@ -1527,7 +1527,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumberDown7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setCreditNumberDown(expected);
@@ -1543,7 +1543,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreditNumberDown8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setCreditNumberDown(expected);
@@ -1560,7 +1560,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreatedAt1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setCreatedAt(expected);
@@ -1575,7 +1575,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreatedAt2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setCreatedAt(expected);
@@ -1590,7 +1590,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreatedAt3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setCreatedAt(expected);
@@ -1605,7 +1605,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreatedAt4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setCreatedAt(expected);
@@ -1620,7 +1620,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreatedAt5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setCreatedAt(expected);
@@ -1635,7 +1635,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreatedAt6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setCreatedAt(expected);
@@ -1650,7 +1650,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreatedAt7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setCreatedAt(expected);
@@ -1665,7 +1665,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetCreatedAt8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setCreatedAt(expected);
@@ -1680,7 +1680,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreatedAt1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setCreatedAt(expected);
@@ -1696,7 +1696,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreatedAt2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setCreatedAt(expected);
@@ -1712,7 +1712,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreatedAt3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setCreatedAt(expected);
@@ -1728,7 +1728,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreatedAt4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setCreatedAt(expected);
@@ -1744,7 +1744,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreatedAt5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setCreatedAt(expected);
@@ -1760,7 +1760,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreatedAt6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setCreatedAt(expected);
@@ -1776,7 +1776,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreatedAt7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setCreatedAt(expected);
@@ -1792,7 +1792,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetCreatedAt8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setCreatedAt(expected);
@@ -1810,7 +1810,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetUpdatedAt1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setUpdatedAt(expected);
@@ -1825,7 +1825,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetUpdatedAt2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setUpdatedAt(expected);
@@ -1840,7 +1840,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetUpdatedAt3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setUpdatedAt(expected);
@@ -1855,7 +1855,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetUpdatedAt4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setUpdatedAt(expected);
@@ -1870,7 +1870,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetUpdatedAt5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setUpdatedAt(expected);
@@ -1885,7 +1885,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetUpdatedAt6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setUpdatedAt(expected);
@@ -1900,7 +1900,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetUpdatedAt7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setUpdatedAt(expected);
@@ -1915,7 +1915,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetUpdatedAt8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setUpdatedAt(expected);
@@ -1930,7 +1930,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetUpdatedAt1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setUpdatedAt(expected);
@@ -1946,7 +1946,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetUpdatedAt2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setUpdatedAt(expected);
@@ -1962,7 +1962,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetUpdatedAt3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setUpdatedAt(expected);
@@ -1978,7 +1978,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetUpdatedAt4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setUpdatedAt(expected);
@@ -1994,7 +1994,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetUpdatedAt5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setUpdatedAt(expected);
@@ -2010,7 +2010,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetUpdatedAt6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setUpdatedAt(expected);
@@ -2026,7 +2026,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetUpdatedAt7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setUpdatedAt(expected);
@@ -2042,7 +2042,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetUpdatedAt8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setUpdatedAt(expected);
@@ -2059,7 +2059,7 @@ public class CreditDTOTest {
 	 */
 		@Test
 	public void testGetLoginId1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setLoginId(expected);
@@ -2073,7 +2073,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testGetLoginId2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setLoginId(expected);
@@ -2087,7 +2087,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testGetLoginId3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setLoginId(expected);
@@ -2101,7 +2101,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testGetLoginId4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setLoginId(expected);
@@ -2115,7 +2115,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testGetLoginId5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setLoginId(expected);
@@ -2129,7 +2129,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testGetLoginId6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setLoginId(expected);
@@ -2143,7 +2143,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testGetLoginId7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setLoginId(expected);
@@ -2157,7 +2157,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testGetLoginId8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setLoginId(expected);
@@ -2171,7 +2171,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetLoginId1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setLoginId(expected);
@@ -2186,7 +2186,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetLoginId2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setLoginId(expected);
@@ -2201,7 +2201,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetLoginId3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setLoginId(expected);
@@ -2216,7 +2216,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetLoginId4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setLoginId(expected);
@@ -2231,7 +2231,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetLoginId5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setLoginId(expected);
@@ -2246,7 +2246,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetLoginId6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setLoginId(expected);
@@ -2261,7 +2261,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetLoginId7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setLoginId(expected);
@@ -2276,7 +2276,7 @@ public class CreditDTOTest {
 	 * のためのテスト・メソッド。
 	 */
 	public void testSetLoginId8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setLoginId(expected);
@@ -2293,7 +2293,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetLastName1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setLastName(expected);
@@ -2308,7 +2308,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetLastName2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setLastName(expected);
@@ -2323,7 +2323,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetLastName3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setLastName(expected);
@@ -2338,7 +2338,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetLastName4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setLastName(expected);
@@ -2353,7 +2353,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetLastName5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setLastName(expected);
@@ -2368,7 +2368,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetLastName6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setLastName(expected);
@@ -2383,7 +2383,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetLastName7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setLastName(expected);
@@ -2398,7 +2398,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetLastName8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setLastName(expected);
@@ -2413,7 +2413,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetLastName1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setLastName(expected);
@@ -2429,7 +2429,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetLastName2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setLastName(expected);
@@ -2445,7 +2445,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetLastName3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setLastName(expected);
@@ -2461,7 +2461,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetLastName4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setLastName(expected);
@@ -2477,7 +2477,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetLastName5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setLastName(expected);
@@ -2493,7 +2493,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetLastName6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setLastName(expected);
@@ -2509,7 +2509,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetLastName7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setLastName(expected);
@@ -2525,7 +2525,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetLastName8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setLastName(expected);
@@ -2543,7 +2543,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetFirstName1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setFirstName(expected);
@@ -2558,7 +2558,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetFirstName2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setFirstName(expected);
@@ -2573,7 +2573,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetFirstName3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setFirstName(expected);
@@ -2588,7 +2588,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetFirstName4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setFirstName(expected);
@@ -2603,7 +2603,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetFirstName5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setFirstName(expected);
@@ -2618,7 +2618,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetFirstName6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setFirstName(expected);
@@ -2633,7 +2633,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetFirstName7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setFirstName(expected);
@@ -2648,7 +2648,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testGetFirstName8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setFirstName(expected);
@@ -2663,7 +2663,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetFirstName1() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = null;
 
 		test.setFirstName(expected);
@@ -2679,7 +2679,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetFirstName2() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "";
 
 		test.setFirstName(expected);
@@ -2695,7 +2695,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetFirstName3() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = " ";
 
 		test.setFirstName(expected);
@@ -2711,7 +2711,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetFirstName4() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "　";
 
 		test.setFirstName(expected);
@@ -2727,7 +2727,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetFirstName5() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123";
 
 		test.setFirstName(expected);
@@ -2743,7 +2743,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetFirstName6() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "あいう１２３";
 
 		test.setFirstName(expected);
@@ -2759,7 +2759,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetFirstName7() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "abc123あいう１２３";
 
 		test.setFirstName(expected);
@@ -2775,7 +2775,7 @@ public class CreditDTOTest {
 	 */
 	@Test
 	public void testSetFirstName8() {
-		CreditDTO test = new CreditDTO();
+		CreditCardDTO test = new CreditCardDTO();
 		String expected = "ａｂｃ１２３あいう漢字";
 
 		test.setFirstName(expected);

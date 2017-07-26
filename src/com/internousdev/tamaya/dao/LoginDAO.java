@@ -32,7 +32,6 @@ public class LoginDAO {
 
 			if(rs1.next()){
 				dto.setUserId(rs1.getInt("user_id"));
-				dto.setLoginFlg(rs1.getBoolean("login_flg"));
 				dto.setUserFlg(rs1.getInt("user_flg"));
 
 			}
@@ -45,34 +44,5 @@ public class LoginDAO {
 			return null;
 		}
 		return dto;
-	}
-
-	public void update(int userId){
-		Connection con = new MySqlConnector("openconnect","root","mysql").getConnection();
-		UserDTO dto = new UserDTO();
-		String sql1 = "UPDATE users SET login_flg=TRUE WHERE user_id=?";
-		String sql2 = "SELECT login_flg from users WHERE user_id=?";
-
-		try{
-			PreparedStatement ps = con.prepareStatement(sql1);
-			ps.setInt(1, userId);
-			//excuteUpdate：SQL文を実行し、更新した行数が帰ってくる
-			ps.executeUpdate();
-
-			ps = con.prepareStatement(sql2);
-			ps.setInt(1, userId);
-			ResultSet rs = ps.executeQuery();
-
-			if(rs.next()){
-				dto.setLoginFlg(rs.getBoolean("login_flg"));
-			}
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
-		try{
-			con.close();
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
 	}
 }

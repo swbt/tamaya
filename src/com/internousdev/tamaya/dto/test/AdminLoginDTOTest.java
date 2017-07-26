@@ -348,7 +348,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.legmina.dto.AdminLoginDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.legmina.dto.AdminLoginDTO#setPassword(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -364,7 +364,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.legmina.dto.AdminLoginDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.legmina.dto.AdminLoginDTO#setPassword(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -380,7 +380,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.legmina.dto.AdminLoginDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.legmina.dto.AdminLoginDTO#setPassword(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
@@ -396,7 +396,7 @@ public class AdminLoginDTOTest {
 	}
 
 	/**
-	 * {@link com.internousdev.legmina.dto.AdminLoginDTO#setUserPass(java.lang.String)}
+	 * {@link com.internousdev.legmina.dto.AdminLoginDTO#setPassword(java.lang.String)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
