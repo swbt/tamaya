@@ -15,10 +15,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-/**
- * @author internousdev
- *
- */
+
 public class ContactConfirmAction extends ActionSupport implements SessionAware{
 
 
@@ -31,7 +28,7 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware{
 	private String userName="";		//問い合わせ者名
 	private String email="";			//メールアドレス
 	private String comment="";			//問い合わせ内容
-	private String postalCode="";		//電話番号
+	private String postalCode;		//電話番号
 	private Map<String,Object> session;
 
 
@@ -51,7 +48,7 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware{
 
 			}
 
-			if(userName.equals("") ==false &&  postalCode.equals("") ==false && email.equals("")== false && comment.equals("")== false){
+			if(userName.equals("") ==false &&  postalCode.equals("")==false && email.equals("")== false && comment.equals("")== false){
 
 				session.put("userName", userName);
 				session.put("postalCode",postalCode );

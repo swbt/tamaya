@@ -11,17 +11,12 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 
-	/**
-	 * 問い合わせフォームに関するクラス
-	 * @author KAORI TAKAHASHI
-	 * @since 2017/06/14
-	 * @version 1.0
-	 */
+
 public class ContactDAO {
 
 
 
-	public boolean mongoInsert(String userName, String email, String postalCode, String comment) throws UnknownHostException {
+	public boolean mongoInsert(String userName, String email, String comment, String postalCode) throws UnknownHostException {
 		boolean result = false;
 
 		/* 管理者が日本人であることを想定しているため、
