@@ -35,7 +35,8 @@ import com.internousdev.util.DBConnector;
 		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root","mysql");
 		Connection con = null;
 		con = db.getConnection();
-		String sql = "select @num :=@num + 1 as no, items.* from (select @num := 0) as no, items where status_flg!=1";
+		/** status_flgをsqlに追加する必要あり*/
+		String sql = "select @num :=@num + 1 as no, items.* from (select @num := 0) as no, items where status_flg!=1";		
 
 		try {
 
@@ -128,7 +129,7 @@ import com.internousdev.util.DBConnector;
 
 
 		/**
-	    * 削除メソッド DBのbook_statusの情報を変更する為のメソッド
+	    * 削除メソッド DBのitem_statusの情報を変更する為のメソッド
 	    */
 	public int delete(int itemId,String itemName){
 
@@ -137,7 +138,7 @@ import com.internousdev.util.DBConnector;
 		DBConnector db = new DBConnector("com.mysql.jdbc.Driver","jdbc:mysql://localhost/","tamaya","root","mysql");
 		Connection conn = db.getConnection();
 
-		String sql = "update items set status_flg=1 where book_Id = ?";
+		String sql = "update items set status_flg=1 where item_Id = ?";
 
 		try{
 			PreparedStatement ps = conn.prepareStatement(sql);
