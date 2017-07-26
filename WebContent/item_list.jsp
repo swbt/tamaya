@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/siharai.css">
+<link href="css/item_list.css" rel="stylesheet" type="text/css">
 <!-- ▼▼jQuery -->
 <script src="js/jquery-3.2.1.min.js"></script>
 <!-- ▼▼他のjavascript -->
