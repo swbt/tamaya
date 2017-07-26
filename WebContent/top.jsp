@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>花火なら『tamaya』</title>
+<title><s:text name="lang.top.title"/></title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Stylesheet
     ================================================== -->
