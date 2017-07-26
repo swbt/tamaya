@@ -22,14 +22,10 @@ public class CartItemDTO {
 	private BigDecimal taxRate;
 	/** 税込価格 */
 	private BigDecimal price;
-	/** 数量 */
-	private int quantity;
 	/** 在庫 */
 	private int stocks;
 	/** 画像のパス */
 	private String imgPath;
-	/** 値段×個数 */
-	private BigDecimal total;
 
 	/** 税込価格と小計を計算するメソッド */
 	public void calc() {

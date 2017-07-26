@@ -4,6 +4,11 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 
+/**
+ * カート情報を格納・取得するクラス
+ * @author Takahiro Adachi
+ *
+ */
 public class CartDTO {
 	/** カート内の商品のリスト */
 	private ArrayList<CartItemDTO> cartItemList;

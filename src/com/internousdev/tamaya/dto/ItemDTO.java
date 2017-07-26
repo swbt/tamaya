@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * 商品情報を格納・取得するクラス
+ * 商品情報を格納・取得するクラス, price と total は自動計算される
  * @author Takahiro Adachi
  * @since 1.0
  */
@@ -19,11 +19,11 @@ public class ItemDTO {
 	/** カテゴリー */
 	private String category;
 	/** 税抜価格 */
-	private BigDecimal basePrice;
+	private BigDecimal basePrice = BigDecimal.ZERO;
 	/** 税率 */
-	private BigDecimal taxRate;
+	private BigDecimal taxRate = BigDecimal.ZERO;
 	/** 税込価格 */
-	private BigDecimal price;
+	private BigDecimal price = BigDecimal.ZERO;
 	/** 在庫 */
 	private int stocks;
 	/** 販売数 */
@@ -32,10 +32,15 @@ public class ItemDTO {
 	private String itemDetail;
 	/** 画像のパス */
 	private String imgPath;
+	/** カート内の個数 */
+	private int quantity = 0;
+	/** 合計価格（税込価格×個数） */
+	private BigDecimal total = BigDecimal.ZERO;
 
-	/** 税込価格を計算するメソッド */
+	/** 税込価格と小計を計算するメソッド */
 	public void calc() {
 		price = basePrice.multiply(BigDecimal.ONE.add(taxRate)).setScale(0, RoundingMode.HALF_EVEN);
+		total = price.multiply(BigDecimal.valueOf(quantity));
 	}
 
 	/** 商品IDを取得するメソッド */
@@ -113,5 +118,17 @@ public class ItemDTO {
 	/** 画像のパスを格納するメソッド */
 	public void setImgPath(String imgPath) {
 		this.imgPath = imgPath;
+	}
+	/** カート内の個数を取得するメソッド */
+	public int getQuantity() {
+		return quantity;
+	}
+	/** カート内の個数を格納するメソッド */
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	/** 合計価格（税込価格×個数）を取得するメソッド */
+	public BigDecimal getTotal() {
+		return total;
 	}
 }
