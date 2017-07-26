@@ -11,7 +11,8 @@
 
   <!-- 国際化 -->
   <constant name="struts.custom.i18n.resources"
-    value="com.internousdev.tamaya.property.header
+    value="
+         com.internousdev.tamaya.property.header
          com.internousdev.tamaya.property.item_list
          com.internousdev.tamaya.property.kanri_header
          com.internousdev.tamaya.property.kanri_henko
