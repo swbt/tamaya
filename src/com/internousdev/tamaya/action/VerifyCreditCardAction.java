@@ -22,18 +22,18 @@ import com.opensymphony.xwork2.ActionSupport;
 public class VerifyCreditCardAction extends ActionSupport implements SessionAware {
 	/** ユーザーID */
 	private int userId;
-	/** クレジット種類 */
-	private int creditId;
+	/** クレジットの種類(1:visa, 2:mastercard, 3:americanexpress) */
+	private int creditBrand;
 	/** クレジット番号 */
 	private String creditNumber;
 	/** クレジット名義 */
 	private String nameE;
 	/** セキュリティコード */
 	private String securityCode;
-	/** 有効期限（月） */
-	private int expirationMonth;
 	/** 有効期限（年） */
 	private int expirationYear;
+	/** 有効期限（月） */
+	private int expirationMonth;
 	/** カート */
 	private ArrayList<CartDTO> cart = new ArrayList<CartDTO>();
 	/** セッション情報 */
@@ -42,18 +42,21 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 	/**
 	 * クレジットカード情報の照合、格納を実行するメソッド
 	 * @since 1.0
-	 * @version 1.0
 	 */
 	public String execute() {
-		if(!session.containsKey("userId")){
-			return "login";
-		} else {
-			userId = (int)session.get("userId");
+		if (!session.containsKey("userId")) {
+			System.out.println("VerifyCreditCardAction : LOGIN");
+			return LOGIN;
 		}
-		System.out.println("creditId:" + creditId + ", creditNumber:" + creditNumber);
+		userId = (int) session.get("userId");
+		if (userId == 0) {
+			System.out.println("VerifyCreditCardAction : LOGIN");
+			return LOGIN;
+		}
+		System.out.println("creditId:" + creditBrand + ", creditNumber:" + creditNumber);
 		System.out.print("securityCode = " + securityCode + ", expirationYear = " + expirationYear);
 		System.out.println(", expirationMonth = " + expirationMonth + ", nameE = " + nameE);
-		CreditUtil util = new CreditUtil(creditId, creditNumber);
+		CreditUtil util = new CreditUtil(creditBrand, creditNumber);
 		// クレジットカード番号上6ケタの照合
 		if (util.brandCheck()) {
 			// クレジットカード番号16ケタ、セキュリティコード、有効期限、名義人の照合
@@ -85,13 +88,13 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	/** クレジット種類を取得するメソッド */
-	public int getCreditId() {
-		return creditId;
+	/** クレジットの種類(1:visa, 2:mastercard, 3:americanexpress)を取得するメソッド */
+	public int getCreditBrand() {
+		return creditBrand;
 	}
-	/** クレジット種類を格納するメソッド */
-	public void setCreditId(int creditId) {
-		this.creditId = creditId;
+	/** クレジットの種類(1:visa, 2:mastercard, 3:americanexpress)を格納するメソッド */
+	public void setCreditBrand(int creditBrand) {
+		this.creditBrand = creditBrand;
 	}
 	/** クレジット番号を取得するメソッド */
 	public String getCreditNumber() {
@@ -117,14 +120,6 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 	public void setSecurityCode(String securityCode) {
 		this.securityCode = securityCode;
 	}
-	/** 有効期限（月）を取得するメソッド */
-	public int getExpirationMonth() {
-		return expirationMonth;
-	}
-	/** 有効期限（月）を格納するメソッド */
-	public void setExpirationMonth(int expirationMonth) {
-		this.expirationMonth = expirationMonth;
-	}
 	/** 有効期限（年）を取得するメソッド */
 	public int getExpirationYear() {
 		return expirationYear;
@@ -132,6 +127,14 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 	/** 有効期限（年）を格納するメソッド */
 	public void setExpirationYear(int expirationYear) {
 		this.expirationYear = expirationYear;
+	}
+	/** 有効期限（月）を取得するメソッド */
+	public int getExpirationMonth() {
+		return expirationMonth;
+	}
+	/** 有効期限（月）を格納するメソッド */
+	public void setExpirationMonth(int expirationMonth) {
+		this.expirationMonth = expirationMonth;
 	}
 	/** カートを取得するメソッド */
 	public ArrayList<CartDTO> getCart() {

@@ -10,7 +10,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * 注文を確定します
+ * クレジット決済をし、注文を確定します
  * @author Takahiro Adachi
  * @since 1.0
  */

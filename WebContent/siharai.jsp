@@ -39,9 +39,9 @@
 				<td><img src="img/jcb.png" width=50></td>
 			</tr>
 			<tr>
-				<td><input type="radio" name="creditId" value="1" required></td>
-				<td><input type="radio" name="creditId" value="2"></td>
-				<td><input type="radio" name="creditId" value="3"></td>
+				<td><input type="radio" name="creditBrand" value="1" required></td>
+				<td><input type="radio" name="creditBrand" value="2"></td>
+				<td><input type="radio" name="creditBrand" value="3"></td>
 			</tr>
 		</table>
 		<br>●クレジットカード情報の入力の間違い等にご注意いただき、下記項目をすべて入力し「支払い確認へ(仮)」を押してください。

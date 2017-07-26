@@ -35,40 +35,49 @@ FOREIGN KEY(tax_type_id) REFERENCES tax_types(tax_type_id)
 );
 
 create table carts(
-user_id int not null,
-item_id int not null,
-quantity int not null,
-primary key (user_id, item_id),
-foreign key (user_id)references openconnect.users(user_id) on delete cascade,
-foreign key (item_id)references items(item_id)
+  user_id INT NOT NULL
+  ,item_id INT NOT NULL
+  ,quantity INT NOT NULL
+  ,PRIMARY KEY(user_id, item_id)
+  ,FOREIGN KEY(user_id) REFERENCES openconnect.users(user_id) ON DELETE CASCADE
+  ,FOREIGN KEY(item_id) REFERENCES items(item_id)
 );
 
-create table purchase_history(
-history_id int primary key not null auto_increment,
-user_id int not null,
-purchase_date datetime not null,
-foreign key (user_id)references openconnect.users(user_id) on delete cascade
+CREATE TABLE shipping_costs( -- 送料
+  shipping_cost DECIMAL(15,5) NOT NULL
+  ,min_grand_total DECIMAL(15,5) NOT NULL -- その送料になる最低額
 );
 
-create table purchase_history_contents(
-history_id int primary key not null,
-item_id int not null,
-price decimal(10, 5) not null,
-quantity int not null default 1,
-foreign key (history_id)references purchase_history(history_id),
-foreign key (item_id)references items(item_id)
+CREATE TABLE orders(
+  order_id INT PRIMARY KEY AUTO_INCREMENT
+  ,user_id INT NOT NULL
+  ,shipping_cost DECIMAL(15,5) NOT NULL -- 送料
+  ,grand_total DECIMAL(15,5) NOT NULL -- 総計
+  ,is_canceled BOOLEAN NOT NULL DEFAULT FALSE -- キャンセルされたか
+  ,order_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP -- 注文日時
+  ,FOREIGN KEY(user_id) REFERENCES openconnect.users(user_id) ON DELETE CASCADE
+  ,INDEX(user_id)
 );
 
-create table credit(
-user_id int not null,
-credit_id int primary key auto_increment,
-credit_number varchar(16) not null,
-name_e varchar(50) not null,
-security_code varchar(4) not null,
-expiration_month varchar(2) not null,
-expiration_year varchar(2) not null,
-registration_date datetime not null default CURRENT_timestamp,
-foreign key (user_id)references openconnect.users(user_id) on delete cascade
+CREATE TABLE order_details(
+  order_id INT NOT NULL
+  ,item_id INT NOT NULL
+  ,price DECIMAL(15, 5) NOT NULL
+  ,quantity INT NOT NULL
+  ,FOREIGN KEY(order_id) REFERENCES orders(order_id)
+  ,FOREIGN KEY(item_id) REFERENCES items(item_id)
+  ,INDEX(order_id)
+);
+
+CREATE TABLE credit_cards(
+  user_id INT NOT NULL
+  ,credit_brand INT NOT NULL -- クレジットの種類(1:visa, 2:mastercard, 3:americanexpress)
+  ,credit_number VARCHAR(16) NOT NULL -- クレジット番号
+  ,name_e VARCHAR(50) NOT NULL -- クレジット名義
+  ,security_code VARCHAR(4) NOT NULL -- セキュリティコード
+  ,expiration_month VARCHAR(2) NOT NULL -- 有効期限（年）
+  ,expiration_year varchar(4) NOT NULL -- 有効期限（月）
+  ,FOREIGN KEY(user_id) REFERENCES openconnect.users(user_id) ON DELETE CASCADE
 );
 
 INSERT INTO tax_types VALUES
@@ -78,6 +87,11 @@ INSERT INTO tax_types VALUES
 INSERT INTO taxs(tax_type_id, tax_rate, begin_on, end_on) VALUES
 (1, 0, '2000-01-01', DEFAULT(end_on))
 ,(2, 0.08, '2014-04-01', DEFAULT(end_on));
+
+INSERT INTO shipping_costs(shipping_cost, min_grand_total) VALUE
+(700, 0)
+,(0, 3000); -- 3000円以上は送料無料
+
 
 insert into items(item_name,base_price,tax_type_id,stocks,item_detail,category,img_path)
 values('純国産線香花火',98,2,9,'100％日本製の線香花火です。線香花火シリーズの中でも大き目のサイズになります。長い時間楽しみたい方、日本の職人が作った花火を楽しみたいお客様にお勧めの花火となっております。','temoti','./img/big_senkou.jpg')
