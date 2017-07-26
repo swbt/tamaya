@@ -62,6 +62,8 @@ table {
 	～以下、画面の横幅が768pxまでの場合のスタイル記入～
 
 
+
+
 }
 /*===============================================
 ●tablet.css 画面の横幅が768pxまで
@@ -76,6 +78,8 @@ table {
 		width: 100%;
 	}
 	～以下、画面の横幅が768pxまでの場合のスタイル記入～
+
+
 
 
 }
@@ -94,32 +98,33 @@ table {
 	～以下、画面の横幅が640pxまでの場合のスタイル記入～
 
 
+
+
 }
 
 body {
-	background-color:black;
+	background-color: black;
 	width: 100%;
 	margin: 0 auto;
 }
+
 .main_img {
-    max-width: 100%;
-    height: 480px;
-    background: url('../img/tamaya7.gif');
-    background-size:cover;
-     background-position: 20% 60%;
+	max-width: 100%;
+	height: 480px;
+	background: url('../img/tamaya7.gif');
+	background-size: cover;
+	background-position: 20% 60%;
 }
-
-
 
 h2 {
 	text-align: center;
 	border: 1px solid black;
 	margin: 10px;
 	padding: 5px;
-	background-color:black;
+	background-color: black;
 }
 
-.pbox2 {
+.main-category1 {
 	padding: 10px;
 	margin: 0 auto;
 	float: left;
@@ -133,82 +138,77 @@ table {
 	margin-right: auto
 }
 
-.kakaku1, .kakaku2, .kakaku3, .kakaku4 {
-	float: left;
-	padding: 30px;
-	margin: 10px;
-}
-
-.button1 {
-	width:165px;
-    position: relative;
-    display: inline-block;
-    font-weight: bold;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    border-left: solid 4px blue;
-    border-right: solid 4px blue;
-    color: black;
-    background: #e1f3ff;
-    transition: .4s;
-}
-
-.button1:hover {
-    background: #668ad8;
-    color: white;
-}
-
-}
-.dbox3 {
-	clear: both;
-	float: left;
-}
-
-.pbox3 {
-	padding: 10px;
-	margin: 0 auto;
-	float: left;
-	text-align: center;
-}
-
-.syurui1, .syurui2, .syurui3, .syurui4 {
-	padding: 30px;
-	float: left;
-	margin: 10px;
-}
-
-.dbox4, .dbox5 {
-	padding: 10px;
-	margin: 0 auto;
-	text-align: center;
-}
-
-
-.h1title4 {
-	clear: both;
-}
-
-.pboxes1, .pboxes2, .pboxes3 {
-	float: left;
-	max-width: 750px;
-	padding: 50px;
-}
-
-.dbox5 {
-	float: clear;
-}
-
-.h1title5 {
-	clear: both;
-	text-align: center;
-	display: inline-block;
-	margin-left: auto;
-	margin-right: auto
-}
-
 tr, td {
 	text-align: center;
 	height: 100px; /*表示したい大きさ*/
 	margin: auto; /*縦余白30pxは任意*/
 	width: 30%;
+}
+
+[class^="main-category-list"] {
+	float: left;
+	padding: 30px;
+	margin: 10px;
+}
+
+}
+.main2 {
+	clear: both;
+	float: left;
+}
+
+.main-category2 {
+	padding: 10px;
+	margin: 0 auto;
+	float: left;
+	text-align: center;
+}
+
+[class^="main-subcategory-list"]{
+	padding: 30px;
+	float: left;
+	margin: 10px;
+}
+
+.button {
+	width: 165px;
+	position: relative;
+	display: inline-block;
+	font-weight: bold;
+	padding: 0.5em 1em;
+	text-decoration: none;
+	border-left: solid 4px blue;
+	border-right: solid 4px blue;
+	color: black;
+	background: #e1f3ff;
+	transition: .4s;
+}
+
+.button:hover {
+	background: #668ad8;
+	color: white;
+}
+
+.main3, .main4 {
+	padding: 10px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.title-ranking {
+	clear: both;
+}
+
+.ranking-main, .ranking-secondary, .ranking-tertiary {
+	float: left;
+	max-width: 750px;
+	padding: 50px;
+}
+
+.title-special {
+	clear: both;
+	text-align: center;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto
 }
