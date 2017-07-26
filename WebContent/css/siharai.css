@@ -53,7 +53,8 @@ h2{
     color:#fff;
     background-color:#49a9d4;
     top:50px; left:250px;
-    }
+   }
 
- .center{margin-left:auto;margin-right:auto;text-align:center}
-
+ .center{
+ margin-left:auto;margin-right:auto;text-align:center
+ }
