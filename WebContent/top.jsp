@@ -41,7 +41,7 @@
 
 <div class="main_img"></div>
 	<div class="main1">
-			<h2><font color="white">花火の価格別と種類別</font></h2>
+			<h2><font color="white"><s:text name="lang.top.main1_h2"/></font></h2>
 		<div class="main-category1">
 			<table>
 				<tr>
@@ -49,7 +49,7 @@
 						<div class="main-category-list1">
 							<s:form action="GoItemListAction">
 								<s:hidden name="priceRange" value="1" />
-								<s:submit class="button" value="499円以下" />
+								<s:submit class="button" value="<s:text name="lang.top.category-price1"/>" />
 							</s:form>
 						</div>
 					</td>
@@ -57,7 +57,7 @@
 						<div class="main-category-list2">
 							<s:form action="GoItemListAction">
 								<s:hidden name="priceRange" value="2" />
-								<s:submit class="button" value="500円～999円"/>
+								<s:submit class="button" value="<s:text name="lang.top.category-price2"/>"/>
 							</s:form>
 						</div>
 					</td>
@@ -65,7 +65,7 @@
 						<div class="main-category-list3">
 							<s:form action="GoItemListAction">
 								<s:hidden name="priceRange" value="3" />
-								<s:submit class="button" value="1000円～4999円"  />
+								<s:submit class="button" value="<s:text name="lang.top.category-price3"/>"  />
 							</s:form>
 						</div>
 					</td>
@@ -73,7 +73,7 @@
 						<div class="main-category-list4">
 							<s:form action="GoItemListAction">
 								<s:hidden name="priceRange" value="4" />
-								<s:submit class="button" value="5000円以上" />
+								<s:submit class="button" value="<s:text name="lang.top.category-price4"/>" />
 							</s:form>
 						</div>
 					</td>
@@ -90,26 +90,26 @@
 						<div class="main-subcategory-list1">
 							<s:form action="GoItemListAction">
 								<s:hidden name="category" value="temoti" />
-								<s:submit class="button" value="手持ち花火"/>
+								<s:submit class="button" value="<s:text name="lang.top.subcategory-temoti"/>"/>
 							</s:form>
 						</div>
 					</td>
 					<td><div class="main-subcategory-list2">
 							<s:form action="GoItemListAction">
 								<s:hidden name="category" value="hunsyutu" />
-								<s:submit class="button" value="噴出花火" />
+								<s:submit class="button" value="<s:text name="lang.top.hunsyutu"/>" />
 							</s:form>
 						</div></td>
 					<td><div class="main-subcategory-list3">
 							<s:form action="GoItemListAction">
 								<s:hidden name="category" value="utiage" />
-								<s:submit class="button" value="打上げ花火"/>
+								<s:submit class="button" value="<s:text name="lang.top.utiage"/>"/>
 							</s:form>
 						</div></td>
 					<td><div class="main-subcategory-list4">
 							<s:form action="GoItemListAction">
 								<s:hidden name="category" value="sonota" />
-								<s:submit class="button" value="その他花火"/>
+								<s:submit class="button" value="<s:text name="lang.top.sonota"/>"/>
 							</s:form>
 						</div></td>
 				</tr>
@@ -119,23 +119,23 @@
 
 	<div class="main3">
 		<div class="title-ranking">
-			<h2><font color="white">花火の売り上げランキングトップ3</font></h2>
+			<h2><font color="white"><s:text name="lang.top.title-ranking"/></font></h2>
 		</div>
 
 		<table>
 
 			<tr>
 				<td><div class="ranking-main">
-					<h3 style="color:red;">1位 メガトンバッグ</h3>
+					<h3 style="color:red;"><s:text name="lang.top.first-place"/></h3>
 					<br>
 					<a href="GoItemListAction"><img src="img/megaton_bag.jpg" width=150 alt="画像の説明文"></a></div></td>
 				<td><div class="ranking-secondary">
-					<h3 style="color:red;">2位 大和魂</h3>
+					<h3 style="color:red;"><s:text name="lang.top.second-place"/></h3>
 					<br>
 					<a href="GoItemListAction"><img src="img/yamato_damashi.jpg" width=150 alt="画像の説明文"></a></div></td>
 
 				<td><div class="ranking-tertiary">
-					<h3 style="color:red;">3位 パワフル三変化</h3>
+					<h3 style="color:red;"><s:text name="lang.top.third-place"/></h3>
 					<br>
 					<a href="GoItemListAction"><img src="img/powerful_sanhenge.jpg" width=150 alt="画像の説明文"></a></div></td>
 			</tr>
@@ -144,7 +144,7 @@
 	<div class="main4">
 		<div class="title-special">
 
-			<a href="./tokusyu.jsp">花火特集ページ</a>
+			<a href="./tokusyu.jsp"><s:text name="lang.top.special-collection"/></a>
 
 		</div>
 
