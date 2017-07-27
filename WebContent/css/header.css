@@ -2,97 +2,84 @@
 	margin:0;
 	padding:0;
 }
-
 a{
-    float: right;
-
+	float: right;
 }
-
-
-
-.clear{
-    clear: both;
+.clear{				/* 該当箇所なし(7/27) */
+	clear: both;
 }
-
-.trim{
-  margin: 0 auto;
-  position: relative;
-  overflow-x: hidden;
+.div_header{
+	margin: 0 auto;
+	position: relative;
+	overflow-x: hidden;
 }
-.example {
-  margin: 0 auto;
-width:500px;
-  margin-right: 20px;
-  position: relative;
-  top:-50px;
+.div_btn_text {
+	margin: 0 auto;
+	width: 500px;
+	margin-right: 20px;
+	position: relative;
+	top: -50px;
+  }
+.div_btn_text a {/*aタグを画像の真ん中に*/
+	position: relative;
+	top: -50px;
+	left: 0px;
 
+	-ms-transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	/*以下装飾*/
+	width:100px;
+	text-align: center;
+	/*余計な隙間を除く*/
+	font-size: 1.0vw;/*文字サイズ*/
+	border: solid white 2px; /*線で囲う*/
+	padding: 7px;/*文字と線の間の余白*/
+	color: white;/*文字色*/
+	text-decoration: none;/*下線を表示させない*/
+	background-color:black;
   }
 
-
-
-
-.example a {/*aタグを画像の真ん中に*/
-  position: relative;
-top: -50px;
-  left: 0px;
-
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  /*以下装飾*/
-    width:100px;
-  text-align: center;
-    /*余計な隙間を除く*/
-  font-size: 1.0vw;/*文字サイズ*/
-  border: solid white 2px; /*線で囲う*/
-  padding: 7px;/*文字と線の間の余白*/
-  color: white;/*文字色*/
-  text-decoration: none;/*下線を表示させない*/
-  background-color:black;
-
+.div_btn_text a:hover{/*カーソルを当てたとき*/
+	background: rgba(255, 255, 255, 0.3);/*背景を半透明に*/
   }
-
-.example a:hover{/*カーソルを当てたとき*/
-  background: rgba(255, 255, 255, 0.3);/*背景を半透明に*/
-  }
-
-  }
-
-img {
-  width: 100px;
-  height: 400px;
-  object-fit: cover;
 }
-#menu ul{
-margin: 0;
-padding: 0;
-list-style: none;
+
+img {			/* cssが効いていない可能性あり(7/27) */
+	width: 100px;
+	height: 400px;
+	object-fit: cover;
 }
-#menu li{
-display: inline;
-padding: 0;
-margin: 0;
-float: right;
+#menu ul{			/* cssが効いていない可能性あり(7/27) */
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#menu li{			/* cssが効いていない可能性あり(7/27) */
+	display: inline;
+	padding: 0;
+	margin: 0;
+	float: right;
 }
 #menu li a{
-display: block;
-width: 100px;
-padding: 3px;
-margin: 10px 0px 10px 0px;
-text-decoration: none;
-border:outset 3px #8000ff;
-background-color: white;
-text-align: center;
-color: black;
-font-size: 14px;
+	display: block;
+	width: 100px;
+	padding: 3px;
+	margin: 10px 0px 10px 0px;
+	text-decoration: none;
+	border:outset 3px #8000ff;
+	background-color: white;
+	text-align: center;
+	color: black;
+	font-size: 14px;
 }
 #menu li a:hover{
-border: inset 3px #ff00ff;
-background-color: white;
+	border: inset 3px #ff00ff;
+	background-color: white;
 }
  .fm{
 	float:right;
-	 top: -100xp;
-     left: 0px;
-     position:relative;
+	top: -100xp;
+	left: 0px;
+	position:relative;
 }

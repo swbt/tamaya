@@ -18,9 +18,9 @@
 
 </head>
 <body>
-  <div class="trim">
+  <div class="div_header">
     <img src="./img/tamaya22.png" class="bb">
-    <div class="example">
+    <div class="div_btn_text">
       <s:form action="LoginAction" class="fm" style="color:white;">
         <s:textfield name="email" label="email" />
         <s:password name="password" label="password" size="20" />
