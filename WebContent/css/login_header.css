@@ -2,81 +2,71 @@
 	margin:0;
 	padding:0;
 }
-
 a{
-    float: right;
+	float: right;
 }
-
 .clear{
-    clear: both;
+	clear: both;
 }
-
-.example {
-  margin: 0 auto;
-width:960px;
-  margin-right: 50px;
-  position: relative;
-  }
-
-.trim{
-  margin: 0 auto;
-  position: relative;
-  overflow-x: hidden;
+.div_01{
+	margin: 0 auto;
+	position: relative;
+	overflow-x: hidden;
 }
-
-.example a {/*aタグを画像の真ん中に*/
-  position: relative;
-  top: -50px;
-  left: 0px;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  /*以下装飾*/
-    width:100px;
-  text-align: center;
-    /*余計な隙間を除く*/
-  font-size: 1.0vw;/*文字サイズ*/
-  border: solid white 2px; /*線で囲う*/
-  padding: 7px;/*文字と線の間の余白*/
-  color: white;/*文字色*/
-  text-decoration: none;/*下線を表示させない*/
-  background-color:black;
-
-  }
-
-
-  }
-
+.div_02 {
+	margin: 0 auto;
+	width:960px;
+	margin-right: 50px;
+	position: relative;
+}
+.div_02 a {/*aタグを画像の真ん中に*/
+	position: relative;
+	top: -50px;
+	left: 0px;
+	-ms-transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	/*以下装飾*/
+	width:100px;
+	text-align: center;
+	/*余計な隙間を除く*/
+	font-size: 1.0vw;/*文字サイズ*/
+	border: solid white 2px; /*線で囲う*/
+	padding: 7px;/*文字と線の間の余白*/
+	color: white;/*文字色*/
+	text-decoration: none;/*下線を表示させない*/
+	background-color:black;
+	}
+}
 img {
-  width: 100px;
-  height: 400px;
-  object-fit: cover;
-
+	width: 100px;
+	height: 400px;
+	object-fit: cover;
 }
-#menu ul{
-margin: 0;
-padding: 0;
-list-style: none;
+#div_03 ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
-#menu li{
-display: inline;
-padding: 0;
-margin: 0;
-float: right;
+#div_03 li{
+	display: inline;
+	padding: 0;
+	margin: 0;
+	float: right;
 }
-#menu li a{
-display: block;
-width: 100px;
-padding: 3px;
-margin: 10px 0px 10px 0px;
-text-decoration: none;
-border:outset 3px #8000ff;
-background-color: white;
-text-align: center;
-color: black;
-font-size: 14px;
+#div_03 li a{
+	display: block;
+	width: 100px;
+	padding: 3px;
+	margin: 10px 0px 10px 0px;
+	text-decoration: none;
+	border:outset 3px #8000ff;
+	background-color: white;
+	text-align: center;
+	color: black;
+	font-size: 14px;
 }
-#menu li a:hover{
-border: inset 3px #ff00ff;
-background-color: white;
+#div_03 li a:hover{
+	border: inset 3px #ff00ff;
+	background-color: white;
 }

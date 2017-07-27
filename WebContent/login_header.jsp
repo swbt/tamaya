@@ -24,10 +24,10 @@
 
   </head>
   <body>
-      <div class="trim">
+      <div class="div_01">
         <img src="./img/tamaya22.png" class="bb">
-    <div class="example">
-    <div id="menu">
+    <div class="div_02">
+    <div id="div_03">
 		<ul>
 			<li><a href="toiawase.jsp">お問い合わせ</a></li>
 			<li><a href="<s:url action="LogoutAction"/>"><i class="button1" ></i> ログアウト</a></li>

@@ -51,12 +51,12 @@
 <div class="table_search">
 	<table>
 		<tr>
-		<th class="th_title">商品検索</th>
+		<th class="th_01">商品検索</th>
 		</tr>
-			<td class="td_itemname">商品名</td>
+			<td class="td_01">商品名</td>
 			<s:form action="AdminItemAction">
-			<td class="td_text"><input type="text" name="itemNamep" size="20"></td>
-			<td class="td_btn"><button type="submit" class="button">検索</button></td>
+			<td class="td_02"><input type="text" name="itemNamep" size="20"></td>
+			<td class="td_03"><button type="submit" class="button">検索</button></td>
 			<!-- select * from items where item_name like '%itemNamep%' -->
 			</s:form>
 	</table>

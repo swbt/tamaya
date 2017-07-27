@@ -63,12 +63,12 @@
 
       <tfoot>
         <tr>
-          <td class="td_postage" colspan="2">送料（国内）</td>
+          <td class="td_01" colspan="2">送料（国内）</td>
           <td align="center" colspan="2">無料</td>
         </tr>
 
         <tr>
-          <td class="td_total" colspan="2">合計（税込）</td>
+          <td class="td_02" colspan="2">合計（税込）</td>
           <td align="center"><s:property value="quantity" /></td>
           <td align="center">￥<fmt:formatNumber value="${total}" /></td>
         </tr>

@@ -4,18 +4,18 @@
  margin-bottom: 30%;
  margin-top: 20%;
 }
-.th_title{
+.th_01{
  text-align: center;
 }
-.td_itemname{
- text-align: center;
- width: 30px;
-}
-.td_text{
+.td_01{
  text-align: center;
  width: 30px;
 }
-.td_btn{
+.td_02{
+ text-align: center;
+ width: 30px;
+}
+.td_03{
  text-align: center;
  width: 30px;
 }

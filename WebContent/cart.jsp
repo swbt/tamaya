@@ -96,12 +96,12 @@
 
         <tfoot>
           <tr>
-            <td class="td_postage" colspan="2">送料（国内）</td>
+            <td class="td_01" colspan="2">送料（国内）</td>
             <td align="center" colspan="4">￥ <s:property value="cart.totalQuantity" />（税込）</td>
           </tr>
 
           <tr>
-            <td class="td_total" colspan="2">合計(個数)（税込）</td>
+            <td class="td_02" colspan="2">合計(個数)（税込）</td>
             <td align="center"><s:property value="cart.totalQuantity" />個</td>
 
             <td align="center" colspan="3">￥ <s:property value="cart.grandTotal" />（税込）
