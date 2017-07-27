@@ -8,19 +8,19 @@ a{
 .clear{				/* 該当箇所なし(7/27) */
 	clear: both;
 }
-.div_header{
+.div_01{
 	margin: 0 auto;
 	position: relative;
 	overflow-x: hidden;
 }
-.div_btn_text {
+.div_02{
 	margin: 0 auto;
 	width: 500px;
 	margin-right: 20px;
 	position: relative;
 	top: -50px;
   }
-.div_btn_text a {/*aタグを画像の真ん中に*/
+.div_02 a {/*aタグを画像の真ん中に*/
 	position: relative;
 	top: -50px;
 	left: 0px;
@@ -40,7 +40,7 @@ a{
 	background-color:black;
   }
 
-.div_btn_text a:hover{/*カーソルを当てたとき*/
+.div_02 a:hover{/*カーソルを当てたとき*/
 	background: rgba(255, 255, 255, 0.3);/*背景を半透明に*/
   }
 }
@@ -50,18 +50,18 @@ img {			/* cssが効いていない可能性あり(7/27) */
 	height: 400px;
 	object-fit: cover;
 }
-#menu ul{			/* cssが効いていない可能性あり(7/27) */
+#div_03 ul{			/* cssが効いていない可能性あり(7/27) */
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-#menu li{			/* cssが効いていない可能性あり(7/27) */
+#div_03 li{			/* cssが効いていない可能性あり(7/27) */
 	display: inline;
 	padding: 0;
 	margin: 0;
 	float: right;
 }
-#menu li a{
+#div_03 li a{
 	display: block;
 	width: 100px;
 	padding: 3px;
@@ -73,11 +73,11 @@ img {			/* cssが効いていない可能性あり(7/27) */
 	color: black;
 	font-size: 14px;
 }
-#menu li a:hover{
+#div_03 li a:hover{
 	border: inset 3px #ff00ff;
 	background-color: white;
 }
- .fm{
+ .sform_01{
 	float:right;
 	top: -100xp;
 	left: 0px;
