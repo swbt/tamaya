@@ -82,6 +82,12 @@ CREATE TABLE credit_cards(
   ,FOREIGN KEY(user_id) REFERENCES openconnect.users(user_id) ON DELETE CASCADE
 );
 
+CREATE TABLE exchanges (
+  currency_code CHAR(3) PRIMARY KEY
+  ,rate DECIMAL(15,5) NOT NULL
+  ,modified_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
 INSERT INTO tax_types VALUES
 (1, '非課税')
 ,(2, '通常税率');
