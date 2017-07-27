@@ -22,18 +22,18 @@ CREATE TABLE taxs( -- 商品にかかる税
 );
 
 create table items(
-item_id int not null primary key auto_increment,
-item_name varchar(100) not null,
-base_price decimal(15,5) not null,
-tax_type_id int not null,
-stocks int default 0 not null,
-sales int default 0 not null,
-item_detail text,
-category enum('utiage','temoti','hunsyutu','sonota') not null,
-img_path varchar(255) not null,
-registration_date datetime default CURRENT_timestamp,
-FOREIGN KEY(tax_type_id) REFERENCES tax_types(tax_type_id),
-status_on varchar(10) not null default '通常' comment '状態フラグ(1:通常,2:削除)'
+  item_id int not null primary key auto_increment
+  ,item_name varchar(100) not null
+  ,base_price decimal(15,5) not null
+  ,tax_type_id int not null
+  ,stocks int default 0 not null
+  ,sales int default 0 not null
+  ,item_detail text
+  ,category enum('utiage', 'temoti', 'hunsyutu', 'sonota') not null
+  ,img_path varchar(255) not null
+  ,registration_date datetime default CURRENT_timestamp
+  ,is_deleted BOOLEAN NOT NULL DEFAULT FALSE
+  ,FOREIGN KEY(tax_type_id) REFERENCES tax_types(tax_type_id)
 );
 
 CREATE TABLE carts(
@@ -64,7 +64,7 @@ CREATE TABLE orders(
 CREATE TABLE order_details(
   order_id INT NOT NULL
   ,item_id INT NOT NULL
-  ,price DECIMAL(15, 5) NOT NULL
+  ,price DECIMAL(15,5) NOT NULL
   ,quantity INT NOT NULL
   ,FOREIGN KEY(order_id) REFERENCES orders(order_id)
   ,FOREIGN KEY(item_id) REFERENCES items(item_id)
@@ -95,8 +95,8 @@ INSERT INTO shipping_costs(shipping_cost, min_subtotal) VALUE
 ,(0, 3000); -- 3000円以上は送料無料
 
 
-insert into items(item_name,base_price,tax_type_id,stocks,item_detail,category,img_path)
-values('純国産線香花火',98,2,9,'100％日本製の線香花火です。線香花火シリーズの中でも大き目のサイズになります。長い時間楽しみたい方、日本の職人が作った花火を楽しみたいお客様にお勧めの花火となっております。','temoti','./img/big_senkou.jpg')
+insert into items(item_name,base_price,tax_type_id,stocks,item_detail,category,img_path) values
+('純国産線香花火',98,2,9,'100％日本製の線香花火です。線香花火シリーズの中でも大き目のサイズになります。長い時間楽しみたい方、日本の職人が作った花火を楽しみたいお客様にお勧めの花火となっております。','temoti','./img/big_senkou.jpg')
 ,('ロケット花火',78,2,5,'日本製のロケット花火です。ロケット花火シリーズの中で最小サイズになります。大きい花火が苦手な方、面白い花火が好きな方にお勧めの花火となっております。','utiage','./img/rocket.jpg')
 ,('家庭用打上げ花火',586,2,7,'日本製の打上げ花火です。打上げ花火シリーズの中でも珍しい家庭用になります。家で花火を楽しみたい方、雨の日でも花火を楽しみたい方にお勧めとなっております。','utiage','./img/katei_uchiage.jpg')
 ,('キラキラ花束',140,2,10,'多数の星が打ち上がり、上空で弾けます。何色もの星が弧を描いて舞い上がる様子はまるで花束のようです。','utiage','./img/kirakira_hanataba.jpg')

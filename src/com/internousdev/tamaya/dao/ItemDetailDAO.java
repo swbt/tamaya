@@ -18,7 +18,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 public class ItemDetailDAO {
 
 	/**
-	 * 商品詳細をデータベースから取得するメソッド
+	 * 商品詳細をデータベースから取得する
 	 * @author Takahiro Adachi
 	 * @since 1.0
 	 */
