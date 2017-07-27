@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class CartDTO {
 	/** カート内の商品のリスト */
-	private ArrayList<CartItemDTO> cartItemList;
+	private ArrayList<ItemDTO> itemList;
 	/** カート内の商品の総数 */
 	private int totalQuantity;
 	/** カート内の商品の小計 */
@@ -22,7 +22,7 @@ public class CartDTO {
 	private BigDecimal grandTotal = BigDecimal.ZERO;
 
 	private void calcTotal() {
-		for (CartItemDTO cartItem : cartItemList) {
+		for (ItemDTO cartItem : itemList) {
 			totalQuantity += cartItem.getQuantity();
 			subtotal = subtotal.add(cartItem.getTotal());
 			grandTotal = BigDecimal.ZERO;
@@ -33,12 +33,12 @@ public class CartDTO {
 	}
 
 	/** カート内の商品のリストを取得するメソッド */
-	public ArrayList<CartItemDTO> getCartItemList() {
-		return cartItemList;
+	public ArrayList<ItemDTO> getItemList() {
+		return itemList;
 	}
 	/** カート内の商品のリストを格納するメソッド */
-	public void setCartItemList(ArrayList<CartItemDTO> cartItemList) {
-		this.cartItemList = cartItemList;
+	public void setItemList(ArrayList<ItemDTO> itemList) {
+		this.itemList = itemList;
 		calcTotal();
 	}
 	/** カート内の商品の総数を取得するメソッド */

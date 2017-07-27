@@ -10,7 +10,7 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tamaya.dao.CartDAO;
-import com.internousdev.tamaya.dto.CartItemDTO;
+import com.internousdev.tamaya.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -19,9 +19,6 @@ import com.opensymphony.xwork2.ActionSupport;
  *
  */
 public class AddToCartAction extends ActionSupport implements SessionAware {
-
-	/** 生成されたシリアルナンバー */
-	private static final long serialVersionUID = -7416129671577221670L;
 	private String category = "";
 	private int priceRange = 0;
 	/** ユーザーID */
@@ -41,9 +38,9 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 	/** 合計(数) */
 	private int totalAmount;
 	/** カートリスト */
-	private ArrayList<CartItemDTO> cartList = new ArrayList<CartItemDTO>();
+	private ArrayList<ItemDTO> cartList = new ArrayList<ItemDTO>();
 	/** カート検索 */
-	private ArrayList<CartItemDTO> searchCart = new ArrayList<CartItemDTO>();
+	private ArrayList<ItemDTO> searchCart = new ArrayList<ItemDTO>();
 	/** ユーザー情報 */
 	private Map<String, Object> session;
 
@@ -194,7 +191,7 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 	/**
 	 * @return cartList
 	 */
-	public ArrayList<CartItemDTO> getCartList() {
+	public ArrayList<ItemDTO> getCartList() {
 		return cartList;
 	}
 
@@ -202,14 +199,14 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 	 * @param cartList
 	 *            セットする cartList
 	 */
-	public void setCartList(ArrayList<CartItemDTO> cartList) {
+	public void setCartList(ArrayList<ItemDTO> cartList) {
 		this.cartList = cartList;
 	}
 
 	/**
 	 * @return searchCart
 	 */
-	public ArrayList<CartItemDTO> getSearchCart() {
+	public ArrayList<ItemDTO> getSearchCart() {
 		return searchCart;
 	}
 
@@ -217,7 +214,7 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 	 * @param searchCart
 	 *            セットする searchCart
 	 */
-	public void setSearchCart(ArrayList<CartItemDTO> searchCart) {
+	public void setSearchCart(ArrayList<ItemDTO> searchCart) {
 		this.searchCart = searchCart;
 	}
 

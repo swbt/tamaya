@@ -7,13 +7,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.internousdev.tamaya.dto.CartDTO;
-import com.internousdev.tamaya.dto.CartItemDTO;
+import com.internousdev.tamaya.dto.ItemDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 public class CartDAO {
 	public CartDTO getCart(int userId) throws SQLException {
 		CartDTO cart = new CartDTO();
-		ArrayList<CartItemDTO> cartItemList = new ArrayList<CartItemDTO>();
+		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 
 		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
 			String sql1 = ""
@@ -34,24 +34,24 @@ public class CartDAO {
 			ResultSet rs1 = ps1.executeQuery();
 
 			while (rs1.next()) {
-				CartItemDTO cartItem = new CartItemDTO();
-				cartItem.setItemId(rs1.getInt("item_id"));
-				cartItem.setItemName(rs1.getString("item_name"));
-				cartItem.setBasePrice(rs1.getBigDecimal("base_price"));
-				cartItem.setTaxRate(rs1.getBigDecimal("tax_rate"));
-				cartItem.setStocks(rs1.getInt("stocks"));
-				cartItem.setImgPath(rs1.getString("img_path"));
-				cartItem.setQuantity(rs1.getInt("quantity"));
-				cartItem.calc();
-				cartItemList.add(cartItem);
+				ItemDTO item = new ItemDTO();
+				item.setItemId(rs1.getInt("item_id"));
+				item.setItemName(rs1.getString("item_name"));
+				item.setBasePrice(rs1.getBigDecimal("base_price"));
+				item.setTaxRate(rs1.getBigDecimal("tax_rate"));
+				item.setStocks(rs1.getInt("stocks"));
+				item.setImgPath(rs1.getString("img_path"));
+				item.setQuantity(rs1.getInt("quantity"));
+				item.calc();
+				itemList.add(item);
 			}
-			cart.setCartItemList(cartItemList);
+			cart.setItemList(itemList);
 
 			String sql2 = "SELECT MIN(shipping_cost) AS shipping_cost FROM shipping_costs WHERE min_subtotal <= ?";
 			PreparedStatement ps2 = con.prepareStatement(sql2);
 			ps2.setBigDecimal(1, cart.getSubtotal());
 			ResultSet rs2 = ps2.executeQuery();
-			while (rs2.next()) {
+			if (rs2.next()) {
 				cart.setShippingCost(rs2.getBigDecimal("shipping_cost"));
 			}
 		}
@@ -60,9 +60,9 @@ public class CartDAO {
 	}
 
 	public boolean addItem(int userId, int itemId, int orderCount) throws SQLException {
-		String sql = "INSERT INTO carts (user_id, item_id, quantity) VALUES (?, ?, ?) "
-				+ "ON DUPLICATE KEY UPDATE quantity = ?";
 		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
+			String sql = "INSERT INTO carts (user_id, item_id, quantity) VALUES (?, ?, ?) "
+					+ "ON DUPLICATE KEY UPDATE quantity = ?";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, userId);
 			ps.setInt(2, itemId);
