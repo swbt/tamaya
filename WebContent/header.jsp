@@ -18,15 +18,15 @@
 
 </head>
 <body>
-  <div class="div_header">
+  <div class="div_01">
     <img src="./img/tamaya22.png" class="bb">
-    <div class="div_btn_text">
-      <s:form action="LoginAction" class="fm" style="color:white;">
-        <s:textfield name="email" label="email" placeholder="メールアドレス"/>
-        <s:password name="password" label="password" size="20" placeholder="パスワード"/>
+    <div class="div_02">
+      <s:form action="LoginAction" class="sform_01" style="color:white;">
+        <s:textfield name="email" label="email" />
+        <s:password name="password" label="password" size="20" />
         <s:submit value="ログイン" />
       </s:form>
-      <div id="menu">
+      <div id="div_03">
         <ul>
           <li><a href="toiawase.jsp">お問い合わせ</a></li>
           <li><a href="<s:url action="GoTopAction" />">トップ</a></li>
