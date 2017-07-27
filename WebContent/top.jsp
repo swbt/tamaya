@@ -21,8 +21,13 @@
 <link href="css/top.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/style.css">
 <script src="slick.min.js"></script>
-<!-- Javascripts
-    ================================================== -->
+
+<!--マウスカーソルからティンカーベルみたいなきらきらが降り注ぐ♪ ver130719
+http://customtemplate.blog112.fc2.com/blog-entry-145.html-->
+<script type="text/javascript" src="http://blog-imgs-60.fc2.com/c/u/s/customtemplate/130719tinkerbell-min.js"></script>
+
+
+<!-- Javascripts================================================== -->
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </head>
