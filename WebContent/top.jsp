@@ -40,9 +40,12 @@
   <!-- ▼▼モーダル画面のjspファイルを読み込む -->
   <s:include value="modal.jsp" />
 
+
   <div class="main_img"></div>
   <div class="main1">
-    <h2><font color="white"><s:text name="lang.top.main1_h2" /></font></h2>
+    <h2>
+      <font color="white"><s:text name="lang.top.main1_h2" /></font>
+    </h2>
     <div class="main-category1">
       <table>
         <tr>
@@ -50,7 +53,7 @@
             <div class="main-category-list1">
               <s:form action="GoItemListAction">
                 <s:hidden name="priceRange" value="1" />
-                <s:submit class="button" value="499" />
+                <s:submit class="button" value="%{getText('lang.top.priceRange1')}" />
               </s:form>
             </div>
           </td>
@@ -58,7 +61,7 @@
             <div class="main-category-list2">
               <s:form action="GoItemListAction">
                 <s:hidden name="priceRange" value="2" />
-                <s:submit class="button" value="500～999円" />
+                <s:submit class="button" value="%{getText('lang.top.priceRange2')}" />
               </s:form>
             </div>
           </td>
@@ -66,7 +69,7 @@
             <div class="main-category-list3">
               <s:form action="GoItemListAction">
                 <s:hidden name="priceRange" value="3" />
-                <s:submit class="button" value="1000円～4999円" />
+                <s:submit class="button" value="%{getText('lang.top.priceRange3')}" />
               </s:form>
             </div>
           </td>
@@ -74,7 +77,7 @@
             <div class="main-category-list4">
               <s:form action="GoItemListAction">
                 <s:hidden name="priceRange" value="4" />
-                <s:submit class="button" value="5000円以上" />
+                <s:submit class="button" value="%{getText('lang.top.priceRange4')}" />
               </s:form>
             </div>
           </td>
@@ -91,34 +94,28 @@
             <div class="main-subcategory-list1">
               <s:form action="GoItemListAction">
                 <s:hidden name="category" value="temoti" />
-                <s:submit class="button" value="手持ち花火" />
+                <s:submit class="button" value="%{getText('lang.top.categoryTemoti')}" />
               </s:form>
             </div>
           </td>
-          <td>
-            <div class="main-subcategory-list2">
+          <td><div class="main-subcategory-list2">
               <s:form action="GoItemListAction">
                 <s:hidden name="category" value="hunsyutu" />
-                <s:submit class="button" value="噴出花火" />
+                <s:submit class="button" value="%{getText('lang.top.categoryHunsyutu')}" />
               </s:form>
-            </div>
-          </td>
-          <td>
-            <div class="main-subcategory-list3">
+            </div></td>
+          <td><div class="main-subcategory-list3">
               <s:form action="GoItemListAction">
                 <s:hidden name="category" value="utiage" />
-                <s:submit class="button" value="打上げ花火" />
+                <s:submit class="button" value="%{getText('lang.top.categoryUtiage')}" />
               </s:form>
-            </div>
-          </td>
-          <td>
-            <div class="main-subcategory-list4">
+            </div></td>
+          <td><div class="main-subcategory-list4">
               <s:form action="GoItemListAction">
                 <s:hidden name="category" value="sonota" />
-                <s:submit class="button" value="その他花火" />
+                <s:submit class="button" value="%{getText('lang.top.categorySonota')}" />
               </s:form>
-            </div>
-          </td>
+            </div></td>
         </tr>
       </table>
     </div>
@@ -126,29 +123,34 @@
 
   <div class="main3">
     <div class="title-ranking">
-      <h2><font color="white"><s:text name="lang.top.title-ranking" /></font></h2>
+      <h2>
+        <font color="white"><s:text name="lang.top.rankingTitle" /></font>
+      </h2>
     </div>
     <table>
       <tr>
         <td>
           <div class="ranking-main">
-            <h3 style="color: red;"><s:text name="lang.top.first-place" /></h3>
-            <br>
-            <a href="GoItemListAction"><img src="img/megaton_bag.jpg" width=150 alt="画像の説明文"></a>
-          </div></td>
+            <h3 style="color: red;">
+              <s:text name="lang.top.firstPlace" />
+            </h3>
+            <br> <a href="GoItemListAction"><img src="img/megaton_bag.jpg" width=150 alt="画像の説明文"></a>
+          </div>
+        </td>
         <td>
           <div class="ranking-secondary">
-            <h3 style="color: red;"><s:text name="lang.top.second-place" /></h3>
-            <br>
-            <a href="GoItemListAction"><img src="img/yamato_damashi.jpg" width=150 alt="画像の説明文"></a>
+            <h3 style="color: red;">
+              <s:text name="lang.top.secondPlace" />
+            </h3>
+            <br> <a href="GoItemListAction"><img src="img/yamato_damashi.jpg" width=150 alt="画像の説明文"></a>
           </div>
         </td>
         <td><div class="ranking-tertiary">
-            <h3 style="color: red;"><s:text name="lang.top.third-place" /></h3>
-            <br>
-            <a href="GoItemListAction"><img src="img/powerful_sanhenge.jpg" width=150 alt="画像の説明文"></a>
-          </div>
-        </td>
+            <h3 style="color: red;">
+              <s:text name="lang.top.thirdPlace" />
+            </h3>
+            <br> <a href="GoItemListAction"><img src="img/powerful_sanhenge.jpg" width=150 alt="画像の説明文"></a>
+          </div></td>
       </tr>
     </table>
   </div>
