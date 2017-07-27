@@ -22,8 +22,8 @@
     <img src="./img/tamaya22.png" class="bb">
     <div class="div_btn_text">
       <s:form action="LoginAction" class="fm" style="color:white;">
-        <s:textfield name="email" label="email" />
-        <s:password name="password" label="password" size="20" />
+        <s:textfield name="email" label="email" placeholder="メールアドレス"/>
+        <s:password name="password" label="password" size="20" placeholder="パスワード"/>
         <s:submit value="ログイン" />
       </s:form>
       <div id="menu">
