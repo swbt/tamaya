@@ -19,10 +19,11 @@
 
 
  <meta http-equiv="refresh" content="2;URL=./top.jsp">
-</HEAD>
-<BODY>
+</head>
+<body>
 <h1>お問い合わせ完了致しました。</h1>
-５秒後にジャンプします。<br>
+<br>
+<p>５秒後にTOPへ移動します。</p>
 
-</BODY>
-</HTML>
+</body>
+</html>
