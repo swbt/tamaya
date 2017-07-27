@@ -31,7 +31,8 @@ item_detail text,
 category enum('utiage','temoti','hunsyutu','sonota') not null,
 img_path varchar(255) not null,
 registration_date datetime default CURRENT_timestamp,
-FOREIGN KEY(tax_type_id) REFERENCES tax_types(tax_type_id)
+FOREIGN KEY(tax_type_id) REFERENCES tax_types(tax_type_id),
+status_flg varchar(10) not null default '通常' comment '状態フラグ(1:通常,2:削除)'
 );
 
 create table carts(
