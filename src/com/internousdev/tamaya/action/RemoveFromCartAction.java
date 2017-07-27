@@ -29,12 +29,7 @@ public class RemoveFromCartAction extends ActionSupport implements SessionAware 
 	 * @since 1.0
 	 */
 	public String execute() throws SQLException {
-		if (session.containsKey("userId")) {
-			userId = (int) session.get("userId");
-		}
-		if (userId == 0) {
-			return LOGIN;
-		}
+		userId = (int) session.get("userId");
 
 		CartDAO dao = new CartDAO();
 		if (!dao.removeItem(userId, itemId)) {

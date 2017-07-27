@@ -41,6 +41,30 @@
       <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
     </result-types>
 
+    <interceptors>
+      <interceptor name="locale" class="com.internousdev.tamaya.interceptor.LocaleInterceptor" /> <!-- ▲ -->
+      <!-- LocaleInterceptorとStruts標準のdefaultStackを足し合わせたinterceptor群を新たに「tamayaStack」と定義 -->
+      <interceptor-stack name="tamayaStack">            <!-- ★ -->
+        <interceptor-ref name="locale" />                                                         <!-- ▲ -->
+        <interceptor-ref name="defaultStack" />
+      </interceptor-stack>
+
+      <interceptor name="login" class="com.internousdev.tamaya.interceptor.LoginInterceptor" >
+        <param name="userId"></param>
+      </interceptor>
+      <interceptor-stack name="loginStack">
+        <interceptor-ref name="login" />
+        <interceptor-ref name="tamayaStack" />          <!-- ★ -->
+      </interceptor-stack>
+    </interceptors>
+
+    <!-- デフォルトのinterceptorを、tamayaStackに設定 -->
+    <default-interceptor-ref name="tamayaStack" />      <!-- ★ -->
+
+    <global-results>
+      <result name="login">login.jsp</result>
+    </global-results>
+
     <action name="TestAction" class="com.internousdev.tamaya.action.TestAction" method="execute">
       <result type="json">
         <param name="root">hash</param>
@@ -62,9 +86,8 @@
     </action>
 
     <action name="GoItemListAction" class="com.internousdev.tamaya.action.GoItemListAction" method="execute">
-      <result name="item_list">item_list.jsp</result>
-      <result name="top" type="redirect">GoTopAction</result>
-      <result name="error" type="redirect">GoTopAction</result>
+      <result name="success">item_list.jsp</result>
+      <result name="error">item_list.jsp</result>
     </action>
 
     <action name="GoItemDetailAction" class="com.internousdev.tamaya.action.GoItemDetailAction" method="execute">
@@ -74,6 +97,7 @@
 
     <!-- カート画面への遷移 -->
     <action name="GoCartAction" class="com.internousdev.tamaya.action.GoCartAction" method="execute">
+      <interceptor-ref name="loginStack" />
       <result name="success">cart.jsp</result>
       <result name="error">cart.jsp</result>
     </action>
@@ -81,6 +105,7 @@
 
     <!-- カートに追加する処理 -->
     <action name="AddToCartAction" class="com.internousdev.tamaya.action.AddToCartAction" method="execute">
+      <interceptor-ref name="loginStack" />
       <result name="success" type="chain">GoItemListAction</result>
       <result name="error">item_list.jsp</result>
       <result name="login">login.jsp</result>
@@ -88,12 +113,14 @@
 
     <!-- カート内のアイテムを削除する -->
     <action name="RemoveFromCartAction" class="com.internousdev.tamaya.action.RemoveFromCartAction" method="execute">
+    <interceptor-ref name="loginStack" />
       <result name="success" type="redirectAction">GoCartAction</result>
       <result name="error" type="redirectAction">GoCartAction</result>
     </action>
 
     <!-- カートを更新する処理 -->
     <action name="UpdateCartAction" class="com.internousdev.tamaya.action.UpdateCartAction" method="execute">
+      <interceptor-ref name="loginStack" />
       <result name="success" type="chain">GoCartAction</result>
       <result name="error" type="redirectAction">GoTopAction</result>
       <result name="remove" type="redirectAction">

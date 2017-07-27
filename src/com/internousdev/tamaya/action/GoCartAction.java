@@ -25,15 +25,7 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 
 	@Override
 	public String execute() throws SQLException {
-		if (!session.containsKey("userId")) {
-			System.out.println("GoCartAction : LOGIN");
-			return LOGIN;
-		}
 		userId = (int) session.get("userId");
-		if (userId == 0) {
-			System.out.println("GoCartAction : LOGIN");
-			return LOGIN;
-		}
 		System.out.println("GoCartAction : userId = " + userId);
 
 		try {
@@ -43,7 +35,7 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 			addActionError("カートの読み込み中にエラーが発生しました");
 			return ERROR;
 		}
-		System.out.println("GoCartAction : totalQuantity = " + cart.getTotalQuantity() + ", totalFee = " + cart.getGrandTotal());
+		System.out.println("GoCartAction : totalQuantity = " + cart.getTotalQuantity() + ", GrandTotal = " + cart.getGrandTotal());
 		System.out.println("GoCartAction : SUCCESS");
 		return SUCCESS;
 	}

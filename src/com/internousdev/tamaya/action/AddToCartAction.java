@@ -29,12 +29,7 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 
 	@Override
 	public String execute() {
-		if (session.containsKey("userId")) {
-			userId = (int)session.get("userId");
-		}
-		if (userId == 0) {
-			return LOGIN;
-		}
+		userId = (int)session.get("userId");
 		System.out.println("AddToCartAction : userId = " + userId + ", itemId = " + itemId + ", quantity = " + quantity);
 		CartDAO dao = new CartDAO();
 		if (dao.addItem(userId, itemId, quantity)) {

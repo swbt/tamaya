@@ -19,16 +19,13 @@ import com.opensymphony.xwork2.ActionSupport;
  * @version 1.0
  */
 public class GoItemListAction extends ActionSupport implements SessionAware {
-	private String transition = "";
 	private String category = "";
 	private int priceRange = 0;
-	private int quantity = 0;
 	private ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 	private Map<String, Object> session;
 
 	@Override
 	public String execute(){
-		String ret = ERROR;
 		System.out.println("GoItemListAction : category = " + category + ", priceRange = " + priceRange);
 		ItemListDAO dao = new ItemListDAO();
 
@@ -41,18 +38,12 @@ public class GoItemListAction extends ActionSupport implements SessionAware {
 		}
 
 		if(itemList.size() <= 0){
-			return ret;
+			addActionError("商品がありません");
+			return ERROR;
 		}
-		ret = "item_list";
-		return ret;
+		return SUCCESS;
 	}
 
-	public String getTransition() {
-		return transition;
-	}
-	public void setTransition(String transition) {
-		this.transition = transition;
-	}
 	public String getCategory() {
 		return category;
 	}
@@ -65,14 +56,6 @@ public class GoItemListAction extends ActionSupport implements SessionAware {
 	public void setPriceRange(int priceRange) {
 		this.priceRange = priceRange;
 	}
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-
 	public ArrayList<ItemDTO> getItemList() {
 		return itemList;
 	}
