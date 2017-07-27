@@ -16,7 +16,7 @@ public class ContactDAO {
 
 
 
-	public boolean mongoInsert(String userName, String email, String comment, String postalCode) throws UnknownHostException {
+	public boolean mongoInsert(String userName, String email, String comment, Integer postalCode) throws UnknownHostException {
 		boolean result = false;
 
 		/* 管理者が日本人であることを想定しているため、

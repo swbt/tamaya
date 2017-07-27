@@ -28,7 +28,7 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware{
 	private String userName="";		//問い合わせ者名
 	private String email="";			//メールアドレス
 	private String comment="";			//問い合わせ内容
-	private String postalCode;		//電話番号
+	private Integer postalCode;		//電話番号
 	private Map<String,Object> session;
 
 
@@ -88,10 +88,10 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware{
 		this.email = email;
 	}
 
-	public String getPostalCode() {
+	public Integer getPostalCode() {
 		return postalCode;
 	}
-	public void setPostalCode(String postalCode) {
+	public void setPostalCode(Integer postalCode) {
 		this.postalCode = postalCode;
 	}
 

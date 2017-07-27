@@ -21,7 +21,7 @@ public class ContactAction extends ActionSupport implements SessionAware{
 	private String email;			//メールアドレス
 	private String comment;			//問い合わせ内容
 
-	private String postalCode;		//電話番号
+	private Integer postalCode;		//電話番号
 
 	private Map<String,Object> session;
 	/**
@@ -36,7 +36,7 @@ public class ContactAction extends ActionSupport implements SessionAware{
 			comment = (String)session.get("comment");
 			email =(String)session.get("email");
 
-			postalCode = (String)session.get("postalCode");
+			postalCode = (Integer)session.get("postalCode");
 
 			if(dao.mongoInsert(userName, email, comment,  postalCode)){
 
@@ -73,10 +73,10 @@ public class ContactAction extends ActionSupport implements SessionAware{
 		this.comment = comment;
 	}
 
-	public String getPostalCode() {
+	public Integer getPostalCode() {
 		return postalCode;
 	}
-	public void setPhoneNumber(String postalCode) {
+	public void setPhoneNumber(Integer postalCode) {
 		this.postalCode = postalCode;
 	}
 	@Override
