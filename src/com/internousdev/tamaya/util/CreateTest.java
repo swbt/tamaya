@@ -6,7 +6,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-
+/**
+ * JUnit用のTestメソッドの雛形を手抜きで作るためのクラス
+ * C:\Users\internousdev\Desktop\test.txt に出力する
+ * @author Takahiro Adachi
+ *
+ */
 public class CreateTest {
 	public static void main(String[] args) {
 		ArrayList<Var> varList = new ArrayList<>();

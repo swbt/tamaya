@@ -66,7 +66,7 @@
         </thead>
 
         <tbody>
-          <s:iterator value="cart">
+          <s:iterator value="cart.cartItemList">
             <!-- デザインが崩れてしまうため保留 -->
             <tr>
               <td><img class="shohin" src="<s:property value="imgPath"/>" width="200" height="180" align="center"></td>
@@ -82,7 +82,7 @@
 
 
 
-              <td align="center">￥ <s:property value="subtotal" />(税込)
+              <td align="center">￥ <s:property value="total" />（税込）
               </td>
               <td align="center"><s:form action="CartDeleteAction">
                   <s:hidden name="userId" value="%{userId}" />
@@ -97,14 +97,14 @@
         <tfoot>
           <tr>
             <td class="souryo" colspan="2">送料（国内）</td>
-            <td align="center" colspan="4">無料</td>
+            <td align="center" colspan="4">￥ <s:property value="cart.totalQuantity" />（税込）</td>
           </tr>
 
           <tr>
             <td class="gokei" colspan="2">合計(個数)（税込）</td>
-            <td align="center"><s:property value="totalQuantity" />個</td>
+            <td align="center"><s:property value="cart.totalQuantity" />個</td>
 
-            <td align="center" colspan="3">￥<s:property value="totalFee" />(税込)
+            <td align="center" colspan="3">￥ <s:property value="cart.grandTotal" />（税込）
             </td>
           </tr>
         </tfoot>

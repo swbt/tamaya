@@ -8,7 +8,6 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tamaya.dao.LogoutDAO;
-import com.internousdev.tamaya.dto.UserDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -23,7 +22,6 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 	public String execute(){
 		String result = ERROR;
 		LogoutDAO dao = new LogoutDAO();
-		UserDTO dto = new UserDTO();
 
 		if(!session.containsKey("userId")){
 			session.clear();
@@ -32,9 +30,8 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 		}
 		int userId = (int)session.get("userId");
 
-		dao.update(userId);
-		System.out.println(dto.getLoginFlg());
-		if(!dto.getLoginFlg()){
+
+		if(dao.update(userId)){
 			session.clear();
 			result = SUCCESS;
 		}

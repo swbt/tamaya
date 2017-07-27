@@ -3,261 +3,105 @@
  */
 package com.internousdev.tamaya.action;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tamaya.dao.CartDAO;
-import com.internousdev.tamaya.dto.CartDTO;
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * @author internousdev
- *
+ * カートに商品を追加する
+ * @author Takahiro Adachi
+ * @since 1.0
  */
 public class AddToCartAction extends ActionSupport implements SessionAware {
-
-	/** 生成されたシリアルナンバー */
-	private static final long serialVersionUID = -7416129671577221670L;
 	private String category = "";
 	private int priceRange = 0;
 	/** ユーザーID */
 	private int userId;
-	/** アイテムID */
+	/** 商品ID */
 	private int itemId;
-	/** アイテムネーム */
-	private String itemName;
-	/** イメージ１ */
-	private String image1;
-	/** オーダーカウント */
-	private int orderCount;
-	/** プライス */
-	private float price;
-	/** 購入番号 */
-	private int numberPurchased;
-	/** 合計(数) */
-	private int totalAmount;
-	/** カートリスト */
-	private ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
-	/** カート検索 */
-	private ArrayList<CartDTO> searchCart = new ArrayList<CartDTO>();
-	/** ユーザー情報 */
+	/** カートに入れる数量 */
+	private int quantity;
+	/** セッション */
 	private Map<String, Object> session;
 
+	@Override
 	public String execute() {
-		String result = ERROR;
-		ActionContext.getContext();
-		System.out.println(ActionContext.getContext().getName());
-		if (session.get("userId") != null) {
-			int userId = (int) session.get("userId");
-			System.out.println("AddToCartAction : userId = " + userId + ", itemId = " + itemId + ", orderCount = " + orderCount);
-			CartDAO dao = new CartDAO();
-			try {
-				if (dao.addItem(userId, itemId, orderCount)) {
-					result = SUCCESS;
-				}
-			} catch (SQLException e) {
-				// TODO 自動生成された catch ブロック
-				e.printStackTrace();
-			}
-		} else {
-			result = LOGIN;
+		if (session.containsKey("userId")) {
+			userId = (int)session.get("userId");
 		}
-
-
-		return result;
+		if (userId == 0) {
+			return LOGIN;
+		}
+		System.out.println("AddToCartAction : userId = " + userId + ", itemId = " + itemId + ", quantity = " + quantity);
+		CartDAO dao = new CartDAO();
+		if (dao.addItem(userId, itemId, quantity)) {
+			return SUCCESS;
+		}
+		return ERROR;
 	}
 
-	/**
-	 * @return userId
-	 */
-	public int getUserId() {
-		return userId;
-	}
 
-	/**
-	 * @param userId
-	 *            セットする userId
-	 */
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
-	/**
-	 * @return itemId
-	 */
-	public int getItemId() {
-		return itemId;
-	}
-
-	/**
-	 * @param itemId
-	 *            セットする itemId
-	 */
-	public void setItemId(int itemId) {
-		this.itemId = itemId;
-	}
-
-	/**
-	 * @return itemName
-	 */
-	public String getItemName() {
-		return itemName;
-	}
-
-	/**
-	 * @param itemName
-	 *            セットする itemName
-	 */
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
-	}
-
-	/**
-	 * @return image1
-	 */
-	public String getImage1() {
-		return image1;
-	}
-
-	/**
-	 * @param image1
-	 *            セットする image1
-	 */
-	public void setImage1(String image1) {
-		this.image1 = image1;
-	}
-
-	/**
-	 * @return orderCount
-	 */
-	public int getOrderCount() {
-		return orderCount;
-	}
-
-	/**
-	 * @param orderCount
-	 *            セットする orderCount
-	 */
-	public void setOrderCount(int orderCount) {
-		this.orderCount = orderCount;
-	}
-
-	/**
-	 * @return price
-	 */
-	public float getPrice() {
-		return price;
-	}
-
-	/**
-	 * @param price
-	 *            セットする price
-	 */
-	public void setPrice(float price) {
-		this.price = price;
-	}
-
-	/**
-	 * @return numberPurchased
-	 */
-	public int getNumberPurchased() {
-		return numberPurchased;
-	}
-
-	/**
-	 * @param numberPurchased
-	 *            セットする numberPurchased
-	 */
-	public void setNumberPurchased(int numberPurchased) {
-		this.numberPurchased = numberPurchased;
-	}
-
-	/**
-	 * @return totalAmount
-	 */
-	public int getTotalAmount() {
-		return totalAmount;
-	}
-
-	/**
-	 * @param totalAmount
-	 *            セットする totalAmount
-	 */
-	public void setTotalAmount(int totalAmount) {
-		this.totalAmount = totalAmount;
-	}
-
-	/**
-	 * @return cartList
-	 */
-	public ArrayList<CartDTO> getCartList() {
-		return cartList;
-	}
-
-	/**
-	 * @param cartList
-	 *            セットする cartList
-	 */
-	public void setCartList(ArrayList<CartDTO> cartList) {
-		this.cartList = cartList;
-	}
-
-	/**
-	 * @return searchCart
-	 */
-	public ArrayList<CartDTO> getSearchCart() {
-		return searchCart;
-	}
-
-	/**
-	 * @param searchCart
-	 *            セットする searchCart
-	 */
-	public void setSearchCart(ArrayList<CartDTO> searchCart) {
-		this.searchCart = searchCart;
-	}
-
-	/**
-	 * @return session
-	 */
-	public Map<String, Object> getSession() {
-		return session;
-	}
-
-	/**
-	 * @param session
-	 *            セットする session
-	 */
-	public void setSession(Map<String, Object> session) {
-		this.session = session;
-	}
-
-	/**
-	 * @return serialversionuid
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
+	/** categoryを取得するメソッド */
 	public String getCategory() {
 		return category;
 	}
 
+	/** categoryを格納するメソッド */
 	public void setCategory(String category) {
 		this.category = category;
 	}
 
+	/** priceRangeを取得するメソッド */
 	public int getPriceRange() {
 		return priceRange;
 	}
 
+	/** priceRangeを格納するメソッド */
 	public void setPriceRange(int priceRange) {
 		this.priceRange = priceRange;
-
 	}
 
+	/** userIdを取得するメソッド */
+	public int getUserId() {
+		return userId;
+	}
+
+	/** userIdを格納するメソッド */
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	/** itemIdを取得するメソッド */
+	public int getItemId() {
+		return itemId;
+	}
+
+	/** itemIdを格納するメソッド */
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
+	}
+
+	/** quantityを取得するメソッド */
+	public int getQuantity() {
+		return quantity;
+	}
+
+	/** quantityを格納するメソッド */
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	/** sessionを取得するメソッド */
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	/** sessionを格納するメソッド */
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
 }

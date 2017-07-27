@@ -135,9 +135,10 @@
   </div>
 
   <div>
-    <a href="./siharai_kanryo.jsp"> <s:form action="FinalizePurchaseOrderAction"></s:form> <img
-      src="img/chumon_kanryo.png" alt="注文確定" align="right">
-    </a>
+    <s:form action="ConfirmOrderAction">
+      <s:token />
+      <s:submit type="image" src="img/chumon_kanryo.png" value="注文確定"/>
+    </s:form>
   </div>
 </body>
 </html>

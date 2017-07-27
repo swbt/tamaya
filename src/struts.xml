@@ -72,14 +72,7 @@
       <result name="error">index.jsp</result>
     </action>
 
-    <!-- 選択・入力されたクレジットカード情報が正しいか検証する -->
-    <action name="VerifyCreditCardAction" class="com.internousdev.tamaya.action.VerifyCreditCardAction" method="execute">
-      <result name="success">siharai_kakunin.jsp</result>
-      <result name="error">siharai.jsp</result>
-      <result name="login" type="redirect">GoTopAction</result>
-    </action>
-
-    <!-- ログイン後のヘッダーからカート画面への遷移 -->
+    <!-- カート画面への遷移 -->
     <action name="GoCartAction" class="com.internousdev.tamaya.action.GoCartAction" method="execute">
       <result name="success">cart.jsp</result>
       <result name="error">cart.jsp</result>
@@ -93,12 +86,11 @@
       <result name="login">login.jsp</result>
     </action>
 
-    <!-- カートから削除する処理 -->
-    <action name="CartDeleteAction" class="com.internousdev.tamaya.action.CartDeleteAction" method="execute">
-      <result name="success">cart.jsp</result>
-      <result name="error" type="redirectAction">GoTopAction</result>
+    <!-- カート内のアイテムを削除する -->
+    <action name="RemoveFromCartAction" class="com.internousdev.tamaya.action.RemoveFromCartAction" method="execute">
+      <result name="success" type="redirectAction">GoCartAction</result>
+      <result name="error" type="redirectAction">GoCartAction</result>
     </action>
-
 
     <!-- カートを更新する処理 -->
     <action name="UpdateCartAction" class="com.internousdev.tamaya.action.UpdateCartAction" method="execute">
@@ -110,6 +102,19 @@
       </result>
     </action>
 
+    <!-- 選択・入力されたクレジットカード情報が正しいか検証する -->
+    <action name="VerifyCreditCardAction" class="com.internousdev.tamaya.action.VerifyCreditCardAction" method="execute">
+      <result name="success">siharai_kakunin.jsp</result>
+      <result name="error">siharai.jsp</result>
+      <result name="login" type="redirect">GoTopAction</result>
+    </action>
+
+    <!-- クレジット決済をし、注文を確定する -->
+    <action name="ConfirmOrderAction" class="com.internousdev.tamaya.action.ConfirmOrderAction" method="execute">
+      <result name="success">siharai_kanryo.jsp</result>
+      <result name="error">siharai.jsp</result>
+      <result name="login" type="redirect">GoTopAction</result>
+    </action>
 
     <!-- マイページを表示する処理 -->
     <action name="GoMyPageAction" class="com.internousdev.tamaya.action.GoMyPageAction" method="execute">

@@ -1,9 +1,10 @@
-set names utf8;
-set foreign_key_checks=0;
-drop database if exists tamaya;
-create database tamaya;
+SET names utf8;
+SET foreign_key_checks = 0;
+DROP DATABASE IF EXISTS tamaya;
+SET foreign_key_checks = 1;
+CREATE DATABASE tamaya;
 
-use tamaya;
+USE tamaya;
 
 CREATE TABLE tax_types( -- 課税区分
   tax_type_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT -- 課税区分ID
@@ -35,9 +36,9 @@ FOREIGN KEY(tax_type_id) REFERENCES tax_types(tax_type_id),
 status_flg varchar(10) not null default '通常' comment '状態フラグ(1:通常,2:削除)'
 );
 
-create table carts(
-  user_id INT NOT NULL
-  ,item_id INT NOT NULL
+CREATE TABLE carts(
+  user_id INT
+  ,item_id INT
   ,quantity INT NOT NULL
   ,PRIMARY KEY(user_id, item_id)
   ,FOREIGN KEY(user_id) REFERENCES openconnect.users(user_id) ON DELETE CASCADE
@@ -46,14 +47,14 @@ create table carts(
 
 CREATE TABLE shipping_costs( -- 送料
   shipping_cost DECIMAL(15,5) NOT NULL
-  ,min_grand_total DECIMAL(15,5) NOT NULL -- その送料になる最低額
+  ,min_subtotal DECIMAL(15,5) NOT NULL -- その送料になる最低額
 );
 
 CREATE TABLE orders(
   order_id INT PRIMARY KEY AUTO_INCREMENT
   ,user_id INT NOT NULL
   ,shipping_cost DECIMAL(15,5) NOT NULL -- 送料
-  ,grand_total DECIMAL(15,5) NOT NULL -- 総計
+  ,grand_total DECIMAL(15,5) NOT NULL -- 総額
   ,is_canceled BOOLEAN NOT NULL DEFAULT FALSE -- キャンセルされたか
   ,order_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP -- 注文日時
   ,FOREIGN KEY(user_id) REFERENCES openconnect.users(user_id) ON DELETE CASCADE
@@ -71,13 +72,13 @@ CREATE TABLE order_details(
 );
 
 CREATE TABLE credit_cards(
-  user_id INT NOT NULL
+  user_id INT PRIMARY KEY
   ,credit_brand INT NOT NULL -- クレジットの種類(1:visa, 2:mastercard, 3:americanexpress)
   ,credit_number VARCHAR(16) NOT NULL -- クレジット番号
   ,name_e VARCHAR(50) NOT NULL -- クレジット名義
   ,security_code VARCHAR(4) NOT NULL -- セキュリティコード
-  ,expiration_month VARCHAR(2) NOT NULL -- 有効期限（年）
-  ,expiration_year varchar(4) NOT NULL -- 有効期限（月）
+  ,expiration_year INT(4) NOT NULL -- 有効期限（年）
+  ,expiration_month INT(2) NOT NULL -- 有効期限（月）
   ,FOREIGN KEY(user_id) REFERENCES openconnect.users(user_id) ON DELETE CASCADE
 );
 
@@ -89,7 +90,7 @@ INSERT INTO taxs(tax_type_id, tax_rate, begin_on, end_on) VALUES
 (1, 0, '2000-01-01', DEFAULT(end_on))
 ,(2, 0.08, '2014-04-01', DEFAULT(end_on));
 
-INSERT INTO shipping_costs(shipping_cost, min_grand_total) VALUE
+INSERT INTO shipping_costs(shipping_cost, min_subtotal) VALUE
 (700, 0)
 ,(0, 3000); -- 3000円以上は送料無料
 
