@@ -69,7 +69,7 @@
           <s:iterator value="cart.cartItemList">
             <!-- デザインが崩れてしまうため保留 -->
             <tr>
-              <td><img class="shohin" src="<s:property value="imgPath"/>" width="200" height="180" align="center"></td>
+              <td><img class="img_item" src="<s:property value="imgPath"/>" width="200" height="180" align="center"></td>
               <td><s:property value="itemName" /></td>
               <td align="center">￥<fmt:formatNumber value="${price}" />（税込）
               </td>
@@ -96,12 +96,12 @@
 
         <tfoot>
           <tr>
-            <td class="souryo" colspan="2">送料（国内）</td>
+            <td class="td_postage" colspan="2">送料（国内）</td>
             <td align="center" colspan="4">￥ <s:property value="cart.totalQuantity" />（税込）</td>
           </tr>
 
           <tr>
-            <td class="gokei" colspan="2">合計(個数)（税込）</td>
+            <td class="td_total" colspan="2">合計(個数)（税込）</td>
             <td align="center"><s:property value="cart.totalQuantity" />個</td>
 
             <td align="center" colspan="3">￥ <s:property value="cart.grandTotal" />（税込）
