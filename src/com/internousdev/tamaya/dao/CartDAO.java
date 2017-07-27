@@ -59,7 +59,7 @@ public class CartDAO {
 		return cart;
 	}
 
-	public boolean addItem(int userId, int itemId, int orderCount) throws SQLException {
+	public boolean addItem(int userId, int itemId, int orderCount) {
 		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
 			String sql = "INSERT INTO carts (user_id, item_id, quantity) VALUES (?, ?, ?) "
 					+ "ON DUPLICATE KEY UPDATE quantity = ?";
@@ -73,7 +73,6 @@ public class CartDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw e;
 		}
 		return false;
 	}
