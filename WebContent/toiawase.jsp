@@ -17,7 +17,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <title><s:text name = "lang.toiawase.inquiry" /></title>
+  <title><s:text name = "lang.tokusyu.title" /></title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="text/javascript">js/toiawase.js</script>
@@ -27,7 +27,7 @@
  <body>
  <img src="./img/tamaya22.png" class="bb">
   <div style="text-align : center">
- <h1>お問い合わせフォーム</h1>
+ <h1><s:text name="lang.toiawase.h1" /></h1>
   </div>
   <br>
   <br>
@@ -38,33 +38,32 @@
  <s:form method="post" action="ContactConfirmAction" class="autoConfirm">
 
 	<div class="row">
-    	<div class="col-sm-2">お名前</div>
+    	<div class="col-sm-2"><s:text name="lang.toiawase.name" /></div>
     	<div class="col-sm-10 form-inline" style="padding: 3px;">
         <input type="text" name="userName" class="form-control" required="required" size="24" maxlength="30" value = "<s:property value='#session.userName' />"placeholder="お名前">
     </div>
 	</div>
     <div class="row">
-        <div class="col-sm-2">電話番号</div>
+        <div class="col-sm-2"><s:text name="lang.toiawase.phone" /></div>
         <div class="col-sm-10 form-inline" style="padding: 3px;">
         <input type="tel" class="form-control input-sm" name="postalCode" required="required" maxlength="30"  value = "<s:property value='#session.postalCode' />"placeholder="電話番号" size="30">
     </div>
     </div>
     <div class="row">
-    	<div class="col-sm-2">Email</div>
+    	<div class="col-sm-2"><s:text name="lang.toiawase.Email" /></div>
         <div class="col-sm-10 form-inline" style="padding: 3px;">
         <input type="email" class="form-control input-sm" name="email" required="required" maxlength="30" value = "<s:property value='#session.email' />"placeholder="email" size="30">
         </div>
     </div>
     <div class="row">
-    	<div class="col-sm-2">問い合わせ内容</div>
-        <div class="col-sm-10 form-inline" style="padding: 3px;">
-        <textarea class="form-control  input-sm" rows="5" name="comment" required="required"  maxlength="500" cols="45" placeholder="お問い合わせ内容"><s:property value='#session.comment' /></textarea>
+    	<div class="col-sm-2"><s:text name="lang.toiawase.form" /></div>
+        <div class="col-sm-10" style="padding: 3px;">
+        <textarea class="form-control  input-sm" rows="5" name="comment" required="required"  maxlength="500" placeholder="お問い合わせ内容"><s:property value='#session.comment' /></textarea>
         <br>
         <br>
- 		<input id="submit_button" class="btn btn-default" type="submit" style="text-align : center" value="送信内容確認">
+ 		<input id="submit_button" class="btn btn-default" type="submit" value="送信内容確認">
         </div>
 	</div>
-
 </s:form>
  </div>
  </div>
@@ -72,7 +71,7 @@
  <br>
  <br>
  <div style="text-align : center">
-<div class="button2"><a href="top.jsp">トップ画面へ</a></div>
+<div class="button2"><a href="top.jsp"><s:text name="lang.toiawase.top" /></a></div>
 </div>
 </body>
 
