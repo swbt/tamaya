@@ -23,7 +23,7 @@
     <div class="example">
       <s:form action="LoginAction" class="fm" style="color:white;">
         <s:textfield name="email" label="email" />
-        <s:password name="userPass" label="password" size="20" />
+        <s:password name="password" label="password" size="20" />
         <s:submit value="ログイン" />
       </s:form>
       <div id="menu">

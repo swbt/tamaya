@@ -20,14 +20,14 @@ import com.internousdev.util.db.mysql.MySqlConnector;
  * @version 1.0
  */
 public class LoginDAO {
-	public UserDTO login(String email, String userPass){
+	public UserDTO login(String email, String password){
 		UserDTO dto = new UserDTO();
 		try (Connection con = new MySqlConnector("openconnect").getConnection();) {
 			String sql1 = "SELECT * FROM users WHERE phone_email = ? AND password = ?";
 
 			PreparedStatement ps1 = con.prepareStatement(sql1);
 			ps1.setString(1, email);
-			ps1.setString(2, userPass);
+			ps1.setString(2, password);
 			ResultSet rs1 = ps1.executeQuery();
 
 			if(rs1.next()){

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import com.opensymphony.xwork2.ActionSupport;
 
 /***
- * トップ画面に行くアクション
+ * Ajaxテスト用アクション
  * @author Takahiro Adachi
  * @since 1.0
  */
@@ -19,7 +19,7 @@ public class TestAction extends ActionSupport {
 		} else {
 			hash.put("method", msg);
 		}
-		System.out.println("HashMapの中身 : " + hash);
+		System.out.println("HashMap<String,String> hash = " + hash);
 		return SUCCESS;
 	}
 

@@ -37,15 +37,7 @@ public class ConfirmOrderAction extends ActionSupport implements SessionAware {
 
 	@Override
 	public String execute() {
-		if (!session.containsKey("userId")) {
-			System.out.println("ConfirmOrderAction : LOGIN");
-			return LOGIN;
-		}
 		userId = (int) session.get("userId");
-		if (userId == 0) {
-			System.out.println("ConfirmOrderAction : LOGIN");
-			return LOGIN;
-		}
 
 		CartDTO cart = new CartDTO();
 		try {

@@ -10,7 +10,7 @@ import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 
 /**
- * ログインが必要な画面に遷移する前に、ログイン判定をする
+ * セッションに userId が含まれていない時にリザルトで "login" を返す
  *
  * @author Takahiro Adachi
  * @since 1.0

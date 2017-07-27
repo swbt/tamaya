@@ -36,10 +36,10 @@
 	<div class="login">
 		<s:form action="LoginAction">
 			<h1>ログイン</h1>
-			<h4>MAILADDRESS</h4>
+			<h4>MAIL ADDRESS</h4>
 			<s:textfield name="email" placeholder="メールアドレス" size="30" />
 			<h4>PASSWORD</h4>
-			<s:password name="userPass" placeholder="パスワード" size="30" />
+			<s:password name="password" placeholder="パスワード" size="30" />
 
 			<div class=log_button align="center">
 				<a href=""><button type="submit"

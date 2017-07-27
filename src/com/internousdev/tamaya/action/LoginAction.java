@@ -12,26 +12,26 @@ import com.internousdev.tamaya.dto.UserDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * emailとuserPassを入力してログインする
+ * email と password を入力してログインする
  * @author Takahiro Adachi
  * @since 1.0
  * @version 1.0
  */
 public class LoginAction extends ActionSupport implements SessionAware {
 	private String email;
-	private String userPass;
+	private String password;
 	private int userFlg;
 	private Map<String, Object> session;
 
 	public String execute(){
-		System.out.println("LoginAction : email = " + email + ", userPass = " + userPass);
+		System.out.println("LoginAction : email = " + email + ", password = " + password);
 		String ret = ERROR;
 		LoginDAO dao = new LoginDAO();
 		UserDTO dto = new UserDTO();
 
 		//入力した情報が登録されているか確認
 
-		dto = dao.login(email, userPass);
+		dto = dao.login(email, password);
 		if(dto == null){
 			System.out.println("LoginAction : result = " + ret);
 			return ret;
@@ -60,11 +60,11 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getUserPass() {
-		return userPass;
+	public String getPassword() {
+		return password;
 	}
-	public void setUserPass(String userPass) {
-		this.userPass = userPass;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public Map<String, Object> getSession() {
 		return session;
@@ -73,6 +73,4 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
-
 }

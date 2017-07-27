@@ -42,24 +42,25 @@
     </result-types>
 
     <interceptors>
-      <interceptor name="locale" class="com.internousdev.tamaya.interceptor.LocaleInterceptor" /> <!-- ▲ -->
+      <!-- HTTPヘッダのAccept-Languageを参照し、表示する言語や通貨の情報をsessionに格納する interceptor -->
+      <interceptor name="locale" class="com.internousdev.tamaya.interceptor.LocaleInterceptor" />
       <!-- LocaleInterceptorとStruts標準のdefaultStackを足し合わせたinterceptor群を新たに「tamayaStack」と定義 -->
-      <interceptor-stack name="tamayaStack">            <!-- ★ -->
-        <interceptor-ref name="locale" />                                                         <!-- ▲ -->
+      <interceptor-stack name="tamayaStack">
+        <interceptor-ref name="locale" />
         <interceptor-ref name="defaultStack" />
       </interceptor-stack>
 
-      <interceptor name="login" class="com.internousdev.tamaya.interceptor.LoginInterceptor" >
-        <param name="userId"></param>
-      </interceptor>
+      <!-- セッションに userId が含まれていない時にリザルトで "login" を返す interceptor -->
+      <interceptor name="login" class="com.internousdev.tamaya.interceptor.LoginInterceptor" />
+      <!-- ログインが必要な時に使用する interceptor 群「loginStack」 -->
       <interceptor-stack name="loginStack">
         <interceptor-ref name="login" />
-        <interceptor-ref name="tamayaStack" />          <!-- ★ -->
+        <interceptor-ref name="tamayaStack" />
       </interceptor-stack>
     </interceptors>
 
-    <!-- デフォルトのinterceptorを、tamayaStackに設定 -->
-    <default-interceptor-ref name="tamayaStack" />      <!-- ★ -->
+    <!-- デフォルトの interceptor を「tamayaStack」に設定 -->
+    <default-interceptor-ref name="tamayaStack" />
 
     <global-results>
       <result name="login">login.jsp</result>
@@ -70,10 +71,13 @@
         <param name="root">hash</param>
       </result>
     </action>
+
+    <!-- TOP画面への遷移 -->
     <action name="GoTopAction" class="com.internousdev.tamaya.action.GoTopAction" method="execute">
       <result name="success">top.jsp</result>
       <result name="error">top.jsp</result>
     </action>
+
     <action name="LoginAction" class="com.internousdev.tamaya.action.LoginAction" method="execute">
       <result name="success" type="redirect">GoTopAction</result>
       <result name="error" type="redirect">GoTopAction</result>
@@ -85,11 +89,12 @@
       <result name="error" type="redirect">GoTopAction</result>
     </action>
 
+    <!-- 商品一覧画面への遷移 -->
     <action name="GoItemListAction" class="com.internousdev.tamaya.action.GoItemListAction" method="execute">
       <result name="success">item_list.jsp</result>
       <result name="error">item_list.jsp</result>
     </action>
-
+    <!-- 商品詳細画面への遷移 -->
     <action name="GoItemDetailAction" class="com.internousdev.tamaya.action.GoItemDetailAction" method="execute">
       <result name="success">syousai.jsp</result>
       <result name="error">index.jsp</result>
@@ -113,7 +118,7 @@
 
     <!-- カート内のアイテムを削除する -->
     <action name="RemoveFromCartAction" class="com.internousdev.tamaya.action.RemoveFromCartAction" method="execute">
-    <interceptor-ref name="loginStack" />
+      <interceptor-ref name="loginStack" />
       <result name="success" type="redirectAction">GoCartAction</result>
       <result name="error" type="redirectAction">GoCartAction</result>
     </action>
@@ -131,6 +136,7 @@
 
     <!-- 選択・入力されたクレジットカード情報が正しいか検証する -->
     <action name="VerifyCreditCardAction" class="com.internousdev.tamaya.action.VerifyCreditCardAction" method="execute">
+      <interceptor-ref name="loginStack" />
       <result name="success">siharai_kakunin.jsp</result>
       <result name="error">siharai.jsp</result>
       <result name="login" type="redirect">GoTopAction</result>
@@ -138,6 +144,7 @@
 
     <!-- クレジット決済をし、注文を確定する -->
     <action name="ConfirmOrderAction" class="com.internousdev.tamaya.action.ConfirmOrderAction" method="execute">
+      <interceptor-ref name="loginStack" />
       <result name="success">siharai_kanryo.jsp</result>
       <result name="error">siharai.jsp</result>
       <result name="login" type="redirect">GoTopAction</result>
@@ -145,6 +152,7 @@
 
     <!-- マイページを表示する処理 -->
     <action name="GoMyPageAction" class="com.internousdev.tamaya.action.GoMyPageAction" method="execute">
+      <interceptor-ref name="loginStack" />
       <result name="success">mypage.jsp</result>
       <result name="error">top.jsp</result>
     </action>

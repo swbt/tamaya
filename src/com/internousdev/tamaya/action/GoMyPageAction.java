@@ -27,17 +27,12 @@ public class GoMyPageAction extends ActionSupport implements SessionAware {
 	private ArrayList<OrderDTO> orderList = new ArrayList<>();
 
 	public String execute() throws SQLException {
-		if (session.containsKey("userId")) {
-			userId = (int) session.get("userId");
-		}
-		if (userId == 0) {
-			return LOGIN;
-		}
+		userId = (int) session.get("userId");
+
 		user = new UserDAO().getMyPage(userId);
 		if (user == null) {
 			return ERROR;
 		}
-
 		//TODO 注文履歴を取得する
 		return SUCCESS;
 	}

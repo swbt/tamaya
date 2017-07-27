@@ -27,7 +27,7 @@ public class ItemListDAO {
 	 * @since 1.0
 	 * @param limit 取得する件数
 	 */
-	public ArrayList<ItemDTO> getRanking(int limit) {
+	public ArrayList<ItemDTO> getRanking(int limit) throws SQLException {
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 
 		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
@@ -58,13 +58,11 @@ public class ItemListDAO {
 				dto.calc();
 				itemList.add(dto);
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
 		}
 		return itemList;
 	}
 
-	public ArrayList<ItemDTO> select() {
+	public ArrayList<ItemDTO> select() throws SQLException {
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 
 		try (Connection con = new MySqlConnector("tamaya", "root", "mysql").getConnection();) {
@@ -94,13 +92,11 @@ public class ItemListDAO {
 				dto.calc();
 				itemList.add(dto);
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
 		}
 		return itemList;
 	}
 
-	public ArrayList<ItemDTO> searchByCategory(String category) {
+	public ArrayList<ItemDTO> searchByCategory(String category) throws SQLException {
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 
 		try (Connection con = new MySqlConnector("tamaya", "root", "mysql").getConnection();) {
@@ -131,13 +127,11 @@ public class ItemListDAO {
 				dto.calc();
 				itemList.add(dto);
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
 		}
 		return itemList;
 	}
 
-	public ArrayList<ItemDTO> searchByPriceRange(int priceRange) {
+	public ArrayList<ItemDTO> searchByPriceRange(int priceRange) throws SQLException {
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 		int minPrice, maxPrice;
 		int priceRange1 = 500;
@@ -198,8 +192,6 @@ public class ItemListDAO {
 				dto.calc();
 				itemList.add(dto);
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
 		}
 		return itemList;
 	}
