@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="css/bootstrapTWBScolor.css">
 <link rel="stylesheet" type="text/css" href="./css/kanri_kakunin.css">
 <link rel="stylesheet" type="text/css" href="css/btn.css">
+<link rel="stylesheet" href="css/reset.css">
 <script src="js/to-top.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -47,15 +48,15 @@
 		<s:include value="kanri_header.jsp" />
 	</header>
 
-<div class="product_search">
+<div class="table_search">
 	<table>
 		<tr>
-		<th class="product_title">商品検索</th>
+		<th class="th_title">商品検索</th>
 		</tr>
-			<td class="product_name">商品名</td>
+			<td class="td_itemname">商品名</td>
 			<s:form action="AdminItemAction">
-			<td class="product_text"><input type="text" name="itemNamep" size="20"></td>
-			<td class="search_botton"><button type="submit" class="button">検索</button></td>
+			<td class="td_text"><input type="text" name="itemNamep" size="20"></td>
+			<td class="td_btn"><button type="submit" class="button">検索</button></td>
 			<!-- select * from items where item_name like '%itemNamep%' -->
 			</s:form>
 	</table>
