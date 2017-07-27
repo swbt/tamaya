@@ -35,7 +35,7 @@ import com.internousdev.util.DBConnector;
 		DBConnector db = new DBConnector("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/", "tamaya", "root","mysql");
 		Connection con = null;
 		con = db.getConnection();
-		String sql = "select @num :=@num + 1 as no, items.* from (select @num := 0) as no, items where status_on!=1";
+		String sql = "select @num :=@num + 1 as no, items.* from (select @num := 0) as no, items where is_deleted!=1";
 
 		try {
 
@@ -137,7 +137,7 @@ import com.internousdev.util.DBConnector;
 		DBConnector db = new DBConnector("com.mysql.jdbc.Driver","jdbc:mysql://localhost/","tamaya","root","mysql");
 		Connection conn = db.getConnection();
 
-		String sql = "update items set status_on=1 where item_Id = ?";
+		String sql = "update items set is_deleted=1 where item_Id = ?";
 
 		try{
 			PreparedStatement ps = conn.prepareStatement(sql);
