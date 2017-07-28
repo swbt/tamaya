@@ -33,7 +33,7 @@ public class GoMyPageAction extends ActionSupport implements SessionAware {
 		if (user == null) {
 			return ERROR;
 		}
-		//TODO 注文履歴を取得する
+	/** 注文履歴を取得する **/
 		return SUCCESS;
 	}
 
