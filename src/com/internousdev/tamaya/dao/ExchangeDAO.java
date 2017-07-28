@@ -17,17 +17,20 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 /**
  * MySQL にアクセスし、為替情報をやり取りする
  *
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class ExchangeDAO {
 	/**
-	 * MySQL にアクセスし、日本円を基準とした為替レートを取得する
+	 * MySQL にアクセスし、対象の通貨の日本円を基準とした為替レートを取得する
 	 *
-	 * @author Takahiro Adachi
+	 * @author TAKAHIRO ADACHI
+	 * @param currencyCode 通貨コード
+	 * @return 為替レート
+	 * @throws SQLException
 	 * @since 1.0
 	 */
-	public BigDecimal getRateFromJPY(String currencyCode) throws SQLException {
+	public BigDecimal getRateFromJPY(String currencyCode) throws SQLException  {
 		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
 			String sql = "SELECT rate FROM exchanges WHERE currency_code = ?; ";
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -44,7 +47,9 @@ public class ExchangeDAO {
 	/**
 	 * MySQL の為替情報が 1日以上古い場合、外部サイトから為替情報をダウンロードし、MySQL に格納する
 	 *
-	 * @author Takahiro Adachi
+	 * @author TAKAHIRO ADACHI
+	 * @throws SQLException
+	 * @throws IOException
 	 * @since 1.0
 	 */
 	public void updateRateFromJPY() throws SQLException, IOException {

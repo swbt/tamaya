@@ -8,17 +8,24 @@ import java.sql.SQLException;
 import com.internousdev.tamaya.dto.UserDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
+/**
+ * MySQL にアクセスし、ユーザー情報をやり取りする
+ *
+ * @author TAKAHIRO ADACHI
+ * @since 1.0
+ */
 public class UserDAO {
 	/**
 	 * MySQL にアクセスし、メールアドレス, password でユーザーを認証。該当するユーザーの情報を取得し、login_flg を true にする
 	 *
-	 * @author Takahiro Adachi
-	 * @since 1.0
+	 * @author TAKAHIRO ADACHI
 	 * @param email メールアドレス
 	 * @param password パスワード
 	 * @return ユーザー情報
+	 * @throws SQLException
+	 * @since 1.0
 	 */
-	public UserDTO login(String email, String password) throws SQLException{
+	public UserDTO login(String email, String password) throws SQLException {
 		UserDTO dto = new UserDTO();
 		try (Connection con = new MySqlConnector("openconnect").getConnection();) {
 			String sql1 = "SELECT user_id, user_flg FROM users WHERE phone_email = ? AND password = ?";
@@ -46,9 +53,9 @@ public class UserDAO {
 	 * MySQL にアクセスし、該当のユーザーの login_flg を false にする
 	 *
 	 * @author Takahiro Adachi
-	 * @since 1.0
 	 * @param userId ユーザーID
 	 * @return 成功したかどうか
+	 * @since 1.0
 	 */
 	public boolean logout(int userId) {
 		try (Connection con = new MySqlConnector("openconnect").getConnection();) {
@@ -77,9 +84,9 @@ public class UserDAO {
 	/**
 	 * MySQL にアクセスし、マイページに表示するユーザー情報を取得する
 	 *
-	 * @since 1.0
 	 * @param userId ユーザーID
 	 * @return ユーザー情報
+	 * @since 1.0
 	 */
 	public UserDTO getMyPage(int userId) {
 		UserDTO user = new UserDTO();

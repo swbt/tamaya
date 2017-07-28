@@ -2,7 +2,7 @@ package com.internousdev.tamaya.dto;
 
 /**
  * クレジット情報に関するDTOクラス
- * @author Atsushi Kawai
+ * @author ATSUSHI KAWAI
  * @since 1.0
  */
 public class CreditCardDTO {

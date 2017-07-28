@@ -42,6 +42,7 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 
 	/**
 	 * クレジットカード情報の照合、格納を実行するメソッド
+	 * @author Takahiro Adachi
 	 * @since 1.0
 	 */
 	@Override

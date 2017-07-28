@@ -23,9 +23,10 @@ public class ItemDAO {
 	/**
 	 * 販売数が多い順に商品を指定した数だけ取得する
 	 *
-	 * @author Takahiro Adachi
-	 * @since 1.0
+	 * @author TAKAHIRO ADACHI
 	 * @param limit 取得する件数
+	 * @return 商品リスト
+	 * @since 1.0
 	 */
 	public ArrayList<ItemDTO> getRanking(int limit) throws SQLException {
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
@@ -62,6 +63,13 @@ public class ItemDAO {
 		return itemList;
 	}
 
+	/**
+	 * 販売数が多い順に商品を全て取得する
+	 *
+	 * @author TAKAHIRO ADACHI
+	 * @return 商品リスト
+	 * @since 1.0
+	 */
 	public ArrayList<ItemDTO> getAllItem() throws SQLException {
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 
@@ -96,6 +104,14 @@ public class ItemDAO {
 		return itemList;
 	}
 
+	/**
+	 * 対象のカテゴリーの商品を販売数が多い順に全て取得する
+	 *
+	 * @author TAKAHIRO ADACHI
+	 * @param category カテゴリー
+	 * @return 商品リスト
+	 * @since 1.0
+	 */
 	public ArrayList<ItemDTO> searchByCategory(String category) throws SQLException {
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 
@@ -131,6 +147,14 @@ public class ItemDAO {
 		return itemList;
 	}
 
+	/**
+	 * 対象の価格帯の商品を販売数が多い順に全て取得する
+	 *
+	 * @author TAKAHIRO ADACHI
+	 * @param category カテゴリー
+	 * @return 商品リスト
+	 * @since 1.0
+	 */
 	public ArrayList<ItemDTO> searchByPriceRange(int priceRange) throws SQLException {
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 		int minPrice, maxPrice;
@@ -196,8 +220,10 @@ public class ItemDAO {
 		return itemList;
 	}
 	/**
-	 * MySQLにアクセスし、該当の商品の詳細を取得する
-	 * @author Takahiro Adachi
+	 * MySQLにアクセスし、対象の商品の詳細を取得する
+	 * @author TAKAHIRO ADACHI
+	 * @param itemId 商品ID
+	 * @return 商品情報
 	 * @since 1.0
 	 */
 	public ItemDTO getItemDetail(int itemId) {

@@ -16,14 +16,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 為替に関する機能を提供する
- *
- * @author Takahiro Adachi
- *
+ * @author TAKAHIRO ADACHI
+ * @since 1.0
  */
 public class ExchangeRateUtil {
 	/**
 	 * 「くじらはんど」の「クジラ 外国 為替 確認 API」から、日本円を基準とした為替レートをダウンロードする
+	 * @author TAKAHIRO ADACHI
 	 * @return 日本円を基準とした為替レート exchange rate from JPY
+	 * @since 1.0
 	 */
 	@SuppressWarnings("unchecked")
 	public static Map<String, String> download() throws IOException {

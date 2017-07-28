@@ -11,12 +11,22 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 /**
  * MySQLにアクセスし、クレジットカードに関するデータをやり取りする
  *
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class CreditCardDAO {
 	/**
 	 * MySQLにアクセスし、検証済みのクレジットカード情報を tamaya.credit_cards テーブルに登録する
+	 * @author TAKAHIRO ADACHI
+	 * @param userId ユーザーID
+	 * @param creditBrand クレジットカードの種類(1:visa, 2:mastercard, 3:americanexpress)
+	 * @param creditNumber クレジットカード番号
+	 * @param nameE クレジットカード名義
+	 * @param securityCode セキュリティコード
+	 * @param expirationYear 有効期限（年）
+	 * @param expirationMonth 有効期限（月）
+	 * @throws SQLException
+	 * @since 1.0
 	 */
 	public void register(int userId, int creditBrand, String creditNumber, String nameE, String securityCode,
 			int expirationYear, int expirationMonth) throws SQLException {
@@ -37,6 +47,10 @@ public class CreditCardDAO {
 
 	/**
 	 * MySQLにアクセスし、該当するユーザーのクレジットカード情報を tamaya.credit_cards テーブルから取得する
+	 * @author TAKAHIRO ADACHI
+	 * @param userId ユーザーID
+	 * @return クレジットカード情報
+	 * @since 1.0
 	 */
 	public CreditCardDTO getCreditCard(int userId) {
 		CreditCardDTO dto = new CreditCardDTO();

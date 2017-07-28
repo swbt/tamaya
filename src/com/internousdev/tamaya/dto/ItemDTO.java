@@ -8,7 +8,7 @@ import java.math.RoundingMode;
 
 /**
  * 商品情報を格納・取得するクラス, price と total は自動計算される
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class ItemDTO {

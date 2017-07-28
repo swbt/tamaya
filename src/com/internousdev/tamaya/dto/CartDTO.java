@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  * カート情報を格納・取得するクラス
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class CartDTO {
