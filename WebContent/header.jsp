@@ -39,7 +39,7 @@
 				<div class="contents">
 					<ul>
 						<li><a href="toiawase.jsp" class="form">お問い合わせ</a></li>
-						<li><a href="<s:url action="GoTopAction" class="top" />">トップ</a></li>
+						<li><a href="<s:url action="GoTopAction"/>">トップ</a></li>
 					</ul>
 				</div>
 			</div>
