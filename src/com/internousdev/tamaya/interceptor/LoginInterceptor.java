@@ -12,7 +12,7 @@ import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 /**
  * セッションに userId が含まれていない時に、Actionを実行せず result として "login" を返す
  *
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class LoginInterceptor extends AbstractInterceptor {
