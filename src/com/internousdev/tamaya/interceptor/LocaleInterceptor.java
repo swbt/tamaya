@@ -4,7 +4,6 @@
 package com.internousdev.tamaya.interceptor;
 
 import java.math.BigDecimal;
-import java.text.NumberFormat;
 import java.util.Currency;
 import java.util.Locale;
 import java.util.Map;
@@ -15,8 +14,8 @@ import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 
 /**
- * HTTPヘッダのAccept-Languageを参照し、表示する言語や通貨の情報をsessionに格納する
- * @author Takahiro Adachi
+ * HTTP ヘッダの Accept-Language を参照し、表示する言語や通貨の情報を session に格納する
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class LocaleInterceptor extends AbstractInterceptor {
@@ -37,8 +36,6 @@ public class LocaleInterceptor extends AbstractInterceptor {
 			int scale = currency.getDefaultFractionDigits();
 			String currencyCode = currency.getCurrencyCode();
 			String symbol = currency.getSymbol();
-
-			NumberFormat nf = NumberFormat.getCurrencyInstance(locale);
 
 			if (!currencyCode.equals("JPY")) {
 				ExchangeDAO dao = new ExchangeDAO();
