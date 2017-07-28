@@ -8,6 +8,14 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport"
+	content="width=device-width,user-scalable=no,maximum-scale=1" />
+<link rel="stylesheet" media="all" type="text/css" href="style.css" />
+<!-- ※デフォルトのスタイル（style.css） -->
+<link rel="stylesheet" media="all" type="text/css" href="tablet.css" />
+<!-- ※タブレット用のスタイル（tablet.css） -->
+<link rel="stylesheet" media="all" type="text/css" href="smart.css" />
+<!-- ※スマートフォン用のスタイル（smart.css） -->
     <title>ログイン後ヘッダー</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Stylesheet
@@ -24,22 +32,17 @@
 
   </head>
   <body>
-      <div class="div_01">
-        <img src="./img/tamaya22.png" class="bb">
-    <div class="div_02">
-    <div id="div_03">
+      <div class="container">
+        <img src="./img/tamaya22.png" class="header-img">
+    <div class="box">
 		<ul>
 			<li><a href="toiawase.jsp">お問い合わせ</a></li>
 			<li><a href="<s:url action="LogoutAction"/>"><i class="button1" ></i> ログアウト</a></li>
 			<li><a href="<s:url action="GoMyPageAction" />">マイページ</a></li>
 			<li><a href="<s:url action="GoCartAction"/>">マイカート</a></li>
 			<li><a href="<s:url action="GoTopAction" />">トップ</a></li>
-
 		</ul>
 		</div>
-
     </div>
-      </div>
-
   </body>
 </html>

@@ -1,4 +1,3 @@
-
 /*===============================================
 ●style.css 画面の横幅が769px以上
 ===============================================*/
@@ -12,6 +11,8 @@
 		width: 100%;
 	}
 	～以下、画面の横幅が768pxまでの場合のスタイル記入～
+
+
 
 }
 /*===============================================
@@ -28,6 +29,8 @@
 	}
 	～以下、画面の横幅が768pxまでの場合のスタイル記入～
 
+
+
 }
 /*===============================================
 ●smart.css 画面の横幅が640pxまで
@@ -42,7 +45,10 @@
 		width: 100%;
 	}
 	～以下、画面の横幅が640pxまでの場合のスタイル記入～
+
+
 }
+
 body {
 	background-color: black;
 	max-width: 100%;
@@ -50,7 +56,7 @@ body {
 }
 
 .main_img {
-	width: 1000px;
+	width: 2000px;
 	height: 480px;
 	background: url('../img/tamaya7.gif');
 	background-size: cover;
@@ -142,7 +148,7 @@ tr, td {
 
 .ranking-main, .ranking-secondary, .ranking-tertiary {
 	float: left;
-	max-width: 750px;
+	max-width: 400px;
 	padding: 50px;
 }
 
@@ -151,7 +157,8 @@ tr, td {
 	text-align: center;
 	display: inline-block;
 	margin-left: auto;
-	margin-right: auto; -webkit-transform : scale( 1);
+	margin-right: auto;
+	-webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transform: scale(1);
 }
