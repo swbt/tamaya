@@ -13,24 +13,20 @@
 	basename="com.internousdev.tamaya.property.toiawase_kanryo" var="lang" />
     <title>問い合わせ完了画面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Stylesheet
-    ==================================================
-    <!--
-    <link rel="stylesheet" type="text/css"  href="css/＠＠＠.css">
-    <link rel="stylesheet" type="text/css" href="css/＠＠＠.css">
-    <link rel="stylesheet" type="text/css" href="">
-    -->
-    <!-- Javascripts
-    ================================================== -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/jquery-3.2.1.min.js"></script>
 
 
  <meta http-equiv="refresh" content="2;URL=./top.jsp">
 </head>
 <body>
+<img src="./img/tamaya22.png" class="bb">
+<br>
+<br>
+<div style="text-align: center">
 <h1><s:text name="lang.toiawase_kanryo.h1" /></h1>
 <br>
 <p><s:text name="lang.toiawase_kanryo.p" /></p>
-
+</div>
 </body>
 </html>

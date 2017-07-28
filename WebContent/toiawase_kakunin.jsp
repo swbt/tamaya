@@ -21,7 +21,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
+<img src="./img/tamaya22.png" class="bb">
 	<s:form method="post" action="ContactAction" class="autoConfirm">
 		<div style="text-align: center">
 			<h1 class="contact-title.h1"></h1>
@@ -30,6 +30,8 @@
 				<br>
 				<s:text name="lang.toiawase_kakunin.br" />
 			</p>
+			<br>
+			<br>
 		</div>
 		<div class="container">
 
