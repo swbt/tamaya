@@ -17,9 +17,9 @@ import com.internousdev.util.creditcard.manager.CreditUtil;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * クレジット決済をし、カートの中身を注文テーブルに移す
+ * クレジット決済をし、カートの中身を注文テーブルに移す。カートを削除する
  *
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class ConfirmOrderAction extends ActionSupport implements SessionAware {

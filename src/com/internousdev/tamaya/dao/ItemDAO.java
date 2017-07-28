@@ -16,7 +16,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 /**
  * MySQL にアクセスし、商品に関する情報を取得するためのクラス
  *
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class ItemDAO {

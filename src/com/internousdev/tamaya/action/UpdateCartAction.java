@@ -9,7 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * カート内の商品の注文数を更新するクラス
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 

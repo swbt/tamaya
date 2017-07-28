@@ -16,9 +16,8 @@ import com.opensymphony.xwork2.ActionSupport;
 /**
  * 商品を検索し、条件に合うものを全て itemList に格納する
  *
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
- * @version 1.0
  */
 public class GoItemListAction extends ActionSupport implements SessionAware {
 	/** ユーザーID */

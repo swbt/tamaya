@@ -14,8 +14,8 @@ import com.internousdev.tamaya.dto.UserDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * email と password を入力してログインする
- * @author Takahiro Adachi
+ * 入力された email と password を検証しログインする。ログイン前にセッションを破棄する
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class LoginAction extends ActionSupport implements SessionAware {
@@ -42,10 +42,12 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		// HttpSession を破棄する
 		((SessionMap<String, Object>)session).invalidate();
 		if(dto.getUserFlg() == 3){
+			((SessionMap<String, Object>)session).invalidate();
 			session.put("userFlg", dto.getUserFlg());
 			return "admin";
 		}
 
+		((SessionMap<String, Object>)session).invalidate();
 		session.put("userId", dto.getUserId());
 		return SUCCESS;
 	}

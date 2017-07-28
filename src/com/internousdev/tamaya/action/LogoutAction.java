@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * MySQL のログインフラグを false にし、セッションを破棄する
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class LogoutAction extends ActionSupport implements SessionAware {

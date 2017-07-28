@@ -14,7 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 /**
  * 対象の商品の詳細を取得し、item に格納する
  *
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class GoItemDetailAction extends ActionSupport implements SessionAware {

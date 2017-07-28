@@ -11,8 +11,8 @@ import com.internousdev.tamaya.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /***
- * トップ画面に行くアクション
- * @author Takahiro Adachi
+ * トップ画面に遷移する際、必要な情報を取得するクラス
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class GoTopAction extends ActionSupport implements SessionAware {

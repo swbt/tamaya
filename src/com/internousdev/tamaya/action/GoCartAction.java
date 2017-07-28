@@ -12,7 +12,7 @@ import com.opensymphony.xwork2.ActionSupport;
 /**
  * カート画面に遷移する際、必要な情報を取得するクラス
  *
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class GoCartAction extends ActionSupport implements SessionAware {

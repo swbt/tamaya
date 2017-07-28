@@ -17,7 +17,7 @@ import com.opensymphony.xwork2.ActionSupport;
 /**
  * 選択・入力されたクレジットカード情報が正しいか検証する
  *
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class VerifyCreditCardAction extends ActionSupport implements SessionAware {
@@ -42,7 +42,7 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 
 	/**
 	 * クレジットカード情報の照合、格納を実行するメソッド
-	 * @author Takahiro Adachi
+	 * @author TAKAHIRO ADACHI
 	 * @since 1.0
 	 */
 	@Override

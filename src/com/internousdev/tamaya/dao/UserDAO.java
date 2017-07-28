@@ -52,7 +52,7 @@ public class UserDAO {
 	/**
 	 * MySQL にアクセスし、該当のユーザーの login_flg を false にする
 	 *
-	 * @author Takahiro Adachi
+	 * @author TAKAHIRO ADACHI
 	 * @param userId ユーザーID
 	 * @return 成功したかどうか
 	 * @since 1.0

@@ -12,7 +12,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * カートに商品を追加する
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class AddToCartAction extends ActionSupport implements SessionAware {

@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ActionSupport;
 /**
  * カート内のアイテムを削除する
  *
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class RemoveFromCartAction extends ActionSupport implements SessionAware {
@@ -25,7 +25,7 @@ public class RemoveFromCartAction extends ActionSupport implements SessionAware 
 	/**
 	 * カート内のアイテムを削除する
 	 *
-	 * @author Takahiro Adachi
+	 * @author TAKAHIRO ADACHI
 	 * @since 1.0
 	 */
 	@Override
