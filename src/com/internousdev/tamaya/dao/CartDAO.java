@@ -10,7 +10,20 @@ import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.dto.ItemDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
+/**
+ * MySQL にアクセスし、カートに関する情報をやり取りする
+ * @author TAKAHIRO ADACHI
+ * @since 1.0
+ */
 public class CartDAO {
+	/**
+	 * MySQL にアクセスし、対象のユーザーのカートを取得する
+	 * @author TAKAHIRO ADACHI
+	 * @param userId ユーザーID
+	 * @return カート
+	 * @throws SQLException
+	 * @since 1.0
+	 */
 	public CartDTO getCart(int userId) throws SQLException {
 		CartDTO cart = new CartDTO();
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
@@ -59,15 +72,24 @@ public class CartDAO {
 		return cart;
 	}
 
-	public boolean addItem(int userId, int itemId, int orderCount) {
+	/**
+	 * MySQL にアクセスし、対象のユーザーのカートに商品と数量を追加する
+	 * @author TAKAHIRO ADACHI
+	 * @param userId ユーザーID
+	 * @param itemId 商品ID
+	 * @param quantity 数量
+	 * @return 成功したかどうか
+	 * @since 1.0
+	 */
+	public boolean addItem(int userId, int itemId, int quantity) {
 		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
 			String sql = "INSERT INTO carts (user_id, item_id, quantity) VALUES (?, ?, ?) "
 					+ "ON DUPLICATE KEY UPDATE quantity = ?";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, userId);
 			ps.setInt(2, itemId);
-			ps.setInt(3, orderCount);
-			ps.setInt(4, orderCount);
+			ps.setInt(3, quantity);
+			ps.setInt(4, quantity);
 			if (ps.executeUpdate() >= 0) {
 				return true;
 			}
@@ -77,6 +99,15 @@ public class CartDAO {
 		return false;
 	}
 
+	/**
+	 * MySQL にアクセスし、対象の商品をカートから取り除く
+	 * @author TAKAHIRO ADACHI
+	 * @param userId ユーザーID
+	 * @param itemId 商品ID
+	 * @return 成功したかどうか
+	 * @throws SQLException
+	 * @since 1.0
+	 */
 	public boolean removeItem(int userId, int itemId) throws SQLException {
 		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
 			String sql = "DELETE FROM carts WHERE user_id = ? && item_id = ?";
@@ -94,10 +125,11 @@ public class CartDAO {
 	}
 
 	/**
-	 * 対象のユーザーのカートの中身を削除する
-	 *
+	 * 対象のユーザーのカートの中身を全て削除する
+	 * @author TAKAHIRO ADACHI
 	 * @param userId ユーザーID
 	 * @return 成功したかどうか
+	 * @since 1.0
 	 */
 	public boolean deleteCart(int userId) {
 		// 該当のユーザーのカートを空にする
