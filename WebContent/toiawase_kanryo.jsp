@@ -28,9 +28,9 @@
  <meta http-equiv="refresh" content="2;URL=./top.jsp">
 </head>
 <body>
-<h1><s:text name="lang.toiawase_kanryo.h1" />お問い合わせ完了致しました。</h1>
+<h1><s:text name="lang.toiawase_kanryo.h1" /></h1>
 <br>
-<p><s:text name="lang.toiawase_kanryo.p" />５秒後にTOPへ移動します。</p>
+<p><s:text name="lang.toiawase_kanryo.p" /></p>
 
 </body>
 </html>
