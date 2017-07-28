@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tamaya.dao.ItemListDAO;
+import com.internousdev.tamaya.dao.ItemDAO;
 import com.internousdev.tamaya.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -23,7 +23,7 @@ public class GoTopAction extends ActionSupport implements SessionAware {
 	@Override
 	public String execute(){
 		try {
-			itemList = new ItemListDAO().getRanking(3);
+			itemList = new ItemDAO().getRanking(3);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return ERROR;

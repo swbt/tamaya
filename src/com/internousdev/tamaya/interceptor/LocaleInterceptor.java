@@ -26,7 +26,6 @@ public class LocaleInterceptor extends AbstractInterceptor {
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		if(!session.containsKey("locale")){
 			Locale locale = ActionContext.getContext().getLocale();
-			System.out.println(locale);
 			Currency currency;
 			try {
 				currency = Currency.getInstance(locale);
@@ -38,18 +37,14 @@ public class LocaleInterceptor extends AbstractInterceptor {
 			int scale = currency.getDefaultFractionDigits();
 			String currencyCode = currency.getCurrencyCode();
 			String symbol = currency.getSymbol();
-			System.out.print("LocaleInterceptor : locale = " + locale + ", scale = " + scale);
-			System.out.println(", currencyCode = " + currencyCode + ", symbol = " + symbol);
 
 			NumberFormat nf = NumberFormat.getCurrencyInstance(locale);
-			System.out.println("例：12.3456 → " + nf.format(12.3456));
 
 			if (!currencyCode.equals("JPY")) {
 				ExchangeDAO dao = new ExchangeDAO();
 				dao.updateRateFromJPY();
 				BigDecimal rate = dao.getRateFromJPY(currencyCode);
 				session.put("rate", rate);
-				System.out.println("rate = " + rate);
 			}
 
 			session.put("locale", locale);

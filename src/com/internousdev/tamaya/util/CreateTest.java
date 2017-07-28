@@ -9,8 +9,9 @@ import java.util.ArrayList;
 /**
  * JUnit用のTestメソッドの雛形を手抜きで作るためのクラス
  * C:\Users\internousdev\Desktop\test.txt に出力する
- * @author Takahiro Adachi
  *
+ * @author Takahiro Adachi
+ * @since 1.0
  */
 public class CreateTest {
 	public static void main(String[] args) {
@@ -296,7 +297,7 @@ class Target {
 				}
 			}
 		} catch (IOException e) {
-			System.out.println(e);
+			e.printStackTrace();
 		}
 	}
 }

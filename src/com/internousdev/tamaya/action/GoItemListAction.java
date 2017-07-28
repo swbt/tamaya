@@ -9,7 +9,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tamaya.dao.ItemListDAO;
+import com.internousdev.tamaya.dao.ItemDAO;
 import com.internousdev.tamaya.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -37,7 +37,7 @@ public class GoItemListAction extends ActionSupport implements SessionAware {
 		if (session.containsKey("userId")) {
 			session.get("userId");
 		}
-		ItemListDAO dao = new ItemListDAO();
+		ItemDAO dao = new ItemDAO();
 
 		try {
 			if (!category.isEmpty()) {
