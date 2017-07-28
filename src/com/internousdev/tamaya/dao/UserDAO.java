@@ -10,10 +10,13 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 
 public class UserDAO {
 	/**
-	 * MySQL にアクセスし、email, password でユーザーを認証。該当するユーザーの情報を取得し、login_flg を true にする
+	 * MySQL にアクセスし、メールアドレス, password でユーザーを認証。該当するユーザーの情報を取得し、login_flg を true にする
 	 *
 	 * @author Takahiro Adachi
 	 * @since 1.0
+	 * @param email メールアドレス
+	 * @param password パスワード
+	 * @return ユーザー情報
 	 */
 	public UserDTO login(String email, String password) throws SQLException{
 		UserDTO dto = new UserDTO();
@@ -44,6 +47,8 @@ public class UserDAO {
 	 *
 	 * @author Takahiro Adachi
 	 * @since 1.0
+	 * @param userId ユーザーID
+	 * @return 成功したかどうか
 	 */
 	public boolean logout(int userId) {
 		try (Connection con = new MySqlConnector("openconnect").getConnection();) {
@@ -68,9 +73,17 @@ public class UserDAO {
 		}
 		return false;
 	}
+
+	/**
+	 * MySQL にアクセスし、マイページに表示するユーザー情報を取得する
+	 *
+	 * @since 1.0
+	 * @param userId ユーザーID
+	 * @return ユーザー情報
+	 */
 	public UserDTO getMyPage(int userId) {
 		UserDTO user = new UserDTO();
-		try (Connection con = new MySqlConnector("openconnect","root","mysql").getConnection();) {
+		try (Connection con = new MySqlConnector("openconnect").getConnection();) {
 			String sql = "SELECT * FROM users WHERE user_id = ?";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, userId);
@@ -78,19 +91,15 @@ public class UserDAO {
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				user.setUserId(rs.getInt("user_id"));
-
 				user.setFamilyNameKanji(rs.getString("family_name_kanji"));
-
 				user.setGivenNameKanji(rs.getString("given_name_kanji"));
-
 				user.setPostal(rs.getString("postal"));
-
 				user.setAddress(rs.getString("address"));
-
 				user.setEmail(rs.getString("phone_email"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+			return null;
 		}
 		return user;
 	}

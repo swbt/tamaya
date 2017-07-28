@@ -92,4 +92,25 @@ public class CartDAO {
 		}
 		return false;
 	}
+
+	/**
+	 * 対象のユーザーのカートの中身を削除する
+	 *
+	 * @param userId ユーザーID
+	 * @return 成功したかどうか
+	 */
+	public boolean deleteCart(int userId) {
+		// 該当のユーザーのカートを空にする
+		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
+			String sql = "DELETE FROM carts WHERE user_id = ?; ";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, userId);
+			if (ps.executeUpdate() <= 0) {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 }

@@ -165,13 +165,4 @@ public class ContactAction extends ActionSupport implements SessionAware {
 		return session;
 	}
 
-	/**
-	 * シリアルID取得メゾット
-	 *
-	 * @return serialversionuid シリアルID
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
 }

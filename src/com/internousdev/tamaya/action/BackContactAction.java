@@ -124,13 +124,4 @@ public class BackContactAction extends ActionSupport{
 		this.postalCode = postalCode;
 	}
 
-	/**
-	 * シリアルID取得メソッド
-	 * @param serialversionuid シリアルID
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-
 }

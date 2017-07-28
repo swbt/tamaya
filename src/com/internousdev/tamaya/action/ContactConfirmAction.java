@@ -153,13 +153,4 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware 
 	public Map<String, Object> getSession() {
 		return session;
 	}
-
-	/**
-	 * シリアルID取得メゾット
-	 *
-	 * @return serialversionuid シリアルID
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 }

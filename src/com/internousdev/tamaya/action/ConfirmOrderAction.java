@@ -10,13 +10,14 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tamaya.dao.CartDAO;
 import com.internousdev.tamaya.dao.CreditCardDAO;
+import com.internousdev.tamaya.dao.OrderDAO;
 import com.internousdev.tamaya.dto.CartDTO;
 import com.internousdev.tamaya.dto.CreditCardDTO;
 import com.internousdev.util.creditcard.manager.CreditUtil;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * クレジット決済をし、注文を確定する
+ * クレジット決済をし、カートの中身を注文テーブルに移す
  *
  * @author Takahiro Adachi
  * @since 1.0
@@ -58,12 +59,24 @@ public class ConfirmOrderAction extends ActionSupport implements SessionAware {
 		creditNumber = dto.getCreditNumber();
 		amountAll = cart.getGrandTotal().intValue();
 
+		try {
+			// tamaya の 注文テーブルにカートの情報を入れる
+			if (!new OrderDAO().order(userId, cart)) {
+				return ERROR;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return ERROR;
+		}
 		CreditUtil util = new CreditUtil(creditBrand, creditNumber);
 		// クレジットカードの利用情報を、カード会社のDBに格納する
 		if (util.selectInsert(projectName, amountAll) != 0) {
-			// 成功した場合の処理
+			// 成功した場合、カートを削除する
+			new CartDAO().deleteCart(userId);
 			return SUCCESS;
 		} else {
+			// 失敗した場合、注文をキャンセルする
+			new OrderDAO().unorder(userId);
 			return ERROR;
 		}
 	}
