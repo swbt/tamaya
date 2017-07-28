@@ -14,7 +14,7 @@ import com.internousdev.tamaya.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * 商品を検索し、条件にあったものを全てitemList<ItemDTOTest>に格納する
+ * 商品を検索し、条件に合うものを全て itemList に格納する
  *
  * @author Takahiro Adachi
  * @since 1.0
@@ -37,7 +37,6 @@ public class GoItemListAction extends ActionSupport implements SessionAware {
 		if (session.containsKey("userId")) {
 			session.get("userId");
 		}
-		System.out.println("GoItemListAction : category = " + category + ", priceRange = " + priceRange);
 		ItemListDAO dao = new ItemListDAO();
 
 		try {
@@ -46,7 +45,7 @@ public class GoItemListAction extends ActionSupport implements SessionAware {
 			} else if (priceRange != 0) {
 				itemList = dao.searchByPriceRange(priceRange);
 			} else {
-				itemList = dao.select();
+				itemList = dao.getAllItem();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

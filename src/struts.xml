@@ -66,11 +66,6 @@
       <result name="login">login.jsp</result>
     </global-results>
 
-    <action name="TestAction" class="com.internousdev.tamaya.action.TestAction" method="execute">
-      <result type="json">
-        <param name="root">hash</param>
-      </result>
-    </action>
 
     <!-- TOP画面への遷移 -->
     <action name="GoTopAction" class="com.internousdev.tamaya.action.GoTopAction" method="execute">

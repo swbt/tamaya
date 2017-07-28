@@ -62,10 +62,10 @@ public class ItemListDAO {
 		return itemList;
 	}
 
-	public ArrayList<ItemDTO> select() throws SQLException {
+	public ArrayList<ItemDTO> getAllItem() throws SQLException {
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 
-		try (Connection con = new MySqlConnector("tamaya", "root", "mysql").getConnection();) {
+		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
 			String sql = ""
 					+"SELECT i.*, tax_rate FROM ("
 					+	"SELECT item_id, item_name, base_price, tax_type_id, stocks, sales, category, img_path "
@@ -99,7 +99,7 @@ public class ItemListDAO {
 	public ArrayList<ItemDTO> searchByCategory(String category) throws SQLException {
 		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 
-		try (Connection con = new MySqlConnector("tamaya", "root", "mysql").getConnection();) {
+		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
 			String sql = ""
 					+"SELECT i.*, tax_rate FROM ("
 					+	"SELECT item_id, item_name, base_price, tax_type_id, stocks, sales, category, img_path "
@@ -159,7 +159,7 @@ public class ItemListDAO {
 			maxPrice = 0;
 		}
 
-		try (Connection con = new MySqlConnector("tamaya", "root", "mysql").getConnection();) {
+		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
 			String sql = ""
 					+"SELECT i.*, tax_rate FROM ("
 					+	"SELECT item_id, item_name, base_price, tax_type_id, stocks, sales, category, img_path "

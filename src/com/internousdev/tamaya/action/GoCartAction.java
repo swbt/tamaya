@@ -26,7 +26,6 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 	@Override
 	public String execute() throws SQLException {
 		userId = (int) session.get("userId");
-		System.out.println("GoCartAction : userId = " + userId);
 
 		try {
 			cart = new CartDAO().getCart(userId);
@@ -34,8 +33,6 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 			e.printStackTrace();
 			return ERROR;
 		}
-		System.out.println("GoCartAction : totalQuantity = " + cart.getTotalQuantity() + ", GrandTotal = " + cart.getGrandTotal());
-		System.out.println("GoCartAction : SUCCESS");
 		return SUCCESS;
 	}
 

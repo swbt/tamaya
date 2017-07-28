@@ -28,6 +28,7 @@ public class RemoveFromCartAction extends ActionSupport implements SessionAware 
 	 * @author Takahiro Adachi
 	 * @since 1.0
 	 */
+	@Override
 	public String execute() throws SQLException {
 		userId = (int) session.get("userId");
 
@@ -59,6 +60,7 @@ public class RemoveFromCartAction extends ActionSupport implements SessionAware 
 		return session;
 	}
 	/** セッションを格納するメソッド */
+	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}

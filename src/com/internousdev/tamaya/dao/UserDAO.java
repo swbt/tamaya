@@ -9,33 +9,36 @@ import com.internousdev.tamaya.dto.UserDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 public class UserDAO {
-	public UserDTO getMyPage(int userId) {
-		UserDTO user = new UserDTO();
-		try (Connection con = new MySqlConnector("openconnect","root","mysql").getConnection();) {
-			String sql = "SELECT * FROM users WHERE user_id = ?";
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setInt(1, userId);
+	/**
+	 * MySQL にアクセスし、email, password でユーザーを認証。該当するユーザーの情報を取得し、login_flg を true にする
+	 *
+	 * @author Takahiro Adachi
+	 * @since 1.0
+	 */
+	public UserDTO login(String email, String password) throws SQLException{
+		UserDTO dto = new UserDTO();
+		try (Connection con = new MySqlConnector("openconnect").getConnection();) {
+			String sql1 = "SELECT user_id, user_flg FROM users WHERE phone_email = ? AND password = ?";
 
-			ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
-				user.setUserId(rs.getInt("user_id"));
+			PreparedStatement ps1 = con.prepareStatement(sql1);
+			ps1.setString(1, email);
+			ps1.setString(2, password);
+			ResultSet rs1 = ps1.executeQuery();
 
-				user.setFamilyNameKanji(rs.getString("family_name_kanji"));
-
-				user.setGivenNameKanji(rs.getString("given_name_kanji"));
-
-				user.setPostal(rs.getString("postal"));
-
-				user.setAddress(rs.getString("address"));
-
-				user.setEmail(rs.getString("phone_email"));
+			if(rs1.next()){
+				dto.setUserId(rs1.getInt("user_id"));
+				dto.setUserFlg(rs1.getInt("user_flg"));
 			}
-		} catch (SQLException e) {
+			String sql2 = "UPDATE users SET login_flg = TRUE WHERE user_id = ?";
+			PreparedStatement ps2 = con.prepareStatement(sql2);
+			ps2.setInt(1, dto.getUserId());
+			ps2.executeUpdate();
+		} catch(SQLException e) {
 			e.printStackTrace();
+			throw e;
 		}
-		return user;
+		return dto;
 	}
-
 	/**
 	 * MySQL にアクセスし、該当のユーザーの login_flg を false にする
 	 *
@@ -65,4 +68,31 @@ public class UserDAO {
 		}
 		return false;
 	}
+	public UserDTO getMyPage(int userId) {
+		UserDTO user = new UserDTO();
+		try (Connection con = new MySqlConnector("openconnect","root","mysql").getConnection();) {
+			String sql = "SELECT * FROM users WHERE user_id = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, userId);
+
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				user.setUserId(rs.getInt("user_id"));
+
+				user.setFamilyNameKanji(rs.getString("family_name_kanji"));
+
+				user.setGivenNameKanji(rs.getString("given_name_kanji"));
+
+				user.setPostal(rs.getString("postal"));
+
+				user.setAddress(rs.getString("address"));
+
+				user.setEmail(rs.getString("phone_email"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return user;
+	}
+
 }

@@ -31,13 +31,12 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 			return SUCCESS;
 		}
 
-
+		// HttpSession を破棄する
+		((SessionMap<String, Object>)session).invalidate();
 		UserDAO dao = new UserDAO();
 		if(dao.logout(userId)){
-			((SessionMap<String, Object>)session).invalidate();
 			return SUCCESS;
 		}
-		((SessionMap<String, Object>)session).invalidate();
 		return ERROR;
 	}
 

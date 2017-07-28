@@ -26,7 +26,6 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 	@Override
 	public String execute() {
 		userId = (int) session.get("userId");
-		System.out.println("UpdateCartAction : userId = " + userId);
 
 		if (quantity <= 0) {
 			return "remove";

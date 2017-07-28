@@ -16,14 +16,16 @@ import com.opensymphony.xwork2.ActionSupport;
  * @since 1.0
  */
 public class AddToCartAction extends ActionSupport implements SessionAware {
-	private String category = "";
-	private int priceRange = 0;
 	/** ユーザーID */
 	private int userId;
-	/** 商品ID */
+	/** カートに入れる商品のID */
 	private int itemId;
 	/** カートに入れる数量 */
 	private int quantity;
+	/** カートに入れた後に遷移するページのカテゴリー */
+	private String category = "";
+	/** カートに入れた後に遷移するページの価格帯 */
+	private int priceRange = 0;
 	/** セッション */
 	private Map<String, Object> session;
 
@@ -31,73 +33,58 @@ public class AddToCartAction extends ActionSupport implements SessionAware {
 	public String execute() {
 		userId = (int)session.get("userId");
 
-		System.out.println("AddToCartAction : userId = " + userId + ", itemId = " + itemId + ", quantity = " + quantity);
 		CartDAO dao = new CartDAO();
 		if (dao.addItem(userId, itemId, quantity)) {
-			System.out.println("AddToCartAction : resurt = success");
 			return SUCCESS;
 		}
-		System.out.println("AddToCartAction : resurt = error");
 		return ERROR;
 	}
 
-
-	/** categoryを取得するメソッド */
-	public String getCategory() {
-		return category;
-	}
-
-	/** categoryを格納するメソッド */
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	/** priceRangeを取得するメソッド */
-	public int getPriceRange() {
-		return priceRange;
-	}
-
-	/** priceRangeを格納するメソッド */
-	public void setPriceRange(int priceRange) {
-		this.priceRange = priceRange;
-	}
-
-	/** userIdを取得するメソッド */
+	/** ユーザーIDを取得するメソッド */
 	public int getUserId() {
 		return userId;
 	}
-
-	/** userIdを格納するメソッド */
+	/** ユーザーIDを格納するメソッド */
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-
-	/** itemIdを取得するメソッド */
+	/** カートに入れる商品のIDを取得するメソッド */
 	public int getItemId() {
 		return itemId;
 	}
-
-	/** itemIdを格納するメソッド */
+	/** カートに入れる商品のIDを格納するメソッド */
 	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
-
-	/** quantityを取得するメソッド */
+	/** カートに入れる商品の数量を取得するメソッド */
 	public int getQuantity() {
 		return quantity;
 	}
-
-	/** quantityを格納するメソッド */
+	/** カートに入れる数量を格納するメソッド */
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-
-	/** sessionを取得するメソッド */
+	/** カートに入れた後に遷移するページのカテゴリーを取得するメソッド */
+	public String getCategory() {
+		return category;
+	}
+	/** カートに入れた後に遷移するページのカテゴリーを格納するメソッド */
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	/** カートに入れた後に遷移するページの価格帯を取得するメソッド */
+	public int getPriceRange() {
+		return priceRange;
+	}
+	/** カートに入れた後に遷移するページの価格帯を格納するメソッド */
+	public void setPriceRange(int priceRange) {
+		this.priceRange = priceRange;
+	}
+	/** セッションを取得するメソッド */
 	public Map<String, Object> getSession() {
 		return session;
 	}
-
-	/** sessionを格納するメソッド */
+	/** セッションを格納するメソッド */
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;

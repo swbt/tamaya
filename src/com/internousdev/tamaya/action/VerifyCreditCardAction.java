@@ -48,22 +48,15 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 	public String execute() {
 		userId = (int) session.get("userId");
 
-		System.out.print("userId = " + userId + ", creditBrand : " + creditBrand + ", creditNumber : " + creditNumber);
-		System.out.print(", securityCode = " + securityCode + ", expirationYear = " + expirationYear);
-		System.out.println(", expirationMonth = " + expirationMonth + ", nameE = " + nameE);
-
 		CreditUtil util = new CreditUtil(creditBrand, creditNumber);
 		// クレジットカード番号上6ケタの照合
 		if (util.brandCheck()) {
 			// クレジットカード番号16ケタ、セキュリティコード、有効期限、名義人の照合
 			if (util.creditCheck(securityCode, expirationYear, expirationMonth, nameE)) {
-				System.out.println("VerifyCreditCardAction : SUCCESS");
 			} else {
-				System.out.println("VerifyCreditCardAction : ERROR(creditCheck)");
 				return ERROR;
 			}
 		} else {
-			System.out.println("VerifyCreditCardAction : ERROR(brandCheck)");
 			return ERROR;
 		}
 		try {
