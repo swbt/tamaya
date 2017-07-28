@@ -1,7 +1,7 @@
 package com.internousdev.tamaya.util;
 /**
  * ネットワークネームを決定するクラス
- * @author Kaori Takahashi
+ * @author KAORI TAKAHASHI
  * @since 2017/7/20
  * @version 1.0
  */
