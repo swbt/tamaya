@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * JUnit用のTestメソッドの雛形を手抜きで作るためのクラス
  * C:\Users\internousdev\Desktop\test.txt に出力する
  *
- * @author Takahiro Adachi
+ * @author TAKAHIRO ADACHI
  * @since 1.0
  */
 public class CreateTest {
