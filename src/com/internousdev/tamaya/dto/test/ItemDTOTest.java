@@ -6,8 +6,11 @@ package com.internousdev.tamaya.dto.test;
 import static org.junit.Assert.*;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import org.junit.Test;
+
+import com.internousdev.tamaya.dto.ItemDTO;
 
 /**
  * 商品に関する情報をここに入れて運ぶ
@@ -372,6 +375,136 @@ public class ItemDTOTest {
 		try {
 			int outOfRange = Integer.parseInt("-2147483649");
 			test.setSales(outOfRange);
+		} catch (RuntimeException e) {
+			assertEquals(e.getMessage(), "For input string: \"-2147483649\"");
+		}
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.ItemDTO#getQuantity()} のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetQuantity1() {
+		ItemDTO test = new ItemDTO();
+		int expected = 0;
+		test.setQuantity(expected);
+		assertEquals(expected, test.getQuantity());
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.ItemDTO#getQuantity()} のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetQuantity2() {
+		ItemDTO test = new ItemDTO();
+		int expected = 2147483647;
+		test.setQuantity(expected);
+		assertEquals(expected, test.getQuantity());
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.ItemDTO#getQuantity()} のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetQuantity3() {
+		ItemDTO test = new ItemDTO();
+		int expected = -2147483648;
+		test.setQuantity(expected);
+		assertEquals(expected, test.getQuantity());
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.ItemDTO#getQuantity()} のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetQuantity4() {
+		ItemDTO test = new ItemDTO();
+		try {
+			int outOfRange = Integer.parseInt("2147483648");
+			test.setQuantity(outOfRange);
+		} catch (RuntimeException e) {
+			assertEquals(e.getMessage(), "For input string: \"2147483648\"");
+		}
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.ItemDTO#getQuantity()} のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetQuantity5() {
+		ItemDTO test = new ItemDTO();
+		try {
+			int outOfRange = Integer.parseInt("-2147483649");
+			test.setQuantity(outOfRange);
+		} catch (RuntimeException e) {
+			assertEquals(e.getMessage(), "For input string: \"-2147483649\"");
+		}
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setQuantity(int)}
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetQuantity1() {
+		ItemDTO test = new ItemDTO();
+		int expected = 0;
+		test.setQuantity(expected);
+		int actual = test.getQuantity();
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setQuantity(int)}
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetQuantity2() {
+		ItemDTO test = new ItemDTO();
+		int expected = 2147483647;
+		test.setQuantity(expected);
+		int actual = test.getQuantity();
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setQuantity(int)}
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetQuantity3() {
+		ItemDTO test = new ItemDTO();
+		int expected = -2147483648;
+		test.setQuantity(expected);
+		int actual = test.getQuantity();
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setQuantity(int)}
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetQuantity4() {
+		ItemDTO test = new ItemDTO();
+		try {
+			int outOfRange = Integer.parseInt("2147483648");
+			test.setQuantity(outOfRange);
+		} catch (RuntimeException e) {
+			assertEquals(e.getMessage(), "For input string: \"2147483648\"");
+		}
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setQuantity(int)}
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetQuantity5() {
+		ItemDTO test = new ItemDTO();
+		try {
+			int outOfRange = Integer.parseInt("-2147483649");
+			test.setQuantity(outOfRange);
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "For input string: \"-2147483649\"");
 		}
@@ -1177,13 +1310,133 @@ public class ItemDTOTest {
 		assertEquals(expected, actual);
 	}
 
+	/**
+	 * {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetBasePrice1() {
+		ItemDTO test = new ItemDTO();
+		BigDecimal expected = new BigDecimal("0");
+		test.setBasePrice(expected);
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), test.getBasePrice());
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetBasePrice2() {
+		ItemDTO test = new ItemDTO();
+		BigDecimal expected = new BigDecimal("1.0E20");
+		test.setBasePrice(expected);
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), test.getBasePrice());
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetBasePrice3() {
+		ItemDTO test = new ItemDTO();
+		BigDecimal expected = new BigDecimal("-1.0E20");
+		test.setBasePrice(expected);
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), test.getBasePrice());
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetBasePrice4() {
+		ItemDTO test = new ItemDTO();
+		BigDecimal expected = new BigDecimal("1.0E-20");
+		test.setBasePrice(expected);
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), test.getBasePrice());
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。
+	 */
+	@Test
+	public void testGetBasePrice5() {
+		ItemDTO test = new ItemDTO();
+		BigDecimal expected = new BigDecimal("-1.0E-20");
+		test.setBasePrice(expected);
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), test.getBasePrice());
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetBasePrice1() {
+		ItemDTO test = new ItemDTO();
+		BigDecimal expected = new BigDecimal("0");
+		test.setBasePrice(expected);
+		BigDecimal actual = test.getBasePrice();
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetBasePrice2() {
+		ItemDTO test = new ItemDTO();
+		BigDecimal expected = new BigDecimal("1.0E20");
+		test.setBasePrice(expected);
+		BigDecimal actual = test.getBasePrice();
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), actual);
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetBasePrice3() {
+		ItemDTO test = new ItemDTO();
+		BigDecimal expected = new BigDecimal("-1.0E20");
+		test.setBasePrice(expected);
+		BigDecimal actual = test.getBasePrice();
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), actual);
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetBasePrice4() {
+		ItemDTO test = new ItemDTO();
+		BigDecimal expected = new BigDecimal("1.0E-20");
+		test.setBasePrice(expected);
+		BigDecimal actual = test.getBasePrice();
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), actual);
+	}
+
+	/**
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
+	 * のためのテスト・メソッド。
+	 */
+	@Test
+	public void testSetBasePrice5() {
+		ItemDTO test = new ItemDTO();
+		BigDecimal expected = new BigDecimal("-1.0E-20");
+		test.setBasePrice(expected);
+		BigDecimal actual = test.getBasePrice();
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), actual);
+	}
+
 	/** {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。 */
 	@Test
 	public void testGetPrice1() {
 		ItemDTO test = new ItemDTO();
 		BigDecimal expected = new BigDecimal("0");
-		test.setPrice(expected);
-		assertEquals(expected, test.getPrice());
+		test.setBasePrice(expected);
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), test.getBasePrice());
 	}
 
 	/** {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。 */
@@ -1191,8 +1444,8 @@ public class ItemDTOTest {
 	public void testGetPrice2() {
 		ItemDTO test = new ItemDTO();
 		BigDecimal expected = new BigDecimal("1.0E20");
-		test.setPrice(expected);
-		assertEquals(expected, test.getPrice());
+		test.setBasePrice(expected);
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), test.getBasePrice());
 	}
 
 	/** {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。 */
@@ -1200,8 +1453,8 @@ public class ItemDTOTest {
 	public void testGetPrice3() {
 		ItemDTO test = new ItemDTO();
 		BigDecimal expected = new BigDecimal("-1.0E20");
-		test.setPrice(expected);
-		assertEquals(expected, test.getPrice());
+		test.setBasePrice(expected);
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), test.getBasePrice());
 	}
 
 	/** {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。 */
@@ -1209,8 +1462,8 @@ public class ItemDTOTest {
 	public void testGetPrice4() {
 		ItemDTO test = new ItemDTO();
 		BigDecimal expected = new BigDecimal("1.0E-20");
-		test.setPrice(expected);
-		assertEquals(expected, test.getPrice());
+		test.setBasePrice(expected);
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), test.getBasePrice());
 	}
 
 	/** {@link com.internousdev.tamaya.dto.ItemDTO#getBasePrice()} のためのテスト・メソッド。 */
@@ -1218,73 +1471,73 @@ public class ItemDTOTest {
 	public void testGetPrice5() {
 		ItemDTO test = new ItemDTO();
 		BigDecimal expected = new BigDecimal("-1.0E-20");
-		test.setPrice(expected);
-		assertEquals(expected, test.getPrice());
+		test.setBasePrice(expected);
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), test.getBasePrice());
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPrice(BigDecimal)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice1() {
 		ItemDTO test = new ItemDTO();
 		BigDecimal expected = new BigDecimal("0");
-		test.setPrice(expected);
-		BigDecimal actual = test.getPrice();
+		test.setBasePrice(expected);
+		BigDecimal actual = test.getBasePrice();
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPrice(BigDecimal)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice2() {
 		ItemDTO test = new ItemDTO();
 		BigDecimal expected = new BigDecimal("1.0E20");
-		test.setPrice(expected);
-		BigDecimal actual = test.getPrice();
-		assertEquals(expected, actual);
+		test.setBasePrice(expected);
+		BigDecimal actual = test.getBasePrice();
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), actual);
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPrice(BigDecimal)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice3() {
 		ItemDTO test = new ItemDTO();
 		BigDecimal expected = new BigDecimal("-1.0E20");
-		test.setPrice(expected);
-		BigDecimal actual = test.getPrice();
-		assertEquals(expected, actual);
+		test.setBasePrice(expected);
+		BigDecimal actual = test.getBasePrice();
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), actual);
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPrice(BigDecimal)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice4() {
 		ItemDTO test = new ItemDTO();
 		BigDecimal expected = new BigDecimal("1.0E-20");
-		test.setPrice(expected);
-		BigDecimal actual = test.getPrice();
-		assertEquals(expected, actual);
+		test.setBasePrice(expected);
+		BigDecimal actual = test.getBasePrice();
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), actual);
 	}
 
 	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setBasePrice(BigDecimal)}
+	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPrice(BigDecimal)}
 	 * のためのテスト・メソッド。
 	 */
 	@Test
 	public void testSetPrice5() {
 		ItemDTO test = new ItemDTO();
 		BigDecimal expected = new BigDecimal("-1.0E-20");
-		test.setPrice(expected);
-		BigDecimal actual = test.getPrice();
-		assertEquals(expected, actual);
+		test.setBasePrice(expected);
+		BigDecimal actual = test.getBasePrice();
+		assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), actual);
 	}
 
 	/**
@@ -1404,131 +1657,6 @@ public class ItemDTOTest {
 		BigDecimal expected = new BigDecimal("-1.0E-20");
 		test.setTaxRate(expected);
 		BigDecimal actual = test.getTaxRate();
-		assertEquals(expected, actual);
-	}
-
-	/**
-	 * {@link com.internousdev.tamaya.dto.ItemDTO#getPriceWithTax()}
-	 * のためのテスト・メソッド。
-	 */
-	@Test
-	public void testGetPriceWithTax1() {
-		ItemDTO test = new ItemDTO();
-		BigDecimal expected = new BigDecimal("0");
-		test.setPriceWithTax(expected);
-		assertEquals(expected, test.getPriceWithTax());
-	}
-
-	/**
-	 * {@link com.internousdev.tamaya.dto.ItemDTO#getPriceWithTax()}
-	 * のためのテスト・メソッド。
-	 */
-	@Test
-	public void testGetPriceWithTax2() {
-		ItemDTO test = new ItemDTO();
-		BigDecimal expected = new BigDecimal("1.0E20");
-		test.setPriceWithTax(expected);
-		assertEquals(expected, test.getPriceWithTax());
-	}
-
-	/**
-	 * {@link com.internousdev.tamaya.dto.ItemDTO#getPriceWithTax()}
-	 * のためのテスト・メソッド。
-	 */
-	@Test
-	public void testGetPriceWithTax3() {
-		ItemDTO test = new ItemDTO();
-		BigDecimal expected = new BigDecimal("-1.0E20");
-		test.setPriceWithTax(expected);
-		assertEquals(expected, test.getPriceWithTax());
-	}
-
-	/**
-	 * {@link com.internousdev.tamaya.dto.ItemDTO#getPriceWithTax()}
-	 * のためのテスト・メソッド。
-	 */
-	@Test
-	public void testGetPriceWithTax4() {
-		ItemDTO test = new ItemDTO();
-		BigDecimal expected = new BigDecimal("1.0E-20");
-		test.setPriceWithTax(expected);
-		assertEquals(expected, test.getPriceWithTax());
-	}
-
-	/**
-	 * {@link com.internousdev.tamaya.dto.ItemDTO#getPriceWithTax()}
-	 * のためのテスト・メソッド。
-	 */
-	@Test
-	public void testGetPriceWithTax5() {
-		ItemDTO test = new ItemDTO();
-		BigDecimal expected = new BigDecimal("-1.0E-20");
-		test.setPriceWithTax(expected);
-		assertEquals(expected, test.getPriceWithTax());
-	}
-
-	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPriceWithTax(BigDecimal)}
-	 * のためのテスト・メソッド。
-	 */
-	@Test
-	public void testSetPriceWithTax1() {
-		ItemDTO test = new ItemDTO();
-		BigDecimal expected = new BigDecimal("0");
-		test.setPriceWithTax(expected);
-		BigDecimal actual = test.getPriceWithTax();
-		assertEquals(expected, actual);
-	}
-
-	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPriceWithTax(BigDecimal)}
-	 * のためのテスト・メソッド。
-	 */
-	@Test
-	public void testSetPriceWithTax2() {
-		ItemDTO test = new ItemDTO();
-		BigDecimal expected = new BigDecimal("1.0E20");
-		test.setPriceWithTax(expected);
-		BigDecimal actual = test.getPriceWithTax();
-		assertEquals(expected, actual);
-	}
-
-	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPriceWithTax(BigDecimal)}
-	 * のためのテスト・メソッド。
-	 */
-	@Test
-	public void testSetPriceWithTax3() {
-		ItemDTO test = new ItemDTO();
-		BigDecimal expected = new BigDecimal("-1.0E20");
-		test.setPriceWithTax(expected);
-		BigDecimal actual = test.getPriceWithTax();
-		assertEquals(expected, actual);
-	}
-
-	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPriceWithTax(BigDecimal)}
-	 * のためのテスト・メソッド。
-	 */
-	@Test
-	public void testSetPriceWithTax4() {
-		ItemDTO test = new ItemDTO();
-		BigDecimal expected = new BigDecimal("1.0E-20");
-		test.setPriceWithTax(expected);
-		BigDecimal actual = test.getPriceWithTax();
-		assertEquals(expected, actual);
-	}
-
-	/**
-	 * {@link com.internousdev.tamaya.dto.dto.ItemDTO#setPriceWithTax(BigDecimal)}
-	 * のためのテスト・メソッド。
-	 */
-	@Test
-	public void testSetPriceWithTax5() {
-		ItemDTO test = new ItemDTO();
-		BigDecimal expected = new BigDecimal("-1.0E-20");
-		test.setPriceWithTax(expected);
-		BigDecimal actual = test.getPriceWithTax();
 		assertEquals(expected, actual);
 	}
 

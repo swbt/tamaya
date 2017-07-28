@@ -19,13 +19,14 @@ public class CreateTest {
 		varList.add(new Var("int", "itemId"));
 		varList.add(new Var("int", "stocks"));
 		varList.add(new Var("int", "sales"));
+		varList.add(new Var("int", "quantity"));
 		varList.add(new Var("String", "itemName"));
 		varList.add(new Var("String", "category"));
 		varList.add(new Var("String", "itemDetail"));
 		varList.add(new Var("String", "imgPath"));
+		varList.add(new Var("BigDecimal", "basePrice"));
 		varList.add(new Var("BigDecimal", "price"));
 		varList.add(new Var("BigDecimal", "taxRate"));
-		varList.add(new Var("BigDecimal", "priceWithTax"));
 		Target target = new Target("com.internousdev.tamaya.dto", "ItemDTO");
 		target.printTest(varList);
 	}
@@ -51,7 +52,7 @@ class Target {
 	}
 
 	public void printTest(ArrayList<Var> varList) {
-		File file = new File("C:\\Users\\internousdev\\Desktop\\test.txt");
+		File file = new File("C:\\Users\\internousdev\\Desktop\\test3.txt");
 		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)));) {
 			for (int i = 0; i < varList.size(); i++) {
 				String getter = "get" + varList.get(i).name.substring(0, 1).toUpperCase()

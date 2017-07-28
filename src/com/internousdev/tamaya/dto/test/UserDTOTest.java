@@ -826,63 +826,7 @@ public class UserDTOTest {
 			assertEquals(expected, actual);
 
 		}
-		/**
-		 * {@link com.internousdev.tamaya.dto.UserDTO#isLoginFlg()}
-		 *  のためのテスト・メソッド。
-		 */
-		@Test
-		public void testLoginFlg1() {
-			UserDTO test = new UserDTO();
-			boolean expected = true;
 
-			test.setLoginFlg(expected);
-			boolean actual=test.getLoginFlg();
-			assertEquals(expected, actual);
-		}
-
-		/**
-		 * {@link com.internousdev.tamaya.dto.UserDTO#isLoginFlg()}
-		 *  のためのテスト・メソッド。
-		 */
-		@Test
-		public void testLoginFlg2() {
-			UserDTO test = new UserDTO();
-			boolean expected = false;
-
-			test.setLoginFlg(expected);
-			boolean actual=test.getLoginFlg();
-			assertEquals(expected, actual);
-		}
-
-
-
-		/**
-		 * {@link com.internousdev.tamaya.dto.UserDTO#setLoginFlg(boolean)}
-		 *  のためのテスト・メソッド。
-		 */
-		@Test
-		public void testSetLoginFlg1() {
-			UserDTO test = new UserDTO();
-			boolean expected = true;
-
-			test.setLoginFlg(expected);
-			boolean actual=test.getLoginFlg();
-			assertEquals(expected, actual);
-		}
-
-		/**
-		 * {@link com.internousdev.tamaya.dto.UserDTO#setLoginFlg(boolean)}
-		 *  のためのテスト・メソッド。
-		 */
-		@Test
-		public void testSetLoginFlg2() {
-			UserDTO test = new UserDTO();
-			boolean expected = false;
-
-			test.setLoginFlg(expected);
-			boolean actual=test.getLoginFlg();
-			assertEquals(expected, actual);
-		}
 
 }
 
