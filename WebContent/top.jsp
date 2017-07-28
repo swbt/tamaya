@@ -7,11 +7,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <%--国際化用 --%>
 <fmt:setLocale value="${pageContext.request.locale.language}" />
 <fmt:setBundle basename="com.internousdev.tamaya.property.top" var="lang" />
 <title><s:text name="lang.top.title" /></title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport"
+	content="width=device-width,user-scalable=no,maximum-scale=1" />
+<link rel="stylesheet" media="all" type="text/css" href="style.css" />
+<!-- ※デフォルトのスタイル（style.css） -->
+<link rel="stylesheet" media="all" type="text/css" href="tablet.css" />
+<!-- ※タブレット用のスタイル（tablet.css） -->
+<link rel="stylesheet" media="all" type="text/css" href="smart.css" />
 <!-- Stylesheet
     ================================================== -->
 <link rel="stylesheet" href="css/reset.css">
