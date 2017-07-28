@@ -15,10 +15,16 @@ import java.util.Map;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
+ * 為替に関する機能を提供する
+ *
  * @author Takahiro Adachi
  *
  */
-public class ExchangeRate {
+public class ExchangeRateUtil {
+	/**
+	 * 「くじらはんど」の「クジラ 外国 為替 確認 API」から、日本円を基準とした為替レートをダウンロードする
+	 * @return 日本円を基準とした為替レート exchange rate from JPY
+	 */
 	@SuppressWarnings("unchecked")
 	public static Map<String, String> download() throws IOException {
 		HttpURLConnection connection = null;
@@ -31,7 +37,7 @@ public class ExchangeRate {
 			connection.setRequestMethod("GET");
 			// レスポンスが来た場合は処理続行
 			if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-				// InputStream から jsonString を読み取り、
+				// InputStream から jsonString を読み取り、Map に代入する
 				try (InputStreamReader isr = new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8);
 						BufferedReader reader = new BufferedReader(isr)) {
 					String jsonString;

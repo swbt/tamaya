@@ -11,10 +11,22 @@ import java.util.Date;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.internousdev.tamaya.util.ExchangeRate;
+import com.internousdev.tamaya.util.ExchangeRateUtil;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
+/**
+ * MySQL にアクセスし、為替情報をやり取りする
+ *
+ * @author Takahiro Adachi
+ * @since 1.0
+ */
 public class ExchangeDAO {
+	/**
+	 * MySQL にアクセスし、日本円を基準とした為替レートを取得する
+	 *
+	 * @author Takahiro Adachi
+	 * @since 1.0
+	 */
 	public BigDecimal getRateFromJPY(String currencyCode) throws SQLException {
 		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
 			String sql = "SELECT rate FROM exchanges WHERE currency_code = ?; ";
@@ -29,7 +41,13 @@ public class ExchangeDAO {
 		return null;
 	}
 
-	public String updateRateFromJPY() throws SQLException, IOException {
+	/**
+	 * MySQL の為替情報が 1日以上古い場合、外部サイトから為替情報をダウンロードし、MySQL に格納する
+	 *
+	 * @author Takahiro Adachi
+	 * @since 1.0
+	 */
+	public void updateRateFromJPY() throws SQLException, IOException {
 		Date now = new Date();
 		Date modifiedAt;
 		Map<String, String> exchangeRates;
@@ -41,7 +59,7 @@ public class ExchangeDAO {
 			if (rs.next()) {
 				modifiedAt = rs.getTimestamp("modified_at");
 				if (modifiedAt == null || now.getTime() - modifiedAt.getTime() > 1000 * 60 * 60 * 24) {
-					exchangeRates = ExchangeRate.download();
+					exchangeRates = ExchangeRateUtil.download();
 
 					String sql2 = "REPLACE INTO exchanges(currency_code, rate) VALUE(?, ?); ";
 					PreparedStatement ps = con.prepareStatement(sql2);
@@ -57,6 +75,5 @@ public class ExchangeDAO {
 				}
 			}
 		}
-		return null;
 	}
 }
