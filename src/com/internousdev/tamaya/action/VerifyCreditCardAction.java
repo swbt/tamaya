@@ -37,7 +37,7 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 	private int expirationMonth;
 	/** カート */
 	private CartDTO cart = new CartDTO();
-	/** セッション情報 */
+	/** セッション */
 	private Map<String, Object> session;
 
 	/**
@@ -70,14 +70,12 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 			new CreditCardDAO().register(userId, creditBrand, creditNumber, nameE, securityCode, expirationYear, expirationMonth);
 		} catch (SQLException e) {
 			e.printStackTrace();
-			addActionError("カード情報の登録に失敗しました");
 			return ERROR;
 		}
 		try {
 			cart = new CartDAO().getCart(userId);
 		} catch (SQLException e) {
 			e.printStackTrace();
-			addActionError("カートの読み込みに失敗しました");
 			return SUCCESS;
 		}
 		return SUCCESS;
@@ -147,11 +145,11 @@ public class VerifyCreditCardAction extends ActionSupport implements SessionAwar
 	public void setCart(CartDTO cart) {
 		this.cart = cart;
 	}
-	/** セッション情報を取得するメソッド */
+	/** セッションを取得するメソッド */
 	public Map<String, Object> getSession() {
 		return session;
 	}
-	/** セッション情報を格納するメソッド */
+	/** セッションを格納するメソッド */
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;

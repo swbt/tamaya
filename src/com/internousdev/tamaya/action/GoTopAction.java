@@ -25,13 +25,11 @@ public class GoTopAction extends ActionSupport implements SessionAware {
 		try {
 			itemList = new ItemListDAO().getRanking(3);
 		} catch (SQLException e) {
-			addActionError("検索中にエラーが発生しました");
 			e.printStackTrace();
 			return ERROR;
 		}
 
 		if(itemList.size() <= 0){
-			addActionError("商品が見つかりませんでした");
 			return ERROR;
 		}
 		return SUCCESS;

@@ -50,12 +50,10 @@ public class GoItemListAction extends ActionSupport implements SessionAware {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			addActionError("検索中にエラーが発生しました");
 			return ERROR;
 		}
 
 		if (itemList.size() <= 0) {
-			addActionError("商品がありません");
 			return ERROR;
 		}
 		return SUCCESS;

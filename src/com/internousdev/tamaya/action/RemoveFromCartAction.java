@@ -33,7 +33,6 @@ public class RemoveFromCartAction extends ActionSupport implements SessionAware 
 
 		CartDAO dao = new CartDAO();
 		if (!dao.removeItem(userId, itemId)) {
-			addActionError("商品の削除に失敗しました");
 			return ERROR;
 		}
 		return SUCCESS;

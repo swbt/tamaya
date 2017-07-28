@@ -5,46 +5,49 @@ package com.internousdev.tamaya.action;
 
 import java.util.Map;
 
+import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tamaya.dao.LogoutDAO;
+import com.internousdev.tamaya.dao.UserDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * emailとpasswordを入力してログインする
+ * MySQL のログインフラグを false にし、セッションを破棄する
  * @author Takahiro Adachi
  * @since 1.0
- * @version 1.0
  */
 public class LogoutAction extends ActionSupport implements SessionAware {
+	/** セッション */
 	private Map<String, Object> session;
 
 	public String execute(){
-		String result = ERROR;
-		LogoutDAO dao = new LogoutDAO();
-
 		if(!session.containsKey("userId")){
-			session.clear();
-			result = SUCCESS;
-			return result;
+			((SessionMap<String, Object>)session).invalidate();
+			return SUCCESS;
 		}
 		int userId = (int)session.get("userId");
-
-
-		if(dao.update(userId)){
-			session.clear();
-			result = SUCCESS;
+		if(userId == 0){
+			((SessionMap<String, Object>)session).invalidate();
+			return SUCCESS;
 		}
-		return result;
+
+
+		UserDAO dao = new UserDAO();
+		if(dao.logout(userId)){
+			((SessionMap<String, Object>)session).invalidate();
+			return SUCCESS;
+		}
+		((SessionMap<String, Object>)session).invalidate();
+		return ERROR;
 	}
 
+	/** セッションを取得する */
 	public Map<String, Object> getSession() {
 		return session;
 	}
+	/** セッションを格納する */
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
-
 }

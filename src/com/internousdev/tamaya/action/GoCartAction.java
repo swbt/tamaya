@@ -32,7 +32,6 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 			cart = new CartDAO().getCart(userId);
 		} catch (SQLException e) {
 			e.printStackTrace();
-			addActionError("カートの読み込み中にエラーが発生しました");
 			return ERROR;
 		}
 		System.out.println("GoCartAction : totalQuantity = " + cart.getTotalQuantity() + ", GrandTotal = " + cart.getGrandTotal());

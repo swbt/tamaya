@@ -44,7 +44,6 @@ public class ConfirmOrderAction extends ActionSupport implements SessionAware {
 			cart = new CartDAO().getCart(userId);
 		} catch (SQLException e) {
 			e.printStackTrace();
-			addActionError("カートの読み込み中にエラーが発生しました");
 			return ERROR;
 		}
 		if (cart == null) {
@@ -53,7 +52,6 @@ public class ConfirmOrderAction extends ActionSupport implements SessionAware {
 
 		CreditCardDTO dto = new CreditCardDAO().getCreditCard(userId);
 		if (dto == null) {
-			addActionError("");
 			return ERROR;
 		}
 		creditBrand = dto.getCreditBrand();
