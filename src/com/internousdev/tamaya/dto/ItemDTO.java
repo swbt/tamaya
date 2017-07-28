@@ -87,6 +87,10 @@ public class ItemDTO {
 	public BigDecimal getPrice() {
 		return price;
 	}
+	/** 税込価格を格納するメソッド */
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
 	/** 在庫を取得するメソッド */
 	public int getStocks() {
 		return stocks;

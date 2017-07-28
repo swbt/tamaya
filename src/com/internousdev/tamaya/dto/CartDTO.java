@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * カート情報を格納・取得するクラス
  * @author Takahiro Adachi
- *
+ * @since 1.0
  */
 public class CartDTO {
 	/** カート内の商品のリスト */
@@ -36,7 +36,7 @@ public class CartDTO {
 	public ArrayList<ItemDTO> getItemList() {
 		return itemList;
 	}
-	/** カート内の商品のリストを格納するメソッド */
+	/** カート内の商品のリストと、それに伴って求まる商品の総数と小計を格納するメソッド */
 	public void setItemList(ArrayList<ItemDTO> itemList) {
 		this.itemList = itemList;
 		calcTotal();

@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tamaya.dao.OrderDAO;
 import com.internousdev.tamaya.dao.UserDAO;
 import com.internousdev.tamaya.dto.OrderDTO;
 import com.internousdev.tamaya.dto.UserDTO;
@@ -33,7 +34,7 @@ public class GoMyPageAction extends ActionSupport implements SessionAware {
 		if (user == null) {
 			return ERROR;
 		}
-	/** 注文履歴を取得する **/
+		orderList = new OrderDAO().getOrderList(userId);
 		return SUCCESS;
 	}
 

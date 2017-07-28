@@ -4,10 +4,9 @@
 package com.internousdev.tamaya.dto;
 
 /**
- * ユーザーの情報をここに入れてやり取りする
- * @author Takahiro Adachi
+ * ユーザーの情報を格納・取得するクラス
+ * @author TAKAHIRO ADACHI
  * @since 1.0
- * @version 1.0
  */
 public class UserDTO {
 	/** ユーザーID */
@@ -30,104 +29,105 @@ public class UserDTO {
 	private String postal;
 	/** 住所 */
 	private String address;
-	/** Eメール */
+	/** Eメールアドレス */
 	private String email;
+	/** ユーザーの権限（1:一般, 2:リーダー, 3:管理者） */
 	private int userFlg;
 
 
-	/** userIdを取得するメソッド */
+	/** ユーザーIDを取得するメソッド */
 	public int getUserId() {
 		return userId;
 	}
-	/** userIdを格納するメソッド */
+	/** ユーザーIDを格納するメソッド */
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	/** passwordを取得するメソッド */
+	/** パスワードを取得するメソッド */
 	public String getPassword() {
 		return password;
 	}
-	/** passwordを格納するメソッド */
+	/** パスワードを格納するメソッド */
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	/** familyNameを取得するメソッド */
+	/** 姓(英語)を取得するメソッド */
 	public String getFamilyName() {
 		return familyName;
 	}
-	/** familyNameを格納するメソッド */
+	/** 姓(英語)を格納するメソッド */
 	public void setFamilyName(String familyName) {
 		this.familyName = familyName;
 	}
-	/** givenNameを取得するメソッド */
+	/** 名(英語)を取得するメソッド */
 	public String getGivenName() {
 		return givenName;
 	}
-	/** givenNameを格納するメソッド */
+	/** 名(英語)を格納するメソッド */
 	public void setGivenName(String givenName) {
 		this.givenName = givenName;
 	}
-	/** familyNameKanjiを取得するメソッド */
+	/** 姓(漢字)を取得するメソッド */
 	public String getFamilyNameKanji() {
 		return familyNameKanji;
 	}
-	/** familyNameKanjiを格納するメソッド */
+	/** 姓(漢字)を格納するメソッド */
 	public void setFamilyNameKanji(String familyNameKanji) {
 		this.familyNameKanji = familyNameKanji;
 	}
-	/** familyNameKanaを取得するメソッド */
+	/** 姓(ひらがな)を取得するメソッド */
 	public String getFamilyNameKana() {
 		return familyNameKana;
 	}
-	/** familyNameKanaを格納するメソッド */
+	/** 姓(ひらがな)を格納するメソッド */
 	public void setFamilyNameKana(String familyNameKana) {
 		this.familyNameKana = familyNameKana;
 	}
-	/** givenNameKanjiを取得するメソッド */
+	/** 名(漢字)を取得するメソッド */
 	public String getGivenNameKanji() {
 		return givenNameKanji;
 	}
-	/** givenNameKanjiを格納するメソッド */
+	/** 名(漢字)を格納するメソッド */
 	public void setGivenNameKanji(String givenNameKanji) {
 		this.givenNameKanji = givenNameKanji;
 	}
-	/** givenNameKanaを取得するメソッド */
+	/** 名(ひらがな)を取得するメソッド */
 	public String getGivenNameKana() {
 		return givenNameKana;
 	}
-	/** givenNameKanaを格納するメソッド */
+	/** 名(ひらがな)を格納するメソッド */
 	public void setGivenNameKana(String givenNameKana) {
 		this.givenNameKana = givenNameKana;
 	}
-	/** postalを取得するメソッド */
+	/** 郵便番号を取得するメソッド */
 	public String getPostal() {
 		return postal;
 	}
-	/** postalを格納するメソッド */
+	/** 郵便番号を格納するメソッド */
 	public void setPostal(String postal) {
 		this.postal = postal;
 	}
-	/** addressを取得するメソッド */
+	/** 住所を取得するメソッド */
 	public String getAddress() {
 		return address;
 	}
-	/** addressを格納するメソッド */
+	/** 住所を格納するメソッド */
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	/** emailを取得するメソッド */
+	/** Eメールアドレスを取得するメソッド */
 	public String getEmail() {
 		return email;
 	}
-	/** emailを格納するメソッド */
+	/** Eメールアドレスを格納するメソッド */
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	/** userFlgを取得するメソッド */
+	/** ユーザーの権限（1:一般, 2:リーダー, 3:管理者）を取得する */
 	public int getUserFlg() {
 		return userFlg;
 	}
-	/** userFlgを格納するメソッド */
+	/** ユーザーの権限（1:一般, 2:リーダー, 3:管理者）を格納する */
 	public void setUserFlg(int userFlg) {
 		this.userFlg = userFlg;
 	}

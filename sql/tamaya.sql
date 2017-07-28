@@ -56,7 +56,7 @@ CREATE TABLE orders(
   ,shipping_cost DECIMAL(15,5) NOT NULL -- 送料
   ,grand_total DECIMAL(15,5) NOT NULL -- 総額
   ,is_canceled BOOLEAN NOT NULL DEFAULT FALSE -- キャンセルされたか
-  ,order_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP -- 注文日時
+  ,ordered_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP -- 注文日時
   ,FOREIGN KEY(user_id) REFERENCES openconnect.users(user_id) ON DELETE CASCADE
   ,INDEX(user_id)
 );
