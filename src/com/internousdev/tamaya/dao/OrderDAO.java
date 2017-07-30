@@ -97,7 +97,7 @@ public class OrderDAO {
 	public ArrayList<OrderDTO> getOrderList(int userId) throws SQLException {
 		ArrayList<OrderDTO> orderList = new ArrayList<>();
 		try (Connection con = new MySqlConnector("tamaya").getConnection();) {
-			String sql1 = "SELECT order_id, shipping_cost, grand_total, ordered_at FROM orders"
+			String sql1 = "SELECT order_id, shipping_cost, grand_total, ordered_at FROM orders "
 					+ "WHERE user_id = ? AND is_canceled = FALSE ";
 			PreparedStatement ps1 = con.prepareStatement(sql1);
 			ps1.setInt(1, userId);

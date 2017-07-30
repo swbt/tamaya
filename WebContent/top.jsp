@@ -12,158 +12,133 @@
 <fmt:setLocale value="${pageContext.request.locale.language}" />
 <fmt:setBundle basename="com.internousdev.tamaya.property.top" var="lang" />
 <title><s:text name="lang.top.title" /></title>
-<meta name="viewport"
-	content="width=device-width,user-scalable=no,maximum-scale=1" />
-<link rel="stylesheet" media="all" type="text/css" href="style.css" />
-<!-- ※デフォルトのスタイル（style.css） -->
-<link rel="stylesheet" media="all" type="text/css" href="tablet.css" />
-<!-- ※タブレット用のスタイル（tablet.css） -->
-<link rel="stylesheet" media="all" type="text/css" href="smart.css" />
-<!-- Stylesheet
-    ================================================== -->
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="slick.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="slick-theme.css" media="screen" />
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link href="css/top.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+<!-- ▼▼StyleSheet -->
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="slick.css"/>
+<link rel="stylesheet" href="slick-theme.css"/>
+<link rel="stylesheet" href="css/bootstrap-modal.min.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style_dark.css">
+
+<!-- ▼▼JavaScript -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="slick.min.js"></script>
 
 
-
-<!-- Javascripts================================================== -->
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-
-  <!-- ▼▼ログイン判定し、それに応じたヘッダーのjspファイルを読み込む -->
-  <s:if test="#session.userId != null && #session.userId > 0 ">
-    <s:include value="login_header.jsp" />
-  </s:if>
-  <s:else>
-    <s:include value="header.jsp" />
-  </s:else>
+  <!-- ▼▼ヘッダーのjspファイルを読み込む -->
+  <s:include value="header.jsp" />
   <!-- ▼▼モーダル画面のjspファイルを読み込む -->
   <s:include value="modal.jsp" />
-
-
-  <div class="main_img"></div>
-  <div class="main1">
-    <h2>
-      <font color="white"><s:text name="lang.top.main1_h2" /></font>
-    </h2>
-    <div class="main-category1">
-      <table>
-        <tr>
-          <td>
-            <div class="main-category-list1">
-              <s:form action="GoItemListAction">
-                <s:hidden name="priceRange" value="1" />
-                <s:submit class="button" value="%{getText('lang.top.priceRange1')}" />
-              </s:form>
-            </div>
-          </td>
-          <td>
-            <div class="main-category-list2">
-              <s:form action="GoItemListAction">
-                <s:hidden name="priceRange" value="2" />
-                <s:submit class="button" value="%{getText('lang.top.priceRange2')}" />
-              </s:form>
-            </div>
-          </td>
-          <td>
-            <div class="main-category-list3">
-              <s:form action="GoItemListAction">
-                <s:hidden name="priceRange" value="3" />
-                <s:submit class="button" value="%{getText('lang.top.priceRange3')}" />
-              </s:form>
-            </div>
-          </td>
-          <td>
-            <div class="main-category-list4">
-              <s:form action="GoItemListAction">
-                <s:hidden name="priceRange" value="4" />
-                <s:submit class="button" value="%{getText('lang.top.priceRange4')}" />
-              </s:form>
-            </div>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-
-  <div class="main2">
-    <div class="main-category2">
-      <table>
-        <tr>
-          <td>
-            <div class="main-subcategory-list1">
-              <s:form action="GoItemListAction">
-                <s:hidden name="category" value="temoti" />
-                <s:submit class="button" value="%{getText('lang.top.categoryTemoti')}" />
-              </s:form>
-            </div>
-          </td>
-          <td><div class="main-subcategory-list2">
-              <s:form action="GoItemListAction">
-                <s:hidden name="category" value="hunsyutu" />
-                <s:submit class="button" value="%{getText('lang.top.categoryHunsyutu')}" />
-              </s:form>
-            </div></td>
-          <td><div class="main-subcategory-list3">
-              <s:form action="GoItemListAction">
-                <s:hidden name="category" value="utiage" />
-                <s:submit class="button" value="%{getText('lang.top.categoryUtiage')}" />
-              </s:form>
-            </div></td>
-          <td><div class="main-subcategory-list4">
-              <s:form action="GoItemListAction">
-                <s:hidden name="category" value="sonota" />
-                <s:submit class="button" value="%{getText('lang.top.categorySonota')}" />
-              </s:form>
-            </div></td>
-        </tr>
-      </table>
-    </div>
-  </div>
-
-  <div class="main3">
-    <div class="title-ranking">
+  <div class="container">
+    <div class="main_img"></div>
+    <div class="main1">
       <h2>
-        <font color="white"><s:text name="lang.top.rankingTitle" /></font>
+        <font color="white"><s:text name="lang.top.main1_h2" /></font>
       </h2>
+      <div class="main-category1">
+        <div class="main-category-list1">
+          <s:form action="GoItemListAction">
+            <s:hidden name="priceRange" value="1" />
+            <s:submit class="button" value="%{getText('lang.top.priceRange1')}" />
+          </s:form>
+        </div>
+        <div class="main-category-list2">
+          <s:form action="GoItemListAction">
+            <s:hidden name="priceRange" value="2" />
+            <s:submit class="button" value="%{getText('lang.top.priceRange2')}" />
+          </s:form>
+        </div>
+        <div class="main-category-list3">
+          <s:form action="GoItemListAction">
+            <s:hidden name="priceRange" value="3" />
+            <s:submit class="button" value="%{getText('lang.top.priceRange3')}" />
+          </s:form>
+        </div>
+        <div class="main-category-list4">
+          <s:form action="GoItemListAction">
+            <s:hidden name="priceRange" value="4" />
+            <s:submit class="button" value="%{getText('lang.top.priceRange4')}" />
+          </s:form>
+        </div>
+      </div>
     </div>
-    <table>
-      <tr>
-        <td>
-          <div class="ranking-main">
-            <h3 style="color: red;">
-              <s:text name="lang.top.firstPlace" />
-            </h3>
-            <br> <a href="GoItemListAction"><img src="img/megaton_bag.jpg" width=150 alt="画像の説明文"></a>
-          </div>
-        </td>
-        <td>
-          <div class="ranking-secondary">
-            <h3 style="color: red;">
-              <s:text name="lang.top.secondPlace" />
-            </h3>
-            <br> <a href="GoItemListAction"><img src="img/yamato_damashi.jpg" width=150 alt="画像の説明文"></a>
-          </div>
-        </td>
-        <td><div class="ranking-tertiary">
-            <h3 style="color: red;">
-              <s:text name="lang.top.thirdPlace" />
-            </h3>
-            <br> <a href="GoItemListAction"><img src="img/powerful_sanhenge.jpg" width=150 alt="画像の説明文"></a>
-          </div></td>
-      </tr>
-    </table>
-  </div>
-  <div class="main4">
-    <div class="title-special">
-      <a href="./tokusyu.jsp"><s:text name="lang.top.special-collection" /></a>
+
+    <div class="main2">
+      <div class="main-category2">
+        <table>
+          <tr>
+            <td>
+              <div class="main-subcategory-list1">
+                <s:form action="GoItemListAction">
+                  <s:hidden name="category" value="temoti" />
+                  <s:submit class="button" value="%{getText('lang.top.categoryTemoti')}" />
+                </s:form>
+              </div>
+            </td>
+            <td><div class="main-subcategory-list2">
+                <s:form action="GoItemListAction">
+                  <s:hidden name="category" value="hunsyutu" />
+                  <s:submit class="button" value="%{getText('lang.top.categoryHunsyutu')}" />
+                </s:form>
+              </div></td>
+            <td><div class="main-subcategory-list3">
+                <s:form action="GoItemListAction">
+                  <s:hidden name="category" value="utiage" />
+                  <s:submit class="button" value="%{getText('lang.top.categoryUtiage')}" />
+                </s:form>
+              </div></td>
+            <td><div class="main-subcategory-list4">
+                <s:form action="GoItemListAction">
+                  <s:hidden name="category" value="sonota" />
+                  <s:submit class="button" value="%{getText('lang.top.categorySonota')}" />
+                </s:form>
+              </div></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="main3">
+      <div class="title-ranking">
+        <h2>
+          <font color="white"><s:text name="lang.top.rankingTitle" /></font>
+        </h2>
+      </div>
+      <table>
+        <tr>
+          <td>
+            <div class="ranking-main">
+              <h3 style="color: red;">
+                <s:text name="lang.top.firstPlace" />
+              </h3>
+              <br> <a href="GoItemListAction"><img src="img/megaton_bag.jpg" width=150 alt="画像の説明文"></a>
+            </div>
+          </td>
+          <td>
+            <div class="ranking-secondary">
+              <h3 style="color: red;">
+                <s:text name="lang.top.secondPlace" />
+              </h3>
+              <br> <a href="GoItemListAction"><img src="img/yamato_damashi.jpg" width=150 alt="画像の説明文"></a>
+            </div>
+          </td>
+          <td><div class="ranking-tertiary">
+              <h3 style="color: red;">
+                <s:text name="lang.top.thirdPlace" />
+              </h3>
+              <br> <a href="GoItemListAction"><img src="img/powerful_sanhenge.jpg" width=150 alt="画像の説明文"></a>
+            </div></td>
+        </tr>
+      </table>
+    </div>
+    <div class="main4">
+      <div class="title-special">
+        <a href="./tokusyu.jsp"><s:text name="lang.top.special-collection" /></a>
+      </div>
     </div>
   </div>
 </body>

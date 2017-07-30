@@ -1,20 +1,44 @@
 @CHARSET "UTF-8";
-body {
-  background-image: url("../img/back-ground2.jpg");
-  background-repeat: repeat;
-  background-size: 200px 200px;
-  color: #BBBBBB;
+/*******************************
+ 全ページに共通の CSS を記述する
+ *******************************/
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3",
+    Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
 }
+a {
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+html {
+  min-height: 100%;
+}
+body {
+  min-height: 100%;
+}
+/* ページ全体の要素を包む */
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 300px;
+  background-color: #012;
+}
+
 input {
   color: black;
 }
-.item_list{
+
+.item_list {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
 
-.item{
+.item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,10 +47,12 @@ input {
   margin: 0 1% 3rem;
   padding-bottom: 3rem;
 }
-.item table{
+
+.item table {
   width: 80%;
   margin: 10%;
 }
+
 .img_path {
   display: block;
   padding: 15%;
@@ -35,23 +61,23 @@ input {
   cursor: pointer;
 }
 
-.item table{
+.item table {
   margin: auto;
 }
 
-@media screen and (max-width: 980px){
+@media screen and (max-width: 980px) {
   .item {
     flex-basis: 31%;
   }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .item {
     flex-basis: 48%;
   }
 }
 
-@media screen and (max-width: 380px){
+@media screen and (max-width: 380px) {
   .item {
     flex-basis: 98%;
   }

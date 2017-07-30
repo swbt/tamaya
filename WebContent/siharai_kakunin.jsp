@@ -54,8 +54,8 @@
             <td><img src="<s:property value="imgPath"/>" <s:property value="itemName" /> align="center"></td>
             <td align="center">￥<fmt:formatNumber value="${price}" />（税込）
             </td>
-            <td align="center"><s:property value="orderCount" /></td>
-            <!-- orderCount新設の必要あり？ -->
+            <td align="center"><s:property value="quantity" /></td>
+            <!-- quantity新設の必要あり？ -->
             <td align="center">￥<fmt:formatNumber value="${subTotal}" /></td>
           </tr>
         </s:iterator>

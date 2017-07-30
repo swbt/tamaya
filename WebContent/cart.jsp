@@ -66,7 +66,7 @@
         </thead>
 
         <tbody>
-          <s:iterator value="cart.cartItemList">
+          <s:iterator value="cart.itemList">
             <!-- デザインが崩れてしまうため保留 -->
             <tr>
               <td><img class="img_item" src="<s:property value="imgPath"/>" width="200" height="180" align="center"></td>
@@ -84,8 +84,7 @@
 
               <td align="center">￥ <s:property value="total" />（税込）
               </td>
-              <td align="center"><s:form action="CartDeleteAction">
-                  <s:hidden name="userId" value="%{userId}" />
+              <td align="center"><s:form action="RemoveFromCartAction">
                   <s:hidden name="itemId" value="%{itemId}" />
                   <button type="submit" class="btn btn-default">削除</button>
                 </s:form></td>
@@ -97,7 +96,7 @@
         <tfoot>
           <tr>
             <td class="td_01" colspan="2">送料（国内）</td>
-            <td align="center" colspan="4">￥ <s:property value="cart.totalQuantity" />（税込）</td>
+            <td align="center" colspan="4">￥ <s:property value="cart.shippingCost" />（税込）</td>
           </tr>
 
           <tr>

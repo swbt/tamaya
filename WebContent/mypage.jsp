@@ -11,21 +11,11 @@
 <!-- Javascripts
     ================================================== -->
 <script src="js/jquery-3.2.1.min.js"></script>
-<!--     <script>
-      $(document).ready(function(){
-        $("#header").load("login_header.html");
-      });
-    </script> -->
 <link rel="stylesheet" type="text/css" href="./css/mypage.css" media="all">
 </head>
 
 <!-- ▼▼ログイン判定し、それに応じたヘッダーのjspファイルを読み込む -->
-<s:if test="#session.userId != null && #session.userId > 0 ">
-  <s:include value="login_header.jsp" />
-</s:if>
-<s:else>
   <s:include value="header.jsp" />
-</s:else>
 
 <h1>マイページ</h1>
 <table class="type07">
@@ -38,7 +28,7 @@
   <tbody>
     <tr>
       <th scope="row">氏名</th>
-      <td><s:property value="user.familyNameKanji" /> <s:property value="user.familyNameKana" /></td>
+      <td><s:property value="user.familyNameKanji" /> <s:property value="user.givenNameKanji" /></td>
     </tr>
     <tr>
       <th scope="row">住所</th>
