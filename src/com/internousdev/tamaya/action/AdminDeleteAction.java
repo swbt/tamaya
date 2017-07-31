@@ -7,7 +7,7 @@ import com.internousdev.tamaya.dao.AdminDeleteDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * @author internousdev
+ * @author
  *商品情報を削除するクラス
  */
 public class AdminDeleteAction extends ActionSupport {
