@@ -23,6 +23,8 @@
 </head>
 
 <body>
+<!-- ▼▼ヘッダーのjspファイルを読み込む -->
+  <s:include value="header.jsp" />
 	<h2>カード情報入力</h2>
 
 

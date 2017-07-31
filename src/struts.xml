@@ -74,14 +74,14 @@
     </action>
 
     <action name="LoginAction" class="com.internousdev.tamaya.action.LoginAction" method="execute">
-      <result name="success" type="redirect">GoTopAction</result>
-      <result name="error" type="redirect">GoTopAction</result>
+      <result name="success">header.jsp</result>
+      <result name="error">header.jsp</result>
       <result name="admin">kanri_kakunin.jsp</result>
     </action>
 
     <action name="LogoutAction" class="com.internousdev.tamaya.action.LogoutAction" method="execute">
-      <result name="success" type="json"></result>
-      <result name="error" type="redirect">GoTopAction</result>
+      <result name="success" type="redirectAction">GoTopAction</result>
+      <result name="error" type="redirectAction">GoTopAction</result>
     </action>
 
     <!-- 商品一覧画面への遷移 -->

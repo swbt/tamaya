@@ -16,28 +16,14 @@
 <link rel="stylesheet" href="css/header.css" />
 <!-- ▼▼JavaScript -->
 <script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/bootstrap-modal.min.js"></script>
-
-<script>
-function logout() {
-  $.ajax({
-    url : 'LogoutAction.action',
-    type : 'GET',
-    dataType : 'json',
-    success : function() {
-      var header = document.getElementsByTagName('header');
-      header[0].textContent = null;
-      $('header').load('header.jsp');
-    }
-  })
-}
-</script>
+<script src="js/header.js"></script>
 </head>
 <body>
-  <header class="header">
-    <a class="logo" href="<s:url action='GoTopAction'/>"><img alt="<s:text name='lang.header.tamaya' />" src="img/logo3.png"></a>
+  <header id="header">
+    <a class="logo" href="<s:url action='GoTopAction'/>"><img alt="<s:text name='lang.header.tamaya' />"
+      src="img/logo3.png"></a>
     <div class="spacer"></div>
-    <nav class="navi">
+    <div class="navi">
       <s:if test="#session.userId > 0">
         <a class="navi_box" href="toiawase.jsp">
           <span class="glyphicon glyphicon-envelope"></span>
@@ -51,25 +37,30 @@ function logout() {
           <span class="glyphicon glyphicon-home"></span>
           <span class="navi_box_title"><s:text name='lang.header.myPage' /></span>
         </a>
-        <a class="navi_box" onclick="logout();">
+        <a class="navi_box" href="<s:url action='LogoutAction'/>">
           <span class="glyphicon glyphicon-log-out"></span>
           <span class="navi_box_title"><s:text name='lang.header.logout' /></span>
         </a>
       </s:if>
       <s:else>
+        <a class="navi_box login_box">
+          <span class="login_label">
+            <s:text name='lang.header.email' />
+          </span>
+          <span class="login_label">
+            <s:text name='lang.header.password' />
+          </span>
+          <input type="text" class="login_input" id="login_email" name="email" />
+          <input type="password" class="login_input" id="login_password" name="password" size="20" />
+          <input type="button"  class="login_submit" value="<s:text name='lang.header.login' />" onclick="login();"/>
+        </a>
         <a class="navi_box" href="toiawase.jsp">
           <span class="glyphicon glyphicon-envelope"></span>
           <span class="navi_box_title"><s:text name='lang.header.contact' /></span>
         </a>
-        <s:form class="navi_box login_box" action="LoginAction">
-          <div class="login_label"><s:text name='lang.header.email' /></div>
-          <div class="login_label"><s:text name='lang.header.password' /></div>
-          <s:textfield class="login_input" name="email"/>
-          <s:password class="login_input" name="password" size="20"/>
-          <s:submit class="login_submit" value="%{getText('lang.header.login')}" />
-        </s:form>
       </s:else>
-    </nav>
-  </header><!-- .header -->
+    </div>
+  </header>
+  <!-- .header -->
 </body>
 </html>
