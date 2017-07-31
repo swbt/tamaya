@@ -14,13 +14,6 @@
     value="
          com.internousdev.tamaya.property.header
          com.internousdev.tamaya.property.item_list
-         com.internousdev.tamaya.property.kanri_header
-         com.internousdev.tamaya.property.kanri_henko
-         com.internousdev.tamaya.property.kanri_kakunin
-         com.internousdev.tamaya.property.kanri_login
-         com.internousdev.tamaya.property.kanri_rireki
-         com.internousdev.tamaya.property.kanri_sakujyo
-         com.internousdev.tamaya.property.kanri_tuika
          com.internousdev.tamaya.property.login_header
          com.internousdev.tamaya.property.login
          com.internousdev.tamaya.property.modal
