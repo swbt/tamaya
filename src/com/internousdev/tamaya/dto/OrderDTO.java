@@ -1,6 +1,7 @@
 package com.internousdev.tamaya.dto;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -64,7 +65,7 @@ public class OrderDTO {
 	}
 	/** 送料を格納するメソッド */
 	public void setShippingCost(BigDecimal shippingCost) {
-		this.shippingCost = shippingCost;
+		this.shippingCost = shippingCost.setScale(0, RoundingMode.HALF_EVEN);;
 	}
 	/** 総計（支払った金額）を取得するメソッド */
 	public BigDecimal getGrandTotal() {
@@ -72,7 +73,7 @@ public class OrderDTO {
 	}
 	/** 総計（支払った金額）を格納するメソッド */
 	public void setGrandTotal(BigDecimal grandTotal) {
-		this.grandTotal = grandTotal;
+		this.grandTotal = grandTotal.setScale(0, RoundingMode.HALF_EVEN);;
 	}
 	/** 注文日時を取得するメソッド */
 	public Date getOrderedAt() {
