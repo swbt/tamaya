@@ -6,12 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.tamaya.dto.MypageDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * 顧客情報に関するクラス
- * @author Miyauchi Akitomo
+ * @author
  * @since 2017/05/15
  * @version 1.0
  *
@@ -22,7 +21,7 @@ public class AdminUserDAO {
 	* 顧客情報を取得しリストに格納する
 	* @param userId ユーザーID
 	* @return itemList 顧客情報
-	* @author Miyauchi Akitomo
+	* @author
 	* @since 2017/05/15
 	* @version 1.0
 	*/

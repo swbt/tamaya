@@ -2,7 +2,7 @@ package com.internousdev.tamaya.dto;
 
 /**
  * 管理者ページの商品検索に関するDTOクラス
- * @author Kaori Takahashi
+ * @author KAORI TAKAHASHI
  * @since 2017/07/24
  * @version 1.0
  */

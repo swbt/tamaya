@@ -10,7 +10,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 
 	/**
 	 * 商品情報の取得に関するクラス
-	 * @author Ryo Maeda
+	 * @author
 	 * @since 2017/05/15
 	 * @version 1.0
 	 */
@@ -19,7 +19,7 @@ public class AdminUpdateDAO {
 
 	/**
 	 * itemId,itemNameで必要な情報を取得するメソッド
-	 * @author Ryo Maeda
+	 * @author
 	 * @since 2017/05/15
 	 * @version 1.0
 	 * @param itemId 商品ID
@@ -58,7 +58,7 @@ public class AdminUpdateDAO {
 
 	/**
 	 * 商品情報を更新するメソッド
-	 * @author Ryo Maeda
+	 * @author
 	 * @since 2017/05/15
 	 * @version 1.0
 	 * @param itemId 商品ID

@@ -23,7 +23,7 @@ import facebook4j.auth.AccessToken;
 
 /**
  * FACEBOOK OAuthでログインする為のクラス
- * @author Kaori Takahashi
+ * @author KAORI TAKAHASHI
  * @since 2017/07/20
  * @version 1.0
  */
@@ -78,7 +78,7 @@ public class FacebookOauth extends ActionSupport{
 	 * @param request リクエスト
 	 * @param response レスポスト
 	 * @return userMap ユーザー情報
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/7/20
 	 * @version 1.0
 	 */
@@ -157,7 +157,7 @@ public class FacebookOauth extends ActionSupport{
 	 * リクエスト用のメソッド
 	 * @param url URL
 	 * @return String
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/07/20
 	 * @version 1.0
 	 */

@@ -14,7 +14,7 @@ import com.internousdev.util.DBConnector;
 	 * 表示したい商品を、DBから取り出しDTOへ転送する為のクラス
 	 * @param itemsName 商品名
 	 * @return itemList 商品情報
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/07/18
 	 * @version 1.0
 	 */

@@ -16,7 +16,7 @@ import twitter4j.auth.RequestToken;
 /**
  * TwitterでのOAuthでログインする為のクラス
  *
- * @author Kaori Takahashi
+ * @author KAORI TAKAHASHI
  * @since 2017/07/20
  * @version 1.0
  */
@@ -47,7 +47,7 @@ public class TwitterOauth {
 	 * @param request リクエスト
 	 * @param response レスポンス
 	 * @return map ユーザー情報
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/057/20
 	 * @version 1.0
 	 */
@@ -71,7 +71,7 @@ public class TwitterOauth {
 	 * @param request リクエスト
 	 * @param response レスポンス
 	 * @return userMap ユーザー情報
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/07/20
 	 * @version 1.0
 	 */
