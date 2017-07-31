@@ -14,7 +14,7 @@ public class AdminDeleteAction extends ActionSupport {
 
 	/**
 	 * 商品ID
-	 * @author Ryo Maeda
+	 * @author
      * @since 2017/05/18
      * @version 1.0
      */
@@ -23,7 +23,7 @@ public class AdminDeleteAction extends ActionSupport {
 
 	/**
 	 * デリートキー
-	 * @author Ryo Maeda
+	 * @author
      * @since 2017/05/18
      * @version 1.0
      */
@@ -35,7 +35,7 @@ public class AdminDeleteAction extends ActionSupport {
 
 	/**
 	 * 商品のデリートキーをtrueにするクラス
-	 * @author Ryo Maeda
+	 * @author
      * @since 2017/05/18
      * @version 1.0
      */

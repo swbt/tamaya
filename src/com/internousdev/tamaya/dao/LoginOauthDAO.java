@@ -5,12 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.internousdev.tamaya.dto.MypageDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * Oauthでのログインに関するクラス
- * @author Kenichi Kaburagi
+ * @author KENICHI KABURAGI
  * @since 2017/06/14
  * @version 1.0
  */
@@ -27,7 +26,7 @@ private MypageDTO dto=new MypageDTO();
  * @param userName OAuthのサービス先のユーザー名
  * @param oauthName OAuth名
  * @return result 成否を判断する変数
- * @author Kenichi Kaburagi
+ * @author KENICHI KABURAGI
  * @since 2017/06/14
  * @version 1.0
  */
@@ -72,7 +71,7 @@ public boolean insert(String uniqueId, String userName, int oauthName) {
  * 多重ログインを防ぐため、ログインフラグをtrueにUPDATEするメソッド
  * @param uniqueId OAuthのサービス先のユニークID
  * @return count 更新した件数
- * @author Kenichi Kaburagi
+ * @author KENICHI KABURAGI
  * @since 2017/06/14
  * @version 1.0
  */
