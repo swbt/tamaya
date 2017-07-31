@@ -20,12 +20,12 @@
 <link rel="stylesheet" href="css/bootstrap-modal.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style_dark.css">
+<link rel="stylesheet" href="css/top.css">
 
 <!-- ▼▼JavaScript -->
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="slick.min.js"></script>
-
 
 </head>
 <body>

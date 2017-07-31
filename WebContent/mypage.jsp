@@ -1,20 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-
+<%--国際化用 --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>マイページ</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-<!-- Javascripts
-    ================================================== -->
+<%--国際化用 --%>
+<fmt:setLocale value="${pageContext.request.locale.language}" />
+<fmt:setBundle basename="com.internousdev.tamaya.property.top" var="lang" />
+<title><s:text name="lang.mypage.title" /></title>
+<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+<!-- ▼▼StyleSheet -->
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/mypage.css">
+
+<!-- ▼▼JavaScript -->
 <script src="js/jquery-3.2.1.min.js"></script>
-<link rel="stylesheet" type="text/css" href="./css/mypage.css" media="all">
-</head>
 
-<!-- ▼▼ログイン判定し、それに応じたヘッダーのjspファイルを読み込む -->
+</head>
+<body>
+  <!-- ▼▼ヘッダーのjspファイルを読み込む -->
   <s:include value="header.jsp" />
 
 <h1>マイページ</h1>
