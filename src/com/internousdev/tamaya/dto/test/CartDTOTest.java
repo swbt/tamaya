@@ -12,7 +12,7 @@ import org.junit.Test;
 import com.internousdev.tamaya.dto.CartDTO;
 
 /**
- * @author voidernousdev
+ * @author YUKO TSUJI
  *
  */
 public class CartDTOTest {

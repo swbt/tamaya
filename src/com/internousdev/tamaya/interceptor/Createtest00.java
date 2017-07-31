@@ -299,29 +299,33 @@ class Target {
 								"/** {@link " + packageName + "." + className + "#" + getter + "()} のためのテスト・メソッド。 */");
 						pw.println("@Test");
 						pw.println("public void " + testGetter + j + "() {");
-						pw.println(className + " test = new " + className + "();");				
+						pw.println(className + " test = new " + className + "();");
 						switch (j) {
 						case 1:
-						
-							break;
-						case 2:
-							expected = "2222-05-03";
-							break;
-						case 3:
 							expected = "";
 							break;
+						case 2:
+							expected = "20140103 00:00:00";
+							break;
+						case 3:
+							expected = "10981124 21:20:13";
+							break;
 						case 4:
-							expected = "9999-12-31";
+							expected = "207/5/19";
 							break;
 						case 5:
-							expected = "01/15/96";
+							expected = "22/15/96";
 							break;
 						}
-					
-						pw.println("SimpleDateFormat sdf = new SimpleDateFormat" + "(" +"\"" + "yyyyMMdd HH:mm:ss" + "\"" + ")" + "\";");
-						pw.println("Date expected = sdf.parse(expected)" + "\";");
-						pw.println("test." + setter + "(expected);");
-						pw.println("assertEquals(expected, test." + getter + "());");
+						pw.println("String expect = \"" + expected + "\";");
+						pw.println("SimpleDateFormat sdf = new SimpleDateFormat" + "(" +"\"" + "yyyy-MM-dd HH:mm:ss" + "\""+");");
+						pw.println("Date expected;");
+						pw.println("try {");
+						pw.println("expected = sdf.parse(expect);" + "\n" +
+		"test.setOrderedAt(expected);" + "\n" +"assertEquals(expected, test.getOrderedAt());");
+						pw.println("} catch (ParseException e) {");
+						pw.println("e.printStackTrace();");
+						pw.println("}");
 						pw.println("}");
 					}
 					for (int j = 1; j <= 5; j++) {
@@ -333,34 +337,32 @@ class Target {
 						pw.println();
 						switch (j) {
 						case 1:
-							expected = "2004-01-01";
+							expected = "";
 							break;
 						case 2:
-							expected = "2222-05-03";
+							expected = "20140103 00:00:00";
 							break;
 						case 3:
-							expected = "12/31/9999";
+							expected = "10981124 21:20:13";
 							break;
 						case 4:
-							expected = "9999-12-31";
+							expected = "207/5/19";
 							break;
 						case 5:
-							expected = "01/15/96";
+							expected = "22/15/96";
 							break;
 						}
-						pw.println("Date expected = new Date()" + "\";");
-						pw.println("Date expected = \"" + expected + "\";");
-						pw.println("test." + setter + "(expected);");
-						pw.println("Date actual = test." + getter + "();");
-						pw.println("assertEquals(expected, actual);");
+						pw.println("String expect = \"" + expected + "\";");
+						pw.println("SimpleDateFormat sdf = new SimpleDateFormat" + "(" +"\"" + "yyyy-MM-dd HH:mm:ss" + "\""+");");
+						pw.println("Date expected;");
+						pw.println("try {");
+						pw.println("expected = sdf.parse(expect);" + "\n" +
+		"test.setOrderedAt(expected);" + "\n" +"assertEquals(expected, test.getOrderedAt());");
+						pw.println("} catch (ParseException e) {");
+						pw.println("e.printStackTrace();");
+						pw.println("}");
 						pw.println("}");
 					}
-
-
-
-
-
-
 				}
 			}
 		} catch (IOException e) {
