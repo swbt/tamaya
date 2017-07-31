@@ -25,11 +25,6 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js "></script>
-<link
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
 </head>
 
 <body>
@@ -47,9 +42,8 @@
 			<s:text name="lang.kanri_rireki.search" />
 		</p>
 		<s:form action="AdminHistoryAction">
-			<input type="number" name="itemId" size="50" placeholder="itemId"
-				min="0" max="100">
-			<input type="submit" value="Search">
+      <input type="number" name="itemId" size="50" placeholder="itemId" min="0" max="100">
+      <input type="submit" value="Search">
 		</s:form>
 
 		<table>

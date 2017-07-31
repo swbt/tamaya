@@ -32,7 +32,8 @@
 
 <!-- メインページ -->
 <body>
-  <div id="header"></div>
+  <!-- ▼▼ヘッダーのjspファイルを読み込む -->
+  <s:include value="header.jsp" />
   <br>
 
   <img src="img/siharai_kakunin.png" alt="お支払い確認">

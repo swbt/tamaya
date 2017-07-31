@@ -22,13 +22,11 @@
 <link rel="stylesheet" type="text/css" href="./css/cart.css">
 <link rel="stylesheet" type="text/css" href="css/btn.css">
 <link rel="stylesheet" type="text/css" href="css/move.css">
-<script src="js/move.js"></script>
-<!-- jQuery -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 
 
 <script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/move.js"></script>
 <script>
 	$(document).ready(function() {
 		$('#top-menu').prmenu();
@@ -39,9 +37,8 @@
 <!-- メインページ -->
 <body>
 
-  <!--     ログインヘッダー読み込む -->
-  <s:include value="login_header.jsp" />
-  <div id="header"></div>
+  <!-- ▼▼ヘッダーのjspファイルを読み込む -->
+  <s:include value="header.jsp" />
   <br>
   <div class="container">
     <!-- 全体を囲むコンテナ -->
