@@ -20,7 +20,8 @@
  <meta http-equiv="refresh" content="2;URL=./top.jsp">
 </head>
 <body>
-<img src="./img/tamaya22.png" class="bb">
+<!-- ▼▼ヘッダーのjspファイルを読み込む -->
+  <s:include value="header.jsp" />
 <br>
 <br>
 <div style="text-align: center">

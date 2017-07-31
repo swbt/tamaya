@@ -24,7 +24,10 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./toiawase.css">
  </head>
+ 
  <body>
+ <!-- ▼▼ヘッダーのjspファイルを読み込む -->
+  <s:include value="header.jsp" />
  <img src="./img/tamaya22.png" class="bb">
   <div style="text-align : center">
  <h1><s:text name="lang.toiawase.h1" /></h1>

@@ -13,3 +13,16 @@ body {
   /* IE6-9 */
   color: #FFF6E9;
 }
+
+/* ページ全体の要素を包む */
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 300px;
+  background-color: #012;
+}
+
+input {
+  color: black;
+}

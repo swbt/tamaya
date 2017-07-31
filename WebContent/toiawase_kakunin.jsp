@@ -21,7 +21,8 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<img src="./img/tamaya22.png" class="bb">
+<!-- ▼▼ヘッダーのjspファイルを読み込む -->
+  <s:include value="header.jsp" />
 	<s:form method="post" action="ContactAction" class="autoConfirm">
 		<div style="text-align: center">
 			<h1 class="contact-title.h1"></h1>
