@@ -20,12 +20,12 @@
 <link rel="stylesheet" href="css/bootstrap-modal.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style_dark.css">
+<link rel="stylesheet" href="css/top.css">
 
 <!-- ▼▼JavaScript -->
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="slick.min.js"></script>
-
 
 </head>
 <body>
@@ -108,32 +108,20 @@
           <font color="white"><s:text name="lang.top.rankingTitle" /></font>
         </h2>
       </div>
-      <table>
-        <tr>
-          <td>
-            <div class="ranking-main">
-              <h3 style="color: red;">
-                <s:text name="lang.top.firstPlace" />
-              </h3>
-              <br> <a href="GoItemListAction"><img src="img/megaton_bag.jpg" width=150 alt="画像の説明文"></a>
-            </div>
-          </td>
-          <td>
-            <div class="ranking-secondary">
-              <h3 style="color: red;">
-                <s:text name="lang.top.secondPlace" />
-              </h3>
-              <br> <a href="GoItemListAction"><img src="img/yamato_damashi.jpg" width=150 alt="画像の説明文"></a>
-            </div>
-          </td>
-          <td><div class="ranking-tertiary">
-              <h3 style="color: red;">
-                <s:text name="lang.top.thirdPlace" />
-              </h3>
-              <br> <a href="GoItemListAction"><img src="img/powerful_sanhenge.jpg" width=150 alt="画像の説明文"></a>
-            </div></td>
-        </tr>
-      </table>
+      <div class="item_list">
+        <s:iterator status="i" begin="1" end="3">
+          <div class="item">
+            <s:form action="GoItemDetailAction" target="item_detail">
+              <s:hidden name="itemId" value="%{itemList.get(#i.index).itemId}"/>
+              <s:submit class="img_path" type="image" src="%{itemList.get(#i.index).imgPath}"
+              data-toggle="modal" data-target="#item_detail_modal"/>
+            </s:form>
+            <s:property value="itemList.get(#i.index).itemName" />
+            <br>
+            <s:property value="itemList.get(#i.index).price" />円（税込）
+          </div>
+        </s:iterator>
+      </div>
     </div>
     <div class="main4">
       <div class="title-special">

@@ -20,7 +20,6 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware 
 
 	private static final long serialVersionUID = -4802657361209963413L;
 
-
 	/** 問い合わせ者名 */
 	private String userName = "";
 	/** メールアドレス */
@@ -50,7 +49,7 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware 
 
 			}
 
-			if (userName.equals("") == false && phoneNumber != 0  && email.equals("") == false
+			if (userName.equals("") == false && phoneNumber != 0 && email.equals("") == false
 					&& comment.equals("") == false) {
 
 				session.put("userName", userName);
@@ -90,6 +89,8 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware 
 
 	/**
 	 * お問い合わせ内容取得メゾット
+	 *
+	 * @return comment 問い合わせ内容
 	 */
 	public String getComment() {
 		return comment;
@@ -97,6 +98,9 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware 
 
 	/**
 	 * お問い合わせ内容格納メゾット
+	 *
+	 * @param comment
+	 *            問い合わせ内容
 	 */
 	public void setComment(String comment) {
 		this.comment = comment;
@@ -125,7 +129,7 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware 
 	/**
 	 * 電話番号取得メゾット
 	 *
-	 * @param phoneNumber
+	 * @return phoneNumber 電話番号
 	 */
 	public long getPhoneNumber() {
 		return phoneNumber;
@@ -135,6 +139,7 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware 
 	 * 電話番号格納メゾット
 	 *
 	 * @param phoneNumber
+	 *            電話番号
 	 */
 
 	public void setPhoneNumber(long phoneNumber) {
@@ -154,6 +159,13 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware 
 	public Map<String, Object> getSession() {
 		return session;
 	}
+
+	/**
+	 * シリアルID取得メゾット
+	 *
+	 * @author RYO SHIRAISHI
+	 * @return serialversionuid シリアルID
+	 */
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}

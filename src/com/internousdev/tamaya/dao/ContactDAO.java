@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-import com.internousdev.tamaya.util.MongoDBconnector;
+import com.internousdev.util.db.mongodb.MongoDBConnector;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -50,10 +50,10 @@ public class ContactDAO {
 		String dt = sdf.format(cal.getTime());
 
 		/* MongoDBサーバに接続 */
-		MongoDBconnector con = new MongoDBconnector();
+		MongoDBConnector con = new MongoDBConnector();
 		/* 利用するDB(コレクション)を取得 */
 		DB db = con.getConnection();
-		DBCollection coll = db.getCollection("inquiry_histories");
+		DBCollection coll = db.getCollection("tamaya");
 
 		BasicDBObject input = new BasicDBObject();
 

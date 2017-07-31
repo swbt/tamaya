@@ -22,13 +22,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="text/javascript">js/toiawase.js</script>
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./toiawase.css">
  </head>
 
  <body>
  <!-- ▼▼ヘッダーのjspファイルを読み込む -->
   <s:include value="header.jsp" />
- <img src="./img/tamaya22.png" class="bb">
   <div style="text-align : center">
  <h1><s:text name="lang.toiawase.h1" /></h1>
   </div>
@@ -41,25 +39,25 @@
  <s:form method="post" action="ContactConfirmAction" class="autoConfirm">
 
 	<div class="row">
-    	<div class="col-sm-2"><s:text name="lang.toiawase.name" /></div>
+    	<div class="col-sm-2"><font color="red"><s:text name="lang.toiawase.name" /></font></div>
     	<div class="col-sm-10 form-inline" style="padding: 3px;">
         <input type="text" name="userName" class="form-control" required="required" size="24" maxlength="30" value = "<s:property value='#session.userName' />"placeholder="お名前">
     </div>
 	</div>
     <div class="row">
-        <div class="col-sm-2"><s:text name="lang.toiawase.phone" /></div>
+        <div class="col-sm-2"><font color="red"><s:text name="lang.toiawase.phone" /></font></div>
         <div class="col-sm-10 form-inline" style="padding: 3px;">
         <input type="tel" class="form-control input-sm" name="phoneNumber" required="required" maxlength="30"  value = "<s:property value='#session.phoneNumber' />"placeholder="電話番号" size="30">
     </div>
     </div>
     <div class="row">
-    	<div class="col-sm-2"><s:text name="lang.toiawase.Email" /></div>
+    	<div class="col-sm-2"><font color="red"><s:text name="lang.toiawase.Email" /></font></div>
         <div class="col-sm-10 form-inline" style="padding: 3px;">
         <input type="email" class="form-control input-sm" name="email" required="required" maxlength="30" value = "<s:property value='#session.email' />"placeholder="email" size="30">
         </div>
     </div>
     <div class="row">
-    	<div class="col-sm-2"><s:text name="lang.toiawase.form" /></div>
+    	<div class="col-sm-2"><font color="red"><s:text name="lang.toiawase.form" /></font></div>
         <div class="col-sm-10" style="padding: 3px;">
         <textarea class="form-control  input-sm" rows="5" name="comment" required="required"  maxlength="500" placeholder="お問い合わせ内容"><s:property value='#session.comment' /></textarea>
         <br>

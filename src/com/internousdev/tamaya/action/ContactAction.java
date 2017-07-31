@@ -20,8 +20,6 @@ public class ContactAction extends ActionSupport implements SessionAware {
 
 	private static final long serialVersionUID = -6348828671699876978L;
 
-
-
 	/**
 	 * 問い合わせ者名
 	 */
@@ -89,7 +87,7 @@ public class ContactAction extends ActionSupport implements SessionAware {
 	 * 問い合わせ者名格納メソッド
 	 *
 	 * @param userName
-	 *            セットする userName
+	 *            問い合わせ者名セットする
 	 */
 	public void setUserName(String userName) {
 		this.userName = userName;
@@ -108,7 +106,7 @@ public class ContactAction extends ActionSupport implements SessionAware {
 	 * メールアドレス格納メソッド
 	 *
 	 * @param email
-	 *            セットする email
+	 *            メールアドレス セットする
 	 */
 	public void setEmail(String email) {
 		this.email = email;
@@ -127,7 +125,7 @@ public class ContactAction extends ActionSupport implements SessionAware {
 	 * 問い合わせ内容格納メソッド
 	 *
 	 * @param comment
-	 *            セットする
+	 *            問い合わせ内容セットする
 	 */
 	public void setComment(String comment) {
 		this.comment = comment;
@@ -143,10 +141,10 @@ public class ContactAction extends ActionSupport implements SessionAware {
 	}
 
 	/**
-	 * 問い合わせ内容格納メソッド
+	 * 電話番号格納メソッド
 	 *
 	 * @param phoneNumber
-	 *            セットする
+	 *            電話番号セットする
 	 */
 	public void setPhoneNumber(long phoneNumber) {
 		this.phoneNumber = phoneNumber;
@@ -166,6 +164,12 @@ public class ContactAction extends ActionSupport implements SessionAware {
 		return session;
 	}
 
+	/**
+	 * シリアルID取得メゾット
+	 *
+	 * @author RYO SHIRAISHI
+	 * @return serialversionuid シリアルID
+	 */
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}

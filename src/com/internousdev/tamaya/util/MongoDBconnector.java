@@ -2,6 +2,7 @@ package com.internousdev.tamaya.util;
 
 import java.net.UnknownHostException;
 
+import com.internousdev.util.db.mongodb.MongoDBConnector;
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
 
@@ -10,7 +11,7 @@ import com.mongodb.MongoClient;
  * @since 2017/07/27
  *
  */
-public class MongoDBconnector {
+public class MongoDBconnector extends MongoDBConnector {
 	private MongoClient client = null;
 
 	public DB getConnection() {

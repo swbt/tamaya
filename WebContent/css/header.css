@@ -2,9 +2,6 @@
 /*******************************
  header.jsp の CSS を記述する
  *******************************/
-header {
-  color: #FFF6E9;
-}
 input {
   color: black;
 }
@@ -19,8 +16,8 @@ input {
   min-width: 300px;
   background-image: url(../img/navi.png);
   background-size: auto 70px;
+  align-items: center;
 }
-/* ▼▼IE で FlexItem の margin が正しく反映されないのを保管するため */
 .navi {
   display: flex;
   flex-wrap: wrap;
@@ -48,8 +45,10 @@ input {
   padding: 0 5px;
   height: 56px;
   min-width: 10px;
+  color: #FFF6E9;
 }
 .navi_box:hover {
+  text-decoration: none;
   color: #DBB400;
 }
 
@@ -82,7 +81,6 @@ input {
 
 @media screen and (max-width: 850px){
   #header {
-  justify-content: center;
     background-size: auto 50px;
   }
   .logo img{
