@@ -13,8 +13,8 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="./css/mypage.css" media="all">
 </head>
-<body>
-  <!-- ▼▼ヘッダーのjspファイルを読み込む -->
+
+<!-- ▼▼ログイン判定し、それに応じたヘッダーのjspファイルを読み込む -->
   <s:include value="header.jsp" />
 
 <h1>マイページ</h1>
@@ -79,4 +79,3 @@
 <p id="pageTop">
   <a href="#">page top</a>
 </p>
-</body>

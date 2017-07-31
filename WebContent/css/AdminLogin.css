@@ -6,10 +6,14 @@
 }
 
 body {
-  padding-top: 30px;
 	font-family: sans-serif;
 	text-align: center;
 }
+/* 	ログイン時の背景
+body {
+	background: url(../img/kanri_background.jpg) center center/cover
+		no-repeat fixed;
+} */
 h1 {
 	font-size: 50px;
 	text-align: center;
