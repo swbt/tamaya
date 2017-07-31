@@ -27,7 +27,7 @@ public class AdminAddAction extends ActionSupport{
 	private int sales;              //売り上げ数//
 
 	private String createdAt;	    //登録日//
-	private String updateAt;		//更新日//
+	private String updatedAt;		//更新日//
 	private String doubling;		//商品名重複時のエラー文//
 
 
