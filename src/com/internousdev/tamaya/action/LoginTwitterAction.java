@@ -11,13 +11,12 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.Definition;
 import com.internousdev.tamaya.dao.LoginOauthDAO;
-import com.internousdev.tamaya.dto.MypageDTO;
 import com.internousdev.tamaya.util.TwitterOauth;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * Twitterでログインする為のクラス
- * @author Kaori Takahashi
+ * @author KAORI TAKAHASHI
  * @since 2017/07/20
  * @version 1.0
  */

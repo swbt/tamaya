@@ -7,15 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.LoginUtil;
 import com.internousdev.tamaya.dao.LoginOauthDAO;
-import com.internousdev.tamaya.dto.MypageDTO;
 import com.internousdev.tamaya.util.Definition;
 import com.internousdev.tamaya.util.GoogleOauth;
-import com.internousdev.tamaya.util.LoginUtil;
 import com.opensymphony.xwork2.ActionSupport;
 /**
  * Googleでログインする為のクラス
- * @author Kaori Takahashi
+ * @author KAORI TAKAHASHI
  * @since 2017/07/20
  * @version 1.0
  */

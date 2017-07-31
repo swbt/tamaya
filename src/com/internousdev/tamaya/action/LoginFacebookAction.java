@@ -12,7 +12,6 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.internousdev.Definition;
 import com.internousdev.LoginUtil;
 import com.internousdev.tamaya.dao.LoginOauthDAO;
-import com.internousdev.tamaya.dto.MypageDTO;
 import com.internousdev.tamaya.util.FacebookOauth;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -20,7 +19,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * LoginFacebookAction　FACEBOOKでログインする為のクラス
- * @author Kaori Takahashi
+ * @author KAORI TAKAHASHI
  * @since 2017/7/20
  * @version 1.0
  */
@@ -29,7 +28,7 @@ public class LoginFacebookAction extends ActionSupport implements SessionAware,
 
 	/**
 	 * シリアルバージョンIDの生成
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/7/20
 	 * @version 1.0
 	 */
@@ -37,7 +36,7 @@ public class LoginFacebookAction extends ActionSupport implements SessionAware,
 
 	/**
 	 * ネットワークネーム
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/7/20
 	 * @version 1.0
 	 */
@@ -47,21 +46,21 @@ public class LoginFacebookAction extends ActionSupport implements SessionAware,
 
 	/**
 	 * レスポンス
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/7/20
 	 * @version 1.0
 	 */
 	private HttpServletRequest request;
 	/**
 	 * リクエスト
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/7/20
 	 * @version 1.0
 	 */
 	private HttpServletResponse response;
 	/**
 	 * セッション
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/7/20
 	 * @version 1.0
 	 */
@@ -69,7 +68,7 @@ public class LoginFacebookAction extends ActionSupport implements SessionAware,
 
 	/**
 	 * エラーメッセージ
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/7/20
 	 * @version 1.0
 	 */
@@ -77,7 +76,7 @@ public class LoginFacebookAction extends ActionSupport implements SessionAware,
 
 	/**実行メソッド
 	 * FACEBOOK認証をし、ユーザー情報をセッションする為のメソッド
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/7/20
 	 * @version 1.0
 	 */
@@ -133,7 +132,7 @@ public class LoginFacebookAction extends ActionSupport implements SessionAware,
 
 	/**
 	 * リクエスト格納メソッド
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/7/20
 	 * @version 1.0
 	 * @param request セットする
@@ -143,7 +142,7 @@ public class LoginFacebookAction extends ActionSupport implements SessionAware,
 	}
      /**
       * レスポンス格納メッソド
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/7/20
 	 * @version 1.0
 	 * @param response　セットする
@@ -154,7 +153,7 @@ public class LoginFacebookAction extends ActionSupport implements SessionAware,
 
 	/**
 	 * セッション取得メソッド
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/7/20
 	 * @version 1.0
 	 * @return session
@@ -165,7 +164,7 @@ public class LoginFacebookAction extends ActionSupport implements SessionAware,
 
 	/**
 	 * セッション格納メソッド
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/7/20
 	 * @version 1.0
 	 * @param session　セットする
@@ -176,7 +175,7 @@ public class LoginFacebookAction extends ActionSupport implements SessionAware,
 
 	/**
 	 * エラーメッセージ取得メソッド
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/7/20
 	 * @version 1.0
 	 * @return errorMsg
@@ -187,7 +186,7 @@ public class LoginFacebookAction extends ActionSupport implements SessionAware,
 
 	/**
 	 * エラーメッセージ格納メソッド
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/7/20
 	 * @version 1.0
 	 * @param errorMsg セットする

@@ -11,7 +11,7 @@ import com.internousdev.tamaya.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * @author internousdev
+ * @author
  *商品情報削除画面への遷移時、削除する商品データを取得するクラス
  */
 public class GoAdminDeleteAction extends ActionSupport {

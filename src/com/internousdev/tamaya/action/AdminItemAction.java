@@ -9,7 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 商品一覧を表示するクラス
- * @author Kaori Takahashi
+ * @author KAORI TAKAHASHI
  * @since 2017/07/21
  * @version 1.0
  *
@@ -127,7 +127,7 @@ public class AdminItemAction extends ActionSupport{
 
 	/**
 	 * 商品リストを取得するメソッド
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * 	@return SUCCESS
 	 * @since 2017/7/21
 	 */

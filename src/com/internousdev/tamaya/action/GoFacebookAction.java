@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  	* GoFacebookAction Facebookでログインする為のクラス
- 	* @author Kaori Takahashi
+ 	* @author KAORI TAKAHASHI
 	* @since 2017/07/20
 	* @version 1.0
 	*/
@@ -19,7 +19,7 @@ public class GoFacebookAction  extends ActionSupport implements ServletResponseA
 
 	/**
 	 * シリアルID
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/07/20
 	 * @version 1.0
 	 */
@@ -27,7 +27,7 @@ public class GoFacebookAction  extends ActionSupport implements ServletResponseA
 
 	/**
 	 * リクエスト
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/07/20
 	 * @version 1.0
 	 */
@@ -35,7 +35,7 @@ public class GoFacebookAction  extends ActionSupport implements ServletResponseA
 
 	/**
 	 * レスポンス
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/07/20
 	 * @version 1.0
 	 */
@@ -45,7 +45,7 @@ public class GoFacebookAction  extends ActionSupport implements ServletResponseA
 
 	/**
 	 * FaceBookからTokenを取得メソッド
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/07/20
 	 * @version 1.0
 	 */
@@ -57,7 +57,7 @@ public class GoFacebookAction  extends ActionSupport implements ServletResponseA
 
 	/**
 	 * リクエスト格納メソッド
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/07/20
 	 * @version 1.0
 	 */
@@ -66,7 +66,7 @@ public class GoFacebookAction  extends ActionSupport implements ServletResponseA
 	}
 	/**
 	 * レスポンス格納メソッド
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/07/20
 	 * @version 1.0
 	 */

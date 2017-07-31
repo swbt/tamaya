@@ -14,7 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * Googleでログインする為のクラス
- * @author Kaori Takahashi
+ * @author KAORI TAKAHASHI
  * @since 2017/07/20
  * @version 1.0
  */
