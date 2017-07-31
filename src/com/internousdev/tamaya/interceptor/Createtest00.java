@@ -299,16 +299,16 @@ class Target {
 								"/** {@link " + packageName + "." + className + "#" + getter + "()} のためのテスト・メソッド。 */");
 						pw.println("@Test");
 						pw.println("public void " + testGetter + j + "() {");
-						pw.println(className + " test = new " + className + "();");
+						pw.println(className + " test = new " + className + "();");				
 						switch (j) {
 						case 1:
-							expected = "2004-01-01";
+						
 							break;
 						case 2:
 							expected = "2222-05-03";
 							break;
 						case 3:
-							expected = "12/31/9999";
+							expected = "";
 							break;
 						case 4:
 							expected = "9999-12-31";
@@ -317,7 +317,9 @@ class Target {
 							expected = "01/15/96";
 							break;
 						}
-						pw.println("Date expected = \"" + expected + "\";");
+					
+						pw.println("SimpleDateFormat sdf = new SimpleDateFormat" + "(" +"\"" + "yyyyMMdd HH:mm:ss" + "\"" + ")" + "\";");
+						pw.println("Date expected = sdf.parse(expected)" + "\";");
 						pw.println("test." + setter + "(expected);");
 						pw.println("assertEquals(expected, test." + getter + "());");
 						pw.println("}");
@@ -328,6 +330,7 @@ class Target {
 						pw.println("@Test");
 						pw.println("public void " + testSetter + j + "() {");
 						pw.println(className + " test = new " + className + "();");
+						pw.println();
 						switch (j) {
 						case 1:
 							expected = "2004-01-01";
@@ -345,6 +348,7 @@ class Target {
 							expected = "01/15/96";
 							break;
 						}
+						pw.println("Date expected = new Date()" + "\";");
 						pw.println("Date expected = \"" + expected + "\";");
 						pw.println("test." + setter + "(expected);");
 						pw.println("Date actual = test." + getter + "();");
