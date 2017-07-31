@@ -16,6 +16,8 @@ public class BackContactAction extends ActionSupport{
 	 *
 	 */
 	private static final long serialVersionUID = 376107014399198994L;
+
+
 	/**
 	 * 問い合わせ者名
 	 */
@@ -23,7 +25,7 @@ public class BackContactAction extends ActionSupport{
 	/**
 	 * 電話番号
 	 */
-	private String postalCode=" ";
+	private long phoneNumber;
 	/**
 	 * メールアドレス
 	 */
@@ -45,7 +47,7 @@ public class BackContactAction extends ActionSupport{
 			if (userName.equals(" ")== true) {
 
 			}
-			if(postalCode.equals(" ")== true){
+			if(phoneNumber == 0) {
 			}
 
 			if(email.equals(" ")== true){
@@ -57,7 +59,7 @@ public class BackContactAction extends ActionSupport{
 
 				result = SUCCESS;
 					return result;
-			//}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -109,19 +111,28 @@ public class BackContactAction extends ActionSupport{
 	}
 	/**
 	 *電話番号取得メソッド
-	 * @return postalCode 電話番号
+	 * @return phoneNumber 電話番号
 	 */
-	public String getPostalCode() {
-		return postalCode;
+	public long getPhoneNumber() {
+		return phoneNumber;
 	}
 
 	/**
 	 * 電話番号格納メソッド
 	 *
-	 * @return postalCode 電話番号
+	 * @return phoneNumber 電話番号
 	 */
-	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	/**
+	 * シリアルID取得メゾット
+	 *
+	 * @author RYO SHIRAISHI
+	 * @return serialversionuid シリアルID
+	 */
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 }
