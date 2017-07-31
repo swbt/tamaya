@@ -20,6 +20,8 @@ public class ContactAction extends ActionSupport implements SessionAware {
 
 	private static final long serialVersionUID = -6348828671699876978L;
 
+
+
 	/**
 	 * 問い合わせ者名
 	 */
@@ -36,7 +38,7 @@ public class ContactAction extends ActionSupport implements SessionAware {
 	/**
 	 * 電話番号
 	 */
-	private Integer postalCode;
+	private long phoneNumber;
 
 	private Map<String, Object> session;
 
@@ -56,14 +58,14 @@ public class ContactAction extends ActionSupport implements SessionAware {
 			comment = (String) session.get("comment");
 			email = (String) session.get("email");
 
-			postalCode = (Integer) session.get("postalCode");
+			phoneNumber = (long) session.get("phoneNumber");
 
-			if (dao.mongoInsert(userName, email, comment, postalCode)) {
+			if (dao.mongoInsert(userName, email, comment, phoneNumber)) {
 
 				session.remove("userName");
 				session.remove("email");
 				session.remove("comment");
-				session.remove("postalCode");
+				session.remove("phoneNumber");
 				result = SUCCESS;
 				return result;
 			}
@@ -134,20 +136,20 @@ public class ContactAction extends ActionSupport implements SessionAware {
 	/**
 	 * 電話番号取得メソッド
 	 *
-	 * @return postalCode
+	 * @return phoneNumber
 	 */
-	public Integer getPostalCode() {
-		return postalCode;
+	public long getPhoneNumber() {
+		return phoneNumber;
 	}
 
 	/**
 	 * 問い合わせ内容格納メソッド
 	 *
-	 * @param postalCode
+	 * @param phoneNumber
 	 *            セットする
 	 */
-	public void setPhoneNumber(Integer postalCode) {
-		this.postalCode = postalCode;
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 	@Override
@@ -162,6 +164,10 @@ public class ContactAction extends ActionSupport implements SessionAware {
 	 */
 	public Map<String, Object> getSession() {
 		return session;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 }

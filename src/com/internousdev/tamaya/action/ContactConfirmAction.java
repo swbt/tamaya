@@ -19,6 +19,8 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ContactConfirmAction extends ActionSupport implements SessionAware {
 
 	private static final long serialVersionUID = -4802657361209963413L;
+
+
 	/** 問い合わせ者名 */
 	private String userName = "";
 	/** メールアドレス */
@@ -26,7 +28,7 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware 
 	/** 問い合わせ内容 */
 	private String comment = "";
 	/** 電話番号 */
-	private Integer postalCode;
+	private long phoneNumber;
 	private Map<String, Object> session;
 
 	/**
@@ -40,7 +42,7 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware 
 			if (userName.equals("") == true) {
 
 			}
-			if (postalCode.equals("") == true) {
+			if (phoneNumber == 0) {
 			}
 			if (email.equals("") == true) {
 			}
@@ -48,11 +50,11 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware 
 
 			}
 
-			if (userName.equals("") == false && postalCode.equals("") == false && email.equals("") == false
+			if (userName.equals("") == false && phoneNumber != 0  && email.equals("") == false
 					&& comment.equals("") == false) {
 
 				session.put("userName", userName);
-				session.put("postalCode", postalCode);
+				session.put("phoneNumber", phoneNumber);
 				session.put("email", email);
 				session.put("comment", comment);
 
@@ -123,20 +125,20 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware 
 	/**
 	 * 電話番号取得メゾット
 	 *
-	 * @param postalCode
+	 * @param phoneNumber
 	 */
-	public Integer getPostalCode() {
-		return postalCode;
+	public long getPhoneNumber() {
+		return phoneNumber;
 	}
 
 	/**
 	 * 電話番号格納メゾット
 	 *
-	 * @param postalCode
+	 * @param phoneNumber
 	 */
 
-	public void setPostalCode(Integer postalCode) {
-		this.postalCode = postalCode;
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 	@Override
@@ -151,5 +153,8 @@ public class ContactConfirmAction extends ActionSupport implements SessionAware 
 	 */
 	public Map<String, Object> getSession() {
 		return session;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 }
