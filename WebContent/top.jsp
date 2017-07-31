@@ -15,8 +15,8 @@
 <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
 <!-- ▼▼StyleSheet -->
 <link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="slick.css"/>
-<link rel="stylesheet" href="slick-theme.css"/>
+<link rel="stylesheet" href="slick.css" />
+<link rel="stylesheet" href="slick-theme.css" />
 <link rel="stylesheet" href="css/bootstrap-modal.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style_dark.css">
@@ -35,94 +35,82 @@
   <s:include value="modal.jsp" />
   <div class="container">
     <div class="main_img"></div>
-    <div class="main1">
-      <h2>
-        <font color="white"><s:text name="lang.top.main1_h2" /></font>
-      </h2>
-      <div class="main-category1">
-        <div class="main-category-list1">
-          <s:form action="GoItemListAction">
-            <s:hidden name="priceRange" value="1" />
-            <s:submit class="button" value="%{getText('lang.top.priceRange1')}" />
-          </s:form>
-        </div>
-        <div class="main-category-list2">
-          <s:form action="GoItemListAction">
-            <s:hidden name="priceRange" value="2" />
-            <s:submit class="button" value="%{getText('lang.top.priceRange2')}" />
-          </s:form>
-        </div>
-        <div class="main-category-list3">
-          <s:form action="GoItemListAction">
-            <s:hidden name="priceRange" value="3" />
-            <s:submit class="button" value="%{getText('lang.top.priceRange3')}" />
-          </s:form>
-        </div>
-        <div class="main-category-list4">
-          <s:form action="GoItemListAction">
-            <s:hidden name="priceRange" value="4" />
-            <s:submit class="button" value="%{getText('lang.top.priceRange4')}" />
-          </s:form>
-        </div>
+    <h2>
+      <font color="white"><s:text name="lang.top.main1_h2" /></font>
+    </h2>
+    <div class="search">
+      <div class="search_item">
+        <s:form action="GoItemListAction">
+          <s:hidden name="priceRange" value="1" />
+          <s:submit class="button" value="%{getText('lang.top.priceRange1')}" />
+        </s:form>
+      </div>
+      <div class="search_item">
+        <s:form action="GoItemListAction">
+          <s:hidden name="priceRange" value="2" />
+          <s:submit class="button" value="%{getText('lang.top.priceRange2')}" />
+        </s:form>
+      </div>
+      <div class="search_item">
+        <s:form action="GoItemListAction">
+          <s:hidden name="priceRange" value="3" />
+          <s:submit class="button" value="%{getText('lang.top.priceRange3')}" />
+        </s:form>
+      </div>
+      <div class="search_item">
+        <s:form action="GoItemListAction">
+          <s:hidden name="priceRange" value="4" />
+          <s:submit class="button" value="%{getText('lang.top.priceRange4')}" />
+        </s:form>
       </div>
     </div>
 
-    <div class="main2">
-      <div class="main-category2">
-        <table>
-          <tr>
-            <td>
-              <div class="main-subcategory-list1">
-                <s:form action="GoItemListAction">
-                  <s:hidden name="category" value="temoti" />
-                  <s:submit class="button" value="%{getText('lang.top.categoryTemoti')}" />
-                </s:form>
-              </div>
-            </td>
-            <td><div class="main-subcategory-list2">
-                <s:form action="GoItemListAction">
-                  <s:hidden name="category" value="hunsyutu" />
-                  <s:submit class="button" value="%{getText('lang.top.categoryHunsyutu')}" />
-                </s:form>
-              </div></td>
-            <td><div class="main-subcategory-list3">
-                <s:form action="GoItemListAction">
-                  <s:hidden name="category" value="utiage" />
-                  <s:submit class="button" value="%{getText('lang.top.categoryUtiage')}" />
-                </s:form>
-              </div></td>
-            <td><div class="main-subcategory-list4">
-                <s:form action="GoItemListAction">
-                  <s:hidden name="category" value="sonota" />
-                  <s:submit class="button" value="%{getText('lang.top.categorySonota')}" />
-                </s:form>
-              </div></td>
-          </tr>
-        </table>
+    <div class="search">
+      <div class="search_item">
+        <s:form action="GoItemListAction">
+          <s:hidden name="category" value="temoti" />
+          <s:submit class="button" value="%{getText('lang.top.categoryTemoti')}" />
+        </s:form>
       </div>
+      <div class="search_item">
+        <s:form action="GoItemListAction">
+          <s:hidden name="category" value="hunsyutu" />
+          <s:submit class="button" value="%{getText('lang.top.categoryHunsyutu')}" />
+        </s:form>
+      </div>
+      <div class="search_item">
+        <s:form action="GoItemListAction">
+          <s:hidden name="category" value="utiage" />
+          <s:submit class="button" value="%{getText('lang.top.categoryUtiage')}" />
+        </s:form>
+      </div>
+      <div class="search_item">
+        <s:form action="GoItemListAction">
+          <s:hidden name="category" value="sonota" />
+          <s:submit class="button" value="%{getText('lang.top.categorySonota')}" />
+        </s:form>
+      </div>
+
     </div>
 
-    <div class="main3">
-      <div class="title-ranking">
-        <h2>
-          <font color="white"><s:text name="lang.top.rankingTitle" /></font>
-        </h2>
-      </div>
-      <div class="item_list">
-        <s:iterator status="i" begin="1" end="3">
-          <div class="item">
-            <s:form action="GoItemDetailAction" target="item_detail">
-              <s:hidden name="itemId" value="%{itemList.get(#i.index).itemId}"/>
-              <s:submit class="img_path" type="image" src="%{itemList.get(#i.index).imgPath}"
-              data-toggle="modal" data-target="#item_detail_modal"/>
-            </s:form>
-            <s:property value="itemList.get(#i.index).itemName" />
-            <br>
-            <s:property value="itemList.get(#i.index).price" />円（税込）
-          </div>
-        </s:iterator>
-      </div>
+    <h2>
+      <font color="white"><s:text name="lang.top.rankingTitle" /></font>
+    </h2>
+    <div class="item_list">
+      <s:iterator status="i" begin="1" end="3">
+        <div class="item">
+          <s:form action="GoItemDetailAction" target="item_detail">
+            <s:hidden name="itemId" value="%{itemList.get(#i.index).itemId}" />
+            <s:submit class="item_img" type="image" src="%{itemList.get(#i.index).imgPath}" data-toggle="modal"
+              data-target="#item_detail_modal" />
+          </s:form>
+          <s:property value="itemList.get(#i.index).itemName" />
+          <br>
+          <s:property value="itemList.get(#i.index).price" />円（税込）
+        </div>
+      </s:iterator>
     </div>
+
     <div class="main4">
       <div class="title-special">
         <a href="./tokusyu.jsp"><s:text name="lang.top.special-collection" /></a>

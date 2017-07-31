@@ -1,169 +1,141 @@
-/*===============================================
-●style.css 画面の横幅が769px以上
-===============================================*/
-@media screen and (min-width: 769px) {
-	img {
-		max-width: 100%;
-		height: auto;
-		width /***/: auto;
-	}
-	#container {
-		width: 100%;
-	}
-	～以下、画面の横幅が768pxまでの場合のスタイル記入～
-
-
-
-}
-/*===============================================
-●tablet.css 画面の横幅が768pxまで
-===============================================*/
-@media screen and (max-width: 768px) {
-	img {
-		max-width: 100%;
-		height: auto;
-		width /***/: auto;
-	}
-	#container {
-		width: 100%;
-	}
-	～以下、画面の横幅が768pxまでの場合のスタイル記入～
-
-
-
-}
-/*===============================================
-●smart.css 画面の横幅が640pxまで
-===============================================*/
-@media screen and (max-width:640px) {
-	img {
-		max-width: 100%;
-		height: auto;
-		width /***/: auto;
-	}
-	#container {
-		width: 100%;
-	}
-	～以下、画面の横幅が640pxまでの場合のスタイル記入～
-
-
-}
+@CHARSET "UTF-8";
 
 body {
-	background-color: black;
-	max-width: 100%;
-	margin: 0 auto;
+  background-color: black;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .main_img {
-	width: 2000px;
-	height: 480px;
-	background: url('../img/tamaya7.gif');
-	background-size: cover;
-	background-position: 20% 60%;
+  width: 100%;
+  max-width: 1000px;
+  height: calc(100vw * 0.56);
+  max-height: calc(1000px * 0.56);
+  background: url('../img/handheld.gif');
+  background-size: 100% 100%;
 }
 
 h2 {
-	text-align: center;
-	border: 1px solid black;
-	margin: 10px;
-	padding: 5px;
-	background-color: black;
+  text-align: center;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 5px;
+  background-color: black;
 }
-
-.main-category1 {
-	padding: 10px;
-	margin: 0 auto;
-	float: left;
-	text-align: center;
+.search {
+  display: flex;
+  flex-wrap: wrap;
+}
+.search_item {
+  padding: 10px;
+  margin: 0 auto;
+  float: left;
+  text-align: center;
 }
 
 table {
-	text-align: center;
-	display: inline-block;
-	margin-left: auto;
-	margin-right: auto
+  text-align: center;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 tr, td {
-	text-align: center;
-	height: 100px; /*表示したい大きさ*/
-	margin: auto; /*縦余白30pxは任意*/
-	width: 30%;
+  text-align: center;
+  height: 100px; /*表示したい大きさ*/
+  margin: auto; /*縦余白30pxは任意*/
+  width: 30%;
 }
 
 [class^="main-category-list"] {
-	float: left;
-	padding: 30px;
-	margin: 10px;
+  float: left;
+  padding: 30px;
+  margin: 10px;
 }
 
 }
 .main2 {
-	clear: both;
-	float: left;
+  clear: both;
+  float: left;
 }
 
 .main-category2 {
-	padding: 10px;
-	margin: 0 auto;
-	float: left;
-	text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  float: left;
+  text-align: center;
 }
 
 [class^="main-subcategory-list"] {
-	padding: 30px;
-	float: left;
-	margin: 10px;
+  padding: 30px;
+  float: left;
+  margin: 10px;
 }
 
 .button {
-	width: 165px;
-	position: relative;
-	display: inline-block;
-	font-weight: bold;
-	padding: 0.5em 1em;
-	text-decoration: none;
-	border-left: solid 4px blue;
-	border-right: solid 4px blue;
-	color: black;
-	background: #e1f3ff;
-	transition: .4s;
+  width: 165px;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-left: solid 4px blue;
+  border-right: solid 4px blue;
+  color: black;
+  background: #e1f3ff;
+  transition: .4s;
 }
 
 .button:hover {
-	background: #668ad8;
-	color: white;
+  background: #668ad8;
+  color: white;
 }
 
 .main3, .main4 {
-	padding: 10px;
-	margin: 0 auto;
-	text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .title-ranking {
-	clear: both;
+  clear: both;
 }
 
 .ranking-main, .ranking-secondary, .ranking-tertiary {
-	float: left;
-	max-width: 400px;
-	padding: 50px;
+  float: left;
+  max-width: 400px;
+  padding: 50px;
 }
 
 .title-special {
-	clear: both;
-	text-align: center;
-	display: inline-block;
-	margin-left: auto;
-	margin-right: auto;
-	-webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transform: scale(1);
+  clear: both;
+  text-align: center;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform: scale(1);
 }
 
 .title-special:hover {
-	-webkit-transform: scale(2.0);
-	transform: scale(2.0);
+  -webkit-transform: scale(2.0);
+  transform: scale(2.0);
+}
+
+.item {
+  flex-basis: 28%;
+}
+
+
+@media screen and (max-width: 768px) {
+  .item {
+    flex-basis: 45%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .item {
+    flex-basis: 95%;
+  }
 }

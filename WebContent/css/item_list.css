@@ -1,3 +1,24 @@
 body{
 	background-color:black;
 }
+.item {
+  flex-basis: 21%;
+}
+
+@media screen and (max-width: 980px) {
+  .item {
+    flex-basis: 29%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .item {
+    flex-basis: 45%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .item {
+    flex-basis: 95%;
+  }
+}

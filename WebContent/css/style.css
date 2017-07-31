@@ -37,8 +37,7 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: rgba(200, 200, 200, 0.2);
-  width: 23%;
-  margin: 0 1% 3rem;
+  margin: 0 2vw 3rem;
   padding-bottom: 3rem;
 }
 
@@ -47,32 +46,16 @@ body {
   margin: 10%;
 }
 
-.img_path {
+.item_img {
   display: block;
-  padding: 15%;
+  padding: 5% 10%;
   width: 100%;
   height: auto;
   cursor: pointer;
+  object-fit: contain;
 }
 
-.item table {
-  margin: auto;
-}
-
-@media screen and (max-width: 980px) {
-  .item {
-    flex-basis: 31%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .item {
-    flex-basis: 48%;
-  }
-}
-
-@media screen and (max-width: 380px) {
-  .item {
-    flex-basis: 98%;
-  }
+.devide {
+  display: flex;
+  flex-wrap: wrap;
 }

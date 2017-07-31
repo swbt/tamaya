@@ -30,38 +30,33 @@
   <s:set name="priceRange" value="priceRange" />
   <s:set name="category" value="category" />
 
-  <div class="item_list">
+  <div class="container">
+    <div class="item_list">
 
 
-    <!-- ▼▼itemList<ItemDTO> の中の ItemDTO オブジェクトを順番に全て取り出す。ループ変数は i -->
-    <s:iterator value="itemList" status="i">
-      <div class="item">
-        <!-- ▼▼この画像をクリックすると #item_detail_modal のモーダルを開く（modal.jsp内にある） -->
-        <s:form action="GoItemDetailAction" target="item_detail">
-          <s:hidden name="itemId" value="%{itemList.get(#i.index).itemId}" />
-          <s:submit class="img_path" type="image" src="%{itemList.get(#i.index).imgPath}" data-toggle="modal"
-            data-target="#item_detail_modal" />
-        </s:form>
-        <table>
-          <tr>
-            <td>商品名</td>
-            <td><s:property value="itemList.get(#i.index).itemName" /></td>
-          </tr>
-          <tr>
-            <td>値段</td>
-            <td><s:property value="itemList.get(#i.index).price" />円（税込）</td>
-          </tr>
-        </table>
-        <s:form action="AddToCartAction">
-          <input type="number" name="quantity" size="5">
-          <div id="countError"></div>
-          <s:hidden name="itemId" value="%{itemId}" />
-          <s:hidden name="priceRange" value="%{#priceRange}" />
-          <s:hidden name="category" value="%{#category}" />
-          <s:submit class="btn btn-primary" value="カートに入れる" />
-        </s:form>
-      </div>
-    </s:iterator>
+      <!-- ▼▼itemList<ItemDTO> の中の ItemDTO オブジェクトを順番に全て取り出す。ループ変数は i -->
+      <s:iterator value="itemList" status="i">
+        <div class="item">
+          <!-- ▼▼この画像をクリックすると #item_detail_modal のモーダルを開く（modal.jsp内にある） -->
+          <s:form action="GoItemDetailAction" target="item_detail">
+            <s:hidden name="itemId" value="%{itemList.get(#i.index).itemId}" />
+            <s:submit class="item_img" type="image" src="%{itemList.get(#i.index).imgPath}" data-toggle="modal"
+              data-target="#item_detail_modal" />
+          </s:form>
+            <s:property value="itemList.get(#i.index).itemName" />
+            <br>
+            <s:property value="itemList.get(#i.index).price" />円（税込）
+          <s:form action="AddToCartAction">
+            <input type="number" name="quantity" size="5">
+            <div id="countError"></div>
+            <s:hidden name="itemId" value="%{itemId}" />
+            <s:hidden name="priceRange" value="%{#priceRange}" />
+            <s:hidden name="category" value="%{#category}" />
+            <s:submit class="btn btn-primary" value="カートに入れる" />
+          </s:form>
+        </div>
+      </s:iterator>
+    </div>
   </div>
 </body>
 </html>
