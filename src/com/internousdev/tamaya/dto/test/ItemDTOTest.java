@@ -15,7 +15,7 @@ import com.internousdev.tamaya.dto.ItemDTO;
 /**
  * 商品に関する情報をここに入れて運ぶ
  *
- * @author Takahiro Adachi
+ * @author YUKO TSUJI
  * @since 1.0
  * @version 1.0
  */
