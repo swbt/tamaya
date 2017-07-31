@@ -23,7 +23,7 @@ public class ContactDAO {
 	 * mongoDBにデータをインサートするメソッド
 	 *
 	 * @author RYO SHIRAISHI
-	 * @param postalCode
+	 * @param phoneNumber
 	 *            電話番号
 	 * @param userName
 	 *            問い合わせ者名
@@ -36,7 +36,7 @@ public class ContactDAO {
 	 *             ホストの IP アドレスが判定できなかった場合にスローされる(呼び出し元で例外処理を行う)
 	 */
 
-	public boolean mongoInsert(String userName, String email, String comment, Integer postalCode)
+	public boolean mongoInsert(String userName, String email, String comment, long phoneNumber)
 			throws UnknownHostException {
 		boolean result = false;
 
@@ -60,7 +60,7 @@ public class ContactDAO {
 		input.put("inquireDate", dt);
 		input.put("userName", userName);
 		input.put("email", email);
-		input.put("postalCode", postalCode);
+		input.put("phoneNumber", phoneNumber);
 		input.put("comment", comment);
 
 		coll.insert(input);

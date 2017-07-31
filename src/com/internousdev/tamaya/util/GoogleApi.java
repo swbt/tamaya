@@ -22,7 +22,7 @@ import org.scribe.utils.Preconditions;
  /**
  * Googleでログインするためのクラス
  * Released under the same license as scribe (MIT License)
- * @author Kaori Takahashi
+ * @author KAORI TAKAHASHI
  * @since 2017/07/20
  * @version 1.0
  */

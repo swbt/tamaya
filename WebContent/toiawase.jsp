@@ -24,7 +24,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./toiawase.css">
  </head>
- 
+
  <body>
  <!-- ▼▼ヘッダーのjspファイルを読み込む -->
   <s:include value="header.jsp" />
@@ -49,7 +49,7 @@
     <div class="row">
         <div class="col-sm-2"><s:text name="lang.toiawase.phone" /></div>
         <div class="col-sm-10 form-inline" style="padding: 3px;">
-        <input type="tel" class="form-control input-sm" name="postalCode" required="required" maxlength="30"  value = "<s:property value='#session.postalCode' />"placeholder="電話番号" size="30">
+        <input type="tel" class="form-control input-sm" name="phoneNumber" required="required" maxlength="30"  value = "<s:property value='#session.phoneNumber' />"placeholder="電話番号" size="30">
     </div>
     </div>
     <div class="row">

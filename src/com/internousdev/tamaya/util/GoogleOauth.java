@@ -22,7 +22,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * GoogleOAuth Googleでログインする為のクラス
- * @author Kaori Takahashi
+ * @author KAORI TAKAHASHI
  * @since 2017/07/20
  * @version 1.0
  */
@@ -54,7 +54,7 @@ public class GoogleOauth extends ActionSupport {
 	 * @param request リクエスト
 	 * @param response レスポンス
 	 * @return map ユーザー情報
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/07/20
 	 * @version 1.0
 	 */
@@ -91,7 +91,7 @@ public class GoogleOauth extends ActionSupport {
 	 * ユーザー情報のMAPを取得するメソッド
 	 * @param request リクエスト
 	 * @return map
-	 * @author Kaori Takahashi
+	 * @author KAORI TAKAHASHI
 	 * @since 2017/07/20
 	 * @version 1.0
 	 */

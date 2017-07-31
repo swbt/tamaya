@@ -55,7 +55,7 @@ public class CartDTO {
 	}
 	/** 送料を格納するメソッド */
 	public void setShippingCost(BigDecimal shippingCost) {
-		this.shippingCost = shippingCost;
+		this.shippingCost = shippingCost.setScale(0, RoundingMode.HALF_EVEN);;
 		calcGrandTotal();
 	}
 	/** 総計（支払う金額）を取得するメソッド */

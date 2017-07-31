@@ -51,7 +51,7 @@
 						<s:text name="lang.toiawase_kakunin.phone" />
 					</div>
 					<div class="col-sm-10 form-inline" style="padding: 10px;">
-						<s:property value='#session.postalCode' />
+						<s:property value='#session.phoneNumber' />
 					</div>
 				</div>
 				<div class="row">
