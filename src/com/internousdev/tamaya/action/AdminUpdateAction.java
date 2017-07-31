@@ -7,7 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 商品情報を更新するためのクラス
- * @author seiya takahashi
+ * @author SEIYA TAKAHASHI
  * @since 2017/6/13
  * @version 1.0
  */

@@ -11,7 +11,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 
 /**
  * 商品情報削除に関するクラス
- * @author seiya takahashi,Kaori Takahashi
+ * @author SEIYA TAKAHASHI,Kaori Takahashi
  * @since 2017/6/14
  * @version 1.0
  *

@@ -7,12 +7,11 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tamaya.dao.AdminHistoryDAO;
-import com.internousdev.tamaya.dto.AdminHistoryDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 管理者販売履歴のためのクラス
- * @author seiya takahashi
+ * @author SEIYA TAKAHASHI
  * @since 2017/6/13
  * @version 1.0
  */

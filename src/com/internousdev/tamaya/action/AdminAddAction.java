@@ -5,11 +5,10 @@ package com.internousdev.tamaya.action;
 
 import java.math.BigDecimal;
 
-import com.internousdev.tamaya.dao.AdminAddDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * @author seiya takahashi
+ * @author SEIYA TAKAHASHI
  * @since 2017/6/13
  *
  * 商品を追加するアクションクラス

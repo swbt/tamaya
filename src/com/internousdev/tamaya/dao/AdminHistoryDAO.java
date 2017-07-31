@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.tamaya.dto.AdminHistoryDTO;
-import com.internousdev.tamaya.dto.HistoryDTO;
 import com.internousdev.util.db.mysql.MySqlConnector;
 
 
@@ -16,7 +14,7 @@ import com.internousdev.util.db.mysql.MySqlConnector;
 /**
  * 管理者販売履歴の表示に関するメソッド
  *
- * @author seiya takahashi
+ * @author SEIYA TAKAHASHI
  * @since 2017/6/14
  * @version 1.0
  */

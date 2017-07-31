@@ -2,9 +2,7 @@ package com.internousdev.tamaya.dao;
 
 import java.util.ArrayList;
 
-import com.internousdev.tamaya.dto.ContactHistoryDTO;
 import com.internousdev.tamaya.util.MongoDBconnector;
-
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -13,7 +11,7 @@ import com.mongodb.DBObject;
 
 /**
  * お問い合わせ情報閲覧に関するクラス
- * @author seiya takahashi
+ * @author SEIYA TAKAHASHI
  * @since 2017/6/14
  * @version 1.0
  */
