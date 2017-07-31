@@ -12,6 +12,16 @@ import org.junit.Test;
 
 import com.internousdev.tamaya.dto.OrderDTO;
 
+/**
+ * OrderDTOをテストするクラス
+ * @author YUKO TSUJI
+ * @since 1.0
+ *
+ */
+
+
+
+
 public class OrderDTOTest {
 	/** {@link com.internousdev.tamaya.dto.OrderDTO#getOrderId()} のためのテスト・メソッド。 */
 	@Test
@@ -66,7 +76,7 @@ public class OrderDTOTest {
 	int expected = 0;
 	test.setOrderId(expected);
 	int actual = test.getOrderId();
-	assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), actual);
+	assertEquals(expected, actual);
 	}
 	/** {@link com.internousdev.tamaya.dto.dto.OrderDTO#setOrderId(int)} のためのテスト・メソッド。 */
 	@Test
@@ -75,7 +85,7 @@ public class OrderDTOTest {
 	int expected = 2147483647;
 	test.setOrderId(expected);
 	int actual = test.getOrderId();
-	assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), actual);
+	assertEquals(expected, actual);
 	}
 	/** {@link com.internousdev.tamaya.dto.dto.OrderDTO#setOrderId(int)} のためのテスト・メソッド。 */
 	@Test
@@ -84,7 +94,7 @@ public class OrderDTOTest {
 	int expected = -2147483648;
 	test.setOrderId(expected);
 	int actual = test.getOrderId();
-	assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), actual);
+	assertEquals(expected, actual);
 	}
 	/** {@link com.internousdev.tamaya.dto.dto.OrderDTO#setOrderId(int)} のためのテスト・メソッド。 */
 	@Test
@@ -115,7 +125,7 @@ public class OrderDTOTest {
 	OrderDTO test = new OrderDTO();
 	BigDecimal expected = new BigDecimal("0");
 	test.setShippingCost(expected);
-	assertEquals(expected, test.getShippingCost());
+	assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), test.getShippingCost());
 	}
 	/** {@link com.internousdev.tamaya.dto.OrderDTO#getShippingCost()} のためのテスト・メソッド。 */
 	@Test
@@ -131,7 +141,7 @@ public class OrderDTOTest {
 	OrderDTO test = new OrderDTO();
 	BigDecimal expected = new BigDecimal("-1.0E20");
 	test.setShippingCost(expected);
-	assertEquals(expected, test.getShippingCost());
+	assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), test.getShippingCost());
 	}
 	/** {@link com.internousdev.tamaya.dto.OrderDTO#getShippingCost()} のためのテスト・メソッド。 */
 	@Test
@@ -139,7 +149,7 @@ public class OrderDTOTest {
 	OrderDTO test = new OrderDTO();
 	BigDecimal expected = new BigDecimal("1.0E-20");
 	test.setShippingCost(expected);
-	assertEquals(expected, test.getShippingCost());
+	assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), test.getShippingCost());
 	}
 	/** {@link com.internousdev.tamaya.dto.OrderDTO#getShippingCost()} のためのテスト・メソッド。 */
 	@Test
@@ -147,7 +157,7 @@ public class OrderDTOTest {
 	OrderDTO test = new OrderDTO();
 	BigDecimal expected = new BigDecimal("-1.0E-20");
 	test.setShippingCost(expected);
-	assertEquals(expected, test.getShippingCost());
+	assertEquals(expected.setScale(0, RoundingMode.HALF_EVEN), test.getShippingCost());
 	}
 	/** {@link com.internousdev.tamaya.dto.dto.OrderDTO#setShippingCost(BigDecimal)} のためのテスト・メソッド。 */
 	@Test
