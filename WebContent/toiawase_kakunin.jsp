@@ -40,7 +40,7 @@
 			<div style="text-align: center">
 				<div class="row">
 					<div class="col-sm-2">
-						<s:text name="lang.toiawase_kakunin.name" />
+						<font color="red"><s:text name="lang.toiawase_kakunin.name" /></font>
 					</div>
 					<div class="col-sm-10 form-inline" style="padding: 10px;">
 						<s:property value='#session.userName' />
@@ -48,7 +48,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-2">
-						<s:text name="lang.toiawase_kakunin.phone" />
+						<font color="red"><s:text name="lang.toiawase_kakunin.phone" /></font>
 					</div>
 					<div class="col-sm-10 form-inline" style="padding: 10px;">
 						<s:property value='#session.phoneNumber' />
@@ -56,7 +56,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-2">
-						<s:text name="lang.toiawase_kakunin.Email" />
+						<font color="red"><s:text name="lang.toiawase_kakunin.Email" /></font>
 					</div>
 					<div class="col-sm-10 form-inline" style="padding: 10px;">
 						<s:property value='#session.email' />
@@ -64,7 +64,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-2">
-						<s:text name="lang.toiawase_kakunin.form" />
+						<font color="red"><s:text name="lang.toiawase_kakunin.form" /></font>
 					</div>
 					<div class="col-sm-10" style="padding: 10px;">
 						<s:property value='#session.comment' />
